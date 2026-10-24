@@ -46,6 +46,7 @@ figure { margin: 0; background: var(--card); border: 1px solid var(--rule); bord
 figure video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
 figcaption { padding: 10px 12px 12px; font-size: 15px; }
 figcaption b { display: block; }
+.note { display: block; margin-top: 4px; font-size: 13px; }
 .coming { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; background: var(--accent-soft); color: var(--accent); font: 600 13px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .06em; text-transform: uppercase; text-align: center; padding: 12px; }
 ul { margin: 0 0 12px; padding-left: 20px; }
 li { margin: 4px 0; }
@@ -87,12 +88,12 @@ footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 16px;
       <figcaption><b>05 · PM agents: what the evidence says</b><span class="muted">The PM jobs map and the evidence for PM agents, audited figures only. 4 min.</span></figcaption>
     </figure>
     <figure>
-      <div class="coming">Film coming</div>
-      <figcaption><b>06 · Ramp Glass, taken apart</b><span class="muted">The Glass teardown, with Ramp's claims labelled as first-party.</span></figcaption>
+      <video controls preload="metadata" src="films/06-ramp-glass.mp4"></video>
+      <figcaption><b>06 · Ramp Glass, taken apart</b><span class="muted">The Glass teardown, with Ramp's claims labelled as first-party. 5 min.</span></figcaption>
     </figure>
     <figure>
-      <div class="coming">Film coming</div>
-      <figcaption><b>09 · Stripe, taken apart</b><span class="muted">Kai, Agent Studio, the whiteboard chain and the verdict on context creation.</span></figcaption>
+      <video controls preload="metadata" src="films/09-stripe-teardown.mp4"></video>
+      <figcaption><b>09 · Stripe, taken apart</b><span class="muted">Kai, Agent Studio, the whiteboard chain and the verdict on context creation. 4 min.</span><span class="muted note">The soundtrack drops to near-silence for about a second at 2:35.</span></figcaption>
     </figure>
   </div>
 
@@ -108,8 +109,8 @@ footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 16px;
     <li><b>Lenny's Newsletter archive sweep:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-lennys-newsletter-archive/00-summary.md">summary</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-lennys-newsletter-archive/01-triage.md">triage</a>.</li>
     <li><b>Department of Product knowledge series sweep:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-department-of-product-knowledge-series/00-summary.md">summary</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-department-of-product-knowledge-series/01-triage.md">triage</a>.</li>
     <li><b>Claude resources articles:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-claude-resources-articles/00-summary.md">summary</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-claude-resources-articles/01-triage.md">triage</a>.</li>
-    <li><b>Airbnb and Spotify product practices:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-airbnb-spotify-product-practices/00-brief.md">brief</a>.</li>
-    <li><b>Block (Square) product practices and Goose:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-block-product-practices/00-brief.md">brief</a>.</li>
+    <li><b>Airbnb and Spotify product practices:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-airbnb-spotify-product-practices/00-brief.md">brief</a>, lifecycle maps for <a href="tasks/research-airbnb-spotify-product-practices/01-pdlc-airbnb.html">Airbnb</a> and <a href="tasks/research-airbnb-spotify-product-practices/02-pdlc-spotify.html">Spotify</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/options/contributions/research-airbnb-spotify-product-practices.md">options proposed</a>.</li>
+    <li><b>Block (Square) product practices and Goose:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-block-product-practices/00-brief.md">brief</a>, <a href="tasks/research-block-product-practices/01-pdlc-block.html">lifecycle map</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/options/contributions/research-block-product-practices.md">options proposed</a>.</li>
   </ul>
 
   <h3>Competitive teardowns</h3>
@@ -137,16 +138,16 @@ footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 16px;
     <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/01-synthesis.md">Synthesis</a> and its <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/00-research-plan.md">research plan</a>.</li>
     <li>Track reports: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-1-meta-harnesses.md">1 meta-harnesses</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-2-harness-frameworks.md">2 harness frameworks</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-3-remote-deployed-agents.md">3 remote and deployed agents</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-4-portable-skills-plugins.md">4 portable skills and plugins</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-5-shared-persistent-sessions.md">5 shared persistent sessions</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-6-work-structure-fit.md">6 work structure fit</a>.</li>
     <li>Follow-up round: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-1-a2a-production.md">A2A in production</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-2-omnigent-reaction.md">Omnigent reaction</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-3-open-harnesses.md">open harnesses</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-4-codex-copilot-admin.md">Codex and Copilot admin</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-6-enterprise-agent-os.md">enterprise agent platforms</a>.</li>
-    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/teardowns-to-pattern-classes/00-mapping.md">Teardowns mapped to the pattern classes</a>.</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/teardowns-to-pattern-classes/00-mapping.md">The teardowns and ecosystems mapped to the pattern classes</a>: each placement sourced and marked clear, partial or contested.</li>
   </ul>
 </section>
 
 <section id="maps">
   <div class="kicker">Section 3</div>
   <h2>The lifecycle maps</h2>
-  <p>One task-anchored map per ecosystem, from opportunity to operate, with every handoff marked documented, inferred or unknown, then one page that lays them all in a single frame and names the common seams and gaps.</p>
+  <p>One task-anchored map for each of nine ecosystems, from opportunity to operate, with every handoff marked documented, inferred or unknown, then one page that lays them all in a single frame and names the common seams and gaps.</p>
   <ul class="pages">
-    <li><a href="tasks/pdlc-cross-ecosystem-map/index.html">Lifecycle across ecosystems<span>Every map in one frame: matrix, seams, comparison</span></a></li>
+    <li><a href="tasks/pdlc-cross-ecosystem-map/index.html">Lifecycle across ecosystems<span>All nine ecosystems in one frame: matrix, seams, comparison</span></a></li>
   </ul>
   <ul class="pages">
     <li><a href="tasks/competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.standalone.html">Stripe<span>The template the other maps follow</span></a></li>
@@ -181,8 +182,8 @@ footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 16px;
   <p>The menu itself: each dimension with an options table (examples, what it gives, what it costs, maturity, evidence links) and numbered key questions, plus questions that cut across dimensions. It records leans where the evidence leans, and does not pick winners.</p>
   <div class="films">
     <figure>
-      <div class="coming">Film coming</div>
-      <figcaption><b>08 · Shaping intent: the options</b><span class="muted">Who shapes intent, what counts as ready, review gating, context location, investment sequencing.</span></figcaption>
+      <video controls preload="metadata" src="films/08-intent-shaping-options.mp4"></video>
+      <figcaption><b>08 · Shaping intent: the options</b><span class="muted">Who shapes intent, what counts as ready, review gating, context location, investment sequencing. 6 min.</span></figcaption>
     </figure>
   </div>
   <ul>
