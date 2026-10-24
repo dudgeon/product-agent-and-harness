@@ -37,6 +37,7 @@ Subject (Geoff, 2026-10-24): "Product agent and harness". Brand new project.
 - 2026-10-24 Apply the taxonomy synthesis's register consolidation (01-synthesis.md section D.0, ~29 to 20 dimensions) once the user-story-mapping worker has added its artifact-management dimension; the taxonomy worker asks Geoff its section I questions directly. (Geoff)
 - 2026-10-24 Workers that did their own research also make short explainers of their findings (explainers pattern), lower priority than the main story film 04, so Geoff can keep up with each sub-task as well as the overall story. GPU order follows the shared lock, with 04 first. (Geoff)
 - 2026-10-24 Films are built end to end before Geoff reviews them: no script sign-off before voicing. Geoff watches the render, then edits the Script Doc. (Geoff, for film 04; the director applies it to the explainer films 05-08 too.)
+- 2026-10-24 Background-session worktree isolation is off for this project (`worktree.bgIsolation: "none"` in .claude/settings.json, local and gitignored), so `claude --bg` workers can Edit the main folder again. That isolation was the root cause of the split register headings and the stranded worktree. (Geoff)
 - 2026-10-24 All research goes in one shared library, `research/` (sources with links, relevance and themes; an index; a theme register), as a standing rule for current and future agents. (Geoff)
 
 ## Done

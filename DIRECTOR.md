@@ -48,7 +48,7 @@ Stopped: research-product-agent-and-harness-968c23 (6b54ecd9, login expired, nev
 
 ## Open issues
 
-- Edit is blocked in `claude --bg` sessions (it demands a worktree, since the folder became a git repo). Workers now put register proposals in options/contributions/<task>.md and the director merges them; find the root cause after the film.
+- Fixed 2026-10-24: Edit was blocked in `claude --bg` sessions by worktree isolation; set `worktree.bgIsolation: "none"` on Geoff's yes (new sessions pick it up; running ones may still be blocked). Register proposals already in options/contributions/ still need merging by the director.
 
 - Some Today sections and synthesis rows cite PM-agent notes that the Fable audit relabelled; the lint sweep and the story's claim check cover this.
 - Monitor output includes the director's own row; ignore it.

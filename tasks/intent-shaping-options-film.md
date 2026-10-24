@@ -16,3 +16,4 @@ Related: [[research-product-agent-and-harness]], [[strategy-story-and-explainer-
 ## Progress
 
 - 2026-10-24 Filed by director-project-agent-and-harness.
+- 2026-10-24 Worker (research-product-agent-and-harness session) started. Script v0.1 written: explainers/projects/08-intent-shaping-options/script-doc.md (8 scenes, ~830 narrated words, ~5 min; claim check, concept map and sources appendices). Film video/films/intent-shaping-options set up (script.md via sync-table, shots.mjs/shots.json, square tokens); scenes drawn in video/src/scenes/intent/Intent.tsx (scene kind `intent`, registered in registry.ts and in plan.mjs page-travel). `build.mjs --check` passed; tsc clean. No GPU work; frames not yet rendered or viewed. Waiting on Geoff's script review and the director's GPU go.
