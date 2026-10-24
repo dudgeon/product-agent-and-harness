@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Agent and Harness</title>
+<meta name="description" content="Research and strategy work on agent harnesses for product work: the pages, maps and explainer films the project has built.">
+<style>
+:root {
+  --paper: #f7f4ee; --card: #fffdf9; --ink: #1d1b18; --muted: #5f5a52; --rule: #ddd6ca;
+  --accent: #a8600a; --accent-soft: #f3e3cc; --link: #1f4f8a;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #171614; --card: #201e1b; --ink: #ece7de; --muted: #a59e92; --rule: #38342e;
+    --accent: #e0a24e; --accent-soft: #3a2c18; --link: #8fb6ea;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #171614; --card: #201e1b; --ink: #ece7de; --muted: #a59e92; --rule: #38342e;
+  --accent: #e0a24e; --accent-soft: #3a2c18; --link: #8fb6ea;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+main { max-width: 980px; margin: 0 auto; padding: 40px 16px 80px; }
+h1, h2, h3 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-weight: 600; line-height: 1.2; }
+h1 { font-size: 2.4rem; margin: 0 0 12px; }
+h2 { font-size: 1.6rem; margin: 0 0 6px; }
+h3 { font-size: 1.1rem; margin: 22px 0 6px; }
+p { margin: 0 0 12px; }
+a { color: var(--link); text-underline-offset: 2px; }
+.kicker { font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.lede { font-size: 1.12rem; color: var(--ink); }
+.muted { color: var(--muted); }
+nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 8px; }
+nav.toc a { font-size: 14px; padding: 4px 10px; border: 1px solid var(--rule); border-radius: 999px; text-decoration: none; background: var(--card); }
+section { border-top: 1px solid var(--rule); padding-top: 32px; margin-top: 36px; }
+.films { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0 8px; }
+figure { margin: 0; background: var(--card); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+figure video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+figcaption { padding: 10px 12px 12px; font-size: 15px; }
+figcaption b { display: block; }
+.coming { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; background: var(--accent-soft); color: var(--accent); font: 600 13px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .06em; text-transform: uppercase; text-align: center; padding: 12px; }
+ul { margin: 0 0 12px; padding-left: 20px; }
+li { margin: 4px 0; }
+.pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 12px 0; padding: 0; list-style: none; }
+.pages li { margin: 0; }
+.pages a { display: block; height: 100%; padding: 12px 14px; background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 6px; text-decoration: none; color: var(--ink); }
+.pages a span { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
+.pages a:hover { border-color: var(--accent); }
+.tag { font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); letter-spacing: .05em; }
+footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 16px; font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="kicker">Research and strategy · 2026</div>
+  <h1>Product agent and harness</h1>
+  <p class="lede">How could product managers, and anyone else in a product role, work with agents in sessions that are persistent and shareable rather than local and private, with common product jobs handed to standardised task agents, and without being tied to one vendor's tool?</p>
+  <p>The end product is a <strong>strategy deck that informs a resource request</strong>: funding to do the hard work of picking the right pattern. It is not a PRD for one implementation. So the project builds a <strong>menu of options, split by dimension</strong>, with the <strong>key questions</strong> that would decide among them, and does not converge on one answer. The reference job is <strong>intent shaping</strong>: turning an opportunity into a spec that coding agents can act on, in a regulated setting where audit matters.</p>
+  <p class="muted">Research and teardowns are largely done, the story and films are in production, and the deck and prototypes have not started. The work is done by Claude agents: a director session hands each piece to a worker session and checks what comes back. Source code, notes and every deliverable are in the <a href="https://github.com/dudgeon/product-agent-and-harness">GitHub repository</a>; start with its <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/README.md">README</a>.</p>
+  <nav class="toc" aria-label="Sections">
+    <a href="#research">Research and teardowns</a>
+    <a href="#taxonomy">Runtime-patterns taxonomy</a>
+    <a href="#maps">Lifecycle maps</a>
+    <a href="#stories">User stories</a>
+    <a href="#options">Options register</a>
+    <a href="#strategy">Strategy films</a>
+  </nav>
+</header>
+
+<section id="research">
+  <div class="kicker">Section 1</div>
+  <h2>Research and teardowns</h2>
+  <p>Every task files its research in one shared library: one note per primary source (about 820), each linking to the original, with why it matters, the themes it supports and an evidence label (first-party, vendor claim, independent, anecdote).</p>
+  <div class="films">
+    <figure>
+      <video controls preload="metadata" src="films/05-pm-agents-evidence.mp4"></video>
+      <figcaption><b>05 · PM agents: what the evidence says</b><span class="muted">The PM jobs map and the evidence for PM agents, audited figures only. 4 min.</span></figcaption>
+    </figure>
+    <figure>
+      <div class="coming">Film coming</div>
+      <figcaption><b>06 · Ramp Glass, taken apart</b><span class="muted">The Glass teardown, with Ramp's claims labelled as first-party.</span></figcaption>
+    </figure>
+    <figure>
+      <div class="coming">Film coming</div>
+      <figcaption><b>09 · Stripe, taken apart</b><span class="muted">Kai, Agent Studio, the whiteboard chain and the verdict on context creation.</span></figcaption>
+    </figure>
+  </div>
+
+  <h3>The research library</h3>
+  <ul>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/README.md">How the library works</a>, the <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/INDEX.md">index of sources</a> and the <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/THEMES.md">theme register</a> (about 65 recurring ideas and the sources behind each).</li>
+  </ul>
+
+  <h3>Research tasks</h3>
+  <ul>
+    <li><b>Prior work found.</b> Geoff's earlier intent-shaping documents and the five dimensions they added: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-product-agent-and-harness/00-prior-work-found.md">00-prior-work-found</a>.</li>
+    <li><b>PM agents and jobs to be done.</b> Ten recurring PM jobs and where PM agents have worked: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-pm-agents-jobs-to-be-done/00-brief.md">brief</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-pm-agents-jobs-to-be-done/01-jobs-to-be-done-map.md">jobs map</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-pm-agents-jobs-to-be-done/02-commercial-pm-agents.md">commercial PM agents</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-pm-agents-jobs-to-be-done/03-in-practice-cases-and-failures.md">cases and failures</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-pm-agents-jobs-to-be-done/audit-2026-10-24.md">audit</a>.</li>
+    <li><b>Lenny's Newsletter archive sweep:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-lennys-newsletter-archive/00-summary.md">summary</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-lennys-newsletter-archive/01-triage.md">triage</a>.</li>
+    <li><b>Department of Product knowledge series sweep:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-department-of-product-knowledge-series/00-summary.md">summary</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-department-of-product-knowledge-series/01-triage.md">triage</a>.</li>
+    <li><b>Claude resources articles:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-claude-resources-articles/00-summary.md">summary</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-claude-resources-articles/01-triage.md">triage</a>.</li>
+    <li><b>Airbnb and Spotify product practices:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-airbnb-spotify-product-practices/00-brief.md">brief</a>.</li>
+    <li><b>Block (Square) product practices and Goose:</b> <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-block-product-practices/00-brief.md">brief</a>.</li>
+  </ul>
+
+  <h3>Competitive teardowns</h3>
+  <ul>
+    <li><b>Ramp Glass.</b> Ramp's company-wide AI coworker workspace: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/competitive-teardown-ramp-glass/00-teardown-summary.md">teardown summary</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/competitive-teardown-ramp-glass/06-x-posts-ramp-leaders-about-glass.md">posts from Ramp leaders</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/competitive-teardown-ramp-glass/audit-2026-10-24.md">audit</a>.</li>
+    <li><b>Shopify River and Aquifer.</b> An agent that lives in Slack's public channels: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/competitive-teardown-shopify-river/00-teardown-summary.md">teardown summary</a>.</li>
+    <li><b>Stripe's knowledge-worker agents.</b> Kai, Agent Studio, Harbor and compliance review agents: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/competitive-teardown-stripe-knowledge-agents/00-teardown-summary.md">teardown summary</a>.</li>
+  </ul>
+</section>
+
+<section id="taxonomy">
+  <div class="kicker">Section 2</div>
+  <h2>The runtime-patterns taxonomy</h2>
+  <p>Ten pattern classes around the general harness, from a vendor harness plus skills to durable workflow engines. The agent loop is cheap and upkeep is the cost; skill files are portable but behaviour isn't; "shared and persistent" is five separate decisions, with identity the sharpest split.</p>
+  <div class="films">
+    <figure>
+      <video controls preload="metadata" src="films/07-runtime-patterns.mp4"></video>
+      <figcaption><b>07 · Where the agent runs: runtime patterns, a menu not a winner</b><span class="muted">The ten pattern classes, the dimensions as a menu, evidence quality and the open questions. 5 min.</span></figcaption>
+    </figure>
+  </div>
+  <ul class="pages">
+    <li><a href="tasks/research-agent-runtime-patterns-taxonomy/map.html">Agent runtime pattern map<span>The ten classes on one page</span></a></li>
+  </ul>
+  <ul>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/01-synthesis.md">Synthesis</a> and its <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/00-research-plan.md">research plan</a>.</li>
+    <li>Track reports: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-1-meta-harnesses.md">1 meta-harnesses</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-2-harness-frameworks.md">2 harness frameworks</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-3-remote-deployed-agents.md">3 remote and deployed agents</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-4-portable-skills-plugins.md">4 portable skills and plugins</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-5-shared-persistent-sessions.md">5 shared persistent sessions</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/track-6-work-structure-fit.md">6 work structure fit</a>.</li>
+    <li>Follow-up round: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-1-a2a-production.md">A2A in production</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-2-omnigent-reaction.md">Omnigent reaction</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-3-open-harnesses.md">open harnesses</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-4-codex-copilot-admin.md">Codex and Copilot admin</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-agent-runtime-patterns-taxonomy/followup-6-enterprise-agent-os.md">enterprise agent platforms</a>.</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/teardowns-to-pattern-classes/00-mapping.md">Teardowns mapped to the pattern classes</a>.</li>
+  </ul>
+</section>
+
+<section id="maps">
+  <div class="kicker">Section 3</div>
+  <h2>The lifecycle maps</h2>
+  <p>One task-anchored map per ecosystem, from opportunity to operate, with every handoff marked documented, inferred or unknown, then one page that lays them all in a single frame and names the common seams and gaps.</p>
+  <ul class="pages">
+    <li><a href="tasks/pdlc-cross-ecosystem-map/index.html">Lifecycle across ecosystems<span>Every map in one frame: matrix, seams, comparison</span></a></li>
+  </ul>
+  <ul class="pages">
+    <li><a href="tasks/competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.standalone.html">Stripe<span>The template the other maps follow</span></a></li>
+    <li><a href="tasks/competitive-teardown-ramp-glass/07-pdlc-agent-ecosystem-map.html">Ramp<span>From the Ramp Glass teardown</span></a></li>
+    <li><a href="tasks/competitive-teardown-shopify-river/01-pdlc-agent-ecosystem-map.html">Shopify<span>From the River and Aquifer teardown</span></a></li>
+    <li><a href="tasks/research-claude-resources-articles/02-pdlc-agent-ecosystem-map.html">Anthropic<span>Anthropic's own use, from its resources articles</span></a></li>
+    <li><a href="tasks/user-story-mapping/01-pdlc-agent-ecosystem-map.html">Atlassian<span>From the user story mapping</span></a></li>
+    <li><a href="tasks/research-pm-agents-jobs-to-be-done/04-pdlc-agent-ecosystem-map.html">Intercom<span>From the PM agents research</span></a></li>
+    <li><a href="tasks/research-airbnb-spotify-product-practices/01-pdlc-airbnb.html">Airbnb<span>People and agents, from the Airbnb and Spotify research</span></a></li>
+    <li><a href="tasks/research-airbnb-spotify-product-practices/02-pdlc-spotify.html">Spotify<span>People and agents, from the Airbnb and Spotify research</span></a></li>
+    <li><a href="tasks/research-block-product-practices/01-pdlc-block.html">Block<span>Square, Cash App and Goose, from the Block research</span></a></li>
+  </ul>
+  <p class="muted">The method behind the cross-ecosystem page is in its <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/pdlc-cross-ecosystem-map/README.md">README</a>.</p>
+</section>
+
+<section id="stories">
+  <div class="kicker">Section 4</div>
+  <h2>User stories</h2>
+  <p>Harness-agnostic, modular stories: ten PM jobs and the cross-cutting needs. Each gives the goal and need, how it is done today without an agent harness, and the variants an agent could take, linked to the jobs map and the register.</p>
+  <ul>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/user-story-mapping/INDEX.md">Index</a> and <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/user-story-mapping/README.md">format and recipe</a>.</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/user-story-mapping/stories-jobs.md">Job stories</a> and <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/user-story-mapping/stories-cross-cutting.md">cross-cutting stories</a>.</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/user-story-mapping/worked-derivation-s05.md">Worked derivation of S05</a>: spec writing derived into two contrasting harnesses.</li>
+    <li>Artifacts research: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/user-story-mapping/research-artifacts-platforms.md">platforms</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/user-story-mapping/research-artifacts-standardization.md">standardisation</a>; <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/user-story-mapping/audit-2026-10-24.md">audit</a>.</li>
+  </ul>
+  <p class="muted">No explainer film is planned for this section.</p>
+</section>
+
+<section id="options">
+  <div class="kicker">Section 5</div>
+  <h2>The options register</h2>
+  <p>The menu itself: each dimension with an options table (examples, what it gives, what it costs, maturity, evidence links) and numbered key questions, plus questions that cut across dimensions. It records leans where the evidence leans, and does not pick winners.</p>
+  <div class="films">
+    <figure>
+      <div class="coming">Film coming</div>
+      <figcaption><b>08 · Shaping intent: the options</b><span class="muted">Who shapes intent, what counts as ready, review gating, context location, investment sequencing.</span></figcaption>
+    </figure>
+  </div>
+  <ul>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/options/DIMENSIONS.md">DIMENSIONS.md</a>, the register, and <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/options/README.md">its rules</a>.</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/tree/main/options/contributions">Contributions</a>: option proposals from the newsletter and article sweeps, kept as filed.</li>
+  </ul>
+</section>
+
+<section id="strategy">
+  <div class="kicker">Section 6</div>
+  <h2>The strategy films</h2>
+  <p>"Ready to ship": the delivery factory sped up, so the hard part is now upstream, in discovering problems and shaping intent. The story lays the options out in banks and illustrates them with Helm, a notional product workspace that is explicitly a concept, not the answer.</p>
+  <div class="films">
+    <figure>
+      <video controls preload="metadata" src="films/04-product-agent-harness-v1.mp4"></video>
+      <figcaption><b>04 · Ready to ship: the product agent and harness (v1)</b><span class="muted">The strategy story, with walkthrough demos of Helm as a conversational thread. 19 min.</span></figcaption>
+    </figure>
+    <figure>
+      <div class="coming">Film coming</div>
+      <figcaption><b>Strategy film v2</b><span class="muted">Built on three dimensions: core product moves as compounding skills and agents, a shared persistent agent runtime, and artifact lifecycle infrastructure.</span></figcaption>
+    </figure>
+  </div>
+  <ul class="pages">
+    <li><a href="tasks/strategy-story-and-explainer-video/frames/checkpoint-b.html">Helm frames<span>The look comparison page</span></a></li>
+  </ul>
+  <ul>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-story-and-explainer-video/00-outline.md">Outline</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-story-and-explainer-video/01-story.md">story with claim check</a> and <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-story-and-explainer-video/02-prototype-design.md">Helm prototype design</a>.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Written with Claude (Anthropic) agents directed by Geoff Dudgeon. Third-party content belongs to its owners and is summarised and quoted for research; verbatim transcripts and full texts are kept out of this repository, and each source note links to its original.</p>
+</footer>
+
+</main>
+</body>
+</html>

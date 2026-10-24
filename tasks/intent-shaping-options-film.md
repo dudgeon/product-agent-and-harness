@@ -26,3 +26,5 @@ Related: [[research-product-agent-and-harness]], [[strategy-story-and-explainer-
 - 2026-10-24 First build failed the voice speech check on 2 lines (ASR heard 'everyone' for 'every one', 'version' for 'versioned'); reworded both in the Script Doc, re-synced, requeued voice-only + full build.
 - 2026-10-24 Director: bed swapped to the clean 1140 s one; before sending, run silencedetect -50 dB d=0.3 over the film (only fade-in/out allowed).
 - 2026-10-24 Director: music test is now silencedetect -50 dB; no near-silence ≥1 s except fade-in/out; sub-second ducking dips OK but listed in the note to Geoff.
+- 2026-10-24 Rendered: explainers/video/out/intent-shaping-options/intent-shaping-options.mp4 (5:32, 16:9 plate, scored on the 1140 s bed). Music test passed (silencedetect -50 dB: fade-in 0.42 s, dips 0.61 s at 2:34 and 0.70 s at 3:33, fade-out; nothing ≥1 s); LISTEN.md and score-qa.png checked. Sent to Geoff with a two-line note; director told.
+- 2026-10-24 Director: film 08 rendered (5:32), passes the 1 s music rule; sent to Geoff.

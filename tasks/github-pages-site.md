@@ -18,3 +18,6 @@ Related: [[project-readme]], [[pdlc-maps-per-ecosystem]], [[pdlc-cross-ecosystem
 
 - 2026-10-24 Filed by director-project-agent-and-harness, waiting for the README.
 - 2026-10-24 README done; worker github-pages-site (a8625ba6, https://claude.ai/code/session_01GQLNgQYd2cVF6wFA3fvz5N) started via claude --bg on Opus 5.5 with --remote-control.
+- 2026-10-24 Worker: site served from main at the repo root (.nojekyll added). Home page index.html (inline styles, no scripts) with six sections linking all 13 task-built HTML pages by relative path and the main markdown deliverables on GitHub; 74 links checked, all resolve to repo files.
+- 2026-10-24 Worker: films 04 v1 (55.4 MB), 05 (12.7 MB) and 07 (37.7 MB, re-encoded from 115 MB at crf 24) copied into films/ at 1080p with faststart. silencedetect -50 dB d=0.3 on source and copy: only the 0-0.5 s fade-in and sub-second dips (max 0.70 s); no near-silence of 1 s or longer. 06, 08, 09 and strategy v2 have "film coming" slots. The films were swept into the director's commit ae9cfe2 while staged.
+- 2026-10-24 Worker: index.html and .nojekyll staged; scripts/public-check.sh passes; no tracked file over 95 MB. Pages not enabled yet: waiting for the director's push.

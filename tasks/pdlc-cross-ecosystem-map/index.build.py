@@ -44,6 +44,8 @@ ECOS = [
         bridge_src=[("stripe-minions-part-2", "Minions part 2"), ("stripe-minions-one-shot-coding-agents", "part 1")],
         review="A person on every PR plus Gru; CI capped at two rounds; 1% canary with auto-pause on release",
         review_src=[("youtube-notmybusiness-inside-stripe-ships-fast", "video"), ("stripe-minions-part-2", "part 2")],
+        classes="Kai P5b (company agent service); Minions P3, P7 and P9 with a P8e watch-only run channel; Orbit P8f (shared plan workspace, partial); Kai projects P4 front-door dispatcher (partial); Harbor over MCP P6 (partial); Kai skills, Agent Studio and Toolshed P10 (partial); Claude Code and Cursor P1",
+        classes_href="../teardowns-to-pattern-classes/00-mapping.md#23-stripe",
     ),
     dict(
         key="ramp", name="Ramp", folder="../competitive-teardown-ramp-glass/",
@@ -66,6 +68,8 @@ ECOS = [
         bridge_src=[("x-sebgoddijn-glass-article", "Goddijn"), ("lenny-podcast-geoff-charles-product-when-coding-solved", "Charles")],
         review="Review Buddy on '93% of our PRs', which also reads the prompts behind the code and picks the human reviewer; senior engineers on the hard 7%; nothing OCA proposes merges without a human",
         review_src=[("lenny-podcast-geoff-charles-product-when-coding-solved", "Charles"), ("ramp-builders-how-we-built-oca", "OCA post")],
+        classes="Glass P5a (per-employee workspace) on a P3 harness (Laminar), plus P7, P8c (private, shared on demand) and P10 (Dojo); Inspect P7 and P8d (multiplayer control plane); Ramp Research a P8b-related chat form; OCA P4, P6 and P9 (partial); the earlier Notion custom agents P11",
+        classes_href="../teardowns-to-pattern-classes/00-mapping.md#21-ramp",
     ),
     dict(
         key="shopify", name="Shopify", folder="../competitive-teardown-shopify-river/",
@@ -88,6 +92,8 @@ ECOS = [
         bridge_src=[("shopify-engineering-under-the-river", "Under the River"), ("fs-knowledge-project-tobi-lutke-ai-agents", "Knowledge Project")],
         review="A human reviewer on every PR ('now becoming a big bottleneck') plus a PR-review profile; merge queue; a freshness-gated queue for security merges",
         review_src=[("bvp-inside-shopifys-ai-first-engineering-playbook", "BVP"), ("shopify-engineering-under-the-river", "Under the River"), ("shopify-engineering-river-vulnerability-remediation", "vuln remediation")],
+        classes="River on Aquifer P5b (company agent service) and P3; River P8a (public by default, chat-native) and P7; Dispatch and Roast P9; Helix P9 (partial); PR-review profile P6 (partial); profiles and World skills P10 (partial); engineers' local tools P1",
+        classes_href="../teardowns-to-pattern-classes/00-mapping.md#22-shopify",
     ),
     dict(
         key="anthropic", name="Anthropic", folder="../research-claude-resources-articles/",
@@ -111,6 +117,8 @@ ECOS = [
         bridge_src=[("claude-dev-claude-code-team-code-review", "code review post"), ("lenny-podcast-dianne-penn-evals-prds", "Penn"), ("claude-tag-ci-cd-first-responder", "CI on-call")],
         review="Agents first, people by risk tier (none, one or two humans); the person who directed the agent counts as a reviewer; blocking security review; incidents become reviewer evals",
         review_src=[("claude-dev-claude-code-team-code-review", "code review post"), ("claude-code-review-ga", "Code Review GA")],
+        classes="Claude Code and Cowork with plugins P1; Claude Tag P8b (channel-scoped, own identity); Code Review P6; cloud sessions P7 and Managed Agents P7 as a hosted harness service; the org plugin marketplace and skill sync P10; the review stack P9 (partial)",
+        classes_href="../teardowns-to-pattern-classes/00-mapping.md#24-anthropic",
     ),
     dict(
         key="atlassian", name="Atlassian", folder="../user-story-mapping/",
@@ -134,6 +142,8 @@ ECOS = [
         bridge_src=[("atlassian-rovo-jira-delivery-agent", "Delivery Agent"), ("atlassian-jpd-link-idea-to-work-item", "JPD link"), ("atlassian-goals-what-is-a-goal", "Goals")],
         review="A person reviews the draft PR plus Rovo Dev checks it against the work item's acceptance criteria (no check if the description is empty); review comments don't yet flow back to the agent automatically",
         review_src=[("atlassian-rovo-dev-acceptance-criteria-code-review", "AC review"), ("atlassian-blog-rovo-dev-in-jira", "Rovo Dev in Jira")],
+        classes="Rovo agents (Chat, Deep Research, Delivery Agent, Ops Expert, Loom Record for agent, Planner) P11 (SaaS-embedded); Jira Coding Agent and third-party agents started from a work item P7; the Rovo A2A gateway P6; work-item dispatch to several agents P4 front-door dispatcher (partial); automation triggers P9 (partial)",
+        classes_href="../teardowns-to-pattern-classes/00-mapping.md#25-atlassian",
     ),
     dict(
         key="intercom", name="Intercom", folder="../research-pm-agents-jobs-to-be-done/",
@@ -156,6 +166,83 @@ ECOS = [
         bridge_src=[("ideas-fin-how-we-use-claude-code-today", "Scanlan"), ("ideas-fin-eight-people-hold-the-bar", "de Róiste"), ("intercom-fin-npi-agent-readiness", "Fin NPI")],
         review="Specialised review sub-agents (Shrek) check the diff against the stated intent; ~19% of PRs auto-approved by risk and size; a person on about 80%; repo owners set the requirement",
         review_src=[("intercom-ai-approving-pull-requests", "AI approving PRs"), ("ideas-fin-webinar-qa-3x-rd-output", "webinar Q&A")],
+        classes="Claude Code with plugins and hooks P1; Shrek reviewers P6; the CI-watching agent and Buzz P7 (partial); the plugin marketplace P10 (partial). Fin and Operator are products Intercom sells, so out of scope",
+        classes_href="../teardowns-to-pattern-classes/00-mapping.md#26-intercom",
+    ),
+    dict(
+        key="airbnb", name="Airbnb", folder="../research-airbnb-spotify-product-practices/",
+        mapfile="01-pdlc-airbnb",
+        tagline="The PM role split four ways and the CEO put in the gap; prototypes carry intent, evals carry evidence for AI features, decisions stay unwritten.",
+        seam_title="A person in the gap: the CEO in every review",
+        seam=("Airbnb split the PM's tasks across a product marketer (story), program manager (plan), designer (prototype) and business lead (model), so research → intent → plan crosses people by design. "
+              "The bridge is the CEO, who reviews every project every 1–12 weeks; principles are deliberately unwritten ('one shared consciousness'). Since 2026 a short agent-drafted concept brief (Pascal) and many prototypes replace the spec, "
+              "and Airbnb names the drift itself: the brief isn't updated after prototyping, reviews go out of order, and an 'AI project coordinator' to keep brief, prototypes and Jira in sync is only proposed. "
+              "Where evidence does travel by artifact it travels as evals, for AI features only."),
+        seam_src=[("dx-airbnb-beyond-the-cli-airchat", "DX talk"), ("verge-decoder-chesky-founder-mode-2024", "Decoder 2024"), ("airbnb-tech-eval-driven-development", "eval-driven development")],
+        handoffs=dict(total=18, doc=14, inf=2, unk=2, note="2 of the 14 documented have the mechanism unknown (Pascal's brief, Everest)"),
+        evidence=dict(n=24, fp=23, vc=0, ind=1, an=0, span="2016–Oct 2026; most 2023–26", single="Pascal, Everest, the prototyping tool and the AI coordinator are each known from one talk; code-share figures are defined inconsistently (59%, 60%, 'coauthored'); no independent check of any AI figure"),
+        unit="An internal harness run as a product (AirChat: a CLI over Claude Code and Codex, SDK apps, Remote) plus narrow agents: Insight Miner (research), Pascal (brief), validation and critique loops, on-call agents, the support agent. None sets the goal or plans",
+        unit_src=[("dx-airbnb-beyond-the-cli-airchat", "DX talk"), ("airbnb-tech-insight-miner-agent-harness", "Insight Miner")],
+        iface="AirChat spans IDE plugins, a CLI over vendor agents, SDK web apps, Slack and a remote web UI; adoption organic through champions with no quotas, while the CEO tracks token use",
+        iface_src=[("dx-airbnb-beyond-the-cli-airchat", "DX talk"), ("latent-space-airbnb-al-dahle-inside-out-ai", "Latent Space")],
+        privacy="Not described for sessions. Decisions are kept unwritten on purpose; Everest, an LLM-built org context graph across the codebase, has unpublished inputs",
+        privacy_src=[("verge-decoder-chesky-founder-mode-2024", "Decoder 2024"), ("latent-space-airbnb-al-dahle-inside-out-ai", "Latent Space")],
+        bridge="The CEO in every review; one roadmap; Everest (code- and project-oriented); for AI features, taxonomies, seed queries and PM-labelled golden sets become evals; brief, prototypes and Jira drift after prototyping",
+        bridge_src=[("lenny-podcast-brian-chesky-new-playbook", "Lenny's Podcast"), ("airbnb-tech-eval-driven-development", "eval-driven development"), ("dx-airbnb-beyond-the-cli-airchat", "DX talk")],
+        review="The CEO reviews every project on a 1–12 week cadence with green/yellow/red scoring; engineers must be able to explain AI-written PRs; validation loops and a critic model run before the PR",
+        review_src=[("lenny-podcast-brian-chesky-new-playbook", "Lenny's Podcast"), ("deepview-al-dahle-airbnb", "Deep View"), ("airbnb-tech-llm-test-migration", "test migration")],
+        classes="AirChat (CLI and gateway over Claude Code and Codex) P4, clear on the definition but with no sub-shape for an in-house governed wrapper; engineers and non-engineers in Claude Code and Codex P1; AirChat Remote P7 and on-call agents P7 (partial); the migration framework P9 and @generateMock P9 (partial); Insight Miner P3 (partial); the AirChat marketplace P10 (partial). Pascal, Everest, the eval stack and the AI coordinator fit no class",
+        classes_href="../teardowns-to-pattern-classes/00-mapping.md#29-airbnb",
+    ),
+    dict(
+        key="spotify", name="Spotify", folder="../research-airbnb-spotify-product-practices/",
+        mapfile="02-pdlc-spotify",
+        tagline="The best-built systems context layer of the nine, and it stops at the code; the bet's evidence travels in the VP who pitches it.",
+        seam_title="The VP carries the evidence; the catalog carries systems, not reasons",
+        seam=("Agents get rich context about systems from the Backstage/Portal catalog (owners, lineage, standards, docs, skills as owned entities over MCP), and Xirp sessions write back to it. "
+              "The why behind a bet travels in people: about 14 VPs pitch bets and the co-CEOs stack-rank 30–50 every six months, with VPs explaining the details in a weekly E-Team. "
+              "Spotify built evidence-carrying intent artifacts (DIBB brief 2016, Thoughtful Execution tree 2020, Understand It Brief and Scorecard 2021), kept them optional and off the platform, and at least one has lapsed. "
+              "No link exists from a bet to the prompts, PRs or A/B tests that serve it; Spotify says it is building one. Engineering intent, by contrast, is agent-ready: versioned prompts with done defined as tests."),
+        seam_src=[("spotify-portal-blog-introducing-xirp", "Xirp"), ("colossus-ilb-gustav-soderstrom-how-spotify-thinks", "Invest Like the Best"), ("claude-customers-spotify-office-hours", "office hours")],
+        handoffs=dict(total=18, doc=15, inf=1, unk=2, note="3 of the 15 documented describe 2016–21 practice whose current use is unknown"),
+        evidence=dict(n=36, fp=33, vc=2, ind=1, an=0, span="2012–Oct 2026; agent evidence 2025–26", single="adoption figures conflict across Spotify's own sources (99%+, 96%, 76%, 73%, 60%); the 2025 bets-process details come from a third-party machine transcript; whether the 2020–21 intent artifacts are still used is unknown (one page now 404); nothing on prototype-to-ship conversion"),
+        unit="Many agents, one context layer: Honk (background coder on the Claude Agent SDK), Xirp (multi-agent sessions across vendor CLIs), Vedder and AiKA (data and knowledge), Fleetshift (deterministic targeting), Confidence (experiments); no agent sets the goal or carries the bet",
+        unit_src=[("spotify-engineering-honk-part-1-1500-prs", "Honk part 1"), ("spotify-portal-blog-introducing-xirp", "Xirp"), ("spotify-engineering-vedder-context-layer", "Vedder")],
+        iface="Slack is the front door for Honk; AiKA is both an MCP client and an MCP server; Xirp is a multi-session workspace across vendor agents; PMs and designers prototype in Cursor; for big APIs a CLI is preferred over MCP",
+        iface_src=[("spotify-engineering-honk-part-1-1500-prs", "Honk part 1"), ("spotify-portal-blog-aika-data-plugins", "AiKA"), ("spotify-portal-blog-introducing-xirp", "Xirp")],
+        privacy="Not described for sessions. Xirp transcripts and metadata flow back to Portal; bet pitches and E-Team discussion happen in the room; the 2016 bets board was open",
+        privacy_src=[("spotify-portal-blog-introducing-xirp", "Xirp"), ("colossus-ilb-gustav-soderstrom-how-spotify-thinks", "Invest Like the Best"), ("kniberg-spotify-rhythm", "Rhythm")],
+        bridge="The Backstage/Portal catalog over MCP (owners, lineage, standards, TechDocs, skills as AiResource entities); Google Docs, Figma and MURAL for the 2020–21 intent artifacts, none linked to the catalog; no object for a bet or brief, and no link from bet to prompt, PR or test (being built)",
+        bridge_src=[("backstage-docs-ai", "Backstage AI docs"), ("spotify-portal-docs-mcp", "Portal MCP"), ("claude-customers-spotify-office-hours", "office hours")],
+        review="Deterministic verifiers in the stop hook and a verification service that runs real CI before any PR exists; code owners; auto-merge for safe fleet changes; an LLM judge was dropped; 'the next constraint became our ability to verify it'",
+        review_src=[("spotify-engineering-honk-part-3-feedback-loops", "Honk part 3"), ("spotify-engineering-quality-at-higher-velocity", "Quality at Higher Velocity"), ("spotify-engineering-coding-no-longer-constraint", "Coding Is No Longer the Constraint")],
+        classes="Honk P2 (Agent SDK inside Spotify's harness), P7 (background PRs) and P9 (inside Fleet Management), with P6 over MCP (partial) and P8 shared sessions in v2 (partial, sub-type unknown); Xirp P4 (clear, no sub-shape fits); Portal AiResource entities and Xirp's marketplace P10; Portal MCP Actions and Vedder P6 (partial); AiKA P5b (partial); engineers and PMs in Claude Code P1. Confidence and the eval funnel fit no class",
+        classes_href="../teardowns-to-pattern-classes/00-mapping.md#28-spotify",
+    ),
+    dict(
+        key="block", name="Block", folder="../research-block-product-practices/",
+        mapfile="01-pdlc-block",
+        tagline="A general harness for everyone (goose) with shared stage services on top; Block removes the people boundary rather than carrying context across it.",
+        seam_title="No handoff to build: role collapse, and a ticket or thread into Builderbot",
+        seam=("Research happens in a person's own local goose session against governed data MCPs; recipes and skills are shared but carry method, not findings, and no source shows a session or its findings handed to another person. "
+              "The one documented shared handoff is a Linear or Jira ticket or a Slack thread into Builderbot, which researches, plans, codes and opens the PR while teammates steer: it is told what to build, not why. "
+              "Block bridges the gap by role collapse: one DRI owns idea to scale, squads of 1–6, PMs and designers ship PRs, prototypes replace decks. The company 'world model' that would generate the backlog is a published plan, not a system in use. "
+              "Staff say every change still needs a human approver and about 95% of AI changes needed edits."),
+        seam_src=[("block-builderbot-rollout", "Builderbot"), ("block-from-hierarchy-to-intelligence", "essay"), ("guardian-block-workers-ai-cant-do-their-jobs", "Guardian")],
+        handoffs=dict(total=17, doc=11, inf=2, unk=4, note="2 of the 11 documented have an upstream link or mechanism unknown"),
+        evidence=dict(n=26, fp=23, vc=2, ind=1, an=0, span="Aug 2025–Oct 2026", single="no first-person account from a Block or Square PM; whether goose sessions can be shared is unknown; Builderbot numbers, the 90% review share and the 3x feature count are Block's own with no method; the Guardian's 95% figure is one anonymous staffer"),
+        unit="One general agent per person (goose, with a curated bundle from ~150 MCP services), task agents as recipes and skills inside it, and shared stage services built on it: Builderbot for plan, code and review; Query Expert and the Data MCP for data. Engineers also buy seven coding harnesses",
+        unit_src=[("lenny-podcast-block-dhanji-goose", "CTO"), ("block-builderbot-rollout", "Builderbot"), ("block-eng-ai-assisted-development-at-block", "AI-assisted dev")],
+        iface="goose desktop and CLI, local and single-user; Builderbot from a Slack thread or a Linear/Jira ticket, steered in the thread; App Kit internal apps (1,000+ in a quarter, 80% of users outside engineering); Buzz as a shared workspace",
+        iface_src=[("lenny-podcast-block-dhanji-goose", "CTO"), ("block-builderbot-rollout", "Builderbot"), ("block-eng-buzz", "Buzz")],
+        privacy="goose sessions are local and nothing shows one shared; the Slack thread is the shared session for Builderbot; a human approver on every change, and AI use mandatory and monitored (staff, via the Guardian)",
+        privacy_src=[("block-builderbot-rollout", "Builderbot"), ("guardian-block-workers-ai-cant-do-their-jobs", "Guardian")],
+        bridge="A ticket or Slack thread (what, not why); prototypes and PRs in place of decks and docs; one MCP catalogue, a skills marketplace, AGENTS.md and an ai-rules generator across harnesses carry method, not findings; a company 'world model' is proposed, not shown",
+        bridge_src=[("block-builderbot-rollout", "Builderbot"), ("block-eng-3-principles-agent-skills", "skills"), ("block-from-hierarchy-to-intelligence", "essay")],
+        review="Builderbot reviewed 90%+ of change requests (Q1 2026); a person makes the final push on every change; headless goose drafts fixes for CI failures; compliance headcount 'basically not touched'",
+        review_src=[("block-q1-2026-shareholder-letter", "Q1 2026 letter"), ("block-eng-actionable-ci", "Actionable CI"), ("a16z-owen-jennings-block-all-in-on-ai", "Jennings")],
+        classes="goose P3 (own open-source harness) and, company-wide with a curated MCP bundle, P1 (partial); engineers' seven coding harnesses P1; Builderbot P7, in Slack threads P8 (sub-type unknown), as a service on goose P3 (partial); Buzz P8b and P4 (partial); Berd P5a (partial, one sentence); Actionable CI P9 and recipes P9 (partial); the Data MCP and Query Expert P6 (partial); the skills marketplace and ai-rules P10. Managerbot, Moneybot, App Kit and the proposed world model fit no class",
+        classes_href="../teardowns-to-pattern-classes/00-mapping.md#27-block",
     ),
 ]
 
@@ -430,6 +517,129 @@ C["intercom"]["operate"] = dict(
     handoffs=[("harness learning", "doc", "SessionEnd → Haiku classifies gaps → Slack post with a pre-filled GitHub issue → new skills; promoted to the base plugin at 50 weekly users", [("ideas-fin-how-we-use-claude-code-today", "Scanlan"), ("ideas-fin-webinar-qa-3x-rd-output", "webinar Q&A")]),
               ("own research and roadmap (Fin data)", "unk", "Fin Insights is documented only as a customer product", [("ideas-fin-working-with-a-black-box-fin-insights", "Fin Insights")])])
 
+# ---- Airbnb
+C["airbnb"]["spot"] = dict(
+    agents="None named. Inputs: 20M support calls, social posts, Minerva metrics; Insight Miner taxonomies", who="The CEO and the top 30–70 leaders; product marketing; the business (CBO) organisation", artifact="One rolling two-year roadmap ('If it's not on the roadmap, it can't ship'); the 'Airbnb Blueprint' storyboard and prioritised fix map", presence="tool",
+    handoffs=[("roadmap (with set goal)", "doc", "everything shipped must be on the one roadmap; the CEO adds and cuts items", [("figma-config-2023-brian-chesky", "Config 2023"), ("lenny-podcast-brian-chesky-new-playbook", "Lenny's Podcast")])])
+C["airbnb"]["talk"] = dict(
+    agents="No agent seen", who="Researchers, designers; the CEO ('talk to normal people we don't pay'); leaders embedded in Paris for experiences", artifact="Findings (format not described); ~500 seed queries for AI search", presence="none",
+    handoffs=[("shape intent (AI search)", "doc", "~500 seed queries from user research ground the synthetic training queries", [("airbnb-tech-castle-nl-search", "CASTLE")]),
+              ("research (product work)", "inf", "people; no tool shown", [])])
+C["airbnb"]["research"] = dict(
+    agents="Insight Miner: a chat agent wrapped in a shared method package, used by dozens of teams; Datako for data questions; Minerva (12,000+ certified metrics); ERF experiments", who="Data science, product-insights and operations teams; more non-technical users than technical", artifact="Taxonomies, prevalence estimates, datasets; Knowledge Repo posts (2016–21)", presence="agent",
+    handoffs=[("shape intent (AI support)", "doc", "taxonomy and prevalence of support situations turned into datasets and evals before launch", [("airbnb-tech-insight-miner-agent-harness", "Insight Miner")]),
+              ("shape intent (Pascal brief)", "doc", "Pascal drafts a concept brief from market research, the roadmap and business objectives; whether it cites sources is not described (mechanism unknown)", [("dx-airbnb-beyond-the-cli-airchat", "DX talk")]),
+              ("plan (research evidence)", "unk", "nothing found carries research evidence into the brief, the Jira tickets or the plan", [])])
+C["airbnb"]["goal"] = dict(
+    agents="None named", who="The CEO with the CFO and business lead; mission teams with one mandate ('Project Hawaii'); for AI features, an eval decision-maker", artifact="Roadmap entry; revenue targets; eval goals and gates set up front", presence="none",
+    handoffs=[("shape intent (goals and gates)", "doc", "for AI features a decision-maker fixes goals and eval gates up front; PMs label golden sets", [("airbnb-tech-eval-driven-development", "eval-driven development")]),
+              ("shape intent (business brief)", "doc", "a product marketer pairs with a business counterpart; the business model and the 'product marketing brief' go to supply and international teams", [("verge-decoder-chesky-founder-mode-2024", "Decoder 2024")])])
+C["airbnb"]["intent"] = dict(
+    agents="Pascal drafts the concept brief; a designer prototyping tool; the CTO feeds image-model mockups to coding agents; @generateMock fills prototypes with realistic data from the design URL", who="Product marketer, designer and CEO; PMs and designers in smaller pods", artifact="Story or press release; short concept brief; 5–10 high-fidelity prototypes; PM-labelled golden sets", presence="agent",
+    handoffs=[("plan", "unk", "the gap is documented: prototypes replace long specs, the brief isn't updated after prototyping, reviews go out of order; an AI coordinator is only proposed", [("dx-airbnb-beyond-the-cli-airchat", "DX talk")]),
+              ("write code", "doc", "a prototype's design URL goes into the mock generator; the CTO feeds image-model mockups to coding agents", [("airbnb-tech-graphql-generatemock", "@generateMock"), ("deepview-al-dahle-airbnb", "Deep View")])])
+C["airbnb"]["plan"] = dict(
+    agents="A proposed 'AI project coordinator' (not built); Everest gives cross-codebase context so generalists can plan in specialist areas", who="Program managers (timelines, coordination); smaller pods", artifact="Central project list with a review schedule; Jira; release calendar", presence="tool",
+    handoffs=[("review (CEO cadence)", "doc", "fixed cadence of CEO reviews with green/yellow/red scoring by the head program manager", [("lenny-podcast-brian-chesky-new-playbook", "Lenny's Podcast")])])
+C["airbnb"]["code"] = dict(
+    agents="AirChat: Airbnb's internal harness; the CLI wraps Claude Code and Codex behind one gateway, with default MCPs, a plugin and skill marketplace, an SDK with ~40 apps, and AirChat Remote for async runs; a migration framework (validate, transform, validate)", who="Engineers, plus managers and non-engineers", artifact="Pull requests; '60% of code' AI-written or co-authored (definitions vary)", presence="agent",
+    handoffs=[("review", "doc", "validation loops before a PR; one model critiques another; a person must be able to explain the PR", [("airbnb-tech-llm-test-migration", "test migration"), ("latent-space-airbnb-al-dahle-inside-out-ai", "Latent Space"), ("deepview-al-dahle-airbnb", "Deep View")])])
+C["airbnb"]["review"] = dict(
+    agents="Validation loops (tests, lint, types, schema checks); one model generates and another critiques; experiment guardrails escalate ~25 experiments a month (2021)", who="The CEO, on a 1–12 week cadence; design reviews must discuss impact; engineers must be able to explain AI-written PRs", artifact="Review decisions (not recorded); approved PRs", presence="agent",
+    handoffs=[("release", "doc", "staged traffic slices and toggles; canary with auto-rollback for model patches; guardrails measured in shadow mode first", [("airbnb-earnings-q2-2026", "Q2 2026 letter"), ("airbnb-tech-llm-eval-weeks-to-a-day", "eval speed"), ("qconsf-2026-airbnb-guardrails-support-agent", "QCon SF")]),
+              ("later work (review decisions)", "inf", "not written down; held in leaders' heads ('shared consciousness')", [("verge-decoder-chesky-founder-mode-2024", "Decoder 2024")])])
+C["airbnb"]["test"] = dict(na="Not split out; validation loops sit inside review")
+C["airbnb"]["release"] = dict(
+    agents="Small traffic slices, opt-in toggles, staged rollout by language, canary with auto-rollback for model patches", who="Product marketing and comms run launches; the CEO keynote", artifact="Two releases a year until 2025; from 2026 'we ship the moment it's ready', with May as a showcase", presence="tool",
+    handoffs=[("operate", "unk", "no row in the map", [])])
+C["airbnb"]["operate"] = dict(
+    agents="Production evals on 5% of traffic daily; Agent-in-the-Loop weekly retraining from support agents' choices; async on-call agents that triage alerts and propose PRs; the AI support agent (~45% of issues resolved without a human, Airbnb's figure)", who="Data science; PMs in a weekly eval review; human support agents", artifact="Dashboards, experiment results, new evals, retrained models", presence="agent",
+    handoffs=[("evals", "doc", "production failures become new evals in a weekly PM review", [("airbnb-tech-eval-driven-development", "eval-driven development")]),
+              ("model", "doc", "support agents' in-workflow choices feed weekly model updates", [("arxiv-airbnb-agent-in-the-loop", "Agent-in-the-Loop")]),
+              ("next build (Everest)", "doc", "learnings said to cut a later project from 9 months to ~6 weeks; how they enter Everest is not described (mechanism unknown)", [("latent-space-airbnb-al-dahle-inside-out-ai", "Latent Space"), ("airbnb-earnings-q2-2026", "Q2 2026 letter")]),
+              ("spot the opportunity (Blueprint)", "doc", "20M support calls, social posts and a storyboard of every screen and policy, combined into a prioritised fix map", [("figma-config-2023-brian-chesky", "Config 2023")])])
+
+# ---- Spotify
+C["spotify"]["spot"] = dict(
+    agents="None named. Confidence is pitched as a 'product intelligence layer'; LLMs are proposed for screening weak ideas", who="VPs and their teams (bottom-up bets, e.g. the AI DJ from the personalisation team); insights teams", artifact="Bet pitch; DIBB data and insights (2016 form)", presence="none",
+    handoffs=[("set goal, plan (VP bet)", "doc", "pitch, then a global stack rank by the co-CEOs, then top-down staffing (2025)", [("colossus-ilb-gustav-soderstrom-how-spotify-thinks", "Invest Like the Best")])])
+C["spotify"]["talk"] = dict(
+    agents="No agent found; diary studies and interviews", who="User researchers (Product Insights)", artifact="Research findings", presence="none",
+    handoffs=[("research", "doc", "diary studies and behavioural logs on the same users at the same time (one team, 2019)", [("spotify-design-simultaneous-triangulation", "Simultaneous Triangulation")])])
+C["spotify"]["research"] = dict(
+    agents="Vedder: expert-curated context clusters; AiKA: internal knowledge Q&A since Dec 2023 (1,000+ daily users); the data assistant has 2,100+ users; behavioural proxies size qualitative findings", who="Data scientists with researchers, and PMs; more than a quarter of data-assistant users had never written SQL", artifact="Answers with SQL and sources; sized opportunity statements", presence="agent",
+    handoffs=[("shape intent (tree, brief, Scorecard)", "doc", "Thoughtful Execution tree, then Understand It Brief, then Scorecard (2020–21); current use unknown", [("spotify-design-thoughtful-execution-framework", "Thoughtful Execution"), ("spotify-design-scorecards-alignment", "Scorecards")]),
+              ("spot, set goal (DIBB brief)", "doc", "a two-page bet brief on an open bets board (2016); current form unknown", [("kniberg-spotify-rhythm", "Rhythm")]),
+              ("bet and plan (research evidence)", "unk", "not described as an artifact; VPs carry it and must explain it themselves in the E-Team", [("colossus-ilb-gustav-soderstrom-how-spotify-thinks", "Invest Like the Best")])])
+C["spotify"]["goal"] = dict(
+    agents="An internal planning tool; the bets board", who="The co-CEOs (co-presidents until 2025) rank bets; VPs write area strategy; teams set measurable goals", artifact="Six-month stack rank of 30–50 bets; 'definitions of done'", presence="tool",
+    handoffs=[("shape intent", "unk", "no row in the map", []),
+              ("agent work, and back (bet → prompts, PRs, A/B tests)", "unk", "no link from a bet to the work that serves it; linking PRs to work items and user value is still being built", [("claude-customers-spotify-office-hours", "office hours")])])
+C["spotify"]["intent"] = dict(
+    agents="Cursor and Claude Code prototypes in the real apps, shared in an internal app store; offline LLM evals pick treatments before A/B tests", who="The product, design and engineering trio; everyone up to the co-CEOs prototypes", artifact="Thoughtful Execution tree, Understand It Brief and Scorecard (2020–21); prototypes; versioned migration prompts", presence="agent",
+    handoffs=[("plan", "doc", "a prototyping phase before each cycle exposes conflicts between bets", [("colossus-ilb-gustav-soderstrom-how-spotify-thinks", "Invest Like the Best")]),
+              ("write code", "doc", "PMs propose small changes through Honk from Slack; prototypes run in the real apps; prototype-to-ship conversion not reported; Figma specs named inconsistent in 2021", [("spotify-engineering-honk-part-1-1500-prs", "Honk part 1"), ("claude-customers-spotify-office-hours", "office hours"), ("spotify-design-productivity-blueprint", "Design Productivity Blueprint")]),
+              ("A/B test → fix (evaluation funnel)", "doc", "evals pick treatments, experiments validate them, judge findings become fixes", [("spotify-engineering-llm-evals-funnel", "evaluation funnel")])])
+C["spotify"]["plan"] = dict(
+    agents="Fleetshift targeting (deterministic); Backstage lineage; code search", who="Co-CEOs and VPs (bets, staffing); migration and library owners; advisory boards of 5–6 senior engineers choose 'golden' technologies", artifact="Six-month plan; target lists; golden-tech standards; RFCs and ADRs", presence="tool",
+    handoffs=[("write code (migrations)", "doc", "Backstage lineage → code search → Fleetshift scope → a context file with mapping tables → Honk", [("spotify-engineering-honk-part-4-dataset-migrations", "Honk part 4")])])
+C["spotify"]["code"] = dict(
+    agents="Honk: a Claude Agent SDK background agent started from Slack, GitHub or Jira (1,500+ merged PRs by Nov 2025); Claude Code; Xirp: multi-agent sessions on Claude Code, Gemini CLI and Codex", who="Engineers supervising agents; PMs for small changes", artifact="Pull requests. Figures disagree: 73% of PRs AI-authored (early 2026); PR frequency up 76% (Jun 2026)", presence="agent",
+    handoffs=[("review", "doc", "verifiers in the stop hook, then a verification service runs real CI, and only then a PR goes to code owners", [("spotify-engineering-honk-part-3-feedback-loops", "Honk part 3"), ("infoq-qcon-spotify-ai-codebase-migration-agent", "QCon talk")]),
+              ("from a thread, ticket or PR comment", "doc", "an interactive agent gathers task details, then hands a prompt to Honk", [("spotify-engineering-honk-part-1-1500-prs", "Honk part 1")]),
+              ("catalog → session → catalog (Xirp)", "doc", "sessions start with catalog context; transcripts and metadata flow back to Portal", [("spotify-portal-blog-introducing-xirp", "Xirp")])])
+C["spotify"]["review"] = dict(
+    agents="Hidden verifiers in the stop hook; a verification service runs real CI before any PR exists; an LLM judge vetoed ~25% of sessions and was later dropped", who="Code owners; the migration driver, who sometimes approves their own PRs; Scorecard evaluators by role (2021)", artifact="Validated PR", presence="agent",
+    handoffs=[("release", "doc", "auto-merge for safe fleet changes; after an auto-merged upgrade broke production, safeguards and owners'-hours scheduling were added", [("spotify-engineering-quality-at-higher-velocity", "Quality at Higher Velocity")])])
+C["spotify"]["test"] = dict(na="Not split out; verifiers and the verification service sit inside review")
+C["spotify"]["release"] = dict(
+    agents="Auto-merge for safe fleet changes (2.5M+ merged fleet PRs); release trains, toggles and gradual rollout; builds pushed to phones from Slack", who="Owning teams", artifact="Merged change; app build", presence="tool",
+    handoffs=[("learn", "doc", "Confidence's default ship rule; every experiment labelled ship, abort or iterate", [("spotify-engineering-risk-aware-product-decisions", "Risk-aware decisions"), ("spotify-engineering-experiments-with-learning", "Experiments with Learning")])])
+C["spotify"]["operate"] = dict(
+    agents="Confidence: a default ship rule and Experiments-with-Learning labels (~12% of tests win, ~64% yield learning); regression monitoring; monthly retros that tag AI's part", who="Experimenters; platform and SRE teams; data science", artifact="Shipping recommendation with reasons; ship, abort or iterate label; incident retros", presence="agent",
+    handoffs=[("shared knowledge", "doc", "AiKA usage leads teams to improve their docs; fewer repeat questions", [("spotify-portal-blog-aika-data-plugins", "AiKA")]),
+              ("next six-month plan", "inf", "learning rates reallocate testing bandwidth; whether results feed the next bets cycle is not described", [("spotify-engineering-experiments-with-learning", "Experiments with Learning")])])
+
+# ---- Block
+C["block"]["spot"] = dict(
+    agents="None internal. Proposed: customer agents (Managerbot, Moneybot) and the intelligence layer's failures as roadmap signal", who="Leaders; DRIs; customers, through customer agents", artifact="A backlog of seller-requested features; 'failure signal' as roadmap (proposed)", presence="none",
+    handoffs=[("write code (seller-request backlog → Builderbot)", "doc", "features sellers had waited months for shipped 'in days'; how the list was produced is not said (upstream link unknown)", [("block-builderbot-rollout", "Builderbot")]),
+              ("from customer agents", "doc", "customers request automations before features ship, said to 'align with our roadmap'; mechanism unknown", [("block-q1-2026-shareholder-letter", "Q1 2026 letter"), ("block-from-hierarchy-to-intelligence", "essay")])])
+C["block"]["talk"] = dict(
+    agents="No tool named. Dorsey: conversational interfaces replace inferred research", who="PMs (the role still asks for customer research), designers", artifact="Not described", presence="none",
+    handoffs=[("research or intent", "unk", "no tool or artifact described", [])])
+C["block"]["research"] = dict(
+    agents="goose with the Block Data MCP (1,100+ governed metrics) and Query Expert (2.1K monthly users); Snowflake, Looker, Tableau, Glean and Drive MCPs", who="Anyone: PMs, growth managers ('without waiting on an analyst'), sales, finance, risk, engineers", artifact="Analyses, reports, internal dashboards and apps (App Kit: 1,000+ apps)", presence="agent",
+    handoffs=[("shape intent (prototype)", "inf", "likely the same person in the same or a later goose session; report → product prototype is not documented", [("lenny-podcast-block-dhanji-goose", "CTO"), ("block-eng-app-kit-localhost-to-launched", "App Kit")]),
+              ("plan (Builderbot or an engineer), across people", "unk", "goose sessions are local; recipes and skills carry method, not findings; what crosses is a prototype, a PR, a thread or a ticket", [])])
+C["block"]["goal"] = dict(
+    agents="No tool shown. Proposed: a company 'markdown file' of values, metrics and non-goals", who="DRIs (own a customer problem, e.g. for 90 days); growth managers own goal and experiment backlog", artifact="Not described (the markdown file is proposed)", presence="none",
+    handoffs=[("shape intent", "inf", "the DRI holds both; the company markdown file is proposed", [("block-from-hierarchy-to-intelligence", "essay"), ("a16z-owen-jennings-block-all-in-on-ai", "Jennings")])])
+C["block"]["intent"] = dict(
+    agents="goose, Claude Code, Cursor, V0, Figma Make; App Kit for internal apps. No PRD agent or recipe found", who="PMs, designers, engineers; DRIs decide", artifact="A prototype or demo ('Friday demos'), often a PR; prototypes replace decks and Google Docs", presence="agent",
+    handoffs=[("decision (DRI, leaders)", "doc", "people bring a prototype they built instead of a deck or Google Doc; Friday demos", [("sequoia-dorsey-every-company-mini-agi", "Dorsey"), ("dive-club-cam-worboys-ai-native-design-org", "Worboys")]),
+              ("write code (the same PM or designer)", "doc", "the same person ships the PR, via a sandbox-to-production programme with engineers pairing", [("dive-club-cam-worboys-ai-native-design-org", "Worboys"), ("a16z-owen-jennings-block-all-in-on-ai", "Jennings")])])
+C["block"]["plan"] = dict(
+    agents="Builderbot researches and plans from a ticket or thread; engineers use RPI (research, plan, implement) in separate sessions; goose's own repo uses 'Ready' issues", who="Engineers; teammates steer in the thread", artifact="Linear or Jira ticket; Slack thread; a 'Ready' issue with agreed design and verification", presence="agent",
+    handoffs=[("write code (inside Builderbot; RPI)", "doc", "one agent researches, plans, branches and codes; RPI keeps the three steps in separate sessions", [("block-builderbot-rollout", "Builderbot"), ("block-eng-ai-assisted-development-at-block", "AI-assisted dev")]),
+              ("from any Slack thread or ticket", "doc", "tag @builderbot with a short description, or it picks up the Linear or Jira ticket; teammates steer in the thread", [("block-builderbot-rollout", "Builderbot")])])
+C["block"]["code"] = dict(
+    agents="Builderbot (~1,500 merged PRs a week, ~15% of changes); seven harnesses ('We buy them all'); goose recipes such as Goose Janitor", who="Agents started by engineers; PMs and designers ship PRs", artifact="Branch and pull request", presence="agent",
+    handoffs=[("review", "doc", "AI reviewed 90%+ of change requests; a human makes the final push", [("block-q1-2026-shareholder-letter", "Q1 2026 letter")])])
+C["block"]["review"] = dict(
+    agents="Builderbot reviewed 90%+ of change requests (Q1 2026); headless goose in CI drafts fixes", who="A person makes the final push on every change; staff say about 95% of AI changes needed edits", artifact="Approved PR", presence="agent",
+    handoffs=[("release", "unk", "deploy mechanics not described; only outcome metrics", []),
+              ("fix (CI failure → headless goose)", "doc", "failing CI becomes a draft-PR fix", [("block-eng-actionable-ci", "Actionable CI")])])
+C["block"]["test"] = dict(na="Not split out; Gosling UI tests are noted under operate")
+C["block"]["release"] = dict(
+    agents="Not described. Outcome claims: post-change incidents down 70%+; Square shipped 130 features in H1 2026 (3x+)", who="Not described", artifact="Live change", presence="none",
+    handoffs=[("operate", "unk", "no row in the map", [])])
+C["block"]["operate"] = dict(
+    agents="Overnight agents that scan vulnerabilities and draft patches from bug tickets; Gosling UI tests; red-team fixes upstreamed; skills marketplace (100+ skills); Buzz agents with memory", who="Engineers, security, support; customers via support bots", artifact="Patches, skills, product signal", presence="agent",
+    handoffs=[("write code (bug tickets, vulnerabilities)", "doc", "background agents draft patches overnight for engineers to review in the morning", [("lenny-podcast-block-dhanji-goose", "CTO")]),
+              ("shared capability", "doc", "red-team findings become upstream goose fixes; skills are PR-reviewed into the marketplace; ~50 AI Champions", [("block-eng-red-teamed-own-ai-agent", "red team"), ("block-eng-3-principles-agent-skills", "skills")]),
+              ("every task (company 'world model')", "unk", "proposed in the essay as what replaces management's information routing; not shown in use", [("block-from-hierarchy-to-intelligence", "essay")])])
+
 # ---------------------------------------------------------------- rendering helpers
 STATUS_LABEL = dict(doc="documented", inf="inferred", unk="unknown")
 
@@ -555,6 +765,11 @@ def dims_html():
             extra = (f' · <a href="{DIM}#context-and-memory-context-and-memory">context-and-memory</a>'
                      f' · <a href="{DIM}#artifact-and-project-structure-how-pm-artifacts-and-projects-are-structured-stored-and-found">artifact-and-project-structure</a>')
         rows.append(f'<tr><th scope="row"><span class="tl">{escape(name)}</span><span class="sub">{escape(sub)}</span><span class="sub"><a href="{href}">register section</a>{extra}</span></th>{cells}</tr>')
+    # pattern classes row (from the teardowns-to-pattern-classes mapping, revised classes)
+    cl_cells = "".join(f'<td><p>{escape(e["classes"])}</p><p class="hsrc"><a href="{e["classes_href"]}">mapping entry</a></p></td>' for e in ECOS)
+    rows.append(f'<tr><th scope="row"><span class="tl">Runtime pattern classes</span><span class="sub">P1–P11 with P5a/b and P8a–f, as revised on 2026-10-24</span>'
+                f'<span class="sub"><a href="../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes">synthesis B.2</a> · '
+                f'<a href="../teardowns-to-pattern-classes/00-mapping.md#8-revised-classes-2026-10-24">mapping §8</a></span></th>{cl_cells}</tr>')
     # evidence row
     ev_cells = []
     for e in ECOS:
@@ -598,12 +813,13 @@ def evidence_html():
 GAPS = [
     dict(
         title="Research → shaped intent, across people, with the evidence attached",
-        where="Undocumented in all six maps. Stripe: Kai → Orbit unknown. Ramp: the define → build contract's transport unknown. Shopify: documented only inside one thread; nothing links it to GSD or a durable artifact. Anthropic: research → another person's plan mode unknown. Atlassian: Deep Research stays in chat. Intercom: research → shape intent unknown.",
+        where="Undocumented in all nine maps. Stripe: Kai → Orbit unknown. Ramp: the define → build contract's transport unknown. Shopify: documented only inside one thread; nothing links it to GSD or a durable artifact. Anthropic: research → another person's plan mode unknown. Atlassian: Deep Research stays in chat. Intercom: research → shape intent unknown. Airbnb: research evidence → plan unknown, and intent → plan drifts after prototyping. Spotify: research evidence → bet unknown; VPs carry it. Block: one person's goose session → plan across people unknown.",
         options=[
             ("A shared place where the next person starts from the thread or session", "Shopify's public thread, Anthropic's open channel, Ramp's shared session", "openness by default, one chat platform, a leadership-modelled culture; Shopify and Anthropic both say the corpus is what agents learn from"),
             ("A handoff artifact that carries evidence and acceptance criteria", "Ramp's named contract (data, requirements, prototype); Atlassian's work item with acceptance criteria; Anthropic's playbook chain (prescribed, not shown)", "a team-agreed spec standard; someone to keep it; it is slower for small work (Ramp runs small loops without one)"),
-            ("One person does research, intent and plan", "Stripe's 'product hat' engineers, Anthropic's one-engineer pods, Intercom's coding designers", "engineers close to customers, tiny pods, hiring for it; none of these is a tooling decision"),
-            ("An agent that carries research into planning", "No map shows one. Harbor reading Kai output is the nearest case, and it goes to a prototype, not a plan", "a research artifact an agent can read, and a planning agent to read it"),
+            ("One person does research, intent and plan", "Stripe's 'product hat' engineers, Anthropic's one-engineer pods, Intercom's coding designers, Block's DRI who owns idea to scale with PMs shipping PRs", "engineers close to customers, tiny pods, hiring for it; none of these is a tooling decision"),
+            ("A senior person carries it", "Airbnb's CEO in every 1–12 week review with principles unwritten; Spotify's VPs pitching bets the co-CEOs rank", "a leader with the time and standing to be in every review; it is the least transferable bridge of the nine and records nothing"),
+            ("An agent that carries research into planning", "Airbnb's Pascal drafts a concept brief from market research, the roadmap and objectives (whether it cites evidence is not described); Harbor reading Kai output goes to a prototype. Neither reaches a plan", "a research artifact an agent can read, and a planning agent to read it; Airbnb's proposed 'AI project coordinator' is the only named candidate and is not built"),
         ],
         questions=[
             "How split are research, intent and planning across people in the target org, compared with the role-blurred companies mapped here?",
@@ -614,11 +830,11 @@ GAPS = [
     ),
     dict(
         title="Goal → intent: no agent anywhere, and the goal is rarely an object an agent can read",
-        where="No map names an agent that sets a goal, and the goal → intent handoff is inferred or unknown in five of six. The goal exists as a readable object only at Atlassian (Goals, with a graph edge to work items) and as a reviewed process at Shopify (GSD Proposal, 2023 evidence). This is the band where Geoff's reference workload, intent shaping, sits.",
+        where="No map names an agent that sets a goal, and the goal → intent handoff is inferred or unknown in six of nine. The goal exists as a readable object only at Atlassian (Goals, with a graph edge to work items), as a reviewed process at Shopify (GSD Proposal, 2023 evidence) and Spotify (30–50 bets stack-ranked every six months, with no object for a bet in the catalog), and as eval goals and gates set up front at Airbnb for AI features. This is the band where Geoff's reference workload, intent shaping, sits.",
         options=[
             ("Leave goal-setting to people and start the agent at intent", "All six, in practice", "nothing; but then the shaping agent cannot check intent against the goal"),
-            ("Make the goal a readable object agents ground on", "Atlassian Goals and the work item → goal edge; Shopify's GSD proposal; Anthropic's written team principles", "a system of record for goals that is kept current; at Atlassian no source says Planner reads it"),
-            ("A shaping agent that interrogates rough intent against goals and constraints", "Jira Planner's clarifying questions (Early Access); Anthropic's 'send the spec to Claude Code' test; Geoff's reference workload", "a question set the team agrees on, and access to the constraints (risk, dependencies, data) that answer it"),
+            ("Make the goal a readable object agents ground on", "Atlassian Goals and the work item → goal edge; Shopify's GSD proposal; Anthropic's written team principles; Airbnb's one roadmap and eval gates; Spotify's bets board (the map suggests a bet as a catalog kind; nobody has built it); Block's proposed company markdown file", "a system of record for goals that is kept current; at Atlassian no source says Planner reads it, and at Spotify the catalog holds systems, not bets"),
+            ("A shaping agent that interrogates rough intent against goals and constraints", "Jira Planner's clarifying questions (Early Access); Anthropic's 'send the spec to Claude Code' test; Airbnb's Pascal drafting the concept brief; Geoff's reference workload", "a question set the team agrees on, and access to the constraints (risk, dependencies, data) that answer it"),
         ],
         questions=[
             "Where do goals live in the target org today, and can an agent read them with current access?",
@@ -628,12 +844,13 @@ GAPS = [
     ),
     dict(
         title="The plan: a shared artifact in two ecosystems, a session or a thread in the other four",
-        where="Stripe's Orbit produces a shareable, commented plan in a workspace; Atlassian's Planner produces work items with acceptance criteria (claimed). Anthropic and Intercom hold the plan in a Claude Code session; Shopify holds it in the thread; Ramp has no planning step of its own. Intercom re-captures intent later, in the PR description.",
+        where="Stripe's Orbit produces a shareable, commented plan in a workspace; Atlassian's Planner produces work items with acceptance criteria (claimed); Block's Builderbot plans from a ticket inside its own run and goose's repo uses 'Ready' issues. Anthropic and Intercom hold the plan in a Claude Code session; Shopify holds it in the thread; Ramp has no planning step of its own. Airbnb names the drift between brief, prototypes and Jira, and Spotify's engineering intent (a versioned prompt with done defined as tests) is agent-ready where its product intent is not. Intercom re-captures intent later, in the PR description.",
         options=[
             ("No plan artifact; capture the why at the PR", "Intercom's hook-enforced create-pr skill, checked in review", "cheap and enforceable; captures intent after planning, so it cannot stop a well-built wrong thing"),
             ("A plan that lives in a shared workspace", "Stripe Orbit workspaces", "evidence is one vendor video"),
             ("Plan as work items with acceptance criteria that the reviewer checks", "Atlassian Planner and the acceptance-criteria review", "Early Access; an empty description means no check"),
-            ("A committed plan file", "Anthropic's playbook (prescription); no map shows it in use", "discipline to write it; not shown surviving contact with small work"),
+            ("A committed plan file", "Anthropic's playbook (prescription); Spotify's Git-versioned migration prompts with end state, preconditions, examples and done-as-tests (engineering only); Block's 'Ready' issues with agreed design and verification", "discipline to write it; shown only for engineering changes, not product intent"),
+            ("An agent that keeps brief, prototypes and tickets in sync", "Airbnb's proposed 'AI project coordinator', 'early days'", "not built anywhere; depends on the brief, prototypes and tickets being readable by one agent"),
         ],
         questions=[
             "Does a regulated reviewer accept a PR description or a session transcript as the decision record, or is a plan artifact mandatory?",
@@ -643,11 +860,12 @@ GAPS = [
     ),
     dict(
         title="Review sloped to risk, on top of a human somewhere",
-        where="Every ecosystem keeps a human in review. Three slope it: Anthropic's risk tiers (none, one or two humans), Intercom's ~19% auto-approval, Ramp's Review Buddy on 93% with seniors on the hard 7%. Stripe, Shopify and Atlassian keep a person on every PR, and Shopify calls that 'a big bottleneck'.",
+        where="Every ecosystem keeps a human in review. Four slope it: Anthropic's risk tiers (none, one or two humans), Intercom's ~19% auto-approval, Ramp's Review Buddy on 93% with seniors on the hard 7%, Spotify's auto-merge for safe fleet changes behind deterministic verifiers. Stripe, Shopify, Atlassian and Block keep a person on every PR; Shopify calls that 'a big bottleneck', Spotify says 'the next constraint became our ability to verify it', and Airbnb's platform lead predicts 'overwhelming code review'. Airbnb's review is the CEO's, on a fixed cadence, and records nothing.",
         options=[
             ("A person on every change plus an agent", "Stripe (Gru), Shopify (PR-review profile), Atlassian (acceptance-criteria check)", "easy to defend; the bottleneck grows with agent volume"),
-            ("Risk-scored routing with partial auto-approval", "Anthropic's classifiers, Intercom's size-and-risk rule, Ramp's reviewer that picks the human", "a trusted scorer, strong CI and test suites, an audit trail; all three figures are self-reported"),
-            ("Review against stated intent, not only the diff", "Intercom's reviewers read the PR's why; Ramp's Review Buddy reads the prompts; Atlassian checks acceptance criteria", "intent must be written somewhere the reviewer can read"),
+            ("Risk-scored routing with partial auto-approval", "Anthropic's classifiers, Intercom's size-and-risk rule, Ramp's reviewer that picks the human, Spotify's auto-merge for 'safe' fleet changes (which once broke production and gained safeguards)", "a trusted scorer, strong CI and test suites, an audit trail; all figures are self-reported"),
+            ("Deterministic verification before any PR exists", "Spotify's stop-hook verifiers and verification service (its LLM judge was dropped); Airbnb's validation loops and critic model; Block's headless goose on CI failures", "a test suite the verifiers can run; Spotify says verification capacity is now the limit"),
+            ("Review against stated intent, not only the diff", "Intercom's reviewers read the PR's why; Ramp's Review Buddy reads the prompts; Atlassian checks acceptance criteria; Airbnb requires the engineer to explain an AI-written PR", "intent must be written somewhere the reviewer can read"),
         ],
         questions=[
             "Who certifies the risk scorer in a regulated org, and what audit trail does an auto-approved change need?",
@@ -657,11 +875,12 @@ GAPS = [
     ),
     dict(
         title="Learning loops that depend on transcripts being available",
-        where="Five of six write back: Shopify's nightly 'dreaming' and corpus mining, Intercom's SessionEnd hook, Anthropic's lessons.md and incidents-as-evals, Ramp's 24-hour memory and Dojo edits, Stripe's factory logs. Atlassian's 'results feed back into the next spec' has no mechanism. The strongest loops read transcripts, which public-by-default makes available.",
+        where="Eight of nine write back: Shopify's nightly 'dreaming' and corpus mining, Intercom's SessionEnd hook, Anthropic's lessons.md and incidents-as-evals, Ramp's 24-hour memory and Dojo edits, Stripe's factory logs, Airbnb's production evals and weekly retraining, Spotify's ship/abort/iterate record and Xirp transcripts flowing back to Portal, Block's PR-reviewed skills and upstreamed red-team fixes. Atlassian's 'results feed back into the next spec' has no mechanism. The strongest loops read transcripts, which public-by-default makes available; the bridge from a learning record to the next goal is described nowhere (Spotify's and Airbnb's maps both say so).",
         options=[
-            ("Mine transcripts into skills and memory", "Shopify, Intercom, Ramp", "transcripts retained and readable; redaction before reuse; retention rules may forbid it"),
-            ("Owner-edited shared knowledge", "Ramp's 6,500+ edits by 323 people; Anthropic's CLAUDE.md and REVIEW.md", "people who maintain it; no transcript access needed"),
-            ("Write-back as a duty of every agent", "Intercom's 'what we built' doc gating support readiness; Anthropic's alert agent that writes the fix", "a place to write to that the next agent reads"),
+            ("Mine transcripts into skills and memory", "Shopify, Intercom, Ramp; Spotify's Xirp transcripts into Portal", "transcripts retained and readable; redaction before reuse; retention rules may forbid it"),
+            ("Owner-edited shared knowledge", "Ramp's 6,500+ edits by 323 people; Anthropic's CLAUDE.md and REVIEW.md; Block's PR-reviewed skills marketplace; Spotify's AiKA driving doc fixes", "people who maintain it; no transcript access needed"),
+            ("Write-back as a duty of every agent", "Intercom's 'what we built' doc gating support readiness; Anthropic's alert agent that writes the fix; Airbnb's production failures becoming evals in a weekly PM review", "a place to write to that the next agent reads"),
+            ("A structured decision record from experiments", "Spotify's Confidence labels every test ship, abort or iterate, with reasons", "an experimentation platform with a default ship rule; the record's link to the next bet is not described"),
         ],
         questions=[
             "Can session transcripts be retained and mined under the target org's retention, privacy and works-council rules?",
@@ -850,7 +1069,7 @@ def page():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lifecycle Across Ecosystems</title>
-<meta name="description" content="The product and software lifecycle, task by task, laid against six agent ecosystems (Stripe, Ramp, Shopify, Anthropic, Atlassian, Intercom): agents, artifacts, handoffs marked documented, inferred or unknown, the seams, and what it means for the strategy deck.">
+<meta name="description" content="The product and software lifecycle, task by task, laid against nine agent ecosystems (Stripe, Ramp, Shopify, Anthropic, Atlassian, Intercom, Airbnb, Spotify, Block): agents, artifacts, handoffs marked documented, inferred or unknown, the seams, and what it means for the strategy deck.">
 <style>{CSS}</style>
 </head>
 <body>
@@ -858,18 +1077,18 @@ def page():
 <div class="wrap">
 <header class="top">
   <div class="eyebrow">Cross-ecosystem map · lifecycle by task · 24 Oct 2026</div>
-  <h1>The product lifecycle across six agent ecosystems, task by task</h1>
-  <p class="lede">Six maps in one frame: {maps_list}. Rows are tasks, not job titles; columns are the companies whose agent ecosystems the project mapped. Each cell shows the agents or tools, who does the task, the artifact, and each handoff out of the task marked <strong>documented</strong> (a source says it happens), <strong>inferred</strong> (consistent with the sources, not stated) or <strong>unknown</strong> (not described). Every figure and claim comes from the six maps and the source notes they cite, and links to them.</p>
+  <h1>The product lifecycle across nine agent ecosystems, task by task</h1>
+  <p class="lede">Nine maps in one frame: {maps_list}. Rows are tasks, not job titles; columns are the companies whose agent ecosystems the project mapped. Each cell shows the agents or tools, who does the task, the artifact, and each handoff out of the task marked <strong>documented</strong> (a source says it happens), <strong>inferred</strong> (consistent with the sources, not stated) or <strong>unknown</strong> (not described). Every figure and claim comes from the six maps and the source notes they cite, and links to them.</p>
   <nav class="toc" aria-label="Sections"><a href="#answer">Short answer</a><a href="#matrix">The matrix</a><a href="#seams">Where context breaks</a><a href="#dimensions">By dimension</a><a href="#strategy">For the strategy deck</a><a href="#evidence">Evidence</a><a href="#method">Method</a></nav>
 </header>
 
 <div class="answer" id="answer">
   <h2>Downstream of intent the handoffs are documented everywhere; upstream, research → intent → plan across people is documented nowhere</h2>
   <ol>
-    <li><strong>Agents sit at the same tasks in all six.</strong> Research, shape the intent, write the code, review and operate have a named agent or agent workflow in every ecosystem. Plan → code → review → release is documented in all six, mostly with a mechanism.</li>
-    <li><strong>No ecosystem has an agent that sets the goal,</strong> and the goal → intent handoff is inferred or unknown in five of six. The goal is a readable object only at Atlassian (Goals) and a reviewed process at Shopify (GSD, 2023 evidence). This band is where Geoff's reference workload, intent shaping, sits.</li>
-    <li><strong>Research → shaped intent or plan, across people, with the evidence attached, is undocumented in all six.</strong> Each ecosystem closes the gap another way: one person does all three tasks (Stripe, Anthropic, Intercom), a shared place stands in for a handoff (Shopify's thread, Anthropic's channel, Ramp's session), or an object carries the <em>what</em> without the <em>why</em> (Atlassian's work item, Intercom's PR description).</li>
-    <li><strong>The practices that close the gap depend on conditions a regulated org may lack:</strong> public-by-default sessions, engineers close to customers, tiny pods, strong test suites behind auto-approval, and transcripts available to mine. The evidence is first-party and self-reported in {total_src - total_ind} of {total_src} source notes.</li>
+    <li><strong>Agents sit at the same tasks in all nine.</strong> Research, shape the intent, write the code, review and operate have a named agent or agent workflow in every ecosystem. Code → review → release is documented in all nine, mostly with a mechanism.</li>
+    <li><strong>No ecosystem has an agent that sets the goal,</strong> and the goal → intent handoff is inferred or unknown in six of nine. The goal is a readable object only at Atlassian (Goals), a reviewed process at Shopify (GSD, 2023 evidence) and Spotify (the six-month bets board), and eval gates set up front at Airbnb, for AI features only. This band is where Geoff's reference workload, intent shaping, sits.</li>
+    <li><strong>Research → shaped intent or plan, across people, with the evidence attached, is undocumented in all nine.</strong> Each ecosystem closes the gap another way: one person does all three tasks (Stripe, Anthropic, Intercom, Block), a shared place stands in for a handoff (Shopify's thread, Anthropic's channel, Ramp's session, Block's Builderbot thread), a senior person carries it (Airbnb's CEO in every review, Spotify's VP pitching the bet), or an object carries the <em>what</em> without the <em>why</em> (Atlassian's work item, Intercom's PR description, Spotify's catalog). The nearest thing to an agent carrying research into intent is Airbnb's Pascal, which drafts a brief from research with a mechanism nobody describes.</li>
+    <li><strong>The practices that close the gap depend on conditions a regulated org may lack:</strong> public-by-default sessions, engineers close to customers, tiny pods, a CEO in every review, strong test suites behind auto-approval, and transcripts available to mine. The evidence is first-party and self-reported in {total_src - total_ind} of {total_src} source notes.</li>
   </ol>
 </div>
 
@@ -878,7 +1097,7 @@ def page():
 <div class="views" id="matrix">
   <section>
     <h2>The matrix: tasks against ecosystems</h2>
-    <p>Ten tasks shared by all six maps, plus <em>Test</em>, which the Ramp map split out for its QA agent. The last row is the seam each map found. The band marks goal → intent, the intent-shaping handoff. Scroll sideways inside the table; row and column labels stay put. On a phone the by-ecosystem view reads top to bottom.</p>
+    <p>Ten tasks shared by all nine maps, plus <em>Test</em>, which the Ramp map split out for its QA agent. The last row is the seam each map found. The band marks goal → intent, the intent-shaping handoff. Scroll sideways inside the table; row and column labels stay put. On a phone the by-ecosystem view reads top to bottom.</p>
     <div class="legend" role="note">
       <span>{glyph("doc")}<strong>documented</strong> solid</span>
       <span>{glyph("inf")}<strong>inferred</strong> dashed</span>
@@ -893,15 +1112,15 @@ def page():
 
 <section id="seams">
   <h2>Where context breaks, and the shared pattern</h2>
-  <p>Each map answered the same question: where does context break between research, intent and plan, across people? Six different places, one pattern.</p>
+  <p>Each map answered the same question: where does context break between research, intent and plan, across people? Nine different places, one pattern.</p>
   <div class="cards">{seam_cards}</div>
   <div class="pattern">
     <h3>The shared pattern</h3>
     <ul>
-      <li><strong>Documented handoffs cluster downstream.</strong> Of {total_handoffs} handoffs across the six maps, {total_doc} are documented, {total_inf} inferred and {total_unk} unknown, and the unknowns sit almost entirely upstream of code: research → plan (Stripe, Anthropic, Atlassian, Intercom), goal → intent (Ramp), define → build across people (Ramp), the formal process ↔ the thread (Shopify), plus release and deploy mechanics that three maps could not find.</li>
-      <li><strong>Where handoffs work, something shared is doing the carrying,</strong> not an agent: Stripe's documents and tool layer, Ramp's shared session, Shopify's public thread, Anthropic's open channel, Atlassian's work item, Intercom's PR description. The agent reads the shared thing; nobody hands the agent a research result.</li>
-      <li><strong>The <em>why</em> is the first thing lost.</strong> Atlassian's work item carries the what; Intercom captures the why only at the PR; Ramp names the contract (data, requirements, prototype) but not its format; Anthropic's eval set carries examples without the reasoning. Shopify's thread keeps the why but only inside Slack, and not for private work.</li>
-      <li><strong>Role blur is doing silent work.</strong> Stripe, Anthropic and Intercom all say the same tasks are done by one person more often than their titles suggest. The seam costs little there. It is the norm in the target org that decides whether it costs a lot.</li>
+      <li><strong>Documented handoffs cluster downstream.</strong> Of {total_handoffs} handoffs across the nine maps, {total_doc} are documented, {total_inf} inferred and {total_unk} unknown, and the unknowns sit almost entirely upstream of code: research → plan (Stripe, Anthropic, Atlassian, Intercom, Airbnb, Block), goal → intent (Ramp, Spotify), define → build across people (Ramp), intent → plan after prototyping (Airbnb), bet → agent work (Spotify), the formal process ↔ the thread (Shopify), plus release and deploy mechanics that four maps could not find.</li>
+      <li><strong>Where handoffs work, something shared is doing the carrying,</strong> or someone senior, not an agent: Stripe's documents and tool layer, Ramp's shared session, Shopify's public thread, Anthropic's open channel, Atlassian's work item, Intercom's PR description, Block's ticket or thread into Builderbot, Spotify's catalog and its pitching VPs, Airbnb's CEO in every review. The agent reads the shared thing; nobody hands the agent a research result.</li>
+      <li><strong>The <em>why</em> is the first thing lost.</strong> Atlassian's work item carries the what; Intercom captures the why only at the PR; Ramp names the contract (data, requirements, prototype) but not its format; Anthropic's eval set carries examples without the reasoning; Spotify's catalog carries systems, not reasons; Builderbot is told what to build, not why; Airbnb keeps review decisions unwritten on purpose. Shopify's thread keeps the why but only inside Slack, and not for private work.</li>
+      <li><strong>Role blur is doing silent work.</strong> Stripe, Anthropic, Intercom and Block all say the same tasks are done by one person more often than their titles suggest, and Block has gone furthest (one DRI from idea to scale, PMs shipping PRs). Airbnb went the other way, splitting the PM into four roles, and needed the CEO to bridge them. It is the norm in the target org that decides whether the seam costs a lot.</li>
     </ul>
   </div>
   <h3>Which tasks have agents, where</h3>
@@ -910,7 +1129,7 @@ def page():
 
 <section id="dimensions">
   <h2>The six ecosystems by the dimensions that matter here</h2>
-  <p>Each row links to its section in the options register, where the options and key questions live. These cells are descriptions from the maps, not recommendations.</p>
+  <p>Each row links to its section in the options register, where the options and key questions live, or, for the pattern classes, to the synthesis and the teardown mapping. These cells are descriptions from the maps and the mapping, not recommendations. The Airbnb, Spotify and Block placements use the revised classes; the other six keep the mapping's original rows plus its section 8 re-placements.</p>
   {dims_html()}
 </section>
 
@@ -922,7 +1141,7 @@ def page():
 
 <section id="evidence">
   <h2>Evidence: who says so</h2>
-  <p>Of {total_src} source notes cited across the six maps, {total_ind} is independent (a 2024 piece on Stripe's culture). The rest are the companies describing themselves, their executives on podcasts, their product docs, or anecdotes. Several rows rest on one source. Treat every figure as a vendor claim until something outside the company confirms it.</p>
+  <p>Of {total_src} source notes cited across the nine maps, {total_ind} are independent (a 2024 piece on Stripe's culture, a 2020 critique of Spotify's squad model, a 2026 Semafor piece on Airbnb, and the Guardian on Block's staff), and none of them checks an AI figure. The rest are the companies describing themselves, their executives on podcasts, their product docs, or anecdotes. Several rows rest on one source. Treat every figure as a vendor claim until something outside the company confirms it.</p>
   {evidence_html()}
   <p class="legend"><span><i class="eb eb-fp" style="display:inline-block;width:14px;height:8px;border-radius:2px"></i> first-party</span><span><i class="eb eb-vc" style="display:inline-block;width:14px;height:8px;border-radius:2px"></i> vendor claim</span><span><i class="eb eb-ind" style="display:inline-block;width:14px;height:8px;border-radius:2px"></i> independent</span><span><i class="eb eb-an" style="display:inline-block;width:14px;height:8px;border-radius:2px"></i> anecdote</span><span>Tags are the ones on each source note's frontmatter (<a href="../../research/README.md">research/README.md</a>). Counts are distinct source notes linked from each map.</span></p>
 </section>
@@ -930,10 +1149,10 @@ def page():
 <section id="method">
   <h2>Method and sources</h2>
   <div class="foot">
-    <p><strong>Built from</strong> the six task-anchored lifecycle maps, each made in the frame of the Stripe map: {maps_list}. The <a href="README.md">companion README</a> lists the method, the sources and what is open. Nothing was added that is not in a map or a source note the map cites; where this page counts something (handoffs, sources), it says so.</p>
-    <p><strong>Rows:</strong> the ten tasks every map used, from Stripe's whiteboard chain (Opportunity → Problem → Goal → Intent → Plan, then Code) extended with review, release and operate, plus Test from the Ramp map. Where a map placed something inside an existing row (Intercom's QA sessions under review, Anthropic's evals under intent, Atlassian's Planner across intent and plan), this page follows the map.</p>
+    <p><strong>Built from</strong> the nine task-anchored lifecycle maps, each made in the frame of the Stripe map: {maps_list}. The <a href="README.md">companion README</a> lists the method, the sources and what is open. Nothing was added that is not in a map or a source note the map cites; where this page counts something (handoffs, sources), it says so.</p>
+    <p><strong>Rows:</strong> the ten tasks every map used, from Stripe's whiteboard chain (Opportunity → Problem → Goal → Intent → Plan, then Code) extended with review, release and operate, plus Test from the Ramp map. Where a map placed something inside an existing row (Intercom's QA sessions under review, Anthropic's evals under intent, Atlassian's Planner across intent and plan, Spotify's verifiers and Block's Gosling tests under review and operate), this page follows the map.</p>
     <p><strong>Handoffs:</strong> taken from each map's handoff table. A pair with no row is shown as unknown and says “no row in the map”. The Stripe map has no counts; the counts here are ours (nine handoffs: seven documented, one inferred, one unknown).</p>
-    <p><strong>Related:</strong> <a href="../research-agent-runtime-patterns-taxonomy/01-synthesis.md">runtime-patterns synthesis</a> (patterns and Geoff's answers) · <a href="{DIM}">options register</a> · <a href="../../research/THEMES.md#opportunity-to-code-chain-opportunity--problem--goal--intent--plan--code">theme: opportunity-to-code chain</a> · <a href="../user-story-mapping/INDEX.md">user stories</a> (S05 is the reference workload) · <a href="../pdlc-maps-per-ecosystem.md">the maps' task note</a>.</p>
+    <p><strong>Related:</strong> <a href="../research-agent-runtime-patterns-taxonomy/01-synthesis.md">runtime-patterns synthesis</a> (patterns and Geoff's answers) · <a href="{DIM}">options register</a> · <a href="../../research/THEMES.md#opportunity-to-code-chain-opportunity--problem--goal--intent--plan--code">theme: opportunity-to-code chain</a> · <a href="../user-story-mapping/INDEX.md">user stories</a> (S05 is the reference workload) · <a href="../teardowns-to-pattern-classes/00-mapping.md">teardowns mapped to pattern classes</a> · <a href="../pdlc-maps-per-ecosystem.md">the maps' task note</a> · the <a href="../research-airbnb-spotify-product-practices/00-brief.md">Airbnb and Spotify brief</a> and the <a href="../research-block-product-practices/00-brief.md">Block brief</a>.</p>
     <p>Standalone HTML, inline styles, no scripts, no web fonts. Generated by <code>index.build.py</code> in this folder.</p>
   </div>
 </section>
