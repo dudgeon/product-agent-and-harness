@@ -4,6 +4,80 @@ Date: 2026-10-24. Worker draft for Geoff's review. Source notes are in the resea
 
 Minions (the coding agents) are already covered in [part 1](../../research/sources/stripe-minions-one-shot-coding-agents.md) and [part 2](../../research/sources/stripe-minions-part-2.md). This teardown adds only how Minions are started and watched, which was missing.
 
+## Second pass (2026-10-24): the chain, the wider ecosystem, and the context-creation hypothesis
+
+Geoff asked for three things: review his doc [Stripe's Internal Agent Ecosystem for Product Development](../../research/sources/claude-doc-geoff-stripe-internal-agent-ecosystem.md) and its unreviewed links, research each named agent (especially Trailhead), and test his hypothesis that a business and operational **context creation agent** is needed.
+
+### 1. The chain: Opportunity → Problem → Goal → Intent → Plan → Code
+
+- **Where it comes from:** the [Not My Business / Clay video](../../research/sources/youtube-notmybusiness-inside-stripe-ships-fast.md) (2026-10-22), at about 12:24-12:31. A Stripe engineer, Adam, has written on a whiteboard:
+  `Opportunity → Problem → Goal → Intent → Plan`
+- **The brace:** a curly brace spans **Problem and Goal**, with a side label that reads, partly legibly at the 360p I could download, "**Customer conv[ersations]**".
+- **"Code" is not on the board.** It is the next step in the video: the plan is handed to a minion that writes the code. Geoff's six-step wording is the board plus that step.
+- **What Adam says:** pointing at Plan, "This is the part that today is happening a lot more in Orbit now" (12:28).
+- **The chain is visual only.** It is not in the captions, which is why the first pass missed it.
+
+| Stage | At Stripe today | Agent or human | Artifact or hand-off | Our map |
+|---|---|---|---|---|
+| Opportunity | Not shown in any tool | Human | none shown | Jobs map J2 (opportunity, strategy); S03 market view |
+| Problem | Customer conversations (the brace); UXR sessions; Kai research and Harbor/Protodash prototypes support it | Human, agent-assisted | Prototypes; research artifacts | J1 (customer contact), J3 (shaping); S01, S02, S04 |
+| Goal | Customer conversations (the brace) | Human | not shown | J2/J3; Intent Factory loop step 1 is "informal high-level intent" |
+| Intent | The engineer states a feature or problem to Orbit, which reads the codebase and Trailhead | Human states it, agent researches | Prompt plus research in Orbit | J3/J4; **S05** (V3 agent-led shaping); Intent Factory steps 1-3 |
+| Plan | Orbit drafts a step plan; teammates comment; the engineer simplifies it | Agent drafts, humans review | Shareable plan (7 steps in the demo) | J4/S05 at engineering level; Intent Factory step 4 (Stripe: prototype instead of PRD) |
+| Code | One-button handoff to a minion; up to 12 hours; pauses to ask | Agent | PR, then the Gru review agent, a human review and a 1% canary | J6; Intent Factory steps 5-8 |
+
+What it means for the project:
+- **Agents own the lower half of the chain at Stripe; people own the upper half.** Stripe built bottom-up: Minions (code), then the review agent, then Orbit (plan, first shown 2026-10-22). Kai, Harbor and Protodash help across the middle.
+- **Geoff's Intent Factory loop starts at "informal intent".** It covers Intent → Code. The chain adds the three human stages above it.
+- **S05 (write and ratify a spec)** sits at Intent → Plan. Stripe's answer there is a *reviewed plan*, not a ratified PRD: the review gate moves to the plan.
+- **The intent-shaping bake-off workload** that Geoff chose ("shape high-level intent against real constraints into intent that deserves to ship") is exactly the Goal → Intent step, which no Stripe agent owns.
+- **Where a context creation agent would feed in:** the brace marks customer conversations as the source of problem and goal. That is uncaptured tacit knowledge. Below Intent, Stripe's agents already ground on captured context: Trailhead, the codebase, Toolshed and skills.
+
+Filed as theme `opportunity-to-code-chain`. Register additions:
+- [intent-shaping-and-spec](../../options/DIMENSIONS.md#intent-shaping-and-spec-intent-shaping-mode-and-spec-standard): new option "plan as the agent-ready artifact"; key questions 4-5 (is the gap above intent or below it; does a plan do the job of a spec).
+- [sequencing](../../options/DIMENSIONS.md#sequencing-which-jobs-first-and-which-layer-first): "bottom-up along the chain" vs "context layer first"; key question 9.
+
+### 2. The other named agents
+
+| Agent or system | What it is | Who uses it | Evidence |
+|---|---|---|---|
+| **Trailhead** | Stripe's internal documentation system, structured like its external docs ("like a custom wiki"). It was built after the six-monthly engineering survey kept flagging stale, fragmented docs (~late 2022). Its distinguishing feature is **owner verification**: docs must be verified to stay current, or they "drift away and get archived". Only once Stripe "trusted that we understood all of our documentation" did it put an **LLM bot** over it (browser, Slack, IDE). The docs complaint then "steep[ly] drop[ped]" in the next survey. Today agents read it: Orbit "is reading Trailhead", minions pull internal docs over Toolshed MCP, and the docs platform can launch minions. | All engineers; agents (Orbit, Minions, probably Kai) | [Sessions 2024 panel](../../research/sources/stripe-sessions-2024-10x-engineer-panel.md) (first-party); [Pragmatic Engineer](../../research/sources/pragmaticengineer-inside-stripe-engineering-culture-part-2.md) (independent, Jan 2024); [Minions part 1](../../research/sources/stripe-minions-one-shot-coding-agents.md); [video](../../research/sources/youtube-notmybusiness-inside-stripe-ships-fast.md). No public numbers. |
+| **Orbit** | Planning layer above Minions: research, a shareable plan, one-button handoff. Engineers run 3-7 projects in parallel. Orbit's UI shows "Workspaces share context across sessions, all visible to each other." | Engineers first; PM use not stated | [video](../../research/sources/youtube-notmybusiness-inside-stripe-ships-fast.md); [Kaliski](../../research/sources/x-stevekaliski-orbit.md) |
+| **Gru** (code-review agent) | Reviews agent-written PRs; tested against past bad changes; "vastly better at just finding bugs than people" (Stripe staff) | Engineers | [video](../../research/sources/youtube-notmybusiness-inside-stripe-ships-fast.md) only; name from captions |
+| **Protodash** | A Stripe Dashboard prototyping kit (Sail design system plus agent rules plus MCP) and in-browser studio on devboxes, built over ~18 months by a design manager. Used by "more PMs than designers". Remix, design-review comments become an agent fix queue, and a prototype became the engineering source of truth. | Designers, PMs | [How I AI](../../research/sources/howiai-stripe-protodash-owen-williams.md) (first-party) |
+| **Compass** | Internal project management: status with on-track labels, linked docs, a Slack channel per project, standups | Everyone | [Pragmatic Engineer](../../research/sources/pragmaticengineer-inside-stripe-engineering-culture-part-2.md); [video](../../research/sources/youtube-notmybusiness-inside-stripe-ships-fast.md) |
+| Stripe Projects (PM example) | A PM built a prototype CLI and revised it between morning and afternoon UXR sessions; launched in 7 weeks | PM plus small team | [video](../../research/sources/youtube-notmybusiness-inside-stripe-ships-fast.md); product post [here](../../research/sources/stripe-projects-dev-stack-from-terminal.md) |
+| Extensibility SDK (practice) | Agent-drafted specs reviewed as GitHub issues; **repo docs "written for AI consumption"** | Platform engineers | [SDK post](../../research/sources/stripe-ai-didnt-write-our-sdk.md) |
+
+Corrections from the second pass:
+- The chatprd summary of the Kai episode says Kai has a skill-deprecation policy. In the transcript that idea is the host's; Krishnamurthy describes telemetry-driven promotion and demotion instead.
+- The Department of Product piece is dated 2026-08-04.
+
+### 3. The hypothesis: is a context creation agent needed?
+
+- **Verdict:** the **need is well supported**. **A dedicated agent is not yet supported.** The evidence favours capture as a *by-product of work* over a standalone agent.
+
+**For (the need):**
+- Every scaled example built on captured context, years before the agents:
+  - **Stripe:** a writing culture led by the CEO and CTO; Trailhead with owner verification; a curated data catalog and canonical datasets documented by owners ("brute-forcing it with humans"); 2,000 skills.
+  - **Shopify:** AGENTS.md and skills, with River's merge rate going from 36% to 77%, credited to people writing down what River should have known.
+  - **Ramp:** 323 employees made 6,500+ edits to what Glass knows.
+- A Stripe engineer who joined in 2013 describes the arc in the video: knowledge in people's heads, then documents, then robots, then AI "can ingest all of this documentation that we'd written".
+- Stripe's chain leaves the top (problem, goal: "customer conversations") uncaptured.
+- Spread works. In the call-centre study, an assistant built on top performers' work raised output 34% for novices ([NBER](../../research/sources/nber-brynjolfsson-generative-ai-at-work.md), independent).
+- Waiting for volunteers will starve it: Stack Overflow posting fell about 25% within six months of ChatGPT ([PNAS Nexus](../../research/sources/pnas-nexus-llms-reduce-public-knowledge-sharing.md), independent).
+
+**Against or complicating (the form):**
+- **No company in our library runs a dedicated "context creation agent".** Capture is built into the agents people already use: Kai's skill-creator and owner-reviewed skill proposals, the payment-method factory's learning logs, River's overnight skill rewrites, Glass's 24-hour pipeline.
+- **Interview agents are shallow.** LLM interviewers make deepening probes in only 4.9% of turns ([InterviewBot](../../research/sources/arxiv-interviewbot-mllm-led-interviews.md)), and structuring interviews loses data and hallucinates ([SWJ](../../research/sources/swj-knowledge-elicitation-automation-llms.md), weak). Anthropic Interviewer scales and is liked, but captures attitudes, not expertise ([launch](../../research/sources/anthropic-interviewer-launch.md)).
+- **Mining is noisy and constrained.** Slack-mined knowledge needs high-precision filtering ([NeurIPS 2025](../../research/sources/neurips-2025-resolution-extraction-slack-vs-tickets.md)). "Who knows what" inferred from Slack was off by about 21 points out of 100 ([Watanabe](../../research/sources/arxiv-watanabe-expertise-estimation-slack.md)). Works councils restrict tools that monitor or rank people ([Microsoft](../../research/sources/microsoft-insidetrack-copilot-works-councils.md)).
+- **The human problem remains.** Knowledge hiding is distinct from knowledge sharing ([meta-analysis](../../research/sources/ebr-knowledge-hiding-meta-analysis.md)). Experts gain little themselves. Curated skills go stale without anyone noticing ([knowledge-activation skills](../../research/sources/arxiv-yahoo-knowledge-activation-skills.md)).
+- **What does work:** verification. Stripe trusted its docs only after owners verified them. GitHub's write-back memory checks citations on read: A/B merge rate 83% → 90% ([GitHub](../../research/sources/github-blog-agentic-memory-copilot.md)). Business knowledge usually lacks that kind of ground truth.
+
+**The sharpest version of the hypothesis to test:** an agent that elicits **problem and goal knowledge** (the "customer conversations" brace) and **decision rules** from people, writes them to a verified, owner-signed store with evidence links and expiry, and is measured by better downstream intent and plans. Do this rather than a general "mine everything" agent.
+
+Register: new sub-choice [context-and-memory / context-creation](../../options/DIMENSIONS.md#context-and-memory-context-and-memory). Its options are passive mining, owner-curated verified knowledge, agent drafts with owner review, interview-style elicitation, write-back from shipped work, and no dedicated capture. It has six key questions and a stated lean. Theme: `tacit-knowledge-capture`.
+
 ## What the agents are, and which jobs they serve
 
 When I searched, "Stripe's knowledge-worker agents" meant one main product and three related systems. The scope was clear enough that I didn't need to ask.
@@ -154,3 +228,9 @@ Every Stripe design choice is filed as option or evidence rows, with key questio
 - Cross-cutting question 8: should the internal agent share a substrate with any customer-facing agent?
 
 New themes in [research/THEMES.md](../../research/THEMES.md): `agent-as-service-many-surfaces`, `scoped-governance-containers`, `task-context-isolation`.
+
+Second pass (2026-10-24):
+- [intent-shaping-and-spec](../../options/DIMENSIONS.md#intent-shaping-and-spec-intent-shaping-mode-and-spec-standard): the Stripe chain; "plan as the agent-ready artifact"; key questions 4-5.
+- [sequencing](../../options/DIMENSIONS.md#sequencing-which-jobs-first-and-which-layer-first): "bottom-up along the chain" vs "context layer first"; key question 9.
+- [context-and-memory](../../options/DIMENSIONS.md#context-and-memory-context-and-memory): new sub-choice **context-creation** (six options, six key questions, a lean).
+- New themes: `opportunity-to-code-chain`, `tacit-knowledge-capture`.
