@@ -17,3 +17,4 @@ This task: https://www.lennysnewsletter.com/archive?sort=new
 - 2026-10-24 Filed by director-project-agent-and-harness.
 - 2026-10-24 Worker sweep-lennys (db172d7f) started via claude --bg on Opus 5.5 with --remote-control.
 - 2026-10-24 Geoff: scope limited to the past two years (posts from 2024-10-24 on); sent to the worker.
+- 2026-10-24 Scope cut by Geoff (via director): posts dated 2024-10-24 or later only. Full post list taken from the sitemap (1,281 URLs); paid session in Geoff's Chrome makes paywalled posts readable. Triage in progress.

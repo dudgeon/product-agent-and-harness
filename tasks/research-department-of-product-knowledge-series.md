@@ -17,3 +17,5 @@ This task: https://departmentofproduct.substack.com/t/knowledge-series
 - 2026-10-24 Filed by director-project-agent-and-harness.
 - 2026-10-24 Worker sweep-dept-of-product (2c0b10cc) started via claude --bg on Opus 5.5 with --remote-control.
 - 2026-10-24 Geoff: scope limited to the past two years (posts from 2024-10-24 on); sent to the worker.
+- 2026-10-24 Worker started. Listed the whole publication through Substack's archive API (437 posts; 121 tagged knowledge-series). Geoff's logged-in Chrome returns full paid text, so nothing is paywalled.
+- 2026-10-24 Scope cut-off from Geoff, relayed by the director: posts dated 2024-10-24 or later only. 73 tagged posts are in scope (13 high, 26 medium, 32 low, 2 none), plus 2 untagged posts that are numbered in the series. The 48 older posts are marked out of scope in 01-triage.md. 01-triage.md written; reading the 40 high and medium posts.
