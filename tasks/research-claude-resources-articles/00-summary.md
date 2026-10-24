@@ -120,3 +120,15 @@ No new dimension is proposed.
 - The two pieces linked from the playbook ("How the Claude Code team does code review" and "Redesigning source control at Anthropic") were filed later for the PDLC map: [claude-dev-claude-code-team-code-review](../../research/sources/claude-dev-claude-code-team-code-review.md), [anthropic-redesigning-source-control-scion](../../research/sources/anthropic-redesigning-source-control-scion.md). See also the Anthropic lifecycle map: [02-pdlc-agent-ecosystem-map.md](02-pdlc-agent-ecosystem-map.md).
 - Webinar recordings (e.g. "How Anthropic works with Claude Tag in Slack", whose blurb claims Claude Tag "opens roughly 65% of our pull requests"; "Measuring AI Fluency"; "Evals for AI agents") would need a transcript pass.
 - Gated guides were filed from their landing pages only: the CIO pilot-to-production blueprint's tier contents and the six-month Cowork rollout framework.
+
+## Pattern classes
+
+Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are placed in the runtime pattern classes P1-P10 of the [taxonomy synthesis, B.2](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes). Every placement is sourced and marked clear, partial or contested in [the mapping, section 2.4](../teardowns-to-pattern-classes/00-mapping.md).
+
+- **P1:** Claude Code and Cowork with plugins (clear).
+- **P6:** Code Review is a deployed reviewer called on pull requests (clear).
+- **P7:** cloud sessions, Managed Agents and the ABC Legal fleet (clear).
+- **P8:** Claude Tag shared channel sessions (clear).
+- **P10:** the org plugin marketplace and skill sync (clear).
+- **Contested:** Managed Agents as a P4 meta-harness, since it hosts one vendor's loop.
+- **Evidence:** first-party.

@@ -39,3 +39,8 @@ A first-party look at Block's own agent harness, Goose: an open-source, local, m
 - Full transcript read (Substack auto-transcription; "MZP/NCP/MTP" = MCP, "Cloud Sonnet" = Claude Sonnet, "BlockCell" spelling uncertain).
 - The show notes promise "how to scale an internal MCP catalog" and "the organizational transformation required"; the episode only touches these in two sentences. No usage numbers were given in this episode.
 - Demos used fake farm-stand data and a demo Square account; internal usage was asserted, not shown.
+
+## Follow-up (2026-10-24, research-block-product-practices)
+- The internal publishing capability described here (BlockCell MCP) appears to have been succeeded by Block App Kit (launched mid-March 2026), first an MCP server and then a skill, with ~80% of users outside engineering and 1,000+ apps ([block-eng-app-kit-localhost-to-launched](block-eng-app-kit-localhost-to-launched.md)); the post does not name BlockCell, so the succession is my inference.
+- The "data MCP that knows all that context" is detailed as Block Data MCP plus Query Expert MCP ([block-eng-data-foundation-automated-analytics](block-eng-data-foundation-automated-analytics.md)).
+- "40 or 50" internal extensions (July 2025) compares with "over 60" (June 2025 playbook), "over 100" (Oct 2025 talk) and "about 150 services" (Nov 2025 investor day): counts depend on who is counting what.

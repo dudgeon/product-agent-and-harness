@@ -27,3 +27,8 @@ Confirms goose reads the Agent Skills format (SKILL.md) from the cross-harness .
 
 ## Could not verify
 - Whether goose reads AGENTS.md as context; extension allowlist semantics and whether an admin can enforce it.
+
+## Follow-up (2026-10-24, research-block-product-practices)
+Read: Using goosehints (https://goose-docs.ai/docs/guides/context-engineering/using-goosehints).
+- **AGENTS.md answered:** goose reads `AGENTS.md` and `.goosehints` at each directory level by default; `CONTEXT_FILE_NAMES` (default `["AGENTS.md", ".goosehints"]`) can swap in e.g. `CLAUDE.md`. Global hints live in `~/.config/goose/.goosehints`; local hints win on conflict; nested hints load as goose touches subdirectories.
+- At Block, skills are the cross-harness layer (internal marketplace of 100+ skills: [block-eng-3-principles-agent-skills](block-eng-3-principles-agent-skills.md)), while recipes stay goose-specific ([goose-docs-recipes](goose-docs-recipes.md)).

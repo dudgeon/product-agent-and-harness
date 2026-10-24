@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Airbnb Lifecycle Map</title>
+<style>
+/* Same language as the Stripe map: ink on cool paper, one amber accent for the undocumented handoff and the tasks only people do. System fonts, no scripts. */
+:root{
+  --paper:#f6f6f2; --surface:#ffffff; --ink:#1d2228; --muted:#5d6670; --rule:#d6d9d6; --accent:#b4580c; --accent-soft:#f5e3d2; --auto:#e9ecef; --lite:#f1f3f1;
+  --serif:"Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; --sans:system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; --mono:ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55}
+.wrap{max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:40px 64px; display:grid; grid-template-columns:minmax(0,1fr); gap:36px}
+.wrap > *{min-width:0}
+header{display:grid; gap:10px; max-width:70ch}
+.eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--serif); font-weight:600; font-size:clamp(30px,4.4vw,44px); line-height:1.1; margin:0; text-wrap:balance}
+h2{font-family:var(--serif); font-weight:600; font-size:24px; margin:0 0 10px; text-wrap:balance}
+p{margin:0; max-width:70ch}
+.lede{font-size:18px}
+.answer{background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:6px; padding:20px 22px; display:grid; gap:12px}
+.answer ol,.answer ul{margin:0; padding-left:22px; display:grid; gap:8px; max-width:72ch}
+.diagram{overflow-x:auto; background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:12px}
+.diagram svg{display:block; min-width:1040px; width:100%; height:auto}
+.diagram .stage{font-family:var(--serif); font-weight:600; font-size:14.5px; fill:var(--ink)}
+.diagram .chain{font-family:var(--serif); font-style:italic; font-size:13.5px; fill:var(--muted)}
+.diagram .lane{font-family:var(--mono); font-size:11px; letter-spacing:.1em; fill:var(--muted)}
+.diagram .cap,.diagram .leg{font-family:var(--sans); font-size:12.5px; fill:var(--muted)}
+.diagram .gapl{fill:var(--accent); font-size:11.5px}
+.diagram .leg{font-size:13.5px; fill:var(--ink)}
+.diagram .guide{stroke:var(--rule); stroke-width:1; stroke-dasharray:2 5}
+.diagram .lanerule{stroke:var(--rule); stroke-width:1.2}
+.diagram .node{fill:var(--surface); stroke:var(--ink); stroke-width:1.6}
+.diagram .node.lite{fill:var(--lite); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode{fill:var(--paper); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode.acc{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.6}
+.diagram .auto{fill:var(--auto); stroke:var(--muted); stroke-width:1.2}
+.diagram .sub{fill:var(--auto); stroke:none}
+.diagram .nt{font-family:var(--sans); fill:var(--ink)}
+.diagram .doc{fill:none; stroke:var(--ink); stroke-width:1.8}
+.diagram .inf{fill:none; stroke:var(--muted); stroke-width:1.5; stroke-dasharray:5 5}
+.diagram .gap{fill:none; stroke:var(--accent); stroke-width:2; stroke-dasharray:3 5}
+.diagram .gapdot{fill:var(--paper); stroke:var(--accent); stroke-width:2}
+.diagram .gapq{font-family:var(--serif); font-weight:600; font-size:16px; fill:var(--accent)}
+.diagram .mk{stroke:var(--ink); stroke-width:1.5}
+.diagram .mkg{stroke:var(--accent); stroke-width:1.5}
+.tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:6px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:760px; font-size:14.5px}
+th,td{text-align:left; vertical-align:top; padding:10px 14px; border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); background:var(--paper)}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600}
+.status{font-family:var(--mono); font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); white-space:nowrap; display:inline-block}
+.s-doc{border-color:var(--ink)} .s-inf{color:var(--muted); border-style:dashed} .s-unk{color:var(--accent); border-color:var(--accent)}
+.row-gap td{background:var(--accent-soft)}
+section{display:grid; gap:12px}
+ul.impl{margin:0; padding-left:20px; display:grid; gap:10px; max-width:74ch}
+.counts{font-family:var(--mono); font-size:13px; color:var(--muted)}
+.foot{font-size:13.5px; color:var(--muted); max-width:82ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Airbnb and Spotify research · lifecycle map by task · 24 Oct 2026</div>
+  <h1>Where Airbnb’s people and agents sit in the product lifecycle, task by task</h1>
+  <p class="lede">Anchored on tasks, not job titles: since 2020 Airbnb has had no classic PM. Product marketers, program managers, designers, a business counterpart and the CEO split the PM’s tasks between them. Each handoff is marked documented, inferred or unknown. Almost every figure is Airbnb’s own.</p>
+</header>
+
+<div class="answer">
+  <h2>The prototype carries intent forward; the evidence and the decisions stay with people</h2>
+  <ol>
+    <li><strong>Intent starts as a story and a short brief.</strong> Product marketing writes the story or press release “months ahead” and the CEO edits it (Lenny’s Podcast, Nov 2023; Config, June 2023). Since 2026 a short “concept brief”, drafted by an AirChat app called Pascal from market research, the roadmap and business objectives, comes before many prototypes (DX talk, June 2026). Whether the brief cites its evidence is not described.</li>
+    <li><strong>Prototypes replace specs, and Airbnb names the drift itself.</strong> After prototyping, “the doc isn’t updated” and reviews happen out of order. A proposed “AI project coordinator” to keep brief, prototypes and Jira in sync is “early days” (DX talk).</li>
+    <li><strong>Decisions are made in reviews and kept unwritten on purpose.</strong> Every project is reviewed every 1–12 weeks and scored green, yellow or red. Leadership principles live in “one shared consciousness” of 60–70 people; there is no written list (Decoder, Oct 2024).</li>
+    <li><strong>Where evidence does travel by artifact, it travels as evals.</strong> For AI features, Insight Miner’s taxonomy of support situations became datasets and evals before launch; user-research seed queries became search training data; PMs label golden sets and gates are fixed up front (Airbnb Tech Blog, Jul–Oct 2026).</li>
+  </ol>
+  <p><strong>Across people:</strong> Airbnb split the PM’s tasks across more people than Stripe or Intercom (product marketer, program manager, designer, business lead), so research → intent → plan is a cross-person handoff by design. Its bridge is not an artifact but a person: the CEO in every review. Everest, an org context graph, is the candidate machine carrier, but its inputs are not published.</p>
+</div>
+
+<div class="diagram" role="figure" aria-label="Airbnb’s product lifecycle by task, with the humans, agents and shared tools at each task and the handoffs between them">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" role="img" aria-labelledby="dtitle"><title id="dtitle">Airbnb’s product lifecycle by task, with the humans, agents and shared tools at each task and the handoffs between them</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mk"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mkg"/></marker></defs>
+<text class="stage" x="82.0" y="24" text-anchor="middle"><tspan x="82.0">Spot the</tspan><tspan x="82.0" dy="18">opportunity</tspan></text>
+<text class="chain" x="82.0" y="66" text-anchor="middle">Opportunity</text>
+<text class="stage" x="206.0" y="24" text-anchor="middle"><tspan x="206.0">Talk to</tspan><tspan x="206.0" dy="18">customers</tspan></text>
+<text class="chain" x="206.0" y="66" text-anchor="middle">Problem</text>
+<line class="guide" x1="144" y1="50" x2="144" y2="500"/>
+<text class="stage" x="330.0" y="24" text-anchor="middle"><tspan x="330.0">Research</tspan><tspan x="330.0" dy="18">the problem</tspan></text>
+<line class="guide" x1="268" y1="50" x2="268" y2="500"/>
+<text class="stage" x="454.0" y="24" text-anchor="middle"><tspan x="454.0">Set the</tspan><tspan x="454.0" dy="18">goal</tspan></text>
+<text class="chain" x="454.0" y="66" text-anchor="middle">Goal</text>
+<line class="guide" x1="392" y1="50" x2="392" y2="500"/>
+<text class="stage" x="578.0" y="24" text-anchor="middle"><tspan x="578.0">Shape the</tspan><tspan x="578.0" dy="18">intent</tspan></text>
+<text class="chain" x="578.0" y="66" text-anchor="middle">Intent</text>
+<line class="guide" x1="516" y1="50" x2="516" y2="500"/>
+<text class="stage" x="702.0" y="24" text-anchor="middle"><tspan x="702.0">Plan the</tspan><tspan x="702.0" dy="18">change</tspan></text>
+<text class="chain" x="702.0" y="66" text-anchor="middle">Plan</text>
+<line class="guide" x1="640" y1="50" x2="640" y2="500"/>
+<text class="stage" x="826.0" y="24" text-anchor="middle"><tspan x="826.0">Write the</tspan><tspan x="826.0" dy="18">code</tspan></text>
+<text class="chain" x="826.0" y="66" text-anchor="middle">Code</text>
+<line class="guide" x1="764" y1="50" x2="764" y2="500"/>
+<text class="stage" x="950.0" y="24" text-anchor="middle"><tspan x="950.0">Review the</tspan><tspan x="950.0" dy="18">change</tspan></text>
+<line class="guide" x1="888" y1="50" x2="888" y2="500"/>
+<text class="stage" x="1074.0" y="24" text-anchor="middle"><tspan x="1074.0">Release</tspan></text>
+<line class="guide" x1="1012" y1="50" x2="1012" y2="500"/>
+<text class="stage" x="1198.0" y="24" text-anchor="middle"><tspan x="1198.0">Operate</tspan><tspan x="1198.0" dy="18">and learn</tspan></text>
+<line class="guide" x1="1136" y1="50" x2="1136" y2="500"/>
+<text class="lane" x="20" y="86">HUMANS · ANY ROLE</text>
+<text class="lane" x="20" y="226">AGENTS</text>
+<text class="lane" x="20" y="426">SHARED</text>
+<line class="lanerule" x1="20" y1="212" x2="1260" y2="212"/><line class="lanerule" x1="20" y1="412" x2="1260" y2="412"/>
+<rect class="pnode" x="26.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="82.0" y="138.8" text-anchor="middle"><tspan x="82.0" dy="0">CEO + top</tspan><tspan x="82.0" dy="15.5">30–70 leaders</tspan></text>
+<rect class="pnode acc" x="150.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="206.0" y="131.0" text-anchor="middle"><tspan x="206.0" dy="0">researchers,</tspan><tspan x="206.0" dy="15.5">designers,</tspan><tspan x="206.0" dy="15.5">the CEO</tspan></text>
+<rect class="pnode" x="274.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="330.0" y="131.0" text-anchor="middle"><tspan x="330.0" dy="0">data science,</tspan><tspan x="330.0" dy="15.5">ops, product</tspan><tspan x="330.0" dy="15.5">insights</tspan></text>
+<rect class="pnode acc" x="398.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="454.0" y="131.0" text-anchor="middle"><tspan x="454.0" dy="0">CEO, CFO,</tspan><tspan x="454.0" dy="15.5">business lead;</tspan><tspan x="454.0" dy="15.5">mission teams</tspan></text>
+<rect class="pnode" x="522.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="578.0" y="131.0" text-anchor="middle"><tspan x="578.0" dy="0">product mktg,</tspan><tspan x="578.0" dy="15.5">designers,</tspan><tspan x="578.0" dy="15.5">PMs, CEO</tspan></text>
+<rect class="pnode" x="646.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="702.0" y="131.0" text-anchor="middle"><tspan x="702.0" dy="0">program</tspan><tspan x="702.0" dy="15.5">managers;</tspan><tspan x="702.0" dy="15.5">small pods</tspan></text>
+<rect class="pnode" x="770.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="826.0" y="131.0" text-anchor="middle"><tspan x="826.0" dy="0">engineers,</tspan><tspan x="826.0" dy="15.5">managers,</tspan><tspan x="826.0" dy="15.5">non-engineers</tspan></text>
+<rect class="pnode" x="894.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="131.0" text-anchor="middle"><tspan x="950.0" dy="0">CEO reviews;</tspan><tspan x="950.0" dy="15.5">engineer must</tspan><tspan x="950.0" dy="15.5">explain the PR</tspan></text>
+<rect class="pnode" x="1018.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="131.0" text-anchor="middle"><tspan x="1074.0" dy="0">product mktg</tspan><tspan x="1074.0" dy="15.5">+ comms run</tspan><tspan x="1074.0" dy="15.5">the launch</tspan></text>
+<rect class="pnode" x="1142.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="131.0" text-anchor="middle"><tspan x="1198.0" dy="0">data science;</tspan><tspan x="1198.0" dy="15.5">PM weekly</tspan><tspan x="1198.0" dy="15.5">eval review</tspan></text>
+<rect class="node" x="274.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="330.0" y="273.0" text-anchor="middle"><tspan x="330.0" dy="0">Insight Miner</tspan><tspan x="330.0" dy="15.5">research</tspan><tspan x="330.0" dy="15.5">harness</tspan></text>
+<rect class="node" x="522.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="578.0" y="273.0" text-anchor="middle"><tspan x="578.0" dy="0">Pascal brief;</tspan><tspan x="578.0" dy="15.5">prototype</tspan><tspan x="578.0" dy="15.5">tools</tspan></text>
+<rect class="node" x="770.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="826.0" y="273.0" text-anchor="middle"><tspan x="826.0" dy="0">AirChat</tspan><tspan x="826.0" dy="15.5">(Claude Code,</tspan><tspan x="826.0" dy="15.5">Codex)</tspan></text>
+<rect class="node" x="894.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="273.0" text-anchor="middle"><tspan x="950.0" dy="0">validation</tspan><tspan x="950.0" dy="15.5">loops; model</tspan><tspan x="950.0" dy="15.5">critiques model</tspan></text>
+<rect class="node" x="1142.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="273.0" text-anchor="middle"><tspan x="1198.0" dy="0">evals 5%/day;</tspan><tspan x="1198.0" dy="15.5">on-call agents;</tspan><tspan x="1198.0" dy="15.5">support agent</tspan></text>
+<rect class="node lite" x="646.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="702.0" y="273.0" text-anchor="middle"><tspan x="702.0" dy="0">“AI project</tspan><tspan x="702.0" dy="15.5">coordinator”</tspan><tspan x="702.0" dy="15.5">(proposed)</tspan></text>
+<rect class="auto" x="1018.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="273.0" text-anchor="middle"><tspan x="1074.0" dy="0">traffic slices,</tspan><tspan x="1074.0" dy="15.5">toggles,</tspan><tspan x="1074.0" dy="15.5">canary</tspan></text>
+<rect class="sub" x="26.0" y="436" width="1228.0" height="56" rx="7"/><text class="nt" style="font-size:13px" x="640.0" y="468.5" text-anchor="middle"><tspan x="640.0" dy="0">Everest org context graph · AirChat MCPs, skills and plugin marketplace · Minerva certified metrics · ERF experiments · Jira · Figma · one roadmap</tspan></text>
+<path class="doc" d="M330.0 330 C330.0 372 538.0 372 560.0 332" marker-end="url(#ah)"/>
+<text class="cap" x="454.0" y="380" text-anchor="middle">taxonomy → datasets + evals</text>
+<path class="doc" d="M578.0 330 C578.0 386 786.0 386 808.0 332" marker-end="url(#ah)"/>
+<text class="cap" x="702.0" y="394" text-anchor="middle">design URL → mocks; mockups → coding agents</text>
+<path class="doc" d="M882 284H894" marker-end="url(#ah)"/>
+<path class="doc" d="M1006 284H1018" marker-end="url(#ah)"/>
+<path class="gap" d="M608.0 238 C622.0 198 658.0 198 672.0 236" marker-end="url(#ahg)"/>
+<circle class="gapdot" cx="640.0" cy="206" r="12"/><text class="gapq" x="640.0" y="212" text-anchor="middle">?</text>
+<text class="cap gapl" x="658.0" y="210" text-anchor="start">brief, Jira drift</text>
+<path class="gap" d="M356.0 238 C370.0 198 662.0 198 676.0 236" marker-end="url(#ahg)"/>
+<circle class="gapdot" cx="516.0" cy="206" r="12"/><text class="gapq" x="516.0" y="212" text-anchor="middle">?</text>
+<path class="inf" d="M330.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M578.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M826.0 188V236" marker-end="url(#ah)"/>
+<path class="doc" d="M826.0 436V332" marker-end="url(#ah)"/>
+<text class="cap" x="831.0" y="426">MCPs, skills</text>
+<path class="inf" d="M1198.0 332V434" marker-end="url(#ah)"/><text class="cap" x="1193.0" y="426" text-anchor="end">failures → new evals</text>
+<path class="doc" d="M20 530h40" marker-end="url(#ah)"/><text class="leg" x="72" y="535">documented by Airbnb</text>
+<path class="inf" d="M270 530h40" marker-end="url(#ah)"/><text class="leg" x="322" y="535">inferred, or a person uses the agent for the task</text>
+<path class="gap" d="M660 530h40" marker-end="url(#ahg)"/><text class="leg" x="712" y="535">research → plan and intent → plan: no carrier described</text>
+<text class="cap" x="20" y="570">Column headers are tasks; the row below them is the opportunity-to-code chain. Accent: tasks still done by people with no tool shown. Our own diagram, not Airbnb’s UI.</text>
+</svg>
+</div>
+
+<section>
+  <h2>Task by task</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Task</th><th>Who does it</th><th>Agents and tools</th><th>Artifact</th></tr></thead>
+    <tbody>
+      <tr><td>Spot the opportunity</td><td>CEO and top leaders; product marketing; the business (CBO) organisation</td><td>None named. Inputs: support calls, social posts, Minerva metrics; Insight Miner taxonomies</td><td>One rolling two-year roadmap (“if it’s not on the roadmap, it can’t ship”); the “Airbnb Blueprint” storyboard and fix map</td></tr>
+      <tr><td>Talk to customers</td><td>Researchers, designers, the CEO (“normal people we don’t pay”); leaders embedded in Paris for experiences</td><td>No agent seen</td><td>Research findings (format not described); ~500 seed queries for AI search</td></tr>
+      <tr><td>Research the problem, read the data</td><td>Data science, product-insights and operations teams, often non-technical</td><td><strong>Insight Miner</strong> (chat agent wrapped in a shared method package; dozens of teams); Datako for data questions; Minerva and ERF</td><td>Taxonomies, prevalence estimates, datasets; Knowledge Repo posts (2016–21)</td></tr>
+      <tr><td>Set the goal</td><td>CEO with CFO and the business lead; mission teams with one mandate (“Project Hawaii”); an eval decision-maker for AI features</td><td>None named</td><td>Roadmap entry; revenue targets; eval goals and gates fixed up front</td></tr>
+      <tr><td>Shape the intent</td><td>Product marketer, designer and CEO; PMs and designers in pods</td><td><strong>Pascal</strong> drafts the concept brief; a designer prototyping tool; image-model mockups fed to coding agents; @generateMock fills prototypes with data</td><td>Story or press release; short concept brief; 5–10 high-fidelity prototypes; PM-labelled golden sets</td></tr>
+      <tr><td>Plan the change</td><td>Program managers (timelines, coordination); smaller pods</td><td>A proposed “AI project coordinator” (not built); Everest gives cross-codebase context</td><td>Central project list with a review schedule; Jira; release calendar</td></tr>
+      <tr><td>Write the code</td><td>Engineers, plus managers returning to code and non-engineers</td><td><strong>AirChat</strong> CLI wrapping Claude Code and Codex; AirChat Remote for async runs; migration framework (validate, transform, validate)</td><td>Pull requests; ~60% of code AI-authored (Airbnb, 2026)</td></tr>
+      <tr><td>Review the change</td><td>The CEO on a 1–12 week cadence; design reviews must discuss impact; engineers must explain AI PRs</td><td>Validation loops (tests, lint, types, schema checks); one model generates, another critiques; ERF guardrails escalate ~25 experiments a month</td><td>Review decisions (not recorded); approved PRs</td></tr>
+      <tr><td>Release</td><td>Product marketing and comms; the CEO keynote</td><td>Small traffic slices, opt-in toggles, staged rollout by language, canary with auto-rollback</td><td>Twice-yearly releases to 2025; since 2026 “we ship the moment it’s ready”, May as a showcase</td></tr>
+      <tr><td>Operate and learn</td><td>Data science; PMs in a weekly eval review; support agents</td><td>Production evals on 5% of traffic daily; Agent-in-the-Loop weekly retraining; async on-call agents; the AI support agent (~45% resolved, Aug 2026)</td><td>Dashboards, experiment results, new evals, retrained models</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Every handoff, task to task</h2>
+  <p class="counts">Counts: 18 handoffs: 14 documented (two with the mechanism unknown), 2 inferred, 2 unknown.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>From → to</th><th>How</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Operate → spot the opportunity (Blueprint)</td><td>20M support calls, social posts and a storyboard of every screen and policy combined into a prioritised fix map</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Spot the opportunity, set the goal → roadmap</td><td>Everything shipped must be on the one roadmap; the CEO adds and cuts items</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Set the goal → shape intent (goal and gates)</td><td>For AI features a decision-maker fixes goals and eval gates up front; PMs label golden sets</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Set the goal → shape intent (business brief)</td><td>A product marketer pairs with a business counterpart; the business model and product-marketing brief go to supply and international teams</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Research (Insight Miner) → shape intent (AI support)</td><td>Taxonomy and prevalence of support situations turned into datasets and evals before the 2025 launch</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Talk to customers → shape intent (AI search)</td><td>~500 seed queries from user research ground the synthetic training queries</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Research, roadmap → shape intent (Pascal)</td><td>Pascal drafts a concept brief from market research, the roadmap and business objectives; whether it cites sources is not described</td><td><span class="status s-doc">documented</span> <span class="status s-inf">mechanism unknown</span></td></tr>
+      <tr><td>Talk to customers → research (product work)</td><td>People; no tool shown</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr class="row-gap"><td><strong>Shape intent → plan</strong></td><td>Prototypes replace long specs; Airbnb says the brief isn’t updated after prototyping and reviews go out of order; an AI coordinator is only proposed</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr class="row-gap"><td><strong>Research evidence → plan</strong></td><td>Nothing found carries research evidence into the brief, the Jira tickets or the plan</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>Shape intent → write code</td><td>A prototype’s design URL goes into the mock generator; the CTO feeds image-model mockups to coding agents</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Plan → review</td><td>Fixed cadence of CEO reviews with green, yellow or red scoring by the head program manager</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Review decisions → later work</td><td>Not written down; held in leaders’ heads (“shared consciousness”)</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr><td>Write code → review</td><td>Validation loops before a PR; one model critiques another; a person must be able to explain the PR</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Review → release</td><td>Staged traffic slices and toggles; canary with auto-rollback for model patches; guardrails measured in shadow mode</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Operate → evals</td><td>Production failures become new evals in a weekly PM review</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Operate → model</td><td>Support agents’ in-workflow choices feed weekly model updates</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Operate → next build (Everest)</td><td>Groceries’ learnings said to make airport pickup take ~6 weeks; how learnings enter Everest is not described</td><td><span class="status s-doc">documented</span> <span class="status s-inf">mechanism unknown</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>What it means for our options</h2>
+  <ul class="impl">
+    <li><strong>The PM’s tasks can be split four ways and still need one carrier.</strong> Product marketer (story), program manager (plan), designer (prototype), business lead (model and pricing). A single “PM agent” would serve several people; a task agent per row fits better.</li>
+    <li><strong>The intent bundle is story + short brief + prototypes + evals, not a PRD.</strong> That favours the prototype-first and eval-as-spec options under intent-shaping-and-spec, with brief-to-prototype sync as the named open need.</li>
+    <li><strong>The review is the decision point, and it is unrecorded.</strong> An agent that prepares each review and records what was decided and why would fill a real gap, against a culture that prefers unwritten principles.</li>
+    <li><strong>AI-feature work already carries evidence by artifact (taxonomies → evals).</strong> That is the clearest pattern for carrying research into a plan, and it exists only where the product is itself an AI feature.</li>
+  </ul>
+</section>
+
+<p class="foot">Sources: <a href="../../research/sources/lenny-podcast-brian-chesky-new-playbook.md">Chesky on Lenny’s Podcast (Nov 2023)</a>; <a href="../../research/sources/figma-config-2023-brian-chesky.md">Config 2023</a>; <a href="../../research/sources/verge-decoder-chesky-founder-mode-2024.md">Decoder (Oct 2024)</a>; <a href="../../research/sources/verge-decoder-chesky-2021-functional-org.md">Decoder (Nov 2021)</a>; <a href="../../research/sources/lenny-podcast-vlad-loktev-airbnb.md">Vlad Loktev (Sep 2024, ex-insider)</a>; <a href="../../research/sources/dx-airbnb-beyond-the-cli-airchat.md">DX talk on AirChat (Jun 2026)</a>; <a href="../../research/sources/latent-space-airbnb-al-dahle-inside-out-ai.md">Al-Dahle on Latent Space (Oct 2026)</a>; <a href="../../research/sources/airbnb-tech-insight-miner-agent-harness.md">Insight Miner (Sep 2026)</a>; <a href="../../research/sources/airbnb-tech-eval-driven-development.md">eval-driven development (Jul 2026)</a>; <a href="../../research/sources/airbnb-tech-castle-nl-search.md">CASTLE (Oct 2026)</a>; <a href="../../research/sources/airbnb-tech-graphql-generatemock.md">@generateMock (Nov 2025)</a>; <a href="../../research/sources/arxiv-airbnb-agent-in-the-loop.md">Agent-in-the-Loop (Oct 2025)</a>; <a href="../../research/sources/airbnb-tech-designing-experimentation-guardrails.md">experiment guardrails (2021)</a>; <a href="../../research/sources/airbnb-earnings-q4-2025.md">Q4 2025 call</a>; <a href="../../research/sources/airbnb-earnings-q2-2026.md">Q2 2026 letter</a>; <a href="../../research/sources/cutler-perri-tbm-255-new-airbnb.md">Cutler and Perri (independent, Nov 2023)</a>; <a href="../../research/sources/semafor-chesky-new-blueprint-2026.md">Semafor (independent, Oct 2026)</a>. Independent coverage is thin: press repeats Airbnb’s numbers unchecked. Full notes: 01-pdlc-airbnb.md in this folder.</p>
+</div>
+</body>
+</html>

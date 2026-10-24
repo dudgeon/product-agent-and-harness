@@ -86,3 +86,13 @@ Naming: "Rovo Dev in Jira" (April 2026 blog) is now documented as the **Jira Cod
   - Planner or Coding Agent reading JPD ideas, Goals or Deep Research pages;
   - third-party agents getting Teamwork Graph context without the Rovo MCP;
   - any single object that ties the whole chain together. The Teamwork Graph links pairs of objects; no "lifecycle" record exists.
+
+## Pattern classes
+
+Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are placed in the runtime pattern classes P1-P10 of the [taxonomy synthesis, B.2](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes). Every placement is sourced and marked clear, partial or contested in [the mapping, section 2.5](../teardowns-to-pattern-classes/00-mapping.md).
+
+- **P6:** the Rovo A2A gateway is clear. The Rovo MCP server, the Rovo Dev reviewer and Rovo Dev in Pipelines are partial.
+- **P7:** the Jira Coding Agent and third-party agents launched from a work item (clear).
+- **P9:** Jira automation triggers (partial).
+- **Contested:** a work item that dispatches to several vendors' agents (P4). B.2 has no system-of-record dispatcher shape.
+- **Evidence:** first-party docs.

@@ -260,3 +260,13 @@ Department of Product pass (2026-10-24):
 - context-and-memory / context-creation: Spotify evidence row; two new options, "knowledge readiness as a release gate" (Intercom) and "embedded human elicitation (pods)" (Uber); key questions 7-8; updated lean.
 - [trust-privacy-defaults](../../options/DIMENSIONS.md#trust-privacy-defaults-trust-and-privacy-defaults-for-sessions-and-context): combination guardrails; key question 10.
 - [adoption-model](../../options/DIMENSIONS.md#adoption-model-adoption-and-enablement-model): "agentic pods" and "one domain, one surface first".
+
+## Pattern classes
+
+Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are placed in the runtime pattern classes P1-P10 of the [taxonomy synthesis, B.2](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes). Every placement is sourced and marked clear, partial or contested in [the mapping, section 2.3](../teardowns-to-pattern-classes/00-mapping.md).
+
+- **P3:** Kai (built on LangChain Deep Agents) and Minions (a Goose fork) are own harnesses (clear).
+- **P7 and P9:** Minions run as background agents inside deterministic workflows. The compliance agents and payment-method factory are also P9 (clear).
+- **P1:** engineers use several general harnesses side by side (clear).
+- **Partial:** Kai projects backed by other harnesses (P4), Kai as an org-wide service (P5), Orbit and Harbor routes (P6), shared sessions (P8), and Kai skills, Agent Studio and Toolshed (P10).
+- **Evidence:** first-party talks and posts; some are ASR captions.

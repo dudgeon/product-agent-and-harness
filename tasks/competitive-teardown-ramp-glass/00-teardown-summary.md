@@ -92,3 +92,13 @@ Glass is one data point on the menu, not a pattern to copy. Its design choices a
 - [adoption-model](../../options/DIMENSIONS.md#adoption-model-adoption-and-enablement-model): product-led enablement vs mandates, leaderboards and a proficiency ladder.
 
 Cross-cutting question added: Ramp changed its answers on loop-source and runtime-location within six months; the resource request should fund a path that can be revisited, not a one-time pick.
+
+## Pattern classes
+
+Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are placed in the runtime pattern classes P1-P10 of the [taxonomy synthesis, B.2](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes). Every placement is sourced and marked clear, partial or contested in [the mapping, section 2.1](../teardowns-to-pattern-classes/00-mapping.md).
+
+- **P2 then P3:** Glass ran on the Claude Agent SDK in April 2026 (P2, clear, historical). By October 2026 it runs on Laminar, Ramp's own provider-agnostic harness, which also runs Inspect and Stack (P3, clear, first-party).
+- **P7 and P8:** Glass and Inspect are background, shareable sessions (clear).
+- **P10:** Dojo and the shared tool catalog are internal skill and tool registries (partial: internal, not portable).
+- **P4, P5 and P9:** OCA is a partial P4 (a DIY coordinator over Claude Code or Codex) and a partial P9 (Temporal). Glass in its October form matching P5 is contested.
+- **Evidence:** all Ramp first-party.

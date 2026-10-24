@@ -84,3 +84,12 @@ My findings are in the shared register, [options/DIMENSIONS.md](../../options/DI
 - [target-user](../../options/DIMENSIONS.md#target-user-which-users-and-personas-we-serve-first-including-for-shared-agents): which personas to serve first (from the jobs map's persona work).
 - [target-outcome](../../options/DIMENSIONS.md#target-outcome-which-outcome-or-value-we-target): time saved vs throughput vs quality vs outcomes.
 - [pm-agent-evaluation](../../options/DIMENSIONS.md#pm-agent-evaluation-how-we-would-know-a-pm-agent-works): self-reported time vs throughput vs quality vs outcomes.
+
+## Pattern classes
+
+Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are placed in the runtime pattern classes P1-P10 of the [taxonomy synthesis, B.2](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes). Every placement is sourced and marked clear, partial or contested in [the mapping, section 2.6](../teardowns-to-pattern-classes/00-mapping.md).
+
+- **Intercom, P1:** Claude Code for everyone, with plugins and hooks (clear).
+- **Intercom, P6:** the Shrek reviewers (clear).
+- **Intercom, partial:** the CI-watching agent and Buzz (P7), and the plugin marketplace (P10).
+- **Evidence:** first-party.

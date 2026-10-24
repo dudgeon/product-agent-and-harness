@@ -17,3 +17,4 @@ Related: [[research-airbnb-spotify-product-practices]] (sibling), [[pdlc-maps-pe
 - 2026-10-24 Filed by director-project-agent-and-harness.
 - 2026-10-24 Worker research-block (762dd35c, https://claude.ai/code/session_015Nc54pXhjrkX3EZq2YRo4e) started via claude --bg on Opus 5.5 with --remote-control.
 - 2026-10-24 Started by worker (Opus 5.5): reading library and template; research fan-out to three Opus subagents (org and leaders; Goose inside Block; PM practice).
+- 2026-10-24 Research done: 61 source notes filed or updated under research-block-product-practices (Opus subagents for org/leaders, Goose internals, PM practice; Lenny CTO episode, Guardian, Dorsey's X note and Square head-of-product episode read in Geoff's browser); duplicates merged; themes in research/themes/research-block-product-practices.md (new: ai-flattened-org, capability-packaging-layers); build.py 0 warnings for this task's notes. Writing map, brief and register proposals.

@@ -62,11 +62,12 @@ def svg(d):
         cls = {"doc": "doc", "inf": "inf", "gap": "gap"}[kind]
         mk = "ahg" if kind == "gap" else "ah"
         if kind == "gap":
-            S.append(f'<path class="gap" d="M{cx(a) + 26:.1f} 238 C{cx(a) + 70:.1f} 200 {cx(b) - 70:.1f} 200 {cx(b) - 26:.1f} 236" marker-end="url(#ahg)"/>')
+            off = 26 if b - a > 1 else 30
+            S.append(f'<path class="gap" d="M{cx(a) + off:.1f} 238 C{cx(a) + off + 14:.1f} 198 {cx(b) - off - 14:.1f} 198 {cx(b) - off:.1f} 236" marker-end="url(#ahg)"/>')
             mx = (cx(a) + cx(b)) / 2
-            S.append(f'<circle class="gapdot" cx="{mx:.1f}" cy="208" r="12"/><text class="gapq" x="{mx:.1f}" y="214" text-anchor="middle">?</text>')
+            S.append(f'<circle class="gapdot" cx="{mx:.1f}" cy="206" r="12"/><text class="gapq" x="{mx:.1f}" y="212" text-anchor="middle">?</text>')
             if label:
-                S.append(f'<text class="cap gapl" x="{mx:.1f}" y="232" text-anchor="middle">{escape(label)}</text>')
+                S.append(f'<text class="cap gapl" x="{mx + 18:.1f}" y="210" text-anchor="start">{escape(label)}</text>')
         elif b == a + 1:
             y = 284
             arrow(f"M{X0 + W * b - 6} {y}H{X0 + W * b + 6}", cls, mk)

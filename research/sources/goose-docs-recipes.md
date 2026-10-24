@@ -30,3 +30,10 @@ Recipes are goose's unit of packaged task capability: a YAML file bundling instr
 
 ## Could not verify
 - Whether Block runs an internal recipe library distinct from its skills marketplace.
+
+## Follow-up (2026-10-24): what the public Recipe Cookbook contains for product work
+Filed by research-block-product-practices (PM-practice subagent). Read: the cookbook data directory https://github.com/block/goose/tree/main/documentation/src/pages/recipes/data/recipes (README and five recipe files) and https://goose-docs.ai/recipes/ (which renders client-side and showed only "Loading recipes...").
+- The archived cookbook holds 46 recipe YAML files plus a subrecipes folder. Almost all are developer tasks (PR review per language, migrations, lint, test coverage, security audit, changelog, commit messages, the rpi-research/plan/implement/iterate chain, ralph loop).
+- None is a PRD, spec, user-research, interview-synthesis, customer-feedback or roadmap recipe. The nearest to product work: `ab-test-framework-generator` (generates variant code, tracking, significance analysis and a dashboard; community author "scaler"), `data-analysis-pipeline` (CSV/JSON/Excel/Parquet to cleaned data, stats, charts and a markdown report), `daily-standup-report-generator` (GitHub PRs, issues and blockers into a dated `./standup/` file), `smart-task-organizer` (action items from files, emails and messages) and `pr-demo-planner` (turns a PR into a demo script and "business value" narrative; author "lifei").
+- Themes: prd-agents (absence: no public PRD recipe from Block or the community), status-update-agents (standup generator), metrics-review-agents (data-analysis pipeline, A/B framework).
+- The README confirms the submission programme ended; the cookbook "remains available as an archive". Authorship is mostly community handles, so these are not evidence of Block-internal PM practice.
