@@ -15,3 +15,4 @@ Related: [[competitive-teardown-stripe-knowledge-agents]], [[strategy-story-and-
 
 - 2026-10-24 Filed by director-project-agent-and-harness; worker teardown-stripe-agents.
 - 2026-10-24 Script v0.1 (6 scenes, 626 voiced words, ~4.5 min) in explainers/projects/09-stripe-teardown/script-doc.md with claim check; film video/films/stripe-teardown; scenes src/scenes/stripe/Stripe.tsx; registry and page-travel entries added; build --check passes. Queued to voice behind story-film's full build (watcher running).
+- 2026-10-24 New rule from the director (Geoff): score bed under the whole film, never --no-score; check out/stripe-teardown/LISTEN.md and score-qa.png before sending. Shared score config (score/score.json: speech duck -20 dB, gaps -11 dB, 2 s fade-in) already meets it; no changes needed.

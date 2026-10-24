@@ -35,6 +35,10 @@ Baseline for every "Today" section: inconsistent Claude Code use with poor artif
 
 S16–S18 were added after the artifact-management follow-up; S01 and S08 also gained V4 variants in the audit. Research: [platforms](research-artifacts-platforms.md), [standardization](research-artifacts-standardization.md). Job stories S02–S06, S09, S10 each gained a V4 artifact-structure variant; S11–S13 were rewritten around the research.
 
+## Atlassian lifecycle map (for pdlc-maps-per-ecosystem)
+
+[01-pdlc-agent-ecosystem-map.md](01-pdlc-agent-ecosystem-map.md) and the standalone [HTML](01-pdlc-agent-ecosystem-map.html) (built by `01-pdlc-agent-ecosystem-map.build.py`), in the Stripe map's frame; evidence per task in [research-atlassian-sdlc-agents.md](research-atlassian-sdlc-agents.md).
+
 ## Worked derivation
 
 [S05 in two contrasting embodiments](worked-derivation-s05.md): A = local general harness with skills and a shared context repo; B = deployed, shared, task-specific spec agent. Model for later journeys, prototypes and videos.

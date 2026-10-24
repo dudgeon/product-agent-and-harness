@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Intercom Agent Lifecycle Map</title>
+<style>
+/* Layout: one reading column with a wide, scrollable task-by-task swimlane; tables below. Ink on cool paper; one amber accent for the undocumented handoff and the tasks only people do. */
+:root{
+  --paper:#f6f6f2; --surface:#ffffff; --ink:#1d2228; --muted:#5d6670; --rule:#d6d9d6; --accent:#b4580c; --accent-soft:#f5e3d2; --auto:#e9ecef; --lite:#f1f3f1;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55}
+.wrap{max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:40px 64px; display:grid; grid-template-columns:minmax(0,1fr); gap:36px}
+.wrap > *{min-width:0}
+header{display:grid; gap:10px; max-width:70ch}
+.eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--serif); font-weight:600; font-size:clamp(30px,4.4vw,44px); line-height:1.1; margin:0; text-wrap:balance}
+h2{font-family:var(--serif); font-weight:600; font-size:24px; margin:0 0 10px; text-wrap:balance}
+p{margin:0; max-width:70ch}
+.lede{font-size:18px}
+.answer{background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:6px; padding:20px 22px; display:grid; gap:12px}
+.answer ol,.answer ul{margin:0; padding-left:22px; display:grid; gap:8px; max-width:72ch}
+.diagram{overflow-x:auto; background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:12px}
+.diagram svg{display:block; min-width:1040px; width:100%; height:auto}
+.diagram .stage{font-family:var(--serif); font-weight:600; font-size:14.5px; fill:var(--ink)}
+.diagram .chain{font-family:var(--serif); font-style:italic; font-size:13.5px; fill:var(--muted)}
+.diagram .lane{font-family:var(--mono); font-size:11px; letter-spacing:.1em; fill:var(--muted)}
+.diagram .cap,.diagram .leg{font-family:var(--sans); font-size:12.5px; fill:var(--muted)}
+.diagram .leg{font-size:13.5px; fill:var(--ink)}
+.diagram .guide{stroke:var(--rule); stroke-width:1; stroke-dasharray:2 5}
+.diagram .lanerule{stroke:var(--rule); stroke-width:1.2}
+.diagram .node{fill:var(--surface); stroke:var(--ink); stroke-width:1.6}
+.diagram .node.lite{fill:var(--lite); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode{fill:var(--paper); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode.acc{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.6}
+.diagram .auto{fill:var(--auto); stroke:var(--muted); stroke-width:1.2}
+.diagram .sub{fill:var(--auto); stroke:none}
+.diagram .nt{font-family:var(--sans); fill:var(--ink)}
+.diagram .doc{fill:none; stroke:var(--ink); stroke-width:1.8}
+.diagram .inf{fill:none; stroke:var(--muted); stroke-width:1.5; stroke-dasharray:5 5}
+.diagram .gap{fill:none; stroke:var(--accent); stroke-width:2; stroke-dasharray:3 5}
+.diagram .gapdot{fill:var(--paper); stroke:var(--accent); stroke-width:2}
+.diagram .gapq{font-family:var(--serif); font-weight:600; font-size:16px; fill:var(--accent)}
+.diagram .mk{stroke:var(--ink); stroke-width:1.5}
+.diagram .mkg{stroke:var(--accent); stroke-width:1.5}
+.tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:6px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:760px; font-size:14.5px}
+th,td{text-align:left; vertical-align:top; padding:10px 14px; border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); background:var(--paper)}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600}
+.status{font-family:var(--mono); font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); white-space:nowrap; display:inline-block}
+.s-doc{border-color:var(--ink)} .s-inf{color:var(--muted); border-style:dashed} .s-unk{color:var(--accent); border-color:var(--accent)}
+.row-gap td{background:var(--accent-soft)}
+section{display:grid; gap:12px}
+ul.impl{margin:0; padding-left:20px; display:grid; gap:10px; max-width:74ch}
+.foot{font-size:13.5px; color:var(--muted); max-width:82ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">PM agents research · Intercom lifecycle map by task · 24 Oct 2026</div>
+  <h1>Where Intercom’s agents sit in the product lifecycle, task by task</h1>
+  <p class="lede">Same frame as the Stripe map: rows are tasks, not job titles. At Intercom engineers take on PM work, designers work in code, and nearly every employee has Claude Code. Each handoff is marked documented, inferred or unknown (9 documented, 2 inferred, 3 unknown). Almost every source is Intercom’s own, and every figure is self-reported.</p>
+</header>
+
+<div class="answer">
+  <h2>Intent is captured downstream, at the pull request; upstream, research → intent → plan is left to people</h2>
+  <ol>
+    <li><strong>Downstream, the “why” is written down and checked.</strong> A hook forces a PR skill that asks why the change exists; review agents check the diff against that intent; a “what we built” doc feeds the support agent’s readiness gate at launch.</li>
+    <li><strong>No source describes research reaching intent or plan.</strong> The research team’s syntheses live in sessions, reports and a queryable interview skill; how they reach designers, PMs or engineers isn’t described.</li>
+    <li><strong>The plan isn’t an artifact.</strong> Engineers plan in 5–20 Claude Code turns with no formal spec; the plan stays in the session (one engineer’s account).</li>
+    <li><strong>Fin’s customer data isn’t shown feeding Intercom’s own roadmap.</strong></li>
+  </ol>
+  <p><strong>Across people:</strong> like Stripe, Intercom shrinks the seam by collapsing roles. Where research, shaping and planning still sit with different people, the first durable statement of intent is the PR description, written after the plan.</p>
+</div>
+
+<div class="diagram" role="figure" aria-label="Swimlane diagram of Intercom's lifecycle by task">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" role="img" aria-labelledby="dtitle"><title id="dtitle">Intercom’s product lifecycle by task, with the humans, agents and shared tools at each task and the handoffs between them</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mk"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mkg"/></marker></defs>
+<text class="stage" x="82.0" y="24" text-anchor="middle"><tspan x="82.0">Spot the</tspan><tspan x="82.0" dy="18">opportunity</tspan></text>
+<text class="stage" x="206.0" y="24" text-anchor="middle"><tspan x="206.0">Talk to</tspan><tspan x="206.0" dy="18">customers</tspan></text>
+<line class="guide" x1="144" y1="50" x2="144" y2="500"/>
+<text class="stage" x="330.0" y="24" text-anchor="middle"><tspan x="330.0">Research</tspan><tspan x="330.0" dy="18">the problem</tspan></text>
+<line class="guide" x1="268" y1="50" x2="268" y2="500"/>
+<text class="stage" x="454.0" y="24" text-anchor="middle"><tspan x="454.0">Set the</tspan><tspan x="454.0" dy="18">goal</tspan></text>
+<line class="guide" x1="392" y1="50" x2="392" y2="500"/>
+<text class="stage" x="578.0" y="24" text-anchor="middle"><tspan x="578.0">Shape the</tspan><tspan x="578.0" dy="18">intent</tspan></text>
+<line class="guide" x1="516" y1="50" x2="516" y2="500"/>
+<text class="stage" x="702.0" y="24" text-anchor="middle"><tspan x="702.0">Plan the</tspan><tspan x="702.0" dy="18">change</tspan></text>
+<line class="guide" x1="640" y1="50" x2="640" y2="500"/>
+<text class="stage" x="826.0" y="24" text-anchor="middle"><tspan x="826.0">Write the</tspan><tspan x="826.0" dy="18">code</tspan></text>
+<line class="guide" x1="764" y1="50" x2="764" y2="500"/>
+<text class="stage" x="950.0" y="24" text-anchor="middle"><tspan x="950.0">Review the</tspan><tspan x="950.0" dy="18">change</tspan></text>
+<line class="guide" x1="888" y1="50" x2="888" y2="500"/>
+<text class="stage" x="1074.0" y="24" text-anchor="middle"><tspan x="1074.0">Release</tspan></text>
+<line class="guide" x1="1012" y1="50" x2="1012" y2="500"/>
+<text class="stage" x="1198.0" y="24" text-anchor="middle"><tspan x="1198.0">Operate</tspan><tspan x="1198.0" dy="18">and learn</tspan></text>
+<line class="guide" x1="1136" y1="50" x2="1136" y2="500"/>
+<text class="lane" x="20" y="86">HUMANS · ANY ROLE</text>
+<text class="lane" x="20" y="226">AGENTS</text>
+<text class="lane" x="20" y="426">SHARED</text>
+<line class="lanerule" x1="20" y1="212" x2="1260" y2="212"/><line class="lanerule" x1="20" y1="412" x2="1260" y2="412"/>
+<rect class="pnode acc" x="26.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="82.0" y="138.8" text-anchor="middle"><tspan x="82.0" dy="0">leaders,</tspan><tspan x="82.0" dy="15.5">top-down</tspan></text>
+<rect class="pnode" x="150.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="206.0" y="131.0" text-anchor="middle"><tspan x="206.0" dy="0">research &</tspan><tspan x="206.0" dy="15.5">data science</tspan><tspan x="206.0" dy="15.5">team</tspan></text>
+<rect class="pnode" x="274.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="330.0" y="131.0" text-anchor="middle"><tspan x="330.0" dy="0">researchers,</tspan><tspan x="330.0" dy="15.5">data sci.,</tspan><tspan x="330.0" dy="15.5">PMs, sales</tspan></text>
+<rect class="pnode acc" x="398.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="454.0" y="146.5" text-anchor="middle"><tspan x="454.0" dy="0">not described</tspan></text>
+<rect class="pnode" x="522.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="578.0" y="131.0" text-anchor="middle"><tspan x="578.0" dy="0">designers</tspan><tspan x="578.0" dy="15.5">(in code),</tspan><tspan x="578.0" dy="15.5">PMs</tspan></text>
+<rect class="pnode" x="646.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="702.0" y="146.5" text-anchor="middle"><tspan x="702.0" dy="0">engineers</tspan></text>
+<rect class="pnode" x="770.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="826.0" y="131.0" text-anchor="middle"><tspan x="826.0" dy="0">engineers;</tspan><tspan x="826.0" dy="15.5">also designers,</tspan><tspan x="826.0" dy="15.5">PMs, TPMs</tspan></text>
+<rect class="pnode" x="894.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="138.8" text-anchor="middle"><tspan x="950.0" dy="0">a person on</tspan><tspan x="950.0" dy="15.5">~80% of PRs</tspan></text>
+<rect class="pnode" x="1018.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="131.0" text-anchor="middle"><tspan x="1074.0" dy="0">shipping eng.</tspan><tspan x="1074.0" dy="15.5">owns rollback;</tspan><tspan x="1074.0" dy="15.5">NPI manager</tspan></text>
+<rect class="pnode" x="1142.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="131.0" text-anchor="middle"><tspan x="1198.0" dy="0">engineers,</tspan><tspan x="1198.0" dy="15.5">support eng.,</tspan><tspan x="1198.0" dy="15.5">PM leaders</tspan></text>
+<rect class="node" x="274.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="330.0" y="273.0" text-anchor="middle"><tspan x="330.0" dy="0">Claude Code +</tspan><tspan x="330.0" dy="15.5">Claude4Data;</tspan><tspan x="330.0" dy="15.5">Cockpit</tspan></text>
+<rect class="node" x="522.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="578.0" y="273.0" text-anchor="middle"><tspan x="578.0" dy="0">Claude Code</tspan><tspan x="578.0" dy="15.5">prototypes ·</tspan><tspan x="578.0" dy="15.5">Surge</tspan></text>
+<rect class="node" x="646.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="702.0" y="273.0" text-anchor="middle"><tspan x="702.0" dy="0">plan mode,</tspan><tspan x="702.0" dy="15.5">held in the</tspan><tspan x="702.0" dy="15.5">session</tspan></text>
+<rect class="node" x="770.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="826.0" y="273.0" text-anchor="middle"><tspan x="826.0" dy="0">Claude Code</tspan><tspan x="826.0" dy="15.5">267 skills;</tspan><tspan x="826.0" dy="15.5">~94% of PRs</tspan></text>
+<rect class="node" x="894.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="273.0" text-anchor="middle"><tspan x="950.0" dy="0">Shrek</tspan><tspan x="950.0" dy="15.5">reviewers;</tspan><tspan x="950.0" dy="15.5">~19% auto</tspan></text>
+<rect class="node" x="1142.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="273.0" text-anchor="middle"><tspan x="1198.0" dy="0">prod console</tspan><tspan x="1198.0" dy="15.5">(MCP); incident</tspan><tspan x="1198.0" dy="15.5">skill</tspan></text>
+<rect class="node lite" x="150.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="206.0" y="273.0" text-anchor="middle"><tspan x="206.0" dy="0">AI-moderated</tspan><tspan x="206.0" dy="15.5">interviews</tspan><tspan x="206.0" dy="15.5">(churn, pilots)</tspan></text>
+<rect class="auto" x="1018.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="273.0" text-anchor="middle"><tspan x="1074.0" dy="0">auto-deploy</tspan><tspan x="1074.0" dy="15.5">~12 min;</tspan><tspan x="1074.0" dy="15.5">Operator → Fin</tspan></text>
+<rect class="sub" x="26.0" y="436" width="1228.0" height="56" rx="7"/><text class="nt" style="font-size:13px" x="640.0" y="468.5" text-anchor="middle"><tspan x="640.0" dy="0">Claude Code plugins and skills (267, installed by MDM) · Surge design system · Snowflake semantic layer · GitHub · Slack · release tracker · Honeycomb, Datadog</tspan></text>
+<path class="doc" d="M262 284H274" marker-end="url(#ah)"/>
+<path class="doc" d="M758 284H770" marker-end="url(#ah)"/>
+<text class="cap" x="764.0" y="234" text-anchor="middle">same session</text>
+<path class="doc" d="M882 284H894" marker-end="url(#ah)"/>
+<text class="cap" x="888.0" y="346" text-anchor="middle">PR states why</text>
+<path class="doc" d="M1006 284H1018" marker-end="url(#ah)"/>
+<path class="doc" d="M1130 284H1142" marker-end="url(#ah)"/>
+<text class="cap" x="1136.0" y="234" text-anchor="middle">“what we built” doc</text>
+<path class="doc" d="M578.0 330 C578.0 384 786.0 384 808.0 332" marker-end="url(#ah)"/>
+<text class="cap" x="582.0" y="350" text-anchor="start">prototype + tighter brief</text>
+<path class="gap" d="M356.0 238 C390.0 200 518.0 200 552.0 236" marker-end="url(#ahg)"/>
+<circle class="gapdot" cx="454.0" cy="208" r="12"/><text class="gapq" x="454.0" y="214" text-anchor="middle">?</text>
+<path class="gap" d="M1188.0 332 C1158.0 400 390.0 400 346.0 334" marker-end="url(#ahg)"/>
+<circle class="gapdot" cx="1076.6" cy="367.0" r="12"/><text class="gapq" x="1076.6" y="373.0" text-anchor="middle">?</text>
+<text class="cap" x="1058.6" y="357.0" text-anchor="end">Fin data → own roadmap</text>
+<path class="inf" d="M330.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M578.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M702.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M826.0 188V236" marker-end="url(#ah)"/>
+<path class="doc" d="M826.0 436V332" marker-end="url(#ah)"/>
+<text class="cap" x="831.0" y="426">skills, hooks</text>
+<path class="doc" d="M1218.0 332V434" marker-end="url(#ah)"/><text class="cap" x="1214.0" y="426" text-anchor="end">gaps → skills</text>
+<path class="doc" d="M20 530h40" marker-end="url(#ah)"/><text class="leg" x="72" y="535">documented by Intercom</text>
+<path class="inf" d="M270 530h40" marker-end="url(#ah)"/><text class="leg" x="322" y="535">a person uses the agent for the task</text>
+<path class="gap" d="M620 530h40" marker-end="url(#ahg)"/><text class="leg" x="672" y="535">not described in any source</text>
+<text class="cap" x="20" y="570">Column headers are tasks (same rows as the Stripe map). Accent: tasks with no tool or process shown. Our own diagram, not Intercom’s UI.</text>
+</svg>
+</div>
+
+<section>
+  <h2>Task by task</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Task</th><th>Who does it at Intercom</th><th>Agents and tools</th><th>Artifact</th></tr></thead>
+    <tbody>
+      <tr><td>Spot the opportunity</td><td>Leadership, top-down: the CEO narrowed the company to customer service and bet on AI</td><td>None named</td><td>Not described</td></tr>
+      <tr><td>Talk to customers</td><td>Research and data science researchers</td><td>AI-moderated interviews for churn studies, pilots and well-defined topics; early discovery and current customers stay human</td><td>Transcripts; a 60+ interview study turned into a queryable skill</td></tr>
+      <tr><td>Research the problem, read the data</td><td>Researchers, data scientists, PMs, sales reps</td><td>Claude Code with Claude4Data (30+ analytics skills) and company-metric guidance skills; Cockpit clusters customer feedback</td><td>HTML and Snowflake/Streamlit reports; daily win/loss feed; leadership deal briefing</td></tr>
+      <tr><td>Set the goal</td><td>Not described (the CTO names company measures: release throughput, idea-to-release time)</td><td>None named</td><td>Not described</td></tr>
+      <tr><td>Shape the intent</td><td>Designers, primarily in code; PMs, closer to customers</td><td>Claude Code prototypes on production components and live data; Surge design system; Figma as a whiteboard</td><td>Prototypes (“the new wireframe”), tighter briefs; no PRD template found</td></tr>
+      <tr><td>Plan the change</td><td>Engineers, who own “the shape of the solution”</td><td>Claude Code plan mode, 5–20 turns before building</td><td>A plan held in the session, not persisted</td></tr>
+      <tr><td>Write the code</td><td>Engineers; also designers, PMs and TPMs</td><td>Claude Code: 13 plugins, 267 skills from 153 contributors; ~93–94% of PRs agent-driven; cloud agents a small share</td><td>PR whose description states why (create-pr skill, hook-enforced)</td></tr>
+      <tr><td>Review the change</td><td>A person on ~80% of PRs; repo owners set requirements</td><td>Shrek: review sub-agents (Claude, Codex) on GitHub webhooks, with evals; ~19% auto-approved by size and risk; CI-watching agent; QA sessions → GitHub issues</td><td>Approved, labelled, logged PR</td></tr>
+      <tr><td>Release</td><td>Automated; the shipping engineer owns rollback; an NPI manager owns support readiness</td><td>Auto-deploy (313 in a day, ~12 min merge to production); Fin: replay tests with AI judges, A/B, staged rollout; Operator drafts support content and FAQ tests</td><td>Live change; tested support content and sign-off</td></tr>
+      <tr><td>Operate and learn</td><td>Engineers; support engineers, design managers and PM leaders use the production console</td><td>Read-only production console over MCP; incident skill; launch monitors on resolution rate and CX score; SessionEnd hook mines sessions for missing skills</td><td>Answers; issues for new skills; updated CLAUDE.md</td></tr>
+    </tbody>
+  </table></div>
+  <p class="foot">No rows were added. QA sessions sit under review; support-agent readiness (Fin new-product introduction) sits under release, because Intercom treats it as a release gate.</p>
+</section>
+
+<section>
+  <h2>Every handoff, task to task</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>From → to</th><th>How</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Talk to customers → research</td><td>Interview studies become a queryable skill; existing calls and win/loss are synthesised first</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr class="row-gap"><td>Research → shape intent</td><td>Not described: reports, the interview skill and Cockpit clusters exist, but no source says how findings reach designers, PMs or engineers</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>Research, spot the opportunity → set the goal</td><td>Not described</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>Set the goal → shape intent</td><td>People; no tool shown</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr><td>Shape intent (prototype) → plan and build</td><td>Prototypes convey intent and tone, implementation left to engineers; tighter briefs, fast reviews, clear criteria</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Shape intent → code, when a designer or PM codes it</td><td>The same person uses Claude Code directly; no ticket or spec hop described</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr><td>Design system → write code</td><td>Auto-installed skills encode Surge and React standards; agent use of existing components 7% → 96%</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Plan → write code</td><td>Same session; the plan stays in session memory</td><td><span class="status s-doc">documented</span> <span class="status s-inf">anecdote</span></td></tr>
+      <tr><td>Write code → review</td><td>Hook-enforced create-pr skill writes why into the PR; GitHub webhook triggers Shrek, which checks the diff against that intent</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>QA session → tracked work</td><td>Recording → video-transcript skill → QA follow-up skill → GitHub issues</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Review → release</td><td>Approved merge triggers automatic deploy; non-approved PRs go to a person with a Slack notice</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Release → support knowledge (Fin)</td><td>“What we built” doc in the release tracker plus walkthrough notes → Operator drafts and FAQ tests → NPI manager signs off</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Operate → harness learning</td><td>SessionEnd hook → gap classified → Slack post and GitHub issue → new skill; promotion at 50 weekly users; weekly CLAUDE.md fact-check</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr class="row-gap"><td>Operate (Fin data) → Intercom’s own roadmap</td><td>Not described; Fin Insights is documented only as a customer product</td><td><span class="status s-unk">unknown</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>What it means for our options</h2>
+  <ul class="impl">
+    <li><strong>Re-capture intent at the PR, then verify it in review.</strong> Cheap and enforceable, but it comes after planning, so it can’t stop a well-built wrong thing.</li>
+    <li><strong>One general harness plus a governed skills marketplace, not a set of named agents.</strong> The only named custom agents are the reviewer (Shrek) and Operator; Stripe, by contrast, names an agent per task.</li>
+    <li><strong>Write-back after release is a first-class step.</strong> Support knowledge is a launch gate; harness gaps come back as skills.</li>
+    <li><strong>The seam to fund is research → shaped intent, with the evidence attached.</strong> Intercom’s research team is heavily AI-assisted, but its handoff to the people who shape work isn’t on record.</li>
+  </ul>
+</section>
+
+<p class="foot">Sources (first-party unless noted): Intercom’s ideas.fin.ai posts by Brian Scanlan (Mar and Jul 2026), Darragh Curran, CTO (Apr and May 2026), John Moriarty (Mar 2026), Molly Mahar (Jan 2026), Clíona de Róiste (Jul 2026), Karen Church (Jul 2026), Maia Bridi (Feb 2026), Pedro Tabacof (Aug 2026), Andrii Yakovenko (Mar 2026), Andrew Walker (Mar 2026, anecdotal); the Intercom blog on AI-approved PRs (Apr 2026) and Fin new-product introduction (Jun 2026); Eoghan McCabe on Lenny’s Podcast (Aug 2025); How I AI with Brian Scanlan (Apr 2026). No independent account of Intercom’s process was found. Full notes: project-agent-and-harness, task research-pm-agents-jobs-to-be-done, 04-pdlc-agent-ecosystem-map.md.</p>
+</div>
+</body>
+</html>

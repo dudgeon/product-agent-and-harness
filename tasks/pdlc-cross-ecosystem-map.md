@@ -1,9 +1,8 @@
 ---
 title: PDLC/SDLC across agent ecosystems
-status: waiting
+status: active
 directed_by: director-project-agent-and-harness
 model: claude-fable-5-1
-waiting_on: every per-ecosystem map in [[pdlc-maps-per-ecosystem]]
 done_when: One standalone HTML work product with inline styling that lays the product and software lifecycle tasks against every ecosystem mapped (Stripe, Ramp, Shopify, Anthropic, Atlassian, Intercom), shows where each has agents, artifacts and handoffs (documented / inferred / unknown), names the common seams and gaps (e.g. research → intent → plan across people), links to each ecosystem map and its sources, and ties back to options/DIMENSIONS.md; accepted by Geoff
 ---
 
@@ -16,3 +15,4 @@ Inputs: the per-ecosystem maps listed in [[pdlc-maps-per-ecosystem]]; the runtim
 ## Progress
 
 - 2026-10-24 Filed by director-project-agent-and-harness, waiting for the per-ecosystem maps.
+- 2026-10-24 Worker pdlc-cross-ecosystem started via claude --bg on Fable 5.1 with --remote-control.
