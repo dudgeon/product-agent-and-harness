@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent runtime pattern map</title>
+<style>
+  :root { --bg:#fff; --fg:#1b1b1b; --muted:#666; --line:#ddd; --hi:#fff3c4; --hi2:#dceeff; --head:#f4f4f4; --s:#2e7d32; --o:#9e7b00; --w:#b23a3a; --q:#888; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#141414; --fg:#eee; --muted:#aaa; --line:#333; --hi:#4a3f12; --hi2:#15314a; --head:#1f1f1f; } }
+  :root[data-theme="dark"] { --bg:#141414; --fg:#eee; --muted:#aaa; --line:#333; --hi:#4a3f12; --hi2:#15314a; --head:#1f1f1f; }
+  body { margin:0; padding:16px; background:var(--bg); color:var(--fg); font:14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width:1200px; margin:0 auto; }
+  h1 { font-size:22px; margin:0 0 4px; } h2 { font-size:17px; margin:28px 0 8px; } p { max-width:80ch; color:var(--muted); }
+  table { border-collapse:collapse; width:100%; margin:8px 0 4px; font-size:13px; }
+  th, td { border:1px solid var(--line); padding:5px 7px; text-align:left; vertical-align:top; }
+  th { background:var(--head); position:sticky; top:0; }
+  td.c { text-align:center; }
+  .wrap { overflow-x:auto; }
+  tr.on td, tr.on th { background:var(--hi2); }
+  td.lit, th.lit { background:var(--hi) !important; }
+  .S { color:var(--s); font-weight:700; } .O { color:var(--o); font-weight:700; } .W { color:var(--w); font-weight:700; } .Q { color:var(--q); }
+  .E { font-size:10px; color:var(--muted); }
+  .legend { font-size:12px; color:var(--muted); }
+  .tag { display:inline-block; padding:1px 6px; border:1px solid var(--line); border-radius:10px; margin:1px 2px; font-size:12px; cursor:default; }
+  .tag.on { background:var(--hi); }
+  nav a { margin-right:12px; font-size:13px; }
+  code { font-size:12px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Agent runtime pattern map</h1>
+<p>Companion to <code>01-synthesis.md</code> (2026-10-24). Dimensions decide which pattern classes are available; user and product dimensions decide which pattern a job step is routed to; themes are what the research library already says about each pattern; PM jobs and Glass design choices show where each pattern has been observed. Hover a row or cell to trace links. A dot marks a link; it is a map of relationships, not a ranking. Nothing here recommends a winner.</p>
+<nav><a href="#dp">Dimensions to patterns</a><a href="#pt">Patterns to themes</a><a href="#pj">Patterns to PM jobs</a><a href="#pg">Patterns to Glass choices</a><a href="#fit">Fit to activity classes</a></nav>
+
+<h2 id="pat">Pattern classes</h2>
+<div class="wrap"><table id="patterns">
+<tr><th>Code</th><th>Pattern</th><th>Examples</th><th>Maturity</th></tr>
+<tr><td>P1</td><td>Vendor harness plus skills and subagents</td><td>Claude Code, Codex; Intercom rollout; Cowork plugins</td><td>mainstream</td></tr>
+<tr><td>P2</td><td>Vendor SDK embedded in an own product</td><td>Ramp Glass on the Claude Agent SDK; Agent SDK hosting patterns</td><td>early-adopter</td></tr>
+<tr><td>P3</td><td>Own harness: framework-built, forked, or minimal loop</td><td>Stripe Minions (Goose fork); Pi; LangGraph, ADK, MAF, Pydantic AI</td><td>mainstream (workflow apps) / early-adopter (coding) / untested (knowledge work)</td></tr>
+<tr><td>P4</td><td>Meta-harness layer above vendor harnesses</td><td>Omnigent (alpha), Warp Oz (beta), Managed Agents, Vercel HarnessAgent, Conductor, DIY coordinators</td><td>emerging; local managers early-adopter</td></tr>
+<tr><td>P5</td><td>Org-deployed agent workspace with its own agent</td><td>Cloudflare OS (early access, 2026-08-05), Project Think</td><td>emerging</td></tr>
+<tr><td>P6</td><td>General harness calling deployed task agents</td><td>Glean agents as MCP tools; Sentry Seer; MCP Tasks; A2A v1.0; CI reviewers; codex-plugin-cc</td><td>early-adopter (sync MCP, CI) / emerging (Tasks, A2A)</td></tr>
+<tr><td>P7</td><td>Background and cloud agents</td><td>Claude Code cloud sessions, Codex cloud, Cursor API, Jules, Copilot cloud agent, scheduled tasks</td><td>early-adopter</td></tr>
+<tr><td>P8</td><td>Shared, persistent, multi-user sessions</td><td>Ramp Inspect, Open-Inspect, Glass sharing, Omnigent sharing, Claude Tag, Codex in Slack</td><td>early-adopter / emerging</td></tr>
+<tr><td>P9</td><td>Workflow engine and durable execution under agents</td><td>LangGraph, Temporal, Inngest, DBOS, Cloudflare Workflows, Stripe blueprints</td><td>mainstream (infra) / early-adopter (under agents)</td></tr>
+<tr><td>P10</td><td>Portable skill and plugin ecosystems as distribution layer</td><td>Agent Skills, AGENTS.md, PayPal registry, Dojo, org plugin sync, public registries</td><td>early-adopter (format) / emerging (registries)</td></tr>
+</table></div>
+
+<h2 id="dp">Dimensions to pattern classes</h2>
+<p>Consolidated dimensions (section D of the synthesis). A dot means the dimension's options include that pattern or the choice directly selects it. Rows D1-D13 are runtime and architecture choices; D14-D20 are user and product choices.</p>
+<div class="wrap"><table class="matrix" data-cols="P1,P2,P3,P4,P5,P6,P7,P8,P9,P10">
+<tr><th>Dimension</th><th>Register sections</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>P8</th><th>P9</th><th>P10</th></tr>
+<tr><th>D1 Loop source</th><td>harness-ownership (split)</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>D2 Harness layering</th><td>harness-ownership (new: harness-layering)</td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>D3 Runtime location</th><td>runtime-location</td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td></td><td></td><td></td></tr>
+<tr><th>D4 Capability format and portability</th><td>capability-packaging (split)</td><td class="c">●</td><td></td><td></td><td></td><td></td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td></tr>
+<tr><th>D5 Capability distribution and trust</th><td>capability-packaging (split), governance plugin rows</td><td></td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td></tr>
+<tr><th>D6 Remote invocation route</th><td>remote-invocation-route</td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td></tr>
+<tr><th>D7 Session persistence, sharing, handoff</th><td>session-persistence-sharing + session-handoff-portability</td><td></td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td></tr>
+<tr><th>D8 Agent identity and delegation</th><td>governance-control-plane (split out)</td><td></td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td></tr>
+<tr><th>D9 Governance: policy, cost, audit</th><td>governance-control-plane</td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td><td></td></tr>
+<tr><th>D10 Durability substrate</th><td>durability-substrate</td><td></td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td></tr>
+<tr><th>D11 Model-provider coupling</th><td>model-provider-coupling</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>D12 Harness upkeep</th><td>harness-upkeep</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>D13 Context and memory</th><td>memory-design + context-location + org-context-grounding-source</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td><td></td><td class="c">●</td></tr>
+<tr><th>D14 Target user</th><td>target-user + shared-agent-users-and-jobs</td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td></tr>
+<tr><th>D15 Target outcome and evaluation</th><td>target-outcome + pm-agent-evaluation</td><td class="c">●</td><td></td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td></td></tr>
+<tr><th>D16 Sequencing (jobs, investment)</th><td>pm-job-sequencing + investment-sequencing</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td class="c">●</td></tr>
+<tr><th>D17 Work structure and activity classification</th><td>work-structure + agent-unit + activity-classification</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td></tr>
+<tr><th>D18 Review and autonomy</th><td>review-gating + review-gate-placement + autonomy-calibration</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td></td></tr>
+<tr><th>D19 Intent shaping mode and spec standard</th><td>intent-shaping-mode + spec-standard</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td></tr>
+<tr><th>D20 Adoption model</th><td>adoption-model</td><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td></tr>
+</table></div>
+
+<h2 id="pt">Pattern classes to themes</h2>
+<p>Theme slugs from <code>research/THEMES.md</code>. Cross-cutting themes that bear on every pattern are listed below the table.</p>
+<div class="wrap"><table class="matrix" data-cols="P1,P2,P3,P4,P5,P6,P7,P8,P9,P10">
+<tr><th>Theme</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>P8</th><th>P9</th><th>P10</th></tr>
+<tr><th>harness-over-model</th><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>single-agent-many-skills</th><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td></tr>
+<tr><th>one-job-per-agent</th><td></td><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td></tr>
+<tr><th>build-vs-buy</th><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>meta-harness</th><td></td><td></td><td></td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>harness-portability</th><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td></tr>
+<tr><th>agent-frameworks</th><td></td><td></td><td class="c">●</td><td></td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td><td></td></tr>
+<tr><th>skill-standards</th><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td></tr>
+<tr><th>skill-supply-chain-security</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td></tr>
+<tr><th>skills-marketplace</th><td></td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td></tr>
+<tr><th>org-learning-loop</th><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td><td class="c">●</td></tr>
+<tr><th>memory-architecture / compounding-context-repo</th><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td></tr>
+<tr><th>cost-control-routing</th><td></td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td></tr>
+<tr><th>shared-persistent-sessions</th><td></td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td></tr>
+<tr><th>remote-agent-invocation</th><td></td><td></td><td></td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td></tr>
+<tr><th>identity-delegation</th><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td></tr>
+<tr><th>work-structure-spectrum</th><td class="c">●</td><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td></tr>
+<tr><th>human-review-gates / risk-sloped-review</th><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td></td></tr>
+<tr><th>evals-autonomy-trust</th><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td><td></td><td class="c">●</td><td class="c">●</td></tr>
+<tr><th>agent-failure-modes</th><td></td><td></td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td class="c">●</td><td></td><td></td></tr>
+<tr><th>non-engineer-builders / enablement-by-product</th><td class="c">●</td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td><td></td></tr>
+</table></div>
+<p class="legend">Cross-cutting on every pattern: vendor-claims-vs-independent-evidence, outcome-measurement-gap, org-context-grounding, legible-org-for-agents. Geoff's themes (intent-factory-before-discovery, agent-led-intent-shaping, agent-ready-intent, risk-review-as-classification) attach to D16, D19 and D18 rather than to one pattern.</p>
+
+<h2 id="pj">Pattern classes to PM jobs (observed, not evaluated)</h2>
+<p>Jobs J1-J10 from the PM jobs map. A dot means a source describes that pattern serving that job; no PM job has an independent evaluation. Track 6 activity classes in the last column: C1 open exploration, C2 directed construction, C3 repeatable standardised judgement, C4 volume pipelines, C5 accountable commitments.</p>
+<div class="wrap"><table class="matrix" data-cols="P1,P2,P3,P4,P5,P6,P7,P8,P9,P10">
+<tr><th>PM job</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>P8</th><th>P9</th><th>P10</th><th>Classes</th></tr>
+<tr><th>J1 Customer contact and research synthesis</th><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td>C3 + C1</td></tr>
+<tr><th>J2 Opportunity, strategy, vision</th><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>C1, C5</td></tr>
+<tr><th>J3 Shape the product (intent, prototypes)</th><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td>C1 then C2</td></tr>
+<tr><th>J4 Write, review, ratify PRD</th><td class="c">●</td><td></td><td></td><td></td><td></td><td class="c">○</td><td></td><td></td><td class="c">○</td><td class="c">●</td><td>C1, C3, C5</td></tr>
+<tr><th>J5 Prioritise and maintain roadmap</th><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>C5</td></tr>
+<tr><th>J6 Manage delivery</th><td></td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td><td>C3, C4</td></tr>
+<tr><th>J7 Launch and GTM</th><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>C3</td></tr>
+<tr><th>J8 Stakeholder and exec comms</th><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td class="c">●</td><td>C4</td></tr>
+<tr><th>J9 Metrics and experiments</th><td></td><td></td><td></td><td></td><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td>C3, C4</td></tr>
+<tr><th>J10 Post-launch feedback triage</th><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td class="c">●</td><td></td><td></td><td></td><td></td><td>C3, C4</td></tr>
+</table></div>
+<p class="legend">○ = analogy only: PRD <em>review</em> has not been observed in any deployed pattern; the nearest evidence is code review as a CI component (Cloudflare) or a workflow with gates.</p>
+
+<h2 id="pg">Pattern classes to Glass design choices</h2>
+<div class="wrap"><table class="matrix" data-cols="P1,P2,P3,P4,P5,P6,P7,P8,P9,P10">
+<tr><th>Glass choice (teardown 1-9)</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>P8</th><th>P9</th><th>P10</th><th>Dimension</th></tr>
+<tr><th>G1 Fix the harness, not the model</th><td></td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>D1, D13</td></tr>
+<tr><th>G2 Don't dumb it down for non-technical users</th><td></td><td class="c">●</td><td></td><td></td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td>D14, D20</td></tr>
+<tr><th>G3 Org learning as a first-class loop</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td><td></td><td class="c">●</td><td>D7, D5</td></tr>
+<tr><th>G4 Skills as Markdown in Git, VCS hidden</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td><td>D4, D5</td></tr>
+<tr><th>G5 Memory as inspectable files, offline pipeline</th><td></td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>D13</td></tr>
+<tr><th>G6 Cost routing and metering in the harness</th><td></td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>D9</td></tr>
+<tr><th>G7 Own, not buy</th><td></td><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>D1, D12</td></tr>
+<tr><th>G8 Self-maintaining vibe-coded codebase</th><td></td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>D12</td></tr>
+<tr><th>G9 Single agent, many skills</th><td class="c">●</td><td class="c">●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="c">●</td><td>D17</td></tr>
+</table></div>
+<p class="legend">Glass's laptop-as-server scheduling is P7's weakest variant (D3); its multiplayer sessions are P8 with no published usage data (D7). All Glass evidence is Ramp's own.</p>
+
+<h2 id="fit">Fit of pattern classes to activity classes</h2>
+<p>Track 6 ratings extended to the split classes. <span class="S">S</span> strong fit, <span class="O">O</span> workable, <span class="W">W</span> weak, <span class="Q">?</span> no evidence. <span class="E">E</span> = at least one cited source bears on the cell; <span class="E">J</span> = judgment derived from the evidence, a hypothesis to test. Sources are in section F of the synthesis.</p>
+<div class="wrap"><table class="matrix">
+<tr><th>Pattern</th><th>C1 Open exploration</th><th>C2 Directed construction</th><th>C3 Standardised judgement</th><th>C4 Volume pipelines</th><th>C5 Accountable commitments</th></tr>
+<tr><th>P1 Vendor harness + skills</th><td class="c"><span class="S">S</span> <span class="E">E</span></td><td class="c"><span class="S">S</span> <span class="E">E</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">E</span></td><td class="c"><span class="W">W</span>/<span class="O">O</span> <span class="E">J</span></td></tr>
+<tr><th>P2 Vendor SDK in own product</th><td class="c"><span class="O">O</span> <span class="E">E</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="S">S</span> <span class="E">E</span></td><td class="c"><span class="S">S</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td></tr>
+<tr><th>P3 Own harness</th><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">E</span></td><td class="c"><span class="S">S</span> <span class="E">E</span></td><td class="c"><span class="S">S</span> <span class="E">E</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td></tr>
+<tr><th>P4 Meta-harness layer</th><td class="c"><span class="Q">?</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td></tr>
+<tr><th>P5 Org-deployed workspace</th><td class="c"><span class="O">O</span> <span class="E">E</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="S">S</span> <span class="E">J</span></td></tr>
+<tr><th>P6 Harness calls deployed agents</th><td class="c"><span class="W">W</span> <span class="E">E</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="S">S</span> (read-only) <span class="E">E</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td></tr>
+<tr><th>P7 Background / cloud agents</th><td class="c"><span class="W">W</span> <span class="E">J</span></td><td class="c"><span class="S">S</span> (with tests) <span class="E">E</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="S">S</span> <span class="E">E</span></td><td class="c"><span class="W">W</span> <span class="E">E</span></td></tr>
+<tr><th>P8 Shared persistent sessions</th><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">E</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="S">S</span> <span class="E">J</span></td></tr>
+<tr><th>P9 Workflow engine</th><td class="c"><span class="W">W</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">E</span></td><td class="c"><span class="S">S</span> <span class="E">E</span></td><td class="c"><span class="S">S</span> <span class="E">E</span></td><td class="c"><span class="S">S</span> <span class="E">J</span></td></tr>
+<tr><th>P10 Portable skill ecosystem</th><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">E</span></td><td class="c"><span class="S">S</span> (packaging, not enforcement) <span class="E">J</span></td><td class="c"><span class="O">O</span> <span class="E">J</span></td><td class="c"><span class="W">W</span> <span class="E">J</span></td></tr>
+</table></div>
+<p class="legend">Reading: P1 is the evidenced default for C1 and C2; P9 or P3 (and P2 when gates live in an own product) is the evidenced home for C3 and C4 once consistency and audit matter; P6 suits the read-only slice of C3; P8 matters most for C5 and hand-offs. The hybrid (general harness hands off to a bounded, gated job on entering a C3/C4 step) fits best on paper and has little direct evidence. No controlled comparison of a task agent against a skill in a general harness exists.</p>
+
+</main>
+<script>
+(function(){
+  // Row and column highlighting for matrices: hovering a cell lights its row and the matching column across all matrices sharing the same column codes.
+  var tables = document.querySelectorAll('table.matrix');
+  tables.forEach(function(t){
+    var cols = (t.getAttribute('data-cols')||'').split(',').filter(Boolean);
+    var rows = t.querySelectorAll('tr');
+    rows.forEach(function(r, ri){
+      r.addEventListener('mouseenter', function(){ r.classList.add('on'); });
+      r.addEventListener('mouseleave', function(){ r.classList.remove('on'); });
+      var cells = r.children;
+      for (var i=0;i<cells.length;i++){
+        (function(cell, idx){
+          cell.addEventListener('mouseenter', function(){
+            var head = rows[0].children[idx];
+            var code = head ? head.textContent.trim() : '';
+            if (!cols.length || cols.indexOf(code)<0) return;
+            document.querySelectorAll('table.matrix').forEach(function(t2){
+              var c2 = (t2.getAttribute('data-cols')||'').split(',');
+              if (c2.indexOf(code)<0) return;
+              var h = t2.querySelectorAll('tr')[0].children;
+              var j=-1; for (var k=0;k<h.length;k++){ if (h[k].textContent.trim()===code) j=k; }
+              if (j<0) return;
+              t2.querySelectorAll('tr').forEach(function(rr){ var c=rr.children[j]; if(c) c.classList.add('lit'); });
+            });
+          });
+          cell.addEventListener('mouseleave', function(){
+            document.querySelectorAll('.lit').forEach(function(x){ x.classList.remove('lit'); });
+          });
+        })(cells[i], i);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
