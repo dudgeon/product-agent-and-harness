@@ -14,6 +14,8 @@ Last updated: 2026-10-24 by director-project-agent-and-harness (Claude Code desk
 
 ## Workers
 
+Session links (Remote Control): story-and-film https://claude.ai/code/session_01RBtdYJ4dEa5inMmJwfHsVe · teardown-stripe-agents https://claude.ai/code/session_01HwoRhRcgdY5PBNZbt8Yg1W · pdlc-cross-ecosystem https://claude.ai/code/session_01A2TsUmicGNkKURfBSNxGQQ · teardown-shopify-river https://claude.ai/code/session_01TYrCTxTPCphJh23xGnarV2 · sweep-lennys https://claude.ai/code/session_01LmQEayPXyVyaGhrMWD7xJL · sweep-dept-of-product https://claude.ai/code/session_01Nr5DsHCZhcJKX6LSudXnjn · ingest-claude-resources https://claude.ai/code/session_01JtkQS4zfweTzmB27xQLbqX · project-readme https://claude.ai/code/session_01V2Np7vJRfWhWV3KRfQregP
+
 | Worker | Id | Started via | Model | Task | State |
 |---|---|---|---|---|---|
 | Research: product agent and harness | local_8a840fd4-9a6b-4127-b4cc-1a5745fb6fff | app session | Opus 5.5 | [research-product-agent-and-harness](tasks/research-product-agent-and-harness.md) | idle; done, awaiting lint and acceptance |
