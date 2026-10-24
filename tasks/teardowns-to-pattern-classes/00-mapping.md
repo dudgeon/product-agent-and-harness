@@ -560,3 +560,31 @@ Geoff chose to revise the classes (task revise-pattern-classes). The old-to-new 
 
 **Counts after the revision:** Glass, Kai, River on Aquifer and Managed Agents gain clear placements. Jira moves from contested to partial. There are 2 new P11 rows (Ramp's Notion agents; Atlassian's Rovo agents as one row). One contested placement remains: Shopify's "Vanilla" pi profile (P3).
 
+---
+
+## 9. Airbnb, Spotify and Block added (2026-10-24)
+
+Sections 2.7-2.9 replace the placeholders, using the revised classes. The sources are the briefs and maps of [research-airbnb-spotify-product-practices](../research-airbnb-spotify-product-practices/00-brief.md) and [research-block-product-practices](../research-block-product-practices/00-brief.md), and the source notes they cite. Each note was opened and its `evidence:` field read. This section supersedes the placeholder remarks in "Sources read" and in section 7.
+
+**Counts: 33 placements: 16 clear, 17 partial, 0 contested.**
+
+| Ecosystem | clear | partial | contested | total |
+|---|---|---|---|---|
+| Block | 6 | 8 | 0 | 14 |
+| Spotify | 6 | 5 | 0 | 11 |
+| Airbnb | 4 | 4 | 0 | 8 |
+
+- **Changed from the placeholders.** Spotify Honk moves from partial to clear in P2 and P7, now on Spotify's own posts. Block's skills move from partial to clear in P10, because the brief documents a PR-reviewed marketplace. Airbnb had no rows before.
+- **No P11 examples.** None of the three is shown adopting a SaaS-embedded agent. Spotify's Portal with AiKA would be P11 for a company that buys it, which is out of scope here.
+- **Evidence.** Mostly first-party. Builderbot rests on Block's own vendor-claim post, Honk partly on Anthropic's customer pages, and AirChat on one talk hosted by DX.
+
+**Class strains these three reveal.**
+1. **P4 now has clear cases, but none fits a named sub-shape.** AirChat is an in-house wrapper and gateway over Claude Code and Codex. Xirp is a vendor-neutral session workspace with catalog context, now also sold. Both meet P4's definition, against B.2's "no teardown supplies a clear P4 case". *Possible fix:* add an "in-house multi-harness platform" sub-shape.
+2. **P5's "not a wrapped vendor CLI" clause leaves out AirChat.** It is company-wide and used by about twice as many people as there are developers, but it wraps vendor CLIs. Its home is P4 plus P1, so P5 still rests on platform-native agents only.
+3. **P2/P3 moves go both ways.** Ramp and Shopify moved from embedding a vendor harness to owning the loop. Spotify went the other way: a home-built loop, then Goose and Aider, then Claude Code and the Agent SDK. This adds weight to strain 12: date every placement.
+4. **P1/P3 and P1/P9 lines (strains 9 and 10).** goose is both Block's own loop and everyone's general harness. goose recipes (typed parameters, sub-recipes, JSON hand-offs, retries) sit between P1's structure-on-demand and a P9 step graph.
+5. **P8 sub-types need an access model the sources don't give.** Builderbot threads and Honk v2 sessions are shared, but neither can be given a sub-type. Buzz is P8b and partly P4: a channel workspace any ACP agent can join.
+6. **P10's two halves meet (strain 11 eased).** Block's PR-reviewed skills marketplace plus `ai-rules`, and Spotify's `AiResource` catalog entities plus Xirp's marketplace, are the first teardown cases with both a governed registry and cross-harness distribution.
+7. **P6 callers stay narrow (strain 6).** Honk is reached from Slack, Jira and an interactive agent. Portal MCP Actions and Block's Data MCP are tool routes, not deployed agents.
+8. **Productisation blurs scope.** Spotify sells Portal, Confidence and Xirp; Block open-sourced goose and Buzz. The same system is an internal runtime here and a product others adopt (P4 or P11). Section 4 counts products a company sells as out of scope, and that rule now needs to say which form is mapped.
+

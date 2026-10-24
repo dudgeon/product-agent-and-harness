@@ -246,3 +246,14 @@ Each links to the register section; proposals are in the [contributions file](..
 - **No source on AI in user research or customer interviews** at either company, beyond Airbnb's seed queries for search.
 - **Not read:** Chesky's YC talk (not recorded); Söderström on Decoder (blocked); Spotify Design's newer posts (the blog now redirects); Into Design Systems on Spotify's Encore (paywalled; not subscribed).
 - **Possible fix to another task's note** (not edited): [claude-customers-spotify-office-hours](../../research/sources/claude-customers-spotify-office-hours.md) is probably from January–February 2026, and its figures differ from Spotify's June 2026 post.
+
+## Pattern classes
+
+Added 2026-10-24 by teardowns-to-pattern-classes. This brief's agents are placed in the revised runtime pattern classes of the [taxonomy synthesis, B.2](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes). Every placement is sourced and marked clear, partial or contested in [the mapping, sections 2.8 and 2.9](../../tasks/teardowns-to-pattern-classes/00-mapping.md#28-spotify); counts and strains are in [section 9](../../tasks/teardowns-to-pattern-classes/00-mapping.md#9-airbnb-spotify-and-block-added-2026-10-24).
+
+- **P4:** Airbnb's AirChat (a governed CLI and gateway over Claude Code and Codex) and Spotify's Xirp (sessions across Claude Code, Gemini CLI and Codex) are the first clear meta-harness cases among the teardowns. Neither fits a named sub-shape.
+- **P2, P7 and P9:** Spotify's Honk embeds the Claude Agent SDK, runs unattended in containers, and fills one step of the deterministic Fleet Management pipeline (all clear). Airbnb's AirChat Remote is P7 and its migration framework P9 (clear).
+- **P10:** Spotify's Backstage `AiResource` entities and Xirp marketplace (clear); Airbnb's AirChat marketplace (partial).
+- **P1:** engineers at both use Claude Code (and Codex at Airbnb) directly (clear).
+- **Partial:** Insight Miner (P3), on-call agents (P7) and @generateMock (P9) at Airbnb; Honk over MCP, Portal MCP Actions and Vedder (P6), Honk v2 sessions (P8) and AiKA (P5b) at Spotify.
+- **Evidence:** mostly first-party; AirChat rests on one DX-hosted talk, and part of Honk on Anthropic's customer pages (vendor-claim). Pascal, Datako, Everest and the eval stack fit no class.

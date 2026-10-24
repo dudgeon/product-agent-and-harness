@@ -165,3 +165,14 @@ No new dimension is proposed. The org-shape question could become one if Airbnb 
 - **Unconfirmed systems.** How the default extensions and allowlist reach laptops (MDM or a custom build). Whether g2, the company "markdown file" or the "world model" exist as running systems.
 - **Unread figures.** Jennings' reported "150%" code-change figure and The Information's "3x features" report were not read at source. The Q4 2025 shareholder letter PDF and the Q3 2026 letter were not read.
 - **Dates.** The two Sequoia episodes are dated from directories (the pages carry no date). The Q1 and Q2 2026 letter dates come from coverage.
+
+## Pattern classes
+
+Added 2026-10-24 by teardowns-to-pattern-classes. This brief's agents are placed in the revised runtime pattern classes of the [taxonomy synthesis, B.2](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes). Every placement is sourced and marked clear, partial or contested in [the mapping, section 2.7](../../tasks/teardowns-to-pattern-classes/00-mapping.md#27-block); counts and strains are in [section 9](../../tasks/teardowns-to-pattern-classes/00-mapping.md#9-airbnb-spotify-and-block-added-2026-10-24).
+
+- **P3 and P1:** goose is Block's own harness (clear) and every employee's general agent (partial, since P1 assumes a vendor's harness). Engineers also use seven bought coding harnesses (clear).
+- **P7:** Builderbot takes a ticket or Slack tag to a merged PR (clear on behaviour; vendor-claim figures; runtime not described). Overnight goose agents are partial.
+- **P10:** the PR-reviewed skills marketplace and `ai-rules` generator give both a governed registry and cross-harness distribution (clear).
+- **P9:** Actionable CI wraps headless goose in deterministic gates (clear); recipes are partial.
+- **P8 and P4:** Buzz is P8b, channel-scoped with each agent's own identity (clear on design, no usage figures), and partly P4. Builderbot threads are P8 with no sub-type set (partial).
+- **Partial, thin:** the Data MCP and Query Expert (P6) and Berd (P5a). Managerbot, Moneybot, App Kit and g2 fit no class.
