@@ -26,3 +26,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Geoff flagged the opportunity >> problem >> goal >> intent >> plan >> code framework; routed to the Stripe and story workers.
 - 2026-10-24 Archive sweep workers started: sweep-lennys, sweep-dept-of-product (Opus). Register proposals go to options/contributions/.
 - 2026-10-24 Stripe worker filed the Department of Product deep dive (via Geoff's Chrome) and linked primaries; its append script split two DIMENSIONS.md headings again; repaired; told it to use options/contributions/ only.
+- 2026-10-24 PM-agents worker relayed Geoff's request for a short PM-agents evidence film (explainers 05); confirmed: separate film, 04 has GPU priority, house style, Script Doc to Geoff before voicing.
