@@ -33,6 +33,8 @@ Stopped: research-product-agent-and-harness-968c23 (6b54ecd9, login expired, nev
 
 ## Queue (what starts when)
 
+- **PDLC maps:** five workers are making per-ecosystem lifecycle maps (Ramp, Shopify, Anthropic, Atlassian, Intercom; Stripe done), tracked in tasks/pdlc-maps-per-ecosystem.md. When all five report, start one Fable worker on tasks/pdlc-cross-ecosystem-map.md (standalone HTML, inline styles).
+
 0. **Films and GPU order:** 04 (main, Fable, priority) → then by the GPU lock: 05 PM-agents (PM session), 06 Ramp Glass (Glass session), 07 runtime patterns (taxonomy session), 08 intent-shaping options (general research session). Each shows Geoff its Script Doc before voicing and tells the director before its first full build.
 
 1. **Storytelling and film** running. Checkpoints A, B, C are the worker's questions to Geoff in its own session.

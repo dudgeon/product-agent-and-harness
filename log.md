@@ -39,3 +39,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Merged 3 register contributions into DIMENSIONS.md: +120 option rows, +158 see-also evidence bullets, +96 key questions; verified nothing lost.
 - 2026-10-24 Workboard artifact published: https://claude.ai/artifact/7fwBzcE3FQPAZujKjShvKj (21 tasks; refresh procedure in DIRECTOR.md).
 - 2026-10-24 Review board published (https://claude.ai/artifact/DZwgZeagyjp9DvnHbfyCAr): kanban, task notes and key deliverables readable in-page, worker session links, accept/reject/skip with comments. README worker project-readme started.
+- 2026-10-24 Geoff: per-ecosystem PDLC/SDLC agent maps (template: Stripe's) sent to five workers; cross-ecosystem map task filed, waiting.
