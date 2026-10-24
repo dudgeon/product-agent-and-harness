@@ -24,3 +24,4 @@ Related: [[research-product-agent-and-harness]], [[strategy-story-and-explainer-
 - 2026-10-24 Director: film 04 build killed by the low-memory guard; Geoff: restart 04 next, hold the shorts. Cancelled intent-film's queued job (no processes or queue ticket left); watcher already exited. Requeue only after out/product-agent-harness/ has its film and 04's build has exited.
 - 2026-10-24 Film 04 rendered (18:52). Stopped the watcher; queued intent-film voice-only then full build (behind glass-film).
 - 2026-10-24 First build failed the voice speech check on 2 lines (ASR heard 'everyone' for 'every one', 'version' for 'versioned'); reworded both in the Script Doc, re-synced, requeued voice-only + full build.
+- 2026-10-24 Director: bed swapped to the clean 1140 s one; before sending, run silencedetect -50 dB d=0.3 over the film (only fade-in/out allowed).

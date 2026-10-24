@@ -24,3 +24,4 @@ Related: [[research-pm-agents-jobs-to-be-done]], [[strategy-story-and-explainer-
 - 2026-10-24 Worker: film 04 rendered; watcher stopped; queued film 05's full build on the GPU lock.
 - 2026-10-24 Worker: rendered (4:25, out/pm-agents-evidence/pm-agents-evidence.mp4); score checked (LISTEN.md, score-qa.png, silencedetect: audible from 0.35 s to end); sent to Geoff and reported to the director.
 - 2026-10-24 Director: film 05 rendered and checked (4:25, 1080p, audio); worker confirmed music throughout and sent it to Geoff.
+- 2026-10-24 Worker: rebuilding with the clean 1140 s score bed (director set aside the 480/600 s beds).
