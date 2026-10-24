@@ -23,23 +23,28 @@ Last updated: 2026-10-24 by director-project-agent-and-harness (Claude Code desk
 | User story mapping: modular PM stories | local_8ebd568e-df86-4849-8b4a-81ae6863d7ca | app session | Opus 5.5 (audited on Fable) | [user-story-mapping](tasks/user-story-mapping.md) | idle; done, awaiting lint and acceptance |
 | teardown-shopify-river | 36a0d56f | claude --bg | Opus 5.5 | [competitive-teardown-shopify-river](tasks/competitive-teardown-shopify-river.md) | idle; reports done, to check |
 | teardown-stripe-agents | 3d45fbd1 | claude --bg | Opus 5.5 | [competitive-teardown-stripe-knowledge-agents](tasks/competitive-teardown-stripe-knowledge-agents.md) | idle; reports done, to check |
-| research-follow-up-round | a36bf408 | claude --bg | Opus 5.5 | [research-runtime-patterns-follow-up-round](tasks/research-runtime-patterns-follow-up-round.md) | waiting on 6 Opus subagents; was moved into a worktree by a subagent, told to write to the main folder |
+| research-follow-up-round | a36bf408 | claude --bg | Opus 5.5 | [research-runtime-patterns-follow-up-round](tasks/research-runtime-patterns-follow-up-round.md) | stopped (stalled); its results merged from the worktree by the director; no addendum, no register rows |
+| story-and-film | 0bd16627 | claude --bg | Fable 5.1 | [strategy-story-and-explainer-video](tasks/strategy-story-and-explainer-video.md) | working; checkpoints A (outline), B (prototype look), C (Script Doc) go to Geoff |
 
 Stopped: research-product-agent-and-harness-968c23 (6b54ecd9, login expired, never ran); user-story-mapping-1 (613dd94f, duplicate of the card session).
 
 ## Queue (what starts when)
 
-1. **Library migration** (director): split `research/THEMES.md` into `research/themes/<task>.md` (`migrate_themes.py` in the director's scratchpad), generate INDEX.md and THEMES.md with `research/build.py`, merge duplicate notes, update `research/README.md`. **Trigger:** River, Stripe and the follow-up round all idle.
-2. **Lint sweep** (one Opus lint worker, [LINTING.md](LINTING.md)) over every task finished so far, then one lint pass per task as each completes. **Trigger:** after the migration.
-3. **Storytelling and video** (Fable 5.1, [strategy-story-and-explainer-video](tasks/strategy-story-and-explainer-video.md)). **Trigger:** the follow-up round, River and Stripe done, migration and lint sweep done, every worker idle. Brief includes: intent shaping as the lead case; check every claim against post-audit notes (claim-check appendix); design the prototype's user flow and animation system itself; explainers pattern, about 15 min, end to end.
-4. **Acceptance:** bring Geoff accept/not-yet questions for each finished task, then mark done and archive on his yes.
+1. **Storytelling and film** running. Checkpoints A, B, C are the worker's questions to Geoff in its own session.
+2. **Lint** runs per task as Geoff accepts it (LINTING.md); the pre-story sweep was skipped on Geoff's "enough side quests".
+3. **Acceptance:** accept/not-yet questions per finished task, then done and archive on his yes.
+4. **Push:** local commits since 2ff3417 wait for Geoff's "push".
 
 ## Needs Geoff
 
-- Push the local commits (LINTING.md, DIRECTOR.md, log.md, digest, PROJECT.md rule changes) to GitHub: waiting for his yes.
+- Push the local commits since 2ff3417: waiting for his yes.
+- Answer the story worker's checkpoints A, B, C in its session.
 - Acceptance of finished tasks (after lint).
 
 ## Open issues
 
 - Some Today sections and synthesis rows cite PM-agent notes that the Fable audit relabelled; the lint sweep and the story's claim check cover this.
 - Monitor output includes the director's own row; ignore it.
+
+- The follow-up round's worktree is still at .claude/worktrees/followup-round (gitignored, all results merged). Remove it with `claude rm a36bf408` once Geoff agrees.
+- Lesson: making the folder a git repo changed `claude --bg` trust and let a subagent create a worktree. Check side effects before changing project infrastructure.
