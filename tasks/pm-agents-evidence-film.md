@@ -21,3 +21,4 @@ Related: [[research-pm-agents-jobs-to-be-done]], [[strategy-story-and-explainer-
 - 2026-10-24 Worker: per director's final rule (lightweight, no questions to Geoff, 16:9 plate, 04 first): voicing nearly done; a watcher queues this film's full build only once story-film's full build is running or finished.
 - 2026-10-24 Worker: voice-only voiced 36/42 lines; 6 failed the speech check on British spellings and 'three in four'; script switched to US spellings and one line rephrased, re-synced, --check passes; the queued full build will voice the 6 lines.
 - 2026-10-24 Worker: per director (04 restarts first, shorts held), cancelled the queued pmae-film full build and its watcher; will requeue only after film 04's film exists in out/product-agent-harness/ and its build has exited.
+- 2026-10-24 Worker: film 04 rendered; watcher stopped; queued film 05's full build on the GPU lock.

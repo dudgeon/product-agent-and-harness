@@ -16,3 +16,4 @@ Related: [[research-agent-runtime-patterns-taxonomy]] (B.2 in 01-synthesis.md), 
 ## Progress
 
 - 2026-10-24 Filed by director-project-agent-and-harness; assigned to the taxonomy worker.
+- 2026-10-24 Started: a subagent is drafting 00-mapping.md from all the teardown and ecosystem files and their source notes. I review it, then make the small additive 'Pattern classes' edits to each teardown summary.

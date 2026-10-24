@@ -22,3 +22,4 @@ Related: [[research-product-agent-and-harness]], [[strategy-story-and-explainer-
 - 2026-10-24 New rule (music under the whole film): the build will be scored (no --no-score); house score.json ducks to -20 dB under speech and -11 dB in gaps, never silent. Will check out/intent-shaping-options/LISTEN.md and score-qa.png before sending.
 - 2026-10-24 story-film full build running; queued intent-film voice-only then full build on the GPU lock (behind stripe, glass, pmae).
 - 2026-10-24 Director: film 04 build killed by the low-memory guard; Geoff: restart 04 next, hold the shorts. Cancelled intent-film's queued job (no processes or queue ticket left); watcher already exited. Requeue only after out/product-agent-harness/ has its film and 04's build has exited.
+- 2026-10-24 Film 04 rendered (18:52). Stopped the watcher; queued intent-film voice-only then full build (behind glass-film).
