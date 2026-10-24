@@ -50,3 +50,6 @@ Added 2026-10-24 at Geoff's request ("opportunity >> problem >> goal >> intent >
 - Whiteboard label under the brace is only partly legible at 360p ('Custome… Conv…'); a higher-resolution stream could not be downloaded (YouTube blocked other formats). Timestamps for frames are from the downloaded file and match the caption times.
 - Auto-captions: names are first names only; "Gru" rendered "Grew"; "Romi/Ramy" probably Rami Banna (author of the Stripe Projects post). No numbers on Orbit adoption.
 - Sponsored-style content (Clay accelerator ad inside); Stripe chose what to show.
+
+## Added 2026-10-24 (PDLC map)
+- Orbit UI text read from a frame of the demo (~13:50): "Tip: Workspaces share context across sessions, all visible to each other." The demo question on screen: how the Treasury send-payout flow handles multiple payment methods such as SEPA.

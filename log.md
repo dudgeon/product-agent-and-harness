@@ -38,3 +38,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Lenny's sweep done: 564 posts triaged (2024-10-24 on), 157 notes filed, 2 new themes; film notes relayed to story-and-film as v2 candidates. Register contributions (3 files) being merged by an Opus subagent.
 - 2026-10-24 Merged 3 register contributions into DIMENSIONS.md: +120 option rows, +158 see-also evidence bullets, +96 key questions; verified nothing lost.
 - 2026-10-24 Workboard artifact published: https://claude.ai/artifact/7fwBzcE3FQPAZujKjShvKj (21 tasks; refresh procedure in DIRECTOR.md).
+- 2026-10-24 Review board published (https://claude.ai/artifact/DZwgZeagyjp9DvnHbfyCAr): kanban, task notes and key deliverables readable in-page, worker session links, accept/reject/skip with comments. README worker project-readme started.
