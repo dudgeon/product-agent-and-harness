@@ -33,7 +33,7 @@ A vendor CEO demoing how his own company works with an asynchronous coding agent
 - Also: using ChatGPT voice as a meeting participant so everyone hears the answer (32:36-35:15).
 
 ## Notable quotes
-- "Really, it is just a thread where a group of you are communicating and figuring out how to work on this issue. And Devin is just one of the players in the thread." (20:55)
+- The shared work surface is a thread where several people work an issue together, with Devin as "just one of the players in the thread" (20:55)
 
 ## Could not verify
 - Transcript read in full (auto-transcription; product names garbled, e.g. "Devon", "dbookie" for DeepWiki, "Chat Priority" for ChatPRD).
