@@ -52,3 +52,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Pattern classes revised: P11 (SaaS-embedded agents), P5a/P5b, P8a-f, hosted meta-harness to P7, Glass (Oct) P5a on P3; change log in 01-synthesis.md.
 - 2026-10-24 Shared 480 s and 600 s score beds had near-silent passages (61.6-63.2 s; ~182 s); set aside in explainers/video/.cache/score/set-aside-2026-10-24/ (reversible). Builds up to ~19 min now use the 1140 s bed. Films 05 and 06 to re-render; all film workers check with silencedetect -50 dB. Note: other explainers films (e.g. Muse) would also pick the 1140 s bed on any rebuild.
 - 2026-10-24 Music test set: no near-silence (<-50 dB) of 1 s or longer except fades; sub-second line-end dips accepted (film 07 passes).
+- 2026-10-24 Film 07 (runtime patterns) rendered, 4:36, sent to Geoff.

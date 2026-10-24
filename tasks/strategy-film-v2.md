@@ -18,3 +18,4 @@ Geoff (2026-10-24, correction): "the opportunity should not be framed around 'co
 
 - 2026-10-24 Filed by director-project-agent-and-harness; to story-and-film (Fable 5.1).
 - 2026-10-24 Director: sent Geoff's framing correction (ambition and opportunity, not catch-up) to story-and-film.
+- 2026-10-24 story-and-film: v2 Script Doc drafted (explainers/projects/10-product-agent-harness-v2/script-doc.md, 13 scenes); Geoff's correction applied: the tee-up opens on ambition (scaling code is in progress; discovery, intent definition and shaping scale with it), deficit framing removed; Helm walkthroughs S8-S11 reuse film 04's voiced lines; the director's bed rule noted (keep near 15 min; silencedetect -50 dB before sending).

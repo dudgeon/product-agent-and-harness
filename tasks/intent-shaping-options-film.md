@@ -25,3 +25,4 @@ Related: [[research-product-agent-and-harness]], [[strategy-story-and-explainer-
 - 2026-10-24 Film 04 rendered (18:52). Stopped the watcher; queued intent-film voice-only then full build (behind glass-film).
 - 2026-10-24 First build failed the voice speech check on 2 lines (ASR heard 'everyone' for 'every one', 'version' for 'versioned'); reworded both in the Script Doc, re-synced, requeued voice-only + full build.
 - 2026-10-24 Director: bed swapped to the clean 1140 s one; before sending, run silencedetect -50 dB d=0.3 over the film (only fade-in/out allowed).
+- 2026-10-24 Director: music test is now silencedetect -50 dB; no near-silence ≥1 s except fade-in/out; sub-second ducking dips OK but listed in the note to Geoff.
