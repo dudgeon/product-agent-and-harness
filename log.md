@@ -34,3 +34,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Film 04: Geoff picked the plate look, 16:9, smaller text, conversational PM. Script Doc https://claude.ai/artifact/BNJKVeJdDxGmiwfVNSBqVy; voicing started. Films 05-08 told to match the look and frame.
 - 2026-10-24 Root cause of broken shared-file edits found (background worktree isolation); set worktree.bgIsolation=none for this project on Geoff's yes. Corrected the DoP canvas axes in the Kai note. DoP sweep done.
 - 2026-10-24 Geoff: stop asking about worker films; they're lightweight. Decided: all 16:9 in 04's look, workers decide details, GPU self-serve after 04's full build starts. Film 09 (Stripe) added.
+- 2026-10-24 Claude resources ingestion done: 695 items triaged, 95 notes filed (first-party), 451 theme bullets; options in options/contributions/.

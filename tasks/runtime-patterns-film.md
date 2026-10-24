@@ -20,3 +20,4 @@ Related: [[research-agent-runtime-patterns-taxonomy]], [[strategy-story-and-expl
 - 2026-10-24 Director: Geoff won't review scripts before render; build end to end at our GPU turn (04 first), then send the film with a review note (stand-ins, Script Doc location).
 - 2026-10-24 Director: match 04's plate look (16:9, 04's tokens and type, no Helm UI); passed to the scene subagent.
 - 2026-10-24 Director: only small exact edits to shared pipeline files (registry.ts, plan.mjs); don't queue on the GPU lock until the director says (order 04, 05, 06, then 07/08).
+- 2026-10-24 Director final rule: lightweight review film, no questions to Geoff, 16:9 in 04's plate tokens, 4-6 min. Script trimmed to v0.2 (about 660 words). GPU: queue only once story-film's full build is running or finished, then run voice-only and one full build.

@@ -18,3 +18,4 @@ This task: https://www.lennysnewsletter.com/archive?sort=new
 - 2026-10-24 Worker sweep-lennys (db172d7f) started via claude --bg on Opus 5.5 with --remote-control.
 - 2026-10-24 Geoff: scope limited to the past two years (posts from 2024-10-24 on); sent to the worker.
 - 2026-10-24 Scope cut by Geoff (via director): posts dated 2024-10-24 or later only. Full post list taken from the sitemap (1,281 URLs); paid session in Geoff's Chrome makes paywalled posts readable. Triage in progress.
+- 2026-10-24 Triage done: 564 posts in window (of 1,281), high 44, medium 121, low 253, none 146; 01-triage.md written. All texts read via Geoff's paid Chrome session; transcripts from Substack (23 episodes without one). 14 Opus subagents filing 158 posts.
