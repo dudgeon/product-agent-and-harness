@@ -43,3 +43,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Geoff: GitHub Pages site after the README; films go in the repo (his override of the voice rule, finished films only). Task filed, waiting.
 - 2026-10-24 Geoff: every published film carries background music throughout (harder to fine-tune on his voice); sent to all six film workers; Pages task checks it before upload.
 - 2026-10-24 All six PDLC maps in; cross-ecosystem map worker started (Fable).
+- 2026-10-24 Film 04 full build killed by the low-memory guard; Geoff: restart 04 next, hold the shorts. Relayed; shorts told to cancel queued jobs until 04's film exists.
