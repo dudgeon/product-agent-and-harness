@@ -57,5 +57,5 @@ Ecosystem-specific open questions are in each map's "Key questions" and "Could n
 ## Files
 
 - `index.html`: the work product.
-- `index.build.py`: generates it; all content lives in this file as data. Adding an ecosystem (the director has Airbnb and Spotify maps in progress) means adding one entry to `ECOS` and one set of cells to `C`; the matrix, the by-ecosystem view, the presence table, the dimensions table and the evidence table all grow a column without a layout change.
+- `index.build.py`: generates it; all content lives in this file as data. Adding an ecosystem (the director has Airbnb, Spotify and Block maps in progress) means adding one entry to `ECOS` and one set of cells to `C`; the matrix, the by-ecosystem view, the presence table, the dimensions table and the evidence table all grow a column without a layout change.
 - `README.md`: this note.
