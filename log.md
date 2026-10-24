@@ -21,3 +21,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Infra on Geoff's yes: DIRECTOR.md (state), log.md, local commits per step, digest page. Monitor on background workers. Follow-up worker found working in a git worktree; told to write to the main folder.
 - 2026-10-24 Caught the do-not-name term in my own rule text and in a new Omnigent note before any push; moved terms to untracked .public-check-terms, added scripts/public-check.sh, squashed unpushed commits (7323da5). Not pushed.
 - 2026-10-24 Pushed to GitHub on Geoff's "push" (public check ok): 2ff3417.
+- 2026-10-24 Research wrapped (follow-up round merged by the director; themes migrated to single-writer files). Storytelling worker story-and-film started on Fable 5.1. My repo setup broke the --bg start (trust prompt); Geoff had to accept it.

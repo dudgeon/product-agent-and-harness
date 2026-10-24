@@ -1,8 +1,7 @@
 ---
 title: Strategy story and 15-minute explainer video
-status: waiting
+status: active
 directed_by: director-project-agent-and-harness
-waiting_on: all research landed (runtime-patterns follow-up round; Shopify River/Aquifer and Stripe knowledge-agent teardowns; Fable audits of the PM-agents, Glass and user-story-mapping work; artifact-management pass of user-story-mapping; taxonomy worker's section I answers with Geoff; register D.0 merges applied by the director) and every existing worker dormant
 done_when: (1) a strategy-shaped story (situation, complication, questions, options, one hypothetical answer) grounded in the project's research and options register; (2) a designed notional prototype: a defined user flow and a consistent visual and animation system across the walkthrough demos; (3) an explainer film made with the explainers pattern, rendered end to end at about 15 minutes, which Geoff can watch and review
 ---
 
@@ -22,3 +21,4 @@ Related: [[research-agent-runtime-patterns-taxonomy]], [[user-story-mapping]], [
 - 2026-10-24 Model when started: Fable 5.1 (cognitively complex: strategy story, prototype design, film), per the worker-model rule.
 - 2026-10-24 Filed by director-project-agent-and-harness, waiting until research lands and workers are dormant; the director starts the worker then.
 - 2026-10-24 Geoff's section I answers change the reference workload to intent shaping (not PRD review): the story should use it as its lead case.
+- 2026-10-24 Worker story-and-film (0bd16627) started via claude --bg on Fable 5.1 with --remote-control (after Geoff re-trusted the folder).
