@@ -16,3 +16,5 @@ Related: [[research-agent-runtime-patterns-taxonomy]], [[strategy-story-and-expl
 ## Progress
 
 - 2026-10-24 Filed by director-project-agent-and-harness.
+- 2026-10-24 Script Doc v0.1 written: explainers/projects/07-runtime-patterns/script-doc.md, about 1,080 narrated words (~7 min), claim check in its appendix. Scenes (rtp) and the no-GPU --check delegated to a subagent. No voicing yet: Geoff reviews the Script Doc first, then voicing waits for the GPU lock (film 04 goes first).
+- 2026-10-24 Director: Geoff won't review scripts before render; build end to end at our GPU turn (04 first), then send the film with a review note (stand-ins, Script Doc location).
