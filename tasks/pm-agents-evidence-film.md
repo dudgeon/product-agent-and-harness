@@ -14,3 +14,4 @@ Related: [[research-pm-agents-jobs-to-be-done]], [[strategy-story-and-explainer-
 ## Progress
 
 - 2026-10-24 Filed by director-project-agent-and-harness; worker is the PM-agents session (local_84be37e8…).
+- 2026-10-24 Worker: director's go received (separate film, house style, queue behind 04 for GPU, show Geoff the Script Doc before voicing). Script v0.1 drafted at explainers/projects/05-pm-agents-evidence/script-doc.md; starting scene build and --check (no GPU).

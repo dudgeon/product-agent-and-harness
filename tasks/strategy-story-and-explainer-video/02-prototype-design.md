@@ -68,6 +68,12 @@ Square 1080 frame for the film; a web workspace in the concept. The ledger layou
 
 **What a project is.** A thin descriptor (name, owner, reviewers, purpose, linked sources, members) plus typed slots the workspace defines for the shaping job only. Platform objects (tickets, pages) are linked, not copied. The spec, decision record and hand-off packet are the artifacts that leave Helm; the session stays.
 
+## 3b. The conversation (Geoff's direction at Checkpoint B)
+
+Geoff: the PM is not just clicking buttons; they collaborate with and steer the agents conversationally. So the centre of Helm is a thread. Sam types short messages in plain language (promote it; finance leads only for now, team leads later; take the limit, I accept the residual risk; fix the first two, rollback is out of scope; Priya, Jo, Alex, look at the sections marked for you; ratify v4, hand it off; accept, good work). The personas answer in prose with what they did, what they found and what they need. What they make (evidence, the spec, the risk grid, the packet, the context write-back) sits on the table at the right, and the gates (accept, ratify, approve) are the human's words with a mark, not a separate control. Sam's messages type in with a caret and carry the accent; the personas' are ink. Helm itself (the hexagon without a letter) speaks for the workspace: project made, invited, packet sent, filed.
+
+Frame: 1920 × 1080 (Geoff: a standard aspect ratio and smaller text for more room). Layout: top bar 0 to 64; rail 0 to 300; thread 300 to 1180 (messages at x 340, width 800, body 22 px, line 30 px); table 1180 to 1920 (x 1220, width 660). Look: plate (Geoff's pick): slate ink on cool paper with halftone washes, the clay accent kept; the story scenes stay on warm paper, so the move into Helm is a palette shift during the page travel.
+
 ## 4. The visual system
 
 Fits the explainers house look (`explainers/video/src/scenes/calm/Calm.tsx`, `style/taste.md`): warm paper, one ink, hairline drawing, small type, square 1080 × 1080, no icons as decoration, counts as cells, nothing moves unless the voice asks.
