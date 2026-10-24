@@ -54,3 +54,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Music test set: no near-silence (<-50 dB) of 1 s or longer except fades; sub-second line-end dips accepted (film 07 passes).
 - 2026-10-24 Film 07 (runtime patterns) rendered, 4:36, sent to Geoff.
 - 2026-10-24 Airbnb, Spotify, Block maps landed; sent to cross-map and taxonomy workers. Pages site worker started: https://claude.ai/code/session_01GQLNgQYd2cVF6wFA3fvz5N
+- 2026-10-24 story-and-film's v2 work registered scenes/pah2 in the shared Root.tsx and registry.ts before the folder existed, breaking every render (film 06 failed). Director removed the four lines (backups in scratchpad), tsc clean; told the worker to register only after its files exist.
