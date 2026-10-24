@@ -30,3 +30,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Glass worker relayed Geoff's request for a Glass explainer (explainers 06); filed ramp-glass-film; GPU order 04, 05, 06.
 - 2026-10-24 Geoff: research workers also make short explainers, lower priority than 04. Filed runtime-patterns-film (07) and intent-shaping-options-film (08).
 - 2026-10-24 Ingestion worker for claude.com/resources (AI-native SDLC playbook and related) started: ingest-claude-resources.
+- 2026-10-24 Geoff: no script review before render; build films end to end, he watches then edits. Sent to story-and-film and films 05-08.

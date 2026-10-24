@@ -15,3 +15,5 @@ Related: [[research-pm-agents-jobs-to-be-done]], [[strategy-story-and-explainer-
 
 - 2026-10-24 Filed by director-project-agent-and-harness; worker is the PM-agents session (local_84be37e8…).
 - 2026-10-24 Worker: director's go received (separate film, house style, queue behind 04 for GPU, show Geoff the Script Doc before voicing). Script v0.1 drafted at explainers/projects/05-pm-agents-evidence/script-doc.md; starting scene build and --check (no GPU).
+- 2026-10-24 Worker: film built without GPU: script synced (6 scenes, 42 lines, ~4.4 min est.), shots.mjs and scene code src/scenes/pmae/Evidence.tsx registered (registry.ts, page-travel in plan.mjs), --check passes; CPU-only preview contact sheet in projects/05-pm-agents-evidence/. Script Doc sent to Geoff for approval before voicing.
+- 2026-10-24 Worker: Geoff approved the script for voicing; GPU lock free and no build running; voicing under the lock (voice-only first).
