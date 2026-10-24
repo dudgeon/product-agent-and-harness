@@ -1,9 +1,8 @@
 ---
 title: GitHub Pages site for the project
-status: waiting
+status: active
 directed_by: director-project-agent-and-harness
 model: claude-opus-5-5
-waiting_on: [[project-readme]] finishing
 done_when: The public repo dudgeon/product-agent-and-harness serves a GitHub Pages site whose home page introduces the project and links every HTML page the tasks built (lifecycle maps, synthesis map, review aids) and every deliverable, by section, with each section's explainer film embedded as it is rendered (films 04-09); passes scripts/public-check.sh; live at its github.io address
 ---
 
@@ -18,3 +17,4 @@ Related: [[project-readme]], [[pdlc-maps-per-ecosystem]], [[pdlc-cross-ecosystem
 ## Progress
 
 - 2026-10-24 Filed by director-project-agent-and-harness, waiting for the README.
+- 2026-10-24 README done; worker github-pages-site (a8625ba6, https://claude.ai/code/session_01GQLNgQYd2cVF6wFA3fvz5N) started via claude --bg on Opus 5.5 with --remote-control.

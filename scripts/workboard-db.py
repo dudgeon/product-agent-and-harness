@@ -16,7 +16,7 @@ APP = lambda sid: {"kind": "app", "id": sid, "link": f"claude://claude.ai/epitax
 RC = {"36a0d56f": "https://claude.ai/code/session_01TYrCTxTPCphJh23xGnarV2", "db172d7f": "https://claude.ai/code/session_01LmQEayPXyVyaGhrMWD7xJL",
       "2c0b10cc": "https://claude.ai/code/session_01Nr5DsHCZhcJKX6LSudXnjn", "d6d48790": "https://claude.ai/code/session_01JtkQS4zfweTzmB27xQLbqX",
       "6058ba84": "https://claude.ai/code/session_01V2Np7vJRfWhWV3KRfQregP", "3d45fbd1": "https://claude.ai/code/session_01HwoRhRcgdY5PBNZbt8Yg1W",
-      "0bd16627": "https://claude.ai/code/session_01RBtdYJ4dEa5inMmJwfHsVe", "343d6311": "https://claude.ai/code/session_01A2TsUmicGNkKURfBSNxGQQ", "85993db5": "https://claude.ai/code/session_01F2D6G24G9xFAoLAG1fAWF5", "762dd35c": "https://claude.ai/code/session_015Nc54pXhjrkX3EZq2YRo4e"}
+      "0bd16627": "https://claude.ai/code/session_01RBtdYJ4dEa5inMmJwfHsVe", "343d6311": "https://claude.ai/code/session_01A2TsUmicGNkKURfBSNxGQQ", "85993db5": "https://claude.ai/code/session_01F2D6G24G9xFAoLAG1fAWF5", "a8625ba6": "https://claude.ai/code/session_01GQLNgQYd2cVF6wFA3fvz5N", "762dd35c": "https://claude.ai/code/session_015Nc54pXhjrkX3EZq2YRo4e"}
 BG = lambda name, jid, state="": {"kind": "bg", "id": jid, "name": name, "url": RC.get(jid, ""), "attach": f"claude attach {jid}", "note": state}
 SESS = {
  "research-product-agent-and-harness": APP("local_8a840fd4-9a6b-4127-b4cc-1a5745fb6fff"),
@@ -44,6 +44,7 @@ SESS = {
  "pdlc-cross-ecosystem-map": BG("pdlc-cross-ecosystem", "343d6311"),
  "research-airbnb-spotify-product-practices": BG("research-airbnb-spotify", "85993db5"),
  "research-block-product-practices": BG("research-block", "762dd35c"),
+ "github-pages-site": BG("github-pages-site", "a8625ba6"),
 }
 MODEL = {"strategy-story-and-explainer-video": "Fable 5.1", "strategy-film-v2": "Fable 5.1"}
 FILMS = {"strategy-story-and-explainer-video": "04-product-agent-harness", "pm-agents-evidence-film": "05-pm-agents-evidence",
