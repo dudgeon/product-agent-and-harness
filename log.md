@@ -19,3 +19,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Public repo created and pushed: github.com/dudgeon/product-agent-and-harness (d007045). Transcripts and third-party full texts kept out; no do-not-name references. Later pushes wait for Geoff.
 - 2026-10-24 Lint-after-every-task rule and LINTING.md written.
 - 2026-10-24 Infra on Geoff's yes: DIRECTOR.md (state), log.md, local commits per step, digest page. Monitor on background workers. Follow-up worker found working in a git worktree; told to write to the main folder.
+- 2026-10-24 Caught the do-not-name term in my own rule text and in a new Omnigent note before any push; moved terms to untracked .public-check-terms, added scripts/public-check.sh, squashed unpushed commits (7323da5). Not pushed.
