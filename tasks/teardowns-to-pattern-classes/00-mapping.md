@@ -454,3 +454,31 @@ These are reported for a later B.2 edit. No class was changed here.
 - **Stale B.2 text.** B.2 and B.3 cite Glass "on the Claude Agent SDK". That is now dated April 2026 (see the P2 suggested edit).
 - **Reading notes, not originals.** Where a note says its body was read through a summarising fetch (the Ramp Builders Inspect post as filed by user-story-mapping; some Atlassian pages before the audit), placements lean on the verbatim-read notes where one exists.
 - **Duplicate notes.** Two notes describe the same Ramp Inspect post (`ramp-builders-why-we-built-background-agent` and `ramp-builders-why-we-built-our-own-background-agent`). This mapping cites the first, filed by the Ramp teardown.
+
+---
+
+## 8. Revised classes (2026-10-24)
+
+Geoff chose to revise the classes (task revise-pattern-classes). The old-to-new table is in the [synthesis change log](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#change-log). Sections 1 to 7 above keep the original numbering. These placements change under the revised classes:
+
+| Ecosystem | Agent or system | Old | New | Fit now | Why |
+|---|---|---|---|---|---|
+| Ramp | Glass (October 2026) | P5 (contested) | **P5a**, on a P3 harness | clear (first-party only) | P5 now means an org-deployed, company-wide platform with a platform-native agent; Glass is a per-employee workspace on Laminar. |
+| Ramp | Glass sessions | P8 | **P8c** | clear | Private, shared on demand (a support agent hands a session to an engineer). |
+| Ramp | Inspect | P8 | **P8d** | clear | Multiplayer session control plane. |
+| Ramp | Ramp Research | P8 (partial) | **P8b** (related form) | partial | Chat-native shared agent in Slack channels. |
+| Ramp | Notion custom agents | fit no class | **P11** | clear | Agents built into a SaaS tool. |
+| Shopify | River on Aquifer | P5 (partial, as Aquifer) | **P5b** | clear | Company agent service through Slack. |
+| Shopify | River | P8 | **P8a** | clear | Public by default, chat-native. |
+| Stripe | Kai | P5 (partial) | **P5b** | clear | Company-wide hosted agent service with project-level governance. Not P8, since sessions are single-user. |
+| Stripe | Kai projects | P4 (partial) | **P4, front-door dispatcher** | partial | Described, not demoed. |
+| Stripe | Minions' public channel | P8 (partial) | **P8e** | clear | Watch-only public run log. |
+| Stripe | Orbit | P8 (partial) | **P8f** | partial | Shared plan workspace; ASR captions only. |
+| Anthropic | Managed Agents | P4 (contested) | **P7**, hosted harness service | clear | Hosts one vendor's loop. |
+| Anthropic | Claude Tag | P8 | **P8b** | clear | Channel-scoped, with the agent's own identity. |
+| Atlassian | Jira work items dispatching to several agents | P4 (contested) | **P4, front-door dispatcher** | partial | Per-space session visibility; no shared policy documented. |
+| Atlassian | Rovo Chat, Deep Research, Delivery Agent, Ops Expert, Loom Record for agent, Jira Planner | fit no class | **P11** | clear | SaaS-native agents in the vendor's system of record. |
+| Intercom | Fin, Operator | fit no class | out of scope | n/a | Products Intercom sells, not internal runtimes. |
+
+**Counts after the revision:** Glass, Kai, River on Aquifer and Managed Agents gain clear placements. Jira moves from contested to partial. There are 2 new P11 rows (Ramp's Notion agents; Atlassian's Rovo agents as one row). One contested placement remains: Shopify's "Vanilla" pi profile (P3).
+

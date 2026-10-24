@@ -132,3 +132,4 @@ Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are pl
 - **P10:** the org plugin marketplace and skill sync (clear).
 - **Contested:** Managed Agents as a P4 meta-harness, since it hosts one vendor's loop.
 - **Evidence:** first-party.
+- **Revised classes (2026-10-24):** Managed Agents moves from contested P4 to P7, as a hosted harness service. Claude Tag is P8b: channel-scoped, with the agent's own identity. See [the mapping, section 8](../../tasks/teardowns-to-pattern-classes/00-mapping.md#8-revised-classes-2026-10-24).

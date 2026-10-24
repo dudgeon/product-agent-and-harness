@@ -102,3 +102,4 @@ Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are pl
 - **P10:** Dojo and the shared tool catalog are internal skill and tool registries (partial: internal, not portable).
 - **P4, P5 and P9:** OCA is a partial P4 (a DIY coordinator over Claude Code or Codex) and a partial P9 (Temporal). Glass in its October form matching P5 is contested.
 - **Evidence:** all Ramp first-party.
+- **Revised classes (2026-10-24):** Glass (October 2026) is now P5a, a per-employee workspace on Laminar (P3). Glass sessions are P8c (private, shared on demand), Inspect is P8d (multiplayer control plane), and Ramp's earlier Notion custom agents are P11 (SaaS-embedded). See [the mapping, section 8](../../tasks/teardowns-to-pattern-classes/00-mapping.md#8-revised-classes-2026-10-24).

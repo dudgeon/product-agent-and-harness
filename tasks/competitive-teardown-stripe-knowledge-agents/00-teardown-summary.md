@@ -270,3 +270,4 @@ Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are pl
 - **P1:** engineers use several general harnesses side by side (clear).
 - **Partial:** Kai projects backed by other harnesses (P4), Kai as an org-wide service (P5), Orbit and Harbor routes (P6), shared sessions (P8), and Kai skills, Agent Studio and Toolshed (P10).
 - **Evidence:** first-party talks and posts; some are ASR captions.
+- **Revised classes (2026-10-24):** Kai is now P5b, a company agent service. Kai projects backed by another harness are a P4 front-door dispatcher (partial). Minions' public channel is P8e (watch-only run log), and Orbit is P8f (shared plan workspace). See [the mapping, section 8](../../tasks/teardowns-to-pattern-classes/00-mapping.md#8-revised-classes-2026-10-24).

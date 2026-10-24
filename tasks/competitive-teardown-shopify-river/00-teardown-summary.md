@@ -236,3 +236,4 @@ Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are pl
 - **Partial:** Roast embedding Claude Code (P2), Aquifer as an org platform (P5), the PR-review profile (P6), and profiles and World skills (P10).
 - **Contested:** the "Vanilla" pi profile (P3).
 - **Evidence:** first-party engineering posts.
+- **Revised classes (2026-10-24):** River on Aquifer is now P5b, a company agent service. River's sharing is P8a: public by default and chat-native. See [the mapping, section 8](../../tasks/teardowns-to-pattern-classes/00-mapping.md#8-revised-classes-2026-10-24).

@@ -96,3 +96,4 @@ Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are pl
 - **P9:** Jira automation triggers (partial).
 - **Contested:** a work item that dispatches to several vendors' agents (P4). B.2 has no system-of-record dispatcher shape.
 - **Evidence:** first-party docs.
+- **Revised classes (2026-10-24):** Rovo Chat, Deep Research, the Delivery Agent, Ops Expert, Loom Record for agent and Jira Planner are now P11 (SaaS-embedded agents). The multi-agent work item is a P4 front-door dispatcher (partial, no longer contested). See [the mapping, section 8](../../tasks/teardowns-to-pattern-classes/00-mapping.md#8-revised-classes-2026-10-24).

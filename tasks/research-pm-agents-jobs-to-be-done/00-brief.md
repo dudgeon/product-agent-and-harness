@@ -93,3 +93,4 @@ Added 2026-10-24 by teardowns-to-pattern-classes. This summary's examples are pl
 - **Intercom, P6:** the Shrek reviewers (clear).
 - **Intercom, partial:** the CI-watching agent and Buzz (P7), and the plugin marketplace (P10).
 - **Evidence:** first-party.
+- **Revised classes (2026-10-24):** Intercom's placements are unchanged. Fin and Operator are out of scope for P11 because they are products Intercom sells. See [the mapping, section 8](../../tasks/teardowns-to-pattern-classes/00-mapping.md#8-revised-classes-2026-10-24).

@@ -49,3 +49,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Geoff on the taxonomy synthesis: 'it's good'. Two follow-ups filed (teardowns-to-pattern-classes, pattern-classes-teardown-examples), both to the taxonomy worker.
 - 2026-10-24 Film 04 v1 rendered (18:52) and sent to Geoff. Short films released to the GPU queue; their pgrep watchers would never fire (they match each other's command lines), so told them to queue directly.
 - 2026-10-24 Film 05 (PM-agents evidence) rendered, 4:25, sent to Geoff.
+- 2026-10-24 Pattern classes revised: P11 (SaaS-embedded agents), P5a/P5b, P8a-f, hosted meta-harness to P7, Glass (Oct) P5a on P3; change log in 01-synthesis.md.
