@@ -24,3 +24,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Research wrapped (follow-up round merged by the director; themes migrated to single-writer files). Storytelling worker story-and-film started on Fable 5.1. My repo setup broke the --bg start (trust prompt); Geoff had to accept it.
 - 2026-10-24 Stripe teardown reopened on Geoff's request (doc review, Trailhead, context-creation hypothesis).
 - 2026-10-24 Geoff flagged the opportunity >> problem >> goal >> intent >> plan >> code framework; routed to the Stripe and story workers.
+- 2026-10-24 Archive sweep workers started: sweep-lennys, sweep-dept-of-product (Opus). Register proposals go to options/contributions/.

@@ -25,6 +25,8 @@ Last updated: 2026-10-24 by director-project-agent-and-harness (Claude Code desk
 | teardown-stripe-agents | 3d45fbd1 | claude --bg | Opus 5.5 | [competitive-teardown-stripe-knowledge-agents](tasks/competitive-teardown-stripe-knowledge-agents.md) | reopened: Geoff's doc, Trailhead, context-creation-agent hypothesis; report goes to story-and-film |
 | research-follow-up-round | a36bf408 | claude --bg | Opus 5.5 | [research-runtime-patterns-follow-up-round](tasks/research-runtime-patterns-follow-up-round.md) | stopped (stalled); its results merged from the worktree by the director; no addendum, no register rows |
 | story-and-film | 0bd16627 | claude --bg | Fable 5.1 | [strategy-story-and-explainer-video](tasks/strategy-story-and-explainer-video.md) | working; checkpoints A (outline), B (prototype look), C (Script Doc) go to Geoff |
+| sweep-lennys | db172d7f | claude --bg | Opus 5.5 | [research-lennys-newsletter-archive](tasks/research-lennys-newsletter-archive.md) | working; options go to options/contributions/ for the director to merge |
+| sweep-dept-of-product | 2c0b10cc | claude --bg | Opus 5.5 | [research-department-of-product-knowledge-series](tasks/research-department-of-product-knowledge-series.md) | working; same |
 
 Stopped: research-product-agent-and-harness-968c23 (6b54ecd9, login expired, never ran); user-story-mapping-1 (613dd94f, duplicate of the card session).
 
@@ -42,6 +44,8 @@ Stopped: research-product-agent-and-harness-968c23 (6b54ecd9, login expired, nev
 - Acceptance of finished tasks (after lint).
 
 ## Open issues
+
+- Edit is blocked in `claude --bg` sessions (it demands a worktree, since the folder became a git repo). Workers now put register proposals in options/contributions/<task>.md and the director merges them; find the root cause after the film.
 
 - Some Today sections and synthesis rows cite PM-agent notes that the Fable audit relabelled; the lint sweep and the story's claim check cover this.
 - Monitor output includes the director's own row; ignore it.
