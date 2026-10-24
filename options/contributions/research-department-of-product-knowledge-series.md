@@ -1,3 +1,5 @@
+Merged into DIMENSIONS.md by the director on 2026-10-24.
+
 # Options contribution: research-department-of-product-knowledge-series
 
 Proposed additions to [DIMENSIONS.md](../DIMENSIONS.md) from the Department of Product Knowledge Series sweep: posts from 2024-10-24 to 2026-10-13 ([triage](../../tasks/research-department-of-product-knowledge-series/01-triage.md), [summary](../../tasks/research-department-of-product-knowledge-series/00-summary.md)). For the director to merge. The rows are grouped under existing dimension slugs, and no new dimension is proposed. Each row was checked against DIMENSIONS.md as of 2026-10-24, and anything already there was left out.

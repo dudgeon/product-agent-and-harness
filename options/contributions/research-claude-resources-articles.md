@@ -1,3 +1,5 @@
+Merged into DIMENSIONS.md by the director on 2026-10-24.
+
 # Options contributions: research-claude-resources-articles
 
 For the director to merge into `options/DIMENSIONS.md` (this task does not edit it). Grouped by existing dimension slug. For each dimension: **new evidence for existing options** (option names as they appear in DIMENSIONS.md), then **proposed new options** in the register's table format, then **key questions**. All sources are claude.com pages: Anthropic on its own products or practice = first-party; customer stories and Anthropic-commissioned surveys = vendor claim. Links are relative to `options/`.

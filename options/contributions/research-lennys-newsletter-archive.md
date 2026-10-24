@@ -1,3 +1,5 @@
+Merged into DIMENSIONS.md by the director on 2026-10-24.
+
 # Options contributions: research-lennys-newsletter-archive
 
 Proposed additions to `options/DIMENSIONS.md` from task research-lennys-newsletter-archive (157 source notes from Lenny's Newsletter, posts from 2024-10-24 onward, filed into `research/sources/`). Consolidated from 14 filing fragments; duplicates merged. **Nothing has been merged into DIMENSIONS.md**; this file is for the director. Dimensions appear in DIMENSIONS.md order. Option names in "New evidence for existing options" are as DIMENSIONS.md spells them. Evidence types: first-party, vendor claim, independent, anecdote. Links are relative to `options/contributions/`.
