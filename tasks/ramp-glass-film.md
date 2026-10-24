@@ -14,3 +14,4 @@ Related: [[competitive-teardown-ramp-glass]], [[pm-agents-evidence-film]], [[str
 ## Progress
 
 - 2026-10-24 Filed by director-project-agent-and-harness; worker is the Glass teardown session (local_dabad5f3…).
+- 2026-10-24 Worker: Script Doc v0.1 written (explainers/projects/06-ramp-glass-teardown/script-doc.md, ~760 words, 6 scenes, claim check in Appendix A); film films/ramp-glass with shots.mjs and scene code src/scenes/glass/Glass.tsx (scene kind glass, registered; 'glass' added to page-travel in pipeline/plan.mjs); --check passes, typecheck clean. No GPU work yet; waiting on Geoff's script review, then the GPU queue (04, 05 first).

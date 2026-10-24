@@ -28,7 +28,7 @@ A PM-audience deep dive on Kai, read in full on 2026-10-24 through Geoff's paid 
 - Three-layer architecture diagram: surface-agnostic APIs (web app, Slack, Chrome extension, embedded in internal tools), then AgentStudio, then the execution environment (harness, sandbox, workflow orchestration, access control). Labels: "Shared with product-facing agents", "Built on LangChain deepagents + K8s".
 - Agent Studio screenshot (from Stripe): a skills grid with owners and usage counts.
 - Sample prompts: (1) score candidate tasks on repeatability, clarity of where people already work, ease of telling whether it works, and value; (2) a guardrail-discovery prompt that looks at *combinations* of individually accessible data, each defined by rule, harm and detection, then ranked by likelihood and severity.
-- Links to an "AI Automation Opportunity Canvas" (DoP's own framework: frequency vs volume) and to a DoP piece on Ramp's Dojo.
+- Links to an "AI Automation Opportunity Canvas" (DoP's own framework: tasks scored on safety, volume and verifiability; see [departmentofproduct-ai-automation-opportunities](departmentofproduct-ai-automation-opportunities.md); corrected 2026-10-24, the earlier note said "frequency vs volume") and to a DoP piece on Ramp's Dojo.
 
 ## Notable quotes
 - "Unlike code which can often be easily rejected for bad syntax or not following coding conventions, knowledge systems like this have to have human agreed rules baked into them."
