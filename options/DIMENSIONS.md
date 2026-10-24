@@ -845,9 +845,24 @@ Proposed by competitive-teardown-stripe-knowledge-agents on 2026-10-24, to test 
 
 **Current lean and what would change it:** Evidence so far favours capture as a **by-product of work**: owner-verified curation plus agent drafts plus write-back from finished tasks, inside the agents people already use. A standalone interview agent is the least proven route. Every scaled example (Stripe, Shopify, Ramp) captures through use and owners, and the best interview-agent evidence shows shallow probing. The hypothesis holds for the **need** (strong evidence: all three companies built on captured context, and people stop writing knowledge down once they can ask an AI). It is unproven for the **form** (a dedicated agent). What would change the lean: a trial where an elicitation agent captures expert decision rules with high fidelity (checked by a second expert) and those rules measurably improve agent output on upper-chain work (problem, goal, intent).
 
+**Department of Product pass (competitive-teardown-stripe-knowledge-agents, 2026-10-24):** new evidence for the options above, plus two options the first pass lacked.
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Owner-curated, verified knowledge (evidence row) | Named domain experts own "clusters": datasets with profiling, expert-vetted question-SQL pairs, business docs; a computed health score flags decay; every conversation is shown to owners | Spotify Vedder (2,100+ users, 177 clusters) | Trustworthy answers on 70,000+ datasets; the experts' role becomes "shaping the knowledge layer that answers thousands" | Curation effort; when Spotify tried to skip curators, they **rejected 87.5% of examples auto-generated from query history** | early-adopter | [Spotify](../research/sources/spotify-engineering-vedder-context-layer.md) (first-party) |
+| Knowledge readiness as a release gate | A feature is "shipped" only when the agent can answer about it: PMs and engineers submit a "what we built" doc; walkthrough and GTM notes join it; an agent drafts and tests the content; a named owner signs off; results are monitored for 2-4 weeks | Intercom Fin NPI with the Operator agent | Context created *at the moment of shipping*, from the people who built it, with a test | A process role (NPI manager); depends on PMs writing the doc; no outcome numbers published | early-adopter | [Intercom](../research/sources/intercom-fin-npi-agent-readiness.md) (first-party, vendor) |
+| Embedded human elicitation (pods) | Engineers shadow domain experts for days, document the workflow, then build the agent with them and validate it with others | Uber Agentic Pods (16 pods in 16 functions in two months) | Finds knowledge "rarely visible from the outside"; redesigns whole workflows | Scarce engineer time; captured knowledge lives in the agent built, not in a shared store | early-adopter | [Uber CTO](../research/sources/x-praveen-uber-agentic-pods.md) (first-party) |
+
+Key questions (DoP pass):
+7. Spotify's 87.5% rejection rate says mined examples are mostly noise. What share of mined context would our domain owners reject, and how much curation time does a cluster take? — *answered by:* a one-domain trial using our own query or document history — *affects:* passive mining, owner-curated
+8. Could "knowledge readiness as a release gate" generalise from support to internal agents? Every shipped feature or decision would update what the internal agent knows, with a named owner. Who would own it in our setting? — *answered by:* Geoff / product ops; a pilot on two launches — *affects:* write-back, owner-curated
+
+Update to the lean: the three new cases strengthen it. Each puts a **human owner or embedded human** at the point of capture: Spotify's curators, Intercom's NPI manager, Uber's pod engineers. Agents draft, test and monitor. None of the three uses a standalone capture agent.
+
 ---
 
-## artifact-and-project-structure: How PM artifacts and projects are structured, stored and found
+## artifact-and-project-structure:
+ How PM artifacts and projects are structured, stored and found
 **Choice:** Do PM artifacts (specs, research syntheses, decisions, status updates, prototypes, dashboards) stay ad hoc and local, follow repo conventions, live as objects in a platform (Atlassian, Notion, Linear style), sit behind a thin product-defined project descriptor, or does a product meta-harness define typed artifact primitives and a project structure itself?
 **Why it matters to the strategy:** Multi-party collaboration, reuse across sessions and harnesses, review, permissions and provenance all depend on a shared answer to "what is a project, what artifact types does it have, where do they live and who may see them". Today there is no cross-tool answer: "project" means different things even inside one vendor, and PM artifacts are mostly local files or scattered docs. This is the structural question behind [[context-and-memory]] (where context lives), [[context-and-memory]] (how context reaches the agent) and [[context-and-memory]] (per-user memory). Those three answer *where and how it is read*; this one answers *what the things are and how a project is defined*. Director: consider merging context-location and org-context-grounding-source into this dimension as its "location" half, or keep all four linked; I have kept them separate and cross-referenced.
 **Related themes:** [[product-artifact-primitives]], [[artifact-standardization]], [[docs-as-code-prd]], [[pm-tool-connectivity]], [[project-taxonomy]], [[compounding-context-repo]], [[org-context-grounding]], [[memory-architecture]]   **Related dimensions:** [[context-and-memory]], [[intent-shaping-and-spec]], [[session-persistence-sharing]], [[governance-control-plane]]
@@ -1439,9 +1454,17 @@ River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
 | Visibility as enablement, CEO in public | Agent works only in public; the CEO runs his own channel (#tobi_river, 100+ watchers); learning by watching, "no curriculum, no training plan, no manager"; AI use assessed in performance reviews | Shopify River | Fast diffusion (5,938 users in 30 days by May 2026, self-reported) | Needs leadership modelling and a culture of working in public; chilling effect (see [[trust-privacy-defaults]]) | early-adopter | [Tobi article](../research/sources/x-tobi-learning-on-the-shop-floor.md) (first-party); [BVP](../research/sources/bvp-inside-shopifys-ai-first-engineering-playbook.md) (first-party) |
 | Internal marketing with an agent persona | AI-generated ads with the agent as a character (Mac-vs-PC parody) to win back users who tried an early version | Shopify Remote Dev team (River share of merged mobile PRs 6%→61%) | Reverses "this is not for me" after a bad first try | Attribution mixed with infra improvements; self-reported | early-adopter | [Remote Dev](../research/sources/shopify-engineering-remote-dev.md) (first-party) |
 
+Department of Product pass (competitive-teardown-stripe-knowledge-agents, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Agentic pods: engineers embedded with a function | Two-week pods pair an AI-proficient engineer with a domain expert: shadow, prioritise, build with them, validate, ship | Uber (~30 engineers; 16 pods in 16 functions; e.g. city capital allocation 15 h → 30 min) | Agents fit real workflows; whole workflows redesigned; adoption built in | Engineer capacity; scales only with pods; outcomes self-reported | early-adopter | [Uber CTO](../research/sources/x-praveen-uber-agentic-pods.md) (first-party) |
+| One domain, one surface first | Start with the most repeatable job and the tool its people already use, then widen | Stripe Kai (GTM pilot, per Stripe; "sales reps researching accounts", per DoP) | Fast proof, clear measure | Can stall as a point tool | early-adopter | [Department of Product](../research/sources/departmentofproduct-stripe-kai.md) (independent); [How I AI](../research/sources/howiai-stripe-kai-krishnamurthy.md) (first-party) |
+
 ---
 
-## agent-interface: Agent interface: own app, chat, or embedded
+## agent-interface:
+ Agent interface: own app, chat, or embedded
 **Choice:** Where people meet the agent: our own app (desktop or web workspace), the chat tool they already live in (Slack, Teams), the IDE/CLI, embedded inside existing tools (docs, tracker, browser), or one agent service behind several of these.
 **Why it matters to the strategy:** The surface decides who can use the agent on day one, what work is visible to others, what UI we must fund (artifact rendering, review panes, cost meters), and how much of the experience a chat vendor controls. River (Slack only) and Glass (own desktop app) are the two strongest opposite data points.
 **Related themes:** [[agent-as-service-many-surfaces]], [[org-learning-loop]], [[shared-persistent-sessions]], [[remote-agent-invocation]], [[enablement-by-product]]   **Related dimensions:** [[trust-privacy-defaults]], [[session-persistence-sharing]], [[artifact-and-project-structure]], [[adoption-model]], [[remote-invocation-route]], [[runtime-location]]
@@ -1528,10 +1551,13 @@ Key questions (Stripe pass):
 9. How would task-context isolation be enforced in our setting (data tags, tool-level checks, session forks)? — *answered by:* security owner; prototype with two customer datasets — *affects:* private, project-scoped and public options
 
 
+Department of Product pass (competitive-teardown-stripe-knowledge-agents, 2026-10-24): an independent explainer extends Stripe's task-context isolation to other domains: never two candidates for the same role side by side; never two patients summarised together; never performance and compensation data combined in one output. It argues such **combination guardrails** must be enforced at infrastructure or session level, not left to skill owners, and offers a discovery method: list what each group may access, then look at combinations, define each rule by harm and detection, and rank by likelihood × severity ([Department of Product](../research/sources/departmentofproduct-stripe-kai.md), independent). Key question: 10. Which combinations of individually accessible data must never meet in one session in our target orgs (e.g. two customers' roadmaps, a person's performance and pay), and can they be enforced below the skill layer? — *answered by:* security and policy owner workshop using that method — *affects:* all options
+
 ---
 
 
 ## Cross-cutting key questions
+
 
 1. Who is the user we are choosing for (individual PM, product team, whole org), and does the answer differ by dimension? — *answered by:* Geoff / user interviews
 2. What would the resource request fund first: a prototype to choose between options, or a build of the leading option?

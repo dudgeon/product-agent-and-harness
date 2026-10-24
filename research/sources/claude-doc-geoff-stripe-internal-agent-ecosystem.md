@@ -33,3 +33,6 @@ _Full text omitted from the public repository; see `source_url` for the original
 ## Could not verify
 - "PMs and designers in equal numbers" for Protodash: the Protodash episode says "more PMs than designers these days"; no numbers.
 - "Rami Banna" as the PM in the Clay video is the doc's inference (captions say "Romi"/"Ramy"); Banna is the author of the Stripe Projects post.
+
+## Added 2026-10-24
+- The Department of Product piece is no longer unread: read in full through Geoff's subscription; see [departmentofproduct-stripe-kai](departmentofproduct-stripe-kai.md).

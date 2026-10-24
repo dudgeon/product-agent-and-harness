@@ -74,6 +74,27 @@ Corrections from the second pass:
 - **The human problem remains.** Knowledge hiding is distinct from knowledge sharing ([meta-analysis](../../research/sources/ebr-knowledge-hiding-meta-analysis.md)). Experts gain little themselves. Curated skills go stale without anyone noticing ([knowledge-activation skills](../../research/sources/arxiv-yahoo-knowledge-activation-skills.md)).
 - **What does work:** verification. Stripe trusted its docs only after owners verified them. GitHub's write-back memory checks citations on read: A/B merge rate 83% → 90% ([GitHub](../../research/sources/github-blog-agentic-memory-copilot.md)). Business knowledge usually lacks that kind of ground truth.
 
+**Department of Product pass (2026-10-24): three more capture cases, all human-owned.**
+Geoff's paid access let me read the full [Department of Product deep dive](../../research/sources/departmentofproduct-stripe-kai.md) and its [15-company table](../../research/sources/departmentofproduct-internal-ai-tools-for-non-engineers.md). On Stripe it adds no new facts (everything traces to Stripe's post). It does add:
+- a PM playbook: one domain and one surface first; keep where skills are built separate from what runs the agent; domain owners as QA;
+- combination guardrails for other domains (two candidates, two patients, performance plus pay), enforced below the skill layer.
+
+Its peer table led to three primary sources that sharpen the hypothesis:
+- **[Spotify's Vedder context layer](../../research/sources/spotify-engineering-vedder-context-layer.md):**
+  - Domain experts own "clusters" of datasets, vetted question-SQL pairs and docs.
+  - When Spotify tried mining experts' query history instead, curators **rejected 87.5% of the generated examples as noise**.
+  - Each cluster has a computed health score, and every conversation is shown to its owners.
+  - 2,100+ users and 177 clusters (first-party).
+- **[Intercom's NPI process](../../research/sources/intercom-fin-npi-agent-readiness.md):**
+  - A feature counts as shipped only when the support agent can answer about it.
+  - PMs and engineers submit a "what we built" doc; walkthrough and GTM notes are added; an agent drafts and tests the content; a named owner signs off (first-party).
+- **[Uber's Agentic Pods](../../research/sources/x-praveen-uber-agentic-pods.md):**
+  - Engineers shadow domain experts for two days before building, because work can't be automated "by looking at process diagrams or documentation".
+  - 16 pods in 16 functions (first-party).
+
+These three strengthen the verdict. The need is real, and each case puts a **human owner or embedded human at the point of capture**, with agents drafting, testing and monitoring. None uses a standalone capture agent.
+Intercom adds a new placement on the chain: capture **after Code**, when work ships. That is the natural home for a context-creation step that feeds the next opportunity → goal cycle.
+
 **The sharpest version of the hypothesis to test:** an agent that elicits **problem and goal knowledge** (the "customer conversations" brace) and **decision rules** from people, writes them to a verified, owner-signed store with evidence links and expiry, and is measured by better downstream intent and plans. Do this rather than a general "mine everything" agent.
 
 Register: new sub-choice [context-and-memory / context-creation](../../options/DIMENSIONS.md#context-and-memory-context-and-memory). Its options are passive mining, owner-curated verified knowledge, agent drafts with owner review, interview-style elicitation, write-back from shipped work, and no dedicated capture. It has six key questions and a stated lean. Theme: `tacit-knowledge-capture`.
@@ -201,7 +222,7 @@ The architecture claims (layering, sandbox as a tool, the VFS, skills gating too
 - The follow-up post Stripe promised on skill routing (hybrid RAG/LLM) had not appeared as of 2026-10-24.
 - Both podcast transcripts are YouTube auto-captions. Timestamps are rounded to two-minute blocks.
 - X posts were read through a read-only mirror, without logging in, and replies were not read. The LinkedIn post was read from a public profile, and its date is unconfirmed.
-- Checked but with nothing on internal agents: Stripe's 2025 annual letter (PDF) and the Sessions 2026 coverage, which is about external agentic commerce. The Department of Product piece is paywalled after the intro.
+- Checked but with nothing on internal agents: Stripe's 2025 annual letter (PDF) and the Sessions 2026 coverage, which is about external agentic commerce. The Department of Product piece was read in full on 2026-10-24 through Geoff's subscription (see the Department of Product pass below).
 - I found no talk by Stripe's AI Platform lead (Chrissie Cui) and no independent post-mortem.
 
 ## Options by dimension
@@ -234,3 +255,8 @@ Second pass (2026-10-24):
 - [sequencing](../../options/DIMENSIONS.md#sequencing-which-jobs-first-and-which-layer-first): "bottom-up along the chain" vs "context layer first"; key question 9.
 - [context-and-memory](../../options/DIMENSIONS.md#context-and-memory-context-and-memory): new sub-choice **context-creation** (six options, six key questions, a lean).
 - New themes: `opportunity-to-code-chain`, `tacit-knowledge-capture`.
+
+Department of Product pass (2026-10-24):
+- context-and-memory / context-creation: Spotify evidence row; two new options, "knowledge readiness as a release gate" (Intercom) and "embedded human elicitation (pods)" (Uber); key questions 7-8; updated lean.
+- [trust-privacy-defaults](../../options/DIMENSIONS.md#trust-privacy-defaults-trust-and-privacy-defaults-for-sessions-and-context): combination guardrails; key question 10.
+- [adoption-model](../../options/DIMENSIONS.md#adoption-model-adoption-and-enablement-model): "agentic pods" and "one domain, one surface first".

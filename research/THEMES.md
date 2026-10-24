@@ -240,6 +240,8 @@ Teach users by what the product does (suggested skills, memory, self-healing) ra
 - [Make the Work Visible](sources/airealized-make-the-work-visible.md): visibility as the adoption lever; peer practices (AI Corner, failure labs) (competitive-teardown-shopify-river)
 - [How Stripe Built Kai on Deep Agents (LangChain)](sources/langchain-how-stripe-built-kai-deep-agents.md): adoption came from removing knobs: users who bounced off configurable tools found Kai needed none (competitive-teardown-stripe-knowledge-agents)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): pilot with GTM (200-300 users), then a company-wide demo triggered the ramp (competitive-teardown-stripe-knowledge-agents)
+- [Uber Agentic Pods (CTO post)](sources/x-praveen-uber-agentic-pods.md): 16 two-week pods in 16 functions: shadow, prioritise, build with the expert, validate, ship ('building with them, not for them') (first-party) (competitive-teardown-stripe-knowledge-agents)
+- [How Stripe Built a new Internal AI Knowledge Platform (Department of Product)](sources/departmentofproduct-stripe-kai.md): 'start with one domain and one surface', the most repeatable job in the tool people already use (independent) (competitive-teardown-stripe-knowledge-agents)
 
 ## enterprise-admin-controls: Enterprise admin controls across harnesses
 The identity, audit, policy, data-retention and cost controls a harness gives an org admin, and on which surfaces they are enforced. It is the baseline a regulated owner compares any build or layer against.
@@ -580,6 +582,7 @@ A stage chain for product work, drawn by a Stripe engineer, in which agents toda
 - [Building and Accelerating the Intent Factory](sources/geoff-building-accelerating-intent-factory.md): Geoff's eight-step Stripe/Ramp loop starts at informal intent and runs to staged release; Stripe's chain adds the three human stages above intent (opportunity, problem, goal) that the loop leaves implicit (competitive-teardown-stripe-knowledge-agents)
 - [Stripe's Internal Agent Ecosystem for Product Development](sources/claude-doc-geoff-stripe-internal-agent-ecosystem.md): Geoff's flow maps Kai (research), Harbor/Protodash (prototype), Orbit (plan), Minions (build), review agent plus human onto the same chain (competitive-teardown-stripe-knowledge-agents)
 - [AI didn't write our SDK. It changed how we built it.](sources/stripe-ai-didnt-write-our-sdk.md): between intent and code, agents draft specs that humans review as GitHub issues before implementation (competitive-teardown-stripe-knowledge-agents)
+- [Intercom Fin NPI](sources/intercom-fin-npi-agent-readiness.md): adds a step after code: shipped work is written back into the agent's knowledge, tested, and monitored for 2-4 weeks (first-party) (competitive-teardown-stripe-knowledge-agents)
 
 ## org-context-grounding: Agents work when grounded in organisation context
 Successful PM agents read the organisation's own data (docs, tickets, calls, code); thin context yields generic output. Related: [[compounding-context-repo]], [[harness-over-model]].
@@ -1067,11 +1070,16 @@ How know-how that lives in people's heads (how the business works, which data to
 - [Copilot and works councils (Microsoft Inside Track)](sources/microsoft-insidetrack-copilot-works-councils.md): works councils objected to features that rank or monitor employees; staged rollout (first-party) (competitive-teardown-stripe-knowledge-agents)
 - [Resolution extraction from Slack vs tickets](sources/neurips-2025-resolution-extraction-slack-vs-tickets.md): knowledge mined from Slack is more relevant but noisier; needs high-precision filtering (independent) (competitive-teardown-stripe-knowledge-agents)
 - [Expertise estimation from Slack](sources/arxiv-watanabe-expertise-estimation-slack.md): 'who knows what' inferred from 27k Slack messages had a best error of 21 points out of 100 (independent) (competitive-teardown-stripe-knowledge-agents)
+- [Encoding Your Domain Expert (Spotify Vedder)](sources/spotify-engineering-vedder-context-layer.md): experts own clusters of datasets, vetted question-SQL pairs and docs; curators rejected 87.5% of examples auto-generated from query history as noise; clusters carry a health score (first-party) (competitive-teardown-stripe-knowledge-agents)
+- [Intercom Fin NPI](sources/intercom-fin-npi-agent-readiness.md): a feature counts as shipped only when the support agent can answer about it; a 'what we built' doc plus meeting notes go to an agent that drafts and tests content (first-party) (competitive-teardown-stripe-knowledge-agents)
+- [Uber Agentic Pods (CTO post)](sources/x-praveen-uber-agentic-pods.md): engineers shadow domain experts for two days before building, because workflows can't be automated 'by looking at process diagrams or documentation' (first-party) (competitive-teardown-stripe-knowledge-agents)
+- [Internal AI tools for non-engineers (DoP PDF)](sources/departmentofproduct-internal-ai-tools-for-non-engineers.md): a 15-company table; three rows (Spotify, Intercom, Uber) are capture mechanisms (independent summary) (competitive-teardown-stripe-knowledge-agents)
 
 ## task-context-isolation: Isolation by task context, not only by user permission
 Limiting what a session may combine based on the task (e.g. never two customers' data in one analysis), even when the user could access each separately. Matters for trust/privacy defaults of shared or discoverable sessions.
 - [Meet Stripe's Knowledge AI Platform](sources/stripe-meet-knowledge-ai-platform.md): "you shouldn't combine data from two unrelated customer contexts in a single analysis"; the boundary is "what should this task be allowed to view given this context?" (competitive-teardown-stripe-knowledge-agents)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): tool policies stop sensitive HR data being written to a Stripe-wide doc without banning tools (competitive-teardown-stripe-knowledge-agents)
+- [How Stripe Built a new Internal AI Knowledge Platform (Department of Product)](sources/departmentofproduct-stripe-kai.md): analogous combination guardrails (two candidates, two patients, performance plus pay) that must be enforced at infrastructure or session level, not by skill owners (independent) (competitive-teardown-stripe-knowledge-agents)
 
 ## vendor-claims-vs-independent-evidence: Vendor claims dominate; independent evidence is rare
 Most evidence on PM agents is vendor marketing or self-reported; controlled or independent evaluations are almost absent. Weigh sources accordingly.
