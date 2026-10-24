@@ -22,7 +22,7 @@ Last updated: 2026-10-24 by director-project-agent-and-harness (Claude Code desk
 | Research: taxonomy of agent runtime patterns | local_2ee18572-3463-43af-b06d-0ee8b5960ba9 | app session | Opus 5.5 | [research-agent-runtime-patterns-taxonomy](tasks/research-agent-runtime-patterns-taxonomy.md) | idle; done (Geoff's section I answers recorded), awaiting lint and acceptance |
 | User story mapping: modular PM stories | local_8ebd568e-df86-4849-8b4a-81ae6863d7ca | app session | Opus 5.5 (audited on Fable) | [user-story-mapping](tasks/user-story-mapping.md) | idle; done, awaiting lint and acceptance |
 | teardown-shopify-river | 36a0d56f | claude --bg | Opus 5.5 | [competitive-teardown-shopify-river](tasks/competitive-teardown-shopify-river.md) | idle; reports done, to check |
-| teardown-stripe-agents | 3d45fbd1 | claude --bg | Opus 5.5 | [competitive-teardown-stripe-knowledge-agents](tasks/competitive-teardown-stripe-knowledge-agents.md) | idle; reports done, to check |
+| teardown-stripe-agents | 3d45fbd1 | claude --bg | Opus 5.5 | [competitive-teardown-stripe-knowledge-agents](tasks/competitive-teardown-stripe-knowledge-agents.md) | reopened: Geoff's doc, Trailhead, context-creation-agent hypothesis; report goes to story-and-film |
 | research-follow-up-round | a36bf408 | claude --bg | Opus 5.5 | [research-runtime-patterns-follow-up-round](tasks/research-runtime-patterns-follow-up-round.md) | stopped (stalled); its results merged from the worktree by the director; no addendum, no register rows |
 | story-and-film | 0bd16627 | claude --bg | Fable 5.1 | [strategy-story-and-explainer-video](tasks/strategy-story-and-explainer-video.md) | working; checkpoints A (outline), B (prototype look), C (Script Doc) go to Geoff |
 
