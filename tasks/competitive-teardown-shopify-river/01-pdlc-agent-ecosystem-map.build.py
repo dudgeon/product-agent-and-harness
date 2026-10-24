@@ -24,7 +24,7 @@ for i,t in enumerate(tasks):
 for y,l in [(86,"HUMANS · ANY ROLE"),(226,"AGENTS"),(426,"SHARED")]:
     S.append(f'<text class="lane" x="{X0}" y="{y}">{l}</text>')
 S.append(f'<line class="lanerule" x1="{X0}" y1="212" x2="{X0+W*NCOL}" y2="212"/><line class="lanerule" x1="{X0}" y1="412" x2="{X0+W*NCOL}" y2="412"/>')
-hum={0:["Tobi: ~6 yearly","themes;","leaders"],1:["not described","in any","source"],2:["anyone (7,000+),","in public","channels"],3:["teams, leaders;","GSD review","OK1 / OK2"],4:["PMs, designers,","engineers,","anyone"],5:["engineers and","others in","the thread"],6:["anyone, from","Slack; overnight","workflows"],7:["a human on","every PR","(“bottleneck”)"],8:["automated"],9:["engineers, security,","SRE, code","owners"]}
+hum={0:["Tobi: ~6 yearly","themes;","leaders"],1:["not described","in any","source"],2:["anyone (7,000+),","in public","channels"],3:["teams, leaders;","GSD review","OK1 / OK2"],4:["PMs, designers,","engineers,","anyone"],5:["engineers and","others in","the thread"],6:["anyone, from","Slack; overnight","workflows"],7:["a human on","every PR","(“bottleneck”)"],8:["automated"],9:["engineers,","security, SRE,","code owners"]}
 for i,l in hum.items():
     cls="pnode acc" if i in (1,3) else "pnode"
     S.append(box(i,96,92,l,cls))

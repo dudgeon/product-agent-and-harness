@@ -15,7 +15,7 @@ Template: the Stripe map, [02-pdlc-agent-ecosystem-map.md](competitive-teardown-
 |---|---|---|
 | Stripe | teardown-stripe-agents | [[competitive-teardown-stripe-knowledge-agents]] (done) |
 | Ramp (Glass, Inspect, Laminar) | Glass teardown session | [[competitive-teardown-ramp-glass]] (done: [07-pdlc-agent-ecosystem-map.md](competitive-teardown-ramp-glass/07-pdlc-agent-ecosystem-map.md)) |
-| Shopify (River, Aquifer) | teardown-shopify-river | [[competitive-teardown-shopify-river]] |
+| Shopify (River, Aquifer) | teardown-shopify-river | [[competitive-teardown-shopify-river]] (done: [01-pdlc-agent-ecosystem-map.md](competitive-teardown-shopify-river/01-pdlc-agent-ecosystem-map.md)) |
 | Anthropic (Claude Code, Cowork, internal use) | ingest-claude-resources | [[research-claude-resources-articles]] (done: [02-pdlc-agent-ecosystem-map.md](research-claude-resources-articles/02-pdlc-agent-ecosystem-map.md)) |
 | Atlassian (Rovo, Jira, Confluence) | user story mapping session | [[user-story-mapping]] |
 | Intercom (Claude Code for everyone, Fin) | PM agents session | [[research-pm-agents-jobs-to-be-done]] |
@@ -30,3 +30,4 @@ Next: [[pdlc-cross-ecosystem-map]], once all of these are in.
 - 2026-10-24 Atlassian map started by the user-story-mapping session (tasks/user-story-mapping/); one Opus subagent filling Rovo Dev / Loom / Goals / ops gaps.
 - 2026-10-24 Ramp map done by the Glass teardown worker: [07-pdlc-agent-ecosystem-map.md](competitive-teardown-ramp-glass/07-pdlc-agent-ecosystem-map.md) and .html (generator .build.py). 19 handoffs: 11 documented, 3 documented with one link unknown, 2 inferred, 3 unknown. Adds a Test row (Testo). Four Ramp Builders posts filed (Inspect, Ramp Research, OCA, agent trust).
 - 2026-10-24 Anthropic PDLC map done: tasks/research-claude-resources-articles/02-pdlc-agent-ecosystem-map.md and .html (generator .build.py); 20 handoffs: 15 documented, 3 inferred, 2 unknown; filed 2 more notes (Claude Code team code review; Scion source control).
+- 2026-10-24 Lifecycle map done by teardown-shopify-river: tasks/competitive-teardown-shopify-river/01-pdlc-agent-ecosystem-map.md + .html (20 handoffs: 14 documented, 2 inferred, 4 unknown).
