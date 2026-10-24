@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-AWS's governance layer for agents is enforced at the tool-call boundary: Cedar policies attached to AgentCore Gateway, evaluated "outside of the agent's reasoning loop", independent of framework or model. That is a deterministic gate a regulated company can audit, and it applies to any agent whose tools go through the gateway, including a Claude Agent SDK agent hosted on AgentCore Runtime (see Classmethod note). Paired with managed online evaluations, it is the closest hyperscaler analogue to Omnigent-style policies, but for agents rather than CLIs.
+AWS's governance layer for agents is enforced at the tool-call boundary: Cedar policies attached to AgentCore Gateway, evaluated "outside of the agent's reasoning loop", independent of framework or model. That is a deterministic gate a regulated company can audit, and it applies to any agent whose tools go through the gateway, including a Claude Agent SDK agent hosted on AgentCore Runtime (see the Classmethod note). Paired with managed online evaluations, it is the closest hyperscaler analogue to Omnigent-style policies, but for agents rather than CLIs.
 
 ## Themes
 - agent-control-plane: Policy intercepts Gateway tool calls before they run; enforce or log-only mode.
@@ -33,4 +33,4 @@ AWS's governance layer for agents is enforced at the tool-call boundary: Cedar p
 - "The policies operate independently of how the agent was built or which model it uses."
 
 ## Could not verify
-- AgentCore Identity and Amazon Quick Suite (AWS's employee-facing agent workspace) were not read. Retrieved via WebFetch (model-summarised view).
+- AgentCore Identity, pricing and Amazon Quick Suite (AWS's employee-facing agent workspace) were not read. Retrieved via WebFetch (model-summarised view).

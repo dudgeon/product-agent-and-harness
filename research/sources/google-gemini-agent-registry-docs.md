@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: docs
 evidence: first-party
 filed_by: research-runtime-patterns-follow-up-round
-themes: [agent-control-plane, capability-distribution-trust, remote-agent-invocation]
+themes: [agent-control-plane, skills-marketplace, remote-agent-invocation]
 relevance: medium
 ---
 
@@ -17,7 +17,7 @@ Shows what an agent registry concretely holds in Google's stack: agents, MCP ser
 
 ## Themes
 - agent-control-plane: "central hub for governance, discovery, and search for your AI ecosystem".
-- capability-distribution-trust: standalone skills can be registered (preview), alongside MCP servers and tools.
+- skills-marketplace: standalone skills can be registered (preview), alongside MCP servers and tools.
 - remote-agent-invocation: registered A2A agents; endpoints define destinations agents may connect to; IAM egress policies (`roles/iap.egressor`).
 
 ## Key points
@@ -30,4 +30,4 @@ Shows what an agent registry concretely holds in Google's stack: agents, MCP ser
 - "Register agents automatically from supported runtimes or manually for custom deployments."
 
 ## Could not verify
-- GA date and semantic-policy preview come from search snippets of release notes, not read directly. Retrieved via WebFetch (model-summarised view).
+- GA date and semantic-policy preview come from search snippets of release notes, not read directly. Page "last updated 2026-10-22" used as published date. Retrieved via WebFetch (model-summarised view).

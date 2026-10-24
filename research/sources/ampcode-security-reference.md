@@ -17,7 +17,7 @@ Amp is a closed, hosted, opinionated harness that picks models for the user. Its
 
 ## Themes
 - harness-portability: multi-model by design, but the agnosticism is Amp's, not the user's (manual: "Amp uses them all, for what each model is best at").
-- cost-control-routing: enterprise workspaces can switch off the ad-supported or free daily grant for all members.
+- cost-control-routing: enterprise workspaces can switch off the ad-supported or free daily grant for all members (per search summary of this page).
 - build-vs-buy: "doesn't offer self-hosted deployments"; some providers can use your own API keys.
 
 ## Key points

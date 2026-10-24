@@ -5,8 +5,10 @@ Every agent in this project files its research here, whatever task it's working 
 ```
 research/
   README.md        this rule
-  INDEX.md         one line per source note (append-only)
-  THEMES.md        the theme register: each theme, what it means, which sources support it
+  build.py         generates INDEX.md and THEMES.md; run it after you file
+  INDEX.md         GENERATED from source-note frontmatter (never edit)
+  THEMES.md        GENERATED from themes/ (never edit)
+  themes/          one file per task: <task-slug>.md, written only by that task
   sources/         one note per primary source
 ```
 
@@ -41,25 +43,25 @@ relevance: high | medium | low
   - `## Full text`: the full transcript or post text, verbatim, when the task asked for it. Long transcripts may instead go in `sources/<slug>.transcript.md` (same `source_url` at the top) and be linked from here.
   - `## Could not verify` (optional): what you couldn't retrieve or confirm.
 
-## 2. `INDEX.md`: one line per source, append-only
+## 2. `INDEX.md` is generated
 
-`- [<title>](sources/<slug>.md) · <type> · <published> · relevance <high|medium|low> · <one-line gist> · <source_url>`
+Don't edit it. Your note's frontmatter (title, type, published, relevance, source_url) and the first sentence of its "Relevance to the project" make its index line. After filing, run `python3 research/build.py`; fix any warning it prints for your notes.
 
-Append your line; never rewrite or reorder others' lines.
+## 3. Themes: write only your task's file
 
-## 3. `THEMES.md`: the theme register
-
-Themes are the recurring ideas pulled out across sources. Each theme is a section:
+Themes are the recurring ideas pulled out across sources. `THEMES.md` is **generated**; never edit it. Each task writes only `research/themes/<task-slug>.md`, so no agent can overwrite another's work:
 
 ```markdown
 ## <theme-slug>: <Theme name>
-<One or two sentences: what the theme is, and why it matters to the project.>
+<One or two sentences: what the theme is, and why it matters to the project. Only when your task introduces the theme.>
 - [<source title>](sources/<slug>.md): <the specific evidence, one line> (<filed_by task>)
 ```
 
-- **Reuse before inventing.** Read THEMES.md first; use an existing theme slug if it fits. Add a new theme only for a genuinely new idea.
-- **Add evidence by appending a bullet** under the theme. Don't rewrite another agent's theme description or bullets; if you think one is wrong or two themes should merge, say so in your report to the director instead.
-- Several agents write here at once: make small appends with Edit, re-reading the file just before each edit.
+- **Reuse before inventing.** Read the generated THEMES.md first; use an existing slug if it fits (add your bullets under the same `## slug: Name` heading in your own file, without a description).
+- Merges, renames and splits of themes across tasks are done only by the lint pass (LINTING.md), one at a time.
+- Then run `python3 research/build.py`.
+
+**Shared files, generally:** never rewrite a file another agent also writes (no Write tool, no script that rewrites it whole). Use small Edits on the current version. `options/DIMENSIONS.md` is the one shared hand-edited file: append only, with Edit.
 
 ## 4. Task deliverables
 

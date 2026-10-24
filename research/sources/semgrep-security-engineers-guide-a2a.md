@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-The primary source behind the widely repeated claim that A2A "supports but does not enforce Agent Card signing", previously only seen second-hand in Track 3. It also notes no enforced short-lived tokens, coarse scopes, no protocol-level consent step, and authorisation left to implementations. Written against v0.3; v1.0 later added signed-card support and dropped implicit/password OAuth flows but, per secondary reading, still leaves signing optional.
+The primary source behind the widely repeated claim that A2A "supports but does not enforce Agent Card signing", which Track 3 had only second-hand. It also notes no enforced short-lived tokens, coarse scopes, no protocol-level consent step, and authorisation left to implementations. Written against v0.3; v1.0 later added signed-card support and dropped implicit/password OAuth flows but, per a vendor blog (grith, 2026-03-20, read), still leaves signing optional.
 
 ## Themes
 - `agent-protocol-security` (proposed): "supports but does not enforce Agent Card signing", enabling spoofing; no central registry, so cheap spoofing is expected as background noise. Stream hijacking with a stolen session token; webhook push to arbitrary targets as a watch item; SDK serialisation bugs expected early.
@@ -22,6 +22,7 @@ The primary source behind the widely repeated claim that A2A "supports but does 
 ## Key points
 - Advice: define the authorisation model for agentic users before building; treat inputs as untrusted; choose SDKs carefully; watch Unicode normalisation, nesting depth, payload size, dynamic typing.
 - Links an A2A audit checklist (not read).
+- grith's post (https://grith.ai/blog/a2a-protocol-zero-defenses-prompt-injection, vendor advocacy, not filed separately) argues the v1.0 spec still has no consent task state, no prompt-injection defence and opaque remote execution, while crediting v1.0 with PKCE and removing implicit/password flows.
 
 ## Could not verify
 - Whether each point still holds for v1.0; the checklist itself.

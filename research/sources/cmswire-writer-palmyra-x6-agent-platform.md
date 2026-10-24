@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Writer (AI HQ) is an enterprise agent workspace for business users that ships its own model and its own "rebuilt orchestration harness", with Playbooks, 200+ Skills, triggers, supervision and spend reporting. It is a P5-shaped product sold as SaaS to large regulated-ish enterprises (AstraZeneca, Vodafone), and it claims the harness rebuild alone gave 44% faster, 41% cheaper tasks: a vendor's own harness-over-model claim.
+Writer (AI HQ) is an enterprise agent workspace for business users that ships its own model and its own "rebuilt orchestration harness", with Playbooks, 200+ Skills, triggers, supervision and spend reporting. It is a P5-shaped product sold as SaaS to large enterprises (AstraZeneca, Vodafone), and it claims the harness rebuild alone gave 44% faster, 41% cheaper tasks: a vendor's own harness-over-model claim.
 
 ## Themes
 - harness-over-model: "the rebuilt harness completed tasks 44% faster at 41% lower cost on average" (vendor claim).

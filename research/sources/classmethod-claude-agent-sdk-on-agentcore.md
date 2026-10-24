@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Independent practitioner evidence that a hyperscaler agent runtime can host the Claude Code harness itself: the Claude Agent SDK launches the Claude Code CLI as a subprocess inside AgentCore Runtime, with model calls routed through Bedrock. This makes "Claude Code-quality harness under a hyperscaler control plane" a real build option (P2 inside a P5-like governed runtime), not just a theory. It is a hello-world, not a production report.
+Independent practitioner evidence that a hyperscaler agent runtime can host the Claude Code harness itself: the Claude Agent SDK launches the Claude Code CLI as a subprocess inside AgentCore Runtime, with model calls routed through Bedrock. This makes "Claude Code-quality harness under a hyperscaler control plane" a real build option (P2 inside a governed cloud runtime), not just a theory. It is a hello-world, not a production report.
 
 ## Themes
 - harness-portability: AWS recommends Strands, but the author shows Claude Agent SDK works on AgentCore Runtime.

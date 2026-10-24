@@ -22,7 +22,7 @@ Analyst profile of OpenCode's company, business model and risks. Useful for supp
 ## Key points
 - Company: Anomaly (team behind SST and terminal.shop); repo moved sst/opencode to anomalyco/opencode; undisclosed funding round after the June 2025 launch.
 - MIT; 172k+ stars and 900+ contributors as of June 2026 (the earlier track recorded about 221k stars at 2026-10-24).
-- Business model: free with BYOK or local models; Go (/month, hosted open-weight models); Zen (pay-as-you-go gateway); Enterprise by quote.
+- Business model: free with BYOK or local models; Go ($10/month, hosted open-weight models); Zen (pay-as-you-go gateway); Enterprise by quote.
 - Risks: 1 GB+ RAM reports, frequent breaking releases, a developer report of prompts sent to a free hosted model for title generation despite local-only config, broad default permissions.
 
 ## Could not verify

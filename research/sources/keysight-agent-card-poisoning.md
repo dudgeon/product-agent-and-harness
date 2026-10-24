@@ -20,7 +20,7 @@ Shows that an Agent Card is untrusted text that ends up in the caller's prompt: 
 
 ## Key points
 - Simulation with a host agent holding `http_get`, `http_post`, `delegate_task`, `execute_python`; evidence from packet captures.
-- Implied mitigation: strict separation of card content from instructions. Signed cards would not help here: a signed card from a malicious agent is still malicious.
+- Implied mitigation: strict separation of card content from instructions. Our inference, not stated by Keysight: signed cards would not help here, since a signed card from a malicious agent is still malicious.
 
 ## Could not verify
 - Date taken from the URL path; author not shown; no named framework or SDK tested.

@@ -26,4 +26,4 @@ Independent journalism on the largest named "A2A" deployment claim (WeChat with 
 - Sources: unnamed Tencent sources via 36Kr, Martin Lau's Q1 2026 earnings call, FT report 2026-06-02.
 
 ## Could not verify
-- Whether the protocol is LF A2A, Huawei's HarmonyOS agent protocol or something Tencent-specific; whether the feature is live.
+- Whether the protocol is LF A2A, Huawei's HarmonyOS agent protocol or something Tencent-specific; whether the feature is live. A Portuguese HDC 2026 report (search snippet only) says HarmonyOS supports "the A2A protocol, adopted by more than 150 organizations", which points to LF A2A on the Huawei side.

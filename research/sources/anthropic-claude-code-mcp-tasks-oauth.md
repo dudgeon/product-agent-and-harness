@@ -26,3 +26,12 @@ Shows how the primary harness actually handles remote agents behind MCP today: t
 
 ## Could not verify
 - Only the first 100k of 150k characters were read; `claude mcp serve` and organisation-controls sections were not read.
+
+## Follow-up (2026-10-24)
+Filed by research-runtime-patterns-follow-up-round (codex-copilot-admin comparison). Read the remainder of the page (from character 100,000) for the managed-MCP sections only; the separate managed-mcp page was not read.
+- Central control: the page points to "Managed MCP configuration" for deploying a fixed server set with `managed-mcp.json`, providing servers to every user with `managedMcpServers`, and restricting servers with `allowedMcpServers` and `deniedMcpServers`. Entries match by `serverName` or `serverUrl` pattern (e.g. a `serverName` of "claude.ai Slack" blocks that connector).
+- Coverage by surface: terminal, VS Code, JetBrains and Agent SDK sessions honour these settings and managed MCP; cloud sessions honour allow/deny entries that reach the session (e.g. via server-managed settings), but "The session's proxy rewrites each connector's URL, so a `serverUrl` pattern written for the connector's own URL doesn't match it"; a `managed-mcp.json` on a self-hosted runner host drops delivered claude.ai connectors.
+- Gap: in Desktop app local and SSH sessions, connectors are registered as in-process `type: "sdk"` servers "and no MCP setting or `managed-mcp.json` reaches them"; the org can only block a connector's tools or turn off Claude Code in the desktop app.
+- `headersHelper` runs as an arbitrary shell command; since v2.1.238 it runs for project-scoped servers only after the folder trust dialog is accepted (earlier, `claude -p` and SDK sessions ran helpers without the trust check).
+- Comparison: Codex `requirements.toml` and Copilot `managed-settings.json` offer equivalent MCP allowlists, with Codex matching on command+args or URL and Copilot on URL, command or name (name called "not a security control"); see [Codex managed configuration](openai-codex-managed-configuration.md) and [Copilot managed settings](github-copilot-enterprise-managed-settings.md).
+- Model-summarised fetch; wording should be rechecked before quoting.

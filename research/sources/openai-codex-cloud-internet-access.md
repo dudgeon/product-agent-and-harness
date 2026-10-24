@@ -16,9 +16,9 @@ relevance: medium
 The network policy for Codex cloud tasks: off by default in the agent phase, per-environment allowlists and an HTTP-method restriction that is unusual among vendors. It also states that workspace-level Agent Security network requirements and the environment's own setting apply separately, and that a full-sandbox escalation can bypass the managed command proxy. For a regulated deployment of background agents this is the egress control that would have to be configured and evidenced.
 
 ## Themes
-- enterprise-admin-controls (proposed): "An allowed domain in Agent Security does not override a restriction in the Cloud environment's internet settings"; managed policy may allow full sandbox escalation that bypasses the command proxy, so set enforced approval and sandbox requirements and test escalated commands.
+- enterprise-admin-controls (proposed): "An allowed domain in Agent Security does not override a restriction in the Cloud environment's internet settings"; managed policy may allow full sandbox escalation that bypasses the command proxy, so the page advises enforced approval and sandbox requirements and testing escalated commands.
 - agent-failure-modes: named risks are prompt injection from untrusted content (example: an issue that tells the agent to POST the last commit to an attacker), code or secret exfiltration, malware or vulnerable dependencies, licence-restricted content.
-- remote-agent-invocation: setup scripts run with internet access; agent phase is off unless enabled per environment.
+- remote-agent-invocation: setup scripts run with internet access; the agent phase is off unless enabled per environment.
 
 ## Key points
 - "By default, Codex blocks internet access during the agent phase." "Setup scripts still run with internet access so you can install dependencies."
@@ -28,3 +28,4 @@ The network policy for Codex cloud tasks: off by default in the agent phase, per
 
 ## Could not verify
 - "Connect to services" (current Codex Cloud) not read. WorkOS (independent) says there is no documented way to restrict setup-phase egress and no documented blocked-egress log ([WorkOS](workos-agent-sandbox-egress-defaults.md)). A single community forum report of a hardcoded allowlist still applying under "unrestricted" was seen in search only, not read.
+- Undated; model-summarised fetch.

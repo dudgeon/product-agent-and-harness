@@ -29,7 +29,7 @@ A rare adopter-written (not vendor) account of how a large company maps one gove
 
 ## Notable quotes
 - "Claude cannot do this today. Connectors are org-wide on or off and cannot be scoped per team, and skill-sharing is org-level."
-- "the principle leads and the platform follows"
+- "Either way the principle leads and the platform follows"
 
 ## Could not verify
-- Retrieved by curl and text extraction (verbatim). Claude admin behaviour described as of GitLab's writing (sources Mar-Apr 2026, page modified 2026-09-08); may have changed.
+- Retrieved by curl and text extraction (verbatim). Claude admin behaviour described as of GitLab's writing (sources Mar-Apr 2026, page last modified 2026-09-08); may have changed.

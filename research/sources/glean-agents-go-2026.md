@@ -25,10 +25,10 @@ Glean's 2026 agent platform release adds the control-plane pieces (per-agent ide
 ## Key points
 - "Independent agents" own multi-step workflows and call a human only for decisions; targets on-call, voice-of-customer synthesis, sales.
 - Build in Claude Code/Cursor, sync with Git; version checkpoints; collaborative editing.
-- No customers or metrics named; deployment model not stated (other Glean pages describe single-tenant customer environment).
+- No customers or metrics named; deployment model not stated (another Glean page describes a single-tenant customer environment).
 
 ## Notable quotes
 - "Each one gets its own identity and provisioned access, so you can see exactly what it touched and why."
 
 ## Could not verify
-- Glean's security showcase page (glean.com/security-showcase, Glean Protect, AWARE framework with Databricks and Palo Alto Networks) was read but gave no concrete controls; not filed separately. Retrieved via WebFetch (model-summarised view).
+- Page shows "Last updated Aug 26, 2026" (used as published date). Glean's security showcase page (Glean Protect, AWARE framework with Databricks and Palo Alto Networks) was read but gave no concrete controls; not filed separately. Retrieved via WebFetch (model-summarised view).

@@ -17,9 +17,9 @@ The clearest public analyst definition of the term "agent control plane": the th
 
 ## Themes
 - agent-control-plane: term introduced by Forrester in December 2025; vendor poll (Feb 2026, 47 vendors): 79% see it as a distinct category, 92% have a named PM or team, 40% report active RFPs.
-- identity-delegation: "No such standard exists" for portable agent identity across planes; Microsoft Entra Agent Registry listed as proprietary.
+- identity-delegation: no portable agent identity standard across planes; Microsoft Entra Agent Registry listed as proprietary.
 - skill-standards: no capability-manifest schema across planes; MCP (2.1 added server identity), A2A agent cards, IBM ACP manifests each cover part.
-- vendor-claims-vs-independent-evidence: poll is of vendors, not buyers.
+- vendor-claims-vs-independent-evidence: the poll is of vendors, not buyers.
 
 ## Key points
 - Control plane needs: observability, portable identity (model bindings, tool access, permissions, cost ceilings, behavioural constraints), policy propagation to build and orchestration layers, interventions (suspend, reroute, throttle, escalate).
@@ -30,6 +30,7 @@ The clearest public analyst definition of the term "agent control plane": the th
 ## Notable quotes
 - "We are in the "dial-up internet" phase of the agentic era."
 - "A control plane can't govern what it can't observe."
+- "No such standard exists at the level of maturity that enterprises require."
 
 ## Could not verify
 - The Q2 2026 landscape report itself (paywalled); vendor list known only from Airia and WSO2 releases. Retrieved via WebFetch (model-summarised view).

@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-A real enterprise customer (a university under compliance obligations) disabled Claude Cowork org-wide because its activity was not captured in Anthropic's audit logs, Compliance API or data exports, citing Anthropic's own guidance not to enable Cowork for regulated workloads. It shows that, for a regulated buyer, audit coverage of each agent surface decides adoption, independent of capability. The gap was later closed (see anthropic-compliance-api-cowork-claude-code, GA 2026-08-26), and the page is now marked archived.
+A real enterprise customer (a university with compliance obligations) disabled Claude Cowork org-wide because its activity was not captured in Anthropic's audit logs, Compliance API or data exports, citing Anthropic's own guidance not to enable Cowork for regulated workloads. It shows that, for a regulated buyer, audit coverage of each agent surface decides adoption, independent of capability. The gap was later closed (see anthropic-compliance-api-cowork-claude-code, GA 2026-08-26), and the page is now marked archived.
 
 ## Themes
 - agent-control-plane: audit coverage per surface is the gating control; only one org-wide on/off toggle, no role-based control at the time.

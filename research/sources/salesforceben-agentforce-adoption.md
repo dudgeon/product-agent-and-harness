@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: article
 evidence: independent
 filed_by: research-runtime-patterns-follow-up-round
-themes: [vendor-claims-vs-independent-evidence, agent-project-failure-rates, enablement-by-product]
+themes: [vendor-claims-vs-independent-evidence, agent-project-failure-rates]
 relevance: medium
 ---
 
@@ -18,10 +18,10 @@ The best independent check found on any enterprise agent platform's adoption: Ag
 ## Themes
 - vendor-claims-vs-independent-evidence: 18,500 deals / 9,500 paid (Q3 FY26) against ~150,000 customers; growth figures come from Salesforce.
 - agent-project-failure-rates: analysts quoted say implementation skills have not reached mid-tier organisations.
-- enablement-by-product: (contrast) over half of new bookings from existing customers buying more credits (consumption model).
 
 ## Key points
 - Agentforce ARR $540M (+330% YoY) per Salesforce; 11.14T tokens served by 2026-01-12 (Benioff on X).
+- Over half of new bookings came from existing customers buying more credits (consumption model).
 - SF Ben surveys: 30-34% adoption among Salesforce developers, admins and architects.
 - Vernon Keenan: few customers have adopted; Timo Kovala (Capgemini): sold on flashy demos rather than pain points.
 
@@ -29,4 +29,4 @@ The best independent check found on any enterprise agent platform's adoption: Ag
 - "the few thousand who have adopted it represent a fraction of the 150,000-customer base" (Vernon Keenan)
 
 ## Could not verify
-- Figures not re-checked against Salesforce filings. Salesforce Ben is a Salesforce-ecosystem publication, independent of Salesforce but not of the ecosystem. Retrieved via WebFetch (model-summarised view).
+- Figures not re-checked against Salesforce filings; the ~6% paid share is my calculation from the article's numbers. Salesforce Ben is a Salesforce-ecosystem publication, independent of Salesforce but not of the ecosystem. Retrieved via WebFetch (model-summarised view).

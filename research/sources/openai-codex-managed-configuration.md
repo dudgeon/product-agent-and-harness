@@ -29,12 +29,12 @@ This is OpenAI's admin-enforced policy layer for Codex (CLI, desktop app, IDE ex
 - Hooks: `[hooks]` with `managed_dir`; `allow_managed_hooks_only = true` skips user, project, session and plugin hooks. The runtime enforces hooks but does not distribute the scripts (use MDM). A `PreToolUse` callback error, timeout or malformed response "can fail the hook without blocking the tool" (fail-open hooks).
 - Network: `[experimental_network]` (experimental, limited Windows support) with domain allow/deny, deny beats allow; "A deny-only policy does not implicitly allow the rest of the internet."
 - Residency: `enforce_residency` in a cloud policy disables "Allow local computer access" for Work; the page says this key does not itself configure residency.
-- Models: model pins are defaults, not enforced requirements; page notes GPT-5.5 retires from Codex with ChatGPT sign-in on 2026-10-14.
+- Models: model pins are defaults, not enforced requirements; the page notes GPT-5.5 retires from Codex with ChatGPT sign-in on 2026-10-14.
 - Group targeting: "Test policies" shows which policies match but not the merged result or client enforcement; "Managed configuration does not grant a workspace seat or feature access."
 - Precedence (low to high): system file, Agent Security cloud bundle, legacy `managed_config.toml` fields, macOS MDM. Managed values override CLI `--config` flags.
 - A running cloud task "may not immediately use a changed policy".
 
 ## Could not verify
 - No publish date on the page; content retrieved through a model-summarised fetch, so verbatim wording should be rechecked before quoting in the deck.
-- Whether requirements are enforced for Codex cloud tasks in the same way as local clients (page says cloud environments have their own tabs; internet-access page says managed command allowlist and proxy apply on "supported managed Codex Cloud paths").
-- No independent test of bypass resistance of the local requirements layer found.
+- Whether requirements are enforced for Codex cloud tasks in the same way as local clients (the page has separate cloud environment tabs; the internet-access page says a managed command allowlist and proxy apply on "supported managed Codex Cloud paths").
+- No independent test of the bypass resistance of the local requirements layer was found.

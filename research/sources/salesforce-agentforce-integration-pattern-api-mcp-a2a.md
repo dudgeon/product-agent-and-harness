@@ -22,7 +22,7 @@ Salesforce's own decision rule for when an Agentforce agent should use a plain A
 ## Key points
 - Describes "two beta features for Agentforce, Model Context Protocol (MCP) and Agent2Agent (A2A)".
 - Hypothetical order-returns example only; no named customers or traffic.
-- Salesforce's architect guide (not read; search snippet) describes A2A Outbound with admin registration of each external agent's skills and A2A Inbound for external agents calling Agentforce.
+- Salesforce's architect interoperability guide (not read; search snippet) describes A2A Outbound with admin registration of each external agent's skills and A2A Inbound for external agents calling Agentforce.
 
 ## Could not verify
 - Current (October 2026) GA status of Agentforce A2A; Salesforce developer docs on A2A were not reached.

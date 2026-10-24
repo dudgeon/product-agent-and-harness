@@ -22,10 +22,11 @@ A vendor-contributed summary of Gartner's Market Guide for Guardian Agents (2026
 
 ## Key points
 - Gartner abstract (2026-05-14, paywalled, seen only as search snippet) titled "Accelerate AI Agent Governance and Security Using Platform-Agnostic Guardian Agents".
-- Related Gartner items seen only via secondary summaries: "agent washing" (June 2025, ~130 of thousands of agentic vendors "real"); first Hype Cycle for Agentic AI (2026) names agent washing as a hazard and recommends MCP plus an MCP gateway (per Tray.ai blog).
+- Related Gartner items seen only via secondary summaries: "agent washing" (June 2025, ~130 of thousands of agentic vendors "real"); first Hype Cycle for Agentic AI (2026) names agent washing as a hazard and recommends MCP plus an MCP gateway (per a Tray.ai blog).
 
 ## Notable quotes
 - "Guardian agents supervise AI agents, helping ensure agent actions align with goals and boundaries." (Gartner, as quoted)
+- "Today, guardian agent deployments are mainly prototypes or pilots." (Gartner, as quoted)
 
 ## Could not verify
 - Gartner primary documents (paywalled). The article is sponsored content promoting an identity product. Retrieved via WebFetch (model-summarised view).

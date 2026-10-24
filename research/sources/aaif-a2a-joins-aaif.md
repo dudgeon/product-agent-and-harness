@@ -25,6 +25,7 @@ A2A moved from its own Linux Foundation project into the Agentic AI Foundation, 
 - Platform support listed: Google Cloud (ADK, Agent Engine, Cloud Run, GKE), Azure AI Foundry, AWS Bedrock AgentCore.
 - Quotes from AAIF CTO Manik Surtani and Google Cloud's Rao Surapaneni.
 - The A2A project's own post dates the move 2026-08-27 and says A2A was accepted at "Growth Stage" ([A2A blog](a2a-project-joining-aaif.md)).
+- Confirms the IBM ACP merger (August 2025) at a primary-ish source, which Track 3 had only from search summaries.
 
 ## Notable quotes
 - "As organizations move multi-platform agentic systems into production, interoperability is becoming essential" (Rao Surapaneni, Google Cloud).

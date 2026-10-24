@@ -1,5 +1,5 @@
 ---
-title: A New Chapter for A2A: Joining the Agentic AI Foundation
+title: "A New Chapter for A2A: Joining the Agentic AI Foundation"
 source_url: https://a2a-protocol.org/latest/blog/2026/08/27/a-new-chapter-for-a2a-joining-the-agentic-ai-foundation/
 author: A2A project
 publisher: a2a-protocol.org

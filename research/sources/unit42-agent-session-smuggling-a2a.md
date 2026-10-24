@@ -27,4 +27,4 @@ A worked attack on stateful agent-to-agent delegation: a malicious remote agent 
 - Not observed in the wild; "its low barrier to execution makes it a realistic risk".
 
 ## Could not verify
-- Whether A2A v1.0 (March 2026) changes anything relevant; the research predates it (the authors say it is not protocol-specific).
+- Whether A2A v1.0 (March 2026) changes anything relevant; the research predates it (the authors say the issue is not protocol-specific).

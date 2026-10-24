@@ -20,7 +20,7 @@ Shows a local parallel-session manager growing into a hosted product with cloud 
 - shared-persistent-sessions: remote hosts where "Workspaces keep running when your laptop sleeps"; Team plan adds cloud workspaces (beta).
 
 ## Key points
-- Plans (pricing page): Free (/bin/zsh, 1 user, local workspaces, desktop app, CLI); Pro (/user/mo; remote access, automations, Linear and Slack integrations, mobile); Team (/user/mo; cloud workspaces beta, 1,200 GB-hours per seat pooled, 5 cloud environments); Ultra (/user/mo); Enterprise (custom, annual: SAML SSO, SCIM provisioning, audit logs, SOC 2 Type II report, uptime SLA).
+- Plans (pricing page): Free ($0, 1 user, local workspaces, desktop app, CLI); Pro ($20/user/mo; remote access, automations, Linear and Slack integrations, mobile); Team ($60/user/mo; cloud workspaces beta, 1,200 GB-hours per seat pooled, 5 cloud environments); Ultra ($200/user/mo); Enterprise (custom, annual: SAML SSO, SCIM provisioning, audit logs, SOC 2 Type II report, uptime SLA).
 - Homepage: "Repos, worktrees, terminal output, and agent sessions stay on your machine"; source public under ELv2, "not OSI-approved open source"; SOC 2 Type II claimed with a trust portal.
 - Logo strip "Trusted by builders from" Microsoft, OpenAI, Google, Salesforce, Vercel, Cloudflare, Amazon: individuals, not stated as customers.
 - Enterprise page is a contact form; no detail on admin policy, self-hosting or data handling.

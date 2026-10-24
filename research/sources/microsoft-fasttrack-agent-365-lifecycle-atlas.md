@@ -33,4 +33,4 @@ Microsoft's own deployment guidance says plainly what the "control plane" does a
 - "Telemetry is visibility, not enforcement."
 
 ## Could not verify
-- Page shows "accuracy reviewed 2026-09-16" (used as published date). A vendor blog (egroup-us, vantaige) claims Agent 365 offers "local agent governance" for Claude Code and Copilot CLI; this atlas does not say so (only Shadow AI detection). Treat that claim as unverified.
+- Page shows "accuracy reviewed 2026-09-16" (used as published date). A vendor blog (egroup-us, vantaige) claims Agent 365 offers "local agent governance" for Claude Code and Copilot CLI; this atlas does not say so (only Shadow AI detection). Treat that claim as unverified. Retrieved via WebFetch (model-summarised view).

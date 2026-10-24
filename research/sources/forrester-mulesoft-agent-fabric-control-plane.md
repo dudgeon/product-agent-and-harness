@@ -21,7 +21,7 @@ A public analyst argument that the cross-platform control layer is more strategi
 - harness-portability: control layer must span many platforms.
 
 ## Key points
-- Agentforce sits in the less cohesive orchestration layer; risk Salesforce over-invests there.
+- Agentforce sits in the less cohesive orchestration layer; risk Salesforce over-invests there while Agentforce and MuleSoft units stay siloed.
 - Agent Fabric "has a strong lead compared to the competition" (analyst opinion).
 
 ## Notable quotes

@@ -27,7 +27,7 @@ Databricks' CTO explaining why Omnigent exists, recorded at Data + AI Summit 202
 - Agent Bricks not mentioned; Unity Catalog mentioned as Zaharia's prior governance work.
 
 ## Notable quotes
-- "I don't want to end up on the front page as, like, I installed some weird npm package and leaked" (Zaharia, paraphrased via summarising fetch; treat as approximate)
+- "I don't want to end up on the front page as, like, I installed some weird npm package and leaked" (Zaharia, via summarising fetch; treat as approximate)
 
 ## Could not verify
 - Only the first ~100k characters of the transcript page were read, through a summarising fetch.

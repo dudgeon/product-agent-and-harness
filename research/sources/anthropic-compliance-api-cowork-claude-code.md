@@ -31,4 +31,4 @@ Anthropic's own enterprise "control plane" piece for its harnesses: the Complian
 - "This beta doesn't include Claude Code on the web"
 
 ## Could not verify
-- Retention periods, public-sector exclusion (stated in support article per search snippet: Compliance API excludes Public Sector orgs). Retrieved via WebFetch (model-summarised view).
+- Retention periods; public-sector exclusion (the support article excludes Public Sector orgs from the Compliance API, per search snippet only). Retrieved via WebFetch (model-summarised view).
