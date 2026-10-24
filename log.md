@@ -36,3 +36,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Geoff: stop asking about worker films; they're lightweight. Decided: all 16:9 in 04's look, workers decide details, GPU self-serve after 04's full build starts. Film 09 (Stripe) added.
 - 2026-10-24 Claude resources ingestion done: 695 items triaged, 95 notes filed (first-party), 451 theme bullets; options in options/contributions/.
 - 2026-10-24 Lenny's sweep done: 564 posts triaged (2024-10-24 on), 157 notes filed, 2 new themes; film notes relayed to story-and-film as v2 candidates. Register contributions (3 files) being merged by an Opus subagent.
+- 2026-10-24 Merged 3 register contributions into DIMENSIONS.md: +120 option rows, +158 see-also evidence bullets, +96 key questions; verified nothing lost.
