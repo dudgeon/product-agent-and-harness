@@ -38,7 +38,7 @@ S.append(f'<text class="cap" x="{X0+W*3+W/2:.1f}" y="{y-8}" text-anchor="middle"
 arrow(f"M{X0+W*6-6} {y}H{X0+W*6+6}")   # Builderbot plan -> code
 arrow(f"M{X0+W*7-6} {y}H{X0+W*7+6}")   # code -> review
 arrow(f"M{cx(4):.1f} 330 C{cx(4):.1f} 384 {cx(6)-40:.1f} 384 {cx(6)-18:.1f} 332")  # PM/designer prototype -> PR
-S.append(f'<text class="cap" x="{cx(5):.1f}" y="398" text-anchor="middle">PMs and designers ship the PR</text>')
+S.append(f'<text class="cap" x="{cx(5)-10:.1f}" y="400" text-anchor="end">PMs and designers ship the PR</text>')
 # research -> plan across people: the gap
 S.append(f'<path class="gap" d="M{cx(2)+26:.1f} 238 C{cx(2)+70:.1f} 200 {cx(5)-70:.1f} 200 {cx(5)-26:.1f} 236" marker-end="url(#ahg)"/>')
 S.append(f'<circle class="gapdot" cx="{(cx(2)+cx(5))/2:.1f}" cy="208" r="12"/><text class="gapq" x="{(cx(2)+cx(5))/2:.1f}" y="214" text-anchor="middle">?</text>')

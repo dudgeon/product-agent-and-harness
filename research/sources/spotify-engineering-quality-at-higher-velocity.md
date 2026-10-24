@@ -26,6 +26,7 @@ Spotify's first public account of quality problems after the AI speed-up. Its cl
 - Other incidents: content processing delays (June 24), compute shortages linked to industry AI demand.
 - Cites DORA 2025: AI adoption linked to higher throughput but lower stability.
 - Says plainly "AI slop isn't among those" problem areas.
+- Process changes: the monthly incident retrospective now also asks whether AI-authored code contributed and whether change volume strained review and rollout; automated changes are scheduled in owning teams' working hours; the mobile quality cycle is "ship fast, then broaden guardrails"; complexity and PR-size thresholds were deliberately left unchanged.
 
 ## Could not verify
 - Incident counts are not given; the "not material" finding is Spotify's own review.

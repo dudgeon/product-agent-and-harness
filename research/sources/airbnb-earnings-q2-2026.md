@@ -28,6 +28,7 @@ Airbnb's strongest public claim that AI changed product delivery: "We've rebuilt
 - Chesky: "Last year, I told our company that AI is an existential risk to us"; the CTO hire moved Airbnb "from a middle-of-the-pack company for AI to a leader in AI" (his view).
 - AI search vision: natural-language input and responses, AI-written titles, real-time personalised highlights, ask the listing page questions; "less chatty" and visual.
 - Letter: https://www.sec.gov/Archives/edgar/data/1559720/000119312526337928/d70413dex991.htm
+- The letter groups shipped work by guest and host journey ("hundreds of small improvements that compound"), while bigger expansions still go out in the "2026 Summer Release". The benchmark firm is not named.
 
 ## Notable quotes
 - "AI is the best thing to ever happen to Airbnb." (Chesky, prepared remarks)

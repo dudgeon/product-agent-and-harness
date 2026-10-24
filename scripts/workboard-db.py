@@ -29,6 +29,7 @@ SESS = {
  "runtime-patterns-film": APP("local_2ee18572-3463-43af-b06d-0ee8b5960ba9"),
  "teardowns-to-pattern-classes": APP("local_2ee18572-3463-43af-b06d-0ee8b5960ba9"),
  "pattern-classes-teardown-examples": APP("local_2ee18572-3463-43af-b06d-0ee8b5960ba9"),
+ "revise-pattern-classes": APP("local_2ee18572-3463-43af-b06d-0ee8b5960ba9"),
  "user-story-mapping": APP("local_8ebd568e-df86-4849-8b4a-81ae6863d7ca"),
  "competitive-teardown-shopify-river": BG("teardown-shopify-river", "36a0d56f"),
  "competitive-teardown-stripe-knowledge-agents": BG("teardown-stripe-agents", "3d45fbd1"),

@@ -25,7 +25,10 @@ First call after the CTO hire. Chesky gives the adoption figure "More than 80% o
 - Goals for one year out (Chesky): support in all live-agent languages and by voice, more ticket types; engineers "significantly more efficient"; AI through booking and listing; aim to be the first e-commerce company to nail conversational search.
 - The "Hawaii" innovation model (hundreds of small improvements) is credited with hundreds of millions in 2025 revenue (operating-model detail; other note covers).
 - CFO: nothing from AI search banked in the 2026 outlook.
+- Project Hawaii in detail (prepared remarks): about two years earlier (so early 2024) "a small lead team" got one mandate, "make it easier to find and book a home", and shipped hundreds of small improvements; it is now the company "blueprint" (a pricing team "with a clear goal", a focused team for Brazil, city-by-city launches: Paris for experiences, LA for services).
+- Release cadence (late Q&A): "we're not waiting for a release to ship… We'll use May as a bit more of a showcase… We ship the moment it's ready"; May 2025 was "a one-time rebuilding of the platform".
 - Letter: https://www.sec.gov/Archives/edgar/data/1559720/000119312526048670/d58192dex991.htm
 
 ## Could not verify
+- The transcript writes both "Project Y" and "Project Hawaii" for the same project, and "shift" for "ship".
 - Machine-generated transcript; the CTO's name is mangled in it. "Nearly 30% of tickets" (call) vs "about a third of issues" (letter) differ in base.

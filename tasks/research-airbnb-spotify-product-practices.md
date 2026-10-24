@@ -17,3 +17,6 @@ Related: [[pdlc-maps-per-ecosystem]] (same map frame), [[pdlc-cross-ecosystem-ma
 - 2026-10-24 Filed by director-project-agent-and-harness.
 - 2026-10-24 Worker research-airbnb-spotify (85993db5, https://claude.ai/code/session_01F2D6G24G9xFAoLAG1fAWF5) started via claude --bg on Opus 5.5 with --remote-control.
 - 2026-10-24 Worker started (Opus 5.5): read rules, existing Spotify/Airbnb notes and the Stripe map template; fanned out four Opus research subagents (Airbnb org/process, Airbnb AI, Spotify org/process, Spotify AI).
+- 2026-10-24 Three of four research subagents done (Airbnb operating model: 16 notes; Airbnb AI: 28 notes; Spotify AI: 24 notes). Wrote mapkit.py and the Airbnb map (01-pdlc-airbnb.md/.html/.build.py): 18 handoffs, 14 documented, 2 inferred, 2 unknown.
+- 2026-10-24 All four subagents done: 90 source notes filed; themes file written (67 themes, 352 bullets, 10 new slugs); build.py 0 warnings. Spotify map written (02-pdlc-spotify.md/.html/.build.py): 18 handoffs, 15 documented, 1 inferred, 2 unknown.
+- 2026-10-24 Wrote 00-brief.md and options/contributions/research-airbnb-spotify-product-practices.md (no edit to DIMENSIONS.md). Checks: build.py 0 warnings; 392 relative links and anchors resolve; no public-check term matches; no Full text sections; HTML has no scripts. Reported to director.

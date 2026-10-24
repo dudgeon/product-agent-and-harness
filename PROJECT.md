@@ -39,6 +39,7 @@ Subject (Geoff, 2026-10-24): "Product agent and harness". Brand new project.
 - 2026-10-24 Films are built end to end before Geoff reviews them: no script sign-off before voicing. Geoff watches the render, then edits the Script Doc. (Geoff, for film 04; the director applies it to the explainer films 05-08 too.)
 - 2026-10-24 Background-session worktree isolation is off for this project (`worktree.bgIsolation: "none"` in .claude/settings.json, local and gitignored), so `claude --bg` workers can Edit the main folder again. That isolation was the root cause of the split register headings and the stranded worktree. (Geoff)
 - 2026-10-24 This project's rendered explainer films may be published in the public repo and on its GitHub Pages site, overriding the explainers rule that keeps voiced audio out of public repos; this covers the finished films only, never the voice model, weights or raw voiced lines. Every published film must carry background music under the narration from start to end, so the voice is harder to fine-tune on. (Geoff)
+- 2026-10-24 Revise the runtime pattern classes (B.2) after mapping the teardowns: add a class for agents built into SaaS tools, move hosted meta-harness services into P7, split P8 by sharing model, re-place Glass; keep an old-to-new change log. (Geoff)
 - 2026-10-24 All research goes in one shared library, `research/` (sources with links, relevance and themes; an index; a theme register), as a standing rule for current and future agents. (Geoff)
 
 ## Done

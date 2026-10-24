@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spotify Lifecycle Map</title>
+<style>
+/* Same language as the Stripe map: ink on cool paper, one amber accent for the undocumented handoff and the tasks only people do. System fonts, no scripts. */
+:root{
+  --paper:#f6f6f2; --surface:#ffffff; --ink:#1d2228; --muted:#5d6670; --rule:#d6d9d6; --accent:#b4580c; --accent-soft:#f5e3d2; --auto:#e9ecef; --lite:#f1f3f1;
+  --serif:"Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; --sans:system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; --mono:ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55}
+.wrap{max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:40px 64px; display:grid; grid-template-columns:minmax(0,1fr); gap:36px}
+.wrap > *{min-width:0}
+header{display:grid; gap:10px; max-width:70ch}
+.eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--serif); font-weight:600; font-size:clamp(30px,4.4vw,44px); line-height:1.1; margin:0; text-wrap:balance}
+h2{font-family:var(--serif); font-weight:600; font-size:24px; margin:0 0 10px; text-wrap:balance}
+p{margin:0; max-width:70ch}
+.lede{font-size:18px}
+.answer{background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:6px; padding:20px 22px; display:grid; gap:12px}
+.answer ol,.answer ul{margin:0; padding-left:22px; display:grid; gap:8px; max-width:72ch}
+.diagram{overflow-x:auto; background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:12px}
+.diagram svg{display:block; min-width:1040px; width:100%; height:auto}
+.diagram .stage{font-family:var(--serif); font-weight:600; font-size:14.5px; fill:var(--ink)}
+.diagram .chain{font-family:var(--serif); font-style:italic; font-size:13.5px; fill:var(--muted)}
+.diagram .lane{font-family:var(--mono); font-size:11px; letter-spacing:.1em; fill:var(--muted)}
+.diagram .cap,.diagram .leg{font-family:var(--sans); font-size:12.5px; fill:var(--muted)}
+.diagram .gapl{fill:var(--accent); font-size:11.5px}
+.diagram .leg{font-size:13.5px; fill:var(--ink)}
+.diagram .guide{stroke:var(--rule); stroke-width:1; stroke-dasharray:2 5}
+.diagram .lanerule{stroke:var(--rule); stroke-width:1.2}
+.diagram .node{fill:var(--surface); stroke:var(--ink); stroke-width:1.6}
+.diagram .node.lite{fill:var(--lite); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode{fill:var(--paper); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode.acc{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.6}
+.diagram .auto{fill:var(--auto); stroke:var(--muted); stroke-width:1.2}
+.diagram .sub{fill:var(--auto); stroke:none}
+.diagram .nt{font-family:var(--sans); fill:var(--ink)}
+.diagram .doc{fill:none; stroke:var(--ink); stroke-width:1.8}
+.diagram .inf{fill:none; stroke:var(--muted); stroke-width:1.5; stroke-dasharray:5 5}
+.diagram .gap{fill:none; stroke:var(--accent); stroke-width:2; stroke-dasharray:3 5}
+.diagram .gapdot{fill:var(--paper); stroke:var(--accent); stroke-width:2}
+.diagram .gapq{font-family:var(--serif); font-weight:600; font-size:16px; fill:var(--accent)}
+.diagram .mk{stroke:var(--ink); stroke-width:1.5}
+.diagram .mkg{stroke:var(--accent); stroke-width:1.5}
+.tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:6px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:760px; font-size:14.5px}
+th,td{text-align:left; vertical-align:top; padding:10px 14px; border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); background:var(--paper)}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600}
+.status{font-family:var(--mono); font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); white-space:nowrap; display:inline-block}
+.s-doc{border-color:var(--ink)} .s-inf{color:var(--muted); border-style:dashed} .s-unk{color:var(--accent); border-color:var(--accent)}
+.row-gap td{background:var(--accent-soft)}
+section{display:grid; gap:12px}
+ul.impl{margin:0; padding-left:20px; display:grid; gap:10px; max-width:74ch}
+.counts{font-family:var(--mono); font-size:13px; color:var(--muted)}
+.foot{font-size:13.5px; color:var(--muted); max-width:82ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Airbnb and Spotify research · lifecycle map by task · 24 Oct 2026</div>
+  <h1>Where Spotify’s people and agents sit in the product lifecycle, task by task</h1>
+  <p class="lede">Anchored on tasks, not job titles: Spotify moved from autonomous squads (2012) to VP-level bets ranked by the co-CEOs every six months (2023 on). Engineers supervise agents, and PMs and designers build prototypes in the real apps. Each handoff is marked documented, inferred or unknown. Almost every figure is Spotify’s own.</p>
+</header>
+
+<div class="answer">
+  <h2>Spotify’s context layer carries systems, not reasons</h2>
+  <ol>
+    <li><strong>Agents get rich context about systems.</strong> The Backstage/Portal catalog (owners, lineage, standards, docs, even skills as owned entities) is exposed to agents over MCP. Xirp sessions start with catalog context, and transcripts flow back (Spotify Engineering and Portal blogs, 2025–26).</li>
+    <li><strong>The why behind a bet travels in people.</strong> About 14 VPs pitch bets “as if … a VC”, and the co-CEOs stack-rank 30–50 of them every six months. VPs must explain details themselves in a weekly E-Team (Söderström, May 2025). No source shows a written evidence brief in today’s bets process.</li>
+    <li><strong>Spotify had evidence-carrying intent artifacts, but kept them optional and off the platform.</strong> The DIBB bet brief (2016), the Thoughtful Execution tree (2020), and the Understand It Brief and Scorecard (2021) live in Google Docs, Figma and MURAL. None is linked into Backstage, the code or the bets record.</li>
+    <li><strong>The engineering intent artifact is strong; the product one is missing.</strong> A fleet change is a versioned prompt with the end state, preconditions, examples and “done” as tests (Honk, Nov 2025). Linking PRs to work items, A/B tests and user value is “what we’re trying to build right now” (chief architect, early 2026).</li>
+  </ol>
+  <p><strong>Across people:</strong> since 2023 Spotify has put the research → intent → plan seam at the VP level. The VP is the carrier, and the six-month bets board is the commitment. The squads that research, shape and build sit below it. Leadership says plans are now the constraint (“when you have productivity on tap, what you need to have are very good plans”, Feb 2026), but its tooling investment is in systems context and verification, not in product rationale.</p>
+</div>
+
+<div class="diagram" role="figure" aria-label="Spotify’s product lifecycle by task, with the humans, agents and shared tools at each task and the handoffs between them">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" role="img" aria-labelledby="dtitle"><title id="dtitle">Spotify’s product lifecycle by task, with the humans, agents and shared tools at each task and the handoffs between them</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mk"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mkg"/></marker></defs>
+<text class="stage" x="82.0" y="24" text-anchor="middle"><tspan x="82.0">Spot the</tspan><tspan x="82.0" dy="18">opportunity</tspan></text>
+<text class="chain" x="82.0" y="66" text-anchor="middle">Opportunity</text>
+<text class="stage" x="206.0" y="24" text-anchor="middle"><tspan x="206.0">Talk to</tspan><tspan x="206.0" dy="18">customers</tspan></text>
+<text class="chain" x="206.0" y="66" text-anchor="middle">Problem</text>
+<line class="guide" x1="144" y1="50" x2="144" y2="500"/>
+<text class="stage" x="330.0" y="24" text-anchor="middle"><tspan x="330.0">Research</tspan><tspan x="330.0" dy="18">the problem</tspan></text>
+<line class="guide" x1="268" y1="50" x2="268" y2="500"/>
+<text class="stage" x="454.0" y="24" text-anchor="middle"><tspan x="454.0">Set the</tspan><tspan x="454.0" dy="18">goal</tspan></text>
+<text class="chain" x="454.0" y="66" text-anchor="middle">Goal</text>
+<line class="guide" x1="392" y1="50" x2="392" y2="500"/>
+<text class="stage" x="578.0" y="24" text-anchor="middle"><tspan x="578.0">Shape the</tspan><tspan x="578.0" dy="18">intent</tspan></text>
+<text class="chain" x="578.0" y="66" text-anchor="middle">Intent</text>
+<line class="guide" x1="516" y1="50" x2="516" y2="500"/>
+<text class="stage" x="702.0" y="24" text-anchor="middle"><tspan x="702.0">Plan the</tspan><tspan x="702.0" dy="18">change</tspan></text>
+<text class="chain" x="702.0" y="66" text-anchor="middle">Plan</text>
+<line class="guide" x1="640" y1="50" x2="640" y2="500"/>
+<text class="stage" x="826.0" y="24" text-anchor="middle"><tspan x="826.0">Write the</tspan><tspan x="826.0" dy="18">code</tspan></text>
+<text class="chain" x="826.0" y="66" text-anchor="middle">Code</text>
+<line class="guide" x1="764" y1="50" x2="764" y2="500"/>
+<text class="stage" x="950.0" y="24" text-anchor="middle"><tspan x="950.0">Review the</tspan><tspan x="950.0" dy="18">change</tspan></text>
+<line class="guide" x1="888" y1="50" x2="888" y2="500"/>
+<text class="stage" x="1074.0" y="24" text-anchor="middle"><tspan x="1074.0">Release</tspan></text>
+<line class="guide" x1="1012" y1="50" x2="1012" y2="500"/>
+<text class="stage" x="1198.0" y="24" text-anchor="middle"><tspan x="1198.0">Operate</tspan><tspan x="1198.0" dy="18">and learn</tspan></text>
+<line class="guide" x1="1136" y1="50" x2="1136" y2="500"/>
+<text class="lane" x="20" y="86">HUMANS · ANY ROLE</text>
+<text class="lane" x="20" y="226">AGENTS</text>
+<text class="lane" x="20" y="426">SHARED</text>
+<line class="lanerule" x1="20" y1="212" x2="1260" y2="212"/><line class="lanerule" x1="20" y1="412" x2="1260" y2="412"/>
+<rect class="pnode" x="26.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="82.0" y="138.8" text-anchor="middle"><tspan x="82.0" dy="0">~14 VPs</tspan><tspan x="82.0" dy="15.5">pitch bets</tspan></text>
+<rect class="pnode acc" x="150.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="206.0" y="138.8" text-anchor="middle"><tspan x="206.0" dy="0">user</tspan><tspan x="206.0" dy="15.5">researchers</tspan></text>
+<rect class="pnode" x="274.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="330.0" y="131.0" text-anchor="middle"><tspan x="330.0" dy="0">data science,</tspan><tspan x="330.0" dy="15.5">research, PMs;</tspan><tspan x="330.0" dy="15.5">non-SQL users</tspan></text>
+<rect class="pnode acc" x="398.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="454.0" y="131.0" text-anchor="middle"><tspan x="454.0" dy="0">co-CEOs</tspan><tspan x="454.0" dy="15.5">stack-rank</tspan><tspan x="454.0" dy="15.5">30–50 bets</tspan></text>
+<rect class="pnode" x="522.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="578.0" y="131.0" text-anchor="middle"><tspan x="578.0" dy="0">PM, design,</tspan><tspan x="578.0" dy="15.5">eng trio;</tspan><tspan x="578.0" dy="15.5">all prototype</tspan></text>
+<rect class="pnode" x="646.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="702.0" y="131.0" text-anchor="middle"><tspan x="702.0" dy="0">VPs staff;</tspan><tspan x="702.0" dy="15.5">migration and</tspan><tspan x="702.0" dy="15.5">library owners</tspan></text>
+<rect class="pnode" x="770.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="826.0" y="131.0" text-anchor="middle"><tspan x="826.0" dy="0">engineers</tspan><tspan x="826.0" dy="15.5">supervise; PMs</tspan><tspan x="826.0" dy="15.5">small changes</tspan></text>
+<rect class="pnode" x="894.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="131.0" text-anchor="middle"><tspan x="950.0" dy="0">code owners;</tspan><tspan x="950.0" dy="15.5">migration</tspan><tspan x="950.0" dy="15.5">driver</tspan></text>
+<rect class="pnode" x="1018.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="138.8" text-anchor="middle"><tspan x="1074.0" dy="0">owning</tspan><tspan x="1074.0" dy="15.5">teams</tspan></text>
+<rect class="pnode" x="1142.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="131.0" text-anchor="middle"><tspan x="1198.0" dy="0">experimenters;</tspan><tspan x="1198.0" dy="15.5">platform</tspan><tspan x="1198.0" dy="15.5">teams</tspan></text>
+<rect class="node" x="274.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="330.0" y="273.0" text-anchor="middle"><tspan x="330.0" dy="0">Vedder (data);</tspan><tspan x="330.0" dy="15.5">AiKA</tspan><tspan x="330.0" dy="15.5">(knowledge)</tspan></text>
+<rect class="node" x="522.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="578.0" y="273.0" text-anchor="middle"><tspan x="578.0" dy="0">Cursor, Claude</tspan><tspan x="578.0" dy="15.5">Code prototypes;</tspan><tspan x="578.0" dy="15.5">offline evals</tspan></text>
+<rect class="node" x="770.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="826.0" y="273.0" text-anchor="middle"><tspan x="826.0" dy="0">Honk</tspan><tspan x="826.0" dy="15.5">(Agent SDK);</tspan><tspan x="826.0" dy="15.5">Xirp sessions</tspan></text>
+<rect class="node" x="894.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="273.0" text-anchor="middle"><tspan x="950.0" dy="0">verifiers;</tspan><tspan x="950.0" dy="15.5">verification</tspan><tspan x="950.0" dy="15.5">service</tspan></text>
+<rect class="node" x="1142.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="273.0" text-anchor="middle"><tspan x="1198.0" dy="0">Confidence</tspan><tspan x="1198.0" dy="15.5">ship rule;</tspan><tspan x="1198.0" dy="15.5">EwL labels</tspan></text>
+<rect class="auto" x="646.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="702.0" y="273.0" text-anchor="middle"><tspan x="702.0" dy="0">Fleetshift +</tspan><tspan x="702.0" dy="15.5">lineage</tspan><tspan x="702.0" dy="15.5">(deterministic)</tspan></text>
+<rect class="auto" x="1018.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="273.0" text-anchor="middle"><tspan x="1074.0" dy="0">auto-merge</tspan><tspan x="1074.0" dy="15.5">if safe;</tspan><tspan x="1074.0" dy="15.5">toggles</tspan></text>
+<rect class="sub" x="26.0" y="436" width="1228.0" height="56" rx="7"/><text class="nt" style="font-size:13px" x="640.0" y="468.5" text-anchor="middle"><tspan x="640.0" dy="0">Backstage / Portal catalog (owners, lineage, standards, TechDocs, skills as entities) · MCP actions · Confidence · bet briefs and trees in Google Docs, Figma · Slack · Jira</tspan></text>
+<path class="doc" d="M758 284H770" marker-end="url(#ah)"/>
+<path class="doc" d="M882 284H894" marker-end="url(#ah)"/>
+<path class="doc" d="M1006 284H1018" marker-end="url(#ah)"/>
+<path class="doc" d="M578.0 330 C578.0 372 786.0 372 808.0 332" marker-end="url(#ah)"/>
+<text class="cap" x="702.0" y="380" text-anchor="middle">Slack → Honk; prototype app store</text>
+<path class="gap" d="M356.0 238 C370.0 198 662.0 198 676.0 236" marker-end="url(#ahg)"/>
+<circle class="gapdot" cx="516.0" cy="206" r="12"/><text class="gapq" x="516.0" y="212" text-anchor="middle">?</text>
+<text class="cap gapl" x="534.0" y="210" text-anchor="start">evidence → bet</text>
+<path class="inf" d="M330.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M578.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M826.0 188V236" marker-end="url(#ah)"/>
+<path class="doc" d="M826.0 436V332" marker-end="url(#ah)"/>
+<text class="cap" x="831.0" y="426">catalog context</text>
+<path class="inf" d="M1198.0 332V434" marker-end="url(#ah)"/><text class="cap" x="1193.0" y="426" text-anchor="end">decision records</text>
+<path class="doc" d="M20 530h40" marker-end="url(#ah)"/><text class="leg" x="72" y="535">documented by Spotify</text>
+<path class="inf" d="M270 530h40" marker-end="url(#ah)"/><text class="leg" x="322" y="535">inferred, or a person uses the agent for the task</text>
+<path class="gap" d="M660 530h40" marker-end="url(#ahg)"/><text class="leg" x="712" y="535">research evidence → bet and plan: carried by VPs, not artifacts</text>
+<text class="cap" x="20" y="570">Column headers are tasks; the row below them is the opportunity-to-code chain. Accent: tasks still done by people with no tool shown. Our own diagram, not Spotify’s UI.</text>
+</svg>
+</div>
+
+<section>
+  <h2>Task by task</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Task</th><th>Who does it</th><th>Agents and tools</th><th>Artifact</th></tr></thead>
+    <tbody>
+      <tr><td>Spot the opportunity</td><td>VPs and their teams (bottom-up bets); insights teams; leadership</td><td>None named; Confidence sold as a “product intelligence layer”; LLMs proposed for screening weak ideas</td><td>Bet pitch; DIBB data and insights (2016 form)</td></tr>
+      <tr><td>Talk to customers</td><td>User researchers (Product Insights)</td><td>No agent found; diary studies, interviews</td><td>Research findings</td></tr>
+      <tr><td>Research the problem, read the data</td><td>Data scientists with researchers; PMs; 2,100+ data-assistant users, a quarter non-SQL</td><td><strong>Vedder</strong> (expert-curated context clusters); <strong>AiKA</strong> (internal knowledge Q&amp;A since Dec 2023); behavioural proxies</td><td>Answers with SQL and sources; sized opportunity statements</td></tr>
+      <tr><td>Set the goal</td><td>Co-CEOs (formerly co-presidents) rank bets; VPs write area strategy; teams set measurable goals</td><td>Internal planning tool; bets board</td><td>Six-month stack rank of 30–50 bets; “definitions of done”</td></tr>
+      <tr><td>Shape the intent</td><td>Product, design and engineering trio; everyone up to the co-CEOs prototypes</td><td>Cursor and Claude Code prototypes in the real apps, shared in an internal app store; offline LLM evals pick treatments</td><td>Thoughtful Execution tree, Understand It Brief, Scorecard (2020–21); prototypes; versioned migration prompts</td></tr>
+      <tr><td>Plan the change</td><td>Co-CEOs and VPs (bets, staffing); migration and library owners; advisory boards on golden tech</td><td>Fleetshift targeting (deterministic); Backstage lineage; code search</td><td>Six-month plan; target lists; golden-tech standards; RFCs and ADRs</td></tr>
+      <tr><td>Write the code</td><td>Engineers supervising agents; PMs for small changes</td><td><strong>Honk</strong> (Claude Agent SDK background agent, from Slack, GitHub, Jira); Claude Code; <strong>Xirp</strong> multi-agent sessions</td><td>Pull requests (73–76% AI-authored or more PRs, Spotify’s figures)</td></tr>
+      <tr><td>Review the change</td><td>Code owners; Scorecard evaluators by role (2021)</td><td>Hidden verifiers in the stop hook; a verification service runs real CI before any PR; an LLM judge (later dropped)</td><td>Validated PR</td></tr>
+      <tr><td>Release</td><td>Owning teams</td><td>Auto-merge for safe fleet changes; release trains, toggles, gradual rollout; builds to phones from Slack</td><td>Merged change; app build</td></tr>
+      <tr><td>Operate and learn</td><td>Experimenters, platform and SRE teams, data science</td><td><strong>Confidence</strong> ship rule and Experiments-with-Learning labels; regression monitoring; monthly retros that tag AI’s part</td><td>Shipping recommendation with reasons; ship/abort/iterate label; retros</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Every handoff, task to task</h2>
+  <p class="counts">Counts: 18 handoffs: 15 documented (three from 2016–21 with current use unknown), 1 inferred, 2 unknown.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>From → to</th><th>How</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Talk to customers → research</td><td>Diary studies and behavioural logs on the same users at the same time (one team, 2019)</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Research → shape intent</td><td>Thoughtful Execution tree (goal, insights, opportunities, hypotheses, solutions, learnings), then Understand It Brief, then Scorecard (2020–21); current use unknown</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Research, insight → spot the opportunity, set the goal</td><td>DIBB two-page bet brief on an open bets board (2016); current form unknown</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Spot (VP bet) → set the goal, plan</td><td>Pitch, then a global stack rank by the co-CEOs, then top-down staffing (2025)</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Shape intent (prototype) → plan</td><td>A prototyping phase before each cycle exposes conflicts between bets</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr class="row-gap"><td><strong>Research evidence → bet and plan</strong></td><td>Not described as an artifact; VPs carry it and must “explain it yourself” in the E-Team</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr class="row-gap"><td><strong>Plan (bet) → agent work and back</strong></td><td>No link from a bet to the prompts, PRs or A/B tests that serve it; linking PRs to work items and user value is still being built</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>Shape intent → write code</td><td>PMs propose small changes through Honk from Slack; prototypes run in the real apps and are shared in an app store; prototype-to-ship conversion not reported</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Shape intent (design) → write code</td><td>Figma specs; named in 2021 as inconsistent, with motion hard to code</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Plan (lineage) → write code (migrations)</td><td>Backstage lineage → code search → Fleetshift scope → context file with mapping tables → Honk</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Thread, ticket, PR comment → write code</td><td>An interactive agent gathers task details, then hands a prompt to Honk</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Shared catalog → agent session → catalog</td><td>Xirp sessions start with catalog context; transcripts and metadata flow back to Portal</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Write code → review</td><td>Verifiers in the stop hook; a verification service runs real CI; only then a PR to code owners</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Review → release</td><td>Auto-merge for safe fleet changes; after an incident, more safeguards and changes scheduled in owners’ working hours</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Release → learn</td><td>Confidence’s default ship rule; every experiment labelled ship, abort or iterate</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Shape intent (offline evals) → A/B test → fix</td><td>An evaluation funnel: evals pick treatments, experiments validate, judge findings become fixes</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Operate → shared knowledge</td><td>AiKA usage leads teams to improve docs; fewer repeat questions</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Learn → next six-month plan</td><td>Learning rates reallocate testing bandwidth; whether results feed the next bets cycle is not described</td><td><span class="status s-inf">inferred</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>What it means for our options</h2>
+  <ul class="impl">
+    <li><strong>The best-built context layer in the eight maps, and it stops at the code.</strong> Catalog, lineage, standards and skills are owned entities agents can query. Product rationale (why this bet, on what evidence) is not one of them. A bet or brief as a catalog kind with an owner and lifecycle is the obvious extension, and nobody has built it.</li>
+    <li><strong>Spotify’s own history is a menu of intent artifacts.</strong> DIBB brief, Thoughtful Execution tree, Understand It Brief, Scorecard. All were optional “reminders” in an autonomy culture, which is a warning for any spec standard an agent would enforce.</li>
+    <li><strong>Engineering intent is agent-ready: end state, preconditions, examples, done as tests, versioned in Git.</strong> That is the strongest evidence for a spec standard with a verification contract.</li>
+    <li><strong>Verification, not generation, is now the limit.</strong> Merged changes roughly doubled year over year, and Spotify says “the next constraint became our ability to verify it”. Autonomy is earned by deterministic checks; the LLM judge was dropped.</li>
+  </ul>
+</section>
+
+<p class="foot">Sources: <a href="../../research/sources/lenny-podcast-gustav-soderstrom-scaling-spotify.md">Söderström on Lenny’s Podcast (May 2023)</a>; <a href="../../research/sources/colossus-ilb-gustav-soderstrom-how-spotify-thinks.md">Invest Like the Best (May 2025)</a>; <a href="../../research/sources/kniberg-spotify-rhythm.md">Spotify Rhythm (2016)</a>; <a href="../../research/sources/spotify-design-thoughtful-execution-framework.md">Thoughtful Execution (2020)</a>; <a href="../../research/sources/spotify-design-scorecards-alignment.md">Scorecards (2021)</a>; <a href="../../research/sources/jeremiahlee-failed-squad-goals.md">Jeremiah Lee (independent, 2020)</a>; <a href="../../research/sources/spotify-engineering-honk-part-1-1500-prs.md">Honk parts 1–4 (Nov 2025–Apr 2026)</a>; <a href="../../research/sources/infoq-qcon-spotify-ai-codebase-migration-agent.md">QCon London talk (Mar 2026)</a>; <a href="../../research/sources/spotify-engineering-coding-no-longer-constraint.md">Coding Is No Longer the Constraint (Jun 2026)</a>; <a href="../../research/sources/spotify-engineering-quality-at-higher-velocity.md">Quality at Higher Velocity (Sep 2026)</a>; <a href="../../research/sources/spotify-portal-blog-introducing-xirp.md">Xirp (Aug 2026)</a>; <a href="../../research/sources/spotify-engineering-vedder-context-layer.md">Vedder (Jun 2026)</a>; <a href="../../research/sources/spotify-engineering-risk-aware-product-decisions.md">Confidence ship rule (2024)</a>; <a href="../../research/sources/spotify-engineering-llm-evals-funnel.md">evaluation funnel (May 2026)</a>; <a href="../../research/sources/claude-customers-spotify-office-hours.md">Anthropic office hours (vendor claim)</a>; <a href="../../research/sources/spotify-q4-2025-earnings-call.md">Q4 2025 call</a>; <a href="../../research/sources/spotify-q3-2026-earnings-call.md">Q3 2026 call</a>; <a href="../../research/sources/heise-spotify-top-developers-no-code.md">heise (independent, Feb 2026)</a>. Full notes: 02-pdlc-spotify.md in this folder.</p>
+</div>
+</body>
+</html>

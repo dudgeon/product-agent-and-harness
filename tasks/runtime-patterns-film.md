@@ -26,3 +26,4 @@ Related: [[research-agent-runtime-patterns-taxonomy]], [[strategy-story-and-expl
 - 2026-10-24 Film 04's full build was running, so I queued on the GPU lock as rtp-film (voice-only, then one full build) behind stripe-film and glass-film.
 - 2026-10-24 Director: film 04's build was killed by the low-memory guard, and Geoff chose to restart 04 next and hold the shorts. Cancelled my rtp-film GPU job: no process left and no ticket in the queue. Will requeue only after out/product-agent-harness has a film and its build has exited.
 - 2026-10-24 Film 04 done (director); stopped my watcher; queued rtp-film (voice-only, then one full build).
+- 2026-10-24 First voice pass: 48 of 50 lines passed. 2 failed the speech check ('M C P', and 'finished' heard as 'Finnish'). Added 'm c p' to the shared voice/heard-as.json (one small edit) and reworded the A2A line to 'the agent-to-agent protocol'. Re-synced, --check passes, requeued voice plus full build.
