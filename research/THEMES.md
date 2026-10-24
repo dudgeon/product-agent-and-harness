@@ -95,6 +95,8 @@ A chain of specialised agents (insight, define, build, review, test, coordinate)
 - [How Warp ships 2,000 PRs a month with AI factories (How I AI)](sources/howiai-warp-zach-lloyd-software-factory.md): Warp's "Wilson" factory turns a Slack/Linear/GitHub/Sentry trigger into issue, implementation, PR and computer-use QA video; factory defined in code (repos, MCP servers, config, agents) (research-lennys-newsletter-archive)
 - [Agentic Software Development Takes The Lead (Forrester)](sources/forrester-agentic-software-development-sdlc-agents.md): Analyst says agents now span the whole SDLC, increasingly orchestrated; PMs "vibe prototypes" and "generate specs, enabling spec-driven development" (research-pm-agents-jobs-to-be-done)
 - [How we use Linear Agent at Linear](sources/linear-how-we-use-linear-agent-at-linear.md): PM-filed issue turned into an agent PR, reviewed by an engineer within the hour (research-pm-agents-jobs-to-be-done)
+- [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): 497 PRs in four weeks fully autonomous: Claude wrote, the AI approval system reviewed, approved and shipped; merge-to-production averages 12 minutes (2026-04-21) (research-pm-agents-jobs-to-be-done)
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): 93.6% of PRs agent-driven; 313 automatic production deployments and 2,539 CI jobs in 24 hours (CTO, 2026-04-16) (research-pm-agents-jobs-to-be-done)
 
 ## agent-failure-modes: Recurring agent failure modes in PM work
 Invented content, silent omissions, brittleness, generic output when context is thin.
@@ -140,6 +142,7 @@ Invented content, silent omissions, brittleness, generic output when context is 
 - [CBTW on Rovo since launch](sources/cbtw-atlassian-rovo-real-world-feedback.md): Partner reports inconsistent backlog analysis/JQL, wrong ticket selection, ignored filters; partner bias, no data (research-pm-agents-jobs-to-be-done)
 - [Why Atlassian Rovo Failed Us](sources/devto-tschimev-why-atlassian-rovo-failed-us.md): Rovo "can't handle nuanced tickets, doesn't understand team conventions"; "polished in demos but struggles in production"; single-team anecdote (research-pm-agents-jobs-to-be-done)
 - [Sycophantic AI decreases prosocial intentions and promotes dependence](sources/stanford-cheng-sycophantic-ai-science-2026.md): 11 models affirmed users ~49% more often than humans (Science, 2026; abstract via search); risk for 'pressure-test my idea' uses (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): an agent pushed "hundreds of thousands of changes" breaking CI; incident-investigation agents give "plausible suggestions that are red herrings" (research-pm-agents-jobs-to-be-done)
 - [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl](sources/fowler-bockeler-sdd-kiro-speckit-tessl.md): spec-kit ignored research notes and duplicated existing classes; over-applied constitution; Tessl regeneration non-deterministic. (user-story-mapping)
 
 ## agent-frameworks: Agent frameworks
@@ -190,6 +193,7 @@ Agents do the research, interrogation and spec-tightening that turn rough intent
 - [Adam Mosseri: AI is a tailwind for authenticity](sources/lenny-podcast-adam-mosseri-product-staff.md): working with agents "looks more like management": define success, choose how prescriptive to be, give feedback along the way (24:06) (research-lennys-newsletter-archive)
 - [Why LinkedIn is turning PMs into AI-powered "full stack builders"](sources/lenny-podcast-tomer-cohen-full-stack-builder.md): heads of craft built trust, growth, research and analyst agents that critique specs; the trust agent replayed on the Open to Work spec found "all the holes that we did not catch until later"; the research agent "shifted the direction of the team" (19:58-21:59) (research-lennys-newsletter-archive)
 - [Felix Rieseberg (Cowork)](sources/howiai-felix-rieseberg-cowork.md): uses Opus over Sonnet when "I ... don't really know yet what [I'm] asking for": reinterpreting the request is the hard part (10:11) (research-lennys-newsletter-archive)
+- [What we're learning from engineers getting the most from Claude Code](sources/ideas-fin-what-were-learning-from-engineers.md): 5-20 plan-mode turns mapping code, comparing options and challenging edge cases before "build it"; no formal spec artifact, the plan lives in the session (anecdote) (research-pm-agents-jobs-to-be-done)
 - [Building and Accelerating the Intent Factory](sources/geoff-building-accelerating-intent-factory.md): Ramp's parallel research agents write each finding to a file; seven-question interrogation; agent-originated intent (§Vision, steps 1–3) (research-product-agent-and-harness)
 - [Intent Shaping in a Well-Managed Environment](sources/geoff-intent-shaping-well-managed-environment.md): an iterative owner/risk-advisor loop in which mitigations become requirements and the spec tightens (§Iterative intent-shaping) (research-product-agent-and-harness)
 
@@ -285,6 +289,8 @@ Practitioner and academic evidence of fabricated details, merged quotes and lost
 - [Don't Use Generative AI to Replace Discovery with Real Humans](sources/producttalk-generative-ai-discovery.md): ChatGPT "customer stories" were generic, similar and fabricated (research-pm-agents-jobs-to-be-done)
 - [Building My First AI Product: 6 Lessons from My 90-Day Deep Dive](sources/producttalk-ai-playbook-first-ai-product.md): ChatGPT invented interview quotes; Claude produced duplicates and solutions labelled as opportunities (research-pm-agents-jobs-to-be-done)
 - [Customer Interview Analysis: Where AI Helps and Hurts](sources/producttalk-customer-interview-analysis-ai.md): ChatGPT got about 30% of direct quotes wrong or missing (research-pm-agents-jobs-to-be-done)
+- [Talk to the bot: When to use an AI interviewer](sources/ideas-fin-talk-to-the-bot-ai-interviewer.md): Intercom researchers use AI summaries only "as a reference point" because they lack company context (research-pm-agents-jobs-to-be-done)
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): researchers spend more time verifying AI-generated findings (research-pm-agents-jobs-to-be-done)
 
 ## artifact-standardization: Artifact standardization
 Conventions, manifests and protocol primitives that make artifacts typed, discoverable and attributable (file layouts, frontmatter, MCP resources, provenance).
@@ -412,6 +418,9 @@ A shared, agent-readable, harness-agnostic store of product context ("evidence, 
 - [Community Wisdom: How AI is changing product operating models](sources/lenny-community-wisdom-ai-operating-models.md): when a PM changes requirements, the open PR should update with an audit trail of why (research-lennys-newsletter-archive)
 - [Community Wisdom: Keeping architecture docs up to date](sources/lenny-community-wisdom-architecture-docs-intent.md): counterview: codebase as single source of truth, docs generated on demand and checked against code and live UI (research-lennys-newsletter-archive)
 - [Why Atlassian Rovo Failed Us](sources/devto-tschimev-why-atlassian-rovo-failed-us.md): .cursorrules, skills/ directory and ADRs in the repo as the agent's context (research-pm-agents-jobs-to-be-done)
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): a weekly GitHub Action fact-checks and updates CLAUDE.md files (2026-03-19, "And there's more") (research-pm-agents-jobs-to-be-done)
+- [How eight people hold the bar for 200+ builders](sources/ideas-fin-eight-people-hold-the-bar.md): Surge Intelligence design-system knowledge layer reached via skills; "the knowledge layer is the real asset, and it compounds" (2026-07-09) (research-pm-agents-jobs-to-be-done)
+- [What we're learning from engineers getting the most from Claude Code](sources/ideas-fin-what-were-learning-from-engineers.md): Intercom engineers update local claude.md files with each fix, one "multiple times a day" (anecdote, 2026-03-25) (research-pm-agents-jobs-to-be-done)
 - [Building and Accelerating the Intent Factory](sources/geoff-building-accelerating-intent-factory.md): a plain-text context repo, a domain owner per topic, spec write-back (Action 5) (research-product-agent-and-harness)
 - [github/spec-kit (README)](sources/github-spec-kit-readme.md): state kept under .specify/ (memory, bugs/<slug>/, assessments/<slug>/ with decision.md). (user-story-mapping)
 - [How Claude remembers your project (Claude Code docs)](sources/anthropic-claude-code-memory-docs.md): the hierarchy managed policy > user > project > local lets org, team and personal context layer. (user-story-mapping)
@@ -716,6 +725,9 @@ Start agents as suggestions, measure against ground truth, then let users raise 
 - [25 proven tactics to accelerate AI adoption](sources/lenny-newsletter-25-ai-adoption-tactics.md): four questions for any AI demo, including ground-truth dataset and evals and how you prepared for model failure (section 5) (research-lennys-newsletter-archive)
 - [How 80,000 companies build with AI (Lenny's Podcast)](sources/lenny-podcast-asha-sharma-loop-not-lane.md): reviewing thousands of agents needs "self-healing observability, really good evals"; device and policy management are solved problems to borrow (24:40) (research-lennys-newsletter-archive)
 - [AI hallucination (Product Talk glossary)](sources/producttalk-ai-hallucination-glossary.md): eval method for synthesis: verbatim-quote check in code plus LLM-as-judge fact checker [audit 2026-10-24]. (research-pm-agents-jobs-to-be-done)
+- [Why not just ship it?](sources/ideas-fin-why-not-just-ship-it.md): every Fin change passes backtests on a few thousand replayed conversations graded by calibrated LLM-judge ensembles, then a pre-registered A/B test, then a 0% dark launch and ramp (2026-08-28) (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): the PR-review agent's evals are a human-curated set of historical PRs with confirmed issues, re-run on prompt changes for precision/recall (2026-05-22) (research-pm-agents-jobs-to-be-done)
+- [Working with a Black Box (Fin Insights)](sources/ideas-fin-working-with-a-black-box-fin-insights.md): CX Score shipped only after an expert-labelled reference dataset and evaluation pipeline; one score reason dropped for missing the bar (research-pm-agents-jobs-to-be-done)
 
 ## feedback-triage-agents: Feedback and research triage/synthesis as an agent job
 Clustering and routing customer feedback, calls and tickets is the best-evidenced PM-agent job, but needs checks against invented or merged quotes.
@@ -774,6 +786,8 @@ Clustering and routing customer feedback, calls and tickets is the best-evidence
 - [Productboard Spark support article](sources/productboard-spark-support-article.md): Clusters customer and market signal into ranked problem statements (research-pm-agents-jobs-to-be-done)
 - [How we use Linear Agent at Linear](sources/linear-how-we-use-linear-agent-at-linear.md): Intercom feedback becomes issues; Triage Intelligence routes, flags duplicates, links Datadog/Sentry context; vendor's own use, unquantified (research-pm-agents-jobs-to-be-done)
 - [Chorus by ZoomInfo](sources/zoominfo-chorus-product-page.md): Captures voice of customer for deal trends, competitors and customer language; one Hudl quote on product-improvement data; no PM workflow (research-pm-agents-jobs-to-be-done)
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): Intercom's internal Cockpit tool consolidates customer feedback and clusters/summarises it with an LLM job; built in ~a month by a data scientist (2026-07-07) (research-pm-agents-jobs-to-be-done)
+- [Working with a Black Box (Fin Insights)](sources/ideas-fin-working-with-a-black-box-fin-insights.md): Fin Topics/Suggestions shipped with explainable clusters and an inbox review flow; post does not say Intercom's own product teams use Insights to decide what to build (research-pm-agents-jobs-to-be-done)
 - [Add features to your hierarchy (Productboard support)](sources/productboard-product-hierarchy.md): feature has an Insights tab for linked insights; notes land in an inbox (web-search summary of a 2019 post, unverified here). (user-story-mapping)
 
 ## harness-over-model: The harness, not the model, limits real-world value
@@ -981,6 +995,8 @@ Strategy, opportunity selection, interviewing, trade-offs and ratifying specs ar
 - [Product Management Theater](sources/svpg-product-management-theater.md): "Generative AI will only compound this": project-style PM work is the exposed part (research-pm-agents-jobs-to-be-done)
 - [Customer Interview Analysis: Where AI Helps and Hurts](sources/producttalk-customer-interview-analysis-ai.md): "expert human synthesis aided by AI synthesis" is the sweet spot (research-pm-agents-jobs-to-be-done)
 - [Customer Interview Analysis: All Things Product podcast with Teresa Torres and Petra Wille](sources/producttalk-torres-customer-interview-analysis-podcast.md): empathy comes from talking to customers; outsourcing customer understanding costs teams over time (show notes) (research-pm-agents-jobs-to-be-done)
+- [How we design when the code writes itself](sources/ideas-fin-how-we-design-when-code-writes-itself.md): agents "own the middle, the build" but "cannot decide which problems matter, set intent, resolve trade-offs, or hold the bar for quality" (research-pm-agents-jobs-to-be-done)
+- [Talk to the bot: When to use an AI interviewer](sources/ideas-fin-talk-to-the-bot-ai-interviewer.md): early-stage discovery, long interviews and synthesis kept human (research-pm-agents-jobs-to-be-done)
 
 ## human-review-gates: Human review gates on agent output
 Where and how a human checks PM-agent output (quote checks, review before send, isolated repos). Related: [[risk-sloped-review]].
@@ -1107,6 +1123,9 @@ Where and how a human checks PM-agent output (quote checks, review before send, 
 - [Introducing Custom Agents (Notion)](sources/notion-introducing-custom-agents.md): warns agents are exposed to prompt injection via content they read; credit-based spend controls. (research-pm-agents-jobs-to-be-done)
 - [The sweet spot for current-generation agentic AI (Vercel)](sources/vercel-sweet-spot-agentic-ai.md): models still limited in reliability and precision; human final call, outputs approved in Slack. (research-pm-agents-jobs-to-be-done)
 - [How we use Linear Agent at Linear](sources/linear-how-we-use-linear-agent-at-linear.md): Humans approve PRs, delegated issues stay human-assigned, autonomy added gradually (research-pm-agents-jobs-to-be-done)
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): PreToolUse hook blocks `gh pr create` unless the create-pr skill (which asks why the change exists) is loaded; hook blocks edits to merged PR branches (research-pm-agents-jobs-to-be-done)
+- [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): the shipping engineer must monitor in production and be ready to roll back; any engineer can request human review (research-pm-agents-jobs-to-be-done)
+- [Why not just ship it?](sources/ideas-fin-why-not-just-ship-it.md): Fin release rules "never knowingly ship a resolution rate regression" or increase hallucinations; decision otherwise holistic, decider not named (research-pm-agents-jobs-to-be-done)
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): delete and project-management tools are disabled by default and need an admin to enable. (user-story-mapping)
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): confirmed verbatim: delete_jira and manage_jira are disabled by default; executeDestructive is a separate pathway 'used to apply agent-level confirmation'; updateJiraScreen 'Returns a plan by default; changes are applied only with an explicit commit'. (user-story-mapping)
 - [DACI decision template (Confluence)](sources/atlassian-confluence-daci-decision-template.md): decision pages name a Driver and 'a single approver who ultimately makes the call'. (user-story-mapping)
@@ -1186,6 +1205,7 @@ New ways of working with agents (no specs, prototypes before meetings, PMs and d
 - [Why LinkedIn is turning PMs into AI-powered "full stack builders"](sources/lenny-podcast-tomer-cohen-full-stack-builder.md): 20% tech, 80% change management; only the "cutting edge 5%" adopt unaided; AI agency and fluency added to hiring and biannual reviews; cross-functional 360s for directs (38:24-44:45) (research-lennys-newsletter-archive)
 - [How Webflow's CPO built an AI chief of staff](sources/howiai-webflow-rachel-wolan-chief-of-staff.md): "you can't get into a meeting with me without a prototype"; mandate plus bottom-up early adopters; career ladder being rewritten (32:34, 40:06) (research-lennys-newsletter-archive)
 - [Why cultivating agency matters more than cultivating skills](sources/lenny-podcast-max-schoening-agency.md): Notion's head of product is surprised "how much prodding" it takes for people to enlist agents in the outer loop of their work; sympathetic to leaderboards at large scale (36:52) (research-lennys-newsletter-archive)
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): CTO goal to 2x R&D productivity in 12 months; "All technical work is becoming agent-first. This is the top priority for R&D."; adoption targets with short deadlines (research-pm-agents-jobs-to-be-done)
 
 ## legible-org-for-agents: Make the organisation legible to agents
 Roadmaps, specs, tickets and tools must be agent-readable so agents can answer and act. Related: [[compounding-context-repo]].
@@ -1214,6 +1234,8 @@ Roadmaps, specs, tickets and tools must be agent-readable so agents can answer a
 - [How Zapier's EA built an army of AI interns](sources/howiai-zapier-ea-cortney-hickey.md): a NotebookLM "strategy companion" makes company strategy "accessible and interactive for all employees" (33:15, show notes only) (research-lennys-newsletter-archive)
 - [Community Wisdom: How AI is changing product operating models](sources/lenny-community-wisdom-ai-operating-models.md): interest in systems that keep shared organisational context ("same understanding of what's important and why") rather than standalone assistants (research-lennys-newsletter-archive)
 - [From skeptic to true believer: How OpenClaw changed my life (Lenny's Podcast)](sources/lenny-podcast-claire-vo-openclaw.md): agent failure is visible in its files ("Does it have this information?"); if an agent can't tell which projects are doing well, neither can a new hire (1:27:32) (research-lennys-newsletter-archive)
+- [How eight people hold the bar for 200+ builders](sources/ideas-fin-eight-people-hold-the-bar.md): with the design-system knowledge layer, agent use of existing components went 7% → 96% and typecheck pass 0% → 74% (self-reported) (research-pm-agents-jobs-to-be-done)
+- [How we design when the code writes itself](sources/ideas-fin-how-we-design-when-code-writes-itself.md): "Design system as agentic infrastructure"; the Surge playground lets designers prototype with production components (research-pm-agents-jobs-to-be-done)
 - [Descriptor Format of Catalog Entities (Backstage)](sources/backstage-descriptor-format.md): annotations link entities to external systems; owner field is for display, not authorization. (user-story-mapping)
 - [Teamwork Graph glossary (Atlassian developer docs)](sources/atlassian-teamwork-graph-glossary.md): the graph is explicitly the layer that links work data across Atlassian apps and connected external tools (Core concepts, 'Teamwork Graph'). (user-story-mapping)
 - [Teamwork Graph object types (Atlassian developer docs)](sources/atlassian-teamwork-graph-object-types.md): a fixed set of connector object types lets Rovo Search/Chat treat Asana tasks, Figma files and Google events uniformly. (user-story-mapping)
@@ -1418,6 +1440,8 @@ Product, CX, finance and sales build tools and PRs via agent harnesses; shifts w
 - [The bottleneck keeps shifting: what AI is changing about how we build (Gamma interview)](sources/atlassian-bottleneck-keeps-shifting-gamma.md): Half of PMs and designers commit code (single company). (research-pm-agents-jobs-to-be-done)
 - [Prototypes vs Products](sources/svpg-prototypes-vs-products.md): PMs without engineering backgrounds think prototype-to-product is a small step and embarrass themselves with engineers (research-pm-agents-jobs-to-be-done)
 - [Building My First AI Product: 6 Lessons from My 90-Day Deep Dive](sources/producttalk-ai-playbook-first-ai-product.md): a non-engineer built a discovery AI product (Replit, then Zapier, then AWS Step Functions, plus evals in Claude Code) (research-pm-agents-jobs-to-be-done)
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): design managers, support engineers and product management leaders among top five users of a read-only production console via MCP; Claude4Data's 30+ analytics skills used by PMs and sales (research-pm-agents-jobs-to-be-done)
+- [How eight people hold the bar for 200+ builders](sources/ideas-fin-eight-people-hold-the-bar.md): designers prototype in code and engineers ship whole surfaces without a designer; ~450 engineers shipped React, most new to it (research-pm-agents-jobs-to-be-done)
 
 ## one-job-per-agent: One job per agent
 Scoping an agent to one defined job (with human in the loop) for consistency and evals. In tension with [[single-agent-many-skills]].
@@ -1455,6 +1479,7 @@ Scoping an agent to one defined job (with human in the loop) for consistency and
 - [How to design AI agent loops (How I AI)](sources/howiai-claire-vo-agent-loops-design.md): loops spawn subagents, including goal-based subagents that validate the loop's output (show notes) (research-lennys-newsletter-archive)
 - [Turning Customer Feedback Noise into Actionable Insights (Azure AI Foundry blog)](sources/microsoft-feedback-noise-multi-agent.md): each specialist agent has its own schema, retrieval and guardrails. (research-pm-agents-jobs-to-be-done)
 - [The sweet spot for current-generation agentic AI (Vercel)](sources/vercel-sweet-spot-agentic-ai.md): lead triage went from a team of 10 to one person; abuse agent cut time to ticket closing 59% (baseline unstated); d0 'most used' is from SaaStr, not this post [audit 2026-10-24]. (research-pm-agents-jobs-to-be-done)
+- [Claude Code: Good skills, bad skills](sources/ideas-fin-claude-code-good-skills-bad-skills.md): good skills "do one thing well", script deterministic work and carry guardrails; 267 skills from 153 contributors (2026-07-15) (research-pm-agents-jobs-to-be-done)
 
 ## opportunity-to-code-chain: Opportunity → problem → goal → intent → plan → code
 A stage chain for product work, drawn by a Stripe engineer, in which agents today own the lower stages (intent research, plan, code, review) and people own the upper ones (opportunity, problem, goal) through customer conversations. It gives the strategy a spine: where each agent sits, where hand-offs and artifacts are, and where captured context must feed in.
@@ -1544,6 +1569,7 @@ Successful PM agents read the organisation's own data (docs, tickets, calls, cod
 - [CBTW on Rovo since launch](sources/cbtw-atlassian-rovo-real-world-feedback.md): Value depends on configuration, data quality and prompt design; out-of-the-box use feels "half baked" (research-pm-agents-jobs-to-be-done)
 - [Why Atlassian Rovo Failed Us](sources/devto-tschimev-why-atlassian-rovo-failed-us.md): Replacement works, author says, because conventions, skills and ADRs live in the repo (research-pm-agents-jobs-to-be-done)
 - [Atlassian Teamwork Graph: The context engine behind your AI (Atlassian blog)](sources/atlassian-blog-teamwork-graph-team-26.md): Atlassian says grounding responses in Teamwork Graph data gave "44% more accurate results" with "48% fewer tokens"; internal benchmark, no method (research-pm-agents-jobs-to-be-done)
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): shared semantic layer being built so AI skills define metrics consistently; "shared, verified infrastructure for our AI tools is essential to their accuracy" (research-pm-agents-jobs-to-be-done)
 - [Teamwork Graph glossary (Atlassian developer docs)](sources/atlassian-teamwork-graph-glossary.md): ACLs are specified per object that a connector adds, so permissions travel with the object. (user-story-mapping)
 - [What are projects? (Claude Help Center)](sources/anthropic-claude-projects-support.md): uploaded knowledge is the grounding, switching to RAG on paid plans when nearing context limits (up to 10x capacity per the page). (user-story-mapping)
 - [Organize work with projects (Claude Cowork docs)](sources/anthropic-cowork-projects-docs.md): Project holds: description (Dispatch reads it to choose a project for a task), folders (one or more local), instructions, links, linked Chat projects, memory. (user-story-mapping)
@@ -1620,6 +1646,10 @@ Skills, prompts and corrections made by one employee propagate to the team so th
 - [How Warp ships 2,000 PRs a month with AI factories (How I AI)](sources/howiai-warp-zach-lloyd-software-factory.md): because the factory is code, it can be frozen, replayed and edited by coding agents (23:44) (research-lennys-newsletter-archive)
 - [Quests, token leaderboards, and a skills marketplace (How I AI)](sources/howiai-sendbird-john-kim-adoption-playbook.md): skills spread through Slack and weekly stage demos; quest completers earn XP redeemable for rewards (12:29, 17:33) (research-lennys-newsletter-archive)
 - [25 proven tactics to accelerate AI adoption](sources/lenny-newsletter-25-ai-adoption-tactics.md): Shopify learning villages, Duolingo FriAIdays, Zapier weekly demos (60+) and hackathons, Whoop counts upleveling others in promotions (section 4) (research-lennys-newsletter-archive)
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): SessionEnd hook has Claude Haiku classify transcript gaps (missing_skill, missing_tool, repeated_failure, wrong_info) and post a pre-filled GitHub issue to Slack (research-pm-agents-jobs-to-be-done)
+- [Why not just ship it?](sources/ideas-fin-why-not-just-ship-it.md): new failure modes seen in live monitoring become cases in the next backtest (research-pm-agents-jobs-to-be-done)
+- [Claude Code: Good skills, bad skills](sources/ideas-fin-claude-code-good-skills-bad-skills.md): skills refreshed from periodic analysis of session data (research-pm-agents-jobs-to-be-done)
+- [What we're learning from engineers getting the most from Claude Code](sources/ideas-fin-what-were-learning-from-engineers.md): "feed the flywheel": local optimisations spread to everyone (research-pm-agents-jobs-to-be-done)
 
 ## outcome-measurement-gap: Nobody can yet measure PM-agent outcomes
 Time-saved claims are self-reported; no one publishes decision-quality or outcome measures. An opening for a harness that bakes in measurement.
@@ -1691,6 +1721,8 @@ Time-saved claims are self-reported; no one publishes decision-quality or outcom
 - [Introducing Productboard Spark, AI Built for Product Teams](sources/productboard-introducing-spark-agentic-product-system.md): "Post-launch evaluation" promised within days of shipping, labelled [Beta] (research-pm-agents-jobs-to-be-done)
 - [Customer Stories (ChatPRD)](sources/chatprd-customer-stories.md): Every metric is drafting speed; none on PRD quality or product outcome (research-pm-agents-jobs-to-be-done)
 - [Helping every team succeed in the AI era (Atlassian blog)](sources/atlassian-blog-helping-every-team-succeed-ai-era.md): Time-per-item and hours-per-week only; no quality or outcome measure (research-pm-agents-jobs-to-be-done)
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): Intercom's headline metric is merged PRs per R&D head (incl. product and design leaders), which the CTO calls imperfect; idea-to-shipped time reported but undefined (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): shipping more is "required, but not sufficient"; revenue called "a lagging indicator"; no customer-outcome figures (research-pm-agents-jobs-to-be-done)
 
 ## pm-ai-usage-surveys: What surveys say about PMs' AI use
 Self-selected, mostly vendor-run surveys of where PMs use AI and what they save; directional only.
@@ -1817,6 +1849,9 @@ Evidence on how PM, designer, engineer, founder-PM and PMM roles overlap or expa
 - [Product Manager Practices for Delegating Work to Generative AI](sources/arxiv-pm-delegating-work-to-genai.md): PMs report prototyping, writing SQL and building agents; PMs move "down the stack" as engineers move up (research-pm-agents-jobs-to-be-done)
 - [Prototypes vs Products](sources/svpg-prototypes-vs-products.md): readers report moving from advising on product shape to shaping it directly (research-pm-agents-jobs-to-be-done)
 - [Product Management Theater](sources/svpg-product-management-theater.md): a person "essentially a project manager" declaring they are a product manager "is just pretending" (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): strong engineers take on PM work; PM and design move to "higher ambiguity" work near customers and GTM; designers ship small fixes and prototypes (research-pm-agents-jobs-to-be-done)
+- [How we design when the code writes itself](sources/ideas-fin-how-we-design-when-code-writes-itself.md): PM, design and engineering boundaries blurring; 2x initiative expects non-engineers to contribute to the codebase (research-pm-agents-jobs-to-be-done)
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): "SQL used to be the majority of the job, and now it's near zero"; data scientists change the product directly (research-pm-agents-jobs-to-be-done)
 
 ## pm-tool-connectivity: Reaching PM tools from agents
 MCP/auth/permission reality of getting agents into analytics, research and docs tools, plus tool-sprawl evidence.
@@ -2062,6 +2097,7 @@ Prompt-to-prototype tools let PMs build quickly but break down as complexity gro
 - [Vercel case studies (Avalara)](sources/vercel-case-studies-avalara.md): Avalara "two patent-pending products created in roughly 60 days" (vendor-claim) (case 17) [audit 2026-10-24] (research-pm-agents-jobs-to-be-done)
 - [Prototypes vs Products](sources/svpg-prototypes-vs-products.md): prototypes show nothing about reliability, scale, security, compliance or full business logic; vendor claims are "buyer beware" (research-pm-agents-jobs-to-be-done)
 - [Agentic Software Development Takes The Lead (Forrester)](sources/forrester-agentic-software-development-sdlc-agents.md): PM prototypes are handed "to the rest of the team to productize" (research-pm-agents-jobs-to-be-done)
+- [To Vibe Code, or Not to Vibe Code?](sources/ideas-fin-to-vibe-code-or-not.md): Fin designer: "Vibe coding doesn't replace structured design work—it precedes it"; five guardrails; replace a prototype treated as a commitment with "something explicitly finalized" (2026-01-23) (research-pm-agents-jobs-to-be-done)
 
 ## public-by-default-agent-work: Public-by-default agent work and its costs
 Agent sessions that are visible to the whole organisation by default (no DMs, no private mode), so others learn by watching and the transcripts can be mined; and the costs of that default: questions not asked, sensitive data in open threads, channel membership as access control, regulated walls. Matters for the trust-privacy-defaults and agent-interface choices.
@@ -2172,6 +2208,8 @@ AI synthesis of interviews, surveys and calls; time saved is claimed, but fideli
 - [Building My First AI Product: 6 Lessons from My 90-Day Deep Dive](sources/producttalk-ai-playbook-first-ai-product.md): on two transcripts Claude found 18/20 opportunities vs her 15/19, added 8/2 she missed, missed 7 of hers each time (research-pm-agents-jobs-to-be-done)
 - [How AI will impact product management](sources/lenny-how-ai-will-impact-product-management.md): discovery 3/5: AI finds signal in customer data, but customers still want people (research-pm-agents-jobs-to-be-done)
 - [Customer Interview Analysis: Where AI Helps and Hurts](sources/producttalk-customer-interview-analysis-ai.md): Torres synthesises first, then uses AI as a fresh perspective that sometimes catches what she missed (research-pm-agents-jobs-to-be-done)
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): one researcher synthesised hundreds of sales calls, win/loss records and interviews in one session; 60+ customer interviews turned into a queryable skill; existing evidence now the first step (research-pm-agents-jobs-to-be-done)
+- [Talk to the bot: When to use an AI interviewer](sources/ideas-fin-talk-to-the-bot-ai-interviewer.md): AI-moderated churn interviews raised response rate from a typical 1.5% to 4%; not used for early discovery, synthesis or (mostly) current customers (2026-02-12) (research-pm-agents-jobs-to-be-done)
 - [Build on Dovetail (docs)](sources/dovetail-build-on-dovetail.md): MCP can read workspace content and create projects, docs, data, highlights and channel data. (user-story-mapping)
 
 ## risk-review-as-classification: Risk review as a specification and classification problem
@@ -2211,6 +2249,9 @@ How much human review agent output gets depends on how risky it is. Where that l
 - [Engineers are becoming sorcerers (Sherwin Wu, OpenAI)](sources/lenny-podcast-sherwin-wu-openai-codex.md): small PRs sometimes merge on Codex review alone; the team is deliberate about "which PRs are completely just Codex-reviewed" (16:57-18:03) (research-lennys-newsletter-archive)
 - [Why your AI product needs a different development lifecycle (CC/CD)](sources/lenny-newsletter-cc-cd-ai-lifecycle.md): start with "simple decisions that are easy to verify and easy for humans to override"; three-rung ladders for support, marketing and coding (CD 1) (research-lennys-newsletter-archive)
 - [How Warp ships 2,000 PRs a month with AI factories (How I AI)](sources/howiai-warp-zach-lloyd-software-factory.md): Vo risk-scores every PR and auto-stamps low-risk ones; Lloyd: "code review becomes an exercise in risk management" (16:18-17:01) (research-lennys-newsletter-archive)
+- [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): sub-agents check problem description, diff-vs-intent, safety, logic and anti-patterns; ~19% of PRs auto-approved; large or broad PRs refused and split (research-pm-agents-jobs-to-be-done)
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): auto-approval began with feature-flag cleanups and small bug fixes; 86% of auto-approved PRs are 20 lines or fewer (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): "Shrek" reviewer triggered by GitHub webhooks in short-lived AWS containers (Claude and Codex); per-repo safety criteria; repo owners add review requirements (research-pm-agents-jobs-to-be-done)
 - [Building and Accelerating the Intent Factory](sources/geoff-building-accelerating-intent-factory.md): Ramp auto-approves low-complexity PRs; Stripe requires human review on every change (§Vision, step 7) (research-product-agent-and-harness)
 
 ## scoped-governance-containers: Governance scoped to a project or workspace
@@ -2353,6 +2394,7 @@ Consolidate to one agent and one conversational surface, extended by skills and 
 - [Claude Skills explained](sources/howiai-claire-vo-claude-skills-explained.md): skills invoked by inference from context with no magic word (pasting a changelog triggered the newsletter skill) (20:15) (research-lennys-newsletter-archive)
 - [Not all AI agents are created equal](sources/lenny-newsletter-three-agent-categories.md): "A single orchestrator agent ... is usually simpler and more effective until true cross-team coordination becomes unavoidable"; multi-agent used by "fewer than 5% to 10%" of teams (consultant estimate) (research-lennys-newsletter-archive)
 - [Marily Nika: new PM toolkit](sources/howiai-marily-nika-pm-toolkit.md): "tool hopping" across five specialised apps with copy-paste hand-offs, which she expects a single tool to replace (9:32, 38:41) (research-lennys-newsletter-archive)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): Claude Code is the single primary tool with "hundreds of skills"; Codex used only in review/approval; open tool policy dropped (research-pm-agents-jobs-to-be-done)
 
 ## skill-standards: Skill standards
 (Section created by research-agent-runtime-patterns-taxonomy; please refine.)
@@ -2454,6 +2496,9 @@ Skills as markdown in a Git repo, reviewed like code, with the VCS hidden from n
 - [Community Wisdom: ... sharing Claude Code context across a team](sources/lenny-community-wisdom-claude-context-sharing.md): a large-company team runs Claude Code with shared settings and a GitHub repo of shared skills plus personal ones; MCP servers mostly disabled because they "eat too much of the context" (thread 5) (research-lennys-newsletter-archive)
 - [How I turned Claude into a self-improving PM assistant (Daniel Blum, Melio)](sources/howiai-melio-daniel-blum-pm-assistant.md): PM setup distributed as a Claude plugin marketplace repo (9 skills, 3 commands) with auto-update that leaves personal memory untouched (research-lennys-newsletter-archive)
 - [Quests, token leaderboards, and a skills marketplace (How I AI)](sources/howiai-sendbird-john-kim-adoption-playbook.md): company plugin/skill marketplace by function, built because people across functions duplicated the same skill (16:19) (research-lennys-newsletter-archive)
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): 13 plugins, 100+ skills deployed to Macs via JAMF; most-used skills have evals (research-pm-agents-jobs-to-be-done)
+- [Claude Code: Good skills, bad skills](sources/ideas-fin-claude-code-good-skills-bad-skills.md): private auto-updating marketplace run by "team-2x"; public curated subset at github.com/intercom/2x-skills (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): plugin hierarchy (base plus team/product-area plugins) forced via MDM; 50 weekly active users makes a skill eligible for the base plugin (research-pm-agents-jobs-to-be-done)
 
 ## spec-becomes-prototype-and-evals: The spec is replaced by prototype plus evals
 Some teams swap the PRD for a problem statement, a working prototype and evals.
@@ -2510,6 +2555,8 @@ Some teams swap the PRD for a problem statement, a working prototype and evals.
 - [Community Wisdom: Pivoting to AI PM, how AI changed our product development cycles](sources/lenny-community-wisdom-ai-product-dev-cycles.md): idea → prototype → formal PRD (if needed) → Figma → Jira; prototype makes the PRD better (thread 4, May 2025) (research-lennys-newsletter-archive)
 - [Product development in the agentic era](sources/anthropic-product-development-agentic-era.md): specs live less in docs and more in working prototypes against pre-production API specs. (research-pm-agents-jobs-to-be-done)
 - [Meta VP's personal agents (Lenny's Newsletter write-up of The Skip Podcast)](sources/lenny-newsletter-meta-chawla-pm-leader-agents.md): for ML work the PRD was replaced by a one-paragraph problem statement plus prototype plus eval set. (research-pm-agents-jobs-to-be-done)
+- [How we design when the code writes itself](sources/ideas-fin-how-we-design-when-code-writes-itself.md): Intercom designers "primarily working in code"; Figma used "more like a whiteboard"; handoffs "less definitive", replaced by tighter briefs, fast review cycles and clear criteria (2026-03-20) (research-pm-agents-jobs-to-be-done)
+- [To Vibe Code, or Not to Vibe Code?](sources/ideas-fin-to-vibe-code-or-not.md): "a vibe prototype is the new wireframe"; a realistic real-data prototype killed an ML feature; another settled a leadership debate (research-pm-agents-jobs-to-be-done)
 - [github/spec-kit (README)](sources/github-spec-kit-readme.md): Workflow: /speckit-constitution (once per project), then per feature /speckit-specify, -plan, -tasks, -implement, -converge. Runs as skills in the agent's chat. (user-story-mapping)
 - [Spec-Driven Development (spec-kit spec-driven.md)](sources/github-spec-kit-spec-driven.md): contrast; here the spec stays primary and code is regenerated. (user-story-mapping)
 
@@ -2739,6 +2786,8 @@ Most evidence on PM agents is vendor marketing or self-reported; controlled or i
 - [Chorus by ZoomInfo](sources/zoominfo-chorus-product-page.md): Only claims are patents and "fastest growing"; no metrics (research-pm-agents-jobs-to-be-done)
 - [Helping every team succeed in the AI era (Atlassian blog)](sources/atlassian-blog-helping-every-team-succeed-ai-era.md): Rovo beta "1-2 hours of time saved per week on average" from closed-beta feedback by "thousands"; no method (case 1) (research-pm-agents-jobs-to-be-done)
 - [Atlassian Teamwork Graph: The context engine behind your AI (Atlassian blog)](sources/atlassian-blog-teamwork-graph-team-26.md): "Per our benchmarks"; no tasks, sample, baseline or setup disclosed (case 1) (research-pm-agents-jobs-to-be-done)
+- [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): revert rates (0.53% vs 5.39% backend) and "5x faster" approval are self-reported with no revert definition or window (research-pm-agents-jobs-to-be-done)
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): all productivity, defect and deploy figures self-reported by the CTO; definitions of "product change" and "idea" not given (research-pm-agents-jobs-to-be-done)
 - [Trends Shaping Product Management in 2025 (ProductPlan)](sources/productplan-trends-product-management-2025.md): vendor-run survey of nearly 400 product professionals; survey dates and exact percentages for consolidation not given. 92% 'somewhere on AI journey', 46% adopted for at least one use case. (user-story-mapping)
 
 ## work-structure-spectrum: Work structure spectrum (unstructured exploration to task-specific workflow)

@@ -361,3 +361,100 @@ Self-selected, mostly vendor-run surveys of where PMs use AI and what they save;
 Cagan's value, usability, feasibility and viability risks and who owns each; a frame for which risks an agent can reduce.
 - [Inside Atlassian's State of Product 2026: key takeaways](sources/mindtheproduct-atlassian-state-of-product-2026-takeaways.md): The 80% figure is used in the map as evidence that feasibility input arrives late (product trio collaboration is thin). (research-pm-agents-jobs-to-be-done)
 - [The Four Big Risks](sources/svpg-four-big-risks.md): Discovery addresses value, usability, feasibility and business viability risk; PM owns value and viability, designer usability, lead engineer feasibility. (research-pm-agents-jobs-to-be-done)
+
+## compounding-context-repo: Context that compounds with each shipped feature
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): a weekly GitHub Action fact-checks and updates CLAUDE.md files (2026-03-19, "And there's more") (research-pm-agents-jobs-to-be-done)
+- [How eight people hold the bar for 200+ builders](sources/ideas-fin-eight-people-hold-the-bar.md): Surge Intelligence design-system knowledge layer reached via skills; "the knowledge layer is the real asset, and it compounds" (2026-07-09) (research-pm-agents-jobs-to-be-done)
+- [What we're learning from engineers getting the most from Claude Code](sources/ideas-fin-what-were-learning-from-engineers.md): Intercom engineers update local claude.md files with each fix, one "multiple times a day" (anecdote, 2026-03-25) (research-pm-agents-jobs-to-be-done)
+
+## non-engineer-builders: Non-engineers ship through agents
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): design managers, support engineers and product management leaders among top five users of a read-only production console via MCP; Claude4Data's 30+ analytics skills used by PMs and sales (research-pm-agents-jobs-to-be-done)
+- [How eight people hold the bar for 200+ builders](sources/ideas-fin-eight-people-hold-the-bar.md): designers prototype in code and engineers ship whole surfaces without a designer; ~450 engineers shipped React, most new to it (research-pm-agents-jobs-to-be-done)
+
+## agent-factory-sdlc: Agents across the whole product development loop
+- [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): 497 PRs in four weeks fully autonomous: Claude wrote, the AI approval system reviewed, approved and shipped; merge-to-production averages 12 minutes (2026-04-21) (research-pm-agents-jobs-to-be-done)
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): 93.6% of PRs agent-driven; 313 automatic production deployments and 2,539 CI jobs in 24 hours (CTO, 2026-04-16) (research-pm-agents-jobs-to-be-done)
+
+## evals-autonomy-trust: Evals, autonomy sliders and earned trust
+- [Why not just ship it?](sources/ideas-fin-why-not-just-ship-it.md): every Fin change passes backtests on a few thousand replayed conversations graded by calibrated LLM-judge ensembles, then a pre-registered A/B test, then a 0% dark launch and ramp (2026-08-28) (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): the PR-review agent's evals are a human-curated set of historical PRs with confirmed issues, re-run on prompt changes for precision/recall (2026-05-22) (research-pm-agents-jobs-to-be-done)
+- [Working with a Black Box (Fin Insights)](sources/ideas-fin-working-with-a-black-box-fin-insights.md): CX Score shipped only after an expert-labelled reference dataset and evaluation pipeline; one score reason dropped for missing the bar (research-pm-agents-jobs-to-be-done)
+
+## vendor-claims-vs-independent-evidence: Vendor claims dominate; independent evidence is rare
+- [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): revert rates (0.53% vs 5.39% backend) and "5x faster" approval are self-reported with no revert definition or window (research-pm-agents-jobs-to-be-done)
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): all productivity, defect and deploy figures self-reported by the CTO; definitions of "product change" and "idea" not given (research-pm-agents-jobs-to-be-done)
+
+## outcome-measurement-gap: Nobody can yet measure PM-agent outcomes
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): Intercom's headline metric is merged PRs per R&D head (incl. product and design leaders), which the CTO calls imperfect; idea-to-shipped time reported but undefined (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): shipping more is "required, but not sufficient"; revenue called "a lagging indicator"; no customer-outcome figures (research-pm-agents-jobs-to-be-done)
+
+## prototyping-agents-limits: Prototyping agents and their limits
+- [To Vibe Code, or Not to Vibe Code?](sources/ideas-fin-to-vibe-code-or-not.md): Fin designer: "Vibe coding doesn't replace structured design work—it precedes it"; five guardrails; replace a prototype treated as a commitment with "something explicitly finalized" (2026-01-23) (research-pm-agents-jobs-to-be-done)
+
+## feedback-triage-agents: Feedback and research triage/synthesis as an agent job
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): Intercom's internal Cockpit tool consolidates customer feedback and clusters/summarises it with an LLM job; built in ~a month by a data scientist (2026-07-07) (research-pm-agents-jobs-to-be-done)
+- [Working with a Black Box (Fin Insights)](sources/ideas-fin-working-with-a-black-box-fin-insights.md): Fin Topics/Suggestions shipped with explainable clusters and an inbox review flow; post does not say Intercom's own product teams use Insights to decide what to build (research-pm-agents-jobs-to-be-done)
+
+## spec-becomes-prototype-and-evals: The spec is replaced by prototype plus evals
+- [How we design when the code writes itself](sources/ideas-fin-how-we-design-when-code-writes-itself.md): Intercom designers "primarily working in code"; Figma used "more like a whiteboard"; handoffs "less definitive", replaced by tighter briefs, fast review cycles and clear criteria (2026-03-20) (research-pm-agents-jobs-to-be-done)
+- [To Vibe Code, or Not to Vibe Code?](sources/ideas-fin-to-vibe-code-or-not.md): "a vibe prototype is the new wireframe"; a realistic real-data prototype killed an ML feature; another settled a leadership debate (research-pm-agents-jobs-to-be-done)
+
+## research-synthesis-agents: Research synthesis agents
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): one researcher synthesised hundreds of sales calls, win/loss records and interviews in one session; 60+ customer interviews turned into a queryable skill; existing evidence now the first step (research-pm-agents-jobs-to-be-done)
+- [Talk to the bot: When to use an AI interviewer](sources/ideas-fin-talk-to-the-bot-ai-interviewer.md): AI-moderated churn interviews raised response rate from a typical 1.5% to 4%; not used for early discovery, synthesis or (mostly) current customers (2026-02-12) (research-pm-agents-jobs-to-be-done)
+
+## org-context-grounding: Agents work when grounded in organisation context
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): shared semantic layer being built so AI skills define metrics consistently; "shared, verified infrastructure for our AI tools is essential to their accuracy" (research-pm-agents-jobs-to-be-done)
+
+## agent-failure-modes: Recurring agent failure modes in PM work
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): an agent pushed "hundreds of thousands of changes" breaking CI; incident-investigation agents give "plausible suggestions that are red herrings" (research-pm-agents-jobs-to-be-done)
+
+## human-review-gates: Human review gates on agent output
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): PreToolUse hook blocks `gh pr create` unless the create-pr skill (which asks why the change exists) is loaded; hook blocks edits to merged PR branches (research-pm-agents-jobs-to-be-done)
+- [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): the shipping engineer must monitor in production and be ready to roll back; any engineer can request human review (research-pm-agents-jobs-to-be-done)
+- [Why not just ship it?](sources/ideas-fin-why-not-just-ship-it.md): Fin release rules "never knowingly ship a resolution rate regression" or increase hallucinations; decision otherwise holistic, decider not named (research-pm-agents-jobs-to-be-done)
+
+## ai-synthesis-hallucination-risk: AI synthesis can invent or merge facts
+- [Talk to the bot: When to use an AI interviewer](sources/ideas-fin-talk-to-the-bot-ai-interviewer.md): Intercom researchers use AI summaries only "as a reference point" because they lack company context (research-pm-agents-jobs-to-be-done)
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): researchers spend more time verifying AI-generated findings (research-pm-agents-jobs-to-be-done)
+
+## one-job-per-agent: One job per agent
+- [Claude Code: Good skills, bad skills](sources/ideas-fin-claude-code-good-skills-bad-skills.md): good skills "do one thing well", script deterministic work and carry guardrails; 267 skills from 153 contributors (2026-07-15) (research-pm-agents-jobs-to-be-done)
+
+## pm-persona-role-expansion: PM and adjacent personas are expanding or blurring
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): strong engineers take on PM work; PM and design move to "higher ambiguity" work near customers and GTM; designers ship small fixes and prototypes (research-pm-agents-jobs-to-be-done)
+- [How we design when the code writes itself](sources/ideas-fin-how-we-design-when-code-writes-itself.md): PM, design and engineering boundaries blurring; 2x initiative expects non-engineers to contribute to the codebase (research-pm-agents-jobs-to-be-done)
+- [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): "SQL used to be the majority of the job, and now it's near zero"; data scientists change the product directly (research-pm-agents-jobs-to-be-done)
+
+## human-judgment-pm-jobs: PM jobs that stay human-led
+- [How we design when the code writes itself](sources/ideas-fin-how-we-design-when-code-writes-itself.md): agents "own the middle, the build" but "cannot decide which problems matter, set intent, resolve trade-offs, or hold the bar for quality" (research-pm-agents-jobs-to-be-done)
+- [Talk to the bot: When to use an AI interviewer](sources/ideas-fin-talk-to-the-bot-ai-interviewer.md): early-stage discovery, long interviews and synthesis kept human (research-pm-agents-jobs-to-be-done)
+
+## skills-marketplace: A versioned skills marketplace with hidden Git
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): 13 plugins, 100+ skills deployed to Macs via JAMF; most-used skills have evals (research-pm-agents-jobs-to-be-done)
+- [Claude Code: Good skills, bad skills](sources/ideas-fin-claude-code-good-skills-bad-skills.md): private auto-updating marketplace run by "team-2x"; public curated subset at github.com/intercom/2x-skills (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): plugin hierarchy (base plus team/product-area plugins) forced via MDM; 50 weekly active users makes a skill eligible for the base plugin (research-pm-agents-jobs-to-be-done)
+
+## risk-sloped-review: Human review sloped to risk
+- [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): sub-agents check problem description, diff-vs-intent, safety, logic and anti-patterns; ~19% of PRs auto-approved; large or broad PRs refused and split (research-pm-agents-jobs-to-be-done)
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): auto-approval began with feature-flag cleanups and small bug fixes; 86% of auto-approved PRs are 20 lines or fewer (research-pm-agents-jobs-to-be-done)
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): "Shrek" reviewer triggered by GitHub webhooks in short-lived AWS containers (Claude and Codex); per-repo safety criteria; repo owners add review requirements (research-pm-agents-jobs-to-be-done)
+
+## leadership-permission-mandate: Leadership permission and mandates drive AI-native ways of working
+- [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): CTO goal to 2x R&D productivity in 12 months; "All technical work is becoming agent-first. This is the top priority for R&D."; adoption targets with short deadlines (research-pm-agents-jobs-to-be-done)
+
+## legible-org-for-agents: Make the organisation legible to agents
+- [How eight people hold the bar for 200+ builders](sources/ideas-fin-eight-people-hold-the-bar.md): with the design-system knowledge layer, agent use of existing components went 7% → 96% and typecheck pass 0% → 74% (self-reported) (research-pm-agents-jobs-to-be-done)
+- [How we design when the code writes itself](sources/ideas-fin-how-we-design-when-code-writes-itself.md): "Design system as agentic infrastructure"; the Surge playground lets designers prototype with production components (research-pm-agents-jobs-to-be-done)
+
+## org-learning-loop: One person's win becomes everyone's baseline
+- [How we use Claude Code today at Intercom](sources/ideas-fin-how-we-use-claude-code-today.md): SessionEnd hook has Claude Haiku classify transcript gaps (missing_skill, missing_tool, repeated_failure, wrong_info) and post a pre-filled GitHub issue to Slack (research-pm-agents-jobs-to-be-done)
+- [Why not just ship it?](sources/ideas-fin-why-not-just-ship-it.md): new failure modes seen in live monitoring become cases in the next backtest (research-pm-agents-jobs-to-be-done)
+- [Claude Code: Good skills, bad skills](sources/ideas-fin-claude-code-good-skills-bad-skills.md): skills refreshed from periodic analysis of session data (research-pm-agents-jobs-to-be-done)
+- [What we're learning from engineers getting the most from Claude Code](sources/ideas-fin-what-were-learning-from-engineers.md): "feed the flywheel": local optimisations spread to everyone (research-pm-agents-jobs-to-be-done)
+
+## agent-led-intent-shaping: Agents shape intent, not only execute it
+- [What we're learning from engineers getting the most from Claude Code](sources/ideas-fin-what-were-learning-from-engineers.md): 5-20 plan-mode turns mapping code, comparing options and challenging edge cases before "build it"; no formal spec artifact, the plan lives in the session (anecdote) (research-pm-agents-jobs-to-be-done)
+
+## single-agent-many-skills: One agent with many skills, not many agents
+- [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): Claude Code is the single primary tool with "hundreds of skills"; Codex used only in review/approval; open tool policy dropped (research-pm-agents-jobs-to-be-done)
