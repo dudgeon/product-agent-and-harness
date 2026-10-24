@@ -45,3 +45,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 All six PDLC maps in; cross-ecosystem map worker started (Fable).
 - 2026-10-24 Film 04 full build killed by the low-memory guard; Geoff: restart 04 next, hold the shorts. Relayed; shorts told to cancel queued jobs until 04's film exists.
 - 2026-10-24 Airbnb and Spotify product-practices worker started: https://claude.ai/code/session_01F2D6G24G9xFAoLAG1fAWF5
+- 2026-10-24 Block product-practices worker started: https://claude.ai/code/session_015Nc54pXhjrkX3EZq2YRo4e

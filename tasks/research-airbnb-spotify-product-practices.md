@@ -16,3 +16,4 @@ Related: [[pdlc-maps-per-ecosystem]] (same map frame), [[pdlc-cross-ecosystem-ma
 
 - 2026-10-24 Filed by director-project-agent-and-harness.
 - 2026-10-24 Worker research-airbnb-spotify (85993db5, https://claude.ai/code/session_01F2D6G24G9xFAoLAG1fAWF5) started via claude --bg on Opus 5.5 with --remote-control.
+- 2026-10-24 Worker started (Opus 5.5): read rules, existing Spotify/Airbnb notes and the Stripe map template; fanned out four Opus research subagents (Airbnb org/process, Airbnb AI, Spotify org/process, Spotify AI).

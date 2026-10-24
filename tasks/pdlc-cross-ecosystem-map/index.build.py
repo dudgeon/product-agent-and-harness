@@ -782,10 +782,10 @@ tr.row-seam td, tr.row-seam th.task-h{background:var(--lite)}
 .eco-task{padding:12px 14px; font-weight:600; border-right:1px solid var(--rule)}
 @media (max-width:640px){.eco-row{grid-template-columns:1fr} .eco-task{border-right:none; border-bottom:1px dashed var(--rule); padding-bottom:8px} .eco-task .tl{display:inline} .eco-task .sub{display:inline; margin-left:6px}}
 /* generic tables */
-.tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:6px; background:var(--surface)}
+.tablewrap{position:relative; overflow-x:auto; border:1px solid var(--rule); border-radius:6px; background:var(--surface)}
 .tablewrap table{border-collapse:collapse; width:100%; font-size:14px}
 .tablewrap th,.tablewrap td{text-align:left; vertical-align:top; padding:10px 14px; border-bottom:1px solid var(--rule)}
-.tablewrap thead th{font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); background:var(--paper); position:sticky; top:0}
+.tablewrap thead th{font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); background:var(--paper)}
 .tablewrap tbody tr:last-child td, .tablewrap tbody tr:last-child th{border-bottom:none}
 .tablewrap tbody th{font-weight:600; background:var(--paper)}
 table.presence{min-width:640px; text-align:center}
