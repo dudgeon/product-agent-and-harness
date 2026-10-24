@@ -27,10 +27,13 @@ Last updated: 2026-10-24 by director-project-agent-and-harness (Claude Code desk
 | story-and-film | 0bd16627 | claude --bg | Fable 5.1 | [strategy-story-and-explainer-video](tasks/strategy-story-and-explainer-video.md) | working; checkpoints A (outline), B (prototype look), C (Script Doc) go to Geoff |
 | sweep-lennys | db172d7f | claude --bg | Opus 5.5 | [research-lennys-newsletter-archive](tasks/research-lennys-newsletter-archive.md) | working; options go to options/contributions/ for the director to merge |
 | sweep-dept-of-product | 2c0b10cc | claude --bg | Opus 5.5 | [research-department-of-product-knowledge-series](tasks/research-department-of-product-knowledge-series.md) | working; same |
+| ingest-claude-resources | d6d48790 | claude --bg | Opus 5.5 | [research-claude-resources-articles](tasks/research-claude-resources-articles.md) | working |
 
 Stopped: research-product-agent-and-harness-968c23 (6b54ecd9, login expired, never ran); user-story-mapping-1 (613dd94f, duplicate of the card session).
 
 ## Queue (what starts when)
+
+0. **Films and GPU order:** 04 (main, Fable, priority) → then by the GPU lock: 05 PM-agents (PM session), 06 Ramp Glass (Glass session), 07 runtime patterns (taxonomy session), 08 intent-shaping options (general research session). Each shows Geoff its Script Doc before voicing and tells the director before its first full build.
 
 1. **Storytelling and film** running. Checkpoints A, B, C are the worker's questions to Geoff in its own session.
 2. **Lint** runs per task as Geoff accepts it (LINTING.md); the pre-story sweep was skipped on Geoff's "enough side quests".
