@@ -3,7 +3,7 @@ title: How Stripe Built a new Internal AI Knowledge Platform that their PMs use 
 source_url: https://departmentofproduct.substack.com/p/how-stripe-built-a-new-internal-ai
 author: Department of Product (Rich Holmes)
 publisher: Department of Product (Substack)
-published: unknown
+published: 2026-08-04
 retrieved: 2026-10-24
 type: article
 evidence: independent
@@ -24,3 +24,6 @@ PM-audience coverage of Kai, mostly paywalled; useful only for the framing that 
 
 ## Could not verify
 - Paywalled beyond the intro; author attribution and date not confirmed.
+
+## Added 2026-10-24
+- Date 2026-08-04 taken from Geoff's ecosystem doc ([note](claude-doc-geoff-stripe-internal-agent-ecosystem.md)); not confirmed on the page.

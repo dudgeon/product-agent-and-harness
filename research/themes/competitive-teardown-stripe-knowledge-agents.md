@@ -39,9 +39,12 @@ Written only by the task `competitive-teardown-stripe-knowledge-agents`. Built i
 ## non-engineer-builders: Non-engineers ship through agents
 - [Harbor: Stripe's AI-assisted prototyping tool](sources/stripe-harbor-ai-prototyping.md): 3,000+ Stripes made 12,000 prototypes in Harbor (25% of Stripes); Finance presents actuals as clickable prototypes; AEs build ROI calculators (competitive-teardown-stripe-knowledge-agents)
 - [Jeff Weinstein: Kai, Minions' sibling](sources/x-jeff-weinstein-kai-sibling.md): a Stripe product lead uses Kai 'all day long' (competitive-teardown-stripe-knowledge-agents)
+- [Protodash (How I AI, Owen Williams)](sources/howiai-stripe-protodash-owen-williams.md): Stripe's Dashboard prototyping studio is used by 'more PMs than designers these days'; a PM on an unstaffed area 'can unblock himself' (competitive-teardown-stripe-knowledge-agents)
 
 ## legible-org-for-agents: Make the organisation legible to agents
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): org chart, projects/OKRs and a tiered data catalog are what let Kai 'do the right thing' without users explaining their job (competitive-teardown-stripe-knowledge-agents)
+- [An Inside Look Into How This $159B Tech Company Ships So Fast](sources/youtube-notmybusiness-inside-stripe-ships-fast.md): Orbit plans by 'reading files in our code base, it's reading Trailhead' (internal docs); Compass tracks projects (competitive-teardown-stripe-knowledge-agents)
+- [Inside Stripe's Engineering Culture: Part 2](sources/pragmaticengineer-inside-stripe-engineering-culture-part-2.md): pre-AI internal tools: Trailhead (docs structured like the external docs), Compass (project status, linked docs, standups), Home intranet search (2024) (competitive-teardown-stripe-knowledge-agents)
 
 ## evals-autonomy-trust: Evals, autonomy sliders and earned trust
 - [Production-grade AI agents for financial compliance: Lessons from Stripe](sources/aws-stripe-compliance-agents.md): each compliance sub-question is validated against human quality standards before it may inform reviewers in production (competitive-teardown-stripe-knowledge-agents)
@@ -59,10 +62,12 @@ Written only by the task `competitive-teardown-stripe-knowledge-agents`. Built i
 
 ## prototyping-agents-limits: Prototyping agents and their limits
 - [Harbor: Stripe's AI-assisted prototyping tool](sources/stripe-harbor-ai-prototyping.md): Harbor prototype animation shipped 'nearly one-for-one'; prototypes became inputs to reviews; next step is live data and prototype-scoped databases (competitive-teardown-stripe-knowledge-agents)
+- [Protodash (How I AI, Owen Williams)](sources/howiai-stripe-protodash-owen-williams.md): gets '90% of the way most of the time ... it will make slop'; taste and craft stay with designers (competitive-teardown-stripe-knowledge-agents)
 
 ## org-context-grounding: Agents work when grounded in organisation context
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): Kai knows the user and org chart by default, reads the project-management system, and connects Drive, Slack and DMs only if the user opts in (toggleable per session) (competitive-teardown-stripe-knowledge-agents)
 - [Emily Glassberg Sands on Latent Space](sources/latentspace-emily-sands-stripe.md): Hubert (text-to-SQL) failed most at data discovery; fixed by deprecating low-quality tables, owner-written docs, and org-position persona context (competitive-teardown-stripe-knowledge-agents)
+- [How can we help everyone become a 10x engineer? (Stripe Sessions 2024)](sources/stripe-sessions-2024-10x-engineer-panel.md): Stripe put an LLM bot over Trailhead only after owners verified docs and the hierarchy was trusted, so answers 'were going to be accurate' (competitive-teardown-stripe-knowledge-agents)
 
 ## agent-failure-modes: Recurring agent failure modes in PM work
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): 'There were agents that went rogue ... may have almost taken down core systems'; 'when in doubt an agent will just brute force it' (competitive-teardown-stripe-knowledge-agents)
@@ -70,6 +75,7 @@ Written only by the task `competitive-teardown-stripe-knowledge-agents`. Built i
 ## human-review-gates: Human review gates on agent output
 - [Production-grade AI agents for financial compliance: Lessons from Stripe](sources/aws-stripe-compliance-agents.md): compliance agents answer sub-questions as pre-fetched research; the human reviewer answers every sub-task; 26% faster median review, >96% helpfulness (competitive-teardown-stripe-knowledge-agents)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): per-project human-in-the-loop confirmation on sensitive tools, deliberately not for everyone, because prompting on every call makes people 'press the wrong button' (competitive-teardown-stripe-knowledge-agents)
+- [An Inside Look Into How This $159B Tech Company Ships So Fast](sources/youtube-notmybusiness-inside-stripe-ships-fast.md): deploys to 1% of boxes with automatic pause and rollback; mandated code review; review agent tested against past bad changes (competitive-teardown-stripe-knowledge-agents)
 
 ## one-job-per-agent: One job per agent
 - [Harbor: Stripe's AI-assisted prototyping tool](sources/stripe-harbor-ai-prototyping.md): Stripe: 'keep agents specialized (on research, coding, or browser-native tools) while exposing them to capabilities in other systems' (competitive-teardown-stripe-knowledge-agents)
@@ -116,3 +122,22 @@ Policy (default model, allowed tools, human-in-the-loop rules, data back end, ev
 Limiting what a session may combine based on the task (e.g. never two customers' data in one analysis), even when the user could access each separately. Matters for trust/privacy defaults of shared or discoverable sessions.
 - [Meet Stripe's Knowledge AI Platform](sources/stripe-meet-knowledge-ai-platform.md): "you shouldn't combine data from two unrelated customer contexts in a single analysis"; the boundary is "what should this task be allowed to view given this context?" (competitive-teardown-stripe-knowledge-agents)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): tool policies stop sensitive HR data being written to a Stripe-wide doc without banning tools (competitive-teardown-stripe-knowledge-agents)
+
+## agent-factory-sdlc: Agents across the whole product development loop
+- [An Inside Look Into How This $159B Tech Company Ships So Fast](sources/youtube-notmybusiness-inside-stripe-ships-fast.md): Orbit: research, shareable plan teammates comment on, one-button handoff to a minion that may run 12 hours and pause to ask; 'Gru' code-review agent (competitive-teardown-stripe-knowledge-agents)
+- [Stripe's Internal Agent Ecosystem for Product Development](sources/claude-doc-geoff-stripe-internal-agent-ecosystem.md): five-stage PM-to-code flow: Kai research, Harbor/Protodash prototype, Orbit plan, Minions build, review agent plus human (competitive-teardown-stripe-knowledge-agents)
+
+## spec-becomes-prototype-and-evals: The spec is replaced by prototype plus evals
+- [AI didn't write our SDK. It changed how we built it.](sources/stripe-ai-didnt-write-our-sdk.md): a two-day prototype moved a scope decision weeks earlier; agents draft specs reviewed as GitHub issues before implementation (~20 lint rules) (competitive-teardown-stripe-knowledge-agents)
+- [Protodash (How I AI, Owen Williams)](sources/howiai-stripe-protodash-owen-williams.md): engineers worked from a designer's prototype PR: 'just use the prototype as the source of truth' (competitive-teardown-stripe-knowledge-agents)
+
+## tacit-knowledge-capture: Capturing tacit knowledge from people for agents
+How know-how that lives in people's heads (how the business works, which data to trust, design and architectural judgment) gets written down, verified and kept current so agents can use it: by passive mining of work exhaust, by experts curating docs, rules and skills, by interview-style elicitation, or by write-back from finished work. Bears on Geoff's hypothesis that a context-creation agent is needed.
+- [How can we help everyone become a 10x engineer? (Stripe Sessions 2024)](sources/stripe-sessions-2024-10x-engineer-panel.md): Trailhead makes owners verify docs or they 'drift away and get archived'; the docs complaint dropped steeply in the next engineering survey (competitive-teardown-stripe-knowledge-agents)
+- [An Inside Look Into How This $159B Tech Company Ships So Fast](sources/youtube-notmybusiness-inside-stripe-ships-fast.md): a 2013 Stripe engineer: once 'no one has all of the state in their heads anymore' Stripe wrote documents, then robots, and now AI 'can ingest all of this documentation that we'd written' (competitive-teardown-stripe-knowledge-agents)
+- [Protodash (How I AI, Owen Williams)](sources/howiai-stripe-protodash-owen-williams.md): a design manager encoded design-system judgment as agent rules over 18 months: 'I feel insane writing these rules, but ... once you've got them, it works' (competitive-teardown-stripe-knowledge-agents)
+- [AI didn't write our SDK. It changed how we built it.](sources/stripe-ai-didnt-write-our-sdk.md): repo-local docs 'written for AI consumption' (principles, boundaries, anti-patterns) raised agent output and cut onboarding for humans (competitive-teardown-stripe-knowledge-agents)
+- [Inside Stripe's Engineering Culture: Part 2](sources/pragmaticengineer-inside-stripe-engineering-culture-part-2.md): CEO- and CTO-led internal writing culture; 'vastly more people consume the writing than produce it' (competitive-teardown-stripe-knowledge-agents)
+- [Investing in Internal Documentation (First Round, David Nunez)](sources/firstround-nunez-internal-documentation.md): knowledge 'trapped in an early hire's head'; internal docs lose to external docs and to the to-do list unless built into career expectations (competitive-teardown-stripe-knowledge-agents)
+- [Stripe's payment method factory](sources/stripe-payment-method-factory.md): planning agent interviews the engineer for context and writes it to a shared knowledge base; learning and decision logs feed prompt updates (competitive-teardown-stripe-knowledge-agents)
+- [Latent Space, Emily Sands](sources/latentspace-emily-sands-stripe.md): canonical-dataset docs written by domain owners ('brute-forcing it with humans'); Sands did not yet trust an LLM to write them (competitive-teardown-stripe-knowledge-agents)

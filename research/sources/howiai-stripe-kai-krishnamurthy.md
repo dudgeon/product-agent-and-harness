@@ -43,3 +43,8 @@ The richest first-party source on how Kai is governed and used, with a live demo
 - Transcript is YouTube auto-captions (e.g. "Sherrod" = Sharadh, "Hubble" spelled variously). Timestamps are 2-minute buckets.
 - 86%+ / 10,000+ weekly are spoken claims from a live dashboard; not independently verified. Stripe headcount ~10,000 (Sands, 2025) makes 10,000+ weekly and 86% hard to reconcile exactly.
 - The "different harness behind a project" capability was described, not demoed.
+
+## Added 2026-10-24 (second pass): chatprd.ai episode summary
+- Same episode, written summary at https://www.chatprd.ai/how-i-ai/how-stripe-built-kai-data-dashboards-reusable-skills-and-enterprise-ai-governance (dated Sept 4, 2026 in Geoff's doc; the YouTube upload is Sept 7). It repeats 86% / 10,000+ / core team under 10, and says Kai has "a sophisticated retrieval system that can find the right skill from a library of over 2,000, based purely on user intent".
+- Correction to watch for: the summary says Sharadh described a skill **deprecation policy**; in the transcript the 30-day deprecation idea is the host's (40:30), and Sharadh answers with telemetry-driven promote/demote. Treat "Kai has a deprecation policy" as unconfirmed.
+- The summary also says a project can default to "a cheaper, faster model like Claude Code" (a model/product mix-up in the summary, not in the transcript).
