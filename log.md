@@ -1,0 +1,21 @@
+# Director log
+
+One line per director action, newest last. Task-level detail is in each task's `## Progress`; this is the cross-project record (and, once `## Done` passes 20 lines, where older Done lines move).
+
+- 2026-10-24 Project set up by hand (Duo not running): PROJECT.md, five phase tasks filed as suggested.
+- 2026-10-24 Research worker started via claude --bg; died on "Login expired"; stopped. Replaced by an app session (card), Remote Control on.
+- 2026-10-24 Started Ramp Glass teardown and PM agents research (app sessions, inherited Sonnet 5.5: a mistake, found later).
+- 2026-10-24 Geoff: research library `research/` with a filing rule; sent to all workers.
+- 2026-10-24 Runtime patterns taxonomy worker proposed (Opus); Geoff started it; told to build on all prior work.
+- 2026-10-24 Geoff: options by dimension, not one answer (`options/`); seeded six dimensions; dimensions include user and product choices; questions unranked.
+- 2026-10-24 User story mapping worker (card, Geoff started it); a duplicate `--bg` worker stopped. Geoff relayed via another session: no more session cards, start workers with `claude --bg --remote-control`.
+- 2026-10-24 Artifact-management follow-up sent to the story worker; new dimension and stories S16–S18 landed.
+- 2026-10-24 Taxonomy synthesis (Fable) landed; sent to Geoff; register consolidated per D.0 to 23 dimensions (verified nothing lost); Geoff answered section I with the taxonomy worker.
+- 2026-10-24 Storytelling and video task filed, waiting; explainer-video-style dropped as superseded.
+- 2026-10-24 Found three workers on Sonnet; switched to Fable for self-audits, then Opus. Audits found and fixed fabricated and misattributed claims. Rule: workers Opus by default, model passed explicitly.
+- 2026-10-24 Shopify River and Stripe knowledge-agent teardowns started (Opus, --bg, Remote Control). Cap removed: "max workers: no limit" added to HOME.md.
+- 2026-10-24 Follow-up research round (thin spots) started on Geoff's yes; storytelling waits for it.
+- 2026-10-24 Theme register wiped twice by concurrent rewrites; fix designed (per-task theme files, generated INDEX/THEMES via research/build.py); migration queued until workers idle.
+- 2026-10-24 Public repo created and pushed: github.com/dudgeon/product-agent-and-harness (d007045). Transcripts and third-party full texts kept out; no do-not-name references. Later pushes wait for Geoff.
+- 2026-10-24 Lint-after-every-task rule and LINTING.md written.
+- 2026-10-24 Infra on Geoff's yes: DIRECTOR.md (state), log.md, local commits per step, digest page. Monitor on background workers. Follow-up worker found working in a git worktree; told to write to the main folder.

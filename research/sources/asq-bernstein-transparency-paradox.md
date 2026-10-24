@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: paper
 evidence: independent
 filed_by: competitive-teardown-shopify-river
-themes: [org-learning-loop, shared-persistent-sessions]
+themes: [org-learning-loop, shared-persistent-sessions, public-by-default-agent-work]
 relevance: medium
 ---
 

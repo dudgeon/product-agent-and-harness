@@ -17,3 +17,4 @@ Related: [[competitive-teardown-ramp-glass]], [[research-agent-runtime-patterns-
 - 2026-10-24 Filed by director-project-agent-and-harness.
 - 2026-10-24 Worker teardown-shopify-river (36a0d56f) started via claude --bg on Opus 5.5 with --remote-control.
 - 2026-10-24 Worker (Opus 5.5) started; read Under the River, Tobi's Learning on the Shop floor (via X API), Tobi's River replies and Oct chart, River vuln-remediation and Quick posts; 9 source notes filed; Opus subagent filing secondary coverage, podcasts and remaining Shopify posts.
+- 2026-10-24 Worker done (draft for Geoff): 36 source notes filed (11 by worker, 25 by Opus subagent), INDEX + THEMES updated (new theme public-by-default-agent-work), new dimensions agent-interface and trust-privacy-defaults opened (Stripe worker appended rows), River rows added to 15 existing dimensions, cross-cutting question added; summary at tasks/competitive-teardown-shopify-river/00-teardown-summary.md.

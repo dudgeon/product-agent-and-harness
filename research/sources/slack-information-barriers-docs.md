@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: docs
 evidence: first-party
 filed_by: competitive-teardown-shopify-river
-themes: [identity-delegation, shared-persistent-sessions]
+themes: [identity-delegation, shared-persistent-sessions, public-by-default-agent-work]
 relevance: medium
 ---
 

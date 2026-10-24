@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: article
 evidence: first-party
 filed_by: competitive-teardown-shopify-river
-themes: [artifact-standardization, non-engineer-builders, org-learning-loop, skill-standards]
+themes: [artifact-standardization, non-engineer-builders, org-learning-loop, skill-standards, public-by-default-agent-work]
 relevance: medium
 ---
 

@@ -2,3 +2,5 @@
 .DS_Store
 # Verbatim third-party transcripts stay local (copyright).
 *.transcript.md
+.claude/
+.public-check-terms

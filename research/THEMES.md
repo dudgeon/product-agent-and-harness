@@ -27,10 +27,14 @@ A shared, agent-readable, harness-agnostic store of product context ("evidence, 
 - [github/spec-kit (README)](sources/github-spec-kit-readme.md): state kept under .specify/ (memory, bugs/<slug>/, assessments/<slug>/ with decision.md). (user-story-mapping)
 - [How Claude remembers your project (Claude Code docs)](sources/anthropic-claude-code-memory-docs.md): the hierarchy managed policy > user > project > local lets org, team and personal context layer. (user-story-mapping)
 - [Why Atlassian Rovo Failed Us](sources/devto-tschimev-why-atlassian-rovo-failed-us.md): .cursorrules, skills/ directory and ADRs in the repo as the agent's context (research-pm-agents-jobs-to-be-done)
+- [Under the River](sources/shopify-engineering-under-the-river.md): monorepo World holds code, skills, conventions, intent documents, runbooks, AGENTS.md and zone knowledge; sessions leave "a pebble, a skill update, an AGENTS.md diff" (competitive-teardown-shopify-river)
+- [River's reaction to the Shop floor post](sources/x-tobi-river-reaction-to-shop-floor-post.md): "AGENTS.md files are mirror surfaces": writing them forces teams to find they "didn't quite agree with each other" (competitive-teardown-shopify-river)
+- [Shopify's River: The AI Agent as Organizational Memory](sources/aienabledpm-shopify-river-organizational-memory.md): agent failures as context, permission and taste gaps, fixed by making knowledge explicit (competitive-teardown-shopify-river)
 
 ## risk-sloped-review: Human review sloped to risk
 How much human review agent output gets depends on how risky it is. Where that line sits is a key harness and governance design choice, especially in regulated organisations.
 - [Building and Accelerating the Intent Factory](sources/geoff-building-accelerating-intent-factory.md): Ramp auto-approves low-complexity PRs; Stripe requires human review on every change (§Vision, step 7) (research-product-agent-and-harness)
+- [How River takes security work from a fix to merge](sources/shopify-engineering-river-vulnerability-remediation.md): "Hand off the decision, not the investigation"; River recommended dropping its own patch when a developer surfaced the original requirement (competitive-teardown-shopify-river)
 
 ## risk-review-as-classification: Risk review as a specification and classification problem
 Risk advisory works as classification against a known taxonomy, with a curation path for novel risks. That makes a risk agent tractable to build and straightforward to evaluate with SME labels.
@@ -55,6 +59,9 @@ Ramp found models were good enough; the preconfigured environment (integrations,
 - [Building Laminar: Ramp's Managed Agents Platform](sources/ramp-builders-building-laminar.md): the harness's 15 responsibilities listed; provider-agnostic; own trace-debug UI (competitive-teardown-ramp-glass)
 - [Stripe's AI minions ship 1,300 PRs weekly from a Slack emoji (How I AI)](sources/howiai-stripe-minions-kaliski.md): minions succeed because of years of devex: hosted devboxes, CI, docs, a 'blessed path for 90% of the common activities' (competitive-teardown-stripe-knowledge-agents)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): data-agent quality depends on pre-AI investments: tiered data catalog, blessed analytics layer, a warehouse hardened for agent query load (competitive-teardown-stripe-knowledge-agents)
+- [Building an agentic harness that outlasts the model](sources/shopify-engineering-agentic-harness-outlasts-model.md): better models gave more noise; all 30+ candidates in one audit were downgraded; the harness is the durable asset (competitive-teardown-shopify-river)
+- [Introducing Roast](sources/shopify-engineering-introducing-roast.md): "Non-determinism is the enemy of reliability"; YAML + markdown steps interleaved with a Claude Code CodingAgent (competitive-teardown-shopify-river)
+- [Learning on the Shop floor](sources/x-tobi-learning-on-the-shop-floor.md): 36%→77% merge rate "did not retrain a model... did not switch models" (self-reported) (competitive-teardown-shopify-river)
 
 ## org-learning-loop: One person's win becomes everyone's baseline
 Skills, prompts and corrections made by one employee propagate to the team so the organisation learns once. Overlaps with [[compounding-context-repo]] (product context) but is about workflow/skills and shared sessions.
@@ -73,6 +80,15 @@ Skills, prompts and corrections made by one employee propagate to the team so th
 - [Other Ramp (@tryramp) posts about Glass, Apr-May 2026](sources/x-tryramp-other-glass-posts.md): company-account amplification; Ramptables episode on the Glass builders (competitive-teardown-ramp-glass)
 - [Meet Stripe's Knowledge AI Platform](sources/stripe-meet-knowledge-ai-platform.md): roadmap: Kai reflects on traces involving a skill, proposes and tests improvements, submits them for the skill owner's review (competitive-teardown-stripe-knowledge-agents)
 - [Stripe's payment method factory](sources/stripe-payment-method-factory.md): learning logs, decision logs, transcripts and PR comments from each run feed an agent that proposes updates to 100+ reusable prompts; an observer agent hardens prompts (competitive-teardown-stripe-knowledge-agents)
+- [Learning on the Shop floor](sources/x-tobi-learning-on-the-shop-floor.md): River refuses DMs so others learn by watching (Lehrwerkstatt); a checkout-warehouse skill reused by 12 teams; merge rate 36%→77% credited to people writing down what River should have known (self-reported) (competitive-teardown-shopify-river)
+- [Tobi's replies about River](sources/x-tobi-river-replies-may-2026.md): "It's not about the transcript of the work. It's about seeing how other people begin the work with the ai" (competitive-teardown-shopify-river)
+- [Under the River](sources/shopify-engineering-under-the-river.md): the public transcript corpus is mined and fed back into skills, prompts and defaults; "the privacy of an agent thread is a disadvantage" (competitive-teardown-shopify-river)
+- [Tobi Lütke: AI Agents, Better Decisions (Knowledge Project)](sources/fs-knowledge-project-tobi-lutke-ai-agents.md): open channels only, to recreate office "osmosis learning"; "a late choice ... one of my favorite calls" (competitive-teardown-shopify-river)
+- [We gave AI agents a mobile dev environment](sources/shopify-engineering-remote-dev.md): the cheap "Jev" classifier tags every mobile River thread, scores outcomes, and failures feed an LLM to improve River (competitive-teardown-shopify-river)
+- [Learning on the Shop floor (Simon Willison)](sources/simonwillison-learning-on-the-shop-floor.md): compares River to Midjourney's public-Discord interface as a way to learn a finicky new skill (independent opinion) (competitive-teardown-shopify-river)
+- [The Transparency Paradox (Bernstein)](sources/asq-bernstein-transparency-paradox.md): counter-evidence: broad visibility bred hiding; curtained lines +10–15% output; learning shared upward once there was data (independent, factory 2009) (competitive-teardown-shopify-river)
+- [Shopify River (Ashgaliyev wiki)](sources/ashgaliyev-wiki-shopify-river.md): River as "organizational apprenticeship" (competitive-teardown-shopify-river)
+- [River: Shopify's Slack-native AI agent (video)](sources/youtube-shopify-river-slack-native-agent.md): official one-line positioning is the public-only constraint (competitive-teardown-shopify-river)
 
 ## skills-marketplace: A versioned skills marketplace with hidden Git
 Skills as markdown in a Git repo, reviewed like code, with the VCS hidden from non-engineers behind publish. A concrete mechanism for sharing agent know-how.
@@ -109,6 +125,8 @@ Agent memory built on first connection, refreshed by a periodic pipeline, read-o
 - [How Claude remembers your project (Claude Code docs)](sources/anthropic-claude-code-memory-docs.md): CLAUDE.md (human-written instructions) vs auto memory (Claude-written learnings; first 200 lines or 25KB loaded each session). (user-story-mapping)
 - [Organize work with projects (Claude Cowork docs)](sources/anthropic-cowork-projects-docs.md): a dedicated project-scoped memory store persisting across sessions; archiving deletes metadata including memory but not local files. (user-story-mapping)
 - [How Stripe Built Kai on Deep Agents (LangChain)](sources/langchain-how-stripe-built-kai-deep-agents.md): Kai keeps session state in an S3-backed virtual filesystem; sandbox calls sync files in and out so the agent sees one persistent file environment per session (competitive-teardown-stripe-knowledge-agents)
+- [Tobi Lütke: AI Agents, Better Decisions (Knowledge Project)](sources/fs-knowledge-project-tobi-lutke-ai-agents.md): River "dreams" off-hours over the day's threads and rewrites skill files; per-person and per-channel memory injected at session start (competitive-teardown-shopify-river)
+- [How River takes security work from a fix to merge](sources/shopify-engineering-river-vulnerability-remediation.md): the work ledger is "useful memory, but it isn't the operational truth"; each entry a claim to re-check (competitive-teardown-shopify-river)
 
 ## cost-control-routing: Cost metering and model routing built into the harness
 Open access to frontier models blew budgets; Ramp added per-project meters, limits and a router that picks the model.
@@ -138,6 +156,10 @@ Open access to frontier models blew budgets; Ramp added per-project meters, limi
 - [Building Laminar: Ramp's Managed Agents Platform](sources/ramp-builders-building-laminar.md): Ramp Router sits in the harness as the LLM gateway; model choice per cost/latency/performance (competitive-teardown-ramp-glass)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): Kai projects set the default model and can block expensive models for a workflow (competitive-teardown-stripe-knowledge-agents)
 - [Production-grade AI agents for financial compliance: Lessons from Stripe](sources/aws-stripe-compliance-agents.md): all LLM calls go through an LLM Proxy (noisy-neighbour limits, fallbacks, usage tracking by privacy class); prompt caching cut cost 60% (competitive-teardown-stripe-knowledge-agents)
+- [Building an agentic harness that outlasts the model](sources/shopify-engineering-agentic-harness-outlasts-model.md): full scan $50–300, diff scan $5–50; partitions sized to 20–30% of the context window (competitive-teardown-shopify-river)
+- [Small Models, Massive Wins (Beyond the Pilot)](sources/venturebeat-beyond-the-pilot-farhan-thawar.md): no token limits but "circuit breakers"; token leaderboard replaced by a usage dashboard where anyone sees their own spend (competitive-teardown-shopify-river)
+- [How Shopify built an AI stack that doesn't care which models survive](sources/venturebeat-shopify-ai-stack-model-agnostic.md): the proxy auto-moved users to Opus or GPT 5.5 when "Claude Fable 5 shut down" (competitive-teardown-shopify-river)
+- [From Memo to Movement](sources/firstround-shopify-ai-culture.md): in 2025 a token-spend leaderboard was "a cool proxy for value"; by 2026 it was removed (competitive-teardown-shopify-river)
 
 ## single-agent-many-skills: One agent with many skills, not many agents
 Consolidate to one agent and one conversational surface, extended by skills and tools.
@@ -159,6 +181,8 @@ Consolidate to one agent and one conversational surface, extended by skills and 
 - [Meet Stripe's Knowledge AI Platform](sources/stripe-meet-knowledge-ai-platform.md): one Kai harness over 1,000+ skills and tools; a no-code builder that produced 4,000+ micro-agents was replaced because of duplicated, uneven, hard-to-maintain agents (competitive-teardown-stripe-knowledge-agents)
 - [How Stripe Built Kai on Deep Agents (LangChain)](sources/langchain-how-stripe-built-kai-deep-agents.md): skills gate tools via allowedTools (two-pass); foundational skills pinned; frontier-model quality degrades past ~150 skills with the system prompt (competitive-teardown-stripe-knowledge-agents)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): ~2,000 skills: ~50 used heavily daily, 100-150 by sub-orgs, many by 2-3 people; telemetry pipeline decides what to promote or move out of the general context (competitive-teardown-stripe-knowledge-agents)
+- [Under the River](sources/shopify-engineering-under-the-river.md): new agents are "profiles" (prompt, skills, extensions, sandbox policy, model defaults) on one substrate: "a new bundle, not ... a new platform" (competitive-teardown-shopify-river)
+- [Shopify Just Showed the Agent Stack](sources/adaptordie-shopify-river-agent-stack.md): "Pi is the engine room. River is the shop floor interface" (commentator's inference) (competitive-teardown-shopify-river)
 
 ## enablement-by-product: The product is the enablement
 Teach users by what the product does (suggested skills, memory, self-healing) rather than training.
@@ -167,6 +191,9 @@ Teach users by what the product does (suggested skills, memory, self-healing) ra
 - [Karim Atiyeh Glass launch post](sources/x-karimatiyeh-glass-feature-requests.md): an account manager's saved prompt took feature-request capture from ~300 to ~20,000 a month (vendor claim) (competitive-teardown-ramp-glass)
 - [How Stripe Built Kai on Deep Agents (LangChain)](sources/langchain-how-stripe-built-kai-deep-agents.md): adoption came from removing knobs: users who bounced off configurable tools found Kai needed none (competitive-teardown-stripe-knowledge-agents)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): pilot with GTM (200-300 users), then a company-wide demo triggered the ramp (competitive-teardown-stripe-knowledge-agents)
+- [We gave AI agents a mobile dev environment](sources/shopify-engineering-remote-dev.md): adoption needed internal ads with a River persona; River went from 6% to 61% of merged mobile PRs (competitive-teardown-shopify-river)
+- [Learning on the Shop floor](sources/x-tobi-learning-on-the-shop-floor.md): learning "does not require a curriculum, a training plan, or a manager. It just requires everyone's work to be visible" (competitive-teardown-shopify-river)
+- [Make the Work Visible](sources/airealized-make-the-work-visible.md): visibility as the adoption lever; peer practices (AI Corner, failure labs) (competitive-teardown-shopify-river)
 
 ## build-vs-buy: Own the agent harness as a moat
 Reasons to build internally: moat, speed of fixes, learning for the external product.
@@ -217,6 +244,7 @@ Product, CX, finance and sales build tools and PRs via agent harnesses; shifts w
 - [Building My First AI Product: 6 Lessons from My 90-Day Deep Dive](sources/producttalk-ai-playbook-first-ai-product.md): a non-engineer built a discovery AI product (Replit, then Zapier, then AWS Step Functions, plus evals in Claude Code) (research-pm-agents-jobs-to-be-done)
 - [Harbor: Stripe's AI-assisted prototyping tool](sources/stripe-harbor-ai-prototyping.md): 3,000+ Stripes made 12,000 prototypes in Harbor (25% of Stripes); Finance presents actuals as clickable prototypes; AEs build ROI calculators (competitive-teardown-stripe-knowledge-agents)
 - [Jeff Weinstein: Kai, Minions' sibling](sources/x-jeff-weinstein-kai-sibling.md): a Stripe product lead uses Kai 'all day long' (competitive-teardown-stripe-knowledge-agents)
+- [Quick: An internal hosting platform for the AI era](sources/shopify-engineering-quick.md): 50,000+ agent-made internal sites; over half the company has made one; skills bundled so any agent can deploy (competitive-teardown-shopify-river)
 
 ## agent-factory-sdlc: Agents across the whole product development loop
 A chain of specialised agents (insight, define, build, review, test, coordinate) removes bottlenecks one after another; Glass is the define-stage agent. Related: [[intent-factory-before-discovery]].
@@ -245,6 +273,8 @@ Roadmaps, specs, tickets and tools must be agent-readable so agents can answer a
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): verbatim re-read: getTeamworkGraphContext returns 'all relationships and linked objects in one traversal' from Jira, Confluence, Goals/Projects/Focus Areas, people, DevOps, Loom, Compass entry points; Confluence spaces carry agent-readable 'space instructions' (getConfluenceSpaceInstructions / setConfluenceSpaceInstructions). (user-story-mapping)
 - [Scopes (Teamwork Graph API)](sources/atlassian-teamwork-graph-scopes.md): 'All Teamwork Graph API scopes are read-only'; a missing scope returns success and empty rows ('fails closed rather than leaking data'), so an agent cannot tell 'no data' from 'no permission'. (user-story-mapping)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): org chart, projects/OKRs and a tiered data catalog are what let Kai 'do the right thing' without users explaining their job (competitive-teardown-stripe-knowledge-agents)
+- [Under the River](sources/shopify-engineering-under-the-river.md): 2024 monorepo + Nix bets; "agent-friendly ≈ human-friendly"; "The work to make a codebase legible to an agent is simply the debt you owe to your human engineers" (competitive-teardown-shopify-river)
+- [How Shopify powers "World" (Flagship)](sources/flagship-ai-first-series-2-shopify-tectonix-nix.md): Nix reproducibility narrows agent build errors to pure code errors (competitive-teardown-shopify-river)
 
 ## evals-autonomy-trust: Evals, autonomy sliders and earned trust
 Start agents as suggestions, measure against ground truth, then let users raise autonomy. Related: [[risk-sloped-review]].
@@ -352,6 +382,14 @@ Most evidence on PM agents is vendor marketing or self-reported; controlled or i
 - [Atlassian Teamwork Graph: The context engine behind your AI (Atlassian blog)](sources/atlassian-blog-teamwork-graph-team-26.md): "Per our benchmarks"; no tasks, sample, baseline or setup disclosed (case 1) (research-pm-agents-jobs-to-be-done)
 - [Stripe Got 83% of Staff Using One AI Agent. Don't Copy Its Sales Numbers.](sources/aifounders-stripe-kai-dont-copy-sales-numbers.md): independent critique: Kai's +39% deals compares the same sellers' Kai and non-Kai weeks; early adopters are the best sellers; cause open (competitive-teardown-stripe-knowledge-agents)
 - [Sharadh Krishnamurthy LinkedIn Kai launch post](sources/linkedin-sharadhk-kai-launch-post.md): Kai usage stated as 80% weekly / 20,000+ sessions a day (LinkedIn), 83% (blog), 86%+ (podcast), '>60k sessions' (LangChain): inconsistent bases (competitive-teardown-stripe-knowledge-agents)
+- [River threads jump to 121,804 (Dealroom)](sources/dealroom-river-threads-121804.md): thread volume alone does not prove productivity or quality; no independent impact measure (competitive-teardown-shopify-river)
+- [Shopify: Building River (ZenML)](sources/zenml-llmops-shopify-river-durable-infrastructure.md): no models, cost, error rates or baselines disclosed (competitive-teardown-shopify-river)
+- [Building a Public AI Agent Workspace (ZenML)](sources/zenml-llmops-shopify-river-public-workspace.md): security and permission model "aren't described"; the 23% unmerged are not discussed (competitive-teardown-shopify-river)
+- [Inside Shopify's software factory (Port)](sources/port-software-factories-shopify.md): "1 in 8" has no definition of "coauthored"; best detail comes from press and VC interviews, not the blog (competitive-teardown-shopify-river)
+- [Shopify's River shows why agent context costs more (Magica)](sources/magica-shopify-river-agent-context-cost.md): no like-for-like comparison against private agents; migration and Aquifer cost undisclosed (competitive-teardown-shopify-river)
+- [AI SLOPCAST #9](sources/oleg-guru-ai-slopcast-shopify-river-lehrwerkstatt.md): only positive metrics; review load on seniors unreported (competitive-teardown-shopify-river)
+- [Tobi Lutke: River Now Writes Half (Podcast Alpha)](sources/podcastalpha-tobi-lutke-river-half-of-prs.md): "founder-stated, not audited"; headline overstates Tobi's "up to about 50%... created out of conversations" (competitive-teardown-shopify-river)
+- [How to Make AI Work Visible (MindStudio)](sources/mindstudio-make-ai-work-visible-shopify-river.md): loose restatement used as a product pitch (competitive-teardown-shopify-river)
 
 ## metrics-review-agents: Metrics review and analytics agents
 Analytics vendors' agents and MCP servers for metric Q&A and monitoring; evidence is mostly vendor claims.
@@ -387,6 +425,8 @@ Time-saved claims are self-reported; no one publishes decision-quality or outcom
 - [Helping every team succeed in the AI era (Atlassian blog)](sources/atlassian-blog-helping-every-team-succeed-ai-era.md): Time-per-item and hours-per-week only; no quality or outcome measure (research-pm-agents-jobs-to-be-done)
 - [Meet Stripe's Knowledge AI Platform](sources/stripe-meet-knowledge-ai-platform.md): Kai's outcome numbers are within-person usage comparisons (Kai weeks vs non-Kai weeks; power vs low users), not controlled tests (competitive-teardown-stripe-knowledge-agents)
 - [Emily Glassberg Sands on Latent Space](sources/latentspace-emily-sands-stripe.md): Sands (Oct 2025): 'I have a really hard time understanding impact. Like I don't quite know what statistic to look at' (competitive-teardown-stripe-knowledge-agents)
+- [Shopify's River shows why agent context costs more (Magica)](sources/magica-shopify-river-agent-context-cost.md): names the missing evidence: resolution time, rollback rate, retention, infrastructure cost against a baseline (competitive-teardown-shopify-river)
+- [How River takes security work from a fix to merge](sources/shopify-engineering-river-vulnerability-remediation.md): "PR count and green-branch count measure motion, not remediation"; measure items reaching fixed, rejected or escalated (competitive-teardown-shopify-river)
 
 ## prototyping-agents-limits: Prototyping agents and their limits
 Prompt-to-prototype tools let PMs build quickly but break down as complexity grows and need engineering handoff.
@@ -537,6 +577,8 @@ Invented content, silent omissions, brittleness, generic output when context is 
 - [Why Atlassian Rovo Failed Us](sources/devto-tschimev-why-atlassian-rovo-failed-us.md): Rovo "can't handle nuanced tickets, doesn't understand team conventions"; "polished in demos but struggles in production"; single-team anecdote (research-pm-agents-jobs-to-be-done)
 - [Sycophantic AI decreases prosocial intentions and promotes dependence](sources/stanford-cheng-sycophantic-ai-science-2026.md): 11 models affirmed users ~49% more often than humans (Science, 2026; abstract via search); risk for 'pressure-test my idea' uses (research-pm-agents-jobs-to-be-done)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): 'There were agents that went rogue ... may have almost taken down core systems'; 'when in doubt an agent will just brute force it' (competitive-teardown-stripe-knowledge-agents)
+- [How River takes security work from a fix to merge](sources/shopify-engineering-river-vulnerability-remediation.md): told to enumerate fully, River rechecked only the oldest claim; "Prompts are the right place to express judgment and the wrong place to express a guarantee" (competitive-teardown-shopify-river)
+- [AI SLOPCAST #9](sources/oleg-guru-ai-slopcast-shopify-river-lehrwerkstatt.md): public-by-default archives everyone's gaps, "a treasure trove" for HR (critique) (competitive-teardown-shopify-river)
 
 ## human-review-gates: Human review gates on agent output
 Where and how a human checks PM-agent output (quote checks, review before send, isolated repos). Related: [[risk-sloped-review]].
@@ -565,6 +607,9 @@ Where and how a human checks PM-agent output (quote checks, review before send, 
 - [How we use Linear Agent at Linear](sources/linear-how-we-use-linear-agent-at-linear.md): Humans approve PRs, delegated issues stay human-assigned, autonomy added gradually (research-pm-agents-jobs-to-be-done)
 - [Production-grade AI agents for financial compliance: Lessons from Stripe](sources/aws-stripe-compliance-agents.md): compliance agents answer sub-questions as pre-fetched research; the human reviewer answers every sub-task; 26% faster median review, >96% helpfulness (competitive-teardown-stripe-knowledge-agents)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): per-project human-in-the-loop confirmation on sensitive tools, deliberately not for everyone, because prompting on every call makes people 'press the wrong button' (competitive-teardown-stripe-knowledge-agents)
+- [How River takes security work from a fix to merge](sources/shopify-engineering-river-vulnerability-remediation.md): draft-only, human merge authority; hand off "the smallest question that an owner has to answer"; River left a human-owned branch alone (competitive-teardown-shopify-river)
+- [Tobi Lütke: AI Agents, Better Decisions (Knowledge Project)](sources/fs-knowledge-project-tobi-lutke-ai-agents.md): "slop grenades", unread agent PRs that shift review load onto colleagues (competitive-teardown-shopify-river)
+- [Inside Shopify's AI-first engineering playbook](sources/bvp-inside-shopifys-ai-first-engineering-playbook.md): "We still require a human PR reviewer, which is now becoming a big bottleneck" (competitive-teardown-shopify-river)
 
 ## ai-synthesis-hallucination-risk: AI synthesis can invent or merge facts
 Practitioner and academic evidence of fabricated details, merged quotes and lost depth in LLM summaries of qualitative data.
@@ -637,6 +682,8 @@ Whether sessions, skills and context can move between harnesses and between loca
 - [How Claude remembers your project (Claude Code docs)](sources/anthropic-claude-code-memory-docs.md): Claude reads AGENTS.md when no CLAUDE.md exists in or above the working directory (v2.1.277+); otherwise CLAUDE.md wins, and a CLAUDE.md can @import AGENTS.md. (user-story-mapping)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): a Kai project can be backed by a different API and harness while keeping Kai's features; Kai skills follow the open skill spec (competitive-teardown-stripe-knowledge-agents)
 - [Stripe Got 83% of Staff Using One AI Agent. Don't Copy Its Sales Numbers.](sources/aifounders-stripe-kai-dont-copy-sales-numbers.md): 'the skills are the durable asset'; keep them exportable from any vendor harness (competitive-teardown-stripe-knowledge-agents)
+- [Under the River](sources/shopify-engineering-under-the-river.md): harness outside the sandbox lets Shopify "swap models, runtimes, even languages on the harness side" (competitive-teardown-shopify-river)
+- [Small Models, Massive Wins (Beyond the Pilot)](sources/venturebeat-beyond-the-pilot-farhan-thawar.md): "River ... switches between models"; "I don't care what harness you wanna use" (competitive-teardown-shopify-river)
 
 ## shared-persistent-sessions: Shared, persistent, multi-user agent sessions
 Agent sessions that outlive one person's laptop: shared with teammates, running in a deployed runtime, resumable or event-driven. Raises identity (who is the agent acting as), permission-leakage, durability and cost questions that local sessions avoid.
@@ -682,6 +729,12 @@ Agent sessions that outlive one person's laptop: shared with teammates, running 
 - [Meet Stripe's Knowledge AI Platform](sources/stripe-meet-knowledge-ai-platform.md): Kai sessions are cloud-hosted and long (one hit 932 turns) but single-user; context is 'locked in'; sharing and multi-person artifacts are on the roadmap (competitive-teardown-stripe-knowledge-agents)
 - [Stripe's AI minions ship 1,300 PRs weekly from a Slack emoji (How I AI)](sources/howiai-stripe-minions-kaliski.md): minions run in a public Slack 'robots' channel watched by 76 people: open-by-default observation and 'pair prompting' (competitive-teardown-stripe-knowledge-agents)
 - [Harbor: Stripe's AI-assisted prototyping tool](sources/stripe-harbor-ai-prototyping.md): Harbor shares artifacts, not sessions: one published snapshot per URL, anchored comments that re-resolve after agent rewrites, remix into a copy (competitive-teardown-stripe-knowledge-agents)
+- [Under the River](sources/shopify-engineering-under-the-river.md): Aquifer session = append-only Postgres event log; harness and sandbox disposable; idle "session cells" rehydrate on any host; "Cells die, sandboxes die, machines die. The conversation doesn't." (Part III) (competitive-teardown-shopify-river)
+- [River floods Shopify chart](sources/x-tobi-river-floods-shopify-chart.md): "wrote in the same thread" links 61,680 (Mar) → 171,853 (Sep 2026), the only published multiplayer metric (self-reported) (competitive-teardown-shopify-river)
+- [We gave AI agents a mobile dev environment](sources/shopify-engineering-remote-dev.md): each River session claims a warm Mac plus Android VM, destroyed after use; tasks start from Slack or run overnight; Live Preview links shareable (competitive-teardown-shopify-river)
+- [Shopify: Building River (ZenML)](sources/zenml-llmops-shopify-river-durable-infrastructure.md): Postgres event-log session, harness outside the sandbox, idle "session cells" restart anywhere (competitive-teardown-shopify-river)
+- [Case Study: Shopify River (Wallfacer)](sources/wallfacer-case-study-shopify-river.md): "the resume mechanism and the audit record are the same artifact" (competitive-teardown-shopify-river)
+- [Hacker News: River submissions and comments](sources/hn-shopify-river-discussion.md): practitioners compare River to Managed Agents and say "we built something similar" (competitive-teardown-shopify-river)
 
 ## remote-agent-invocation: Remote agent invocation
 Starting and steering agents that run elsewhere: cloud tasks, scheduled or API/webhook-triggered runs, Slack mentions.
@@ -712,6 +765,9 @@ Starting and steering agents that run elsewhere: cloud tasks, scheduled or API/w
 - [Cloudflare AI code review](sources/cloudflare-ai-code-review-opencode.md): a task-specific multi-agent reviewer on OpenCode, run as a CI component; 131k runs, $1.19 average (first-party production account) (research-agent-runtime-patterns-taxonomy)
 - [Stripe's AI minions ship 1,300 PRs weekly from a Slack emoji (How I AI)](sources/howiai-stripe-minions-kaliski.md): minions start from a Slack emoji reaction (message = prompt, emoji picks the repo), also from Docs and tickets, and from a phone (competitive-teardown-stripe-knowledge-agents)
 - [Harbor: Stripe's AI-assisted prototyping tool](sources/stripe-harbor-ai-prototyping.md): Harbor's toolset is exposed on Stripe's internal MCP so Kai and devbox coding agents can create, read, update and publish prototypes; its renderer is a separate service (competitive-teardown-stripe-knowledge-agents)
+- [Under the River](sources/shopify-engineering-under-the-river.md): one stack, three modes: interactive (River), automation (PR review, woken by external systems), job (CI/batch, log optional) (competitive-teardown-shopify-river)
+- [How River takes security work from a fix to merge](sources/shopify-engineering-river-vulnerability-remediation.md): River opens one Slack thread per finding from a ledger; 4 threads / 35 findings in a minute, each progressing independently (competitive-teardown-shopify-river)
+- [Small Models, Massive Wins (Beyond the Pilot)](sources/venturebeat-beyond-the-pilot-farhan-thawar.md): River is pull-only: "you can talk to it, but it doesn't talk to you" (competitive-teardown-shopify-river)
 
 ## meta-harness: Meta harness
 A layer that runs, governs or abstracts over several harnesses.
@@ -780,6 +836,11 @@ Who an agent acts as when one agent or harness calls another: user tokens, servi
 - [What are Confluence's roles?](sources/atlassian-confluence-roles-space-permissions.md): role-based space access (Admin, Manager, Collaborator, Viewer, custom); public links, guest access and anonymous access are separate admin grants; 'you can't assign or remove roles that include permissions you don't have.' (user-story-mapping)
 - [Add or remove page restrictions (Confluence)](sources/atlassian-confluence-page-restrictions.md): per-item states open / edit-restricted / restricted / restricted-by-parent; view restrictions inherit to children, edit restrictions do not; the Rovo MCP server can read and set these states. (user-story-mapping)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): 'agentic identity ... we haven't solved this yet'; agent identity tags the use case an agent serves, used for priority and load shedding after agents nearly took down core systems (competitive-teardown-stripe-knowledge-agents)
+- [Small Models, Massive Wins (Beyond the Pilot)](sources/venturebeat-beyond-the-pilot-farhan-thawar.md): "River can see Slack messages ... data warehouse ... product management system"; "you can't go into a private channel" (competitive-teardown-shopify-river)
+- [Inside Shopify's AI-first engineering playbook](sources/bvp-inside-shopifys-ai-first-engineering-playbook.md): MCP servers go "through the same auth flow that you have", so AI sees only what you can see (assistant tools, not River) (competitive-teardown-shopify-river)
+- [River at Shopify (Internal Agents Map)](sources/internal-agents-shopify-river.md): credentials and sandbox marked "Not reported" in public sources (competitive-teardown-shopify-river)
+- [Shopify's Aquifer, in the Open (Lobu)](sources/lobu-shopifys-aquifer-in-the-open.md): a proxy swaps placeholder tokens for real ones at egress, so the worker never holds secrets (vendor's own design, contrasted with Aquifer) (competitive-teardown-shopify-river)
+- [Create information barriers in Slack](sources/slack-information-barriers-docs.md): barriers block DMs and huddles between IdP groups, but members "will still be able to interact in public and private channels" they share (competitive-teardown-shopify-river)
 
 ## skill-standards: Skill standards
 (Section created by research-agent-runtime-patterns-taxonomy; please refine.)
@@ -853,6 +914,7 @@ Conventions, manifests and protocol primitives that make artifacts typed, discov
 - [PRD template (Confluence)](sources/atlassian-confluence-prd-template.md): named sections: basics and roles, objective, success metrics, assumptions, options (requirement, user story, importance, Jira issues), supporting docs, open questions with answer date, out of scope. (user-story-mapping)
 - [Project poster template (Confluence)](sources/atlassian-confluence-project-poster-template.md): Team Playbook project poster: problem space, what we know vs still need to answer, solution and scope, reference links; a living page upstream of the PRD. (user-story-mapping)
 - [DACI decision template (Confluence)](sources/atlassian-confluence-daci-decision-template.md): decision record fields: status, impact, DACI roles, due date, background, options with pros/cons/cost, action items, outcome. (user-story-mapping)
+- [Quick: An internal hosting platform for the AI era](sources/shopify-engineering-quick.md): one artifact form (static folder + fixed API: db, files, AI, warehouse, websockets, identity); "All Quick sites are open to all employees", no owners (competitive-teardown-shopify-river)
 
 ## docs-as-code-prd: PRDs and specs as files in the repo
 Whether product specs live as markdown in git and how consistent that practice is.
@@ -976,6 +1038,8 @@ One agent service behind an API, reached through a web app, Slack, browser exten
 - [Meet Stripe's Knowledge AI Platform](sources/stripe-meet-knowledge-ai-platform.md): "The agent is a service, not an application, and surfaces are simply customized views into it"; web app, Slack, Chrome extension in third-party tools, internal apps embed via API (competitive-teardown-stripe-knowledge-agents)
 - [Stripe built their own in-house Glean alternative](sources/groundedhallucination-stripe-kai-teardown.md): "Surfaces are views, not the product" (independent restatement) (competitive-teardown-stripe-knowledge-agents)
 - [Harbor: Stripe's AI-assisted prototyping tool](sources/stripe-harbor-ai-prototyping.md): Harbor is its own browser app but also an MCP toolset and a rendering service other agents call (competitive-teardown-stripe-knowledge-agents)
+- [Under the River](sources/shopify-engineering-under-the-river.md): the counter-case: River has one surface (Slack, no DMs), with companion links (Quick sites, Live Preview) for rich output (competitive-teardown-shopify-river)
+- [Tobi Lütke: AI Agents, Better Decisions (Knowledge Project)](sources/fs-knowledge-project-tobi-lutke-ai-agents.md): River can join Google Meet when invited, "although not really utilized" (competitive-teardown-shopify-river)
 
 ## scoped-governance-containers: Governance scoped to a project or workspace
 Policy (default model, allowed tools, human-in-the-loop rules, data back end, even which harness) set once by a project owner and applied to everyone working in that project, rather than per user or org-wide. Matters for governance and trust defaults.
@@ -986,3 +1050,18 @@ Policy (default model, allowed tools, human-in-the-loop rules, data back end, ev
 Limiting what a session may combine based on the task (e.g. never two customers' data in one analysis), even when the user could access each separately. Matters for trust/privacy defaults of shared or discoverable sessions.
 - [Meet Stripe's Knowledge AI Platform](sources/stripe-meet-knowledge-ai-platform.md): "you shouldn't combine data from two unrelated customer contexts in a single analysis"; the boundary is "what should this task be allowed to view given this context?" (competitive-teardown-stripe-knowledge-agents)
 - [Build your own company brain (How I AI, Krishnamurthy)](sources/howiai-stripe-kai-krishnamurthy.md): tool policies stop sensitive HR data being written to a Stripe-wide doc without banning tools (competitive-teardown-stripe-knowledge-agents)
+
+## public-by-default-agent-work: Public-by-default agent work and its costs
+Agent sessions that are visible to the whole organisation by default (no DMs, no private mode), so others learn by watching and the transcripts can be mined; and the costs of that default: questions not asked, sensitive data in open threads, channel membership as access control, regulated walls. Matters for the trust-privacy-defaults and agent-interface choices.
+- [Learning on the Shop floor](sources/x-tobi-learning-on-the-shop-floor.md): River "does not respond to direct messages"; "Asking for help feels different when the whole company can see the question" (competitive-teardown-shopify-river)
+- [Under the River](sources/shopify-engineering-under-the-river.md): "Every conversation with River becomes a public Slack transcript, open by default to other Shopify employees" (competitive-teardown-shopify-river)
+- [River's reaction to the Shop floor post](sources/x-tobi-river-reaction-to-shop-floor-post.md): "Some questions that would have been asked in a DM just don't get asked"; also an "honesty pressure" on agent and user (competitive-teardown-shopify-river)
+- [Small Models, Massive Wins (Beyond the Pilot)](sources/venturebeat-beyond-the-pilot-farhan-thawar.md): River refuses private channels too: "you can't go into a private channel and say, 'Hey, River, help me build'" (competitive-teardown-shopify-river)
+- [Quick](sources/shopify-engineering-quick.md): the same default for artifacts: all sites open to all employees, no owners (competitive-teardown-shopify-river)
+- [Shopify's River shows why agent context costs more (Magica)](sources/magica-shopify-river-agent-context-cost.md): Slack's CPO: a boundary for "genuinely sensitive work"; "psychological safety should determine where openness stops" (competitive-teardown-shopify-river)
+- [Shopify Just Showed the Agent Stack](sources/adaptordie-shopify-river-agent-stack.md): "A pricing conversation may need a tighter audience" (competitive-teardown-shopify-river)
+- [Hacker News: River submissions and comments](sources/hn-shopify-river-discussion.md): one-line anecdote: the way people speak to agents wouldn't be "kosher in a company slack" (competitive-teardown-shopify-river)
+- [The Transparency Paradox (Bernstein)](sources/asq-bernstein-transparency-paradox.md): broad visibility can breed hiding; privacy zones raised output 10–15% (independent; factory setting) (competitive-teardown-shopify-river)
+- [Create information barriers in Slack](sources/slack-information-barriers-docs.md): chat-tool walls don't stop interaction in shared channels, so a channel-native agent inherits that gap (competitive-teardown-shopify-river)
+- [Tenable on Claude Tag](sources/tenable-claude-tag-slack-access-model.md): in channel agents, public-channel join policy effectively governs access to the agent's credentials; new members see scrollback (competitive-teardown-shopify-river)
+

@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: article
 evidence: first-party
 filed_by: competitive-teardown-shopify-river
-themes: [shared-persistent-sessions, org-learning-loop, compounding-context-repo, legible-org-for-agents, harness-portability, single-agent-many-skills, remote-agent-invocation, memory-architecture, vendor-claims-vs-independent-evidence]
+themes: [shared-persistent-sessions, org-learning-loop, compounding-context-repo, legible-org-for-agents, harness-portability, single-agent-many-skills, remote-agent-invocation, memory-architecture, vendor-claims-vs-independent-evidence, public-by-default-agent-work]
 relevance: high
 ---
 

@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: x-post
 evidence: first-party
 filed_by: competitive-teardown-shopify-river
-themes: [org-learning-loop, shared-persistent-sessions, enablement-by-product, compounding-context-repo, evals-autonomy-trust, vendor-claims-vs-independent-evidence]
+themes: [org-learning-loop, shared-persistent-sessions, enablement-by-product, compounding-context-repo, evals-autonomy-trust, vendor-claims-vs-independent-evidence, public-by-default-agent-work]
 relevance: high
 ---
 

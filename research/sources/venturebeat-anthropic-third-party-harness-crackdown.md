@@ -26,3 +26,6 @@ Independent news report of Anthropic blocking subscription OAuth use by spoofing
 
 ## Could not verify
 - Later steps (Feb 2026 terms update, March 2026 OpenCode PR removing Anthropic OAuth, April 2026 extension to OpenClaw, June 15 2026 separate Agent SDK credit) appear only in search-result summaries (The New Stack, Gigazine, others); not read first-hand.
+
+## Follow-up (2026-10-24)
+Filed by research-runtime-patterns-follow-up-round. The later steps listed under "Could not verify" are now dated in an independent timeline, [falcao-anthropic-claude-access-crackdown](falcao-anthropic-claude-access-crackdown.md) (2026-05-24): Consumer Terms update 2026-02-17 to 20; legal demands and OpenCode PR #18186 on 2026-03-19 (OpenCode v1.3.0 release note reportedly 2026-03-22, per search summary); Pro/Max coverage of third-party tools ended 2026-04-04 with transition credits; Agent SDK credits ($20/$100/$200 per month) announced 2026-05-13, effective 2026-06-15, then API list prices. API-key use was never blocked. Anthropic's own posts were still not read first-hand.

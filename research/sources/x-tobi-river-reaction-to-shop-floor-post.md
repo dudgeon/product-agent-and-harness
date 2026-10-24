@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: x-post
 evidence: first-party
 filed_by: competitive-teardown-shopify-river
-themes: [org-learning-loop, shared-persistent-sessions, compounding-context-repo]
+themes: [org-learning-loop, shared-persistent-sessions, compounding-context-repo, public-by-default-agent-work]
 relevance: high
 ---
 

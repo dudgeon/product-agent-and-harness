@@ -104,6 +104,16 @@ Key questions (Stripe pass):
 14. Should knowledge work and code delivery share one loop or use two (Stripe uses two; Ramp moved everything onto Laminar)? — *answered by:* compare upkeep cost and capability gaps in a two-job prototype; ask Ramp and Stripe about the trade — *affects:* all loop-source options
 
 
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Own disposable loop on an own substrate, outside the sandbox | Org writes its own harness ("reads history, calls the model, emits tool intents") as a cheap, disposable process separate from the sandbox; earlier Shopify workflows embedded Claude Code (Roast) | Shopify Aquifer (River, PR review, headless "pi" profile) | Swap models, runtimes, even languages on the harness side; loop outside the `rm -rf` blast radius; one observable decision stream | Requires a platform team and the 2024 monorepo/Nix substrate; models used not disclosed; no cost data | early-adopter (one large adopter) | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party); [Roast](../research/sources/shopify-engineering-introducing-roast.md) (first-party) |
+
+Key questions (River pass):
+- Did Shopify's move from embedding Claude Code (Roast, 2025) to an own loop (Aquifer, 2026) follow a specific limit (multiplayer, durability, observability), and would we hit the same limit? — *answered by:* ask Shopify builders; compare with Ramp's SDK-to-own-infra path — *affects:* embed SDK vs own harness
+
 ---
 
 ## harness-layering: Is there a layer above the vendor harnesses
@@ -148,6 +158,16 @@ Formerly: harness-ownership (the meta-harness and layer rows and questions, per 
 Key questions (Stripe pass):
 8. Is a configuration layer (custom agents and projects) enough "layer above" for teams, or do they need to bring their own harness behind the same UI as Stripe allows? — *answered by:* ask Stripe how many projects use a non-Kai backend; user interviews with teams that already own agents — *affects:* meta-harness options
 
+
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| One substrate under many agent profiles (layer below, not above) | Instead of a meta-harness over vendor CLIs, one platform (session, harness, sandbox, gateway, credentials proxy, observability) hosts many agents as config bundles | Shopify Aquifer: River, PR review, "pi" profiles; "future agents are peers, not children" | Next agent costs a bundle, not a platform; same session model across interactive, automation and job modes | Every agent shares one platform's limits and team; no portability to vendor harnesses stated | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party) |
+
+Key questions (River pass):
+- Is our layer of leverage above harnesses (meta-harness) or below agents (a substrate that hosts profiles)? Shopify's answer is below. — *answered by:* Geoff / director scoping; prototype of two profiles on one session store — *affects:* meta-harness vs substrate options
 
 ---
 
@@ -207,6 +227,16 @@ Key questions (Stripe pass):
 7. Sandbox-as-tool (Kai) vs agent-inside-sandbox (Minions, Claude cloud) vs laptop-as-server (Glass): which does our security owner accept for non-engineers handling customer data? — *answered by:* security/policy owner review of the three patterns — *affects:* sandboxed per session, org-deployed service, desktop app
 
 
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Org-hosted ephemeral session cells over a durable log | Each live session materialises a short-lived process (Go runtime + harness) on any host; it exits when idle and rehydrates from Postgres on the next message | Shopify Aquifer / River; Remote Dev adds a warm pool of remote Macs and Linux VMs claimed per session | No laptop dependency; cheap idle; parallel sessions; mobile builds without local Macs | Org runs the fleet; orchestrator not named; Remote Dev setup took iterations (warm pool, staggered refresh) | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party); [Remote Dev](../research/sources/shopify-engineering-remote-dev.md) (first-party) |
+
+Key questions (River pass):
+- Which of our first jobs need specialised execution environments (simulators, GPUs, data access) that a laptop or vendor cloud can't give, as River needed remote Macs? — *answered by:* jobs map with environment needs — *affects:* org-hosted vs vendor cloud vs laptop
+
 ---
 
 ## capability-format-portability: Capability format and portability
@@ -261,6 +291,16 @@ Formerly: capability-packaging (the format and portability rows and questions; r
 Key questions (Stripe pass):
 10. At what catalog size does LLM-only skill selection break for our users (Stripe reports ~150), and what prefilter (RAG, classifier, role tiers) fixes it? — *answered by:* skill-routing eval on a synthetic catalog of PM skills; ask Stripe for the promised follow-up post — *affects:* open-standard skill, plugin bundle
 
+
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Agent profile as a data bundle | An agent product = system prompt + skills + extensions + sandbox policy + model defaults, built reproducibly (Nix) and shipped as a bundle; skills live as files in the monorepo next to code | Shopify Aquifer profiles; World skills, AGENTS.md, channel-preloaded skills | New agents are cheap; skills reviewed like code; one checkout-warehouse skill reused by 12 teams (claimed) | Format not stated (SKILL.md or own); Nix is a steep dependency; no portability claim | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party); [Tobi article](../research/sources/x-tobi-learning-on-the-shop-floor.md) (first-party) |
+
+Key questions (River pass):
+- Should our unit of packaging be the skill (portable file) or the whole agent profile (prompt + skills + tools + policy + model defaults)? — *answered by:* prototype packaging two PM agents both ways — *affects:* skill-file vs profile-bundle options
 
 ---
 
@@ -348,6 +388,13 @@ Evidence so far favours MCP (sync, with Tasks for long jobs) over A2A for harnes
 | Specialist tool exposes its toolset and engine over internal MCP | A specialised agent product publishes CRUD/publish tools and a rendering service other agents call | Stripe Harbor (used by Kai and devbox coding agents) | Agents stay specialised but chain without copy-paste; artifacts move between tools | Identity and ownership across hops not described | early-adopter | [Harbor post](../research/sources/stripe-harbor-ai-prototyping.md) (first-party) |
 | Self-hosted agent service (evidence row) | Agents run as a shared internal service called by product tooling | Stripe compliance agents in review tooling | Embeds agents in existing work tools | Platform to run | early-adopter | [AWS/Stripe compliance post](../research/sources/aws-stripe-compliance-agents.md) (first-party, vendor-hosted) |
 
+
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Chat mention as the human route; external wake-up for automation | Humans @-mention the agent in Slack; systems wake durable sessions (PR review) or run ephemeral jobs (CI) on the same stack; workflows open their own threads | Shopify River (interactive), PR review (automation), CI/batch (job); security remediation opening one thread per finding | One stack, three modes; automation results land where humans already are | No API/MCP/A2A route for other harnesses documented; Slack as the bus | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party); [vuln remediation](../research/sources/shopify-engineering-river-vulnerability-remediation.md) (first-party) |
 
 ---
 
@@ -438,6 +485,16 @@ Key questions (Stripe pass):
 9. Stripe chose single-user sessions plus shareable artifacts, Ramp chose shareable sessions: which do our users need first for handoffs? — *answered by:* user interviews on handoff moments; prototype both — *affects:* ephemeral-private, shared/multiplayer, artifact sharing
 
 
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Durable, threaded, multiplayer, public by construction | Session identity is an append-only Postgres event log; harness and sandbox die freely; the human surface is a public Slack thread anyone can join | Shopify River on Aquifer | Work survives process death; second humans join mid-task; searchable corpus; 171,853 same-thread co-writing links in Sep 2026 (self-reported) | Public-only has privacy costs (see [[trust-privacy-defaults]]); live sandbox state beyond the log not described; all figures self-reported | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party); [chart](../research/sources/x-tobi-river-floods-shopify-chart.md) (first-party) |
+
+Key questions (River pass):
+- Shopify's thread pattern is "agent pulled into a human conversation already in progress". How often does that happen in our target users' work, versus a person starting a task alone? — *answered by:* observation of PM threads; pilot metric (share of agent sessions with 2+ humans) — *affects:* multiplayer vs single-owner options
+
 ---
 
 ## agent-identity-delegation: Agent identity and delegation
@@ -481,6 +538,16 @@ See also: "Zero-ambient-access capabilities plus observation log" (Cloudflare OS
 Key questions (Stripe pass):
 7. Under whose identity do Kai's tool calls run (user OAuth, service account, project identity)? Not disclosed; matters for our audit design. — *answered by:* ask Stripe directly; compare Glass (user SSO) — *affects:* all identity options
 
+
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Broad-access agent behind a credentials proxy, directed from public channels (inferred) | The agent "has access to all the code, all the systems, all the tools... sandboxed and secure"; "River can see Slack messages... our data warehouse... our product management system" (Thawar); by contrast Shopify's assistant MCP tools go "through the same auth flow that you have" (BVP); Aquifer has a credentials proxy and gateway; anyone in a public channel can ask | Shopify River (details not disclosed) | Simple: no per-user OAuth; anyone can get help | Whoever can post can direct the agent's access (the Claude Tag risk); viewer and requester permissions not re-checked as far as disclosed | early-adopter (inferred; unverified) | [Knowledge Project](../research/sources/fs-knowledge-project-tobi-lutke-ai-agents.md) (first-party); [Beyond the Pilot](../research/sources/venturebeat-beyond-the-pilot-farhan-thawar.md) (first-party); [BVP](../research/sources/bvp-inside-shopifys-ai-first-engineering-playbook.md) (first-party); [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party); [Tenable](../research/sources/tenable-claude-tag-slack-access-model.md) (independent, analogous) |
+
+Key questions (River pass):
+- Whose permissions does River use for warehouse and production-trace queries requested in a public thread, and does it restrict results by requester? — *answered by:* ask Shopify; not in any public source — *affects:* service identity vs on-behalf-of options
 
 ---
 
@@ -544,6 +611,13 @@ Key questions (Stripe pass):
 9. Who would own projects (policy) in our setting, and does project-scoped policy reduce approval prompts and unsafe workarounds vs per-user settings? — *answered by:* prototype project policies with two teams; count prompts and overrides — *affects:* per-harness settings, control plane, per-project meter
 
 
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Audit by public transcript plus a self-written session table | Every session is a public thread and a durable event log; the agent writes a `river_sessions` domain table; cost governance by a company usage dashboard where anyone sees their own AI spend (leaderboard removed) | Shopify River; Shopify usage dashboard | Audit and usage analytics come free; social accountability for spend | River cost not disclosed; no budget caps or per-project meters described; public transcript is not access control | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party); [Beyond the Pilot](../research/sources/venturebeat-beyond-the-pilot-farhan-thawar.md) (first-party) |
+
 ---
 
 ## durability-substrate: How persistence and recovery are implemented
@@ -570,6 +644,13 @@ Key questions (Stripe pass):
 Evidence row (first-party, [Building Laminar](../research/sources/ramp-builders-building-laminar.md)): Ramp chose "boring technology" — Postgres (sessions and messages), Temporal (durable orchestration of the loop, surviving deploys and ephemeral failures), S3 — on a disposable worker fleet, with "sandbox-as-a-tool" so sandbox lifetime is decoupled from session lifetime. Stated reason: the team already knows how to run and fix that stack at scale.
 
 ### Added by: research-agent-runtime-patterns-taxonomy (Track 5) on 2026-10-24 | audit pass: competitive-teardown-ramp-glass on 2026-10-24
+
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Postgres event log + cattle session cells | Append-only session log in Postgres is the canonical truth; ephemeral per-session processes on any host; sandboxes warm or fresh | Shopify Aquifer | Crash and idle recovery without special workflow engines; "pick the end-to-end substrate, and refuse to compromise on cattle-not-pets" | Orchestrator unnamed; recovery of in-flight tool calls not described | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party) |
 
 ---
 
@@ -727,6 +808,18 @@ Key questions (Stripe pass):
 11. Glass builds memory offline from connected accounts; Kai relies on org context, projects and skills with no long-term personal memory. Which matters more for PM work? — *answered by:* diary study of what PMs re-explain each session; prototype both — *affects:* memory-design options
 
 
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Monorepo as the intelligence layer | One repo holds code, skills, conventions, intent documents, runbooks, AGENTS.md and zone knowledge; sessions leave "a pebble, a skill update, an AGENTS.md diff" | Shopify World | Context compounds in reviewed files; agent and humans share one source | Needs a monorepo; non-code knowledge in a code repo may not suit non-engineers | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party) |
+| Nightly "dreaming" over the day's sessions, per-person + per-channel memory | Off-hours job reviews conversations and skill use and rewrites text files, skills and instructions (no weights); injected at session start for the requester, plus channel memory | Shopify River | Agent improves without retraining; per-channel context | Tobi describes it inconsistently (per channel vs per person); no inspection or correction UX described | early-adopter | [Knowledge Project](../research/sources/fs-knowledge-project-tobi-lutke-ai-agents.md) (first-party) |
+| Classifier mining of the public corpus | A fast cheap classifier ("Jev") tags every River mobile conversation by outcome; failures go to an LLM to propose skill and tooling fixes | Shopify Remote Dev team | Systematic improvement from real use | Depends on transcripts being available (public-by-default); method and results unquantified | emerging | [Remote Dev](../research/sources/shopify-engineering-remote-dev.md) (first-party) |
+
+Key questions (River pass):
+- If memory and skills are mined from shared sessions, how is sensitive content kept out of what gets injected into everyone's sessions? — *answered by:* prototype with a redaction step; security owner — *affects:* corpus-mining and shared-memory options
+
 ---
 
 ## artifact-and-project-structure: How PM artifacts and projects are structured, stored and found
@@ -774,6 +867,13 @@ No lean. Evidence is thin on PM-side practice (anecdote and vendor guides); the 
 | Project as intent plus governance container | A project states what the user is trying to do (a strong intent signal) and carries its skills, tools, model and policies; open to join | Stripe Kai projects | Better routing and safer defaults per workflow | Another object to curate | early-adopter | [How I AI, Krishnamurthy](../research/sources/howiai-stripe-kai-krishnamurthy.md) (first-party) |
 | Artifacts live beside the conversation and evolve in place | Reports, dashboards and docs created in the session and edited turn by turn; published prototypes at URLs with anchored comments | Stripe Kai; Stripe Harbor | Work product is the unit, not the chat | Artifacts locked in sessions until sharing ships (Kai) | early-adopter | [Stripe Kai post](../research/sources/stripe-meet-knowledge-ai-platform.md) (first-party); [Harbor post](../research/sources/stripe-harbor-ai-prototyping.md) (first-party) |
 
+
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Channel as project, thread as unit, outputs as links | No project object; channels hold team skills and memory; threads end in PRs, tickets, diagrams, prototypes, Quick sites, Live Preview links or generated videos | Shopify River + Quick (50,000+ internal sites, open to all employees, no owners) | Zero new containers; findable by Slack search | Non-code artifacts (specs, decks) have no stated home; Quick has no permissions or ownership | early-adopter | [Knowledge Project](../research/sources/fs-knowledge-project-tobi-lutke-ai-agents.md) (first-party); [Quick](../research/sources/shopify-engineering-quick.md) (first-party) |
 
 ---
 
@@ -904,6 +1004,14 @@ Key questions (Stripe pass):
 6. Can we run a randomised or staggered rollout instead of on/off comparisons, so outcome claims survive the critique Stripe's numbers face? — *answered by:* experiment design with a pilot team — *affects:* all evaluation options
 
 
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Outcome-reached per item, not motion | Measure whether each item reaches an evidence-supported outcome (fixed, rejected, escalated); "PR count and green-branch count measure motion, not remediation" | Shopify River security remediation | Guards against vanity metrics like thread counts | Defined for security; PM equivalent unclear | early-adopter | [vuln remediation](../research/sources/shopify-engineering-river-vulnerability-remediation.md) (first-party) |
+| Usage and merge-share metrics | Threads, sessions, coauthored-PR share, merge rate | Shopify River (36%→77% merge rate; ~1 in 8 merged PRs; 121,804 threads/month) | Easy to collect from the agent's own tables | No definitions; volume not value (Dealroom) | early-adopter | [Tobi article](../research/sources/x-tobi-learning-on-the-shop-floor.md) (first-party); [Dealroom](../research/sources/dealroom-river-threads-121804.md) (independent) |
+
 ---
 
 ## sequencing: Which jobs first and which layer first
@@ -965,6 +1073,13 @@ Geoff's doc leans towards delivery-first, then shaping, then discovery. Bottlene
 
 #### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
 - Reference workload for the first bake-off is **intent shaping**: take high-level intent and shape it against the real constraints of a large enterprise into intent that deserves to ship and is ready to, with constraints identified and resolved, dependencies mapped, and ready to hand to an engineering team or coding agent. It replaces PRD review as the example job.
+
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Substrate first, agent second | Make the org legible (monorepo, reproducible environments, written-down skills, fast CI) years before the agent; then ship one agent, then turn it into a platform of profiles | Shopify (2024 bets; River 2026; Aquifer under it) | "Agent-friendly ≈ human-friendly": the prep pays off for humans too | Two years and an order-of-magnitude CI scale-up before payoff; a monorepo migration is out of reach for most | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party) |
 
 ---
 
@@ -1174,6 +1289,13 @@ Row moved from governance-control-plane: "Autonomy slider + ground-truth evals" 
 | Human reviews every output (evidence row, knowledge work) | Agent output is supplementary research; the human answers every sub-question | Stripe compliance agents | Accountability kept; 26% faster | Caps the gain | early-adopter | [AWS/Stripe compliance post](../research/sources/aws-stripe-compliance-agents.md) (first-party, vendor-hosted) |
 
 
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Agent drives the pipeline, hands off one small decision | Agent validates live state, repairs, and routes "the smallest question that an owner has to answer" with evidence; owners approve and merge; guarantees enforced in code, judgement in prompts | Shopify River security remediation | Owners stop shuttling state; trust kept by explicit stopping points | Prompts alone failed to enforce complete enumeration (observed) | early-adopter | [vuln remediation](../research/sources/shopify-engineering-river-vulnerability-remediation.md) (first-party) |
+
 ---
 
 ## intent-shaping-and-spec: Intent shaping mode and spec standard
@@ -1263,7 +1385,105 @@ Key questions (Stripe pass):
 5. How much of Kai's ramp is the product vs Stripe's preconditions (an AI-forward culture, 8,500 daily LLM-tool users already in Oct 2025, a mature data catalog)? — *answered by:* compare adoption curves at a less AI-forward org; ask Stripe what the pre-Kai baseline was — *affects:* all adoption options
 
 
+
+River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
+
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Visibility as enablement, CEO in public | Agent works only in public; the CEO runs his own channel (#tobi_river, 100+ watchers); learning by watching, "no curriculum, no training plan, no manager"; AI use assessed in performance reviews | Shopify River | Fast diffusion (5,938 users in 30 days by May 2026, self-reported) | Needs leadership modelling and a culture of working in public; chilling effect (see [[trust-privacy-defaults]]) | early-adopter | [Tobi article](../research/sources/x-tobi-learning-on-the-shop-floor.md) (first-party); [BVP](../research/sources/bvp-inside-shopifys-ai-first-engineering-playbook.md) (first-party) |
+| Internal marketing with an agent persona | AI-generated ads with the agent as a character (Mac-vs-PC parody) to win back users who tried an early version | Shopify Remote Dev team (River share of merged mobile PRs 6%→61%) | Reverses "this is not for me" after a bad first try | Attribution mixed with infra improvements; self-reported | early-adopter | [Remote Dev](../research/sources/shopify-engineering-remote-dev.md) (first-party) |
+
 ---
+
+## agent-interface: Agent interface: own app, chat, or embedded
+**Choice:** Where people meet the agent: our own app (desktop or web workspace), the chat tool they already live in (Slack, Teams), the IDE/CLI, embedded inside existing tools (docs, tracker, browser), or one agent service behind several of these.
+**Why it matters to the strategy:** The surface decides who can use the agent on day one, what work is visible to others, what UI we must fund (artifact rendering, review panes, cost meters), and how much of the experience a chat vendor controls. River (Slack only) and Glass (own desktop app) are the two strongest opposite data points.
+**Related themes:** [[agent-as-service-many-surfaces]], [[org-learning-loop]], [[shared-persistent-sessions]], [[remote-agent-invocation]], [[enablement-by-product]]   **Related dimensions:** [[trust-privacy-defaults]], [[session-persistence-sharing]], [[artifact-and-project-structure]], [[adoption-model]], [[remote-invocation-route]], [[runtime-location]]
+Opened by competitive-teardown-shopify-river (Geoff's request), in parallel with competitive-teardown-stripe-knowledge-agents.
+
+### Options
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Chat-native only (agent as a channel member) | The agent has no UI of its own; you @-mention it in a channel and it replies in thread; outputs are links (PRs, sites) | Shopify River (Slack, no DMs, "@river" top-level post then thread) | Zero install; joins human threads already in progress ("@river would be good to get your opinion"); visibility and search come free from the chat tool; 5,938 employees in 30 days by May 2026, 121,804 threads in Sep 2026 (self-reported) | Chat UI is poor for long artifacts, diffs, rich review, cost meters; rich outputs need a second surface (Shopify built Quick and Live Preview links); chat vendor owns UX, retention and API limits; visibility follows the chat tool's permission model | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party); [Tobi article](../research/sources/x-tobi-learning-on-the-shop-floor.md) (first-party); [Tobi replies](../research/sources/x-tobi-river-replies-may-2026.md) (first-party); [Tobi chart](../research/sources/x-tobi-river-floods-shopify-chart.md) (first-party) |
+| Chat-native plus a companion web surface for rich output | Chat is the front door; links open a web page for what chat can't show (live app preview, hosted artifact) | River + Quick sites + Remote Dev Live Preview (simulator streamed to a shareable Quick page) | Keeps chat as the shared place while giving review a real UI | Two surfaces to maintain; still no place to browse or manage sessions outside chat | early-adopter | [Quick](../research/sources/shopify-engineering-quick.md) (first-party); [Remote Dev](../research/sources/shopify-engineering-remote-dev.md) (first-party) |
+| Own app / workspace | A desktop or web app built for agent work: panes, inline rendering, skills marketplace, scheduling, cost meter | Ramp Glass (desktop app, SSO, split panes, Dojo); Claude Cowork; Cloudflare OS | Full control of UX for long and artifact-heavy work; can expose memory, cost and review; suits non-engineers' multi-step work | A new surface to adopt; work is private unless the app builds sharing (Glass added share-session); laptop-bound runtime in Glass's case | early-adopter | [Goddijn](../research/sources/x-sebgoddijn-glass-article.md) (first-party); [Buchan](../research/sources/x-shanebuchan-how-we-built-glass.md) (first-party); [Cloudflare OS](../research/sources/cloudflare-os-announcement.md) (vendor claim) |
+| IDE / CLI | The agent lives in the developer's terminal or editor | Claude Code, Cursor, Codex CLI | Best for engineers' deep work; mature tooling | "Local agents have a ceiling": private, dies with the session, others don't learn (Shopify's stated reason for building River); excludes most non-engineers | mainstream | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party) |
+| Embedded in existing tools / host-agnostic service | One agent service reached from many hosts: chat, web, browser extension, docs, tracker, or as tools in another harness via MCP | Ramp Inspect (Slack, web with hosted VS Code, Chrome extension); Glean agents as MCP tools; Open-Inspect (web, Slack, GitHub, Linear) | Meets each user where they are; one backend and session model | Capabilities differ per surface; harder to make work visible across surfaces; more integration upkeep | early-adopter | [Modal on Inspect](../research/sources/modal-ramp-inspect-background-agent.md) (vendor claim); [Glean](../research/sources/glean-agents-as-mcp-tools.md) (vendor claim); [Open-Inspect](../research/sources/github-open-inspect-background-agents.md) (first-party) |
+| Public community chat as the primary interface (precedent outside agents) | Users must work in shared public channels to use the tool | Midjourney's Discord-first years | Users learn a new tacit skill by watching others' prompts | Consumer precedent; opinion, not data | n/a (precedent) | [Simon Willison](../research/sources/simonwillison-learning-on-the-shop-floor.md) (independent) |
+| Vendor chat-agent offering | The model vendor's or chat vendor's own agent in Slack/Teams | Claude Tag in Slack; Codex Slack integration; Devin in Slack | No build; chat-native from day one | The vendor's identity and visibility model applies (channel members can direct the agent within its bundle; approval responses readable in channel) | early-adopter | [Tenable on Claude Tag](../research/sources/tenable-claude-tag-slack-access-model.md) (independent); [Codex Slack docs](../research/sources/openai-codex-cloud-slack.md) (first-party); [Answer.AI on Devin](../research/sources/answerai-month-with-devin.md) (independent) |
+
+### Key questions to choose
+1. Where do our target users already ask colleagues for help and discuss work (Slack, Teams, doc comments, tracker), and is that tool a system of record or just a chat pipe? — *answered by:* user interviews; chat-tool usage data from IT — *affects:* chat-native vs own app
+2. Which of the first jobs produce artifacts that chat can't show well (specs, prototypes, decks, dashboards, diffs), and would a companion link surface be enough? — *answered by:* jobs map plus a two-version prototype (thread only vs thread + web page) on two real jobs — *affects:* chat-native only vs chat + companion vs own app
+3. Does the org's chat tool allow a bot of this kind: API rate limits, retention settings, eDiscovery, admin approval for apps, Enterprise Grid features? — *answered by:* IT / chat-platform owner — *affects:* chat-native options, vendor chat-agent
+4. Is Shopify's adoption (5,938 users in 30 days) due to the Slack surface, the monorepo substrate, or a CEO-led culture? Can we separate them? — *answered by:* ask Shopify builders if reachable; compare with Ramp's own-app adoption curve; more research — *affects:* all
+5. Do non-engineers (PMs, designers, support) get as much from a chat-only agent as engineers do? Shopify says PMs and designers use River via Remote Dev but gives no split by role. — *answered by:* ask Shopify; pilot with mixed roles — *affects:* chat-native vs own app
+6. If we choose a chat surface, which one: is the target org on Slack or Teams, and does it differ across target orgs? — *answered by:* Geoff / target-org inventory — *affects:* chat-native, vendor offering
+
+### Current lean and what would change it
+No lean. Evidence so far: chat-native wins on reach and on making work visible by default (River); an own app wins on rich, artifact-heavy, multi-step work for non-engineers (Glass); and both large adopters ended up with more than one surface (River + Quick/Live Preview; Inspect's Slack + web + extension). A finding that our first jobs are artifact-heavy would push toward an own app or chat + companion; a finding that most value comes from pulling the agent into existing human threads would push toward chat-native.
+
+### Added by: competitive-teardown-shopify-river on 2026-10-24
+
+#### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| One agent service, web app default plus chat, browser extension and API embedding (Stripe detail) | "The agent is a service, not an application, and surfaces are simply customized views into it": an opinionated web app most people use (no setup, day 0), a Slack integration, Chrome extensions inside third-party web tools, and internal apps embedding the agent via API (e.g. Finance's budget-modelling app) | Stripe Kai | Meets people in each tool without a product per surface; one agent and governance model behind all | Building the API, extension and embeds; rich artifacts still need the web app | early-adopter | [Stripe Kai post](../research/sources/stripe-meet-knowledge-ai-platform.md) (first-party); [How I AI, Krishnamurthy](../research/sources/howiai-stripe-kai-krishnamurthy.md) (first-party) |
+| Chat reaction as the front door for unattended task agents (evidence row for chat-native) | Any Slack message becomes a task by emoji reaction; results reported in thread; runs on a phone | Stripe Minions | Lowest activation energy; the whole company is already in Slack | Only for one-shot tasks with strong CI | early-adopter | [How I AI, Kaliski](../research/sources/howiai-stripe-minions-kaliski.md) (first-party) |
+| Specialist agents with their own app, exposed to other agents over MCP | A specialist keeps its own UI (browser tab with prototype and chat) but publishes tools so a general agent can drive it | Stripe Harbor (driven by Kai and coding agents) | Rich, job-specific UI where it matters, no forced app-switch elsewhere | Several apps to learn | early-adopter | [Harbor post](../research/sources/stripe-harbor-ai-prototyping.md) (first-party) |
+
+Key questions (Stripe pass):
+7. Stripe rejected both a standalone app ("would force users out of their natural workflows") and a product per surface ("hard to maintain"), yet most use is still its web app. What share of use would land in embedded surfaces for our users, and is the embed work worth funding before the web app? — *answered by:* ask Stripe for the surface split; instrument a pilot with web plus one embed — *affects:* embedded/host-agnostic, own app, chat-native
+
+
+---
+
+## trust-privacy-defaults: Trust and privacy defaults for sessions and context
+**Choice:** Who can see an agent session (its transcript, artifacts and memory) by default: only its owner, the people invited, a team or project, or everyone in the org; and whether private work is allowed at all.
+**Why it matters to the strategy:** It decides how much the org learns from each session (Shopify's whole thesis) against what users will be willing to ask, what sensitive data leaks, and whether the design survives a regulated setting. It is a policy choice as much as a product one and has its own owners (security, legal, HR, works councils).
+**Related themes:** [[public-by-default-agent-work]], [[org-learning-loop]], [[shared-persistent-sessions]], [[identity-delegation]], [[task-context-isolation]], [[scoped-governance-containers]], [[compounding-context-repo]]   **Related dimensions:** [[agent-interface]], [[session-persistence-sharing]], [[agent-identity-delegation]], [[governance-control-plane]], [[context-and-memory]], [[artifact-and-project-structure]]
+Opened by competitive-teardown-shopify-river (Geoff's request), in parallel with competitive-teardown-stripe-knowledge-agents.
+
+### Options
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Private by default, no sharing | Sessions belong to one user; nothing visible to others | Local Claude Code, Cursor, ChatGPT ("a private window" in Tobi's words) | Users ask anything; no leakage between colleagues; simplest compliance story | Org learns nothing ("the only person who learns anything is the person at the keyboard"); transcripts deleted (Claude Code 30-day default) | mainstream | [Tobi article](../research/sources/x-tobi-learning-on-the-shop-floor.md) (first-party, argues against); [ITdaily](../research/sources/itdaily-claude-code-30-day-transcript-deletion.md) (independent) |
+| Private by default, share on demand | The owner chooses to share a session (snapshot link, hand-off, invite) | Ramp Glass share-session; Claude Code on the web Team-visibility link | Users control exposure; supports hand-off | Few sessions may be shared (Ramp gives no share rate); learning depends on individual effort | early-adopter | [Glass launch](../research/sources/ramp-introducing-glass.md) (first-party); [Claude cloud docs](../research/sources/anthropic-claude-code-cloud-sessions.md) (first-party) |
+| Private draft, then publish the outcome | Work privately; share a cleaned artifact, skill or blueprint, not the transcript | Cloudflare OS blueprints (code without data or history); skills marketplaces (Glass Dojo) | Learning through reusable recipes; experiments stay private | Loses "how people begin the work", which Tobi says matters most; relies on people publishing | emerging | [Cloudflare OS](../research/sources/cloudflare-os-announcement.md) (vendor claim); [Goddijn](../research/sources/x-sebgoddijn-glass-article.md) (first-party); [Bernstein](../research/sources/asq-bernstein-transparency-paradox.md) (independent: privacy zones, then share once there is data) |
+| Team- or project-scoped by default | Sessions visible to a team, project or workspace with its own policies | Confluence space permissions; Stripe Kai project-scoped tool policies | Learning within the group that shares context; sensitive work fenced by container | Silos between teams; container design and membership upkeep | early-adopter | [Confluence restrictions](../research/sources/atlassian-confluence-page-restrictions.md) (first-party) |
+| Public by default org-wide, no private mode | Every session is a transcript open to all employees; the agent refuses DMs and private channels ("you can't go into a private channel and say, 'Hey, River, help me build'", Thawar) | Shopify River ("River only works in the open. No direct messages"); Shopify Quick (all sites open to all employees, no owners) | Osmosis learning (Lehrwerkstatt); a corpus to mine into skills and defaults (merge rate 36%→77% claimed); "honesty pressure" on agent and user; co-participation (171,853 same-thread links in Sep 2026) | Chilling effect ("Some questions that would have been asked in a DM just don't get asked", River's own words); sensitive data (customer PII, security findings, HR, M&A, incidents) in open threads; channel join policy becomes the access control; broad visibility can breed hiding (Bernstein); unclear fit with regulated walls; all evidence self-reported | early-adopter (one large adopter) | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party); [Tobi article](../research/sources/x-tobi-learning-on-the-shop-floor.md) (first-party); [River's reaction](../research/sources/x-tobi-river-reaction-to-shop-floor-post.md) (first-party); [Quick](../research/sources/shopify-engineering-quick.md) (first-party); [Bernstein](../research/sources/asq-bernstein-transparency-paradox.md) (independent, counter-evidence); [Beyond the Pilot](../research/sources/venturebeat-beyond-the-pilot-farhan-thawar.md) (first-party); critiques: [Magica, quoting Slack's CPO on a boundary for "genuinely sensitive work"](../research/sources/magica-shopify-river-agent-context-cost.md) (independent), [AI Slopcast: an archive of everyone's gaps is "a treasure trove" for HR](../research/sources/oleg-guru-ai-slopcast-shopify-river-lehrwerkstatt.md) (independent), [HN anecdote](../research/sources/hn-shopify-river-discussion.md) (anecdote) |
+| Public by default with fenced exceptions | Open by default, with named private zones (security, HR, legal, regulated teams) and information barriers | Implied by River's security-remediation threads (where they live is unstated); Slack information barriers | Most of the learning benefit, with walls where law or risk requires | Who decides the exceptions; exceptions grow; agent memory and skills may carry data across the wall | emerging (inferred; no documented example) | [River vuln remediation](../research/sources/shopify-engineering-river-vulnerability-remediation.md) (first-party, silent on visibility); [Slack information barriers](../research/sources/slack-information-barriers-docs.md) (first-party: barriers don't stop interaction in shared channels) |
+| Channel-membership-scoped agent credentials | The agent acts with a bundle or service identity in a channel; whoever can post there can direct it, and new members see scrollback | Claude Tag; Codex Slack (responses readable by channel members) | Simple to deploy in chat | Visibility and authority both follow channel membership; public-channel join policy governs access to bundled credentials | early-adopter | [Tenable](../research/sources/tenable-claude-tag-slack-access-model.md) (independent); [Codex Slack](../research/sources/openai-codex-cloud-slack.md) (first-party) |
+
+### Key questions to choose
+1. What share of the target jobs touch data that can't be open to the whole org (customer PII, financials, security, HR, legal, unreleased strategy), and can those jobs be fenced without killing the default? — *answered by:* jobs map scored with a data-classification owner; security/privacy policy owner — *affects:* public-by-default, fenced exceptions, team-scoped
+2. Is the target a regulated organisation with information barriers, records-retention, or works-council rules on employee monitoring? If so, is public-by-default allowed at all? — *answered by:* Geoff; compliance, legal and (in the EU) works council — *affects:* public options
+3. How large is the chilling effect: which questions stop being asked when sessions are public, and are they the low-value ones (River's claim) or the important, uncertain ones (Bernstein's finding)? — *answered by:* a pilot with matched teams (public vs private default), counting questions asked and their kind; user interviews — *affects:* public-by-default vs private-by-default
+4. Does visibility itself drive the learning, or does it come from someone mining the corpus into skills (Shopify does both)? If mining is what matters, private-by-default with an opt-in corpus might capture most of the value. — *answered by:* ask Shopify; a pilot measuring reuse of others' threads vs reuse of mined skills — *affects:* public-by-default vs private draft then publish
+5. When a session is visible, does the viewer see only what their own permissions allow (re-check), or everything the session saw with the creator's access? — *answered by:* security owner; prototype — *affects:* all shared options; see [[agent-identity-delegation]]
+6. What does our org's culture support: would a CEO-modelled public channel (Tobi's #tobi_river, 100+ watchers) work here, or does public-by-default need a leadership mandate we don't have? — *answered by:* Geoff / leadership; user interviews — *affects:* public-by-default
+7. How are memory and skills learned from public sessions scrubbed of sensitive data before they are reused everywhere? — *answered by:* prototype of a mining pipeline with a redaction step; Track 5 memory research — *affects:* public-by-default, private draft then publish
+
+### Current lean and what would change it
+No lean. Shopify is the only large-scale evidence for public-by-default and it is all self-reported; the one independent study found the opposite effect in a very different setting (factory floor, 2009). A finding that the target org is regulated, or that the first jobs are mostly sensitive, pushes toward private or team-scoped defaults with a publish step; a pilot showing a small chilling effect and high reuse of others' threads would push toward public-by-default.
+
+### Added by: competitive-teardown-shopify-river on 2026-10-24
+
+#### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
+| Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
+|---|---|---|---|---|---|---|
+| Private single-user sessions, personal sources opt-in per session (Stripe detail for "Private by default") | Sessions belong to the user (sharing on the roadmap); org chart, date and project system known by default; Drive, Slack and DMs connect only if the user opts in, togglable per session or day | Stripe Kai | Users control what personal context the agent sees; low leakage risk | Context "locked in"; org learns only through published skills | early-adopter | [Stripe Kai post](../research/sources/stripe-meet-knowledge-ai-platform.md) (first-party); [How I AI, Krishnamurthy](../research/sources/howiai-stripe-kai-krishnamurthy.md) (first-party) |
+| Isolation by task context, not just user permission | The platform forbids combining data from two unrelated customer contexts in one session even when the user can access each; boundary is "what should this task be allowed to view given this context?" | Stripe Kai | Prevents cross-customer contamination in analyses and artifacts | Needs data tagged by context and enforcement in tools; mechanism not disclosed | emerging | [Stripe Kai post](../research/sources/stripe-meet-knowledge-ai-platform.md) (first-party) |
+| Team- or project-scoped by default (Stripe evidence) | Projects (5 to 500 people, open to join) carry tool policies, default model, human confirmation on sensitive tools, and for HR a separately secured back end | Stripe Kai projects | Policy fits the work's sensitivity; one owner decides for many | Session visibility inside a project not stated (sessions appear single-user) | early-adopter | [How I AI, Krishnamurthy](../research/sources/howiai-stripe-kai-krishnamurthy.md) (first-party) |
+| Open by default for coding-agent runs, private for knowledge work (mixed defaults by work family) | Coding-agent runs posted in a public Slack channel others watch; knowledge-work sessions private | Stripe Minions robots channel (76 watchers) vs Kai | Learning from visible runs where data is low-risk (code in QA devboxes) | Two policies to explain | anecdote | [How I AI, Kaliski](../research/sources/howiai-stripe-minions-kaliski.md) (first-party); [Stripe Kai post](../research/sources/stripe-meet-knowledge-ai-platform.md) (first-party) |
+
+Key questions (Stripe pass):
+8. Stripe makes coding runs visible and knowledge-work sessions private; Shopify makes everything public. Is the right default set per work family or data class rather than org-wide? — *answered by:* jobs map scored by data class; ask Stripe and Shopify why their defaults differ — *affects:* all options
+9. How would task-context isolation be enforced in our setting (data tags, tool-level checks, session forks)? — *answered by:* security owner; prototype with two customer datasets — *affects:* private, project-scoped and public options
+
+
+---
+
 
 ## Cross-cutting key questions
 
@@ -1278,3 +1498,6 @@ Key questions (Stripe pass):
 
 - (user-story-mapping) Which embodiment fits depends on a fact we lack in several stories: how PMs keep artifacts today, whether reviewers will enter agent sessions, and whether a machine-checkable spec standard exists. Are these three facts the first things to establish before any prototype? The cross-cutting stories ([S11–S15](../tasks/user-story-mapping/stories-cross-cutting.md)) and the S05 pair ([worked derivation](../tasks/user-story-mapping/worked-derivation-s05.md)) mark where each bites. — *answered by:* a short interview round plus one clickable prototype pair — *affects:* all
 7. Ramp changed its answer on who supplies the loop (vendor SDK → own harness) and where it runs (laptop → cloud workers) within about six months of shipping Glass. Should the resource request fund a reversible first step and an explicit revisit point rather than a one-time pattern choice, and what would the revisit criteria be? — *answered by:* Geoff / the strategy deck's framing; evidence in [Building Laminar](../research/sources/ramp-builders-building-laminar.md) (competitive-teardown-ramp-glass, audit 2026-10-24)
+8. (competitive-teardown-stripe-knowledge-agents) Stripe runs its internal knowledge agent on the same harness, sandbox, orchestration and access control as its customer-facing agents, arguing the shared substrate forces the external security bar inside and improves both. Does our resource request assume the internal PM agent and any customer-facing agent share a substrate, or are they separate bets? It bears on loop-source, runtime-location, governance-control-plane and trust-privacy-defaults. — *answered by:* Geoff / product leadership; ask Stripe what sharing has cost them — *affects:* the scope of the request ([source](../research/sources/stripe-meet-knowledge-ai-platform.md), first-party)
+
+- (competitive-teardown-shopify-river) Does the strategy assume the target org will accept agent work being visible by default? Shopify's River (public-only, no DMs) shows the learning upside; the cost (chilling effect, sensitive data, regulated walls) is unmeasured. The answer moves [[agent-interface]], [[trust-privacy-defaults]], [[context-and-memory]] (corpus mining), [[adoption-model]] and [[agent-identity-delegation]] together. — *answered by:* Geoff; policy/compliance owners; a matched public-vs-private pilot
