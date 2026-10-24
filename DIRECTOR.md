@@ -40,6 +40,10 @@ Stopped: research-product-agent-and-harness-968c23 (6b54ecd9, login expired, nev
 3. **Acceptance:** accept/not-yet questions per finished task, then done and archive on his yes.
 4. **Push:** local commits since 2ff3417 wait for Geoff's "push".
 
+## Workboard
+
+https://claude.ai/artifact/7fwBzcE3FQPAZujKjShvKj (Dashboard type). To refresh: update STAGE in scripts/workboard-data.py, run it, upload workboard.json as an asset (Artifact publish, asset: true, url above), then ArtifactData update datasets/tasks with the new source.url and updated.at. GitHub links resolve only after a push.
+
 ## Needs Geoff
 
 - Push the local commits since 2ff3417: waiting for his yes.
