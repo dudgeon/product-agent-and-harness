@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ramp Agent Lifecycle Map</title>
+<style>
+/* Same styling as the Stripe map (02-pdlc-agent-ecosystem-map.build.py) so the maps compare side by side. One amber accent for the undocumented handoffs and the task only people do. */
+:root{
+  --paper:#f6f6f2; --surface:#ffffff; --ink:#1d2228; --muted:#5d6670; --rule:#d6d9d6; --accent:#b4580c; --accent-soft:#f5e3d2; --auto:#e9ecef; --lite:#f1f3f1;
+  --serif:Charter, "Iowan Old Style", Georgia, "Times New Roman", serif; --sans:system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; --mono:ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55}
+.wrap{max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:40px 64px; display:grid; grid-template-columns:minmax(0,1fr); gap:36px}
+.wrap > *{min-width:0}
+header{display:grid; gap:10px; max-width:70ch}
+.eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--serif); font-weight:600; font-size:clamp(30px,4.4vw,44px); line-height:1.1; margin:0; text-wrap:balance}
+h2{font-family:var(--serif); font-weight:600; font-size:24px; margin:0 0 10px; text-wrap:balance}
+p{margin:0; max-width:70ch}
+.lede{font-size:18px}
+.answer{background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:6px; padding:20px 22px; display:grid; gap:12px}
+.answer ol,.answer ul{margin:0; padding-left:22px; display:grid; gap:8px; max-width:72ch}
+.diagram{overflow-x:auto; background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:12px}
+.diagram svg{display:block; min-width:1040px; width:100%; height:auto}
+.diagram .stage{font-family:var(--serif); font-weight:600; font-size:14.5px; fill:var(--ink)}
+.diagram .chain{font-family:var(--serif); font-style:italic; font-size:13.5px; fill:var(--muted)}
+.diagram .lane{font-family:var(--mono); font-size:11px; letter-spacing:.1em; fill:var(--muted)}
+.diagram .cap,.diagram .leg{font-family:var(--sans); font-size:12.5px; fill:var(--muted)}
+.diagram .leg{font-size:13.5px; fill:var(--ink)}
+.diagram .guide{stroke:var(--rule); stroke-width:1; stroke-dasharray:2 5}
+.diagram .lanerule{stroke:var(--rule); stroke-width:1.2}
+.diagram .node{fill:var(--surface); stroke:var(--ink); stroke-width:1.6}
+.diagram .node.lite{fill:var(--lite); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode{fill:var(--paper); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode.acc{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.6}
+.diagram .auto{fill:var(--auto); stroke:var(--muted); stroke-width:1.2}
+.diagram .sub{fill:var(--auto); stroke:none}
+.diagram .nt{font-family:var(--sans); fill:var(--ink)}
+.diagram .doc{fill:none; stroke:var(--ink); stroke-width:1.8}
+.diagram .inf{fill:none; stroke:var(--muted); stroke-width:1.5; stroke-dasharray:5 5}
+.diagram .gap{fill:none; stroke:var(--accent); stroke-width:2; stroke-dasharray:3 5}
+.diagram .gapdot{fill:var(--paper); stroke:var(--accent); stroke-width:2}
+.diagram .gapq{font-family:var(--serif); font-weight:600; font-size:16px; fill:var(--accent)}
+.diagram .mk{stroke:var(--ink); stroke-width:1.5}
+.diagram .mkg{stroke:var(--accent); stroke-width:1.5}
+.tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:6px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:760px; font-size:14.5px}
+th,td{text-align:left; vertical-align:top; padding:10px 14px; border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); background:var(--paper)}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600}
+.status{font-family:var(--mono); font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); white-space:nowrap; display:inline-block}
+.s-doc{border-color:var(--ink)} .s-inf{color:var(--muted); border-style:dashed} .s-unk{color:var(--accent); border-color:var(--accent)}
+.row-gap td{background:var(--accent-soft)}
+section{display:grid; gap:12px}
+ul.impl{margin:0; padding-left:20px; display:grid; gap:10px; max-width:74ch}
+.foot{font-size:13.5px; color:var(--muted); max-width:82ch}
+.diagram svg{min-width:1100px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Ramp teardown · lifecycle map by task · 24 Oct 2026</div>
+  <h1>Where Ramp’s agents sit in the product lifecycle, task by task</h1>
+  <p class="lede">Same frame as the Stripe map: rows are tasks, not job titles. At Ramp non-engineers write code through Inspect and PMs prototype in Glass. Each handoff is marked documented, inferred or unknown. Every figure is Ramp’s own; none is independently checked.</p>
+</header>
+
+<div class="answer">
+  <h2>Ramp names the define → build contract, but not how it travels</h2>
+  <ol>
+    <li><strong>The contract is named.</strong> Geoff Charles: engineering wants the data, “the actual requirements that they can use for their coding agents, and a prototype”: “the next contract”. No source shows how it moves from a PM’s Glass session to an engineer’s Inspect session.</li>
+    <li><strong>Where context crosses people, Ramp carries the session itself.</strong> Glass sessions can be handed to a colleague, and every Inspect session is multiplayer with attributed prompts. Since October, Glass and Inspect run on one harness, Laminar.</li>
+    <li><strong>For small work, the people boundary goes away.</strong> Agent-run loops take feedback to backlog, plan, code, CI and the knowledge base, with a Slack check; “60% of UX issues … fixed within 24 hours”.</li>
+    <li><strong>The top of the chain is unrecorded.</strong> No tool is shown for setting the goal, and planning has no agent of its own.</li>
+  </ol>
+  <p><strong>Against Stripe:</strong> Stripe’s gap is between two agents (Kai → Orbit). Ramp’s tooling has fewer gaps: one workspace, shared sessions, one harness. Its public record leaves the same seam open in a different place: the hand-off from a define-stage session to a build-stage session when different people own them.</p>
+</div>
+
+<div class="diagram" role="figure" aria-label="Swimlane diagram of Ramp's lifecycle by task">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 640" role="img" aria-labelledby="dtitle"><title id="dtitle">Ramp’s product lifecycle by task, with the humans, agents and shared tools at each task and the handoffs between them</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mk"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mkg"/></marker></defs>
+<text class="stage" x="77.0" y="24" text-anchor="middle"><tspan x="77.0">Spot the</tspan><tspan x="77.0" dy="18">opportunity</tspan></text>
+<text class="chain" x="77.0" y="66" text-anchor="middle">identify</text>
+<text class="stage" x="191.0" y="24" text-anchor="middle"><tspan x="191.0">Talk to</tspan><tspan x="191.0" dy="18">customers</tspan></text>
+<line class="guide" x1="134" y1="50" x2="134" y2="500"/>
+<text class="stage" x="305.0" y="24" text-anchor="middle"><tspan x="305.0">Research</tspan><tspan x="305.0" dy="18">the problem</tspan></text>
+<line class="guide" x1="248" y1="50" x2="248" y2="500"/>
+<text class="stage" x="419.0" y="24" text-anchor="middle"><tspan x="419.0">Set the</tspan><tspan x="419.0" dy="18">goal</tspan></text>
+<line class="guide" x1="362" y1="50" x2="362" y2="500"/>
+<text class="stage" x="533.0" y="24" text-anchor="middle"><tspan x="533.0">Shape the</tspan><tspan x="533.0" dy="18">intent</tspan></text>
+<text class="chain" x="533.0" y="66" text-anchor="middle">define</text>
+<line class="guide" x1="476" y1="50" x2="476" y2="500"/>
+<text class="stage" x="647.0" y="24" text-anchor="middle"><tspan x="647.0">Plan the</tspan><tspan x="647.0" dy="18">change</tspan></text>
+<line class="guide" x1="590" y1="50" x2="590" y2="500"/>
+<text class="stage" x="761.0" y="24" text-anchor="middle"><tspan x="761.0">Write the</tspan><tspan x="761.0" dy="18">code</tspan></text>
+<text class="chain" x="761.0" y="66" text-anchor="middle">build</text>
+<line class="guide" x1="704" y1="50" x2="704" y2="500"/>
+<text class="stage" x="875.0" y="24" text-anchor="middle"><tspan x="875.0">Review the</tspan><tspan x="875.0" dy="18">change</tspan></text>
+<text class="chain" x="875.0" y="66" text-anchor="middle">review</text>
+<line class="guide" x1="818" y1="50" x2="818" y2="500"/>
+<text class="stage" x="989.0" y="24" text-anchor="middle"><tspan x="989.0">Test</tspan></text>
+<text class="chain" x="989.0" y="66" text-anchor="middle">test</text>
+<line class="guide" x1="932" y1="50" x2="932" y2="500"/>
+<text class="stage" x="1103.0" y="24" text-anchor="middle"><tspan x="1103.0">Release</tspan></text>
+<text class="chain" x="1103.0" y="66" text-anchor="middle">coordinate</text>
+<line class="guide" x1="1046" y1="50" x2="1046" y2="500"/>
+<text class="stage" x="1217.0" y="24" text-anchor="middle"><tspan x="1217.0">Operate</tspan><tspan x="1217.0" dy="18">and learn</tspan></text>
+<text class="chain" x="1217.0" y="66" text-anchor="middle">improve</text>
+<line class="guide" x1="1160" y1="50" x2="1160" y2="500"/>
+<text class="lane" x="20" y="86">HUMANS · ANY ROLE</text>
+<text class="lane" x="20" y="226">AGENTS</text>
+<text class="lane" x="20" y="426">SHARED</text>
+<line class="lanerule" x1="20" y1="212" x2="1274" y2="212"/><line class="lanerule" x1="20" y1="412" x2="1274" y2="412"/>
+<rect class="pnode" x="25.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="77.0" y="139.0" text-anchor="middle"><tspan x="77.0" dy="0">PMs,</tspan><tspan x="77.0" dy="15">leaders</tspan></text>
+<rect class="pnode" x="139.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="191.0" y="139.0" text-anchor="middle"><tspan x="191.0" dy="0">account mgrs,</tspan><tspan x="191.0" dy="15">sales, PMs</tspan></text>
+<rect class="pnode" x="253.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="305.0" y="131.5" text-anchor="middle"><tspan x="305.0" dy="0">anyone:</tspan><tspan x="305.0" dy="15">ops, sales,</tspan><tspan x="305.0" dy="15">PMs, eng.</tspan></text>
+<rect class="pnode acc" x="367.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="419.0" y="139.0" text-anchor="middle"><tspan x="419.0" dy="0">people; no</tspan><tspan x="419.0" dy="15">tool shown</tspan></text>
+<rect class="pnode" x="481.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="533.0" y="139.0" text-anchor="middle"><tspan x="533.0" dy="0">PMs and</tspan><tspan x="533.0" dy="15">others</tspan></text>
+<rect class="pnode" x="709.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="761.0" y="124.0" text-anchor="middle"><tspan x="761.0" dy="0">eng. and</tspan><tspan x="761.0" dy="15">non-eng.:</tspan><tspan x="761.0" dy="15">Slack, web,</tspan><tspan x="761.0" dy="15">ext., PR</tspan></text>
+<rect class="pnode" x="823.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="875.0" y="131.5" text-anchor="middle"><tspan x="875.0" dy="0">a human</tspan><tspan x="875.0" dy="15">reviewer the</tspan><tspan x="875.0" dy="15">agent picks</tspan></text>
+<rect class="pnode" x="937.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="989.0" y="139.0" text-anchor="middle"><tspan x="989.0" dy="0">PMs give</tspan><tspan x="989.0" dy="15">instructions</tspan></text>
+<rect class="pnode" x="1051.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="1103.0" y="146.5" text-anchor="middle"><tspan x="1103.0" dy="0">PMs</tspan></text>
+<rect class="pnode" x="1165.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="1217.0" y="139.0" text-anchor="middle"><tspan x="1217.0" dy="0">on-call,</tspan><tspan x="1217.0" dy="15">support, ops</tspan></text>
+<rect class="pnode" x="595.0" y="96" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="647.0" y="131.5" text-anchor="middle"><tspan x="647.0" dy="0">inside Glass;</tspan><tspan x="647.0" dy="15">no separate</tspan><tspan x="647.0" dy="15">step shown</tspan></text>
+<rect class="node" x="25.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="77.0" y="273.5" text-anchor="middle"><tspan x="77.0" dy="0">Insight agent</tspan><tspan x="77.0" dy="15">calls, tickets,</tspan><tspan x="77.0" dy="15">surveys</tspan></text>
+<rect class="node" x="139.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="191.0" y="273.5" text-anchor="middle"><tspan x="191.0" dy="0">Glass prompt</tspan><tspan x="191.0" dy="15">calls → ~20k</tspan><tspan x="191.0" dy="15">requests/mo</tspan></text>
+<rect class="node" x="253.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="305.0" y="273.5" text-anchor="middle"><tspan x="305.0" dy="0">Ramp</tspan><tspan x="305.0" dy="15">Research ·</tspan><tspan x="305.0" dy="15">Gadget</tspan></text>
+<rect class="node" x="481.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="533.0" y="273.5" text-anchor="middle"><tspan x="533.0" dy="0">Glass</tspan><tspan x="533.0" dy="15">define-stage</tspan><tspan x="533.0" dy="15">agent</tspan></text>
+<rect class="node" x="709.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="761.0" y="273.5" text-anchor="middle"><tspan x="761.0" dy="0">Inspect</tspan><tspan x="761.0" dy="15">~75% of PRs</tspan><tspan x="761.0" dy="15">(Ramp’s figure)</tspan></text>
+<rect class="node" x="823.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="875.0" y="281.0" text-anchor="middle"><tspan x="875.0" dy="0">Review</tspan><tspan x="875.0" dy="15">Buddy</tspan></text>
+<rect class="node" x="937.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="989.0" y="281.0" text-anchor="middle"><tspan x="989.0" dy="0">Testo</tspan><tspan x="989.0" dy="15">browser QA</tspan></text>
+<rect class="node" x="1051.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="1103.0" y="273.5" text-anchor="middle"><tspan x="1103.0" dy="0">Gadget</tspan><tspan x="1103.0" dy="15">launch</tspan><tspan x="1103.0" dy="15">content</tspan></text>
+<rect class="node" x="1165.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="1217.0" y="281.0" text-anchor="middle"><tspan x="1217.0" dy="0">OCA · small</tspan><tspan x="1217.0" dy="15">loops</tspan></text>
+<rect class="node lite" x="595.0" y="238" width="104.0" height="92" rx="7"/><text class="nt" style="font-size:12px" x="647.0" y="273.5" text-anchor="middle"><tspan x="647.0" dy="0">no planning</tspan><tspan x="647.0" dy="15">agent</tspan><tspan x="647.0" dy="15">named</tspan></text>
+<rect class="sub" x="25.0" y="436" width="1244.0" height="56" rx="7"/><text class="nt" style="font-size:13px" x="647.0" y="468.5" text-anchor="middle"><tspan x="647.0" dy="0">Laminar (one harness) · Ramp Router · tool catalog · Dojo skills (350+) · Glass memory (24 h) · shared and multiplayer sessions · Notion / Linear / Slack record</tspan></text>
+<path class="doc" d="M129 284H139" marker-end="url(#ah)"/>
+<path class="doc" d="M813 284H823" marker-end="url(#ah)"/>
+<path class="doc" d="M927 284H937" marker-end="url(#ah)"/>
+<path class="inf" d="M357 314 C419.0 314 419.0 314 481 314" marker-end="url(#ah)"/>
+<text class="cap" x="419.0" y="306" text-anchor="middle">connected</text>
+<path class="doc" d="M989.0 330 C989.0 358 769.0 358 769.0 333" marker-end="url(#ah)"/>
+<text class="cap" x="875.0" y="372" text-anchor="middle">Testo: bugs back to the loop</text>
+<path class="doc" d="M1203.0 330 C1203.0 392 791.0 392 791.0 333" marker-end="url(#ah)"/>
+<text class="cap" x="989.0" y="406" text-anchor="middle">OCA: fix PR, a human merges</text>
+<path class="gap" d="M559.0 238 C603.0 198 691.0 198 735.0 236" marker-end="url(#ahg)"/>
+<circle class="gapdot" cx="647.0" cy="206" r="12"/><text class="gapq" x="647.0" y="212" text-anchor="middle">?</text>
+<path class="gap" d="M1041 284 H1051" marker-end="url(#ahg)"/>
+<path class="inf" d="M191.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M305.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M533.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M761.0 188V236" marker-end="url(#ah)"/>
+<text class="cap" x="766.0" y="426">multiplayer session</text>
+<path class="doc" d="M761.0 436V332" marker-end="url(#ah)"/>
+<path class="inf" d="M1241.0 332V434" marker-end="url(#ah)"/><text class="cap" x="1237.0" y="426" text-anchor="end">to the KB</text>
+<path class="doc" d="M20 540h40" marker-end="url(#ah)"/><text class="leg" x="72" y="545">documented by Ramp</text>
+<path class="inf" d="M260 540h40" marker-end="url(#ah)"/><text class="leg" x="312" y="545">a person uses the agent, or inferred</text>
+<path class="gap" d="M620 540h40" marker-end="url(#ahg)"/><text class="leg" x="672" y="545">mechanism not described: define → build contract; test → release</text>
+<text class="cap" x="20" y="580">Column headers are tasks; the italic row below them is Geoff Charles’s “software factory” stages. “Test” is a row the Stripe map doesn’t have. Accent: the task only people do, with no tool shown. Our own diagram, not Ramp’s UI.</text>
+</svg>
+</div>
+
+<section>
+  <h2>Task by task</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Task</th><th>Who does it at Ramp</th><th>Agents and tools</th><th>Artifact</th></tr></thead>
+    <tbody>
+      <tr><td>Spot the opportunity</td><td>PMs, leaders</td><td>Customer insight agent over calls, tickets, session replays and surveys; Slack agent, dashboard, daily digest and podcast</td><td>Clustered, traceable insight</td></tr>
+      <tr><td>Talk to customers</td><td>Account managers, sales, PMs</td><td>Glass saved prompt pulls feature requests from calls (≈300 → ≈20,000 a month); earlier, Notion agents triaged sales feedback</td><td>Feature-request records; prioritised list</td></tr>
+      <tr><td>Research the problem</td><td>Anyone: sales, ops, finance, PMs, engineers</td><td>Ramp Research (Slack data agent; 1,476 questions in four weeks vs 66 in the human channel); Glass with Snowflake; Gadget for org questions</td><td>Threaded answers with CSV previews; Glass sessions</td></tr>
+      <tr><td>Set the goal</td><td>People</td><td>None named</td><td>Not described</td></tr>
+      <tr><td>Shape the intent</td><td>PMs and others</td><td>Glass as the define-stage agent: data, research, strategy, spec conventions, design system, code base</td><td>“The next contract”: data, requirements, a working prototype</td></tr>
+      <tr><td>Plan the change</td><td>Not shown as a separate task</td><td>No named planning agent; inside Glass or the small loops</td><td>Not described separately</td></tr>
+      <tr><td>Write the code</td><td>Agents, started by engineers and non-engineers</td><td>Inspect (≈30% of merged PRs in Jan, &gt;50% in Mar, “75%” in Sept)</td><td>Branch and PR under the requester’s identity</td></tr>
+      <tr><td>Review the change</td><td>A human reviewer the agent picks</td><td>Review Buddy (“93% of our PRs” handled)</td><td>Reviewed PR</td></tr>
+      <tr><td>Test <em>(Ramp split)</em></td><td>Agents; PMs give instructions</td><td>Testo browser QA agent; 425 bugs in 30 days</td><td>Bug and design-quality feedback</td></tr>
+      <tr><td>Release</td><td>PMs</td><td>Deploy not described; Gadget writes launch content and updates the roadmap; Glass prompt emails customers when their request ships (5,000+)</td><td>Launch content; status updates</td></tr>
+      <tr><td>Operate and learn</td><td>On-call, support, ops; small-loop agents</td><td>OCA (575 of 1,220 incident-fix PRs assisted in four weeks); small loops; issue channel to tickets</td><td>Incident reports, fix PRs, tickets, KB updates</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Every handoff, task to task</h2>
+  <p>19 handoffs: 11 documented, 3 documented with one link’s mechanism unknown, 2 inferred, 3 unknown.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>From → to</th><th>How</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Spot the opportunity (insight agent) → talk to customers</td><td>Traceable insight lets a PM “identify exactly which customers to talk to”; via Slack agent, dashboard, podcast</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Talk to customers (calls) → feature requests (Glass)</td><td>A saved Glass prompt pulls requests from call recordings</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Feature requests → prioritised → customer email on ship</td><td>Two more saved prompts; how “shipped” is detected isn’t described</td><td><span class="status s-doc">documented</span> <span class="status s-unk">link unknown</span></td></tr>
+      <tr><td>Research (Ramp Research) → scoping features</td><td>Teams add it to “project channels to scope out new features”</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Research (Ramp Research, Snowflake) → shape intent (Glass)</td><td>Both are connected tools in every Glass install; carrying answers into a define session isn’t shown</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr><td>Set the goal → shape intent</td><td>Not described</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr class="row-gap"><td>Shape intent (Glass, PM) → plan and write code (Inspect, engineer)</td><td>“The next contract” (data, requirements for coding agents, prototype) is named; how it travels between sessions or people isn’t</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>Shape intent → plan the change</td><td>Inside Glass (“AI is your tech lead”); no separate plan artifact</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr><td>Slack thread, PR comment, Chrome selection, web prompt → write code (Inspect)</td><td>Slack app with a repository classifier; extension sends the element tree; state synced across clients</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>One person’s session → another person (Glass, Inspect)</td><td>Share the Glass session; Inspect sessions are multiplayer with attributed prompts</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Write code (Inspect) → review (Review Buddy, human)</td><td>PR under the requester’s identity; Review Buddy reads the code and the prompts behind it and picks the human reviewer</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Review → test (Testo) → back to code</td><td>Feedback goes “back through the loop to fix”; routing not described</td><td><span class="status s-doc">documented</span> <span class="status s-unk">link unknown</span></td></tr>
+      <tr><td>Review and test → release</td><td>Deploy and rollout not described in any source</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>Release → launch content and the record (Gadget)</td><td>Reads Notion, Linear, Slack, tickets; writes help-center, blog, customer email; updates the roadmap</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Incident → OCA → Inspect → human merge</td><td>OCA joins the incident channel, reports at ~5 and ~13 min, asks Inspect for a PR; nothing merges without a human</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Feedback → backlog → plan → code → CI → knowledge base (small loops)</td><td>Agent routes, matches to Linear, dedupes, ranks, plans, asks in Slack, codes; each link’s mechanism not described</td><td><span class="status s-doc">documented</span> <span class="status s-unk">link unknown</span></td></tr>
+      <tr><td>Glass issue reports → tickets</td><td>A Slack channel triaged into tickets automatically</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Everyday work → every Glass session (memory)</td><td>24-hour pipeline writes memory files read at session start (April design)</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>One person’s workflow → everyone (Dojo, knowledge edits)</td><td>Publish creates a reviewed Git change; 323 people made 6,500+ edits to what Glass knows</td><td><span class="status s-doc">documented</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>What it means for our options</h2>
+  <ul class="impl">
+    <li><strong>Ramp’s answer to context across people is the shared session, not a hand-off artifact.</strong> It leaves open what happens when the next person needs a durable, reviewable artifact.</li>
+    <li><strong>The define → build contract is a concrete candidate spec standard</strong>: evidence, requirements written for coding agents, and a working prototype. Its format is the open question.</li>
+    <li><strong>One agent per stage, on one harness.</strong> Insight, Glass, Inspect, Review Buddy, Testo, Gadget, OCA, all on Laminar.</li>
+    <li><strong>Split by size.</strong> Agent-run loops for small changes; human-shaped intent for large ones.</li>
+  </ul>
+</section>
+
+<p class="foot">Sources (all Ramp first-party unless marked): Geoff Charles’s “software factory” talk (Sept 2026); Ramp Builders posts on Inspect (Jan 2026), Ramp Research (Sept 2025), OCA (Sept 2026), Laminar (Oct 2026) and agent trust (July 2025); Seb Goddijn’s and Shane Buchan’s Glass articles (Apr 2026); Eric Glyman’s launch article and Karim Atiyeh’s post (Oct 2026, vendor claims); the Pragmatic Summit talk by Ramp engineers (Mar 2026). Review Buddy, Testo, Gadget and the insight agent appear only in Charles’s talk. Full notes: project-agent-and-harness, task competitive-teardown-ramp-glass, 07-pdlc-agent-ecosystem-map.md.</p>
+</div>
+</body>
+</html>

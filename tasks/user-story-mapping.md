@@ -27,3 +27,4 @@ Related: [[research-pm-agents-jobs-to-be-done]] (PM jobs map), [[research-agent-
 - 2026-10-24 Director: worker had run on Sonnet 5.5 (inherited); switched to Fable 5.1 and asked for a self-audit (claims vs sources, source notes, gaps, register placement); switch to Opus 5.5 after.
 - 2026-10-24 Audit on Fable 5.1 (Sonnet earlier): all 18 stories re-read; 5 overstated source tags fixed, 37 stale anchors regenerated, slugs remapped to the consolidated register (parent/sub), 11 identity variants retagged, 3 ordering bugs fixed, V4 added to S01/S08; Atlassian/Ramp verification pass filed 12 notes and corrected the Teamwork Graph access claim; log in tasks/user-story-mapping/audit-2026-10-24.md.
 - 2026-10-24 Director: asked for a task-anchored PDLC/SDLC agent map of this ecosystem, see [[pdlc-maps-per-ecosystem]].
+- 2026-10-24 New piece: Atlassian PDLC/SDLC agent-ecosystem map (task pdlc-maps-per-ecosystem), in the Stripe map's frame; gap research subagent running.

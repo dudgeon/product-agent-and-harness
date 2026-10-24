@@ -8,7 +8,7 @@ Task: [research-claude-resources-articles](../research-claude-resources-articles
 
 **Totals:** 695 lines (269 articles, 20 guides covering 145 pages, 284 customer pages, 118 webinar pages, 4 index pages). High 29, medium 66 (filed as 95 notes with companions folded in), already filed 9, folded 15, low 514, none 62.
 
-**Not on the resources site but linked from the playbook:** "Redesigning source control at Anthropic" (2026-10-19) and "How the Claude Code team does code review" (2026-10-16) open off-site; not triaged here, both likely medium for a follow-up.
+**Not on the resources site but linked from the playbook:** "Redesigning source control at Anthropic" (2026-10-19) and "How the Claude Code team does code review" (2026-10-16) open off-site; not triaged here, both filed later for the PDLC map (claude-dev-claude-code-team-code-review, anthropic-redesigning-source-control-scion).
 
 **Webinars:** every webinar page is an event listing (speakers, agenda, sign-up) with no transcript, so all are low even where the topic is on point (e.g. "How Anthropic works with Claude Tag in Slack" claims Claude Tag "now opens roughly 65% of our pull requests"; "Measuring AI Fluency at Your Organization"; "Evals for AI agents"). The recordings would need a separate pass.
 

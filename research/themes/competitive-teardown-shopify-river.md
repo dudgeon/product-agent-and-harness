@@ -25,6 +25,7 @@ Written only by the task `competitive-teardown-shopify-river`. Built into ../THE
 - [The Transparency Paradox (Bernstein)](sources/asq-bernstein-transparency-paradox.md): counter-evidence: broad visibility bred hiding; curtained lines +10–15% output; learning shared upward once there was data (independent, factory 2009) (competitive-teardown-shopify-river)
 - [Shopify River (Ashgaliyev wiki)](sources/ashgaliyev-wiki-shopify-river.md): River as "organizational apprenticeship" (competitive-teardown-shopify-river)
 - [River: Shopify's Slack-native AI agent (video)](sources/youtube-shopify-river-slack-native-agent.md): official one-line positioning is the public-only constraint (competitive-teardown-shopify-river)
+- [Reflexive AI usage is now a baseline expectation at Shopify](sources/x-tobi-reflexive-ai-usage-memo.md): "Learning is self directed, but share what you learned"; prompts shared in Slack and Vault channels (Apr 2025, pre-River) (competitive-teardown-shopify-river)
 
 ## memory-architecture: Memory as inspectable files from an offline pipeline
 - [Tobi Lütke: AI Agents, Better Decisions (Knowledge Project)](sources/fs-knowledge-project-tobi-lutke-ai-agents.md): River "dreams" off-hours over the day's threads and rewrites skill files; per-person and per-channel memory injected at session start (competitive-teardown-shopify-river)
@@ -44,6 +45,7 @@ Written only by the task `competitive-teardown-shopify-river`. Built into ../THE
 - [We gave AI agents a mobile dev environment](sources/shopify-engineering-remote-dev.md): adoption needed internal ads with a River persona; River went from 6% to 61% of merged mobile PRs (competitive-teardown-shopify-river)
 - [Learning on the Shop floor](sources/x-tobi-learning-on-the-shop-floor.md): learning "does not require a curriculum, a training plan, or a manager. It just requires everyone's work to be visible" (competitive-teardown-shopify-river)
 - [Make the Work Visible](sources/airealized-make-the-work-visible.md): visibility as the adoption lever; peer practices (AI Corner, failure labs) (competitive-teardown-shopify-river)
+- [Reflexive AI usage is now a baseline expectation at Shopify](sources/x-tobi-reflexive-ai-usage-memo.md): adoption by mandate as well: AI questions in performance and peer reviews; headcount requests must show why AI can't do it (Apr 2025) (competitive-teardown-shopify-river)
 
 ## non-engineer-builders: Non-engineers ship through agents
 - [Quick: An internal hosting platform for the AI era](sources/shopify-engineering-quick.md): 50,000+ agent-made internal sites; over half the company has made one; skills bundled so any agent can deploy (competitive-teardown-shopify-river)
@@ -74,6 +76,7 @@ Written only by the task `competitive-teardown-shopify-river`. Built into ../THE
 - [How River takes security work from a fix to merge](sources/shopify-engineering-river-vulnerability-remediation.md): draft-only, human merge authority; hand off "the smallest question that an owner has to answer"; River left a human-owned branch alone (competitive-teardown-shopify-river)
 - [Tobi Lütke: AI Agents, Better Decisions (Knowledge Project)](sources/fs-knowledge-project-tobi-lutke-ai-agents.md): "slop grenades", unread agent PRs that shift review load onto colleagues (competitive-teardown-shopify-river)
 - [Inside Shopify's AI-first engineering playbook](sources/bvp-inside-shopifys-ai-first-engineering-playbook.md): "We still require a human PR reviewer, which is now becoming a big bottleneck" (competitive-teardown-shopify-river)
+- [How Shopify builds product](sources/lenny-how-shopify-builds-product.md): every project passes GSD (Proposal, Prototype, Build, Release, Results), reviewed by directors (OK1) and senior leadership (OK2), mostly async (2023) (competitive-teardown-shopify-river)
 
 ## harness-portability: Harness portability
 - [Under the River](sources/shopify-engineering-under-the-river.md): harness outside the sandbox lets Shopify "swap models, runtimes, even languages on the harness side" (competitive-teardown-shopify-river)
@@ -101,6 +104,7 @@ Written only by the task `competitive-teardown-shopify-river`. Built into ../THE
 
 ## artifact-standardization: Artifact standardization
 - [Quick: An internal hosting platform for the AI era](sources/shopify-engineering-quick.md): one artifact form (static folder + fixed API: db, files, AI, warehouse, websockets, identity); "All Quick sites are open to all employees", no owners (competitive-teardown-shopify-river)
+- [How Shopify builds product](sources/lenny-how-shopify-builds-product.md): PMs submit a short video per GSD review: what is it, why is it valuable, how does it work (2023) (competitive-teardown-shopify-river)
 
 ## agent-as-service-many-surfaces: The agent as a service with many surfaces
 - [Under the River](sources/shopify-engineering-under-the-river.md): the counter-case: River has one surface (Slack, no DMs), with companion links (Quick sites, Live Preview) for rich output (competitive-teardown-shopify-river)
@@ -119,3 +123,6 @@ Agent sessions that are visible to the whole organisation by default (no DMs, no
 - [The Transparency Paradox (Bernstein)](sources/asq-bernstein-transparency-paradox.md): broad visibility can breed hiding; privacy zones raised output 10–15% (independent; factory setting) (competitive-teardown-shopify-river)
 - [Create information barriers in Slack](sources/slack-information-barriers-docs.md): chat-tool walls don't stop interaction in shared channels, so a channel-native agent inherits that gap (competitive-teardown-shopify-river)
 - [Tenable on Claude Tag](sources/tenable-claude-tag-slack-access-model.md): in channel agents, public-channel join policy effectively governs access to the agent's credentials; new members see scrollback (competitive-teardown-shopify-river)
+
+## prototyping-agents-limits: Prototyping agents and their limits
+- [Reflexive AI usage is now a baseline expectation at Shopify](sources/x-tobi-reflexive-ai-usage-memo.md): "AI must be part of your GSD Prototype phase"; the prototype phase "should be dominated by AI exploration" (Apr 2025) (competitive-teardown-shopify-river)

@@ -27,3 +27,4 @@ Related: [[research-product-agent-and-harness]].
 - 2026-10-24 Director: audit reviewed (lead log read); session switched back to Opus 5.5.
 - 2026-10-24 Worker: Geoff asked for an explainer video of these findings; asked the director about timing/GPU and whether it stays separate from film 04; drafted script v0.1 (explainers/projects/05-pm-agents-evidence/script-doc.md, ~5 min, audited figures only). No GPU work yet.
 - 2026-10-24 Director: asked for a task-anchored PDLC/SDLC agent map of this ecosystem, see [[pdlc-maps-per-ecosystem]].
+- 2026-10-24 Worker: new piece: Intercom PDLC/SDLC agent-ecosystem map (task pdlc-maps-per-ecosystem), as 04-pdlc-agent-ecosystem-map.md/.html here; gap research running.

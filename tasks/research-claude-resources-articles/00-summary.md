@@ -117,6 +117,6 @@ No new dimension is proposed.
 
 ## Could not verify / follow-ups
 
-- Two companion pieces linked from the playbook open off the resources site and were not filed: "Redesigning source control at Anthropic" and "How the Claude Code team does code review". Both are likely medium.
+- The two pieces linked from the playbook ("How the Claude Code team does code review" and "Redesigning source control at Anthropic") were filed later for the PDLC map: [claude-dev-claude-code-team-code-review](../../research/sources/claude-dev-claude-code-team-code-review.md), [anthropic-redesigning-source-control-scion](../../research/sources/anthropic-redesigning-source-control-scion.md). See also the Anthropic lifecycle map: [02-pdlc-agent-ecosystem-map.md](02-pdlc-agent-ecosystem-map.md).
 - Webinar recordings (e.g. "How Anthropic works with Claude Tag in Slack", whose blurb claims Claude Tag "opens roughly 65% of our pull requests"; "Measuring AI Fluency"; "Evals for AI agents") would need a transcript pass.
 - Gated guides were filed from their landing pages only: the CIO pilot-to-production blueprint's tier contents and the six-month Cowork rollout framework.

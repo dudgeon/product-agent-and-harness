@@ -68,6 +68,7 @@ Product, CX, finance and sales build tools and PRs via agent harnesses; shifts w
 - [What product looks like when coding is solved | Geoff Charles (Ramp CPO)](sources/lenny-podcast-geoff-charles-product-when-coding-solved.md): ~1,000 non-engineer PRs/month via Inspect (competitive-teardown-ramp-glass)
 - [Ramp: Lessons from Building a New AI Product - The Pragmatic Summit](sources/pragmatic-engineer-ramp-lessons-new-ai-product.md): PM vibe-coded ~20 tools (competitive-teardown-ramp-glass)
 - [Inside Ramp's Custom Agent Operating System](sources/notion-inside-ramps-custom-agent-os.md): "turning everybody at Ramp into a builder" (competitive-teardown-ramp-glass)
+- [Why We Built Our Own Background Agent](sources/ramp-builders-why-we-built-background-agent.md): Chrome extension lets non-engineers point at UI and request changes; multiplayer used to teach PMs and designers (competitive-teardown-ramp-glass)
 
 ## agent-factory-sdlc: Agents across the whole product development loop
 A chain of specialised agents (insight, define, build, review, test, coordinate) removes bottlenecks one after another; Glass is the define-stage agent. Related: [[intent-factory-before-discovery]].
@@ -75,16 +76,38 @@ A chain of specialised agents (insight, define, build, review, test, coordinate)
 - [How We Built Glass: Vibe Coding a Product Used by 700 People](sources/x-shanebuchan-how-we-built-glass.md): Glass builds Glass with Defrag, doc validation, gates (competitive-teardown-ramp-glass)
 - [Ramp built an AI agent harness in six weeks](sources/thenewstack-ramp-laminar-agent-harness.md): one harness under customer-service agents, Inspect and Glass (competitive-teardown-ramp-glass)
 - [Building Laminar: Ramp's Managed Agents Platform](sources/ramp-builders-building-laminar.md): one harness for support chat, headless OCR, Inspect, Stack and Glass (competitive-teardown-ramp-glass)
+- [Why We Built Our Own Background Agent](sources/ramp-builders-why-we-built-background-agent.md): Inspect verifies its own work (tests, telemetry, flags, screenshots) and takes intent from Slack, web, Chrome extension and PR comments (competitive-teardown-ramp-glass)
+- [How we built OCA, our AI on-call assistant](sources/ramp-builders-how-we-built-oca.md): incident agent hands obvious fixes to Inspect for a human-reviewed PR; assisted 575 of 1,220 incident-fix PRs in four weeks (first-party) (competitive-teardown-ramp-glass)
 
 ## legible-org-for-agents: Make the organisation legible to agents
 Roadmaps, specs, tickets and tools must be agent-readable so agents can answer and act. Related: [[compounding-context-repo]].
 - [What product looks like when coding is solved | Geoff Charles (Ramp CPO)](sources/lenny-podcast-geoff-charles-product-when-coding-solved.md): "the organization needs to be legible to your agents"; Gadget (competitive-teardown-ramp-glass)
 - [Ramp: Lessons from Building a New AI Product - The Pragmatic Summit](sources/pragmatic-engineer-ramp-lessons-new-ai-product.md): shared internal tool catalog of hundreds of tools (competitive-teardown-ramp-glass)
+- [Meet Ramp Research: Our Agentic Data Analyst](sources/ramp-builders-meet-ramp-research.md): domain owners wrote docs as a file system the data agent reads; dbt/Looker/Snowflake metadata indexed (competitive-teardown-ramp-glass)
 
 ## evals-autonomy-trust: Evals, autonomy sliders and earned trust
 Start agents as suggestions, measure against ground truth, then let users raise autonomy. Related: [[risk-sloped-review]].
 - [Ramp: Lessons from Building a New AI Product - The Pragmatic Summit](sources/pragmatic-engineer-ramp-lessons-new-ai-product.md): Policy Agent suggestions -> auto-approve slider; weekly labeling; evals from five examples (competitive-teardown-ramp-glass)
 - [What product looks like when coding is solved | Geoff Charles (Ramp CPO)](sources/lenny-podcast-geoff-charles-product-when-coding-solved.md): autonomous small loops, Review Buddy 93%, Testo 425 bugs (competitive-teardown-ramp-glass)
+- [Meet Ramp Research: Our Agentic Data Analyst](sources/ramp-builders-meet-ramp-research.md): evaluate the context layer, asserting on intermediate tool calls and query shape, not each answer (competitive-teardown-ramp-glass)
+- [How we built OCA, our AI on-call assistant](sources/ramp-builders-how-we-built-oca.md): responder ratings per incident drive model and setting choices; one-shot hook 'detours' force self-checks (competitive-teardown-ramp-glass)
+- [How To Build Agents Users Can Trust](sources/ramp-builders-agents-users-can-trust.md): suggestions, then acting on subsets, then full autonomy; Approve / Reject / Needs review instead of confidence scores (competitive-teardown-ramp-glass)
 
 ## shared-persistent-sessions: Shared, persistent, multi-user agent sessions
 - [Building Laminar: Ramp's Managed Agents Platform](sources/ramp-builders-building-laminar.md): async-by-default, always-open sessions with HITL approvals, steering and multiplayer; session state in Postgres decoupled from sandboxes; cloud workers so 'laptop goes to sleep' no longer matters (first-party) (competitive-teardown-ramp-glass)
+- [Why We Built Our Own Background Agent](sources/ramp-builders-why-we-built-background-agent.md): every Inspect session is multiplayer, prompts attributed per person, state synced across Slack, web, extension, PR and hosted VS Code (first-party) (competitive-teardown-ramp-glass)
+
+## research-synthesis-agents: Research synthesis agents
+- [Meet Ramp Research: Our Agentic Data Analyst](sources/ramp-builders-meet-ramp-research.md): Slack data agent; 1,476 questions answered in four weeks versus 66 in the human help channel (first-party) (competitive-teardown-ramp-glass)
+
+## org-context-grounding: Agents work when grounded in organisation context
+- [Meet Ramp Research: Our Agentic Data Analyst](sources/ramp-builders-meet-ramp-research.md): grounding in dbt, Looker and Snowflake metadata plus domain-owner docs (competitive-teardown-ramp-glass)
+- [How To Build Agents Users Can Trust](sources/ramp-builders-agents-users-can-trust.md): customer's expense policy brought in as editable context the agent cites (competitive-teardown-ramp-glass)
+
+## human-review-gates: Human review gates on agent output
+- [Why We Built Our Own Background Agent](sources/ramp-builders-why-we-built-background-agent.md): PRs open under the requesting user's GitHub identity so nobody approves their own agent's work (competitive-teardown-ramp-glass)
+- [How we built OCA, our AI on-call assistant](sources/ramp-builders-how-we-built-oca.md): nothing OCA triggers merges without a human; Slack buttons gate destructive actions (competitive-teardown-ramp-glass)
+- [How To Build Agents Users Can Trust](sources/ramp-builders-agents-users-can-trust.md): deterministic hard stops (dollar limits, blocklists) layered over the agent (competitive-teardown-ramp-glass)
+
+## harness-portability: Harness portability
+- [How we built OCA, our AI on-call assistant](sources/ramp-builders-how-we-built-oca.md): OCA runs inside Claude Code or Codex depending on which models perform better; switched to GPT-6 Astra (first-party) (competitive-teardown-ramp-glass)
