@@ -25,3 +25,4 @@ Related: [[research-product-agent-and-harness]].
 - 2026-10-24 Worker (audit, Fable): audit started; 3 Opus subagents re-checking files 01-03 claim by claim against sources/originals; brief's option links fixed for consolidated DIMENSIONS.md; log in audit-2026-10-24.md.
 - 2026-10-24 Worker (audit, Fable): audit complete: ~540 claims checked across files 01-03, ~110 errors fixed, 24 source notes added, ~65 items left marked (unverified); brief, options entries, INDEX and THEMES aligned; logs in audit-2026-10-24*.md.
 - 2026-10-24 Director: audit reviewed (lead log read); session switched back to Opus 5.5.
+- 2026-10-24 Worker: Geoff asked for an explainer video of these findings; asked the director about timing/GPU and whether it stays separate from film 04; drafted script v0.1 (explainers/projects/05-pm-agents-evidence/script-doc.md, ~5 min, audited figures only). No GPU work yet.
