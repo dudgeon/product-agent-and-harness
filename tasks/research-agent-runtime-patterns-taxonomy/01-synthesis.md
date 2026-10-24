@@ -333,7 +333,7 @@ Seed rows in the register that still say "to be linked" or "to be researched" (f
 ---
 
 ### D.1 Loop source: who supplies the agent loop
-Register: [harness-ownership](../../options/DIMENSIONS.md#harness-ownership-who-owns-the-harness-the-agent-loop) (split proposed; see D.2 for the layer question).
+Register: [harness-ownership](../../options/DIMENSIONS.md#original-framing-before-the-split--harness-ownership-who-owns-the-harness-the-agent-loop) (split proposed; see D.2 for the layer question).
 
 **Choice.** Do users keep a vendor harness as the loop, do we embed a vendor's harness SDK in our own product, use a hosted harness, build on a general framework, fork an open harness, or write a minimal loop?
 
@@ -358,7 +358,7 @@ Register: [harness-ownership](../../options/DIMENSIONS.md#harness-ownership-who-
 **Lean.** None recorded. The evidence that the loop is cheap and upkeep is not, and that every build example is a well-resourced engineering organisation, would need a scoped upkeep estimate before any build option could be preferred. An independent cost-of-ownership account from a non-AI-product company would change the picture most.
 
 ### D.2 Harness layering: is there a layer above the vendor harnesses
-Register: [harness-ownership](../../options/DIMENSIONS.md#harness-ownership-who-owns-the-harness-the-agent-loop) rows on meta-harnesses (new dimension proposed by Track 1).
+Register: [harness-ownership](../../options/DIMENSIONS.md#original-framing-before-the-split--harness-ownership-who-owns-the-harness-the-agent-loop) rows on meta-harnesses (new dimension proposed by Track 1).
 
 **Choice.** None (users run vendor CLIs directly); a local parallel-session manager; a self-run meta-harness server; a hosted multi-harness control plane; an SDK-level adapter inside our product; or a platform-native workspace that replaces the CLI.
 
@@ -415,7 +415,7 @@ Register: [runtime-location](../../options/DIMENSIONS.md#runtime-location-where-
 **Lean.** None.
 
 ### D.4 Capability format and portability
-Register: [capability-packaging](../../options/DIMENSIONS.md#capability-packaging-how-skills-and-agents-are-packaged-and-invoked) (split proposed by Track 4).
+Register: [capability-packaging](../../options/DIMENSIONS.md#original-framing-before-the-split--capability-packaging-how-skills-and-agents-are-packaged-and-invoked) (split proposed by Track 4).
 
 **Choice.** Is reusable know-how an always-on context file, an open-standard skill, a harness-extended skill, a packaged subagent, a plugin bundle, an MCP server, or a deployed agent; and how much of it moves between harnesses?
 
@@ -439,7 +439,7 @@ Register: [capability-packaging](../../options/DIMENSIONS.md#capability-packagin
 **Lean.** None. Track 4's inference (no source tests it directly): a Claude Code plugin can carry multi-step, partly deterministic workflows with no server of our own, but not guaranteed triggering, per-user credentials beyond `userConfig`, shared state, unattended execution, uniform audit or a sandbox for plugin code.
 
 ### D.5 Capability distribution and trust
-Register: [capability-packaging](../../options/DIMENSIONS.md#capability-packaging-how-skills-and-agents-are-packaged-and-invoked) registry rows; [governance-control-plane](../../options/DIMENSIONS.md#governance-control-plane-permissions-cost-identity-audit) plugin policy rows.
+Register: [capability-packaging](../../options/DIMENSIONS.md#original-framing-before-the-split--capability-packaging-how-skills-and-agents-are-packaged-and-invoked) registry rows; [governance-control-plane](../../options/DIMENSIONS.md#original-framing-before-the-split--governance-control-plane-permissions-cost-identity-audit) plugin policy rows.
 
 **Choice.** How skills and plugins reach users and are trusted: public registries, a vendor-managed org marketplace, an org-governed private registry with scan plus review plus version pin, eval-gated changes, or Git-backed marketplace with hidden Git.
 
@@ -489,7 +489,7 @@ Register: [remote-invocation-route](../../options/DIMENSIONS.md#remote-invocatio
 **Lean (Track 3, thin and mostly vendor-sourced).** MCP (sync, Tasks for long jobs) over A2A for harness-to-agent calls today, because every named host supports MCP, concrete examples exist, and A2A's evidence is membership rather than use. Would change if a primary harness ships a native A2A client or independent accounts of A2A in production appear.
 
 ### D.7 Session persistence, sharing and handoff
-Register: [session-persistence-sharing](../../options/DIMENSIONS.md#session-persistence-sharing-session-persistence-and-sharing), [session-handoff-portability](../../options/DIMENSIONS.md#session-handoff-portability-handing-a-session-between-people-devices-and-harnesses) (merge proposed).
+Register: [session-persistence-sharing](../../options/DIMENSIONS.md#sub-choice-session-persistence-sharing--session-persistence-and-sharing), [session-handoff-portability](../../options/DIMENSIONS.md#sub-choice-session-handoff-portability--handing-a-session-between-people-devices-and-harnesses) (merge proposed).
 
 **Choice.** Ephemeral-private; resumable-private cloud session with share-by-link snapshot; shared-live multiplayer on a per-session control plane; durable session log decoupled from harness; one-shot isolated runs with a human at the PR; scheduled or event-triggered runs; shared sessions over any harness; shareable apps with data-free blueprints. Handoff sub-choice: fork-copy, move toggle, branch-only, message-in, neutral trace record, retained transcripts.
 
@@ -519,7 +519,7 @@ Register: [session-persistence-sharing](../../options/DIMENSIONS.md#session-pers
 **Lean.** None.
 
 ### D.8 Agent identity and delegation
-Register: rows in [governance-control-plane](../../options/DIMENSIONS.md#governance-control-plane-permissions-cost-identity-audit) (new dimension proposed by Tracks 3 and 5; theme `identity-delegation`).
+Register: rows in [governance-control-plane](../../options/DIMENSIONS.md#original-framing-before-the-split--governance-control-plane-permissions-cost-identity-audit) (new dimension proposed by Tracks 3 and 5; theme `identity-delegation`).
 
 **Choice.** Whose authority a shared or delegated agent uses: the creator's tokens (teammates can steer), the requester's account, an admin-provisioned service identity with scoped bundles, the agent as co-author under human approval, environment-bounded with no human credentials, or per-server OAuth with token exchange or a vault for downstream calls.
 
@@ -546,7 +546,7 @@ Register: rows in [governance-control-plane](../../options/DIMENSIONS.md#governa
 **Lean.** None.
 
 ### D.9 Governance and control plane: policy, cost, audit
-Register: [governance-control-plane](../../options/DIMENSIONS.md#governance-control-plane-permissions-cost-identity-audit) minus identity rows (D.8) and review rows (D.17).
+Register: [governance-control-plane](../../options/DIMENSIONS.md#original-framing-before-the-split--governance-control-plane-permissions-cost-identity-audit) minus identity rows (D.8) and review rows (D.17).
 
 **Choice.** Where policy, spend limits and audit are enforced: per-harness settings; gateway or proxy; stateful session policies above harnesses; zero-ambient-access capabilities plus observation log; hosted multi-harness control plane with shared audit; deterministic gates in the harness (hooks); hard per-run limits outside the agent; per-project meter plus model router.
 
@@ -620,7 +620,7 @@ Register: [harness-upkeep](../../options/DIMENSIONS.md#harness-upkeep-who-mainta
 **Lean.** None.
 
 ### D.13 Context and memory
-Register: [memory-design](../../options/DIMENSIONS.md#memory-design-memory-design), [context-location](../../options/DIMENSIONS.md#context-location-where-product-context-lives-for-agents), [org-context-grounding-source](../../options/DIMENSIONS.md#org-context-grounding-source-how-organisation-context-reaches-the-agent) (merge proposed).
+Register: [memory-design](../../options/DIMENSIONS.md#sub-choice-memory-design--memory-design), [context-location](../../options/DIMENSIONS.md#sub-choice-context-location--where-product-context-lives-for-agents), [org-context-grounding-source](../../options/DIMENSIONS.md#sub-choice-org-context-grounding-source--how-organisation-context-reaches-the-agent) (merge proposed).
 
 **Choice.** Three sub-choices. (a) Per-user memory: none, user-authored files, offline-built read-only profile, shared knowledge edited by users. (b) Where product context lives: scattered, shared plain-text repo near the code, systems of record queried by agents. (c) How org context reaches the agent: platform-native graph, connectors/MCP into a general harness, curated context repo, user-supplied.
 
@@ -638,7 +638,7 @@ Register: [memory-design](../../options/DIMENSIONS.md#memory-design-memory-desig
 **Lean (recorded in the register).** Geoff's doc leans towards a harness-agnostic plain-text repo because it survives tool changes; it would weaken if connector retrieval proved reliably better in an eval or governance for a repo cannot be solved. Note the counter-evidence on always-on context files from the ETH study (reduced success, +20% cost) against Vercel's vendor eval in favour.
 
 ### D.14 Target user
-Register: [target-user](../../options/DIMENSIONS.md#target-user-which-users-and-personas-we-serve-first), [shared-agent-users-and-jobs](../../options/DIMENSIONS.md#shared-agent-users-and-jobs-which-users-and-jobs-a-shared-persistent-agent-serves-first) (merge proposed).
+Register: [target-user](../../options/DIMENSIONS.md#sub-choice-target-user--which-users-and-personas-we-serve-first), [shared-agent-users-and-jobs](../../options/DIMENSIONS.md#sub-choice-shared-agent-users-and-jobs--which-users-and-jobs-a-shared-persistent-agent-serves-first) (merge proposed).
 
 **Choice.** IC PM at a mid or large company; head of product or CPO; founder-PM or AI builder; technical or platform PM and product ops; adjacent roles; every employee including non-engineers (agent workspace); engineers running many agents in parallel.
 
@@ -675,7 +675,7 @@ Register: [target-outcome](../../options/DIMENSIONS.md#target-outcome-which-outc
 **Lean.** None.
 
 ### D.16 Sequencing: which jobs first and which layer first
-Register: [pm-job-sequencing](../../options/DIMENSIONS.md#pm-job-sequencing-which-pm-jobs-to-automate-first), [investment-sequencing](../../options/DIMENSIONS.md#investment-sequencing-where-to-invest-first).
+Register: [pm-job-sequencing](../../options/DIMENSIONS.md#sub-choice-pm-job-sequencing--which-pm-jobs-to-automate-first), [investment-sequencing](../../options/DIMENSIONS.md#sub-choice-investment-sequencing--where-to-invest-first).
 
 **Choice.** Job level: feedback triage and synthesis (J1, J10); status and "ask the org" (J8); spec/PRD draft and review (J4); prototyping (J3); metrics review (J9); strategy and prioritisation (J2, J5). Stage level: delivery factory first, shaping layer first, or discovery first.
 
@@ -694,7 +694,7 @@ Register: [pm-job-sequencing](../../options/DIMENSIONS.md#pm-job-sequencing-whic
 **Leans (recorded in the register).** PM-agents brief: bounded, reviewable jobs first (feedback triage, status, spec first draft plus gap review) because they have the most first-party use and checkable output; would change if interviews show a different top pain or a trial shows review cost cancels the saving. Geoff's doc: delivery first, then shaping, then discovery; bottleneck data showing build is not the constraint would change it.
 
 ### D.17 Work structure and activity classification
-Register: [work-structure](../../options/DIMENSIONS.md#work-structure-how-structured-the-work-is-and-what-agent-shape-fits), [agent-unit](../../options/DIMENSIONS.md#agent-unit-persona-job-or-stage-as-the-unit-of-an-agent) (merge proposed), [activity-classification](../../options/DIMENSIONS.md#activity-classification-how-we-classify-user-activity-for-agent-fit) (new, Track 6).
+Register: [work-structure](../../options/DIMENSIONS.md#sub-choice-work-structure--how-structured-the-work-is-and-what-agent-shape-fits), [agent-unit](../../options/DIMENSIONS.md#sub-choice-agent-unit--persona-job-or-stage-as-the-unit-of-an-agent) (merge proposed), [activity-classification](../../options/DIMENSIONS.md#activity-classification-how-we-classify-user-activity-for-agent-fit) (new, Track 6).
 
 **Choice.** Which work stays in a flexible general harness and which moves to a task-specific agent or workflow; what the unit is (persona, job, stage, chain); and how we classify work to decide (two classes, multi-axis task properties, worker-desired agency, usage-derived).
 
@@ -724,7 +724,7 @@ Register: [work-structure](../../options/DIMENSIONS.md#work-structure-how-struct
 **Lean.** None as a recommendation. Track 6's evidence-backed layered reading (judgment): one user-facing surface; a small bounded loop (about 3-10 steps) as the unit of reliability; a skill or subagent per job as the unit of packaging, with a deployed agent only when a job needs its own runtime or governance; narrow specialists plus a coordinator for review automation; interdependent work kept in one context.
 
 ### D.18 Review and autonomy
-Register: [review-gating](../../options/DIMENSIONS.md#review-gating-how-human-review-of-agent-output-is-gated), [review-gate-placement](../../options/DIMENSIONS.md#review-gate-placement-where-review-gates-sit-on-pm-agent-output), [autonomy-calibration](../../options/DIMENSIONS.md#autonomy-calibration-who-sets-how-much-autonomy-an-agent-gets-and-how-it-changes) (merge proposed).
+Register: [review-gating](../../options/DIMENSIONS.md#sub-choice-review-gating--how-human-review-of-agent-output-is-gated), [review-gate-placement](../../options/DIMENSIONS.md#sub-choice-review-gate-placement--where-review-gates-sit-on-pm-agent-output), [autonomy-calibration](../../options/DIMENSIONS.md#sub-choice-autonomy-calibration--who-sets-how-much-autonomy-an-agent-gets-and-how-it-changes) (merge proposed).
 
 **Choice.** Where gates sit (human every time; automated verifiers plus spot check; isolation and blast-radius limits; risk-sloped autonomy; upstream risk classification at shaping time) and who sets autonomy (fixed by policy per task class; user-set slider; earned from measured accuracy; classifier-gated).
 
@@ -745,7 +745,7 @@ Register: [review-gating](../../options/DIMENSIONS.md#review-gating-how-human-re
 **Lean (recorded in the register for review-gating).** In regulated organisations, evidence points to every-change review as the floor (Stripe), with upstream classification as the lever that could shrink review effort; would change if policy owners accept risk-scored auto-approval.
 
 ### D.19 Intent shaping mode and spec standard
-Register: [intent-shaping-mode](../../options/DIMENSIONS.md#intent-shaping-mode-who-shapes-intent-and-how), [spec-standard](../../options/DIMENSIONS.md#spec-standard-what-counts-as-agent-ready-intent) (from Geoff's documents; kept as filed).
+Register: [intent-shaping-mode](../../options/DIMENSIONS.md#sub-choice-intent-shaping-mode--who-shapes-intent-and-how), [spec-standard](../../options/DIMENSIONS.md#sub-choice-spec-standard--what-counts-as-agent-ready-intent) (from Geoff's documents; kept as filed).
 
 **Choice.** Who shapes intent (PM-led bespoke; PM-led with a versioned shaping skill; agent-led interrogation and research; prototype-first; agent-originated) and what counts as agent-ready intent (narrative PRD; short evidence-tied spec with a completeness standard; prototype as spec; canonical spec plus risk mitigations; spec pushed straight to coding agents).
 
@@ -1033,3 +1033,4 @@ Lesson for this register: several items in section I were key questions the rese
 
   B.3's reading of Glass is superseded for its October form (now P5a on P3, plus P7, P8c and P10). Strains not addressed in this revision: the P2/P3 line for open harnesses embedded unmodified; P3 cases that are whole in-house platforms; P6's definition assuming a general-harness caller; P9 mixing step graphs with durable substrates; P10 mixing portability with internal registries; and dating every placement. See [the mapping](../teardowns-to-pattern-classes/00-mapping.md), section 6.
 - 2026-10-24: added Airbnb, Spotify and Block teardown examples to B.2 (revised classes).
+- 2026-10-24: re-pointed 23 links in section D to the current anchors in options/DIMENSIONS.md (the sub-choice or original-framing heading where each old dimension now lives) after the register restructure. Link text unchanged.
