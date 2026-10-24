@@ -46,6 +46,7 @@ figure { margin: 0; background: var(--card); border: 1px solid var(--rule); bord
 figure video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
 figcaption { padding: 10px 12px 12px; font-size: 15px; }
 figcaption b { display: block; }
+figure.lead { margin: 22px 0 4px; }
 .note { display: block; margin-top: 4px; font-size: 13px; }
 .coming { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; background: var(--accent-soft); color: var(--accent); font: 600 13px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .06em; text-transform: uppercase; text-align: center; padding: 12px; }
 ul { margin: 0 0 12px; padding-left: 20px; }
@@ -68,6 +69,10 @@ footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 16px;
   <p class="lede">How could product managers, and anyone else in a product role, work with agents in sessions that are persistent and shareable rather than local and private, with common product jobs handed to standardised task agents, and without being tied to one vendor's tool?</p>
   <p>The end product is a <strong>strategy deck that informs a resource request</strong>: funding to do the hard work of picking the right pattern. It is not a PRD for one implementation. So the project builds a <strong>menu of options, split by dimension</strong>, with the <strong>key questions</strong> that would decide among them, and does not converge on one answer. The reference job is <strong>intent shaping</strong>: turning an opportunity into a spec that coding agents can act on, in a regulated setting where audit matters.</p>
   <p class="muted">Research and teardowns are largely done, the story and films are in production, and the deck and prototypes have not started. The work is done by Claude agents: a director session hands each piece to a worker session and checks what comes back. Source code, notes and every deliverable are in the <a href="https://github.com/dudgeon/product-agent-and-harness">GitHub repository</a>; start with its <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/README.md">README</a>.</p>
+  <figure class="lead">
+    <video controls preload="metadata" src="films/04-product-agent-harness-v2.mp4"></video>
+    <figcaption><b>Start here · 04 · The product agent and harness (v2)</b><span class="muted">The strategy story in 15 minutes: three dimensions, the lifecycle and the stories. The first cut and the other films are below.</span></figcaption>
+  </figure>
   <nav class="toc" aria-label="Sections">
     <a href="#research">Research and teardowns</a>
     <a href="#taxonomy">Runtime-patterns taxonomy</a>
@@ -195,22 +200,23 @@ footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 16px;
 <section id="strategy">
   <div class="kicker">Section 6</div>
   <h2>The strategy films</h2>
-  <p>"Ready to ship": the delivery factory sped up, so the hard part is now upstream, in discovering problems and shaping intent. The story lays the options out in banks and illustrates them with Helm, a notional product workspace that is explicitly a concept, not the answer.</p>
+  <p>The strategy story starts from ambition. Coding at scale is already happening; achieving what a company wants also needs problem discovery, intent definition and shaping to scale with it. The second version is built on three dimensions (the core product moves as compounding skills and agents, a shared persistent agent runtime, and the artifacts underneath), then the interactions across the lifecycle, then the workflow stories, told partly through Helm, a notional product workspace that is explicitly a concept, not the answer.</p>
   <div class="films">
     <figure>
-      <video controls preload="metadata" src="films/04-product-agent-harness-v1.mp4"></video>
-      <figcaption><b>04 · Ready to ship: the product agent and harness (v1)</b><span class="muted">The strategy story, with walkthrough demos of Helm as a conversational thread. 19 min.</span></figcaption>
+      <video controls preload="metadata" src="films/04-product-agent-harness-v2.mp4"></video>
+      <figcaption><b>04 · The product agent and harness (v2)</b><span class="muted">The three dimensions, the lifecycle and the eighteen stories. 15 min.</span></figcaption>
     </figure>
     <figure>
-      <div class="coming">Film coming</div>
-      <figcaption><b>Strategy film v2</b><span class="muted">Built on three dimensions: core product moves as compounding skills and agents, a shared persistent agent runtime, and artifact lifecycle infrastructure.</span></figcaption>
+      <video controls preload="metadata" src="films/04-product-agent-harness-v1.mp4"></video>
+      <figcaption><b>04 · Ready to ship (v1, first cut)</b><span class="muted">The first version of the strategy story, with walkthrough demos of Helm as a conversational thread. 19 min.</span></figcaption>
     </figure>
   </div>
   <ul class="pages">
     <li><a href="tasks/strategy-story-and-explainer-video/frames/checkpoint-b.html">Helm frames<span>The look comparison page</span></a></li>
   </ul>
   <ul>
-    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-story-and-explainer-video/00-outline.md">Outline</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-story-and-explainer-video/01-story.md">story with claim check</a> and <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-story-and-explainer-video/02-prototype-design.md">Helm prototype design</a>.</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-film-v2/00-story.md">v2 story spine</a>, with every editorial call recorded.</li>
+    <li>v1: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-story-and-explainer-video/00-outline.md">outline</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-story-and-explainer-video/01-story.md">story with claim check</a> and <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/strategy-story-and-explainer-video/02-prototype-design.md">Helm prototype design</a>.</li>
   </ul>
 </section>
 
