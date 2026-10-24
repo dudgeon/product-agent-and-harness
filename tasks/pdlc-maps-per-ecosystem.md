@@ -16,7 +16,7 @@ Template: the Stripe map, [02-pdlc-agent-ecosystem-map.md](competitive-teardown-
 | Stripe | teardown-stripe-agents | [[competitive-teardown-stripe-knowledge-agents]] (done) |
 | Ramp (Glass, Inspect, Laminar) | Glass teardown session | [[competitive-teardown-ramp-glass]] (done: [07-pdlc-agent-ecosystem-map.md](competitive-teardown-ramp-glass/07-pdlc-agent-ecosystem-map.md)) |
 | Shopify (River, Aquifer) | teardown-shopify-river | [[competitive-teardown-shopify-river]] |
-| Anthropic (Claude Code, Cowork, internal use) | ingest-claude-resources | [[research-claude-resources-articles]] |
+| Anthropic (Claude Code, Cowork, internal use) | ingest-claude-resources | [[research-claude-resources-articles]] (done: [02-pdlc-agent-ecosystem-map.md](research-claude-resources-articles/02-pdlc-agent-ecosystem-map.md)) |
 | Atlassian (Rovo, Jira, Confluence) | user story mapping session | [[user-story-mapping]] |
 | Intercom (Claude Code for everyone, Fin) | PM agents session | [[research-pm-agents-jobs-to-be-done]] |
 

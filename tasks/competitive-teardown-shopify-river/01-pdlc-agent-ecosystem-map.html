@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shopify Agent Lifecycle Map</title>
+<style>
+/* Reused from the Stripe map. Layout: one reading column with a wide, scrollable task-by-task swimlane; tables below. Ink on cool paper; one amber accent for the undocumented handoff and the tasks only people do. */
+:root{
+  --paper:#f6f6f2; --surface:#ffffff; --ink:#1d2228; --muted:#5d6670; --rule:#d6d9d6; --accent:#b4580c; --accent-soft:#f5e3d2; --auto:#e9ecef; --lite:#f1f3f1;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55}
+.wrap{max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:40px 64px; display:grid; grid-template-columns:minmax(0,1fr); gap:36px}
+.wrap > *{min-width:0}
+header{display:grid; gap:10px; max-width:70ch}
+.eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--serif); font-weight:600; font-size:clamp(30px,4.4vw,44px); line-height:1.1; margin:0; text-wrap:balance}
+h2{font-family:var(--serif); font-weight:600; font-size:24px; margin:0 0 10px; text-wrap:balance}
+p{margin:0; max-width:70ch}
+.lede{font-size:18px}
+.answer{background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:6px; padding:20px 22px; display:grid; gap:12px}
+.answer ol,.answer ul{margin:0; padding-left:22px; display:grid; gap:8px; max-width:72ch}
+.diagram{overflow-x:auto; background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:12px}
+.diagram svg{display:block; min-width:1040px; width:100%; height:auto}
+.diagram .stage{font-family:var(--serif); font-weight:600; font-size:14.5px; fill:var(--ink)}
+.diagram .chain{font-family:var(--serif); font-style:italic; font-size:13.5px; fill:var(--muted)}
+.diagram .lane{font-family:var(--mono); font-size:11px; letter-spacing:.1em; fill:var(--muted)}
+.diagram .cap,.diagram .leg{font-family:var(--sans); font-size:12.5px; fill:var(--muted)}
+.diagram .leg{font-size:13.5px; fill:var(--ink)}
+.diagram .guide{stroke:var(--rule); stroke-width:1; stroke-dasharray:2 5}
+.diagram .lanerule{stroke:var(--rule); stroke-width:1.2}
+.diagram .node{fill:var(--surface); stroke:var(--ink); stroke-width:1.6}
+.diagram .node.lite{fill:var(--lite); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode{fill:var(--paper); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode.acc{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.6}
+.diagram .auto{fill:var(--auto); stroke:var(--muted); stroke-width:1.2}
+.diagram .sub{fill:var(--auto); stroke:none}
+.diagram .nt{font-family:var(--sans); fill:var(--ink)}
+.diagram .doc{fill:none; stroke:var(--ink); stroke-width:1.8}
+.diagram .inf{fill:none; stroke:var(--muted); stroke-width:1.5; stroke-dasharray:5 5}
+.diagram .gap{fill:none; stroke:var(--accent); stroke-width:2; stroke-dasharray:3 5}
+.diagram .gapdot{fill:var(--paper); stroke:var(--accent); stroke-width:2}
+.diagram .gapq{font-family:var(--serif); font-weight:600; font-size:16px; fill:var(--accent)}
+.diagram .mk{stroke:var(--ink); stroke-width:1.5}
+.diagram .mkg{stroke:var(--accent); stroke-width:1.5}
+.tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:6px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:760px; font-size:14.5px}
+th,td{text-align:left; vertical-align:top; padding:10px 14px; border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); background:var(--paper)}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600}
+.status{font-family:var(--mono); font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); white-space:nowrap; display:inline-block}
+.s-doc{border-color:var(--ink)} .s-inf{color:var(--muted); border-style:dashed} .s-unk{color:var(--accent); border-color:var(--accent)}
+.row-gap td{background:var(--accent-soft)}
+section{display:grid; gap:12px}
+ul.impl{margin:0; padding-left:20px; display:grid; gap:10px; max-width:74ch}
+.foot{font-size:13.5px; color:var(--muted); max-width:82ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Shopify teardown · lifecycle map by task · 24 Oct 2026</div>
+  <h1>Where Shopify’s agents sit in the product lifecycle, task by task</h1>
+  <p class="lede">Same frame as the Stripe map: rows are tasks, not job titles. At Shopify one agent, River, does research, intent, planning and code in a public Slack thread that nearly the whole company uses. Each handoff is marked documented, inferred or unknown. Every figure is Shopify’s own.</p>
+</header>
+
+<div class="answer">
+  <h2>Inside the thread, context mostly doesn’t break. At its edges, it does</h2>
+  <ol>
+    <li><strong>The public thread is the handoff.</strong> People discuss, then ask River to “summarize this, create a ticket… make a diagram… create a prototype”, and River “usually offers to go fix it”. Research, intent, plan and code happen in one place.</li>
+    <li><strong>People hand off by joining.</strong> “A second human… drops in with a constraint or a redirect”; same-thread co-writing links grew from 61,680 (March) to 171,853 (September 2026). Later people start “from this thread, not from a blank prompt” (claimed, not measured).</li>
+    <li><strong>It breaks at the edges.</strong> No source links customer conversations, yearly themes or GSD proposals to River threads. There is no intent or plan artifact beyond the thread, ticket, Quick site or PR. How a Quick prototype becomes production code is not described. River refuses DMs and private channels, so sensitive research never enters the shared context.</li>
+  </ol>
+  <p><strong>Against Stripe:</strong> Stripe’s break is between agents (Kai’s single-user sessions don’t reach Orbit). Shopify avoided it with one agent in one shared place, at the price of privacy and of structure. The remaining seam is between the conversation and the formal process (GSD) and the durable artifact.</p>
+</div>
+
+<div class="diagram" role="figure" aria-label="Swimlane diagram of Shopify's lifecycle by task">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="dtitle"><title id="dtitle">Shopify’s product lifecycle by task, with the humans, agents and shared tools at each task and the handoffs between them</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mk"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mkg"/></marker></defs>
+<text class="stage" x="82.0" y="24" text-anchor="middle"><tspan x="82.0">Spot the</tspan><tspan x="82.0" dy="18">opportunity</tspan></text>
+<text class="stage" x="206.0" y="24" text-anchor="middle"><tspan x="206.0">Talk to</tspan><tspan x="206.0" dy="18">customers</tspan></text>
+<line class="guide" x1="144" y1="50" x2="144" y2="510"/>
+<text class="stage" x="330.0" y="24" text-anchor="middle"><tspan x="330.0">Research</tspan><tspan x="330.0" dy="18">the problem</tspan></text>
+<line class="guide" x1="268" y1="50" x2="268" y2="510"/>
+<text class="stage" x="454.0" y="24" text-anchor="middle"><tspan x="454.0">Set the</tspan><tspan x="454.0" dy="18">goal</tspan></text>
+<text class="chain" x="454.0" y="66" text-anchor="middle">GSD: Proposal</text>
+<line class="guide" x1="392" y1="50" x2="392" y2="510"/>
+<text class="stage" x="578.0" y="24" text-anchor="middle"><tspan x="578.0">Shape the</tspan><tspan x="578.0" dy="18">intent</tspan></text>
+<text class="chain" x="578.0" y="66" text-anchor="middle">GSD: Prototype</text>
+<line class="guide" x1="516" y1="50" x2="516" y2="510"/>
+<text class="stage" x="702.0" y="24" text-anchor="middle"><tspan x="702.0">Plan the</tspan><tspan x="702.0" dy="18">change</tspan></text>
+<text class="chain" x="826.0" y="66" text-anchor="middle">GSD: Build</text>
+<line class="guide" x1="640" y1="50" x2="640" y2="510"/>
+<text class="stage" x="826.0" y="24" text-anchor="middle"><tspan x="826.0">Write the</tspan><tspan x="826.0" dy="18">code</tspan></text>
+<line class="guide" x1="764" y1="50" x2="764" y2="510"/>
+<text class="stage" x="950.0" y="24" text-anchor="middle"><tspan x="950.0">Review the</tspan><tspan x="950.0" dy="18">change</tspan></text>
+<line class="guide" x1="888" y1="50" x2="888" y2="510"/>
+<text class="stage" x="1074.0" y="24" text-anchor="middle"><tspan x="1074.0">Release</tspan></text>
+<text class="chain" x="1074.0" y="66" text-anchor="middle">GSD: Release</text>
+<line class="guide" x1="1012" y1="50" x2="1012" y2="510"/>
+<text class="stage" x="1198.0" y="24" text-anchor="middle"><tspan x="1198.0">Operate</tspan><tspan x="1198.0" dy="18">and learn</tspan></text>
+<text class="chain" x="1198.0" y="66" text-anchor="middle">GSD: Results</text>
+<line class="guide" x1="1136" y1="50" x2="1136" y2="510"/>
+<text class="lane" x="20" y="86">HUMANS · ANY ROLE</text>
+<text class="lane" x="20" y="226">AGENTS</text>
+<text class="lane" x="20" y="426">SHARED</text>
+<line class="lanerule" x1="20" y1="212" x2="1260" y2="212"/><line class="lanerule" x1="20" y1="412" x2="1260" y2="412"/>
+<rect class="pnode" x="26.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="82.0" y="131.0" text-anchor="middle"><tspan x="82.0" dy="0">Tobi: ~6 yearly</tspan><tspan x="82.0" dy="15.5">themes;</tspan><tspan x="82.0" dy="15.5">leaders</tspan></text>
+<rect class="pnode acc" x="150.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="206.0" y="131.0" text-anchor="middle"><tspan x="206.0" dy="0">not described</tspan><tspan x="206.0" dy="15.5">in any</tspan><tspan x="206.0" dy="15.5">source</tspan></text>
+<rect class="pnode" x="274.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="330.0" y="131.0" text-anchor="middle"><tspan x="330.0" dy="0">anyone (7,000+),</tspan><tspan x="330.0" dy="15.5">in public</tspan><tspan x="330.0" dy="15.5">channels</tspan></text>
+<rect class="pnode acc" x="398.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="454.0" y="131.0" text-anchor="middle"><tspan x="454.0" dy="0">teams, leaders;</tspan><tspan x="454.0" dy="15.5">GSD review</tspan><tspan x="454.0" dy="15.5">OK1 / OK2</tspan></text>
+<rect class="pnode" x="522.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="578.0" y="131.0" text-anchor="middle"><tspan x="578.0" dy="0">PMs, designers,</tspan><tspan x="578.0" dy="15.5">engineers,</tspan><tspan x="578.0" dy="15.5">anyone</tspan></text>
+<rect class="pnode" x="646.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="702.0" y="131.0" text-anchor="middle"><tspan x="702.0" dy="0">engineers and</tspan><tspan x="702.0" dy="15.5">others in</tspan><tspan x="702.0" dy="15.5">the thread</tspan></text>
+<rect class="pnode" x="770.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="826.0" y="131.0" text-anchor="middle"><tspan x="826.0" dy="0">anyone, from</tspan><tspan x="826.0" dy="15.5">Slack; overnight</tspan><tspan x="826.0" dy="15.5">workflows</tspan></text>
+<rect class="pnode" x="894.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="131.0" text-anchor="middle"><tspan x="950.0" dy="0">a human on</tspan><tspan x="950.0" dy="15.5">every PR</tspan><tspan x="950.0" dy="15.5">(“bottleneck”)</tspan></text>
+<rect class="pnode" x="1018.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="146.5" text-anchor="middle"><tspan x="1074.0" dy="0">automated</tspan></text>
+<rect class="pnode" x="1142.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="131.0" text-anchor="middle"><tspan x="1198.0" dy="0">engineers, security,</tspan><tspan x="1198.0" dy="15.5">SRE, code</tspan><tspan x="1198.0" dy="15.5">owners</tspan></text>
+<rect class="node" x="274.0" y="238" width="608.0" height="92" rx="7"/><text class="nt" style="font-size:13px" x="578.0" y="273.0" text-anchor="middle"><tspan x="578.0" dy="0">River · one agent, in one public Slack thread</tspan><tspan x="578.0" dy="15.5">research · summary, ticket, diagram, prototype · plan push-back · PR</tspan><tspan x="578.0" dy="15.5">durable session on Aquifer; anyone can join the thread</tspan></text>
+<rect class="node lite" x="26.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="82.0" y="273.0" text-anchor="middle"><tspan x="82.0" dy="0">Roast:</tspan><tspan x="82.0" dy="15.5">competitive-</tspan><tspan x="82.0" dy="15.5">intel workflow</tspan></text>
+<rect class="node" x="894.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="273.0" text-anchor="middle"><tspan x="950.0" dy="0">PR-review</tspan><tspan x="950.0" dy="15.5">profile</tspan><tspan x="950.0" dy="15.5">(Aquifer)</tspan></text>
+<rect class="auto" x="1018.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="273.0" text-anchor="middle"><tspan x="1074.0" dy="0">merge queue;</tspan><tspan x="1074.0" dy="15.5">freshness-</tspan><tspan x="1074.0" dy="15.5">gated (security)</tspan></text>
+<rect class="node" x="1142.0" y="238" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="273.0" text-anchor="middle"><tspan x="1198.0" dy="0">River: traces,</tspan><tspan x="1198.0" dy="15.5">security fixes,</tspan><tspan x="1198.0" dy="15.5">crash triage</tspan></text>
+<rect class="sub" x="26.0" y="436" width="1228.0" height="56" rx="7"/><text class="nt" style="font-size:13px" x="640.0" y="468.5" text-anchor="middle"><tspan x="640.0" dy="0">World (code, skills, AGENTS.md, intent docs) · Aquifer sessions · Slack search · GSD · Quick sites · Remote Dev · warehouse · traces</tspan></text>
+<path class="doc" d="M882 284H894" marker-end="url(#ah)"/>
+<path class="doc" d="M1006 284H1018" marker-end="url(#ah)"/>
+<path class="doc" d="M1198.0 330 C1198.0 392 836.0 392 836.0 332" marker-end="url(#ah)"/>
+<text class="cap" x="1054.0" y="404" text-anchor="middle">finding → thread → draft PR</text>
+<path class="inf" d="M330.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M578.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M702.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M826.0 188V236" marker-end="url(#ah)"/>
+<path class="gap" d="M206.0 188 C206.0 214 300.0 214 300.0 236" marker-end="url(#ahg)"/>
+<circle class="gapdot" cx="224.0" cy="212" r="12"/><text class="gapq" x="224.0" y="218" text-anchor="middle">?</text>
+<path class="gap" d="M454.0 188V236" marker-end="url(#ahg)"/>
+<circle class="gapdot" cx="454.0" cy="212" r="12"/><text class="gapq" x="454.0" y="218" text-anchor="middle">?</text>
+<path class="doc" d="M578.0 436V332" marker-end="url(#ah)"/>
+<text class="cap" x="583.0" y="426">skills, memory, repo</text>
+<path class="doc" d="M1228.0 332V434" marker-end="url(#ah)"/><text class="cap" x="1222.0" y="426" text-anchor="end">dreaming · mining → skills</text>
+<text class="cap" x="20" y="514" style="fill:var(--accent)">Private channels and DMs: River refuses them, so work there never enters the shared context (handoff unknown).</text>
+<path class="doc" d="M20 548h40" marker-end="url(#ah)"/><text class="leg" x="72" y="553">documented by Shopify</text>
+<path class="inf" d="M270 548h40" marker-end="url(#ah)"/><text class="leg" x="322" y="553">people pull River into the thread</text>
+<path class="gap" d="M620 548h40" marker-end="url(#ahg)"/><text class="leg" x="672" y="553">customers, goals, GSD → River: not described in any source</text>
+<text class="cap" x="20" y="588">Column headers are tasks; the row below them is Shopify’s GSD phase. Accent: tasks with no agent or tool shown. Our own diagram, not Shopify’s UI.</text>
+</svg>
+</div>
+
+<section>
+  <h2>Task by task</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Task</th><th>Who does it at Shopify</th><th>Agents and tools</th><th>Artifact</th></tr></thead>
+    <tbody>
+      <tr><td>Spot the opportunity</td><td>Tobi sets ~6 yearly themes from the merchant’s view; leaders</td><td>None for River; a Roast workflow aggregates competitive intel from the web and CRM conversations (2025)</td><td>Yearly themes; intel (form not described)</td></tr>
+      <tr><td>Talk to customers</td><td>Not described in any source</td><td>None named</td><td>Not described</td></tr>
+      <tr><td>Research the problem, read the data</td><td>Anyone (7,000+ people), in public channels</td><td>River: code, data warehouse, production traces, the PM system, papers</td><td>Public, searchable thread with findings</td></tr>
+      <tr><td>Set the goal</td><td>Teams turn themes into objectives; GSD Proposal reviewed OK1/OK2 (2023)</td><td>No tool shown</td><td>Team objectives; GSD proposal, often a short PM video</td></tr>
+      <tr><td>Shape the intent</td><td>PMs, designers, engineers, anyone; GSD Prototype phase “dominated by AI exploration” (2025)</td><td>River in the thread; Quick sites (50,000+); Live Preview; intent documents in World</td><td>Ticket, diagram, Quick URL, GSD prototype, intent docs</td></tr>
+      <tr><td>Plan the change</td><td>Engineers and others in the thread</td><td>River “pushes back on a plan”; Helix checkpoints (migration); Dispatch partitions (security)</td><td>The thread; no standalone plan artifact for River work</td></tr>
+      <tr><td>Write the code</td><td>Anyone, from Slack; overnight workflows</td><td>River (~1 in 8 merged PRs coauthored, May 2026; 6%→61% of merged mobile PRs); Remote Dev; Dispatch; local Claude Code, Cursor</td><td>PR in World, coauthored by River</td></tr>
+      <tr><td>Review the change</td><td>A human on every PR, “a big bottleneck”; “slop grenades”</td><td>PR-review profile on Aquifer; before/after recordings; Helix gates</td><td>Approved PR; recordings</td></tr>
+      <tr><td>Release</td><td>Automated; GSD Release</td><td>Merge queue; freshness-gated queue for security; deploy not described</td><td>Merged change on World’s head</td></tr>
+      <tr><td>Operate and learn</td><td>Engineers, security, SRE, code owners; GSD Results</td><td>River: traces, security remediation, crash triage. Learning loop: dreaming, corpus mining, Jev classifier</td><td>Verified fixes; updated skills, memory, AGENTS.md</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Every handoff, task to task</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>From → to</th><th>How</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Any human thread → River</td><td>@-mention in a public channel; River joins a conversation in progress</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Research → shape intent (same thread)</td><td>Ask River to summarise, ticket, diagram or prototype; “an hour or so later, that is there”</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Research or intent → write code (same thread)</td><td>River investigates and “usually offers to go fix it”; proposes a PR</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Person → person, mid-task</td><td>A second human joins the thread; the durable session continues</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Past thread → next person’s research</td><td>Slack search; per-channel and per-person memory at session start; reuse unmeasured</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Write code → review</td><td>River-coauthored PR “reviewed by us”; PR-review profile woken by an external system</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Write code (mobile) → review by non-engineers</td><td>Live Preview link; before/after recordings; explainer videos</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Review → release</td><td>Merge queue; freshness-gated for security</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Operate (finding) → code → owner → verify</td><td>Ledger; one thread per finding; draft PR; “the smallest question”; verify at head</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Operate (production signal) → research</td><td>Traces; “from a log line in production back to the commit”; crash-fix workflows being added</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Learn → every task’s context</td><td>Nightly dreaming; corpus mining; Jev classifier; skill and AGENTS.md diffs</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Spot opportunity → set goal</td><td>Yearly themes → objectives → six-month roadmap (2023, no agent)</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Set goal → shape intent</td><td>GSD Proposal → Prototype, reviewed OK1/OK2; Prototype “dominated by AI exploration”</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Meeting → thread</td><td>River joins Google Meet if invited, “not really utilized”</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Intent documents in World → plan, code</td><td>River works from World, which holds intent docs; authorship not stated</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr><td>Roast competitive intel → research or goal</td><td>Aggregates web and CRM conversations; destination not stated</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr class="row-gap"><td>Talk to customers → research</td><td>Not described</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr class="row-gap"><td>GSD project ↔ River thread</td><td>River can read the PM system; linking or updating GSD not described</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr class="row-gap"><td>Quick prototype → PR in World</td><td>Not described; a human engineer must own anything reaching merchants</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr class="row-gap"><td>Private or sensitive work → River</td><td>River refuses DMs and private channels; route not described</td><td><span class="status s-unk">unknown</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="foot">20 handoffs: 14 documented, 2 inferred, 4 unknown. Most documented ones rest on one first-party source.</p>
+</section>
+
+<section>
+  <h2>What it means for our options</h2>
+  <ul class="impl">
+    <li><strong>One shared place can remove the research → intent → plan seam that Stripe left to people,</strong> if the org accepts working in public. The same default that drives learning drives handoff.</li>
+    <li><strong>The thread is not an intent standard.</strong> Shopify keeps its formal gates (GSD) apart from the agent conversation, with no documented link between them. Orgs that need reviewable specs still need an explicit intent artifact.</li>
+    <li><strong>One general agent with profiles, not one agent per task.</strong> This is the opposite unit to Stripe’s; narrow, structured jobs (security, migration, scanning) still get their own pipelines.</li>
+    <li><strong>Learning is a loop across all tasks,</strong> and it depends on transcripts being available, which is a consequence of public-by-default.</li>
+  </ul>
+</section>
+
+<p class="foot">Sources: Shopify Engineering’s Under the River (May 2026), security remediation (Sept 2026), Remote Dev (Oct 2026), Quick (June 2026), Dispatch (July 2026) and Roast (June 2025); Tobi Lütke’s Learning on the Shop floor (May 2026), his replies, the September usage chart (Oct 2026) and his April 2025 memo; The Knowledge Project with Tobi (Sept 2026); Farhan Thawar on Beyond the Pilot (2026) and to BVP (Apr 2026); Glen Coates on Lenny’s Newsletter (July 2023, for GSD and goals). All first-party; no independent source observes these handoffs. Full notes: project-agent-and-harness, task competitive-teardown-shopify-river, 01-pdlc-agent-ecosystem-map.md.</p>
+</div>
+</body>
+</html>
