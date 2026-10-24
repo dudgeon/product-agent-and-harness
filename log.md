@@ -41,3 +41,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Review board published (https://claude.ai/artifact/DZwgZeagyjp9DvnHbfyCAr): kanban, task notes and key deliverables readable in-page, worker session links, accept/reject/skip with comments. README worker project-readme started.
 - 2026-10-24 Geoff: per-ecosystem PDLC/SDLC agent maps (template: Stripe's) sent to five workers; cross-ecosystem map task filed, waiting.
 - 2026-10-24 Geoff: GitHub Pages site after the README; films go in the repo (his override of the voice rule, finished films only). Task filed, waiting.
+- 2026-10-24 Geoff: every published film carries background music throughout (harder to fine-tune on his voice); sent to all six film workers; Pages task checks it before upload.

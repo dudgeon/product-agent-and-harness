@@ -62,6 +62,9 @@ Platforms that register, govern and observe agents across vendors (registries, p
 - [OpenAI launches Frontier to manage enterprise AI agents](sources/techinformed-openai-frontier-launch.md): Adds the named customers and partners for OpenAI Frontier and the market framing (Salesforce calls Agentforce an "operating system for humans and agents"). (research-runtime-patterns-follow-up-round)
 - [OpenAI's Frontier gives AI agents employee-like identities, shared context and enterprise permissions](sources/the-decoder-openai-frontier.md): Press summary of OpenAI's own Frontier launch (OpenAI's page returned 403). (research-runtime-patterns-follow-up-round)
 - [5 Learnings from the First-Ever Gartner Market Guide for Guardian Agents](sources/thehackernews-gartner-guardian-agents-market-guide.md): A vendor-contributed summary of Gartner's Market Guide for Guardian Agents (2026-02-25, limited distribution). (research-runtime-patterns-follow-up-round)
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): one Agents page per space for Atlassian, Studio and third-party agents with triggers, prompt, sources and role (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): assign to Claude Code, Cursor, Copilot (Codex soon) and Jira Coding Agent; Copilot, Cursor and Claude as automation action steps (user-story-mapping)
+- [Using Jira for agentic engineering](sources/atlassian-jira-agentic-engineering-guide.md): agents triggered by assignment, workflow transition, board column or automation rule (user-story-mapping)
 
 ## agent-factory-sdlc: Agents across the whole product development loop
 A chain of specialised agents (insight, define, build, review, test, coordinate) removes bottlenecks one after another; Glass is the define-stage agent. Related: [[intent-factory-before-discovery]].
@@ -97,6 +100,12 @@ A chain of specialised agents (insight, define, build, review, test, coordinate)
 - [How we use Linear Agent at Linear](sources/linear-how-we-use-linear-agent-at-linear.md): PM-filed issue turned into an agent PR, reviewed by an engineer within the hour (research-pm-agents-jobs-to-be-done)
 - [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): 497 PRs in four weeks fully autonomous: Claude wrote, the AI approval system reviewed, approved and shipped; merge-to-production averages 12 minutes (2026-04-21) (research-pm-agents-jobs-to-be-done)
 - [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): 93.6% of PRs agent-driven; 313 automatic production deployments and 2,539 CI jobs in 24 hours (CTO, 2026-04-16) (research-pm-agents-jobs-to-be-done)
+- [Generate code from a work item in Jira (Jira Coding Agent)](sources/atlassian-jira-coding-agent-generate-code.md): assign a work item to Jira Coding Agent or Start work from Agent sessions; one sandbox session per repo; output is a draft PR it never merges (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): July 2026 launch spans Planner (spec), Jira for Slack and Loom prompts (intake), agents in Jira, Coding Agent, agent sessions, coding-agent automations, DX cost per PR (user-story-mapping)
+- [Using Jira for agentic engineering](sources/atlassian-jira-agentic-engineering-guide.md): vendor lifecycle is plan, orchestrate, review, scale (user-story-mapping)
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): operate step: alert/incident triage, PIR drafted as a Jira work item or Confluence page (user-story-mapping)
+- [Work with Rovo Dev in Bitbucket Pipelines](sources/atlassian-rovo-dev-bitbucket-pipelines.md): release step (beta): change summaries from commits, work items and deployment data; failed-build explanations (user-story-mapping)
+- [Rovo Dev in Jira launch blog](sources/atlassian-blog-rovo-dev-in-jira.md): agent proposes a plan to review, then executes, tests and opens PRs in a cloud sandbox (user-story-mapping)
 
 ## agent-failure-modes: Recurring agent failure modes in PM work
 Invented content, silent omissions, brittleness, generic output when context is thin.
@@ -196,6 +205,7 @@ Agents do the research, interrogation and spec-tightening that turn rough intent
 - [What we're learning from engineers getting the most from Claude Code](sources/ideas-fin-what-were-learning-from-engineers.md): 5-20 plan-mode turns mapping code, comparing options and challenging edge cases before "build it"; no formal spec artifact, the plan lives in the session (anecdote) (research-pm-agents-jobs-to-be-done)
 - [Building and Accelerating the Intent Factory](sources/geoff-building-accelerating-intent-factory.md): Ramp's parallel research agents write each finding to a file; seven-question interrogation; agent-originated intent (§Vision, steps 1–3) (research-product-agent-and-harness)
 - [Intent Shaping in a Well-Managed Environment](sources/geoff-intent-shaping-well-managed-environment.md): an iterative owner/risk-advisor loop in which mitigations become requirements and the spec tightens (§Iterative intent-shaping) (research-product-agent-and-harness)
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): asks follow-up questions on scope, constraints and success; PMs named in the audience (Early Access) (user-story-mapping)
 
 ## agent-project-failure-rates: Agent project failure rates
 Press-reported statistics on agent and genAI pilot failure (Gartner, MIT); not PM-specific and mostly unverified.
@@ -257,6 +267,9 @@ Intent is complete enough for agentic delivery when it meets an agreed standard 
 - [Connect a coding agent to Spark via MCP (Productboard support)](sources/productboard-mcp-server-spark.md): specs live in a Specification tab on initiatives, features and subfeatures; Spark's 'Write spec' skill drafts them; agents read, edit, comment and update status. (user-story-mapping)
 - [github/spec-kit (README)](sources/github-spec-kit-readme.md): a standard command set and Markdown artifacts per stage; constitution is the project-level baseline. (user-story-mapping)
 - [Spec-Driven Development (spec-kit spec-driven.md)](sources/github-spec-kit-spec-driven.md): spec.md has user stories and acceptance criteria, ambiguity marked [NEEDS CLARIFICATION] instead of guessed; templates act as structured prompts with self-review checklists. (user-story-mapping)
+- [Check acceptance criteria in a code review](sources/atlassian-rovo-dev-acceptance-criteria-code-review.md): named fields (AC, Requirements, Definition of Done) are the machine-checked contract; empty description means no check (user-story-mapping)
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): rough idea to agent-ready spec in a Confluence Live Doc (user-story-mapping)
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): each prompt task has title, bullets, transcript quote, keyframes, timestamps (user-story-mapping)
 
 ## agent-stewardship: Every deployed agent needs a human steward
 Agents that people rely on stay useful only while a named person keeps tending them (reading traces, fixing prompts, adding guardrails, deciding what becomes a primitive); when that care stops, the agent decays. This matters for who maintains a PM agent and what headcount it implies. New because existing slugs cover harness ownership as a build-vs-buy choice (build-vs-buy) or the dimension harness-upkeep, but no theme covers the ongoing human care of a deployed agent as a role.
@@ -291,6 +304,7 @@ Practitioner and academic evidence of fabricated details, merged quotes and lost
 - [Customer Interview Analysis: Where AI Helps and Hurts](sources/producttalk-customer-interview-analysis-ai.md): ChatGPT got about 30% of direct quotes wrong or missing (research-pm-agents-jobs-to-be-done)
 - [Talk to the bot: When to use an AI interviewer](sources/ideas-fin-talk-to-the-bot-ai-interviewer.md): Intercom researchers use AI summaries only "as a reference point" because they lack company context (research-pm-agents-jobs-to-be-done)
 - [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): researchers spend more time verifying AI-generated findings (research-pm-agents-jobs-to-be-done)
+- [Make Rovo your research assistant - Deep research mode](sources/atlassian-rovo-deep-research.md): inline citations added after evaluation found claims hard to verify (user-story-mapping)
 
 ## artifact-standardization: Artifact standardization
 Conventions, manifests and protocol primitives that make artifacts typed, discoverable and attributable (file layouts, frontmatter, MCP resources, provenance).
@@ -424,6 +438,7 @@ A shared, agent-readable, harness-agnostic store of product context ("evidence, 
 - [Building and Accelerating the Intent Factory](sources/geoff-building-accelerating-intent-factory.md): a plain-text context repo, a domain owner per topic, spec write-back (Action 5) (research-product-agent-and-harness)
 - [github/spec-kit (README)](sources/github-spec-kit-readme.md): state kept under .specify/ (memory, bugs/<slug>/, assessments/<slug>/ with decision.md). (user-story-mapping)
 - [How Claude remembers your project (Claude Code docs)](sources/anthropic-claude-code-memory-docs.md): the hierarchy managed policy > user > project > local lets org, team and personal context layer. (user-story-mapping)
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): past PIRs are summarised for new incidents (user-story-mapping)
 
 ## cost-control-routing: Cost metering and model routing built into the harness
 Open access to frontier models blew budgets; Ramp added per-project meters, limits and a router that picks the model.
@@ -492,6 +507,8 @@ Open access to frontier models blew budgets; Ramp added per-project meters, limi
 - [How Warp ships 2,000 PRs a month with AI factories (How I AI)](sources/howiai-warp-zach-lloyd-software-factory.md): per-PR agent cost tracked centrally; model is the biggest lever; replay past tasks under other configs to build a cost-quality Pareto chart for routing (17:01-30:39) (research-lennys-newsletter-archive)
 - [How to design AI agent loops (How I AI)](sources/howiai-claire-vo-agent-loops-design.md): goal loops are where "most people burn tokens for nothing"; two warning signs of expense (show notes only) (research-lennys-newsletter-archive)
 - [Productboard Plans & Pricing (Spark)](sources/productboard-pricing-spark.md): PM agent metered in credits per maker (500/mo Business; 1,500 + 800/maker Enterprise); top-ups $5/50 credits (research-pm-agents-jobs-to-be-done)
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): Rovo credits charged for Teamwork Graph context reads, including by Claude or ChatGPT via MCP or CLI, from December 3, 2026 (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): DX cost management estimates cost per PR across Claude, Cursor, Copilot and Jira (user-story-mapping)
 
 ## docs-as-code-prd: PRDs and specs as files in the repo
 Whether product specs live as markdown in git and how consistent that practice is.
@@ -642,6 +659,7 @@ The identity, audit, policy, data-retention and cost controls a harness gives an
 - [What Claude Code, Cursor, OpenAI and Copilot log, and what nobody logs](sources/senseon-what-ai-coding-tools-log.md): A security vendor's survey of what each AI tool's logs contain. (research-runtime-patterns-follow-up-round)
 - [What's New (University of Minnesota DevEx GitHub Enterprise change log)](sources/umn-devex-github-copilot-changelog.md): A rare public record from an enterprise administrator (not a vendor) of how Copilot was actually rolled out and cost-controlled: a small pilot, cost centres billed to departmental Azure subscriptions, MCP enabled only fo (research-runtime-patterns-follow-up-round)
 - [What your agent sandbox can reach by default](sources/workos-agent-sandbox-egress-defaults.md): An independent (WorkOS sells identity infrastructure, not coding agents) comparison of what Codex cloud and Claude Code can reach by default. (research-runtime-patterns-follow-up-round)
+- [Work with Rovo Dev in Bitbucket Pipelines](sources/atlassian-rovo-dev-bitbucket-pipelines.md): not yet governed by the org AI early-access toggle; only the workspace Rovo Dev switch (user-story-mapping)
 
 ## evals-autonomy-trust: Evals, autonomy sliders and earned trust
 Start agents as suggestions, measure against ground truth, then let users raise autonomy. Related: [[risk-sloped-review]].
@@ -728,6 +746,8 @@ Start agents as suggestions, measure against ground truth, then let users raise 
 - [Why not just ship it?](sources/ideas-fin-why-not-just-ship-it.md): every Fin change passes backtests on a few thousand replayed conversations graded by calibrated LLM-judge ensembles, then a pre-registered A/B test, then a 0% dark launch and ramp (2026-08-28) (research-pm-agents-jobs-to-be-done)
 - [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): the PR-review agent's evals are a human-curated set of historical PRs with confirmed issues, re-run on prompt changes for precision/recall (2026-05-22) (research-pm-agents-jobs-to-be-done)
 - [Working with a Black Box (Fin Insights)](sources/ideas-fin-working-with-a-black-box-fin-insights.md): CX Score shipped only after an expert-labelled reference dataset and evaluation pipeline; one score reason dropped for missing the bar (research-pm-agents-jobs-to-be-done)
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): field-level autonomy controls exist only for the Jira Triage Agent so far (user-story-mapping)
+- [RovoDev Code Reviewer (ICSE 2026)](sources/arxiv-rovodev-code-reviewer-icse26.md): LLM judge filters wrong comments; classifier ranks actionability; 38.70% resolution vs 44.45% for humans (user-story-mapping)
 
 ## feedback-triage-agents: Feedback and research triage/synthesis as an agent job
 Clustering and routing customer feedback, calls and tickets is the best-evidenced PM-agent job, but needs checks against invented or merged quotes.
@@ -789,6 +809,8 @@ Clustering and routing customer feedback, calls and tickets is the best-evidence
 - [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): Intercom's internal Cockpit tool consolidates customer feedback and clusters/summarises it with an LLM job; built in ~a month by a data scientist (2026-07-07) (research-pm-agents-jobs-to-be-done)
 - [Working with a Black Box (Fin Insights)](sources/ideas-fin-working-with-a-black-box-fin-insights.md): Fin Topics/Suggestions shipped with explainable clusters and an inbox review flow; post does not say Intercom's own product teams use Insights to decide what to build (research-pm-agents-jobs-to-be-done)
 - [Add features to your hierarchy (Productboard support)](sources/productboard-product-hierarchy.md): feature has an Insights tab for linked insights; notes land in an inbox (web-search summary of a 2019 post, unverified here). (user-story-mapping)
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): related Loom AI workflow turns a recording into a bug report work item in Jira or Linear (user-story-mapping)
+- [Make Rovo your research assistant - Deep research mode](sources/atlassian-rovo-deep-research.md): blog names customer-feedback analysis as a use case (user-story-mapping)
 
 ## harness-over-model: The harness, not the model, limits real-world value
 Ramp found models were good enough; the preconfigured environment (integrations, skills, memory, UX) decided whether non-experts got value. Central to what a "product agent and harness" is. Related: [[compounding-context-repo]].
@@ -912,6 +934,8 @@ Whether sessions, skills and context can move between harnesses and between loca
 - [Connect a coding agent to Spark via MCP (Productboard support)](sources/productboard-mcp-server-spark.md): documented for Claude Cowork, Claude Code, Cursor; remote MCP at mcp.productboard.com, browser sign-in, agent sees only what the user can see. (user-story-mapping)
 - [Build on Dovetail (docs)](sources/dovetail-build-on-dovetail.md): Three options: MCP server, REST API (default 200 requests/min per workspace), CLI 'dt' for bulk import from Notion, Confluence, Google Drive and files (no sync after import). (user-story-mapping)
 - [How Claude remembers your project (Claude Code docs)](sources/anthropic-claude-code-memory-docs.md): Claude reads AGENTS.md when no CLAUDE.md exists in or above the working directory (v2.1.277+); otherwise CLAUDE.md wins, and a CLAUDE.md can @import AGENTS.md. (user-story-mapping)
+- [Open a Jira work item in an AI coding tool](sources/atlassian-jira-open-work-item-in-coding-tool.md): Codex, Cursor, Copilot, VS Code, Claude Code, Rovo CLI (user-story-mapping)
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): 'Send to agent' pre-fills Rovo, Claude or a copied markdown prompt (user-story-mapping)
 
 ## human-judgment-pm-jobs: PM jobs that stay human-led
 Strategy, opportunity selection, interviewing, trade-offs and ratifying specs are where practitioners say human judgment stays central; agents prepare, humans decide.
@@ -997,6 +1021,7 @@ Strategy, opportunity selection, interviewing, trade-offs and ratifying specs ar
 - [Customer Interview Analysis: All Things Product podcast with Teresa Torres and Petra Wille](sources/producttalk-torres-customer-interview-analysis-podcast.md): empathy comes from talking to customers; outsourcing customer understanding costs teams over time (show notes) (research-pm-agents-jobs-to-be-done)
 - [How we design when the code writes itself](sources/ideas-fin-how-we-design-when-code-writes-itself.md): agents "own the middle, the build" but "cannot decide which problems matter, set intent, resolve trade-offs, or hold the bar for quality" (research-pm-agents-jobs-to-be-done)
 - [Talk to the bot: When to use an AI interviewer](sources/ideas-fin-talk-to-the-bot-ai-interviewer.md): early-stage discovery, long interviews and synthesis kept human (research-pm-agents-jobs-to-be-done)
+- [Using Jira for agentic engineering](sources/atlassian-jira-agentic-engineering-guide.md): 'Set the goal (people decide what and why; Jira turns it into a plan)' (user-story-mapping)
 
 ## human-review-gates: Human review gates on agent output
 Where and how a human checks PM-agent output (quote checks, review before send, isolated repos). Related: [[risk-sloped-review]].
@@ -1129,6 +1154,9 @@ Where and how a human checks PM-agent output (quote checks, review before send, 
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): delete and project-management tools are disabled by default and need an admin to enable. (user-story-mapping)
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): confirmed verbatim: delete_jira and manage_jira are disabled by default; executeDestructive is a separate pathway 'used to apply agent-level confirmation'; updateJiraScreen 'Returns a plan by default; changes are applied only with an explicit commit'. (user-story-mapping)
 - [DACI decision template (Confluence)](sources/atlassian-confluence-daci-decision-template.md): decision pages name a Driver and 'a single approver who ultimately makes the call'. (user-story-mapping)
+- [Generate code from a work item in Jira (Jira Coding Agent)](sources/atlassian-jira-coding-agent-generate-code.md): always a draft PR; 'It doesn't merge pull requests' (user-story-mapping)
+- [Using Jira for agentic engineering](sources/atlassian-jira-agentic-engineering-guide.md): a review status holds the transition to done until a human approves and CI passes (user-story-mapping)
+- [RovoDev Code Reviewer (ICSE 2026)](sources/arxiv-rovodev-code-reviewer-icse26.md): reviewer posts comments only; humans accept or decline (user-story-mapping)
 
 ## identity-delegation: Identity and delegation (on-behalf-of)
 Who an agent acts as when one agent or harness calls another: user tokens, service accounts, delegation chains, revocation and audit. Cuts across remote agents, MCP/A2A and shared sessions.
@@ -1178,6 +1206,8 @@ Who an agent acts as when one agent or harness calls another: user tokens, servi
 - [Linear for Agents (developer docs)](sources/linear-developers-agents.md): assigning an issue to an agent sets it as delegate; the human stays assignee. (user-story-mapping)
 - [What are Confluence's roles?](sources/atlassian-confluence-roles-space-permissions.md): role-based space access (Admin, Manager, Collaborator, Viewer, custom); public links, guest access and anonymous access are separate admin grants; 'you can't assign or remove roles that include permissions you don't have.' (user-story-mapping)
 - [Add or remove page restrictions (Confluence)](sources/atlassian-confluence-page-restrictions.md): per-item states open / edit-restricted / restricted / restricted-by-parent; view restrictions inherit to children, edit restrictions do not; the Rovo MCP server can read and set these states. (user-story-mapping)
+- [Generate code from a work item in Jira (Jira Coding Agent)](sources/atlassian-jira-coding-agent-generate-code.md): acts as the initiating user, who is PR and commit author; automations run as the connection owner (user-story-mapping)
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): agents run on their own account (needs a space role) or the triggering user's account (user-story-mapping)
 
 ## intent-factory-before-discovery: Accelerate the intent factory before discovery
 Automating intent refinement and delivery has to come before using AI for higher-order discovery, or more ideas just swell the backlog. This sets the order of priorities for what a product agent should do first.
@@ -1249,6 +1279,8 @@ Roadmaps, specs, tickets and tools must be agent-readable so agents can answer a
 - [Glean Enterprise Graph (product page)](sources/glean-enterprise-graph-product-page.md): entities are inferred automatically by machine learning rather than declared. (user-story-mapping)
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): verbatim re-read: getTeamworkGraphContext returns 'all relationships and linked objects in one traversal' from Jira, Confluence, Goals/Projects/Focus Areas, people, DevOps, Loom, Compass entry points; Confluence spaces carry agent-readable 'space instructions' (getConfluenceSpaceInstructions / setConfluenceSpaceInstructions). (user-story-mapping)
 - [Scopes (Teamwork Graph API)](sources/atlassian-teamwork-graph-scopes.md): 'All Teamwork Graph API scopes are read-only'; a missing scope returns success and empty rows ('fails closed rather than leaking data'), so an agent cannot tell 'no data' from 'no permission'. (user-story-mapping)
+- [Work with Jira Delivery agent](sources/atlassian-rovo-jira-delivery-agent.md): documented TWG work-item context returns related PRs, commits, branches, pages and hierarchy; user summary returns work items, pages, PRs, Loom videos, projects and goals (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): 'the SDLC needs to become legible to agents without becoming less accountable to humans' (user-story-mapping)
 
 ## memory-architecture: Memory as inspectable files from an offline pipeline
 Agent memory built on first connection, refreshed by a periodic pipeline, read-only during sessions.
@@ -1480,6 +1512,7 @@ Scoping an agent to one defined job (with human in the loop) for consistency and
 - [Turning Customer Feedback Noise into Actionable Insights (Azure AI Foundry blog)](sources/microsoft-feedback-noise-multi-agent.md): each specialist agent has its own schema, retrieval and guardrails. (research-pm-agents-jobs-to-be-done)
 - [The sweet spot for current-generation agentic AI (Vercel)](sources/vercel-sweet-spot-agentic-ai.md): lead triage went from a team of 10 to one person; abuse agent cut time to ticket closing 59% (baseline unstated); d0 'most used' is from SaaStr, not this post [audit 2026-10-24]. (research-pm-agents-jobs-to-be-done)
 - [Claude Code: Good skills, bad skills](sources/ideas-fin-claude-code-good-skills-bad-skills.md): good skills "do one thing well", script deterministic work and carry guardrails; 267 skills from 153 contributors (2026-07-15) (research-pm-agents-jobs-to-be-done)
+- [Work with Jira Delivery agent](sources/atlassian-rovo-jira-delivery-agent.md): out-of-the-box agent scoped to delivery state with its own tool set (user-story-mapping)
 
 ## opportunity-to-code-chain: Opportunity → problem → goal → intent → plan → code
 A stage chain for product work, drawn by a Stripe engineer, in which agents today own the lower stages (intent research, plan, code, review) and people own the upper ones (opportunity, problem, goal) through customer conversations. It gives the strategy a spine: where each agent sits, where hand-offs and artifacts are, and where captured context must feed in.
@@ -1502,6 +1535,13 @@ A stage chain for product work, drawn by a Stripe engineer, in which agents toda
 - [Anthropic's CPO on what comes next (Mike Krieger)](sources/lenny-podcast-mike-krieger-anthropic-cpo.md): Krieger's chain: model reads Discord, forums and X for "what's emergent", proposes fixes, opens a PR, spins up an A/B test; limited by context flow, not reasoning (19:20-20:51) (research-lennys-newsletter-archive)
 - [Community Wisdom: What to do when non-PMs start shipping](sources/lenny-community-wisdom-non-pms-shipping.md): canonical chain (goal, opportunity, selection, solution, design, build, release) still holds; "prototyping is just solution identification"; what changes is who's involved at each stage (research-lennys-newsletter-archive)
 - [Shape Up (Ryan Singer)](sources/lenny-podcast-ryan-singer-shape-up.md): demand-side JTBD research, then framing ("calendar" becomes "see empty spaces"), then shaping within an appetite, then a whole idea to a team that writes its own tasks (40:36, 1:38:37) (research-lennys-newsletter-archive)
+- [Link an idea to a Jira work item (JPD)](sources/atlassian-jpd-link-idea-to-work-item.md): idea to epic/task via the Delivery tab; optional 'Embed the idea description and fields into the work item' is the only documented way idea content reaches the work item an agent reads (user-story-mapping)
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): screen recording becomes an agent prompt and, for Atlassian accounts, Jira work items 'for agents to act on' (user-story-mapping)
+- [Check acceptance criteria in a code review](sources/atlassian-rovo-dev-acceptance-criteria-code-review.md): review reads AC from the work item matched by the key in the branch name (user-story-mapping)
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): finalized plan becomes sequenced work items each with AC and plan context; 'agent orchestration takes over' (user-story-mapping)
+- [Open a Jira work item in an AI coding tool](sources/atlassian-jira-open-work-item-in-coding-tool.md): deep link passes summary and description (support doc) or also linked docs (blog) (user-story-mapping)
+- [What is a goal? (Atlassian Goals)](sources/atlassian-goals-what-is-a-goal.md): goals link sub-goals, projects, Jira epics and work items; Teamwork Graph has a work-item-contributes-to-goal relationship (user-story-mapping)
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): PIR action items become Jira work items, closing the operate-to-backlog loop (user-story-mapping)
 
 ## org-context-grounding: Agents work when grounded in organisation context
 Successful PM agents read the organisation's own data (docs, tickets, calls, code); thin context yields generic output. Related: [[compounding-context-repo]], [[harness-over-model]].
@@ -1574,6 +1614,8 @@ Successful PM agents read the organisation's own data (docs, tickets, calls, cod
 - [What are projects? (Claude Help Center)](sources/anthropic-claude-projects-support.md): uploaded knowledge is the grounding, switching to RAG on paid plans when nearing context limits (up to 10x capacity per the page). (user-story-mapping)
 - [Organize work with projects (Claude Cowork docs)](sources/anthropic-cowork-projects-docs.md): Project holds: description (Dispatch reads it to choose a project for a task), folders (one or more local), instructions, links, linked Chat projects, memory. (user-story-mapping)
 - [Glean Enterprise Graph (product page)](sources/glean-enterprise-graph-product-page.md): graph of high-value entities (projects, people, customers, products) linked to docs, tickets and specs; permissions-enforced via connectors. (user-story-mapping)
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): per-space agent Sources (Confluence pages, Loom recordings) and instructions (user-story-mapping)
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): incident triage grounded in runbooks, past incidents, Slack history (user-story-mapping)
 
 ## org-learning-loop: One person's win becomes everyone's baseline
 Skills, prompts and corrections made by one employee propagate to the team so the organisation learns once. Overlaps with [[compounding-context-repo]] (product context) but is about workflow/skills and shared sessions.
@@ -1723,6 +1765,7 @@ Time-saved claims are self-reported; no one publishes decision-quality or outcom
 - [Helping every team succeed in the AI era (Atlassian blog)](sources/atlassian-blog-helping-every-team-succeed-ai-era.md): Time-per-item and hours-per-week only; no quality or outcome measure (research-pm-agents-jobs-to-be-done)
 - [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): Intercom's headline metric is merged PRs per R&D head (incl. product and design leaders), which the CTO calls imperfect; idea-to-shipped time reported but undefined (research-pm-agents-jobs-to-be-done)
 - [Webinar Q&A: How Fin 3x'd R&D output in 16 months](sources/ideas-fin-webinar-qa-3x-rd-output.md): shipping more is "required, but not sufficient"; revenue called "a lagging indicator"; no customer-outcome figures (research-pm-agents-jobs-to-be-done)
+- [RovoDev Code Reviewer (ICSE 2026)](sources/arxiv-rovodev-code-reviewer-icse26.md): outcomes measured as comment resolution and PR cycle time, not quality or customer impact (user-story-mapping)
 
 ## pm-ai-usage-surveys: What surveys say about PMs' AI use
 Self-selected, mostly vendor-run surveys of where PMs use AI and what they save; directional only.
@@ -1897,6 +1940,7 @@ MCP/auth/permission reality of getting agents into analytics, research and docs 
 - [Call the Teamwork Graph API](sources/atlassian-teamwork-graph-call-the-api.md): the graph is 'available through Forge's Preview release phase', callable only from a Forge app (api.asUser().requestTeamworkGraph), with 1-month breaking-change notice; not a direct OAuth endpoint for an external harness. (user-story-mapping)
 - [Limitations and considerations (Teamwork Graph)](sources/atlassian-teamwork-graph-limitations.md): Forge apps only, installed in Jira or Confluence, org-admin install; Atlassian intends controls so graph data 'is not egressed from the Atlassian platform'. (user-story-mapping)
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): v2 exposes a few Primary tools plus discover/executeRead/executeWrite/executeDestructive; delete_jira and manage_jira 'disabled by default. An admin must enable'; Confluence has archive but no delete tool. (user-story-mapping)
+- [Open a Jira work item in an AI coding tool](sources/atlassian-jira-open-work-item-in-coding-tool.md): optional Rovo MCP lets the local agent read Jira and Confluence and update the work item (user-story-mapping)
 
 ## policy-enforcement-fail-open: Agent policy layers that fail open
 Policy layers enforce only at the seams they hook, and gaps (errors, unparsed actions, internal tools, sub-agents) have defaulted to allow. In a regulated setting, whether a control fails open or closed matters as much as what it expresses. Our coined label.
@@ -1962,6 +2006,7 @@ Agents draft and review PRDs and specs; adoption is high but quality evidence is
 - [Spec Kit and spec-driven.md (GitHub)](sources/github-spec-kit-sdd.md): templates force `[NEEDS CLARIFICATION: ...]` markers instead of guessing, a spec-quality convention. (user-story-mapping)
 - [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl](sources/fowler-bockeler-sdd-kiro-speckit-tessl.md): unclear target user (developers, product people, or both); Kiro turned a small bug into 4 stories / 16 acceptance criteria. (user-story-mapping)
 - [Connect a coding agent to Spark via MCP (Productboard support)](sources/productboard-mcp-server-spark.md): Beta, included with Spark-enabled workspaces at no extra cost; admins enable it under Settings > MCP Server and choose roles. (user-story-mapping)
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): spec published as an editable, co-edited Confluence Live Doc linked to Jira (user-story-mapping)
 
 ## product-artifact-primitives: Native PM artifact objects and project containers across platforms
 What each platform treats as its first-class product-work objects (idea, initiative, project, space, spec, insight, document, skill) and how a 'project' is bounded. Matters for deciding whether a product meta-harness defines its own primitives or maps onto existing ones.
@@ -2007,6 +2052,8 @@ What each platform treats as its first-class product-work objects (idea, initiat
 - [Atlassian MCP enhancements blog](sources/atlassian-blog-mcp-enhancements-jpd.md): July 2026 blog claims agents can find a JPD idea and link it to a delivery issue, but the supported-tools page names no JPD tool. (user-story-mapping)
 - [Open-Inspect README](sources/github-open-inspect-background-agents.md): the session is 'the core unit of work'; it stores messages, events, 'Artifacts | PRs created, screenshots captured', participants and sandbox state; no project object, grouping is by repository, environment and team; Linear holds the project mapping. (user-story-mapping)
 - [Why We Built Our Own Background Agent (Ramp Builders)](sources/ramp-builders-why-we-built-our-own-background-agent.md): Inspect's unit is the session (own SQLite DB, shareable by URL) and its output is the PR with before/after screenshots; no spec, PRD, project or folder concept described. (user-story-mapping)
+- [What is a goal? (Atlassian Goals)](sources/atlassian-goals-what-is-a-goal.md): Goal = name, owner, target date, status, monthly update, sub-goals; Home projects sync with epics (user-story-mapping)
+- [Link an idea to a Jira work item (JPD)](sources/atlassian-jpd-link-idea-to-work-item.md): idea shows a Delivery progress bar from linked work items (user-story-mapping)
 
 ## product-coherence-over-automation: Product coherence can suffer from over-automation
 Warnings that agent-driven shipping produces incoherent 'additive' products without a human holding the whole.
@@ -2211,6 +2258,7 @@ AI synthesis of interviews, surveys and calls; time saved is claimed, but fideli
 - [Nobody changed their title. Everybody changed their job.](sources/ideas-fin-nobody-changed-their-title.md): one researcher synthesised hundreds of sales calls, win/loss records and interviews in one session; 60+ customer interviews turned into a queryable skill; existing evidence now the first step (research-pm-agents-jobs-to-be-done)
 - [Talk to the bot: When to use an AI interviewer](sources/ideas-fin-talk-to-the-bot-ai-interviewer.md): AI-moderated churn interviews raised response rate from a typical 1.5% to 4%; not used for early discovery, synthesis or (mostly) current customers (2026-02-12) (research-pm-agents-jobs-to-be-done)
 - [Build on Dovetail (docs)](sources/dovetail-build-on-dovetail.md): MCP can read workspace content and create projects, docs, data, highlights and channel data. (user-story-mapping)
+- [Make Rovo your research assistant - Deep research mode](sources/atlassian-rovo-deep-research.md): planned multi-step report over org and connected sources with sources list; Confluence export claimed only in a 2025 blog (user-story-mapping)
 
 ## risk-review-as-classification: Risk review as a specification and classification problem
 Risk advisory works as classification against a known taxonomy, with a curation path for novel risks. That makes a risk agent tractable to build and straightforward to evaluate with SME labels.
@@ -2265,6 +2313,7 @@ Policy (default model, allowed tools, human-in-the-loop rules, data back end, ev
 - [What a harness is and how to build one with Claude Agent SDK](sources/howiai-claire-vo-agent-sdk-harness.md): "How to encode specific permissions into a harness" (show notes; details not available) (research-lennys-newsletter-archive)
 - [Community Wisdom: ... sharing Claude Code context across a team](sources/lenny-community-wisdom-claude-context-sharing.md): Obsidian dropped for "too little governance around what agents can do to the data (without a human in the loop)" (thread 5) (research-lennys-newsletter-archive)
 - [Quests, token leaderboards, and a skills marketplace (How I AI)](sources/howiai-sendbird-john-kim-adoption-playbook.md): pre-vetted app template with auth and environments, "fully compliant", plus a weekly CTO/engineering/Infosec task force; quests show a risk rating (9:51-14:56) (research-lennys-newsletter-archive)
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): agents are members of a space with a role; private spaces grant nothing without one (user-story-mapping)
 
 ## shared-persistent-sessions: Shared, persistent, multi-user agent sessions
 Agent sessions that outlive one person's laptop: shared with teammates, running in a deployed runtime, resumable or event-driven. Raises identity (who is the agent acting as), permission-leakage, durability and cost questions that local sessions avoid.
@@ -2571,6 +2620,7 @@ Using agents to map edge cases and gaps in specs and designs before build.
 - [Shape Up (Ryan Singer)](sources/lenny-podcast-ryan-singer-shape-up.md): the "grumpy old plumber" engineer opens the code during shaping; a one-step fintech onboarding change had three bank-specific branches, found before green-light rather than in week four (50:42) (research-lennys-newsletter-archive)
 - [25 proven tactics to accelerate AI adoption](sources/lenny-newsletter-25-ai-adoption-tactics.md): Ramp PMs "give any product spec to these personas and get instant feedback on what they're missing" (section 5) (research-lennys-newsletter-archive)
 - [How Anthropic teams use Claude Code](sources/anthropic-how-teams-use-claude-code.md): product design maps error states and logic flows with Claude Code to find edge cases early; 'saves hours' later, unquantified. (research-pm-agents-jobs-to-be-done)
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): 'tells you whether your spec is detailed enough for execution, with specific suggestions for what's missing' (user-story-mapping)
 
 ## status-update-agents: Status updates and 'ask the org' Q&A as an agent job
 Drafting weekly updates and answering launch/status questions from org context removes PM note-taking and follow-up work.
@@ -2613,6 +2663,9 @@ Drafting weekly updates and answering launch/status questions from org context r
 - [Introducing Custom Agents (Notion)](sources/notion-introducing-custom-agents.md): reporting agents shown as customer use cases (Braintrust weekly upgrade report, Clay post-mortems); standups only as generic examples [audit 2026-10-24]. (research-pm-agents-jobs-to-be-done)
 - [How AI turns product managers back into builders](sources/atlassian-ai-turns-pms-into-builders.md): Gupta claims an agent can draft 70 to 80% of emails (his claim, unverified). (research-pm-agents-jobs-to-be-done)
 - [What product looks like when coding is solved | Geoff Charles (Ramp CPO)](sources/lenny-podcast-geoff-charles-product-when-coding-solved.md): Gadget, Ramp's coordination agent over Notion roadmap/specs, Slack and Linear, answers status questions, updates the roadmap and pings late owners; "85% of questions that are being asked to PMs now are fully answered with AI" (13:01, speaker-reported; credited to Gadget, not Glass) [audit 2026-10-24] (research-pm-agents-jobs-to-be-done)
+- [Work with Jira Delivery agent](sources/atlassian-rovo-jira-delivery-agent.md): stakeholder summaries, daily digests, stale-work follow-ups, usable in automation (user-story-mapping)
+- [What is a goal? (Atlassian Goals)](sources/atlassian-goals-what-is-a-goal.md): goal updates are human-written monthly (reminder on the 1st, released on the 8th) (user-story-mapping)
+- [Work with Rovo Dev in Bitbucket Pipelines](sources/atlassian-rovo-dev-bitbucket-pipelines.md): release change summaries; Release Notes Drafter from up to 20 Jira issues (user-story-mapping)
 
 ## svpg-four-risks: SVPG's four risks and role ownership
 Cagan's value, usability, feasibility and viability risks and who owns each; a frame for which risks an agent can reduce.
@@ -2685,6 +2738,7 @@ How know-how that lives in people's heads (how the business works, which data to
 - [Engineers are becoming sorcerers (Sherwin Wu, OpenAI)](sources/lenny-podcast-sherwin-wu-openai-codex.md): agent failures are "usually a problem with context"; the fix is to encode tribal knowledge into the repo via .md files, skills and code structure; a no-escape-hatch 100% Codex team surfaces these gaps (12:44-14:16) (research-lennys-newsletter-archive)
 - [Community Wisdom: Top Contributors Summer 2026 (product engineers pilot)](sources/lenny-community-wisdom-product-engineers-pilot.md): the curator asks what is lost when a leader's judgment is distributed through an AI operating system rather than conversation (research-lennys-newsletter-archive)
 - [Community Wisdom: Building without clear PM requirements](sources/lenny-community-wisdom-building-without-pm-requirements.md): 2-month experiment pairing 5 engineers with Support/Success/Ops SMEs and a vision doc: fast prototypes, but SMEs stuck on "fix this specific issue" (thread 1) (research-lennys-newsletter-archive)
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): captures narration, clicks, visited URLs, console and network logs into an agent prompt (user-story-mapping)
 
 ## task-context-isolation: Isolation by task context, not only by user permission
 Limiting what a session may combine based on the task (e.g. never two customers' data in one analysis), even when the user could access each separately. Matters for trust/privacy defaults of shared or discoverable sessions.
@@ -2702,6 +2756,7 @@ Limiting what a session may combine based on the task (e.g. never two customers'
 - [OpenClaw: The complete guide](sources/lenny-newsletter-claire-vo-openclaw-guide.md): isolated machine; anyone who can message the bot can instruct it, so no group chats; injection via email and web (research-lennys-newsletter-archive)
 - [How to turn your AI into a world-class designer](sources/lenny-newsletter-ai-world-class-designer.md): critic invoked "in a fresh context, with just the screenshot, not the code ... or earlier iterations/critiques" because the builder "isn't objective" (Technique 3) (research-lennys-newsletter-archive)
 - [From skeptic to true believer: How OpenClaw changed my life (Lenny's Podcast)](sources/lenny-podcast-claire-vo-openclaw.md): each agent gets "his own quiet room" with only its lane's context (44:18) (research-lennys-newsletter-archive)
+- [Generate code from a work item in Jira (Jira Coding Agent)](sources/atlassian-jira-coding-agent-generate-code.md): only the selected repo is cloned; in automations the agent runs 'restricted' with no Teamwork Graph or Confluence context (user-story-mapping)
 
 ## vendor-claims-vs-independent-evidence: Vendor claims dominate; independent evidence is rare
 Most evidence on PM agents is vendor marketing or self-reported; controlled or independent evaluations are almost absent. Weigh sources accordingly.
@@ -2789,6 +2844,9 @@ Most evidence on PM agents is vendor marketing or self-reported; controlled or i
 - [AI is approving our pull requests (Intercom)](sources/intercom-ai-approving-pull-requests.md): revert rates (0.53% vs 5.39% backend) and "5x faster" approval are self-reported with no revert definition or window (research-pm-agents-jobs-to-be-done)
 - [2× – nine months later: We did it](sources/ideas-fin-2x-nine-months-later.md): all productivity, defect and deploy figures self-reported by the CTO; definitions of "product change" and "idea" not given (research-pm-agents-jobs-to-be-done)
 - [Trends Shaping Product Management in 2025 (ProductPlan)](sources/productplan-trends-product-management-2025.md): vendor-run survey of nearly 400 product professionals; survey dates and exact percentages for consolidation not given. 92% 'somewhere on AI journey', 46% adopted for at least one use case. (user-story-mapping)
+- [RovoDev Code Reviewer (ICSE 2026)](sources/arxiv-rovodev-code-reviewer-icse26.md): peer-reviewed but all-Atlassian authors: PR cycle time -30.8%; a separate Atlassian blog claims -45%, unreconciled (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): '44% more accurate results while using 48% fewer tokens' with Teamwork Graph, no method (user-story-mapping)
+- [Rovo Dev in Jira launch blog](sources/atlassian-blog-rovo-dev-in-jira.md): feature-flag cleanup 'around 85%' faster; 29 of 31 PRs needed no manual changes (user-story-mapping)
 
 ## work-structure-spectrum: Work structure spectrum (unstructured exploration to task-specific workflow)
 Whether a piece of work wants a flexible general harness or a constrained task-specific agent or workflow depends on a handful of properties (step predictability, verifiability, repeatability, error cost, audit need, tacit context), and most real systems are hybrids. Tests Geoff's hypothesis; see tasks/research-agent-runtime-patterns-taxonomy/track-6-work-structure-fit.md.

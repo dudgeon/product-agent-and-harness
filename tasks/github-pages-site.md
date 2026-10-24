@@ -11,7 +11,7 @@ done_when: The public repo dudgeon/product-agent-and-harness serves a GitHub Pag
 
 Geoff (2026-10-24): "once the readme.md work finishes, I think we need to set this repo up with a github site/pages to make it easier for readers to see the html pages you are building and the video explainers for each section"
 
-Geoff's decision on films (2026-10-24): put the films in the repo, overriding the explainers rule that voiced audio stays out of public repos, for this project's rendered films only (never the voice model, its weights or raw voiced lines). Keep each mp4 under GitHub's 100 MB file limit (compress) or use Git LFS.
+Geoff's decision on films (2026-10-24): put the films in the repo, overriding the explainers rule that voiced audio stays out of public repos, for this project's rendered films only (never the voice model, its weights or raw voiced lines). Keep each mp4 under GitHub's 100 MB file limit (compress) or use Git LFS. Every published film has background music under the narration from start to end (Geoff: it makes fine-tuning on his voice harder); check before uploading.
 
 Related: [[project-readme]], [[pdlc-maps-per-ecosystem]], [[pdlc-cross-ecosystem-map]], [[strategy-story-and-explainer-video]] and the explainer films.
 

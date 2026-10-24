@@ -9,10 +9,14 @@ Written only by the task `user-story-mapping`. Built into ../THEMES.md by ../bui
 - [github/spec-kit (README)](sources/github-spec-kit-readme.md): a standard command set and Markdown artifacts per stage; constitution is the project-level baseline. (user-story-mapping)
 - [Spec-Driven Development (spec-kit spec-driven.md)](sources/github-spec-kit-spec-driven.md): spec.md has user stories and acceptance criteria, ambiguity marked [NEEDS CLARIFICATION] instead of guessed; templates act as structured prompts with self-review checklists. (user-story-mapping)
 
+- [Check acceptance criteria in a code review](sources/atlassian-rovo-dev-acceptance-criteria-code-review.md): named fields (AC, Requirements, Definition of Done) are the machine-checked contract; empty description means no check (user-story-mapping)
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): rough idea to agent-ready spec in a Confluence Live Doc (user-story-mapping)
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): each prompt task has title, bullets, transcript quote, keyframes, timestamps (user-story-mapping)
 ## compounding-context-repo: Context that compounds with each shipped feature
 - [github/spec-kit (README)](sources/github-spec-kit-readme.md): state kept under .specify/ (memory, bugs/<slug>/, assessments/<slug>/ with decision.md). (user-story-mapping)
 - [How Claude remembers your project (Claude Code docs)](sources/anthropic-claude-code-memory-docs.md): the hierarchy managed policy > user > project > local lets org, team and personal context layer. (user-story-mapping)
 
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): past PIRs are summarised for new incidents (user-story-mapping)
 ## memory-architecture: Memory as inspectable files from an offline pipeline
 - [How Claude remembers your project (Claude Code docs)](sources/anthropic-claude-code-memory-docs.md): CLAUDE.md (human-written instructions) vs auto memory (Claude-written learnings; first 200 lines or 25KB loaded each session). (user-story-mapping)
 - [Organize work with projects (Claude Cowork docs)](sources/anthropic-cowork-projects-docs.md): a dedicated project-scoped memory store persisting across sessions; archiving deletes metadata including memory but not local files. (user-story-mapping)
@@ -32,17 +36,25 @@ Written only by the task `user-story-mapping`. Built into ../THEMES.md by ../bui
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): verbatim re-read: getTeamworkGraphContext returns 'all relationships and linked objects in one traversal' from Jira, Confluence, Goals/Projects/Focus Areas, people, DevOps, Loom, Compass entry points; Confluence spaces carry agent-readable 'space instructions' (getConfluenceSpaceInstructions / setConfluenceSpaceInstructions). (user-story-mapping)
 - [Scopes (Teamwork Graph API)](sources/atlassian-teamwork-graph-scopes.md): 'All Teamwork Graph API scopes are read-only'; a missing scope returns success and empty rows ('fails closed rather than leaking data'), so an agent cannot tell 'no data' from 'no permission'. (user-story-mapping)
 
+- [Work with Jira Delivery agent](sources/atlassian-rovo-jira-delivery-agent.md): documented TWG work-item context returns related PRs, commits, branches, pages and hierarchy; user summary returns work items, pages, PRs, Loom videos, projects and goals (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): 'the SDLC needs to become legible to agents without becoming less accountable to humans' (user-story-mapping)
 ## prd-agents: PRD and spec writing/review as an agent job
 - [Spec Kit and spec-driven.md (GitHub)](sources/github-spec-kit-sdd.md): templates force `[NEEDS CLARIFICATION: ...]` markers instead of guessing, a spec-quality convention. (user-story-mapping)
 - [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl](sources/fowler-bockeler-sdd-kiro-speckit-tessl.md): unclear target user (developers, product people, or both); Kiro turned a small bug into 4 stories / 16 acceptance criteria. (user-story-mapping)
 - [Connect a coding agent to Spark via MCP (Productboard support)](sources/productboard-mcp-server-spark.md): Beta, included with Spark-enabled workspaces at no extra cost; admins enable it under Settings > MCP Server and choose roles. (user-story-mapping)
 
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): spec published as an editable, co-edited Confluence Live Doc linked to Jira (user-story-mapping)
 ## vendor-claims-vs-independent-evidence: Vendor claims dominate; independent evidence is rare
 - [Trends Shaping Product Management in 2025 (ProductPlan)](sources/productplan-trends-product-management-2025.md): vendor-run survey of nearly 400 product professionals; survey dates and exact percentages for consolidation not given. 92% 'somewhere on AI journey', 46% adopted for at least one use case. (user-story-mapping)
 
+- [RovoDev Code Reviewer (ICSE 2026)](sources/arxiv-rovodev-code-reviewer-icse26.md): peer-reviewed but all-Atlassian authors: PR cycle time -30.8%; a separate Atlassian blog claims -45%, unreconciled (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): '44% more accurate results while using 48% fewer tokens' with Teamwork Graph, no method (user-story-mapping)
+- [Rovo Dev in Jira launch blog](sources/atlassian-blog-rovo-dev-in-jira.md): feature-flag cleanup 'around 85%' faster; 29 of 31 PRs needed no manual changes (user-story-mapping)
 ## feedback-triage-agents: Feedback and research triage/synthesis as an agent job
 - [Add features to your hierarchy (Productboard support)](sources/productboard-product-hierarchy.md): feature has an Insights tab for linked insights; notes land in an inbox (web-search summary of a 2019 post, unverified here). (user-story-mapping)
 
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): related Loom AI workflow turns a recording into a bug report work item in Jira or Linear (user-story-mapping)
+- [Make Rovo your research assistant - Deep research mode](sources/atlassian-rovo-deep-research.md): blog names customer-feedback analysis as a use case (user-story-mapping)
 ## spec-becomes-prototype-and-evals: The spec is replaced by prototype plus evals
 - [github/spec-kit (README)](sources/github-spec-kit-readme.md): Workflow: /speckit-constitution (once per project), then per feature /speckit-specify, -plan, -tasks, -implement, -converge. Runs as skills in the agent's chat. (user-story-mapping)
 - [Spec-Driven Development (spec-kit spec-driven.md)](sources/github-spec-kit-spec-driven.md): contrast; here the spec stays primary and code is regenerated. (user-story-mapping)
@@ -50,12 +62,15 @@ Written only by the task `user-story-mapping`. Built into ../THEMES.md by ../bui
 ## research-synthesis-agents: Research synthesis agents
 - [Build on Dovetail (docs)](sources/dovetail-build-on-dovetail.md): MCP can read workspace content and create projects, docs, data, highlights and channel data. (user-story-mapping)
 
+- [Make Rovo your research assistant - Deep research mode](sources/atlassian-rovo-deep-research.md): planned multi-step report over org and connected sources with sources list; Confluence export claimed only in a 2025 blog (user-story-mapping)
 ## org-context-grounding: Agents work when grounded in organisation context
 - [Teamwork Graph glossary (Atlassian developer docs)](sources/atlassian-teamwork-graph-glossary.md): ACLs are specified per object that a connector adds, so permissions travel with the object. (user-story-mapping)
 - [What are projects? (Claude Help Center)](sources/anthropic-claude-projects-support.md): uploaded knowledge is the grounding, switching to RAG on paid plans when nearing context limits (up to 10x capacity per the page). (user-story-mapping)
 - [Organize work with projects (Claude Cowork docs)](sources/anthropic-cowork-projects-docs.md): Project holds: description (Dispatch reads it to choose a project for a task), folders (one or more local), instructions, links, linked Chat projects, memory. (user-story-mapping)
 - [Glean Enterprise Graph (product page)](sources/glean-enterprise-graph-product-page.md): graph of high-value entities (projects, people, customers, products) linked to docs, tickets and specs; permissions-enforced via connectors. (user-story-mapping)
 
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): per-space agent Sources (Confluence pages, Loom recordings) and instructions (user-story-mapping)
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): incident triage grounded in runbooks, past incidents, Slack history (user-story-mapping)
 ## agent-failure-modes: Recurring agent failure modes in PM work
 - [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl](sources/fowler-bockeler-sdd-kiro-speckit-tessl.md): spec-kit ignored research notes and duplicated existing classes; over-applied constitution; Tessl regeneration non-deterministic. (user-story-mapping)
 
@@ -64,6 +79,9 @@ Written only by the task `user-story-mapping`. Built into ../THEMES.md by ../bui
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): confirmed verbatim: delete_jira and manage_jira are disabled by default; executeDestructive is a separate pathway 'used to apply agent-level confirmation'; updateJiraScreen 'Returns a plan by default; changes are applied only with an explicit commit'. (user-story-mapping)
 - [DACI decision template (Confluence)](sources/atlassian-confluence-daci-decision-template.md): decision pages name a Driver and 'a single approver who ultimately makes the call'. (user-story-mapping)
 
+- [Generate code from a work item in Jira (Jira Coding Agent)](sources/atlassian-jira-coding-agent-generate-code.md): always a draft PR; 'It doesn't merge pull requests' (user-story-mapping)
+- [Using Jira for agentic engineering](sources/atlassian-jira-agentic-engineering-guide.md): a review status holds the transition to done until a human approves and CI passes (user-story-mapping)
+- [RovoDev Code Reviewer (ICSE 2026)](sources/arxiv-rovodev-code-reviewer-icse26.md): reviewer posts comments only; humans accept or decline (user-story-mapping)
 ## harness-portability: Harness portability
 - [Teamwork Graph object types (Atlassian developer docs)](sources/atlassian-teamwork-graph-object-types.md): external tools are mapped into the vendor's types rather than exposed natively. (user-story-mapping)
 - [Getting started with the Atlassian Rovo MCP server](sources/atlassian-rovo-mcp-server-getting-started.md): any MCP-compatible client can connect; setup guides for Claude Code, Claude Desktop, Cursor, Codex, VS Code/Copilot, Windsurf. (user-story-mapping)
@@ -73,6 +91,8 @@ Written only by the task `user-story-mapping`. Built into ../THEMES.md by ../bui
 - [Build on Dovetail (docs)](sources/dovetail-build-on-dovetail.md): Three options: MCP server, REST API (default 200 requests/min per workspace), CLI 'dt' for bulk import from Notion, Confluence, Google Drive and files (no sync after import). (user-story-mapping)
 - [How Claude remembers your project (Claude Code docs)](sources/anthropic-claude-code-memory-docs.md): Claude reads AGENTS.md when no CLAUDE.md exists in or above the working directory (v2.1.277+); otherwise CLAUDE.md wins, and a CLAUDE.md can @import AGENTS.md. (user-story-mapping)
 
+- [Open a Jira work item in an AI coding tool](sources/atlassian-jira-open-work-item-in-coding-tool.md): Codex, Cursor, Copilot, VS Code, Claude Code, Rovo CLI (user-story-mapping)
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): 'Send to agent' pre-fills Rovo, Claude or a copied markdown prompt (user-story-mapping)
 ## shared-persistent-sessions: Shared, persistent, multi-user agent sessions
 - [Notion MCP supported tools](sources/notion-mcp-supported-tools.md): notion-spawn-session, wait-session, send-message-to-session, read-session-event let an outside agent start and observe Custom Agent sessions. (user-story-mapping)
 - [Linear for Agents (developer docs)](sources/linear-developers-agents.md): agent sessions start automatically on mention or delegation; webhook expects a thought activity within 10 seconds. (user-story-mapping)
@@ -90,6 +110,8 @@ Written only by the task `user-story-mapping`. Built into ../THEMES.md by ../bui
 - [What are Confluence's roles?](sources/atlassian-confluence-roles-space-permissions.md): role-based space access (Admin, Manager, Collaborator, Viewer, custom); public links, guest access and anonymous access are separate admin grants; 'you can't assign or remove roles that include permissions you don't have.' (user-story-mapping)
 - [Add or remove page restrictions (Confluence)](sources/atlassian-confluence-page-restrictions.md): per-item states open / edit-restricted / restricted / restricted-by-parent; view restrictions inherit to children, edit restrictions do not; the Rovo MCP server can read and set these states. (user-story-mapping)
 
+- [Generate code from a work item in Jira (Jira Coding Agent)](sources/atlassian-jira-coding-agent-generate-code.md): acts as the initiating user, who is PR and commit author; automations run as the connection owner (user-story-mapping)
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): agents run on their own account (needs a space role) or the triggering user's account (user-story-mapping)
 ## skill-standards: Skill standards
 - [Notion MCP supported tools](sources/notion-mcp-supported-tools.md): tools to convert a page to a Skill, upload/download Skills; enabled-skill lists capped at 30; uploads up to 20 MiB compressed / 1,000 files. (user-story-mapping)
 
@@ -143,6 +165,7 @@ MCP/auth/permission reality of getting agents into analytics, research and docs 
 - [Limitations and considerations (Teamwork Graph)](sources/atlassian-teamwork-graph-limitations.md): Forge apps only, installed in Jira or Confluence, org-admin install; Atlassian intends controls so graph data 'is not egressed from the Atlassian platform'. (user-story-mapping)
 - [Atlassian Rovo MCP server: supported tools](sources/atlassian-rovo-mcp-server-supported-tools.md): v2 exposes a few Primary tools plus discover/executeRead/executeWrite/executeDestructive; delete_jira and manage_jira 'disabled by default. An admin must enable'; Confluence has archive but no delete tool. (user-story-mapping)
 
+- [Open a Jira work item in an AI coding tool](sources/atlassian-jira-open-work-item-in-coding-tool.md): optional Rovo MCP lets the local agent read Jira and Confluence and update the work item (user-story-mapping)
 ## project-taxonomy: How 'project' is defined
 Initiative/project/epic/space taxonomies across tools and conventions.
 - [Initiatives (Linear docs)](sources/linear-initiatives-docs.md): Initiatives are curated groups of projects tied to a company objective; sub-initiatives allowed; projects can be collected by filters; initiative health on track/at risk/off track from updates; documents attach via a Resources pro (user-story-mapping)
@@ -179,3 +202,54 @@ What each platform treats as its first-class product-work objects (idea, initiat
 - [Atlassian MCP enhancements blog](sources/atlassian-blog-mcp-enhancements-jpd.md): July 2026 blog claims agents can find a JPD idea and link it to a delivery issue, but the supported-tools page names no JPD tool. (user-story-mapping)
 - [Open-Inspect README](sources/github-open-inspect-background-agents.md): the session is 'the core unit of work'; it stores messages, events, 'Artifacts | PRs created, screenshots captured', participants and sandbox state; no project object, grouping is by repository, environment and team; Linear holds the project mapping. (user-story-mapping)
 - [Why We Built Our Own Background Agent (Ramp Builders)](sources/ramp-builders-why-we-built-our-own-background-agent.md): Inspect's unit is the session (own SQLite DB, shareable by URL) and its output is the PR with before/after screenshots; no spec, PRD, project or folder concept described. (user-story-mapping)
+- [What is a goal? (Atlassian Goals)](sources/atlassian-goals-what-is-a-goal.md): Goal = name, owner, target date, status, monthly update, sub-goals; Home projects sync with epics (user-story-mapping)
+- [Link an idea to a Jira work item (JPD)](sources/atlassian-jpd-link-idea-to-work-item.md): idea shows a Delivery progress bar from linked work items (user-story-mapping)
+## agent-factory-sdlc: Agents across the whole product development loop
+- [Generate code from a work item in Jira (Jira Coding Agent)](sources/atlassian-jira-coding-agent-generate-code.md): assign a work item to Jira Coding Agent or Start work from Agent sessions; one sandbox session per repo; output is a draft PR it never merges (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): July 2026 launch spans Planner (spec), Jira for Slack and Loom prompts (intake), agents in Jira, Coding Agent, agent sessions, coding-agent automations, DX cost per PR (user-story-mapping)
+- [Using Jira for agentic engineering](sources/atlassian-jira-agentic-engineering-guide.md): vendor lifecycle is plan, orchestrate, review, scale (user-story-mapping)
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): operate step: alert/incident triage, PIR drafted as a Jira work item or Confluence page (user-story-mapping)
+- [Work with Rovo Dev in Bitbucket Pipelines](sources/atlassian-rovo-dev-bitbucket-pipelines.md): release step (beta): change summaries from commits, work items and deployment data; failed-build explanations (user-story-mapping)
+- [Rovo Dev in Jira launch blog](sources/atlassian-blog-rovo-dev-in-jira.md): agent proposes a plan to review, then executes, tests and opens PRs in a cloud sandbox (user-story-mapping)
+## opportunity-to-code-chain: Opportunity → problem → goal → intent → plan → code
+- [Link an idea to a Jira work item (JPD)](sources/atlassian-jpd-link-idea-to-work-item.md): idea to epic/task via the Delivery tab; optional 'Embed the idea description and fields into the work item' is the only documented way idea content reaches the work item an agent reads (user-story-mapping)
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): screen recording becomes an agent prompt and, for Atlassian accounts, Jira work items 'for agents to act on' (user-story-mapping)
+- [Check acceptance criteria in a code review](sources/atlassian-rovo-dev-acceptance-criteria-code-review.md): review reads AC from the work item matched by the key in the branch name (user-story-mapping)
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): finalized plan becomes sequenced work items each with AC and plan context; 'agent orchestration takes over' (user-story-mapping)
+- [Open a Jira work item in an AI coding tool](sources/atlassian-jira-open-work-item-in-coding-tool.md): deep link passes summary and description (support doc) or also linked docs (blog) (user-story-mapping)
+- [What is a goal? (Atlassian Goals)](sources/atlassian-goals-what-is-a-goal.md): goals link sub-goals, projects, Jira epics and work items; Teamwork Graph has a work-item-contributes-to-goal relationship (user-story-mapping)
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): PIR action items become Jira work items, closing the operate-to-backlog loop (user-story-mapping)
+## task-context-isolation: Isolation by task context, not only by user permission
+- [Generate code from a work item in Jira (Jira Coding Agent)](sources/atlassian-jira-coding-agent-generate-code.md): only the selected repo is cloned; in automations the agent runs 'restricted' with no Teamwork Graph or Confluence context (user-story-mapping)
+## agent-control-plane: Agent control planes above vendors
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): one Agents page per space for Atlassian, Studio and third-party agents with triggers, prompt, sources and role (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): assign to Claude Code, Cursor, Copilot (Codex soon) and Jira Coding Agent; Copilot, Cursor and Claude as automation action steps (user-story-mapping)
+- [Using Jira for agentic engineering](sources/atlassian-jira-agentic-engineering-guide.md): agents triggered by assignment, workflow transition, board column or automation rule (user-story-mapping)
+## scoped-governance-containers: Governance scoped to a project or workspace
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): agents are members of a space with a role; private spaces grant nothing without one (user-story-mapping)
+## evals-autonomy-trust: Evals, autonomy sliders and earned trust
+- [View and manage agents in your Jira space](sources/atlassian-jira-manage-agents-in-space.md): field-level autonomy controls exist only for the Jira Triage Agent so far (user-story-mapping)
+- [RovoDev Code Reviewer (ICSE 2026)](sources/arxiv-rovodev-code-reviewer-icse26.md): LLM judge filters wrong comments; classifier ranks actionability; 38.70% resolution vs 44.45% for humans (user-story-mapping)
+## agent-led-intent-shaping: Agents shape intent, not only execute it
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): asks follow-up questions on scope, constraints and success; PMs named in the audience (Early Access) (user-story-mapping)
+## spec-edge-case-review: Agents for spec edge-case review
+- [Introducing Jira Planner](sources/atlassian-blog-introducing-jira-planner.md): 'tells you whether your spec is detailed enough for execution, with specific suggestions for what's missing' (user-story-mapping)
+## outcome-measurement-gap: Nobody can yet measure PM-agent outcomes
+- [RovoDev Code Reviewer (ICSE 2026)](sources/arxiv-rovodev-code-reviewer-icse26.md): outcomes measured as comment resolution and PR cycle time, not quality or customer impact (user-story-mapping)
+## tacit-knowledge-capture: Capturing tacit knowledge from people for agents
+- [Record for AI agents (Loom)](sources/atlassian-loom-record-for-agent.md): captures narration, clicks, visited URLs, console and network logs into an agent prompt (user-story-mapping)
+## ai-synthesis-hallucination-risk: AI synthesis can invent or merge facts
+- [Make Rovo your research assistant - Deep research mode](sources/atlassian-rovo-deep-research.md): inline citations added after evaluation found claims hard to verify (user-story-mapping)
+## cost-control-routing: Cost metering and model routing built into the harness
+- [Using the Ops Expert agent](sources/atlassian-rovo-ops-expert-agent.md): Rovo credits charged for Teamwork Graph context reads, including by Claude or ChatGPT via MCP or CLI, from December 3, 2026 (user-story-mapping)
+- [How we're evolving Jira for AI-native software development](sources/atlassian-blog-jira-ai-native-software-development.md): DX cost management estimates cost per PR across Claude, Cursor, Copilot and Jira (user-story-mapping)
+## human-judgment-pm-jobs: PM jobs that stay human-led
+- [Using Jira for agentic engineering](sources/atlassian-jira-agentic-engineering-guide.md): 'Set the goal (people decide what and why; Jira turns it into a plan)' (user-story-mapping)
+## status-update-agents: Status updates and 'ask the org' Q&A as an agent job
+- [Work with Jira Delivery agent](sources/atlassian-rovo-jira-delivery-agent.md): stakeholder summaries, daily digests, stale-work follow-ups, usable in automation (user-story-mapping)
+- [What is a goal? (Atlassian Goals)](sources/atlassian-goals-what-is-a-goal.md): goal updates are human-written monthly (reminder on the 1st, released on the 8th) (user-story-mapping)
+- [Work with Rovo Dev in Bitbucket Pipelines](sources/atlassian-rovo-dev-bitbucket-pipelines.md): release change summaries; Release Notes Drafter from up to 20 Jira issues (user-story-mapping)
+## enterprise-admin-controls: Enterprise admin controls across harnesses
+- [Work with Rovo Dev in Bitbucket Pipelines](sources/atlassian-rovo-dev-bitbucket-pipelines.md): not yet governed by the org AI early-access toggle; only the workspace Rovo Dev switch (user-story-mapping)
+## one-job-per-agent: One job per agent
+- [Work with Jira Delivery agent](sources/atlassian-rovo-jira-delivery-agent.md): out-of-the-box agent scoped to delivery state with its own tool set (user-story-mapping)
