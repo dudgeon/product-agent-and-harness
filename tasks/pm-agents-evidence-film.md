@@ -25,3 +25,4 @@ Related: [[research-pm-agents-jobs-to-be-done]], [[strategy-story-and-explainer-
 - 2026-10-24 Worker: rendered (4:25, out/pm-agents-evidence/pm-agents-evidence.mp4); score checked (LISTEN.md, score-qa.png, silencedetect: audible from 0.35 s to end); sent to Geoff and reported to the director.
 - 2026-10-24 Director: film 05 rendered and checked (4:25, 1080p, audio); worker confirmed music throughout and sent it to Geoff.
 - 2026-10-24 Worker: rebuilding with the clean 1140 s score bed (director set aside the 480/600 s beds).
+- 2026-10-24 Worker: rebuilt on the clean 1140 s bed; silencedetect -50 dB: fade-in 0.45 s plus four sub-second line-end dips, none at 1 s+; new copy sent to Geoff, director told.
