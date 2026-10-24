@@ -59,3 +59,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Film 06 (Ramp Glass) re-rendered, 4:59, sent to Geoff.
 - 2026-10-24 Film 09 passes with a 1.04 s quiet stretch (voice silent too); music test clarified in PROJECT.md.
 - 2026-10-24 Film 09 (Stripe) rendered, 4:11, sent. All short films (05-09) done. Strategy film v2 voicing and building on the GPU (about an hour).
+- 2026-10-24 Pushed to GitHub on Geoff's yes (817cbb9): Pages site home page and explainer films 04-09. Pages to be enabled by github-pages-site.
