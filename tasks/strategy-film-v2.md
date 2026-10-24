@@ -1,0 +1,17 @@
+---
+title: Strategy film v2: get to the heart of it faster
+status: active
+directed_by: director-project-agent-and-harness
+model: claude-fable-5-1
+done_when: A second version of the strategy film (v1 kept as is), built end to end without asking Geoff, structured on his three dimensions (standardised core product moves as compounding skills and agents; a shared persistent agent runtime and its taxonomy; artifact lifecycle infrastructure), then the interactions across upstream analysis, shaping, coding-agent coordination, shipping, testing and iterating, then the representative workflow stories; with a short tee-up only; rendered after the last explainer films (05-09) finish, with music throughout, and sent to Geoff
+---
+
+## Request
+
+Geoff (2026-10-24): "The Story 04 film is good, and we should keep it. Or rather, I will finish reviewing it later. I only got the first 30 seconds in. I think it starts at much too high an altitude, and we may still keep it, but I think that we need to do another version, which gets to the heart of the matter faster. There are three dimensions for enhancing product work in the agent era, and they are standardizing the core product moves and jobs to be done using a robust and self-improving set of skills and agents that the whole company uses and improves such that they compound over time. Two, selecting or building an agent runtime that allows for shared persistent agentic workflows where the vast majority of product work, whether or not it conforms to standardized workflow, happens within that runtime. So we can examine traces, find new places to improve and standardize, and accelerate collaboration between product managers and their partners. And three, underlying infrastructure to support artifact lifecycle management. Then you can talk about the interactions between upstream analysis, core product shaping work, coordination with coding agents, shipping, testing, and iterating from there. The video should focus on approaches for standardizing those core product moves into skills and agents, the taxonomy of approaches for the runtime, and the high-level thinking around artifact management and documentation. Then it should dive into the representative workflow stories that I assume you've built but I've not yet seen. It can have a very high-level tee-up in terms of coding is accelerating and humans performing product management functions need these tools and approaches to both keep up and capture the opportunities of agentic software and product development, but it should not waste too much time on a high-altitude think piece. Cue this up, do a full end-to-end story creation and video generation without requesting further guidance from me. Cue it to happen after the last of the explainer videos finish."
+
+Related: [[strategy-story-and-explainer-video]] (v1, kept), [[user-story-mapping]] (the workflow stories), [[research-agent-runtime-patterns-taxonomy]] (runtime taxonomy, revised classes), [[teardowns-to-pattern-classes]], [[pdlc-cross-ecosystem-map]].
+
+## Progress
+
+- 2026-10-24 Filed by director-project-agent-and-harness; to story-and-film (Fable 5.1).

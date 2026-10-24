@@ -36,6 +36,7 @@ SESS = {
  "stripe-teardown-film": BG("teardown-stripe-agents", "3d45fbd1"),
  "research-runtime-patterns-follow-up-round": BG("research-follow-up-round", "a36bf408", "stopped; results merged by the director"),
  "strategy-story-and-explainer-video": BG("story-and-film", "0bd16627"),
+ "strategy-film-v2": BG("story-and-film", "0bd16627"),
  "research-lennys-newsletter-archive": BG("sweep-lennys", "db172d7f"),
  "research-department-of-product-knowledge-series": BG("sweep-dept-of-product", "2c0b10cc"),
  "research-claude-resources-articles": BG("ingest-claude-resources", "d6d48790"),
@@ -44,7 +45,7 @@ SESS = {
  "research-airbnb-spotify-product-practices": BG("research-airbnb-spotify", "85993db5"),
  "research-block-product-practices": BG("research-block", "762dd35c"),
 }
-MODEL = {"strategy-story-and-explainer-video": "Fable 5.1"}
+MODEL = {"strategy-story-and-explainer-video": "Fable 5.1", "strategy-film-v2": "Fable 5.1"}
 FILMS = {"strategy-story-and-explainer-video": "04-product-agent-harness", "pm-agents-evidence-film": "05-pm-agents-evidence",
          "ramp-glass-film": "06-ramp-glass-teardown", "runtime-patterns-film": "07-runtime-patterns",
          "intent-shaping-options-film": "08-intent-shaping-options", "stripe-teardown-film": "09-stripe-teardown"}
