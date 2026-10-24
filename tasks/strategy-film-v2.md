@@ -12,6 +12,9 @@ Geoff (2026-10-24): "The Story 04 film is good, and we should keep it. Or rather
 
 Related: [[strategy-story-and-explainer-video]] (v1, kept), [[user-story-mapping]] (the workflow stories), [[research-agent-runtime-patterns-taxonomy]] (runtime taxonomy, revised classes), [[teardowns-to-pattern-classes]], [[pdlc-cross-ecosystem-map]].
 
+Geoff (2026-10-24, correction): "the opportunity should not be framed around 'coding is speeding up so we need to keep up', instead it should be about how achieving ambitions requires scaling coding (already in progress) and scaling problem discovery, intent definition, etc — opportunistic and optimistic — not trying fix a problem"
+
 ## Progress
 
 - 2026-10-24 Filed by director-project-agent-and-harness; to story-and-film (Fable 5.1).
+- 2026-10-24 Director: sent Geoff's framing correction (ambition and opportunity, not catch-up) to story-and-film.
