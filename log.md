@@ -62,3 +62,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 Pushed to GitHub on Geoff's yes (817cbb9): Pages site home page and explainer films 04-09. Pages to be enabled by github-pages-site.
 - 2026-10-24 Pages live at https://dudgeon.org/product-agent-and-harness/ (custom domain; github.io redirects).
 - 2026-10-24 Strategy film v2 rendered, 15:12, sent to Geoff; to be added to the Pages site.
+- 2026-10-24 Pushed on Geoff's yes (a8cf689): v2 leads the site.
