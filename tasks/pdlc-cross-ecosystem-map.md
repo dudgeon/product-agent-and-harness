@@ -16,3 +16,4 @@ Inputs: the per-ecosystem maps listed in [[pdlc-maps-per-ecosystem]]; the runtim
 
 - 2026-10-24 Filed by director-project-agent-and-harness, waiting for the per-ecosystem maps.
 - 2026-10-24 Worker pdlc-cross-ecosystem started via claude --bg on Fable 5.1 with --remote-control.
+- 2026-10-24 Worker pdlc-cross-ecosystem: built tasks/pdlc-cross-ecosystem-map/index.html (standalone, no scripts, no web fonts, light and dark, matrix plus by-ecosystem view) from the six maps, with README.md and the generator index.build.py; all 135 relative links and anchors checked; public-check clean; folder staged, not committed.
