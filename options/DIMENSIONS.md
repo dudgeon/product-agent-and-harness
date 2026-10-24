@@ -861,8 +861,7 @@ Update to the lean: the three new cases strengthen it. Each puts a **human owner
 
 ---
 
-## artifact-and-project-structure:
- How PM artifacts and projects are structured, stored and found
+## artifact-and-project-structure: How PM artifacts and projects are structured, stored and found
 **Choice:** Do PM artifacts (specs, research syntheses, decisions, status updates, prototypes, dashboards) stay ad hoc and local, follow repo conventions, live as objects in a platform (Atlassian, Notion, Linear style), sit behind a thin product-defined project descriptor, or does a product meta-harness define typed artifact primitives and a project structure itself?
 **Why it matters to the strategy:** Multi-party collaboration, reuse across sessions and harnesses, review, permissions and provenance all depend on a shared answer to "what is a project, what artifact types does it have, where do they live and who may see them". Today there is no cross-tool answer: "project" means different things even inside one vendor, and PM artifacts are mostly local files or scattered docs. This is the structural question behind [[context-and-memory]] (where context lives), [[context-and-memory]] (how context reaches the agent) and [[context-and-memory]] (per-user memory). Those three answer *where and how it is read*; this one answers *what the things are and how a project is defined*. Director: consider merging context-location and org-context-grounding-source into this dimension as its "location" half, or keep all four linked; I have kept them separate and cross-referenced.
 **Related themes:** [[product-artifact-primitives]], [[artifact-standardization]], [[docs-as-code-prd]], [[pm-tool-connectivity]], [[project-taxonomy]], [[compounding-context-repo]], [[org-context-grounding]], [[memory-architecture]]   **Related dimensions:** [[context-and-memory]], [[intent-shaping-and-spec]], [[session-persistence-sharing]], [[governance-control-plane]]
@@ -1463,8 +1462,7 @@ Department of Product pass (competitive-teardown-stripe-knowledge-agents, 2026-1
 
 ---
 
-## agent-interface:
- Agent interface: own app, chat, or embedded
+## agent-interface: Agent interface: own app, chat, or embedded
 **Choice:** Where people meet the agent: our own app (desktop or web workspace), the chat tool they already live in (Slack, Teams), the IDE/CLI, embedded inside existing tools (docs, tracker, browser), or one agent service behind several of these.
 **Why it matters to the strategy:** The surface decides who can use the agent on day one, what work is visible to others, what UI we must fund (artifact rendering, review panes, cost meters), and how much of the experience a chat vendor controls. River (Slack only) and Glass (own desktop app) are the two strongest opposite data points.
 **Related themes:** [[agent-as-service-many-surfaces]], [[org-learning-loop]], [[shared-persistent-sessions]], [[remote-agent-invocation]], [[enablement-by-product]]   **Related dimensions:** [[trust-privacy-defaults]], [[session-persistence-sharing]], [[artifact-and-project-structure]], [[adoption-model]], [[remote-invocation-route]], [[runtime-location]]
