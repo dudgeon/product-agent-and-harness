@@ -57,3 +57,4 @@ One line per director action, newest last. Task-level detail is in each task's `
 - 2026-10-24 story-and-film's v2 work registered scenes/pah2 in the shared Root.tsx and registry.ts before the folder existed, breaking every render (film 06 failed). Director removed the four lines (backups in scratchpad), tsc clean; told the worker to register only after its files exist.
 - 2026-10-24 Film 08 (intent-shaping options) rendered, 5:32, sent to Geoff.
 - 2026-10-24 Film 06 (Ramp Glass) re-rendered, 4:59, sent to Geoff.
+- 2026-10-24 Film 09 passes with a 1.04 s quiet stretch (voice silent too); music test clarified in PROJECT.md.
