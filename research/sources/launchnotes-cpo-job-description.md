@@ -23,4 +23,4 @@ Vendor job-description page used for persona P2 (GPM/CPO): board communication, 
 
 ## Could not verify
 - Role description comes from vendor job-description pages; no Lenny's, Reforge or SVPG material on CPO jobs was found in this pass.
-- Audit 2026-10-24: page read; board communication and product ops not found; removed from the map's P2 row (board communication now marked unverified).
+- Re-check 2026-10-24: page read; board communication and product ops not found; removed from the map's P2 row (board communication now marked unverified).

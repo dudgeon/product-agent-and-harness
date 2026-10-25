@@ -47,4 +47,4 @@ Block's CTO, in the fullest first-party account of how Block runs: a functional 
 ## Could not verify
 - No method behind the 8-10 hours (self-reported) or the 20-25% composite; no baseline or period.
 - The CTO intro says he oversees "over 3,500 people"; the show notes say "more than 4,000 engineers": figures differ within the page.
-- Earlier audit (2026-10-24, research-pm-agents-jobs-to-be-done) read only the paywalled page's chapter list; this rewrite (2026-10-24, research-block-product-practices) is from the full transcript read in Geoff's signed-in browser. Transcript is auto-generated ("games" = gains).
+- An earlier pass (2026-10-24, research-pm-agents-jobs-to-be-done) read only the paywalled page's chapter list; this rewrite (2026-10-24, research-block-product-practices) is from the full transcript read through a paid subscription. Transcript is auto-generated ("games" = gains).

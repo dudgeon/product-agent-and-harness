@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Shows how thin review evidence is for Aha! AI agentic features. G2 aggregates user reviews (anecdote-level evidence). Audit 2026-10-24: original could not be fetched (HTTP 403, also on g2.com/products/aha/reviews); claims below rest on search-result summaries and are unverified unless marked.
+Shows how thin review evidence is for Aha! AI agentic features. G2 aggregates user reviews (anecdote-level evidence). Re-check 2026-10-24: original could not be fetched (HTTP 403, also on g2.com/products/aha/reviews); claims below rest on search-result summaries and are unverified unless marked.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: User-review data is the only third-party signal for Aha! AI, and it is thin: generative-AI rows mostly "Not enough data" on this comparison (search summary, unverified) (case 6)

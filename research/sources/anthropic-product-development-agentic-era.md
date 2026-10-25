@@ -29,6 +29,6 @@ First-party account from one Anthropic PM of how the job shifted from alignment 
 
 ## Could not verify
 - Publish date not captured in the original research.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read; author and date (2026-04-29) filled; only limit stated is that Managed Agents is "currently in beta".
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read; author and date (2026-04-29) filled; only limit stated is that Managed Agents is "currently in beta".
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read; author and date (2026-04-29) filled; only limit stated is that Managed Agents is "currently in beta".
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read; author and date (2026-04-29) filled; only limit stated is that Managed Agents is "currently in beta".
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read; author and date (2026-04-29) filled; only limit stated is that Managed Agents is "currently in beta".
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read; author and date (2026-04-29) filled; only limit stated is that Managed Agents is "currently in beta".

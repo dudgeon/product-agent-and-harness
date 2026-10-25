@@ -1,6 +1,6 @@
 # Teardown: Shopify River and Aquifer (summary)
 
-Date: 2026-10-24. Worker draft for Geoff's review (task: [competitive-teardown-shopify-river](../competitive-teardown-shopify-river.md)). Source notes are in the research library (`../../research/sources/`); this summary links to them and doesn't copy them.
+Date: 2026-10-24. Source notes are in the research library (`../../research/sources/`); this summary links to them and doesn't copy them.
 
 **Evidence status, read this first.** Almost everything here is Shopify's own account: engineering blog posts, Tobi Lütke's X posts and podcast remarks, and executives' interviews. The independent sources found (ZenML, Port, adaptordie, Internal Agents Map, Dealroom, Simon Willison, others listed below) mostly restate Shopify's numbers. Nobody outside Shopify has measured River's outcomes, quality, cost or privacy effects. The architecture descriptions (Aquifer's session/harness/sandbox split, profiles, session cells) come from the builders and are specific and technically credible. The outcome numbers (merge rate, PR share, backlog cuts) have no stated method. Dates matter: the River story runs from March to October 2026 and the numbers change fast.
 

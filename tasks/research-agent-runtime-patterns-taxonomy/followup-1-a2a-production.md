@@ -178,7 +178,7 @@ Amended (no new INDEX line): [Ask HN: Is anyone using the A2A protocol?](../../r
 **New theme proposed: `agent-protocol-security`: Security of agent-to-agent and agent-to-tool protocols.**
 Attacks and gaps that arise because a remote agent or its metadata becomes input to your agent: card or description poisoning, session smuggling, identity loss across delegation hops, optional signing, and gateways that cover one protocol but not another.
 
-Why it is new: `skill-supply-chain-security` covers installed skills and plugins, and `identity-delegation` covers whose authority is used. Neither covers runtime attacks from a live remote counterparty, or audit coverage of a protocol route. If the director prefers, it could be folded into `identity-delegation` plus `agent-failure-modes`.
+Why it is new: `skill-supply-chain-security` covers installed skills and plugins, and `identity-delegation` covers whose authority is used. Neither covers runtime attacks from a live remote counterparty, or audit coverage of a protocol route. It could instead be folded into `identity-delegation` plus `agent-failure-modes`.
 
 - [When AI Agents Go Rogue: Agent Session Smuggling](sources/unit42-agent-session-smuggling-a2a.md): malicious remote agent injects instructions across an A2A session; unauthorised `buy_stock` in an ADK PoC; not a protocol flaw (research-runtime-patterns-follow-up-round)
 - [A2ABreak](sources/arxiv-a2abreak-security-analysis.md): 11 spec-level vulnerabilities exploitable by a compliant adversary, incl. multi-hop identity loss (research-runtime-patterns-follow-up-round)
@@ -234,7 +234,7 @@ Option rows. The first one replaces the evidence and maturity text of the existi
 Key questions (continuing the existing numbering):
 
 8. Which systems must the intent-shaping agent reach (Jira and Confluence, ServiceNow, Salesforce, Workday, internal services), and does each expose MCP, an A2A agent endpoint, or only APIs, at which A2A version (0.3 or 1.0)? — *answered by:* system inventory with platform owners; vendor docs check — *affects:* SaaS agent endpoint, A2A agent, agent behind MCP, vendor API
-9. Where will the intent-shaping agent be called from: a coding harness (no A2A client except Gemini CLI), an enterprise agent host (Gemini Enterprise, Copilot Studio, Agentforce, ServiceNow), or our own surface? This is the A2A-specific form of Geoff's open Q7, still open. — *answered by:* user interviews; usage data — *affects:* all A2A options vs MCP
+9. Where will the intent-shaping agent be called from: a coding harness (no A2A client except Gemini CLI), an enterprise agent host (Gemini Enterprise, Copilot Studio, Agentforce, ServiceNow), or our own surface? This is the A2A-specific form of an open cross-cutting question, still open. — *answered by:* user interviews; usage data — *affects:* all A2A options vs MCP
 10. Does our audit and gateway plane see A2A traffic as well as MCP, given that ServiceNow's AI Gateway covers MCP only? — *answered by:* security architect; gateway vendor trial — *affects:* all A2A options
 11. When a remote agent's answer feeds intent shaping, how is its provenance carried and checked (Eon had to invent a `DataContext` extension), and what happens on empty or failed remote responses? — *answered by:* prototype with one remote agent and injected failures — *affects:* A2A, agent behind MCP, SaaS agent endpoint
 12. Which sensitive actions need out-of-band human approval when a remote agent is in the loop (Unit 42's mitigation), and can the chosen host do that? — *answered by:* threat-model workshop; host feature check — *affects:* all remote options
@@ -285,7 +285,6 @@ Key question:
 - **Cursor.** A forum request was found; whether Cursor ships anything A2A-related was not confirmed.
 - **Unchecked claims.** That Gemini CLI is "deprecated and replaced by antigravity-cli" (HN claim). Laurie Voss's talk on agent protocols was not watched.
 - **Download counts include CI**; npm, Maven and NuGet were not checked, and GitHub dependents are not available through the API.
-- **Process note for the coordinator.** My first 11 note files were written by mistake to the shared checkout (`/Users/geoff/claude-home/project-agent-and-harness/research/sources/`) before the session switched to this worktree. Bash is blocked there, so I could not delete them. Their corrected copies are in this worktree. The shared-checkout strays to delete are:
   - `aaif-a2a-joins-aaif.md`
   - `a2a-project-joining-aaif.md`
   - `aaif-eon-a2a-into-production.md`

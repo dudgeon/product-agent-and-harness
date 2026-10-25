@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-A PM-audience explainer that frames the agent harness as the place product teams now differentiate ("agentic moats"), built around Square's head of product calling Managerbot's harness the "secret sauce". It distils five harness principles (brain/hands/session split, fixed rules mixed with AI steps, designed human approval, tool curation and progressive disclosure, self-improving harnesses), each pinned to a company case. Every company fact is second-hand from vendor posts, press and one VentureBeat interview; there is no new data. Its value for the deck is the plain-language framing and one sharp design question for PMs: "which decisions belong to the model, and which belong to the system?", answered by reversibility. Bears on loop-source, review-and-autonomy and governance-control-plane.
+A PM-audience explainer that frames the agent harness as the place product teams now differentiate ("agentic moats"), built around Square's head of product calling Managerbot's harness the "secret sauce". It distils five harness principles (brain/hands/session split, fixed rules mixed with AI steps, designed human approval, tool curation and progressive disclosure, self-improving harnesses), each pinned to a company case. Every company fact is second-hand from vendor posts, press and one VentureBeat interview; there is no new data. Its value for the strategy is the plain-language framing and one sharp design question for PMs: "which decisions belong to the model, and which belong to the system?", answered by reversibility. Bears on loop-source, review-and-autonomy and governance-control-plane.
 
 ## Themes
 - harness-over-model: opens with Anthropic's harness-design experiments (solo agent 20 min/$9 with a broken game vs a three-agent harness 6 h/$200 that worked) and draws the lesson that "the right harness for last year's model may be over-engineered for this year's" (section "Anthropic's engineer demonstrates..."). Second-hand from [Anthropic's post](anthropic-harness-design-long-running-apps.md).
@@ -42,4 +42,4 @@ A PM-audience explainer that frames the agent harness as the place product teams
 - The Square head of product quote and the Dorsey "organisational intelligence" line come via VentureBeat (footnote 1); the VentureBeat article is not filed and was not read here.
 - The OpenAI April 2026 Agents SDK claim was not checked against OpenAI's changelog.
 - The closing table of 20+ real-world examples (Spotify, Slack, Microsoft and others) is an image and was not available in the text.
-- Retrieved through Geoff's paid subscription; summarised, not reproduced.
+- Retrieved through a paid subscription; summarised, not reproduced.

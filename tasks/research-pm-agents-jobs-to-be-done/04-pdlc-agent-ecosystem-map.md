@@ -1,6 +1,6 @@
 # Intercom's agent ecosystem, mapped to the tasks of the product lifecycle
 
-Date: 2026-10-24. Worker draft (task research-pm-agents-jobs-to-be-done, for [[pdlc-maps-per-ecosystem]]). Same frame as the [Stripe map](../competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.md): rows are tasks, not job titles; each handoff is marked **documented** (an Intercom source says it happens), **inferred** (consistent with the sources but not stated) or **unknown**. Built only from filed notes in `../../research/sources/`. Visual version: [04-pdlc-agent-ecosystem-map.html](04-pdlc-agent-ecosystem-map.html).
+Date: 2026-10-24. Same frame as the [Stripe map](../competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.md): rows are tasks, not job titles; each handoff is marked **documented** (an Intercom source says it happens), **inferred** (consistent with the sources but not stated) or **unknown**. Built only from filed notes in `../../research/sources/`. Visual version: [04-pdlc-agent-ecosystem-map.html](04-pdlc-agent-ecosystem-map.html).
 
 **Evidence caveat.** Almost every source is Intercom's own (its Substack ideas.fin.ai, its blog, its CTO's webinar answers, its CEO on a podcast). Intercom sells Fin and an AI-native engineering story, so these are first-party and self-reported; no independent account of Intercom's process was found (one paywalled interview aside).
 
@@ -80,9 +80,9 @@ LEARNING  sessions → SessionEnd gaps → GitHub issues → new skills (documen
 - **Intercom's answer to the seam is to re-capture intent at the PR, not to carry it from research.** The "why" is demanded when the PR is opened and checked by the reviewer. That is a cheap, enforceable pattern ([review-and-autonomy](../../options/DIMENSIONS.md#review-and-autonomy-review-and-autonomy)), but it captures intent after planning, so it can't stop a well-built wrong thing.
 - **One general harness plus a governed skills marketplace, not a set of named agents.** Unlike Stripe (Kai, Harbor, Orbit, Minions), Intercom runs nearly everything through Claude Code with hundreds of skills and hook-enforced workflows; the only named custom agents are the reviewer (Shrek) and Operator. Evidence for the "general harness plus skills" option in [work-structure](../../options/DIMENSIONS.md#work-structure-how-structured-the-work-is-what-agent-shape-fits-and-the-unit-of-an-agent).
 - **Write-back after release is a first-class step.** The support agent's knowledge is a launch gate fed by a "what we built" doc; harness gaps feed back as skills. Both are concrete versions of [context-and-memory](../../options/DIMENSIONS.md#context-and-memory-context-and-memory) write-back.
-- **The research team is AI-heavy but disconnected on paper.** The best candidate seam to fund here is research → shaped intent, with the evidence attached.
+- **The research team is AI-heavy but disconnected on paper.** The best candidate seam to build for here is research → shaped intent, with the evidence attached.
 
-## Cross-ecosystem notes (for the comparison worker)
+## Cross-ecosystem notes
 
 - Intercom is the "general harness + skills + hooks" archetype; Stripe is the "named agent per task" archetype.
 - Intercom's distinctive mechanisms: intent captured at PR creation and verified in review; risk-based auto-approval (~19%); support-agent readiness as a release gate; a telemetry-driven harness learning loop.

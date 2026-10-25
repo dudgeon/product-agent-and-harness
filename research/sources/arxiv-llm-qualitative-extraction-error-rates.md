@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-The only independent quantitative error-rate comparison in the case file, but not about any commercial PM agent and not about interview synthesis: it measures LLM data extraction from published papers for a literature (scoping) review in health professions education. Useful as an analogue (structured extraction from text), not as a benchmark for synthesising user-research interviews. Its key finding, that AI-human disagreement concentrates on questions needing interpretation, bears directly on research-synthesis agents. Evidence kind: independent (academic preprint, not peer reviewed). Audit 2026-10-24: arXiv abstract page fetched and claims checked.
+The only independent quantitative error-rate comparison in the case file, but not about any commercial PM agent and not about interview synthesis: it measures LLM data extraction from published papers for a literature (scoping) review in health professions education. Useful as an analogue (structured extraction from text), not as a benchmark for synthesising user-research interviews. Its key finding, that AI-human disagreement concentrates on questions needing interpretation, bears directly on research-synthesis agents. Evidence kind: independent (academic preprint, not peer reviewed). Re-check 2026-10-24: arXiv abstract page fetched and claims checked.
 
 ## Themes
 - research-synthesis-agents: In literature-review data extraction (187 publications, 17 questions), AI inaccuracies were 1.51% vs 4.37% for humans; disagreement concentrated on interpretive questions (abstract). Not Dovetail, not interviews

@@ -28,4 +28,4 @@ A September 2025 tutorial on MCP for PMs across several clients (Claude Desktop 
 
 ## Could not verify
 - Capabilities are as of September 2025 and were not re-checked.
-- Retrieved through Geoff's paid subscription; summarised, not reproduced.
+- Retrieved through a paid subscription; summarised, not reproduced.

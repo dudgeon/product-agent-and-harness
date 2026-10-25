@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: article
 evidence: first-party
 filed_by: research-pm-agents-jobs-to-be-done
-filed_note: audit 2026-10-24
+filed_note: re-check 2026-10-24
 themes: [research-synthesis-agents, human-judgment-pm-jobs, ai-synthesis-hallucination-risk, feedback-triage-agents]
 relevance: high
 ---

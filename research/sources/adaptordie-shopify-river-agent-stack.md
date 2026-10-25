@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-A commerce-oriented commentary on "Under the River". **It restates Shopify's claims** and translates them into a merchant-agent product thesis. Two things are worth keeping: its reading of **pi as the headless base agent, with River as one social wrapper**, and its list of Aquifer components that includes a **"credentials proxy"** and "gateways". This suggests Under the River mentions credentials handling, which the coordinator should check in the original.
+A commerce-oriented commentary on "Under the River". **It restates Shopify's claims** and translates them into a merchant-agent product thesis. Two things are worth keeping: its reading of **pi as the headless base agent, with River as one social wrapper**, and its list of Aquifer components that includes a **"credentials proxy"** and "gateways". This suggests Under the River mentions credentials handling, which should be checked in the original.
 
 ## Themes
 - `single-agent-many-skills`: "Pi is the engine room. River is the shop floor interface." River, PR review and Vanilla (headless pi) are peer profiles. "Add a bundle, not a platform."

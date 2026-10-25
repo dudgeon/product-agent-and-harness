@@ -25,4 +25,4 @@ Author's analysis of Lenny's content and practitioner voices, not a survey. Know
 
 ## Could not verify
 - Page returned 403; claims taken from search summary only.
-- Audit 2026-10-24: re-tried: medium.com 403, scribe.rip 404, freedium TLS error, archives blocked. Everything above is from search-engine extracts (unverified). Publication date unknown; it cites Q1 2026 data, so likely late March 2026 or later (inference).
+- Re-check 2026-10-24: re-tried: medium.com 403, scribe.rip 404, freedium TLS error, archives blocked. Everything above is from search-engine extracts (unverified). Publication date unknown; it cites Q1 2026 data, so likely late March 2026 or later (inference).

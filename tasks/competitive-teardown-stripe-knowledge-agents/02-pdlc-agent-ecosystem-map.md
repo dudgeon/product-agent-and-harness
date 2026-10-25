@@ -1,6 +1,6 @@
 # Stripe's agent ecosystem, mapped to the tasks of the product lifecycle
 
-Date: 2026-10-24 (v2, re-anchored on tasks at Geoff's request). Worker draft (task competitive-teardown-stripe-knowledge-agents). Built only from the filed source notes in `../../research/sources/`. Each handoff is marked **documented** (a Stripe source says it happens), **inferred** (consistent with the sources but not stated) or **unknown**. Visual version: [Stripe Agent Lifecycle Map](https://claude.ai/artifact/CqRTGU5Dy5Wqz3kAwdbw2n).
+Date: 2026-10-24 (v2, re-anchored on tasks). Built only from the filed source notes in `../../research/sources/`. Each handoff is marked **documented** (a Stripe source says it happens), **inferred** (consistent with the sources but not stated) or **unknown**. Visual version: [Stripe Agent Lifecycle Map](https://claude.ai/artifact/CqRTGU5Dy5Wqz3kAwdbw2n).
 
 ## Why this map is anchored on tasks, not job families
 
@@ -23,7 +23,7 @@ So each row below is a **task**, and "who does it" lists the roles the sources s
 2. **Orbit starts from intent that a person types.** In the demo, an engineer types a research question; Orbit reads the codebase and Trailhead, then drafts a plan ([video](../../research/sources/youtube-notmybusiness-inside-stripe-ships-fast.md)). Orbit targets engineers first.
 3. **What bridges the two is people, plus shared tools and documents.** Kai, Orbit, Minions and Harbor all reach Toolshed (~500 MCP tools, used by "hundreds of different agents") and the same documents, Slack threads and tickets ([Minions part 2](../../research/sources/stripe-minions-part-2.md); [part 1](../../research/sources/stripe-minions-one-shot-coding-agents.md)).
 
-**What the task view changes.** Because one person at Stripe often does both tasks, the missing agent link may cost little there: the context travels in that person's head and in the docs they share. The gap bites when the tasks are split across people (a PM researches, an engineer plans), which is the norm in most of our target orgs. That makes "research → intent → plan, carried across people" the seam to fund, whatever the job titles.
+**What the task view changes.** Because one person at Stripe often does both tasks, the missing agent link may cost little there: the context travels in that person's head and in the docs they share. The gap bites when the tasks are split across people (a PM researches, an engineer plans), which is the norm in most of our target orgs. That makes "research → intent → plan, carried across people" the seam to build for, whatever the job titles.
 
 ## The lifecycle, task by task
 
@@ -70,7 +70,7 @@ SHARED       Toolshed (~500 MCP tools) · Trailhead (owner-verified docs) · dev
 ## What it means for our options
 
 - **Map agents to tasks, then let roles vary.** Stripe's own record shows a single agent per task (Kai for research, Harbor for prototypes, Orbit for plans, Minions for code), used by whoever does the task. That is evidence for the "job agent" or "stage agent" unit over a "persona agent" (see [work-structure / agent-unit](../../options/DIMENSIONS.md#work-structure-how-structured-the-work-is-what-agent-shape-fits-and-the-unit-of-an-agent)).
-- **The seam to fund is research → intent → plan when those tasks sit with different people.** At Stripe one person often does all three. In orgs with a firmer PM/engineering split, the missing Kai → Orbit link becomes a real handoff cost. Options that carry shaped intent, with its evidence, into planning address it ([intent-shaping-and-spec](../../options/DIMENSIONS.md#intent-shaping-and-spec-intent-shaping-mode-and-spec-standard); story S05).
+- **The seam to build for is research → intent → plan when those tasks sit with different people.** At Stripe one person often does all three. In orgs with a firmer PM/engineering split, the missing Kai → Orbit link becomes a real handoff cost. Options that carry shaped intent, with its evidence, into planning address it ([intent-shaping-and-spec](../../options/DIMENSIONS.md#intent-shaping-and-spec-intent-shaping-mode-and-spec-standard); story S05).
 - **Single-user sessions are the blocker Stripe names itself.** Kai's roadmap item matches our [session-persistence-sharing](../../options/DIMENSIONS.md#session-persistence-sharing-session-persistence-sharing-and-handoff) choice. Orbit's shared workspaces suggest Stripe solved it first for planning.
 - **Agents connect through a shared tool layer and documents, not an orchestrator.**
 

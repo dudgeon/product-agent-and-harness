@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Content-marketing overview of ChatPRD by Banani, which sells an AI design/prototyping tool (adjacent to, not a direct competitor of, ChatPRD); no hands-on test. Folded-in second source is from BuildBetter, a direct competitor. Evidence kind: anecdote (opinion, not measurement); not disinterested. Audit 2026-10-24: original and the BuildBetter page fetched in full and claims checked.
+Content-marketing overview of ChatPRD by Banani, which sells an AI design/prototyping tool (adjacent to, not a direct competitor of, ChatPRD); no hands-on test. Folded-in second source is from BuildBetter, a direct competitor. Evidence kind: anecdote (opinion, not measurement); not disinterested. Re-check 2026-10-24: original and the BuildBetter page fetched in full and claims checked.
 
 ## Themes
 - prd-agents: ChatPRD described as "an AI-powered copilot for product managers and startup founders"; Banani says ChatGPT primed with example PRDs is a workable alternative but "not as convenient and requires additional setup" (case 9)

@@ -830,17 +830,17 @@ GAPS = [
     ),
     dict(
         title="Goal → intent: no agent anywhere, and the goal is rarely an object an agent can read",
-        where="No map names an agent that sets a goal, and the goal → intent handoff is inferred or unknown in six of nine. The goal exists as a readable object only at Atlassian (Goals, with a graph edge to work items), as a reviewed process at Shopify (GSD Proposal, 2023 evidence) and Spotify (30–50 bets stack-ranked every six months, with no object for a bet in the catalog), and as eval goals and gates set up front at Airbnb for AI features. This is the band where Geoff's reference workload, intent shaping, sits.",
+        where="No map names an agent that sets a goal, and the goal → intent handoff is inferred or unknown in six of nine. The goal exists as a readable object only at Atlassian (Goals, with a graph edge to work items), as a reviewed process at Shopify (GSD Proposal, 2023 evidence) and Spotify (30–50 bets stack-ranked every six months, with no object for a bet in the catalog), and as eval goals and gates set up front at Airbnb for AI features. This is the band where the reference workload, intent shaping, sits.",
         options=[
             ("Leave goal-setting to people and start the agent at intent", "All six, in practice", "nothing; but then the shaping agent cannot check intent against the goal"),
             ("Make the goal a readable object agents ground on", "Atlassian Goals and the work item → goal edge; Shopify's GSD proposal; Anthropic's written team principles; Airbnb's one roadmap and eval gates; Spotify's bets board (the map suggests a bet as a catalog kind; nobody has built it); Block's proposed company markdown file", "a system of record for goals that is kept current; at Atlassian no source says Planner reads it, and at Spotify the catalog holds systems, not bets"),
-            ("A shaping agent that interrogates rough intent against goals and constraints", "Jira Planner's clarifying questions (Early Access); Anthropic's 'send the spec to Claude Code' test; Airbnb's Pascal drafting the concept brief; Geoff's reference workload", "a question set the team agrees on, and access to the constraints (risk, dependencies, data) that answer it"),
+            ("A shaping agent that interrogates rough intent against goals and constraints", "Jira Planner's clarifying questions (Early Access); Anthropic's 'send the spec to Claude Code' test; Airbnb's Pascal drafting the concept brief; the reference workload", "a question set the team agrees on, and access to the constraints (risk, dependencies, data) that answer it"),
         ],
         questions=[
             "Where do goals live in the target org today, and can an agent read them with current access?",
             "What are the universal questions every piece of intent must answer here, and where is the source for each answer?",
         ],
-        links=[("intent-shaping-mode", f"{DIM}#sub-choice-intent-shaping-mode--who-shapes-intent-and-how"), ("work-structure", f"{DIM}#work-structure-how-structured-the-work-is-what-agent-shape-fits-and-the-unit-of-an-agent"), ("Geoff's answer Q8", "../research-agent-runtime-patterns-taxonomy/01-synthesis.md#geoffs-answers-2026-10-24")],
+        links=[("intent-shaping-mode", f"{DIM}#sub-choice-intent-shaping-mode--who-shapes-intent-and-how"), ("work-structure", f"{DIM}#work-structure-how-structured-the-work-is-what-agent-shape-fits-and-the-unit-of-an-agent"), ("reference workload", "../research-agent-runtime-patterns-taxonomy/01-synthesis.md#g-cross-cutting-questions-and-what-further-work-would-cover")],
     ),
     dict(
         title="The plan: a shared artifact in two ecosystems, a session or a thread in the other four",
@@ -1069,7 +1069,7 @@ def page():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lifecycle Across Ecosystems</title>
-<meta name="description" content="The product and software lifecycle, task by task, laid against nine agent ecosystems (Stripe, Ramp, Shopify, Anthropic, Atlassian, Intercom, Airbnb, Spotify, Block): agents, artifacts, handoffs marked documented, inferred or unknown, the seams, and what it means for the strategy deck.">
+<meta name="description" content="The product and software lifecycle, task by task, laid against nine agent ecosystems (Stripe, Ramp, Shopify, Anthropic, Atlassian, Intercom, Airbnb, Spotify, Block): agents, artifacts, handoffs marked documented, inferred or unknown, the seams, and what it means for the strategy.">
 <style>{CSS}</style>
 </head>
 <body>
@@ -1079,14 +1079,14 @@ def page():
   <div class="eyebrow">Cross-ecosystem map · lifecycle by task · 24 Oct 2026</div>
   <h1>The product lifecycle across nine agent ecosystems, task by task</h1>
   <p class="lede">Nine maps in one frame: {maps_list}. Rows are tasks, not job titles; columns are the companies whose agent ecosystems the project mapped. Each cell shows the agents or tools, who does the task, the artifact, and each handoff out of the task marked <strong>documented</strong> (a source says it happens), <strong>inferred</strong> (consistent with the sources, not stated) or <strong>unknown</strong> (not described). Every figure and claim comes from the six maps and the source notes they cite, and links to them.</p>
-  <nav class="toc" aria-label="Sections"><a href="#answer">Short answer</a><a href="#matrix">The matrix</a><a href="#seams">Where context breaks</a><a href="#dimensions">By dimension</a><a href="#strategy">For the strategy deck</a><a href="#evidence">Evidence</a><a href="#method">Method</a></nav>
+  <nav class="toc" aria-label="Sections"><a href="#answer">Short answer</a><a href="#matrix">The matrix</a><a href="#seams">Where context breaks</a><a href="#dimensions">By dimension</a><a href="#strategy">For the strategy</a><a href="#evidence">Evidence</a><a href="#method">Method</a></nav>
 </header>
 
 <div class="answer" id="answer">
   <h2>Downstream of intent the handoffs are documented everywhere; upstream, research → intent → plan across people is documented nowhere</h2>
   <ol>
     <li><strong>Agents sit at the same tasks in all nine.</strong> Research, shape the intent, write the code, review and operate have a named agent or agent workflow in every ecosystem. Code → review → release is documented in all nine, mostly with a mechanism.</li>
-    <li><strong>No ecosystem has an agent that sets the goal,</strong> and the goal → intent handoff is inferred or unknown in six of nine. The goal is a readable object only at Atlassian (Goals), a reviewed process at Shopify (GSD, 2023 evidence) and Spotify (the six-month bets board), and eval gates set up front at Airbnb, for AI features only. This band is where Geoff's reference workload, intent shaping, sits.</li>
+    <li><strong>No ecosystem has an agent that sets the goal,</strong> and the goal → intent handoff is inferred or unknown in six of nine. The goal is a readable object only at Atlassian (Goals), a reviewed process at Shopify (GSD, 2023 evidence) and Spotify (the six-month bets board), and eval gates set up front at Airbnb, for AI features only. This band is where the reference workload, intent shaping, sits.</li>
     <li><strong>Research → shaped intent or plan, across people, with the evidence attached, is undocumented in all nine.</strong> Each ecosystem closes the gap another way: one person does all three tasks (Stripe, Anthropic, Intercom, Block), a shared place stands in for a handoff (Shopify's thread, Anthropic's channel, Ramp's session, Block's Builderbot thread), a senior person carries it (Airbnb's CEO in every review, Spotify's VP pitching the bet), or an object carries the <em>what</em> without the <em>why</em> (Atlassian's work item, Intercom's PR description, Spotify's catalog). The nearest thing to an agent carrying research into intent is Airbnb's Pascal, which drafts a brief from research with a mechanism nobody describes.</li>
     <li><strong>The practices that close the gap depend on conditions a regulated org may lack:</strong> public-by-default sessions, engineers close to customers, tiny pods, a CEO in every review, strong test suites behind auto-approval, and transcripts available to mine. The evidence is first-party and self-reported in {total_src - total_ind} of {total_src} source notes.</li>
   </ol>
@@ -1134,8 +1134,8 @@ def page():
 </section>
 
 <section id="strategy">
-  <h2>What it means for the strategy deck</h2>
-  <p>The deck informs a resource request and keeps the choice open, so each common gap below is framed as options seen in the maps, the conditions each depends on, and the key questions that would decide. Nothing here is a recommendation; the register sections hold the full menus.</p>
+  <h2>What it means for the strategy</h2>
+  <p>The strategy keeps the choice open, so each common gap below is framed as options seen in the maps, the conditions each depends on, and the key questions that would decide. Nothing here is a recommendation; the register sections hold the full menus.</p>
   {gaps_html()}
 </section>
 
@@ -1152,7 +1152,7 @@ def page():
     <p><strong>Built from</strong> the nine task-anchored lifecycle maps, each made in the frame of the Stripe map: {maps_list}. The <a href="README.md">companion README</a> lists the method, the sources and what is open. Nothing was added that is not in a map or a source note the map cites; where this page counts something (handoffs, sources), it says so.</p>
     <p><strong>Rows:</strong> the ten tasks every map used, from Stripe's whiteboard chain (Opportunity → Problem → Goal → Intent → Plan, then Code) extended with review, release and operate, plus Test from the Ramp map. Where a map placed something inside an existing row (Intercom's QA sessions under review, Anthropic's evals under intent, Atlassian's Planner across intent and plan, Spotify's verifiers and Block's Gosling tests under review and operate), this page follows the map.</p>
     <p><strong>Handoffs:</strong> taken from each map's handoff table. A pair with no row is shown as unknown and says “no row in the map”. The Stripe map has no counts; the counts here are ours (nine handoffs: seven documented, one inferred, one unknown).</p>
-    <p><strong>Related:</strong> <a href="../research-agent-runtime-patterns-taxonomy/01-synthesis.md">runtime-patterns synthesis</a> (patterns and Geoff's answers) · <a href="{DIM}">options register</a> · <a href="../../research/THEMES.md#opportunity-to-code-chain-opportunity--problem--goal--intent--plan--code">theme: opportunity-to-code chain</a> · <a href="../user-story-mapping/INDEX.md">user stories</a> (S05 is the reference workload) · <a href="../teardowns-to-pattern-classes/00-mapping.md">teardowns mapped to pattern classes</a> · <a href="../pdlc-maps-per-ecosystem.md">the maps' task note</a> · the <a href="../research-airbnb-spotify-product-practices/00-brief.md">Airbnb and Spotify brief</a> and the <a href="../research-block-product-practices/00-brief.md">Block brief</a>.</p>
+    <p><strong>Related:</strong> <a href="../research-agent-runtime-patterns-taxonomy/01-synthesis.md">runtime-patterns synthesis</a> (patterns and open questions) · <a href="{DIM}">options register</a> · <a href="../../research/THEMES.md#opportunity-to-code-chain-opportunity--problem--goal--intent--plan--code">theme: opportunity-to-code chain</a> · <a href="../user-story-mapping/INDEX.md">user stories</a> (S05 is the reference workload) · <a href="../teardowns-to-pattern-classes/00-mapping.md">teardowns mapped to pattern classes</a> · the maps' task note · the <a href="../research-airbnb-spotify-product-practices/00-brief.md">Airbnb and Spotify brief</a> and the <a href="../research-block-product-practices/00-brief.md">Block brief</a>.</p>
     <p>Standalone HTML, inline styles, no scripts, no web fonts. Generated by <code>index.build.py</code> in this folder.</p>
   </div>
 </section>

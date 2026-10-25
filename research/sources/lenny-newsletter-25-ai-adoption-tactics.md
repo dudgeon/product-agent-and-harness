@@ -33,5 +33,5 @@ A compact catalogue of adoption practices at six companies (Shopify, Ramp, Zapie
 - "Instead of focusing on shiny demos, look for rigorous data and evaluations." (section 5)
 
 ## Could not verify
-- Full post read (subscriber-only; text from Geoff's paid session). Numbers are the companies' own as relayed by Yang; method not stated.
+- Full post read (subscriber-only; text through a paid subscription). Numbers are the companies' own as relayed by Yang; method not stated.
 - Ramp persona review is a one-sentence mention; how personas are built, refreshed, or validated is not described.

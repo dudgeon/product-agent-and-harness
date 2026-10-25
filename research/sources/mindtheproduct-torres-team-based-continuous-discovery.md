@@ -23,4 +23,4 @@ Mind the Product write-up (by Eira Hayward) of Torres's keynote on continuous di
 
 ## Could not verify
 - Torres primary writing beyond this and the podcast page was not accessible.
-- Audit 2026-10-24: byline is Eira Hayward, not Torres; evidence changed from first-party to independent. Contains the minimum definition ('weekly touchpoints with customers / by the team building the product / ... small research activities / in pursuit of a desired product outcome') and the trio (product manager, design lead, tech lead).
+- Re-check 2026-10-24: byline is Eira Hayward, not Torres; evidence changed from first-party to independent. Contains the minimum definition ('weekly touchpoints with customers / by the team building the product / ... small research activities / in pursuit of a desired product outcome') and the trio (product manager, design lead, tech lead).

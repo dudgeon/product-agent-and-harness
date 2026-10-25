@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Vendor pages for a metrics Q&A agent, KPI-monitoring and root-cause agents, and an MCP server; no outcome data. Evidence kind: vendor pages only. Audit 2026-10-24: original blog, mixpanel.com/ai, /ai/agents and /ai/mcp fetched in full; claims checked. The GPT-3.5 detail is from 2023 trade press seen only via search.
+Vendor pages for a metrics Q&A agent, KPI-monitoring and root-cause agents, and an MCP server; no outcome data. Evidence kind: vendor pages only. Re-check 2026-10-24: original blog, mixpanel.com/ai, /ai/agents and /ai/mcp fetched in full; claims checked. The GPT-3.5 detail is from 2023 trade press seen only via search.
 
 ## Themes
 - metrics-review-agents: Spark (July 2023) turned questions into reports; now Mixpanel Agent plus KPI Monitoring Agent, Root Cause Analysis Agent and an MCP server with Verified Mode (case 15)

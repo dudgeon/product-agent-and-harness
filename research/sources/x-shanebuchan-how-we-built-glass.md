@@ -37,4 +37,4 @@ _Full text omitted from the public repository; see `source_url` for the original
 ## Could not verify
 
 Full article text not saved; replies not retrieved.
-Context (audit 2026-10-24): this is the April 2026 architecture (desktop app, local MCP proxy, laptop-side scheduling). Ramp's October Laminar post moves Glass sessions to cloud workers and says the codebase there is agent-written but not 'vibe coded' ([source](ramp-builders-building-laminar.md)).
+Context (re-check 2026-10-24): this is the April 2026 architecture (desktop app, local MCP proxy, laptop-side scheduling). Ramp's October Laminar post moves Glass sessions to cloud workers and says the codebase there is agent-written but not 'vibe coded' ([source](ramp-builders-building-laminar.md)).

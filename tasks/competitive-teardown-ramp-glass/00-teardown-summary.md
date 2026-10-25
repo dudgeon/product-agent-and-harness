@@ -1,6 +1,6 @@
 # Teardown: Ramp Glass (summary)
 
-Date: 2026-10-24, audited the same day (see [audit-2026-10-24.md](audit-2026-10-24.md)). Worker draft for Geoff's review.
+Date: 2026-10-24. Claims were re-checked against the sources the same day.
 
 Source notes live in the research library (`../../research/sources/`). Primary: [launch video](../../research/sources/ramp-introducing-glass.md), [Goddijn article](../../research/sources/x-sebgoddijn-glass-article.md), [Buchan build story](../../research/sources/x-shanebuchan-how-we-built-glass.md), [Charles "AI pilled"](../../research/sources/x-geoffintech-ai-pilled-article.md), [Glyman launch article](../../research/sources/x-eglyman-introducing-glass-learn-things-once.md), [Ramp "Building Laminar"](../../research/sources/ramp-builders-building-laminar.md), [Charles on the Lenny's channel](../../research/sources/lenny-podcast-geoff-charles-product-when-coding-solved.md), [Pragmatic Summit talk](../../research/sources/pragmatic-engineer-ramp-lessons-new-ai-product.md), [Router launch posts](../../research/sources/x-ramp-router-launch-posts.md), [Notion video](../../research/sources/notion-inside-ramps-custom-agent-os.md). Independent: [The New Stack on Laminar](../../research/sources/thenewstack-ramp-laminar-agent-harness.md) (which itself relies on Ramp's post). The sourced X-post list is [06-x-posts-ramp-leaders-about-glass.md](06-x-posts-ramp-leaders-about-glass.md).
 
@@ -91,7 +91,7 @@ Glass is one data point on the menu, not a pattern to copy. Its design choices a
 - [review-and-autonomy](../../options/DIMENSIONS.md#review-and-autonomy-review-and-autonomy): Policy Agent's autonomy slider and labelled evals.
 - [adoption-model](../../options/DIMENSIONS.md#adoption-model-adoption-and-enablement-model): product-led enablement vs mandates, leaderboards and a proficiency ladder.
 
-Cross-cutting question added: Ramp changed its answers on loop-source and runtime-location within six months; the resource request should fund a path that can be revisited, not a one-time pick.
+Cross-cutting question added: Ramp changed its answers on loop-source and runtime-location within six months; the next phase should take a path that can be revisited, not a one-time pick.
 
 ## Pattern classes
 

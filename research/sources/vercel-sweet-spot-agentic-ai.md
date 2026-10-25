@@ -23,4 +23,4 @@ Not PM work but the clearest 'one job per agent' pattern: agents suit work that 
 - Template: narrow job, domain-expert builder, human approval.
 
 ## Could not verify
-- Audit 2026-10-24: title, authors and date filled from the page (the URL slug still says "sweet spot").
+- Re-check 2026-10-24: title, authors and date filled from the page (the URL slug still says "sweet spot").

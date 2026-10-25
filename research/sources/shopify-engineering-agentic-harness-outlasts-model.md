@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-This post is about **Dispatch**, Shopify AppSec's multi-agent vulnerability-scanning harness. It is not River or Aquifer, but it is part of the same AI-native engineering stack, and it is one of the few Shopify posts that publishes **costs per run** and an explicit **verifier-uses-a-different-model** rule. It is strong first-party evidence for "the harness, not the model, is the durable asset". River later carries remediation of these findings to merge; see the separate post "How River takes security work from a fix to merge" (2026-09-02, filed by the coordinator).
+This post is about **Dispatch**, Shopify AppSec's multi-agent vulnerability-scanning harness. It is not River or Aquifer, but it is part of the same AI-native engineering stack, and it is one of the few Shopify posts that publishes **costs per run** and an explicit **verifier-uses-a-different-model** rule. It is strong first-party evidence for "the harness, not the model, is the durable asset". River later carries remediation of these findings to merge; see the separate post "How River takes security work from a fix to merge" (2026-09-02, filed separately).
 
 ## Themes
 - `harness-over-model`: newer security-tuned frontier models found more candidates, but in one audit all 30+ candidates were downgraded or false positives. "The models are getting better, but the most important piece of the system remains the harness." The durable advantages are a test oracle, partitioning, cross-model verification, and deterministic code owning credentials, Git and storage (§The harness outlasts the model).

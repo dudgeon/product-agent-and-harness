@@ -25,4 +25,4 @@ Single Substack, with job postings as supporting evidence, defining platform and
 
 ## Could not verify
 - One Substack plus job postings; no survey data.
-- Audit 2026-10-24: page read; platform PM scope and metrics (developer adoption, reliability, cost efficiency) confirmed.
+- Re-check 2026-10-24: page read; platform PM scope and metrics (developer adoption, reliability, cost efficiency) confirmed.

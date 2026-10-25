@@ -31,4 +31,4 @@ A beginner's tutorial (December 2025) teaching PMs to use Claude Code as a gener
 ## Could not verify
 - The Product OS and agent-template repos were not opened; their contents are as described in the post.
 - Some details (slash command names, MCP difficulty) were true at December 2025 and may have changed.
-- Retrieved through Geoff's paid subscription; summarised, not reproduced.
+- Retrieved through a paid subscription; summarised, not reproduced.

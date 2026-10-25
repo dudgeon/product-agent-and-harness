@@ -31,6 +31,6 @@ Best single account of PM-leader agents covering review prep, nightly decision t
 
 ## Could not verify
 - Page read directly via search/fetch; podcast itself not heard.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read original: author corrected (Nikhyl Singhal, not Lenny), own title used, PRD scope and sponsorship wording corrected.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read original: author corrected (Nikhyl Singhal, not Lenny), own title used, PRD scope and sponsorship wording corrected.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read original: author corrected (Nikhyl Singhal, not Lenny), own title used, PRD scope and sponsorship wording corrected.
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read original: author corrected (Nikhyl Singhal, not Lenny), own title used, PRD scope and sponsorship wording corrected.
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read original: author corrected (Nikhyl Singhal, not Lenny), own title used, PRD scope and sponsorship wording corrected.
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read original: author corrected (Nikhyl Singhal, not Lenny), own title used, PRD scope and sponsorship wording corrected.

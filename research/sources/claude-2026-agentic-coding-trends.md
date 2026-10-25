@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Anthropic's framing of the "agentic SDLC": the traditional eight stages remain, but requirements and design compress into "express intent (minutes)" and human effort moves to review and to defining which problems are worth solving. It is a vendor prediction document, not evidence, but it is the vendor's own picture of where the product role sits (upstream intent, downstream review), which the strategy deck will be compared against. Its central caveat is useful: Anthropic's own research says developers use AI in about 60% of their work but can "fully delegate" only 0-20% of tasks.
+Anthropic's framing of the "agentic SDLC": the traditional eight stages remain, but requirements and design compress into "express intent (minutes)" and human effort moves to review and to defining which problems are worth solving. It is a vendor prediction document, not evidence, but it is the vendor's own picture of where the product role sits (upstream intent, downstream review), which this project's strategy will be compared against. Its central caveat is useful: Anthropic's own research says developers use AI in about 60% of their work but can "fully delegate" only 0-20% of tasks.
 
 ## Themes
 - agent-factory-sdlc: side-by-side traditional vs agentic SDLC table, eight stages each, cycle time "weeks-months" to "hours-days" (Trend 1).

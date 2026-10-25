@@ -26,4 +26,4 @@ Vendor blog describing product ops: standardising workflows, owning tool stack, 
 
 ## Could not verify
 - No product-ops survey found; a cited '37% of companies include product ops' (ProductPlan 2024) was not verified.
-- Audit 2026-10-24: page read; 'owns tool stack' softened to 'manages/standardises tools'.
+- Re-check 2026-10-24: page read; 'owns tool stack' softened to 'manages/standardises tools'.

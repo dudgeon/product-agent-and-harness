@@ -25,8 +25,8 @@ Core framework defining PM accountability: value, usability, feasibility and bus
 - Owners: PM = value and viability; designer = usability; lead engineer = feasibility.
 - Used for J3 outputs (risk assessment across the four risks) and persona accountabilities P1, P6a, P6b.
 - PM is 'responsible for the value and viability risks, and overall accountable for the product's outcomes'; 'The Product Lead Engineer is responsible for the feasibility risk'. The page is a note on the new edition of INSPIRED; it does not literally say 'discovery tackles' the risks.
-- Companion post 'Discovery – Judgement' (Cagan, 2020-09-10, https://svpg.com/discovery-judgement/), opened in the audit: calls a PM judging technical feasibility risk without consulting the engineers one of the most common, largely avoidable problems, tied to overruns.
+- Companion post 'Discovery – Judgement' (Cagan, 2020-09-10, https://svpg.com/discovery-judgement/), opened in the re-check: calls a PM judging technical feasibility risk without consulting the engineers one of the most common, largely avoidable problems, tied to overruns.
 
 ## Could not verify
 - The discovery-judgement post was not opened directly; its claim is from a search summary.
-- Audit 2026-10-24: page and the Discovery – Judgement post opened directly and confirmed; the earlier search-summary caveat is superseded.
+- Re-check 2026-10-24: page and the Discovery – Judgement post opened directly and confirmed; the earlier search-summary caveat is superseded.

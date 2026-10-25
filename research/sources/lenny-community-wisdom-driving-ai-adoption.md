@@ -34,5 +34,5 @@ One Slack thread (thread 2 of four) collects practitioners' tactics for AI adopt
 - "Making it explicit gives them a real veto path rather than having automation done to them" (an operator, thread 2).
 
 ## Could not verify
-- Paywalled digest read in full via Geoff's paid session. Only thread 2 and the top-finds list are relevant; threads on APM career growth, QA vs PM, and consumer subscription conversion were read and skipped.
+- Paywalled digest read in full through a paid subscription. Only thread 2 and the top-finds list are relevant; threads on APM career growth, QA vs PM, and consumer subscription conversion were read and skipped.
 - The "measured" demo-slot finding gives no method, sample or effect size. Contributors are named in the post; roles are used here instead.

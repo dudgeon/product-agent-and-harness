@@ -23,4 +23,4 @@ Modern CTO podcast #950, transcript read on audit. Cagan: the bottleneck is now 
 - Summary only.
 
 ## Could not verify
-- Audit 2026-10-24: transcript page read directly. No SVPG article on AI PRDs found.
+- Re-check 2026-10-24: transcript page read directly. No SVPG article on AI PRDs found.

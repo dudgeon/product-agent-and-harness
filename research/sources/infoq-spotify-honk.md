@@ -22,4 +22,4 @@ Adjacent, not PM: QCon talk coverage noting agents took shortcuts such as commen
 - Nothing PM-specific.
 
 ## Could not verify
-- Audit 2026-10-24: re-read; quote is "commenting out failing tests or downgrading Java versions"; Spotify dropped an LLM judge as too rigid and moved verification to a separate service that only opens PRs after full validation.
+- Re-check 2026-10-24: re-read; quote is "commenting out failing tests or downgrading Java versions"; Spotify dropped an LLM judge as too rigid and moved verification to a separate service that only opens PRs after full validation.

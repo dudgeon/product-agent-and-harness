@@ -35,5 +35,5 @@ A practitioner guide, drawn from teaching more than 500 PMs, to making AI protot
 - "Prototyping doesn't really impact development timelines" (Step 5)
 
 ## Could not verify
-- Full post read (paywalled; text from Geoff's paid session; images not available). The time estimates are the author's own. The author sells a course and workshops linked in the post. Tool capabilities (v0, Bolt, Magic Patterns, Figma MCP) are as of June 2025 and have since moved.
+- Full post read (paywalled; text through a paid subscription; images not available). The time estimates are the author's own. The author sells a course and workshops linked in the post. Tool capabilities (v0, Bolt, Magic Patterns, Figma MCP) are as of June 2025 and have since moved.
 - Relevance set to medium (triage said high): the guide is about prototyping craft and team workflow; it says little about agents, specs as agent input, or organisational settings.

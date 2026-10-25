@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Competitor assessment of Linear's agent (BuildBetter sells a customer-feedback platform and names itself the top recommendation): strong on triage and dedupe, weak on customer-signal analysis. Opinion with no own tests, and partly out of date (see Key points). Audit 2026-10-24: original fetched in full and claims checked.
+Competitor assessment of Linear's agent (BuildBetter sells a customer-feedback platform and names itself the top recommendation): strong on triage and dedupe, weak on customer-signal analysis. Opinion with no own tests, and partly out of date (see Key points). Re-check 2026-10-24: original fetched in full and claims checked.
 
 ## Themes
 - feedback-triage-agents: Linear strong on triage and dedupe ("Flags issues likely to be duplicates of existing tickets"), weak upstream: "fall short on upstream customer discovery" (competitor opinion, no test)

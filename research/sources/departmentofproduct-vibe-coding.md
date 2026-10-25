@@ -28,4 +28,4 @@ An early (March 2025) hands-on comparison of Lovable and Replit for PM prototype
 
 ## Could not verify
 - Tool behaviour is as of March 2025; the live prototype links were not opened.
-- Retrieved through Geoff's paid subscription; prompts are described, not reproduced.
+- Retrieved through a paid subscription; prompts are described, not reproduced.

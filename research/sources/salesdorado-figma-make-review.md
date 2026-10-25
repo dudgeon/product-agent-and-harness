@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-French B2B-sales media site's review of Figma Make as a PM/designer prototyping tool (English version exists). Not a vendor or competitor; the site sells advertising and lead referrals, no affiliate disclosure seen. The author says they tried the tool but documents no test project, timings or results, so treat as opinion rather than measurement. Audit 2026-10-24: original (French) and English version fetched in full and claims checked.
+French B2B-sales media site's review of Figma Make as a PM/designer prototyping tool (English version exists). Not a vendor or competitor; the site sells advertising and lead referrals, no affiliate disclosure seen. The author says they tried the tool but documents no test project, timings or results, so treat as opinion rather than measurement. Re-check 2026-10-24: original (French) and English version fetched in full and claims checked.
 
 ## Themes
 - prototyping-agents-limits: Edge is reading existing Figma file metadata; "Make excelle jusqu'au prototype, pas au-delà" (prototype-only); hosting on a figma.site subdomain; credit quotas strictly enforced per licence since 18 March 2026 (case 16)

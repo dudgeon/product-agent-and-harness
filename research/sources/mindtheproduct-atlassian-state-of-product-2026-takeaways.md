@@ -30,4 +30,4 @@ Practitioner-site summary (page title 'Four things we learned from Atlassian's S
 - The page rendered only the 80% figure in the portion readable.
 - The '49% insufficient strategy time' and '10 to 60 minutes per day' figures came from a search summary and were not located in fetched text.
 - The report appears as '1,000+' and '1,200+' respondents on different Atlassian pages.
-- Audit 2026-10-24: re-checked against the report PDF: 80%, 49% (strategic planning and roadmap development) and 10-60 minutes (half of respondents) confirmed; Mind the Product's own wording of the 49% sentence could not be surfaced (unverified). The earlier 'only the 80% figure was readable' and 'search summary only' items above are superseded.
+- Re-check 2026-10-24: re-checked against the report PDF: 80%, 49% (strategic planning and roadmap development) and 10-60 minutes (half of respondents) confirmed; Mind the Product's own wording of the 49% sentence could not be surfaced (unverified). The earlier 'only the 80% figure was readable' and 'search summary only' items above are superseded.

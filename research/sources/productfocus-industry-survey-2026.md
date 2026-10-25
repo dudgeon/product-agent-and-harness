@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Vendor survey of 677 respondents in 40 countries. Its 97% versus 64% gap between productivity gains and improved product outcomes is the sharpest data point for the outcome-measurement gap, and 85% validation shows human review remains standard. Figures confirmed against the PDF in the 2026-10-24 audit.
+Vendor survey of 677 respondents in 40 countries. Its 97% versus 64% gap between productivity gains and improved product outcomes is the sharpest data point for the outcome-measurement gap, and 85% validation shows human review remains standard. Figures confirmed against the PDF in the 2026-10-24 re-check.
 
 ## Themes
 - **outcome-measurement-gap**: 97% report some productivity improvement from AI (32% significant, 10% vast) but only 64% report improved product outcomes.
@@ -28,4 +28,4 @@ Vendor survey of 677 respondents in 40 countries. Its 97% versus 64% gap between
 
 ## Could not verify
 - PDF was unreadable (binary); all figures rely on search summary only.
-- Audit 2026-10-24: PDF text was read and all figures confirmed; the 'PDF unreadable, search summary only' item above is superseded. 'Some improvement' is a low bar.
+- Re-check 2026-10-24: PDF text was read and all figures confirmed; the 'PDF unreadable, search summary only' item above is superseded. 'Some improvement' is a low bar.

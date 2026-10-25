@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: article
 evidence: first-party
 filed_by: research-pm-agents-jobs-to-be-done
-filed_note: audit 2026-10-24
+filed_note: re-check 2026-10-24
 themes: [research-synthesis-agents, ai-synthesis-hallucination-risk, human-judgment-pm-jobs]
 relevance: high
 ---
@@ -29,4 +29,4 @@ This is Torres's own write-up comparing her interview synthesis with AI synthesi
 - The article gives no "% of insights missed" figure. The "AI summaries miss 20 to 40%" figure once cited in the map does not come from here.
 
 ## Could not verify
-- The article is partly paywalled. It was read for the audit through a fact-check agent's WebFetch extraction, so quotes are near-verbatim. Which interviews and which model versions were used is not recorded here.
+- The article is partly paywalled. It was read for the re-check through a fact-check agent's WebFetch extraction, so quotes are near-verbatim. Which interviews and which model versions were used is not recorded here.

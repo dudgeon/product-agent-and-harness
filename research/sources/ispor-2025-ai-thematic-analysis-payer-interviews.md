@@ -22,4 +22,4 @@ Poster (ISPOR 2025, Montreal; Value in Health 28 S1, MSR54) on 10 payer intervie
 - Small sample.
 
 ## Could not verify
-- Audit 2026-10-24: abstract page read directly; full poster not seen.
+- Re-check 2026-10-24: abstract page read directly; full poster not seen.

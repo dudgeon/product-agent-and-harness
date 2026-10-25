@@ -1,11 +1,11 @@
 # How Airbnb and Spotify run product, and where agents sit in it
 
-Date: 2026-10-24. Worker brief for [research-airbnb-spotify-product-practices](../research-airbnb-spotify-product-practices.md).
+Date: 2026-10-24. Worker brief for research-airbnb-spotify-product-practices.
 
 Built from 90 new source notes in [`research/sources/`](../../research/sources/) (themes in [research/themes/research-airbnb-spotify-product-practices.md](../../research/themes/research-airbnb-spotify-product-practices.md)) plus five Spotify notes filed earlier by other tasks. Companion files:
 - [01-pdlc-airbnb.md](01-pdlc-airbnb.md) / [.html](01-pdlc-airbnb.html): Airbnb lifecycle map.
 - [02-pdlc-spotify.md](02-pdlc-spotify.md) / [.html](02-pdlc-spotify.html): Spotify lifecycle map.
-- [options/contributions/research-airbnb-spotify-product-practices.md](../../options/contributions/research-airbnb-spotify-product-practices.md): register proposals.
+- options/contributions/research-airbnb-spotify-product-practices.md: register proposals.
 
 **Evidence labels.** Each claim carries one of these labels and a date:
 - **FP**: first-party. The company describes itself (blogs, earnings calls, leaders' interviews).
@@ -200,7 +200,7 @@ The six maps: [Stripe](../competitive-teardown-stripe-knowledge-agents/02-pdlc-a
 
 ## 6. Findings by project dimension
 
-Each links to the register section; proposals are in the [contributions file](../../options/contributions/research-airbnb-spotify-product-practices.md).
+Each links to the register section; proposals are in the contributions file.
 
 - **[Intent shaping](../../options/DIMENSIONS.md#intent-shaping-and-spec-intent-shaping-mode-and-spec-standard).** Three intent forms are on show:
   - narrative-first (Airbnb);

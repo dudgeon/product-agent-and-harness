@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Sentry's Seer hands its root-cause analysis to a coding agent on Claude Managed Agents, which plans, implements and opens a pull request, closing the maintain-stage loop from detected bug to reviewable code. For the deck it is a clean build-versus-buy data point (one engineer shipped the integration in weeks because sandboxing, lifecycle and runtime were bought, not built) and an example of model-provider coupling chosen for data residency (Claude via Vertex AI). Anthropic customer story; volume and speed figures are the customer's claims, and no fix-acceptance or merge rate is given.
+Sentry's Seer hands its root-cause analysis to a coding agent on Claude Managed Agents, which plans, implements and opens a pull request, closing the maintain-stage loop from detected bug to reviewable code. For the strategy it is a clean build-versus-buy data point (one engineer shipped the integration in weeks because sandboxing, lifecycle and runtime were bought, not built) and an example of model-provider coupling chosen for data residency (Claude via Vertex AI). Anthropic customer story; volume and speed figures are the customer's claims, and no fix-acceptance or merge rate is given.
 
 ## Themes
 - build-vs-buy: building a coding agent meant sandboxing, lifecycle management and a runtime, "a significant detour"; Managed Agents let a single engineer ship the initial integration "in weeks instead of months" and removed ongoing infra upkeep (sections "The challenge", "The solution").

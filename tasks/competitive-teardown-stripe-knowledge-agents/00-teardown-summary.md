@@ -1,12 +1,12 @@
 # Teardown: Stripe's agents for knowledge workers (summary)
 
-Date: 2026-10-24. Worker draft for Geoff's review. Source notes are in the research library (`../../research/sources/`). Primary sources: [Stripe's Kai post](../../research/sources/stripe-meet-knowledge-ai-platform.md) (2026-07-30), [LangChain case study](../../research/sources/langchain-how-stripe-built-kai-deep-agents.md) (2026-08-03, vendor), [How I AI with Sharadh Krishnamurthy](../../research/sources/howiai-stripe-kai-krishnamurthy.md) (2026-09-07, 50-minute demo), [AWS/Stripe compliance agents](../../research/sources/aws-stripe-compliance-agents.md) (2026-06-26), [Harbor](../../research/sources/stripe-harbor-ai-prototyping.md) (2026-09-14), [payment-method factory](../../research/sources/stripe-payment-method-factory.md) (2026-09-30), [How I AI with Steve Kaliski on Minions](../../research/sources/howiai-stripe-minions-kaliski.md) (2026-03-24), [Latent Space with Emily Sands](../../research/sources/latentspace-emily-sands-stripe.md) (2025-10-30, the pre-Kai baseline), plus leader posts ([Sands](../../research/sources/x-emilygsands-kai-launch.md), [Weinstein](../../research/sources/x-jeff-weinstein-kai-sibling.md), [Krishnamurthy](../../research/sources/linkedin-sharadhk-kai-launch-post.md)) and one independent critique ([AI Founders](../../research/sources/aifounders-stripe-kai-dont-copy-sales-numbers.md)). Everything about how the agents work and what they achieve comes from Stripe or its vendors (LangChain, AWS). Nothing has been independently verified, and nothing here comes from using the product.
+Date: 2026-10-24. Source notes are in the research library (`../../research/sources/`). Primary sources: [Stripe's Kai post](../../research/sources/stripe-meet-knowledge-ai-platform.md) (2026-07-30), [LangChain case study](../../research/sources/langchain-how-stripe-built-kai-deep-agents.md) (2026-08-03, vendor), [How I AI with Sharadh Krishnamurthy](../../research/sources/howiai-stripe-kai-krishnamurthy.md) (2026-09-07, 50-minute demo), [AWS/Stripe compliance agents](../../research/sources/aws-stripe-compliance-agents.md) (2026-06-26), [Harbor](../../research/sources/stripe-harbor-ai-prototyping.md) (2026-09-14), [payment-method factory](../../research/sources/stripe-payment-method-factory.md) (2026-09-30), [How I AI with Steve Kaliski on Minions](../../research/sources/howiai-stripe-minions-kaliski.md) (2026-03-24), [Latent Space with Emily Sands](../../research/sources/latentspace-emily-sands-stripe.md) (2025-10-30, the pre-Kai baseline), plus leader posts ([Sands](../../research/sources/x-emilygsands-kai-launch.md), [Weinstein](../../research/sources/x-jeff-weinstein-kai-sibling.md), [Krishnamurthy](../../research/sources/linkedin-sharadhk-kai-launch-post.md)) and one independent critique ([AI Founders](../../research/sources/aifounders-stripe-kai-dont-copy-sales-numbers.md)). Everything about how the agents work and what they achieve comes from Stripe or its vendors (LangChain, AWS). Nothing has been independently verified, and nothing here comes from using the product.
 
 Minions (the coding agents) are already covered in [part 1](../../research/sources/stripe-minions-one-shot-coding-agents.md) and [part 2](../../research/sources/stripe-minions-part-2.md). This teardown adds only how Minions are started and watched, which was missing.
 
 ## Second pass (2026-10-24): the chain, the wider ecosystem, and the context-creation hypothesis
 
-Geoff asked for three things: review his doc [Stripe's Internal Agent Ecosystem for Product Development](../../research/sources/claude-doc-geoff-stripe-internal-agent-ecosystem.md) and its unreviewed links, research each named agent (especially Trailhead), and test his hypothesis that a business and operational **context creation agent** is needed.
+The brief asked for three things: review the doc [Stripe's Internal Agent Ecosystem for Product Development](../../research/sources/claude-doc-geoff-stripe-internal-agent-ecosystem.md) and its unreviewed links, research each named agent (especially Trailhead), and test his hypothesis that a business and operational **context creation agent** is needed.
 
 ### 1. The chain: Opportunity → Problem → Goal → Intent → Plan → Code
 
@@ -30,7 +30,7 @@ What it means for the project:
 - **Agents own the lower half of the chain at Stripe; people own the upper half.** Stripe built bottom-up: Minions (code), then the review agent, then Orbit (plan, first shown 2026-10-22). Kai, Harbor and Protodash help across the middle.
 - **Geoff's Intent Factory loop starts at "informal intent".** It covers Intent → Code. The chain adds the three human stages above it.
 - **S05 (write and ratify a spec)** sits at Intent → Plan. Stripe's answer there is a *reviewed plan*, not a ratified PRD: the review gate moves to the plan.
-- **The intent-shaping bake-off workload** that Geoff chose ("shape high-level intent against real constraints into intent that deserves to ship") is exactly the Goal → Intent step, which no Stripe agent owns.
+- **The intent-shaping bake-off workload** chosen for this project ("shape high-level intent against real constraints into intent that deserves to ship") is exactly the Goal → Intent step, which no Stripe agent owns.
 - **Where a context creation agent would feed in:** the brace marks customer conversations as the source of problem and goal. That is uncaptured tacit knowledge. Below Intent, Stripe's agents already ground on captured context: Trailhead, the codebase, Toolshed and skills.
 
 Filed as theme `opportunity-to-code-chain`. Register additions:
@@ -75,7 +75,7 @@ Corrections from the second pass:
 - **What does work:** verification. Stripe trusted its docs only after owners verified them. GitHub's write-back memory checks citations on read: A/B merge rate 83% → 90% ([GitHub](../../research/sources/github-blog-agentic-memory-copilot.md)). Business knowledge usually lacks that kind of ground truth.
 
 **Department of Product pass (2026-10-24): three more capture cases, all human-owned.**
-Geoff's paid access let me read the full [Department of Product deep dive](../../research/sources/departmentofproduct-stripe-kai.md) and its [15-company table](../../research/sources/departmentofproduct-internal-ai-tools-for-non-engineers.md). On Stripe it adds no new facts (everything traces to Stripe's post). It does add:
+A paid subscription allowed a full read of the [Department of Product deep dive](../../research/sources/departmentofproduct-stripe-kai.md) and its [15-company table](../../research/sources/departmentofproduct-internal-ai-tools-for-non-engineers.md). On Stripe it adds no new facts (everything traces to Stripe's post). It does add:
 - a PM playbook: one domain and one surface first; keep where skills are built separate from what runs the agent; domain owners as QA;
 - combination guardrails for other domains (two candidates, two patients, performance plus pay), enforced below the skill layer.
 
@@ -177,7 +177,7 @@ Daily LLM-tool use was already 8,500 of roughly 10,000 staff. Kai therefore land
 - Payment-method factory: integrations went from up to 6 months to 2-6 weeks.
 - The independent critique points out that the sales figures compare usage with non-usage, and the best sellers adopt first, so cause is unproven ([AI Founders](../../research/sources/aifounders-stripe-kai-dont-copy-sales-numbers.md)). Sands herself said in Oct 2025: "I have a really hard time understanding impact."
 
-## Design choices worth noting (for the deck)
+## Design choices worth noting
 
 1. **An agent service with surfaces, not an app.** One agent behind an API, with the web app as the default, and Slack, a browser extension and embedding wherever people already work.
 2. **Projects as governance.** Policy (model, tools, human confirmation, back end, harness) is set once per project by an owner, not by each user and not org-wide.
@@ -222,7 +222,7 @@ The architecture claims (layering, sandbox as a tool, the VFS, skills gating too
 - The follow-up post Stripe promised on skill routing (hybrid RAG/LLM) had not appeared as of 2026-10-24.
 - Both podcast transcripts are YouTube auto-captions. Timestamps are rounded to two-minute blocks.
 - X posts were read through a read-only mirror, without logging in, and replies were not read. The LinkedIn post was read from a public profile, and its date is unconfirmed.
-- Checked but with nothing on internal agents: Stripe's 2025 annual letter (PDF) and the Sessions 2026 coverage, which is about external agentic commerce. The Department of Product piece was read in full on 2026-10-24 through Geoff's subscription (see the Department of Product pass below).
+- Checked but with nothing on internal agents: Stripe's 2025 annual letter (PDF) and the Sessions 2026 coverage, which is about external agentic commerce. The Department of Product piece was read in full on 2026-10-24 through a paid subscription (see the Department of Product pass below).
 - I found no talk by Stripe's AI Platform lead (Chrissie Cui) and no independent post-mortem.
 
 ## Options by dimension

@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-A small venture fund turned Cowork from a personal productivity tool into "shared firm infrastructure" by having people build skills that everyone then uses, with a chained board-meeting workflow (prep, company context, summary, record) that updates its own prior output in Drive. It is a compact example of a non-engineering team running a skill-based, multi-tool agent with a stated human-review rule and a security assessment, relevant to the deck's adoption-model and review options. Customer Q&A published by Anthropic; time savings are the customer's claims, and "shared" here means shared skills and a shared custom MCP, not shared agent sessions.
+A small venture fund turned Cowork from a personal productivity tool into "shared firm infrastructure" by having people build skills that everyone then uses, with a chained board-meeting workflow (prep, company context, summary, record) that updates its own prior output in Drive. It is a compact example of a non-engineering team running a skill-based, multi-tool agent with a stated human-review rule and a security assessment, relevant to the strategy's adoption-model and review options. Customer Q&A published by Anthropic; time savings are the customer's claims, and "shared" here means shared skills and a shared custom MCP, not shared agent sessions.
 
 ## Themes
 - non-engineer-builders: non-technical investment and operations staff moved from weekend vibe-coding and Claude Code to building Cowork skills; Head of People and Head of Marketing built their own workflows (Q&A, "evaluated other AI tools"; "What's surprised you").

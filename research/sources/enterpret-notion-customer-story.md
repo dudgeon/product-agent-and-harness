@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Vendor customer story; the headline "360%" time-saved figure is undefined, while the body gives a concrete before/after (monthly insights report from 2 weeks to 3 days). Evidence kind: vendor-published customer story (vendor-claim) with named Notion staff. Audit 2026-10-24: original fetched in full and claims checked.
+Vendor customer story; the headline "360%" time-saved figure is undefined, while the body gives a concrete before/after (monthly insights report from 2 weeks to 3 days). Evidence kind: vendor-published customer story (vendor-claim) with named Notion staff. Re-check 2026-10-24: original fetched in full and claims checked.
 
 ## Themes
 - feedback-triage-agents: Monthly user-insights report cut "from 2 weeks to 3 days" (body; Maya Bakir, Product Operations); headline "saved time spent by over 360%" undefined (case 21)

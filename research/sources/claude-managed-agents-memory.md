@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Anthropic's launch of built-in, file-based memory for Managed Agents describes a concrete memory architecture with enterprise controls: stores mounted as a filesystem, shareable across agents with different scopes (org-wide read-only, per-user read-write), concurrent-safe, versioned, auditable to the agent and session that wrote each memory, with rollback and redaction. That gives the deck a specific vendor option for the context-and-memory dimension and a reference point for what governed agent memory should support. It is a beta announcement: the customer outcome numbers are the customers' claims and no failure modes (poisoned or stale memories) are discussed.
+Anthropic's launch of built-in, file-based memory for Managed Agents describes a concrete memory architecture with enterprise controls: stores mounted as a filesystem, shareable across agents with different scopes (org-wide read-only, per-user read-write), concurrent-safe, versioned, auditable to the agent and session that wrote each memory, with rollback and redaction. That gives the strategy a specific vendor option for the context-and-memory dimension and a reference point for what governed agent memory should support. It is a beta announcement: the customer outcome numbers are the customers' claims and no failure modes (poisoned or stale memories) are discussed.
 
 ## Themes
 - memory-architecture: memory mounts onto a filesystem so the agent uses bash and code execution on it; memories are files exportable and manageable by API (sections "How memory works", "Portable memories").

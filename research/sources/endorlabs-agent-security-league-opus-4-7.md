@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-A rare third-party benchmark that holds the model fixed and varies the harness (Cursor vs Claude Code vs Codex vs SWE-Agent) on functional correctness and security of generated code, built on CMU's SusVibes. Endor Labs sells code-security tooling but is not a harness vendor. Relevant to Geoff's view that harness quality matters: the same model scored differently by harness, though the author attributes small gaps to non-determinism. Coding only.
+A rare third-party benchmark that holds the model fixed and varies the harness (Cursor vs Claude Code vs Codex vs SWE-Agent) on functional correctness and security of generated code, built on CMU's SusVibes. Endor Labs sells code-security tooling but is not a harness vendor. Relevant to the project's view that harness quality matters: the same model scored differently by harness, though the author attributes small gaps to non-determinism. Coding only.
 
 ## Themes
 - harness-over-model: Opus 4.7 in Cursor 91.1% functional / 22.9% secure vs Claude Code 87.2% / 20.1%; Opus 4.6 in Cursor 84.4/7.8 vs Claude Code 81.0/8.4 (harness order flips on security); Gemini 3 Pro in Claude Code 41.9/8.4 vs Cursor 31.8/7.3.

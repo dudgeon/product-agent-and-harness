@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-Anthropic's own playbook for rolling Cowork out to non-engineers lays out a five-level adoption ladder (chat, deliverable, skill, scheduled bundle, admin-provisioned department plugin) and a six-month champion-led rollout, which is a ready-made sequencing and adoption-model option for the strategy deck. Its product-management section describes PRDs drafted by "stacking" four plugins (productivity, data, sales, product) in one session, the clearest first-party statement of the single-agent, many-skills pattern applied to PM work. It is a vendor guide: the outcome claims are anecdotal and unmeasured, and it says almost nothing about failure, review or governance beyond admin provisioning and OpenTelemetry export.
+Anthropic's own playbook for rolling Cowork out to non-engineers lays out a five-level adoption ladder (chat, deliverable, skill, scheduled bundle, admin-provisioned department plugin) and a six-month champion-led rollout, which is a ready-made sequencing and adoption-model option for the strategy. Its product-management section describes PRDs drafted by "stacking" four plugins (productivity, data, sales, product) in one session, the clearest first-party statement of the single-agent, many-skills pattern applied to PM work. It is a vendor guide: the outcome claims are anecdotal and unmeasured, and it says almost nothing about failure, review or governance beyond admin provisioning and OpenTelemetry export.
 
 ## Themes
 - enablement-by-product: the whole guide is a staged enablement programme: champion teams, pre-built plugins to beat the cold-start problem, weekly pilot check-ins, live demos to adjacent teams (ch. 5, "Driving adoption at scale").

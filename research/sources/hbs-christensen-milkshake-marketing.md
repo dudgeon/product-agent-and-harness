@@ -24,4 +24,4 @@ Secondary account of Christensen's JTBD. Source for the idea that customers hire
 
 ## Could not verify
 - Secondary summary, not Christensen's primary text.
-- Audit 2026-10-24: page read; 'hire' a product confirmed; demographics point confirmed ('18 to 35 years old with a college degree does not cause you to buy'); the product-category half is a paraphrase.
+- Re-check 2026-10-24: page read; 'hire' a product confirmed; demographics point confirmed ('18 to 35 years old with a college degree does not cause you to buy'); the product-category half is a paraphrase.

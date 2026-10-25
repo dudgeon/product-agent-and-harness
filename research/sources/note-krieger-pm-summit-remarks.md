@@ -23,5 +23,5 @@ Independent attendee write-up: Anthropic's Mike Krieger first asked whether Clau
 
 ## Could not verify
 - Not verified against talk video.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): original re-read; misattributed "single decision owner" and "editing as a job" removed (they are in productmanagementsociety-ten-things-lenny-summit).
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): original re-read; misattributed "single decision owner" and "editing as a job" removed (they are in productmanagementsociety-ten-things-lenny-summit).
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): original re-read; misattributed "single decision owner" and "editing as a job" removed (they are in productmanagementsociety-ten-things-lenny-summit).
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): original re-read; misattributed "single decision owner" and "editing as a job" removed (they are in productmanagementsociety-ten-things-lenny-summit).

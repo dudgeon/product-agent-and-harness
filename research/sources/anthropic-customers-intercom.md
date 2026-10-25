@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Support-agent resolution figures; Intercom Fin is relevant to PMs only as a feedback source. Gap: no evidence Fin feedback improves PM decisions. Evidence kind: Anthropic customer story plus Intercom and AWS pages, all vendor/partner-published. Audit 2026-10-24: original (redirects to https://claude.com/customers/intercom), Intercom homepage and AWS case study fetched in full; claims checked. None of the three pages shows a date.
+Support-agent resolution figures; Intercom Fin is relevant to PMs only as a feedback source. Gap: no evidence Fin feedback improves PM decisions. Evidence kind: Anthropic customer story plus Intercom and AWS pages, all vendor/partner-published. Re-check 2026-10-24: original (redirects to https://claude.com/customers/intercom), Intercom homepage and AWS case study fetched in full; claims checked. None of the three pages shows a date.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: Vendor/partner-sourced resolution rates and customer counts that differ across pages (51% average / up to 86% and 25,000+ customers on Anthropic's page; 76% across 12,000+ customers on Intercom's homepage; 56% within 30 days and 4,000+ customers on AWS's undated page) (case 14)

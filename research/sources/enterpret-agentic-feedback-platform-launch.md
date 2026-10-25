@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Press release for an agentic feedback taxonomy/synthesis platform; the draft-PRD-from-evidence use case comes from a separate Enterpret use-case page, not the release. Evidence kind: vendor press release; no metrics for Enterpret or its customers. Audit 2026-10-24: Business Wire returned 403; release text read via the verbatim MarTech Series republication (dated 2025-10-28) and search summaries; the use-case page was fetched at its current URL.
+Press release for an agentic feedback taxonomy/synthesis platform; the draft-PRD-from-evidence use case comes from a separate Enterpret use-case page, not the release. Evidence kind: vendor press release; no metrics for Enterpret or its customers. Re-check 2026-10-24: Business Wire returned 403; release text read via the verbatim MarTech Series republication (dated 2025-10-28) and search summaries; the use-case page was fetched at its current URL.
 
 ## Themes
 - feedback-triage-agents: Release says the platform "ingests feedback from more than 50 channels" (e.g. Intercom, Gong, Reddit, X) and uses adaptive AI in place of manual tagging; "action agents" alert teams (case 21)

@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Three healthcare companies run Claude Tag, the shared Slack agent, only in channels and with connectors that never touch patient data, because Tag is not yet covered by Anthropic's BAA; the per-channel scoping that makes this possible is a concrete regulated-industry pattern for the deck's governance and trust-default options. The Tennr example is the sharpest data point: autonomy is set per channel, so the agent ships code without PR review in a low-risk internal-tool channel but only gathers information in product and engineering channels. Customer stories published by Anthropic, with a promotional credit offer attached; outcome figures are the customers' claims.
+Three healthcare companies run Claude Tag, the shared Slack agent, only in channels and with connectors that never touch patient data, because Tag is not yet covered by Anthropic's BAA; the per-channel scoping that makes this possible is a concrete regulated-industry pattern for the strategy's governance and trust-default options. The Tennr example is the sharpest data point: autonomy is set per channel, so the agent ships code without PR review in a low-risk internal-tool channel but only gathers information in product and engineering channels. Customer stories published by Anthropic, with a promotional credit offer attached; outcome figures are the customers' claims.
 
 ## Themes
 - scoped-governance-containers: Tag can be off by default, enabled only in approved channels, DMs disabled, connectors scoped per channel; "access bundles" give a channel its codebase and tracker while EHR and clinical systems stay unreachable (intro bullets).

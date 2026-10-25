@@ -25,4 +25,4 @@ Framework material from the Pragmatic Institute listing 37 activities across pro
 
 ## Could not verify
 - Only the 37 activities and the handoff idea were confirmed; per-box definitions not read.
-- Audit 2026-10-24: article and framework page read; no date shown on the article (© 2026).
+- Re-check 2026-10-24: article and framework page read; no date shown on the article (© 2026).

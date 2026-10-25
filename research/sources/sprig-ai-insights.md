@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Vendor description of in-product surveys with AI analysis (now a Synthesize Agent that clusters open-text responses into themes with counts and drafts summaries and recommendations). The Square metric is on a separate Sprig customer page and is not about AI. Evidence kind: vendor-claim. Audit 2026-10-24: original and extra URL fetched in full; Square claim checked on https://www.sprig.com/customers/square.
+Vendor description of in-product surveys with AI analysis (now a Synthesize Agent that clusters open-text responses into themes with counts and drafts summaries and recommendations). The Square metric is on a separate Sprig customer page and is not about AI. Evidence kind: vendor-claim. Re-check 2026-10-24: original and extra URL fetched in full; Square claim checked on https://www.sprig.com/customers/square.
 
 ## Themes
 - research-synthesis-agents: Synthesize Agent groups open-text survey responses into named themes with response counts, drafts summaries and recommendations; page says "AI assists analysis. It does not replace your judgment." (case 12)

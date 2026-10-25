@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-Anthropic's Applied AI team argues that in enterprise deployments a single agent loop with progressively disclosed skills and tools frequently beats both a monolithic prompt and an orchestrator with team-owned subagents, on quality and often on cost and latency. That is direct first-party evidence for the single-agent-many-skills side of the deck's agent-structure choice, and it names the organisational cause of the opposite pattern (agent architecture copying the org chart). It also supplies an ownership model (small central team owns system prompt and end-to-end evals; domain teams own skills and tools with their own evals) and a migration method, though its comparison data is anecdotal and undisclosed.
+Anthropic's Applied AI team argues that in enterprise deployments a single agent loop with progressively disclosed skills and tools frequently beats both a monolithic prompt and an orchestrator with team-owned subagents, on quality and often on cost and latency. That is direct first-party evidence for the single-agent-many-skills side of the strategy's agent-structure choice, and it names the organisational cause of the opposite pattern (agent architecture copying the org chart). It also supplies an ownership model (small central team owns system prompt and end-to-end evals; domain teams own skills and tools with their own evals) and a migration method, though its comparison data is anecdotal and undisclosed.
 
 ## Themes
 - single-agent-many-skills: "a single agent with skills frequently outperformed both the one-prompt-for-everything design and the subagent design on quality, and often at a lower cost and latency per task" (intro).

@@ -35,7 +35,7 @@ Confluence and Home entities were not on this page. A web-search summary (not a 
 
 Retrieved via WebFetch, which returns a model-summarised view of the page, not verbatim text; wording and exact lists should be re-checked against the live page before quoting.
 
-## Verification (user-story-mapping audit, 2026-10-24)
+## Verification (user-story-mapping re-check, 2026-10-24)
 
 Re-read verbatim (curl, tags stripped). Page "Last updated Jul 16, 2025".
 - Confirmed: the two examples of queryable types on this page are "Jira work items" and "Users"; the Rovo Search/Chat-indexed connector list (Branch, Calendar event, Comment, Commit, Conversation, Customer organization, Deal, Design, Document, Message, Project, Pull request, Repository, Space, Video, Work item) and the not-indexed list (Build, Deployment, Software service, Test, Test execution, Test plan, Test run) match the earlier note exactly.

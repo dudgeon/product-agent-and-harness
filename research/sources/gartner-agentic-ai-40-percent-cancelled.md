@@ -23,4 +23,4 @@ Secondary coverage of a Gartner forecast that over 40% of agentic AI projects wi
 
 ## Could not verify
 - Gartner primary (press release 2025-06-25, https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) returned 403.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): via search snippets of the release: causes given as "escalating costs, unclear business value or inadequate risk controls"; analyst Anushree Verma; about 130 of thousands of agentic vendors are "real" (agent washing); the only data cited is a January 2025 poll of 3,412 webinar attendees on investment levels. The 40% figure is an analyst prediction with no stated method.
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): via search snippets of the release: causes given as "escalating costs, unclear business value or inadequate risk controls"; analyst Anushree Verma; about 130 of thousands of agentic vendors are "real" (agent washing); the only data cited is a January 2025 poll of 3,412 webinar attendees on investment levels. The 40% figure is an analyst prediction with no stated method.

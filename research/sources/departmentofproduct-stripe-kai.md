@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-A PM-audience deep dive on Kai, read in full on 2026-10-24 through Geoff's paid subscription. Its facts all come from Stripe's own Kai post (no new Stripe data or interviews), but it adds three things. First, a builder's playbook for PMs: start with one repeatable domain and the surface people already use; separate "where skills get built" from "what runs the agent"; design combination guardrails beyond access permissions; make domain owners the QA. Second, an analogy table of combination guardrails for other domains. Third, a linked list of 15 internal AI tools for non-engineers at peer companies, filed as [its own note](departmentofproduct-internal-ai-tools-for-non-engineers.md). Useful for the deck's "how to start" framing and for the trust/privacy dimension. It is not evidence of outcomes.
+A PM-audience deep dive on Kai, read in full on 2026-10-24 through a paid subscription. Its facts all come from Stripe's own Kai post (no new Stripe data or interviews), but it adds three things. First, a builder's playbook for PMs: start with one repeatable domain and the surface people already use; separate "where skills get built" from "what runs the agent"; design combination guardrails beyond access permissions; make domain owners the QA. Second, an analogy table of combination guardrails for other domains. Third, a linked list of 15 internal AI tools for non-engineers at peer companies, filed as [its own note](departmentofproduct-internal-ai-tools-for-non-engineers.md). Useful for the strategy's "how to start" framing and for the trust/privacy dimension. It is not evidence of outcomes.
 
 ## Themes
 - agent-as-service-many-surfaces: the Chrome extension covers "external, browser-based tools that Stripe doesn't control the codebase of, so embedding via API isn't an option, but a browser-level extension still is"; "By making the API the core product and treating every surface as a thin layer on top, Stripe could add new surfaces without touching the underlying logic."
@@ -35,4 +35,4 @@ A PM-audience deep dive on Kai, read in full on 2026-10-24 through Geoff's paid 
 
 ## Could not verify
 - "Stripe started with sales reps researching accounts" is the author's reading; Stripe's post and podcast say the pilot was with GTM, not specifically account research.
-- Retrieved through Geoff's logged-in browser; the paywalled text is summarised, not reproduced.
+- Retrieved through a paid subscription; the paywalled text is summarised, not reproduced.

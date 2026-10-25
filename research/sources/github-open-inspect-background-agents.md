@@ -28,7 +28,7 @@ An MIT open-source reimplementation of the Inspect pattern on Cloudflare Workers
 ## Could not verify
 - Maturity/release status not stated in the README; docs/AUTH.md not read.
 
-## Verification (user-story-mapping audit, 2026-10-24)
+## Verification (user-story-mapping re-check, 2026-10-24)
 
 Re-read README verbatim (raw.githubusercontent.com, main) plus docs/HOW_IT_WORKS.md, for how sessions, projects, artifacts and outputs are organised. GitHub API at retrieval: 3,395 stars, MIT, created 2026-01-25, pushed 2026-10-24, homepage backgroundagents.dev. README credits: "inspired by Ramp's Inspect" (links builders.ramp.com/post/why-we-built-our-background-agent); it is not Ramp's repository, and a `ramp/open-inspect` repo does not exist (404).
 - Unit of work: "A session is the core unit of work in Open-Inspect." Sessions are "Tied to a workspace" (one repo, up to 10 ad hoc, a saved environment, or no repository), persistent, multiplayer, stateful.

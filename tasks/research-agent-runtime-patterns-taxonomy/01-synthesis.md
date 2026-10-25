@@ -1,6 +1,6 @@
 # Synthesis: a taxonomy of agent runtime patterns for coding and knowledge work
 
-Date: 2026-10-24. Task: [research-agent-runtime-patterns-taxonomy](../research-agent-runtime-patterns-taxonomy.md). Plan: [00-research-plan.md](00-research-plan.md). Inputs: six track reports ([1](track-1-meta-harnesses.md), [2](track-2-harness-frameworks.md), [3](track-3-remote-deployed-agents.md), [4](track-4-portable-skills-plugins.md), [5](track-5-shared-persistent-sessions.md), [6](track-6-work-structure-fit.md)), the options register ([options/DIMENSIONS.md](../../options/DIMENSIONS.md), about 29 dimensions), the research library ([INDEX](../../research/INDEX.md), [THEMES](../../research/THEMES.md), 288 source notes), the [Ramp Glass teardown](../competitive-teardown-ramp-glass/00-teardown-summary.md), the [PM jobs brief](../research-pm-agents-jobs-to-be-done/00-brief.md) and [jobs map](../research-pm-agents-jobs-to-be-done/01-jobs-to-be-done-map.md), the [prior-work note](../research-product-agent-and-harness/00-prior-work-found.md), and Geoff's two intent documents ([Intent Factory](../../research/sources/geoff-building-accelerating-intent-factory.md), [Intent Shaping](../../research/sources/geoff-intent-shaping-well-managed-environment.md)).
+Date: 2026-10-24. Task: research-agent-runtime-patterns-taxonomy. Plan: [00-research-plan.md](00-research-plan.md). Inputs: six track reports ([1](track-1-meta-harnesses.md), [2](track-2-harness-frameworks.md), [3](track-3-remote-deployed-agents.md), [4](track-4-portable-skills-plugins.md), [5](track-5-shared-persistent-sessions.md), [6](track-6-work-structure-fit.md)), the options register ([options/DIMENSIONS.md](../../options/DIMENSIONS.md), about 29 dimensions), the research library ([INDEX](../../research/INDEX.md), [THEMES](../../research/THEMES.md), 288 source notes), the [Ramp Glass teardown](../competitive-teardown-ramp-glass/00-teardown-summary.md), the [PM jobs brief](../research-pm-agents-jobs-to-be-done/00-brief.md) and [jobs map](../research-pm-agents-jobs-to-be-done/01-jobs-to-be-done-map.md), the [prior-work note](../research-product-agent-and-harness/00-prior-work-found.md), and Geoff's two intent documents ([Intent Factory](../../research/sources/geoff-building-accelerating-intent-factory.md), [Intent Shaping](../../research/sources/geoff-intent-shaping-well-managed-environment.md)).
 
 What this document is: a menu of options by dimension with the key questions that would decide among them, a taxonomy of patterns, and a map tying both to the existing themes, PM jobs and Glass design choices. What it is not: a recommendation. No pattern is picked as the winner; where a lean is noted it comes with the evidence behind it and what would change it. Building our own harness is one option among several.
 
@@ -18,9 +18,8 @@ Companion files: a visual map in [map.html](map.html) (self-contained, no extern
 - [D. Options by dimension](#d-options-by-dimension)
 - [E. Connection to existing work](#e-connection-to-existing-work)
 - [F. Fit to unstructured vs task-specific work](#f-fit-to-unstructured-vs-task-specific-work)
-- [G. Cross-cutting questions and what a resource request would fund](#g-cross-cutting-questions-and-what-a-resource-request-would-fund)
+- [G. Cross-cutting questions and what further work would cover](#g-cross-cutting-questions-and-what-further-work-would-cover)
 - [H. Evidence quality, gaps and inconsistencies](#h-evidence-quality-gaps-and-inconsistencies)
-- [I. Open questions for Geoff](#i-open-questions-for-geoff)
 
 ---
 
@@ -37,11 +36,11 @@ Companion files: a visual map in [map.html](map.html) (self-contained, no extern
 - "Shared and persistent" is five separable decisions (where it runs, what makes it durable, who the agent acts as, how people join, how work is handed on), and the sharpest divergence is identity: Cursor runs shared agents with the creator's tokens, Codex as the requester, Claude Tag as a service account with channel-scoped bundles, Copilot as agent-with-co-author ([Track 5](track-5-shared-persistent-sessions.md)). Every handoff found is asymmetric.
 - Standardised judgement work, where it works, is built as narrow specialists with explicit exclusions, deterministic gates, SME-labelled evals and a logged human override: Cloudflare's code reviewer (131,246 runs in a month, average $1.19, break-glass on 0.6% of MRs; [source](../../research/sources/cloudflare-ai-code-review-opencode.md), first-party), Stripe Minions ([source](../../research/sources/stripe-minions-one-shot-coding-agents.md), first-party), Ramp's Policy Agent ([source](../../research/sources/pragmatic-engineer-ramp-lessons-new-ai-product.md), first-party).
 
-**Geoff's hypothesis after research.** Partly supported and refined ([Track 6](track-6-work-structure-fit.md)). All four major vendors draw a line between work whose path can be written down (workflow) and work whose path cannot (agent), and an independent survey of 86 deployed systems finds 68% run at most 10 steps before a human intervenes ([production study](../../research/sources/arxiv-measuring-agents-in-production.md), independent). But the line in the evidence is not "kind of user activity" (planning vs PRD review); it is a bundle of properties of a *step of work*: path predictability, verifiability, repeatability and consistency demand, error cost, audit need, context breadth, collaboration, and how much agency the person wants to keep. The same PM moves between these inside one session. Structure can also live inside the general harness (skills, hooks, subagents, headless runs), and structure that compensates for model weakness decays with each model release, while structure demanded by the work (verification, audit, permissions) persists. No controlled comparison of a task-specific agent against a skill in a general harness exists for any standard job; that is the central evidence gap for this project.
+**The working hypothesis after research.** Partly supported and refined ([Track 6](track-6-work-structure-fit.md)). All four major vendors draw a line between work whose path can be written down (workflow) and work whose path cannot (agent), and an independent survey of 86 deployed systems finds 68% run at most 10 steps before a human intervenes ([production study](../../research/sources/arxiv-measuring-agents-in-production.md), independent). But the line in the evidence is not "kind of user activity" (planning vs PRD review); it is a bundle of properties of a *step of work*: path predictability, verifiability, repeatability and consistency demand, error cost, audit need, context breadth, collaboration, and how much agency the person wants to keep. The same PM moves between these inside one session. Structure can also live inside the general harness (skills, hooks, subagents, headless runs), and structure that compensates for model weakness decays with each model release, while structure demanded by the work (verification, audit, permissions) persists. No controlled comparison of a task-specific agent against a skill in a general harness exists for any standard job; that is the central evidence gap for this project.
 
 **Biggest evidence gaps.** Independent evidence is thin everywhere and mostly about failures: no independent post-mortem of a shared multi-user session, no cost-of-ownership account for an own harness, no quality or latency data for any MCP-served agent, no A2A production deployment, no independent review of Omnigent, Cloudflare OS adoption figures that are Cloudflare's own, and no evaluation of any PM agent on a PM job ([section H](#h-evidence-quality-gaps-and-inconsistencies)).
 
-**Nothing is settled.** The register now holds about 29 dimensions, which this document consolidates to 20 (section D, with a merge table), each with options and unranked key questions. Several questions can only be answered by Geoff (section I), and most of the rest need a small set of prototypes, trials and interviews (section G) rather than more desk research.
+**Nothing is settled.** The register now holds about 29 dimensions, which this document consolidates to 20 (section D, with a merge table), each with options and unranked key questions. Several questions are scoping questions for the project owner, and most of the rest need a small set of prototypes, trials and interviews (section G) rather than more desk research.
 
 ---
 
@@ -305,7 +304,7 @@ Reading the map: the runtime dimensions (D1-D9) decide which pattern classes are
 
 ## D. Options by dimension
 
-This is the main product. The register has about 29 dimensions written by several agents with overlaps. Below they are consolidated into 20 for this document; [DIMENSIONS.md](../../options/DIMENSIONS.md) itself is unchanged (the director owns it). Options tables here are compact; the full rows with every evidence link are in the register sections linked from each heading.
+This is the main product. The register has about 29 dimensions written by several agents with overlaps. Below they are consolidated into 20 for this document; [DIMENSIONS.md](../../options/DIMENSIONS.md) itself is unchanged (it is maintained separately). Options tables here are compact; the full rows with every evidence link are in the register sections linked from each heading.
 
 ### D.0 Proposed merges, splits and new dimensions
 
@@ -328,7 +327,7 @@ This is the main product. The register has about 29 dimensions written by severa
 | pm-job-sequencing, investment-sequencing | Keep both, present together as job-level and stage-level sequencing | PM-agents brief | Different granularity, same "what first" question |
 | (new) skill-trigger-reliability | Treat as a cross-cutting key question rather than a dimension | Track 4 | Bears on skills vs deployed agents vs always-on context |
 
-Seed rows in the register that still say "to be linked" or "to be researched" (for example "Use a vendor harness as is", "Ephemeral-private", "Per-harness settings") remain unsourced; they are the baseline options and need a citation before the deck uses them.
+Seed rows in the register that still say "to be linked" or "to be researched" (for example "Use a vendor harness as is", "Ephemeral-private", "Per-harness settings") remain unsourced; they are the baseline options and need a citation before the strategy uses them.
 
 ---
 
@@ -347,7 +346,7 @@ Register: [harness-ownership](../../options/DIMENSIONS.md#original-framing-befor
 | Minimal own loop | Pi, Mini-SWE-Agent, Amp tutorial | Total context control; tiny prompt | Own provider abstraction, UI, evals, safety; no ecosystem | early-adopter (coding); untested for knowledge work | [Zechner](../../research/sources/mariozechner-pi-minimal-coding-agent.md) (anecdote); [Amp](../../research/sources/ampcode-how-to-build-an-agent.md) (first-party) |
 
 **Key questions (unranked).**
-- Is the funded thing a harness at all, or the assets and governance around vendor harnesses? The independent study says the competitive unit has moved from the loop to the ecosystem surface. *Answered by:* Geoff and the director scoping the request; Track 4 and 5 findings; a scoped upkeep estimate.
+- Is the thing being built a harness at all, or the assets and governance around vendor harnesses? The independent study says the competitive unit has moved from the loop to the ecosystem surface. *Answered by:* project scoping; Track 4 and 5 findings; a scoped upkeep estimate.
 - Which target jobs need a coding-style harness (shell, files, sandbox) and which are workflow-shaped (fixed steps, structured I/O)? *Answered by:* job inventory scored against the PM jobs map; one job built as a skill in Claude Code, as an Agent SDK app and as a framework workflow, compared on reliability, cost and effort.
 - Who would maintain the harness through model releases, and what is the recurring effort? Anthropic, Cognition and Vercel each report stale components or rebuilds after a model change. *Answered by:* interviews with Ramp- and Stripe-like adopters; staffing estimate; budget owner.
 - Does Ramp's ownership rationale (moat, same-day fixes, learning for its own product) apply to our target users' orgs, or are they buyers of a harness? *Answered by:* user and sponsor interviews.
@@ -375,7 +374,7 @@ Register: [harness-ownership](../../options/DIMENSIONS.md#original-framing-befor
 
 **Key questions (unranked).**
 - Which meaning of meta-harness matters: a governance and sharing layer, a local parallel-session tool, or an SDK adapter inside a product we build? *Answered by:* mapping the three aims to each shape; user interviews.
-- Is "less dependent on Claude Code" satisfied by a platform-native agent (Cloudflare OS replaces the CLI), or must Claude Code and Codex stay in the loop? *Answered by:* Geoff; user interviews.
+- Is "less dependent on Claude Code" satisfied by a platform-native agent (Cloudflare OS replaces the CLI), or must Claude Code and Codex stay in the loop? *Answered by:* the project owner; user interviews.
 - Does a layer that wraps vendor CLIs stay viable as vendors change login, terminal and hook behaviour? *Answered by:* a two-week Omnigent trial with Claude Code and Codex; upstream issue history.
 - Is the first-party path (Managed Agents, Claude Code on the web, Codex cloud) closing the gap a third-party layer would fill? *Answered by:* vendor roadmap review and briefings.
 - Do policies need to hold when someone runs the vendor CLI directly? *Answered by:* security and policy owner.
@@ -670,7 +669,7 @@ Register: [target-outcome](../../options/DIMENSIONS.md#target-outcome-which-outc
 | Classification accuracy vs SME labels | False positives and negatives | Geoff's risk-agent concept | Only for jobs with a known taxonomy | [Intent Shaping](../../research/sources/geoff-intent-shaping-well-managed-environment.md) (first-party concept) |
 | Product or business outcomes | Adoption, revenue | none found | Long lag; confounded | unsourced |
 
-**Key questions (unranked).** What outcome would the sponsor fund against? *Answered by:* sponsor interviews. Is speed, consistency, reduced review effort or org learning the target (speed alone is contested: METR's RCT found experts 19% slower while believing they were faster)? *Answered by:* choose the metric with Geoff; baseline trial. Can we get a before/after baseline for the first job? *Answered by:* pilot design. Which PM jobs can be framed as classification against a known taxonomy? *Answered by:* reviewing the jobs map with SMEs. What would a sceptical exec accept as proof? *Answered by:* exec interviews.
+**Key questions (unranked).** What outcome would a sponsor measure success against? *Answered by:* sponsor interviews. Is speed, consistency, reduced review effort or org learning the target (speed alone is contested: METR's RCT found experts 19% slower while believing they were faster)? *Answered by:* choose the metric with the project owner; baseline trial. Can we get a before/after baseline for the first job? *Answered by:* pilot design. Which PM jobs can be framed as classification against a known taxonomy? *Answered by:* reviewing the jobs map with SMEs. What would a sceptical exec accept as proof? *Answered by:* exec interviews.
 
 **Lean.** None.
 
@@ -689,7 +688,7 @@ Register: [pm-job-sequencing](../../options/DIMENSIONS.md#sub-choice-pm-job-sequ
 | Strategy and prioritisation | agent prepares, human decides | Weakest evidence | P1 | [SVPG](../../research/sources/svpg-four-big-risks.md) (first-party opinion) |
 | Delivery factory first / shaping first / discovery first | Stripe and Ramp loops; Glass as define-stage agent | Starved by vague intent / little visible gain / balloons backlog | P7, P9 / P1, P2, P10 / vendor tools | [Intent Factory](../../research/sources/geoff-building-accelerating-intent-factory.md) (first-party) |
 
-**Key questions (unranked).** Which jobs do target PMs find most painful and repetitive (frequency x pain x cost of error)? *Answered by:* PM interviews and time diary; scoring the jobs map. Score each PM job step on the activity axes before choosing (D.17). *Answered by:* scoring workshop with PMs and a policy owner. Where is the actual bottleneck today: shovel-ready intent, build, review or release? *Answered by:* value-stream data. Do we agree with the intent-first order? *Answered by:* Geoff. Is an intake-alias discovery phase (Cloudflare's rollout) a cheaper way to find which jobs to standardise than designing a jobs map first? *Answered by:* small pilot with one team. Which jobs have org data we can legally and technically reach? *Answered by:* data-access inventory.
+**Key questions (unranked).** Which jobs do target PMs find most painful and repetitive (frequency x pain x cost of error)? *Answered by:* PM interviews and time diary; scoring the jobs map. Score each PM job step on the activity axes before choosing (D.17). *Answered by:* scoring workshop with PMs and a policy owner. Where is the actual bottleneck today: shovel-ready intent, build, review or release? *Answered by:* value-stream data. Do we agree with the intent-first order? *Answered by:* the project owner. Is an intake-alias discovery phase (Cloudflare's rollout) a cheaper way to find which jobs to standardise than designing a jobs map first? *Answered by:* small pilot with one team. Which jobs have org data we can legally and technically reach? *Answered by:* data-access inventory.
 
 **Leans (recorded in the register).** PM-agents brief: bounded, reviewable jobs first (feedback triage, status, spec first draft plus gap review) because they have the most first-party use and checkable output; would change if interviews show a different top pain or a trial shows review cost cancels the saving. Geoff's doc: delivery first, then shaping, then discovery; bottleneck data showing build is not the constraint would change it.
 
@@ -873,24 +872,24 @@ S = strong fit, O = workable, W = weak, ? = no evidence. Each cell is marked **E
 
 ---
 
-## G. Cross-cutting questions and what a resource request would fund
+## G. Cross-cutting questions and what further work would cover
 
 ### G.1 Cross-cutting questions (unranked)
 
 From the register's cross-cutting section and the track reports:
 
-1. Who is the user we are choosing for (individual PM, product team, whole org), and does the answer differ by dimension? *Answered by:* Geoff; user interviews.
-2. What would the resource request fund first: prototypes to choose between options, or a build of a leading option? *Answered by:* Geoff; director.
-3. Is the target setting a regulated organisation? If so, regulatory review shapes review gating, prototype-as-spec, context governance and harness choice. *Answered by:* Geoff; risk and compliance owners.
+1. Who is the user we are choosing for (individual PM, product team, whole org), and does the answer differ by dimension? *Answered by:* the project owner; user interviews.
+2. What should further work cover first: prototypes to choose between options, or a build of a leading option? *Answered by:* project scoping.
+3. Is the target setting a regulated organisation? If so, regulatory review shapes review gating, prototype-as-spec, context governance and harness choice. *Answered by:* the project owner; risk and compliance owners.
 4. Shared-agent identity (creator, requester, service account) is a product decision as much as a security one: what is the least surprising behaviour for users? *Answered by:* user interviews plus security owner.
-5. Is the first deployed task agent meant to be called from many harnesses we do not control, or only from our own product? That decides whether protocols (MCP, A2A) matter at all. *Answered by:* Geoff; user interviews.
-6. Is the thing being funded a harness at all, or the assets and governance around vendor harnesses? *Answered by:* Geoff and director scoping; Track 4 and 5 findings; upkeep estimate.
-7. Does the project treat "unstructured" work as out of scope for standardisation, or as something that still needs structured context (folders, memory, rubrics)? *Answered by:* Geoff; user interviews.
+5. Is the first deployed task agent meant to be called from many harnesses we do not control, or only from our own product? That decides whether protocols (MCP, A2A) matter at all. *Answered by:* the project owner; user interviews.
+6. Is the thing being built a harness at all, or the assets and governance around vendor harnesses? *Answered by:* project scoping; Track 4 and 5 findings; upkeep estimate.
+7. Does the project treat "unstructured" work as out of scope for standardisation, or as something that still needs structured context (folders, memory, rubrics)? *Answered by:* the project owner; user interviews.
 8. How reliably do skills trigger in the harnesses our users use? It bears on skills vs deployed agents vs always-on context across D.4, D.6 and D.17. *Answered by:* per-harness trigger eval with a no-skill baseline.
-9. Is model-provider independence a goal, or only harness independence? The first conflicts with current Claude access terms. *Answered by:* Geoff; procurement.
+9. Is model-provider independence a goal, or only harness independence? The first conflicts with current Claude access terms. *Answered by:* the project owner; procurement.
 10. Which hosts do target users actually use (Claude Code, Codex, Claude Desktop, Cursor, Copilot)? Support for MCP Tasks, A2A, plugins and background agents differs per host. *Answered by:* user interviews; usage data.
 
-### G.2 What a resource request would need to fund to answer these
+### G.2 What further work would be needed to answer these
 
 Grouped by instrument, unranked. Each item names the dimensions it informs.
 
@@ -953,12 +952,12 @@ The field moves monthly. Dated anchors: A2A v1.0 March 2026; Managed Agents publ
 
 Between tracks, or between a track report and its source note:
 
-- **Stripe PR volume.** Track 2 cites "1,000+ merged agent PRs per week" ([stripe-minions-one-shot-coding-agents](../../research/sources/stripe-minions-one-shot-coding-agents.md)); Track 5 cites ">1,300 merged PRs/week" ([stripe-minions-part-2](../../research/sources/stripe-minions-part-2.md)); Geoff's Intent Factory relays "more than 1,000 (1,300) by March 2026, reportedly about 7,000 a week (~30% of merges) by August". Different Stripe posts at different dates, all first-party; the deck should pick one and date it.
+- **Stripe PR volume.** Track 2 cites "1,000+ merged agent PRs per week" ([stripe-minions-one-shot-coding-agents](../../research/sources/stripe-minions-one-shot-coding-agents.md)); Track 5 cites ">1,300 merged PRs/week" ([stripe-minions-part-2](../../research/sources/stripe-minions-part-2.md)); Geoff's Intent Factory relays "more than 1,000 (1,300) by March 2026, reportedly about 7,000 a week (~30% of merges) by August". Different Stripe posts at different dates, all first-party; the strategy should pick one and date it.
 - **Omnigent stars.** Track 1 reports about 11k stars from the README at retrieval and notes a second-hand "8,000 stars at the time" from a Berkeley RDI talk write-up; not a contradiction but two dates.
 - **SkillsBench headline.** The paper's text says +16.2pp average, its Figure 2 caption +12.66pp; abstract says 86 tasks, body 84 ([note](../../research/sources/arxiv-skillsbench.md)). Track 4 and the register use +16.2pp and 84 tasks.
 - **MalSkills count.** 262 (earlier version and search summary) vs 400 confirmed malicious (v2, 2026-08-21); only the abstract page was read ([note](../../research/sources/arxiv-malskills.md)). Tracks use 400.
 - **Glass team size and timeline.** 3 (Buchan) vs 4 (Charles); the "$1.5M week in May caused Glass" narrative conflicts with April articles that already describe Glass ([teardown](../competitive-teardown-ramp-glass/00-teardown-summary.md)).
-- **Cloudflare OS "early access" vs "open-sourced".** Register rows call it early access v2 and open source (Apache-2.0 named only in the repo); both are true per the sources but the deck should say which.
+- **Cloudflare OS "early access" vs "open-sourced".** Register rows call it early access v2 and open source (Apache-2.0 named only in the repo); both are true per the sources but the strategy should say which.
 - **Managed Agents dates.** Track 2 says "April 2026 header"; Track 3 says "beta (header 2026-04-01)"; Track 1 dates the meta-harness statement 2026-04-08. Consistent, but three different anchors for one product.
 - **Cognition vs Anthropic on multi-agent.** Track 2 lists it as a disagreement; Track 6 reads it as partly a scoping difference (coding vs breadth-first research) untested head-to-head. Both readings are in the register.
 - **Always-on context files.** Vercel's vendor eval (AGENTS.md index scored 100%) and the ETH independent study (context files reduce success, +20% cost) point in opposite directions; the register records both; the Intent Factory's context-repo lean should be read against the ETH result.
@@ -967,58 +966,15 @@ Between tracks, or between a track report and its source note:
 ### H.4 Possible-overwrite and duplicate-note problems
 
 - **Track 6 overwrote two notes filed earlier by another agent:** [anthropic-building-effective-agents.md](../../research/sources/anthropic-building-effective-agents.md) and [cognition-dont-build-multi-agents.md](../../research/sources/cognition-dont-build-multi-agents.md). The current frontmatter carries Track 6's themes (`work-structure-spectrum`, `single-agent-many-skills`, `one-job-per-agent`, `evals-autonomy-trust`, `agent-frameworks` for the first; `single-agent-many-skills`, `one-job-per-agent`, `agent-failure-modes` for the second). Track 2 cited both notes for `build-vs-buy` and `agent-frameworks` claims (start with raw APIs; frameworks obscure prompts; crews make conflicting implicit decisions); the INDEX lines and THEMES bullets still reflect Track 2's reading and still match the live notes on the facts, but Track 2's original `build-vs-buy` framing in the frontmatter and any Track 2-specific detail may be lost. The owner of the first versions should check.
-- **Duplicate source notes for the same primary source** (filed by different tracks): [anthropic-scaling-managed-agents.md](../../research/sources/anthropic-scaling-managed-agents.md) and [anthropic-engineering-scaling-managed-agents.md](../../research/sources/anthropic-engineering-scaling-managed-agents.md) (Track 1 suggested the director merge them); [answerai-month-with-devin.md](../../research/sources/answerai-month-with-devin.md) (Track 5) and [answerai-thoughts-month-with-devin.md](../../research/sources/answerai-thoughts-month-with-devin.md) (Track 3); [anthropic-claude-code-subagents.md](../../research/sources/anthropic-claude-code-subagents.md) (Track 3) and [anthropic-claude-code-subagents-docs.md](../../research/sources/anthropic-claude-code-subagents-docs.md) (Track 4). Facts agree across each pair.
+- **Duplicate source notes for the same primary source** (filed by different tracks): [anthropic-scaling-managed-agents.md](../../research/sources/anthropic-scaling-managed-agents.md) and [anthropic-engineering-scaling-managed-agents.md](../../research/sources/anthropic-engineering-scaling-managed-agents.md) (Track 1 suggested merging them); [answerai-month-with-devin.md](../../research/sources/answerai-month-with-devin.md) (Track 5) and [answerai-thoughts-month-with-devin.md](../../research/sources/answerai-thoughts-month-with-devin.md) (Track 3); [anthropic-claude-code-subagents.md](../../research/sources/anthropic-claude-code-subagents.md) (Track 3) and [anthropic-claude-code-subagents-docs.md](../../research/sources/anthropic-claude-code-subagents-docs.md) (Track 4). Facts agree across each pair.
 - **Stray empty file** at `research/-we-rethink-work-with-cloudflare-os.md` (0 bytes), probably a mis-pathed write of the Cloudflare rollout note; the real note is in `research/sources/`.
-- **Register formatting.** In `capability-packaging`, one option row (Cloudflare CI component) sits after the PM-agents "Added evidence" bullets rather than inside the table; `runtime-location` has a Track 3 question numbered "3." colliding with the existing 3; the `harness-ownership` "Added by" line lists "Track 2 pass" twice; Track 5's three new dimensions were added to the Contents by the director after Track 5's report noted they were missing. None affects content.
+- **Register formatting.** In `capability-packaging`, one option row (Cloudflare CI component) sits after the PM-agents "Added evidence" bullets rather than inside the table; `runtime-location` has a Track 3 question numbered "3." colliding with the existing 3; the `harness-ownership` "Added by" line lists "Track 2 pass" twice; Track 5's three new dimensions were added to the Contents after Track 5's report noted they were missing. None affects content.
 
 ---
-
-## I. Open questions for Geoff
-
-Only Geoff can answer these; the tracks and the register depend on them. Unranked.
-
-1. **Unit of classification.** Is the unit you want to classify the user (a PM who sometimes ideates and sometimes reviews) or the job step? The evidence supports the step; a persona-level split would be hard to defend.
-2. **Which hypothesis to settle first.** (a) "Task agents beat skills in a general harness on standardised jobs" (no evidence either way; needs a bake-off), or (b) "ideation should stay unstructured" (guidance and anecdote support it; nothing measured). They need different research.
-3. **Meaning of meta-harness.** Which do you need: a governance and sharing layer over many vendor CLIs (Omnigent, Warp Oz), a local parallel-session manager (Conductor), an SDK adapter inside a product we build (HarnessAgent), or none? And is "less dependent on Claude Code" satisfied by a platform-native agent (Cloudflare OS) that does not wrap Claude Code at all?
-4. **Scope of the funded thing.** A harness we operate, or portable assets plus governance that work in whichever harness users run? Upkeep evidence bears on this.
-5. **Harness vs model independence.** Is model-provider independence a goal, or only harness independence? The first conflicts with current Claude access terms.
-6. **Who the first users are.** Individual PMs doing open work (C1/C2-heavy) or a team lead or product-ops owner standardising a process (C3-heavy)? And is the buyer a platform or security owner while the PM is the user?
-7. **Where the first deployed agent is called from.** Harnesses we do not control (Claude Code, Codex, Claude Desktop, Cursor), or only our own surface? That decides whether MCP/A2A matter at all.
-8. **Reference workload.** Which one job is the bake-off: PRD review (your example), feedback triage, or the risk-advisor agent from your Intent Shaping document? For PRD review: is the team's standard a rubric of judgement criteria or a completeness checklist, and can SMEs label 20+ past PRDs?
-9. **Enforcement need.** Do you need the audit and enforcement a deployed workflow gives, or is a skill plus a logged human sign-off enough for the jobs you pick?
-10. **Regulated setting and identity.** Is the target a regulated organisation (ZDR, HIPAA, CMEK, transcript retention, data residency)? Which identity behaviour is acceptable for a shared agent: requester, creator tokens, or service account? Who is the policy owner we can ask?
-11. **Shared sessions.** Which jobs do you want shared or unattended first: interactive co-working, recurring digests, or chat requests? Is a shared persistent session more valuable for C1 (shared thinking) or C5 (accountable commitments)? Is laptop-dependence (Glass-style scheduling) a dealbreaker?
-12. **Bitter-lesson weight.** How much weight do you put on "structure decays as models improve"? It affects whether to encode PM standards as workflows or as portable context (skills, rubrics, evals) that survive model changes.
-13. **Target outcome.** Speed, consistency, reduced review effort, org learning, or something else? Speed alone is contested in the independent evidence.
-14. **Trials as evidence.** Would a one-to-two-week Omnigent trial and a one-day Cloudflare OS deploy be acceptable substitutes for unavailable independent evidence? Should we chase adopters (Ramp, Stripe, PayPal, Cloudflare, Databricks) for interviews?
-15. **Thin spots to continue.** Should the tracks continue on: A2A production evidence; Omnigent community reaction; Superset, OpenCode, Goose, Cline, Amp, Cursor's third-party-harness stance; Codex and Copilot admin controls; Cowork and Claude Enterprise plugin administration; enterprise agent-OS vendors? Or accept "unproven" for the deck?
-16. **Register structure.** Do you accept the merges and splits in D.0, so the director can apply them to DIMENSIONS.md?
-
----
-
-## Geoff's answers (2026-10-24)
-
-Asked in this session at the director's request; Q16 (register merges) is the director's. Recorded in [options/DIMENSIONS.md](../../options/DIMENSIONS.md) under "Geoff's answers" in each affected dimension.
-
-- 2026-10-24 **Q4 Scope of the funded thing:** "all of the above": whatever is needed for the highest-leverage build/buy and the best experience and outcomes. Build, buy and layer all stay open.
-- 2026-10-24 **Q6 First users:** our own team plus a small number of beta users across the company. Internal tooling, not a commercial play.
-- 2026-10-24 **Q3 Meaning of meta-harness:** define terms by real, common usage, not by what we want them to mean. Where a pattern lacks a consensus term, coin one explicitly. If Cloudflare OS fits a different pattern, name that pattern (here: *org-deployed agent workspace*, P5, our coined term) and do not stretch "meta-harness" to it. Follow-up: B.2 P4 should lead with the common horizontal sense and list the competing usages (Anthropic Managed Agents, the Stanford optimiser) as such.
-- 2026-10-24 **Q5 Harness vs model independence:** both are benefits rather than goals, and their value is unquantified. Geoff would not trade harness quality for harness independence.
-- 2026-10-24 **Q7 Where the first deployed agent is called from:** "we don't know; we are doing research and strategy." Stays an open key question.
-- 2026-10-24 **Q8 Reference workload:** **intent shaping**, replacing PRD review as the example. Take high-level intent and shape it against the real constraints of a large enterprise into intent that deserves to ship and is ready to, with constraints identified and resolved, dependencies mapped, and ready for handoff to an engineering team or coding agent.
-- 2026-10-24 **Q14 Trials:** yes. A short Omnigent trial, a Cloudflare OS deploy and adopter interviews (Ramp, Stripe, PayPal, Cloudflare, Databricks) are listed as proposed work for the resource request. Nothing is run now.
-- 2026-10-24 **Q15 Thin spots:** propose a follow-up research round to the director, who decides.
-- 2026-10-24 **Q13 Target outcome:** free human time for discovering novel problems, experiments and insight. Specifying and shaping simple intent should become trivial and approach full autonomy while meeting organisational standards for quality and good management. Consistency, reduced review effort, org learning and speed are all wanted.
-- 2026-10-24 **Q1 and Q2:** agreed. Classify by job step, not by user. The first hypothesis to test is "task agent beats skill in a general harness on a standardised job", on intent shaping.
-- 2026-10-24 **Q9 and Q10 Enforcement and regulation:** the setting is regulated and audit is needed. The specifics (residency, retention, identity behaviour) remain key questions for the policy owner.
-- 2026-10-24 **Q11 and Q12 Sharing and encoding of standards:** these are open; don't force them. Geoff found the questions too vague and then too implementation-level for this stage. Both stay unranked key questions: which kind of sharing matters first, and whether to encode standards as fixed workflows or as rubrics and evals. They are candidate variables for the intent-shaping bake-off.
-
-Lesson for this register: several items in section I were key questions the research should leave open, not decisions for Geoff. Future question lists should separate *direction only Geoff can give* (scope, users, outcome, terminology) from *open key questions* that funded work would answer.
 
 ## Change log
 
 - 2026-10-24: added a "Teardown examples" line under each pattern class in B.2, from tasks/teardowns-to-pattern-classes/00-mapping.md (task pattern-classes-teardown-examples). No other text changed. P2's existing Glass example dates from April 2026; by October Glass runs on Ramp's own Laminar harness (P3), as its teardown example line says.
-- 2026-10-24: **pattern classes revised** (Geoff: "Revise, with a change log"; task revise-pattern-classes). The options register (options/DIMENSIONS.md) and the films keep the old numbering until their next edit.
 
   | Old | New | What changed |
   |---|---|---|

@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Trade-press coverage of Amplitude AI Feedback, whose technology comes from Amplitude's July 2025 acquisition of Kraftful; only a customer quote, no metrics. Evidence kind: trade press relaying the vendor announcement, no independent testing, so vendor-claim. Audit 2026-10-24: original fetched in full and claims checked.
+Trade-press coverage of Amplitude AI Feedback, whose technology comes from Amplitude's July 2025 acquisition of Kraftful; only a customer quote, no metrics. Evidence kind: trade press relaying the vendor announcement, no independent testing, so vendor-claim. Re-check 2026-10-24: original fetched in full and claims checked.
 
 ## Themes
 - feedback-triage-agents: AI Feedback turns customer input into product insights; Replit quote, no number (cases 3, 23)

@@ -30,4 +30,4 @@ Interview with Gamma hosted on a vendor blog; single-company evidence of the PM 
 
 ## Could not verify
 - Single company; no rigorous industry data on how often the PM role merges into engineering or design.
-- Audit 2026-10-24: page read. Bug-triage and A/B-versus-evals claims confirmed (evals scored 100% yet missed users' preference for minor copy improvements).
+- Re-check 2026-10-24: page read. Bug-triage and A/B-versus-evals claims confirmed (evals scored 100% yet missed users' preference for minor copy improvements).

@@ -15,7 +15,7 @@ relevance: medium
 ## Relevance to the project
 Guide to agents for PM updates, meetings and info sync: pick a low-risk high-impact task first and apply a five-question safety checklist. Paywalled, so no outcomes were visible.
 
-Extended 2026-10-24 by research-lennys-newsletter-archive (full text read via Geoff's paid session; relevance raised to medium): a widely read early-2025 framework for PM agents built on no-code "AI automation" platforms (Zapier Agents, Lindy, Relay, Gumloop, Cassidy). Useful to the project for its six-behaviour definition of "agentic", the junior-intern test for what to delegate, concrete low-downside patterns (draft, recommend, append, DM me), the observation that companies grant write access more readily than read access, which blocks agents from checking their own work, and the "AI isn't endangering your job, but letting AI read for you is" warning. Bears on review-and-autonomy, work-structure and human-judgment boundaries. The tooling is dated (pre-MCP-everywhere, pre-coding-harness for PMs).
+Extended 2026-10-24 by research-lennys-newsletter-archive (full text read through a paid subscription; relevance raised to medium): a widely read early-2025 framework for PM agents built on no-code "AI automation" platforms (Zapier Agents, Lindy, Relay, Gumloop, Cassidy). Useful to the project for its six-behaviour definition of "agentic", the junior-intern test for what to delegate, concrete low-downside patterns (draft, recommend, append, DM me), the observation that companies grant write access more readily than read access, which blocks agents from checking their own work, and the "AI isn't endangering your job, but letting AI read for you is" warning. Bears on review-and-autonomy, work-structure and human-judgment boundaries. The tooling is dated (pre-MCP-everywhere, pre-coding-harness for PMs).
 
 ## Themes
 - status-update-agents: agents for updates, meetings and information sync.
@@ -39,6 +39,6 @@ Extended 2026-10-24 by research-lennys-newsletter-archive (full text read via Ge
 - Cost advice (Relay.app founder): get it working with a good model and lots of data, then optimise only high-frequency runs by cheaper model or less data. Security framing: compare AI risk to existing third-party automations and human permissions; "Consult your local CISO."
 
 ## Could not verify
-- Partly paywalled. (Resolved 2026-10-24: full text read via Geoff's paid session; screenshots and the platform comparison chart not visible in the text copy.)
+- Partly paywalled. (Resolved 2026-10-24: full text read through a paid subscription; screenshots and the platform comparison chart not visible in the text copy.)
 - Platform-founder quotes are vendor claims; the usability-session anecdotes have no counts or outcomes.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): visible part read: first exercise is a Zapier call-prep agent that only DMs you in Slack; checklist confirmed (understand the task, start smaller, keep downside low, give enough context, stay close to raw customer signals).
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): visible part read: first exercise is a Zapier call-prep agent that only DMs you in Slack; checklist confirmed (understand the task, start smaller, keep downside low, give enough context, stay close to raw customer signals).

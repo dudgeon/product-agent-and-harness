@@ -1,12 +1,12 @@
 # Summary: Department of Product, Knowledge Series
 
-Task: [research-department-of-product-knowledge-series](../research-department-of-product-knowledge-series.md). Swept 2026-10-24. Triage: [01-triage.md](01-triage.md). Theme evidence: [research/themes/research-department-of-product-knowledge-series.md](../../research/themes/research-department-of-product-knowledge-series.md). Proposed options: [options/contributions/research-department-of-product-knowledge-series.md](../../options/contributions/research-department-of-product-knowledge-series.md).
+Task: research-department-of-product-knowledge-series. Swept 2026-10-24. Triage: [01-triage.md](01-triage.md). Theme evidence: [research/themes/research-department-of-product-knowledge-series.md](../../research/themes/research-department-of-product-knowledge-series.md). Proposed options: options/contributions/research-department-of-product-knowledge-series.md.
 
 ## What was done
 
-- **Archive.** 437 posts in the publication; 121 tagged Knowledge Series. Geoff set a cut-off (via the director) at posts dated 2024-10-24 or later, which leaves **73 tagged posts in scope plus 2 untagged posts numbered in the series**. The 48 older posts are listed in the triage as out of scope. The series has no podcasts or guest posts.
+- **Archive.** 437 posts in the publication; 121 tagged Knowledge Series. The sweep was cut off at posts dated 2024-10-24 or later, which leaves **73 tagged posts in scope plus 2 untagged posts numbered in the series**. The 48 older posts are listed in the triage as out of scope. The series has no podcasts or guest posts.
 - **Triage** (in scope): 13 high, 26 medium, 32 low, 2 none, plus 1 untagged medium post.
-- **Read and filed: all 40 high and medium posts**, read in full through Geoff's logged-in paid subscription in Chrome. Nothing stayed paywalled. After reading, relevance was re-rated honestly: **6 high, 20 medium, 14 low**. Most of the drops are 2025 primers that later first-party sources in the library supersede.
+- **Read and filed: all 40 high and medium posts**, read in full through a paid subscription. Nothing stayed paywalled. After reading, relevance was re-rated honestly: **6 high, 20 medium, 14 low**. Most of the drops are 2025 primers that later first-party sources in the library supersede.
 - Notes are summaries in our own words with section references. There is no full text, and no prompts or templates are reproduced. Every company fact is marked second-hand.
 - The existing DoP notes ([Stripe Kai](../../research/sources/departmentofproduct-stripe-kai.md), [internal AI tools PDF](../../research/sources/departmentofproduct-internal-ai-tools-for-non-engineers.md)) were left as they were. They are not Knowledge Series posts.
 
@@ -56,7 +56,7 @@ Most reinforced, by bullet count: `pm-tool-connectivity` (10), `vendor-claims-vs
 
 ## Options by dimension
 
-Proposed in [options/contributions/research-department-of-product-knowledge-series.md](../../options/contributions/research-department-of-product-knowledge-series.md), for the director to merge into: activity-classification, review-and-autonomy, pm-agent-evaluation, governance-control-plane, agent-identity-delegation, session-persistence-sharing, context-and-memory, artifact-and-project-structure, intent-shaping-and-spec, capability-distribution-trust, agent-interface, loop-source, adoption-model. Plus one cross-cutting question: trace every figure to its primary source before the deck uses it. No new dimensions are proposed.
+Proposed for merging into: activity-classification, review-and-autonomy, pm-agent-evaluation, governance-control-plane, agent-identity-delegation, session-persistence-sharing, context-and-memory, artifact-and-project-structure, intent-shaping-and-spec, capability-distribution-trust, agent-interface, loop-source, adoption-model. Plus one cross-cutting question: trace every figure to its primary source before the strategy uses it. No new dimensions are proposed.
 
 ## For the film (tasks/strategy-story-and-explainer-video/)
 

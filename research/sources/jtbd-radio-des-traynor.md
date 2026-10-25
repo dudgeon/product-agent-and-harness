@@ -24,4 +24,4 @@ Practitioner view from Intercom's co-founder: the customer is not the fundamenta
 
 ## Could not verify
 - Only the episode page was read, not a full transcript.
-- Audit 2026-10-24: page has a transcript; the 'jobs are verbs' attribution was corrected to Moesta.
+- Re-check 2026-10-24: page has a transcript; the 'jobs are verbs' attribution was corrected to Moesta.

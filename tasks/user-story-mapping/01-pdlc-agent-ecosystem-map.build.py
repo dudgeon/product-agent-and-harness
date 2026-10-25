@@ -228,7 +228,7 @@ body='''<div class="wrap">
   <ul class="impl">
     <li><strong>The work item is the handoff contract, and it is harness-agnostic at the code step.</strong> Five coding agents take the same item and the reviewer checks the same acceptance criteria. That favours a product agent that writes into the system of record over one that holds intent in its own sessions.</li>
     <li><strong>Copy intent into the artifact the next agent reads; don’t rely on links.</strong> The idea “embed” option and the reviewer’s empty-description rule say the same thing.</li>
-    <li><strong>The seam to fund is still research → first shaped artifact.</strong> Atlassian has the objects; it has no documented path from research output into them.</li>
+    <li><strong>The seam to build for is still research → first shaped artifact.</strong> Atlassian has the objects; it has no documented path from research output into them.</li>
     <li><strong>Who may write code is a per-codebase choice.</strong> PMs committed on Confluence (isolated repo, explicit contribution model) and not on Jira.</li>
   </ul>
 </section>

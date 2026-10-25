@@ -97,7 +97,7 @@ Search summaries of Agent Bricks pages mention contextual policies enforced thro
   This bears on P4, P5 (Cloudflare's capability model, where Kenton Varda argues per-agent permissioning "does not scale") and P1 (Claude Code hooks).
 - **Session-sharing axis (P8):** Omnigent's maintainers chose the invariant "a shared session always executes as its owner". This is a concrete design option for shared sessions in a regulated setting (attribution identity separate from execution identity). The SciChart account warns against per-message acting identity: about six weeks to build, removed after privilege escalation.
 - **Terms:** no new term needed. "Meta-harness" in the horizontal sense is confirmed as common usage by independent commentary (AINews: "the harness of harnesses"). I propose the theme slug `policy-enforcement-fail-open` for the new idea; this is a coined label, see THEMES below.
-- **Trial design (Geoff approved a short Omnigent trial as proposed work):** the evidence now says what the trial must test, in the order the tracker suggests it will fail:
+- **Trial design (a short Omnigent trial is listed as proposed work):** the evidence now says what the trial must test, in the order the tracker suggests it will fail:
   1. Server deploy with OIDC (Entra issue #11417).
   2. Fail-closed behaviour when the policy server is down.
   3. The same policy enforced identically on Claude Code, Codex (native and direct) and sub-agents.

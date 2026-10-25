@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-The only named Amplitude customer number. The "75%" is one self-reported example: time to build a dashboard with Amplitude AI Agents, not a measured reduction in analysis time across work. Evidence kind: customer-written story published on the vendor's blog, so vendor-claim. Audit 2026-10-24: original fetched in full and claims checked.
+The only named Amplitude customer number. The "75%" is one self-reported example: time to build a dashboard with Amplitude AI Agents, not a measured reduction in analysis time across work. Evidence kind: customer-written story published on the vendor's blog, so vendor-claim. Re-check 2026-10-24: original fetched in full and claims checked.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: Headline "cuts analysis time by 75%" generalises a single self-reported example (a dashboard built in under an hour instead of about half a day); credited to Amplitude AI Agents, which predate the Feb 2026 Global Agent launch (case 3)

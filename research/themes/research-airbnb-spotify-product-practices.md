@@ -413,7 +413,7 @@ Which level sets intent (team, VP, executive) and how alignment is carried down.
 - [The Platform PM role at Spotify (DX ep. 50)](sources/dx-podcast-nils-loodin-platform-pm-spotify.md): leadership sets strategy in objectives, strategy docs and roadmaps; teams are "autonomous with how" (research-airbnb-spotify-product-practices)
 
 ## bets-and-planning-cadence: Bets and planning cadence
-A stack-ranked list of bets on a fixed cadence is the company's unit of commitment, so it anchors plan-stage artifacts. Close to leadership-review-cadence; the lint pass may merge them.
+A stack-ranked list of bets on a fixed cadence is the company's unit of commitment, so it anchors plan-stage artifacts. Close to leadership-review-cadence; a later consolidation pass may merge them.
 - [Spotify Rhythm: How we create focus](sources/kniberg-spotify-rhythm.md): company bets re-ranked quarterly; product bets every 6 weeks; Now/Next/Later boards; one stack rank, with High-Medium-Low called "broken" (slides 10-19) (research-airbnb-spotify-product-practices)
 - [Don't Copy the Spotify Model](sources/infoq-dont-copy-spotify-model.md): DIBBs and a company-wide visible bets board in 2016 (research-airbnb-spotify-product-practices)
 - [Lessons from scaling Spotify (Gustav Söderström)](sources/lenny-podcast-gustav-soderstrom-scaling-spotify.md): six-month increments with about two weeks of planning (1:02:46) (research-airbnb-spotify-product-practices)

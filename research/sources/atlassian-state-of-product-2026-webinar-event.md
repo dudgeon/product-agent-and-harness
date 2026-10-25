@@ -28,4 +28,4 @@ Vendor webinar and event marketing for the Atlassian State of Product 2026 repor
 
 ## Could not verify
 - Event/marketing copy only; no underlying data.
-- Audit 2026-10-24: webinar page fetched (title 'State of Product 2026: Key findings from 1000+ product teams', no body); the events.atlassian.com session URL now redirects to an error page. Webinar ran Sept 23/24 2025. Figures checked against the report PDF (see mindtheproduct-atlassian-state-of-product-2026-takeaways).
+- Re-check 2026-10-24: webinar page fetched (title 'State of Product 2026: Key findings from 1000+ product teams', no body); the events.atlassian.com session URL now redirects to an error page. Webinar ran Sept 23/24 2025. Figures checked against the report PDF (see mindtheproduct-atlassian-state-of-product-2026-takeaways).

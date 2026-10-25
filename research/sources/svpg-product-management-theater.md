@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: article
 evidence: first-party
 filed_by: research-pm-agents-jobs-to-be-done
-filed_note: audit 2026-10-24
+filed_note: re-check 2026-10-24
 themes: [pm-persona-role-expansion, human-judgment-pm-jobs]
 relevance: medium
 ---
@@ -26,4 +26,4 @@ Cagan's own source for the "product management theater" warning, which the jobs 
 - Part of a series: "Product Leadership Theater" (2024-02-13) and "Transformation Theater" (2024-02-27).
 
 ## Could not verify
-- Read for the audit through a fact-check agent's WebFetch extraction (summarising reader), not a raw copy. Quotes are near-verbatim and should be checked against the page before being printed.
+- Read for the re-check through a fact-check agent's WebFetch extraction (summarising reader), not a raw copy. Quotes are near-verbatim and should be checked against the page before being printed.

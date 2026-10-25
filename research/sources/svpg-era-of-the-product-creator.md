@@ -26,4 +26,4 @@ Cagan defines the product role by ownership of product risk rather than title, a
 
 ## Could not verify
 - Read via search summary only, not full article. Cagan's 2025 and 2026 writing was not read in full beyond this and 'Four Big Risks'.
-- Audit 2026-10-24: page read directly; claims confirmed as worded above. 'Ownership of value and viability risk is what survives' is NOT on the page and was removed from the map. The earlier 'search summary only' caveat is superseded.
+- Re-check 2026-10-24: page read directly; claims confirmed as worded above. 'Ownership of value and viability risk is what survives' is NOT on the page and was removed from the map. The earlier 'search summary only' caveat is superseded.

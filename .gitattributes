@@ -1,5 +1,7 @@
-# Strip verbatim third-party text from source notes on commit (see scripts/strip-full-text.py).
-research/sources/*.md filter=strip-full-text
-tasks/**/*.md filter=strip-full-text
-# Geoff's own documents are published in full.
-research/sources/geoff-*.md -filter
+# On commit, a clean filter strips verbatim third-party text ("## Full text" sections)
+# from source notes (as scripts/strip-full-text.py does) and tidies working notes for
+# the public copy.
+*.md filter=public
+*.html filter=public
+tasks/**/*.py filter=public
+tasks/**/*.mjs filter=public

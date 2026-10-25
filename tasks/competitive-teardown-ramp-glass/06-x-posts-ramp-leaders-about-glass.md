@@ -1,6 +1,6 @@
 # X posts about Ramp Glass from Ramp leaders and team
 
-Retrieved 2026-10-24 (first pass) and re-verified 2026-10-24 (audit pass) by reading each post's page in the built-in browser, logged out, read-only. Text below is exact as rendered unless marked "summarized". Times are the displayed times (US Eastern, from the ISO timestamps on the page). View/engagement counts are as displayed logged out on 2026-10-24 and are approximate (order shown by X: replies, reposts, likes, bookmarks).
+Retrieved 2026-10-24 (first pass) and re-verified 2026-10-24 (second pass) by reading each post's page in the built-in browser, logged out, read-only. Text below is exact as rendered unless marked "summarized". Times are the displayed times (US Eastern, from the ISO timestamps on the page). View/engagement counts are as displayed logged out on 2026-10-24 and are approximate (order shown by X: replies, reposts, likes, bookmarks).
 
 Discovery method: web search (standard + extended) found the URLs; each was then opened to verify text and date. Profile timelines (x.com/geoffintech, x.com/sebgoddijn) are login-walled, so this list is NOT a complete sweep of their timelines. See "Not retrieved / not verified" at the end.
 
@@ -151,7 +151,7 @@ I read it in full; NOT saved verbatim here (re-open for full text). Summary of t
 - Jake Messer (@jakemesser_, appears to be a Ramp employee): https://x.com/jakemesser_/status/2057608322560438337 ("Glass has become an integral part of my daily process at Ramp."; not opened, snippet only).
 - Chase (@itsmechase): https://x.com/itsmechase/status/2042445791449473503 (reaction; snippet only).
 
-## D. Found in the 2026-10-24 audit pass (added after the first list)
+## D. Found in the 2026-10-24 second pass (added after the first list)
 
 ### D1. Ramp Router launch, Jul 20, 2026 (origin of the "30% bill cut" claim)
 Three posts, verified text and dates; full text in [x-ramp-router-launch-posts](../../research/sources/x-ramp-router-launch-posts.md):

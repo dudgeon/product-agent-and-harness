@@ -23,4 +23,4 @@ Peer-reviewed conference paper (portal record): DeepSeek R1 pipeline re-ran a pu
 
 ## Could not verify
 - Listing not read in full.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): portal blocks automated fetch (bot check); title, authors and year not confirmed; no error-rate figure in the abstract.
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): portal blocks automated fetch (bot check); title, authors and year not confirmed; no error-rate figure in the abstract.

@@ -23,5 +23,5 @@ Peer-reviewed: persona-prompted ChatGPT gave reduced variance and different regr
 
 ## Could not verify
 - Paper not read directly.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): bibliographic details confirmed via search (Political Analysis 32: 401-416, doi:10.1017/pan.2024.5); also reports results shifted with prompt wording and over three months. Full text still unread.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): bibliographic details confirmed via search (Political Analysis 32: 401-416, doi:10.1017/pan.2024.5); also reports results shifted with prompt wording and over three months. Full text still unread.
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): bibliographic details confirmed via search (Political Analysis 32: 401-416, doi:10.1017/pan.2024.5); also reports results shifted with prompt wording and over three months. Full text still unread.
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): bibliographic details confirmed via search (Political Analysis 32: 401-416, doi:10.1017/pan.2024.5); also reports results shifted with prompt wording and over three months. Full text still unread.

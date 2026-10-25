@@ -25,4 +25,4 @@ Vendor blog giving secondary coverage of Cagan. Source for his view that product
 
 ## Could not verify
 - The 'product management theater' characterisation is from vendor and podcast coverage, not verified in Cagan's own writing.
-- Audit 2026-10-24: page read; 'theater' is absent. The leaders-drive-AI quote and the product-owner point are confirmed.
+- Re-check 2026-10-24: page read; 'theater' is absent. The leaders-drive-AI quote and the product-owner point are confirmed.

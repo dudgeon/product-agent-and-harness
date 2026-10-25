@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-The most rigorous-looking evidence in the case file, but vendor-published and about generic knowledge work. Best example for the vendor-claims-vs-independent theme: an outside firm took part, but Notion ran and published it. Evidence kind: vendor-claim. Audit 2026-10-24: English and zh-cn landing pages fetched in full and claims checked; the gated full report was not opened.
+The most rigorous-looking evidence in the case file, but vendor-published and about generic knowledge work. Best example for the vendor-claims-vs-independent theme: an outside firm took part, but Notion ran and published it. Evidence kind: vendor-claim. Re-check 2026-10-24: English and zh-cn landing pages fetched in full and claims checked; the gated full report was not opened.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: Notion Research "in partnership with MeasuringU" (described by Notion as an independent UX research firm), published by Notion; workflows unnamed, no significance tests, randomization or design stated, full report behind a lead form (case 8)

@@ -25,4 +25,4 @@ Curated resource page from a founder community, not a Torres summary. Supports t
 
 ## Could not verify
 - The 'AI summaries miss 20 to 40%' figure appeared only in search-summary text and could not be confirmed. A Business Tech Navigator page with unverifiable figures was not used.
-- Audit 2026-10-24: page read: no date (© 2026), no author. The 'AI summaries miss 20 to 40%' figure is not here or in Torres's article and was found nowhere; removed from the map.
+- Re-check 2026-10-24: page read: no date (© 2026), no author. The 'AI summaries miss 20 to 40%' figure is not here or in Torres's article and was found nowhere; removed from the map.

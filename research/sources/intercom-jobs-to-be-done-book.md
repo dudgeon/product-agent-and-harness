@@ -24,4 +24,4 @@ Framework primary material on JTBD from Intercom. Provides the JTBD vocabulary (
 
 ## Could not verify
 - Only the announcement and topics were confirmed. The claim that Job Stories centre on context and trigger rather than persona is from a secondary summary not verified against the book.
-- Audit 2026-10-24: page read; all six topics confirmed, including 'Job Stories and their advantages compared to personas' and 'This book isn't a step-by-step guide'.
+- Re-check 2026-10-24: page read; all six topics confirmed, including 'Job Stories and their advantages compared to personas' and 'This book isn't a step-by-step guide'.

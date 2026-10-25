@@ -14,7 +14,7 @@ relevance: high
 
 ## Relevance to the project
 
-The adoption playbook behind Glass: a four-level AI proficiency ladder, leaderboards, no token caps, central-platform-plus-spokes org design, and the story that 90%+ adoption still left people stuck on basic chat, which is why Glass was built. Key for the strategy deck on organizational change and for how a harness fits an adoption program.
+The adoption playbook behind Glass: a four-level AI proficiency ladder, leaderboards, no token caps, central-platform-plus-spokes org design, and the story that 90%+ adoption still left people stuck on basic chat, which is why Glass was built. Key for the strategy on organizational change and for how a harness fits an adoption program.
 
 ## Themes
 
@@ -37,4 +37,4 @@ _Full text omitted from the public repository; see `source_url` for the original
 ## Could not verify
 
 Full article text was read but not saved; replies not retrieved. Stats are self-reported. Internal inconsistency: team of four here vs three-person core team in Buchan's article.
-Superseded (audit 2026-10-24): "built on Anthropic's Claude Agent SDK" is the April 2026 state. Ramp's October post says every agentic product including Glass now runs on Laminar, its own provider-agnostic harness ([source](ramp-builders-building-laminar.md)).
+Superseded (re-check 2026-10-24): "built on Anthropic's Claude Agent SDK" is the April 2026 state. Ramp's October post says every agentic product including Glass now runs on Laminar, its own provider-agnostic harness ([source](ramp-builders-building-laminar.md)).

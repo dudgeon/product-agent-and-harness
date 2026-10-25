@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Vendor customer story with a survey-analysis speed claim and adoption counts; no time-saved metric. Evidence kind: vendor-published customer story (vendor-claim), speakers identified by title only. Audit 2026-10-24: original fetched in full and claims checked. Page says originally published March 2024 (search index shows 2024-03-20), updated 2026-09-30.
+Vendor customer story with a survey-analysis speed claim and adoption counts; no time-saved metric. Evidence kind: vendor-published customer story (vendor-claim), speakers identified by title only. Re-check 2026-10-24: original fetched in full and claims checked. Page says originally published March 2024 (search index shows 2024-03-20), updated 2026-09-30.
 
 ## Themes
 - feedback-triage-agents: "Hundreds of thousands of survey responses analyzed in hours" for Canva's 10th Anniversary Survey, "instead of a multi-month manual project" (Key results) (case 21)

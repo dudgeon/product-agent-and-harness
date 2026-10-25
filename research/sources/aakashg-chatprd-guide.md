@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-A guide made in collaboration with the ChatPRD team; contains the author's drafting-time claim. Not sponsored (the post says so), but produced with the vendor, so treated as vendor-claim rather than independent. Audit 2026-10-24: original fetched (public part; paywall cuts the rest) and claims checked.
+A guide made in collaboration with the ChatPRD team; contains the author's drafting-time claim. Not sponsored (the post says so), but produced with the vendor, so treated as vendor-claim rather than independent. Re-check 2026-10-24: original fetched (public part; paywall cuts the rest) and claims checked.
 
 ## Themes
 - prd-agents: Author: "In my testing, it takes the time you need for a PRD from 2-hours to 30-minutes" (case 9); own unmeasured estimate

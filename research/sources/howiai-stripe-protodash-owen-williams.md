@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-Protodash is a Stripe Dashboard prototyping kit and browser studio built over ~18 months by a design manager, now used by "more PMs than designers". Its core is **tacit design knowledge written down as agent rules** (how to use the Sail design system, which internal component matches which Figma pattern, what not to do when the MCP server is down), the kind of expert-curated capture Geoff's hypothesis is about. It also shows PMs unblocking themselves without a designer, prototypes becoming the handoff source of truth, and design-review comments turned into an agent fix queue. Bears on prototyping, the PM job map and the context-creation hypothesis.
+Protodash is a Stripe Dashboard prototyping kit and browser studio built over ~18 months by a design manager, now used by "more PMs than designers". Its core is **tacit design knowledge written down as agent rules** (how to use the Sail design system, which internal component matches which Figma pattern, what not to do when the MCP server is down), the kind of expert-curated capture the working hypothesis is about. It also shows PMs unblocking themselves without a designer, prototypes becoming the handoff source of truth, and design-review comments turned into an agent fix queue. Bears on prototyping, the PM job map and the context-creation hypothesis.
 
 ## Themes
 - tacit-knowledge-capture: v1 was "a bundle of cursor rules" plus the Sail MCP server; "I feel insane writing these rules, but like once you've got them, it works pretty well" (38:00); rules "whittled down through my various experiments" (08:00).

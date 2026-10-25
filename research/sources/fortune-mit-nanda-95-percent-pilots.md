@@ -22,4 +22,4 @@ Press coverage: about 95% of corporate genAI pilots show no measurable P&L impac
 - Method criticised.
 
 ## Could not verify
-- Audit 2026-10-24: primary read; see mit-nanda-genai-divide-2025. Fortune says internal builds succeed "one-third as often"; the report says about 33% vs 67% (half as often).
+- Re-check 2026-10-24: primary read; see mit-nanda-genai-divide-2025. Fortune says internal builds succeed "one-third as often"; the report says about 33% vs 67% (half as often).

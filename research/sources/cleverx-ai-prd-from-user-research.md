@@ -24,4 +24,4 @@ Vendor workflow post for AI-drafted PRDs. Useful as an explicit statement from a
 
 ## Could not verify
 - Vendor marketing; no independent evidence.
-- Audit 2026-10-24: page read (no author or date shown). AI-limits sentence confirmed: 'What AI cannot do is make the prioritization calls, define the technical architecture, set the engineering scope, or decide which trade-offs match your business strategy.'
+- Re-check 2026-10-24: page read (no author or date shown). AI-limits sentence confirmed: 'What AI cannot do is make the prioritization calls, define the technical architecture, set the engineering scope, or decide which trade-offs match your business strategy.'

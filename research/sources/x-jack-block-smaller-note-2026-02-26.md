@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Dorsey's own note to staff announcing the cut from over 10,000 people to just under 6,000, read in full in Geoff's browser. It states the causal claim plainly (intelligence tools plus "smaller and flatter teams") and closes with the product direction that matters for PM work: customers will "build their own features directly, composed of our capabilities and served through our interfaces". That is the customer-facing half of the operating model in [From Hierarchy to Intelligence](block-from-hierarchy-to-intelligence.md), where the backlog comes from what the system cannot yet compose.
+Dorsey's own note to staff announcing the cut from over 10,000 people to just under 6,000, read in full through a paid subscription. It states the causal claim plainly (intelligence tools plus "smaller and flatter teams") and closes with the product direction that matters for PM work: customers will "build their own features directly, composed of our capabilities and served through our interfaces". That is the customer-facing half of the operating model in [From Hierarchy to Intelligence](block-from-hierarchy-to-intelligence.md), where the backlog comes from what the system cannot yet compose.
 
 ## Themes
 - ai-flattened-org: the reason given is not distress ("our business is strong") but that intelligence tools "paired with smaller and flatter teams" change "what it means to build and run a company" (paragraph 3).

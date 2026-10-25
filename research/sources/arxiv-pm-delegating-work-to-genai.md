@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: paper
 evidence: first-party
 filed_by: research-pm-agents-jobs-to-be-done
-filed_note: audit 2026-10-24
+filed_note: re-check 2026-10-24
 themes: [pm-ai-usage-surveys, human-judgment-pm-jobs, pm-persona-role-expansion, prd-agents]
 relevance: high
 ---

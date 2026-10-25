@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: article
 evidence: anecdote
 filed_by: research-pm-agents-jobs-to-be-done
-filed_note: audit 2026-10-24
+filed_note: re-check 2026-10-24
 themes: [human-judgment-pm-jobs, prd-agents, research-synthesis-agents, pm-job-stable-methods-change]
 relevance: medium
 ---

@@ -36,5 +36,5 @@ A PM director describes encoding her own review judgment into custom GPTs that h
 - "They get real-time guidance on going from 0 to 80, which means I can focus my time on getting them from 80 to 100." (Strategy 4)
 
 ## Could not verify
-- Full post read (paywalled; text from Geoff's paid session). Team size, the NPS referred to, and the "10x" quote have no stated method. Dated November 2024; tools are custom GPTs of that period.
+- Full post read (paywalled; text through a paid subscription). Team size, the NPS referred to, and the "10x" quote have no stated method. Dated November 2024; tools are custom GPTs of that period.
 - Whether the GPT's grades agree with her own was not measured; "remarkably similar to what I'd give" is her judgment.

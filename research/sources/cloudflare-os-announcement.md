@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-This is the Cloudflare offering Geoff meant. It is not a meta-harness over Claude Code/Codex: it is an org-deployable, per-employee agent workspace on Cloudflare's own primitives, with a capability-based security model. It is the strongest example found of the 'deployed, shared, persistent' end of the runtime-location axis, and of governance by observation logging.
+This is the Cloudflare offering the research plan meant. It is not a meta-harness over Claude Code/Codex: it is an org-deployable, per-employee agent workspace on Cloudflare's own primitives, with a capability-based security model. It is the strongest example found of the 'deployed, shared, persistent' end of the runtime-location axis, and of governance by observation logging.
 
 ## Themes
 - [[shared-persistent-sessions]]: browser workspace with persistent sessions/state; apps are private by default, shareable live (shared state) or as 'blueprints' (code only, no data).

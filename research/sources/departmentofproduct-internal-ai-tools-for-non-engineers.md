@@ -41,4 +41,4 @@ Rows, as categorised by the author (category; date):
 - Uber Agentic Pods (2026).
 
 ## Could not verify
-- Only the Spotify, Intercom and Uber primaries were read. The other rows' figures (e.g. Asana's $100k a year) are the table's summaries and were not checked. Read through Geoff's browser session; the PDF was not downloaded.
+- Only the Spotify, Intercom and Uber primaries were read. The other rows' figures (e.g. Asana's $100k a year) are the table's summaries and were not checked. Read through a paid subscription; the PDF was not downloaded.

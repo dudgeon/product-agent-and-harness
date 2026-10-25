@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Competitor review: CleverX sells a research platform (participant panel plus analysis) and promotes itself in the article as an alternative to Dovetail. No hands-on test is reported. It does NOT contain the AI-reliability warning (fabricated quotes, silent omission of sessions) that the case file attributed to it. Its criticisms are about recruitment, cost, learning curve and data volume. Evidence kind: anecdote (competitor opinion, no disclosed test). Audit 2026-10-24: original fetched in full and claims checked.
+Competitor review: CleverX sells a research platform (participant panel plus analysis) and promotes itself in the article as an alternative to Dovetail. No hands-on test is reported. It does NOT contain the AI-reliability warning (fabricated quotes, silent omission of sessions) that the case file attributed to it. Its criticisms are about recruitment, cost, learning curve and data volume. Evidence kind: anecdote (competitor opinion, no disclosed test). Re-check 2026-10-24: original fetched in full and claims checked.
 
 ## Themes
 - research-synthesis-agents: Competitor's view: Dovetail's AI "has less to work with" on small or new datasets; no participant recruitment; per-seat cost; learning curve (sections "Where Dovetail falls short")

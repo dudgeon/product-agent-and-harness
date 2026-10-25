@@ -35,6 +35,6 @@ This is OpenAI's admin-enforced policy layer for Codex (CLI, desktop app, IDE ex
 - A running cloud task "may not immediately use a changed policy".
 
 ## Could not verify
-- No publish date on the page; content retrieved through a model-summarised fetch, so verbatim wording should be rechecked before quoting in the deck.
+- No publish date on the page; content retrieved through a model-summarised fetch, so verbatim wording should be rechecked before quoting in the strategy.
 - Whether requirements are enforced for Codex cloud tasks in the same way as local clients (the page has separate cloud environment tabs; the internet-access page says a managed command allowlist and proxy apply on "supported managed Codex Cloud paths").
 - No independent test of the bypass resistance of the local requirements layer was found.

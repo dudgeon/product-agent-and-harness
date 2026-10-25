@@ -26,4 +26,4 @@ A pre-agent (November 2024) productivity guide for IC PMs in "the great flatteni
 - Other tactics (not AI): do meeting action items live while screen-sharing; replace half of meetings with sub-one-minute Looms; no Slack in the morning; no DMs, repost in public channels; cultivate "mini-PMs"; plan full disconnects.
 
 ## Could not verify
-- Full post read via Geoff's paid session; screenshots not visible. No outcome data; personal practice.
+- Full post read through a paid subscription; screenshots not visible. No outcome data; personal practice.

@@ -38,7 +38,7 @@ A practitioner's catalogue of how LLM synthesis of customer research goes wrong 
 - "Nothing in the output signals 'check me again.'" (closing)
 
 ## Could not verify
-- Read in full (paid text via Geoff's session). Screenshots of model outputs referenced in the post were not available in the text; claims about what they show are the author's.
+- Read in full (paid text through a paid subscription). Screenshots of model outputs referenced in the post were not available in the text; claims about what they show are the author's.
 - "2,000 hours of testing" and "over 100 times" are her own figures, method not stated; data is fictional (Whoop), not a real study.
 - Author sells a course ("Claude Code for Customer Insights"), so this is partly promotional.
 - The self-verification approach relies on the same model checking itself; the post does not test how often the verifier misses errors.

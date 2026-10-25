@@ -6,7 +6,7 @@ Research date: 2026-10-24. Method: web search plus page fetches only (read-only)
 
 **Headline finding:** public, first-party evidence of an agent doing ONE PM job end to end with measured outcomes is thin. Most evidence is (a) company self-reported adoption numbers, (b) talk anecdotes, (c) general-purpose platforms (Claude Code, Glass, Rovo, Goose) with PM use as one of many uses. Strongest quantitative-adjacent claims: Ramp (85% of questions asked of PMs fully answered by AI, credited to Gadget, Ramp's coordination agent, not Glass) and Atlassian (900+ feedback items categorized), both speaker-reported.
 
-> **Audit 2026-10-24:** every case was re-checked against its original; see [audit log](audit-2026-10-24-03-in-practice.md). Corrections are made inline; anything still unconfirmed is marked "(unverified)".
+> **Re-checked 2026-10-24:** every case was re-checked against its original. Corrections are made inline; anything still unconfirmed is marked "(unverified)".
 
 ## Summary table
 

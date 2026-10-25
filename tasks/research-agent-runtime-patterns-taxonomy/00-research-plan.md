@@ -1,6 +1,6 @@
 # Research plan: taxonomy of agent runtime patterns
 
-Date: 2026-10-24. Task: [research-agent-runtime-patterns-taxonomy](../research-agent-runtime-patterns-taxonomy.md). Status: draft for Geoff's check-in.
+Date: 2026-10-24. Task: research-agent-runtime-patterns-taxonomy. Status: draft.
 
 ## Goal
 
@@ -8,7 +8,7 @@ A research-grounded taxonomy of agent runtime patterns for coding and knowledge 
 
 ## What existing research already covers (and gaps)
 
-Read: PROJECT.md, research/README.md, INDEX.md and THEMES.md (about 130 source notes), the Ramp Glass teardown, the PM-agents brief and the prior-work note.
+Read: the project brief, research/README.md, INDEX.md and THEMES.md (about 130 source notes), the Ramp Glass teardown, the PM-agents brief and the prior-work note.
 
 Covered, build on it and do not redo:
 - **Ramp Glass** (a first-party-built harness on the Claude Agent SDK): MCP proxy, Dojo skills marketplace on Git, memory pipeline, cost router, shared sessions, scheduled tasks. Themes: `harness-over-model`, `skills-marketplace`, `memory-architecture`, `cost-control-routing`, `single-agent-many-skills`, `build-vs-buy`. All Ramp's own account, no independent verification.
@@ -18,12 +18,12 @@ Covered, build on it and do not redo:
 Gaps (this task's tracks):
 - No source yet on meta-harnesses, harness-agnostic layers, A2A, remote-agent MCP servers, managed/cloud agents, agent frameworks, open skill standards, or multi-user persistent sessions as an infrastructure pattern.
 - Little independent evidence anywhere; the Ramp material is first-party.
-- The structured vs unstructured work distinction is stated by Geoff, not yet researched.
+- The structured vs unstructured work distinction is a working hypothesis, not yet researched.
 
 ## Preliminary findings (from two quick searches, to be verified by the tracks)
 
 - "Ormnigent" is very likely **Omnigent**: Databricks' open-source (Apache 2.0, alpha) "meta harness" that sits above Claude Code, Codex, Pi or custom agents. It offers a uniform session API in sandboxes, policies (e.g. spend caps) and shared live sessions. Source: [Databricks blog](https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents) (vendor claim; not yet read in full).
-- **Confirmed by Geoff (2026-10-24):** Ormnigent = Databricks' Omnigent; the Cloudflare offering is **Cloudflare OS** (https://blog.cloudflare.com/cloudflare-os, 2026-08-05): open-source, deploy-in-your-own-account per-employee agent workspace (persistent workspaces/sessions, Access + typed bindings + 'Gatekeepers', Dynamic Workers apps, AI Gateway cost caps, shared skills library; browser-based, does not mention Claude Code/Codex). Related: 'How we use AI with Cloudflare OS', github.com/cloudflare/cloudflare-os. Cloudflare Agents Week, 2026-04-14 to 04-20**, an "agent cloud" (Sandboxes GA, Artifacts Git storage, Workflows v2, Mesh, Managed OAuth for Access). Secondary coverage only so far; geoff may mean a newer offering. Track 1 must identify it.
+- **Confirmed (2026-10-24):** Ormnigent = Databricks' Omnigent; the Cloudflare offering is **Cloudflare OS** (https://blog.cloudflare.com/cloudflare-os, 2026-08-05): open-source, deploy-in-your-own-account per-employee agent workspace (persistent workspaces/sessions, Access + typed bindings + 'Gatekeepers', Dynamic Workers apps, AI Gateway cost caps, shared skills library; browser-based, does not mention Claude Code/Codex). Related: 'How we use AI with Cloudflare OS', github.com/cloudflare/cloudflare-os. Cloudflare Agents Week, 2026-04-14 to 04-20**, an "agent cloud" (Sandboxes GA, Artifacts Git storage, Workflows v2, Mesh, Managed OAuth for Access). Secondary coverage only so far; the plan may mean a newer offering. Track 1 must identify it.
 
 ## What we already have (per track: start here, fill gaps, don't redo)
 
@@ -36,7 +36,7 @@ Existing material: `research/INDEX.md`, `research/THEMES.md`, `research/sources/
 | 3 Remote agents | `one-job-per-agent`; Ramp Inspect/Policy Agent; Jira-agent-to-coding-agent flow (Atlassian) | MCP-agent, A2A, managed/cloud agents; real adoption |
 | 4 Skills/plugins | `skills-marketplace` (Dojo), `org-learning-loop`, Cowork PM plugin notes | Open standards, portability, security, how much complexity a skill can carry |
 | 5 Shared sessions | `memory-architecture`, `compounding-context-repo`, `org-context-grounding`; Glass multiplayer/scheduled tasks (laptop-dependence limit noted) | Infrastructure for deployed/persistent sessions; failures |
-| 6 Work structure | PM jobs map (10 jobs x suitability), `human-judgment-pm-jobs`, `human-review-gates`, `evals-autonomy-trust`, `risk-sloped-review`, `one-job-per-agent` vs `single-agent-many-skills` | Test Geoff's structured/unstructured hypothesis beyond PM work |
+| 6 Work structure | PM jobs map (10 jobs x suitability), `human-judgment-pm-jobs`, `human-review-gates`, `evals-autonomy-trust`, `risk-sloped-review`, `one-job-per-agent` vs `single-agent-many-skills` | Test the structured/unstructured hypothesis beyond PM work |
 
 The synthesis must also connect each pattern to those themes, the PM jobs, and the Glass design choices (teardown summary list 1-9).
 
@@ -67,14 +67,13 @@ Each track: read-only web research, one source note per primary source in `resea
 
 ## Process
 
-1. This plan, then check-in with Geoff (tracks, the Omnigent/Cloudflare question).
+1. This plan, then a check-in (tracks, the Omnigent/Cloudflare question).
 2. Fan out six parallel subagents, one per track, each briefed with the filing rule.
-3. Questions that need Geoff go to him as they arise.
 4. Before synthesis, re-read research/ and tasks/*/ (PM-agents research is still running) and give the Fable synthesis subagent everything.
 5. Synthesis written to `01-synthesis.md` (executive summary, taxonomy, theme/concept/pattern map, fit for unstructured vs task-specific work, open questions); reviewed against this plan.
 
-## Options by dimension (added 2026-10-24 per director)
+## Options by dimension (added 2026-10-24)
 
-The project deliverable is a menu of options and key questions, not a single recommended pattern. The taxonomy axes above are the provisional dimensions in [options/DIMENSIONS.md](../../options/DIMENSIONS.md) (harness-ownership, runtime-location, capability-packaging, session-persistence-sharing, work-structure, governance-control-plane). Each track appends options (examples, gives/costs, maturity, evidence-linked source note marked vendor claim / independent / first-party) and concrete key questions (with what could answer each) to the relevant dimension, and proposes new dimensions in its report. The synthesis is organised by dimension, with cross-cutting questions and a "what the resource request would need to fund" view.
+The project deliverable is a menu of options and key questions, not a single recommended pattern. The taxonomy axes above are the provisional dimensions in [options/DIMENSIONS.md](../../options/DIMENSIONS.md) (harness-ownership, runtime-location, capability-packaging, session-persistence-sharing, work-structure, governance-control-plane). Each track appends options (examples, gives/costs, maturity, evidence-linked source note marked vendor claim / independent / first-party) and concrete key questions (with what could answer each) to the relevant dimension, and proposes new dimensions in its report. The synthesis is organised by dimension, with cross-cutting questions and a "what further work would cover" view.
 
-Update 2026-10-24 (Geoff): dimensions also include USER and PRODUCT choices (which users we serve, which jobs to automate first, target outcome/value, how adoption happens), not only runtime/architecture. Where findings bear on these (e.g. unstructured vs task-specific work, who the user is), add them as dimensions. Key questions stay unranked.
+Update 2026-10-24: dimensions also include USER and PRODUCT choices (which users we serve, which jobs to automate first, target outcome/value, how adoption happens), not only runtime/architecture. Where findings bear on these (e.g. unstructured vs task-specific work, who the user is), add them as dimensions. Key questions stay unranked.

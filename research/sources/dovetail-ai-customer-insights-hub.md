@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Vendor launch announcement of Dovetail 3.0 (Channels, Ask Dovetail, Recruit, and AI transcription, summaries, highlights and tagging in Projects). Anchors the research-synthesis agent job, and is the actual source of the Notion "100 hours down to 10" and GrandPad "about half" testimonials. Evidence kind: vendor-claim (vendor press release; named-customer testimonials are vendor-published). Audit 2026-10-24: the dovetail.com blog URL now returns 404; claims checked against the identical press release reprint at https://aijourn.com/dovetail-announces-world-first-ai-customer-insights-hub-to-drive-customer-centric-decisions-across-enterprises/ and the product docs page fetched in full.
+Vendor launch announcement of Dovetail 3.0 (Channels, Ask Dovetail, Recruit, and AI transcription, summaries, highlights and tagging in Projects). Anchors the research-synthesis agent job, and is the actual source of the Notion "100 hours down to 10" and GrandPad "about half" testimonials. Evidence kind: vendor-claim (vendor press release; named-customer testimonials are vendor-published). Re-check 2026-10-24: the dovetail.com blog URL now returns 404; claims checked against the identical press release reprint at https://aijourn.com/dovetail-announces-world-first-ai-customer-insights-hub-to-drive-customer-centric-decisions-across-enterprises/ and the product docs page fetched in full.
 
 ## Themes
 - research-synthesis-agents: Dovetail 3.0 launches Channels (always-on feedback clustered into themes with AI summaries), Ask Dovetail (agentic assistant in Slack/Teams with evidence-backed answers), and AI transcription, summaries, highlights and tagging in Projects (case 5)

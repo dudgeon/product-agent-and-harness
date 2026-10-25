@@ -31,4 +31,4 @@ A first-party account of AI adoption across a 1,000+ engineer organisation at a 
 ## Could not verify
 - No transcript was available and the episode was not watched; this note is built only from the show notes and chapter list. Every claim (150 to 15 hours, 70 PRs in 15 minutes, six-to-nine-month rewrite) is the episode's own framing and unverified. What the speed run actually involved, how power users were defined, and which metrics were chosen are unknown.
 - A web search found only a third-party profile repeating the 150-to-15-hour figure and mentioning Slack-based agent tooling linking Linear, MCP servers and several codebases; not a primary source. A Cointelegraph item reported a Coinbase platform head saying 95-100% of code is written with AI help; not checked.
-- Whether the episode says anything about how product managers or specs changed is unknown. Worth a transcript pass if Coinbase becomes a case in the deck.
+- Whether the episode says anything about how product managers or specs changed is unknown. Worth a transcript pass if Coinbase becomes a case in the strategy.

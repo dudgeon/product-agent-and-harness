@@ -33,7 +33,7 @@ Atlassian's own vocabulary for its 'graph of work': objects, object types, direc
 
 Retrieved via WebFetch, which returns a model-summarised view of the page, not verbatim text; wording and exact lists should be re-checked against the live page before quoting.
 
-## Verification (user-story-mapping audit, 2026-10-24)
+## Verification (user-story-mapping re-check, 2026-10-24)
 
 Re-read verbatim (curl, tags stripped). Page "Last updated Jan 27, 2025".
 - Confirmed: object/object type, API vs connector object types, ARI pattern `ari:cloud:{app}:{siteId}:{objectType}/{objectId}`, directional typed relationships, ACL per connector object, "curated GraphQL API", Cypher "originally developed by Neo4j".

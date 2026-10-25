@@ -24,4 +24,4 @@ Vendor blog on PM agents, source for the unverified claim that 80% of feedback i
 
 ## Could not verify
 - 80% claim is vendor-sourced and unverified. Forrester and McKinsey statistics in vendor blogs could not be traced to originals and were not used.
-- Audit 2026-10-24: exact wording 'The result? 80% of customer feedback never gets analyzed.', with no citation.
+- Re-check 2026-10-24: exact wording 'The result? 80% of customer feedback never gets analyzed.', with no citation.

@@ -1,6 +1,6 @@
 # Ramp's agent ecosystem, mapped to the tasks of the product lifecycle
 
-Date: 2026-10-24. Worker draft (task competitive-teardown-ramp-glass), in the same frame as the [Stripe map](../competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.md) so the two compare side by side. Built only from filed source notes in `../../research/sources/`. Each handoff is marked **documented** (a Ramp source says it happens), **inferred** (consistent with the sources but not stated) or **unknown**. Every figure is Ramp's own (first-party); none has been checked outside Ramp. Visual version: [07-pdlc-agent-ecosystem-map.html](07-pdlc-agent-ecosystem-map.html).
+Date: 2026-10-24. Built in the same frame as the [Stripe map](../competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.md) so the two compare side by side. Built only from filed source notes in `../../research/sources/`. Each handoff is marked **documented** (a Ramp source says it happens), **inferred** (consistent with the sources but not stated) or **unknown**. Every figure is Ramp's own (first-party); none has been checked outside Ramp. Visual version: [07-pdlc-agent-ecosystem-map.html](07-pdlc-agent-ecosystem-map.html).
 
 ## Why tasks, not job titles (the Ramp version)
 

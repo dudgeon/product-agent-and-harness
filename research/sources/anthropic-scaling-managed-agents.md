@@ -12,7 +12,7 @@ themes: [meta-harness]
 relevance: high
 ---
 
-> Note rebuilt by the director on 2026-10-24: the original note's frontmatter and body were overwritten by a concurrent edit before the project had version history. Only the Track 1 addendum below survived; the source should be re-read to restore Key points.
+> Note rebuilt on 2026-10-24: the original note was lost before the project had version history. Only the Track 1 addendum below survived; the source should be re-read to restore Key points.
 
 ## Relevance to the project
 

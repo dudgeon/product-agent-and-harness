@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-A competitor review (Slite makes a competing knowledge tool and says so: "Obvious disclosure first. We make Slite."), so opinion, not measurement. Its value is as a relay of concrete Rovo failure reports from Atlassian community posts (invented runbook steps, invented release information) plus one small own test. Relevant to the failure-mode and grounding questions for any PM agent. Audit 2026-10-24: original fetched in full and claims checked; the two community posts it cites did not render in fetch, and the Seibert-hosted partner write-up was fetched separately.
+A competitor review (Slite makes a competing knowledge tool and says so: "Obvious disclosure first. We make Slite."), so opinion, not measurement. Its value is as a relay of concrete Rovo failure reports from Atlassian community posts (invented runbook steps, invented release information) plus one small own test. Relevant to the failure-mode and grounding questions for any PM agent. Re-check 2026-10-24: original fetched in full and claims checked; the two community posts it cites did not render in fetch, and the Seibert-hosted partner write-up was fetched separately.
 
 ## Themes
 - agent-failure-modes: A user team reported (Atlassian community post, relayed by Slite) a Rovo runbook summary with "troubleshooting steps, commands, and contact names that appear nowhere on the source page"; a partner reported a custom agent inventing releases for a date range with no data (case 1)

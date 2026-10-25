@@ -22,4 +22,4 @@ Episode summary: R&D throughput doubled in nine months and 100% of engineers plu
 - Throughput claim and PM code-shipping claim only; no PM workflows.
 
 ## Could not verify
-- Audit 2026-10-24: host/guest and date corrected; page gives no skill count and does not say the 100% applies to non-engineers.
+- Re-check 2026-10-24: host/guest and date corrected; page gives no skill count and does not say the 100% applies to non-engineers.

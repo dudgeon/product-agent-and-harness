@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Vendor CEO's ROI guide mixing case-study claims with a hypothetical dollar calculation. Evidence kind: vendor-claim. Audit 2026-10-24: original fetched in full and claims checked; page shows both March 21, 2025 and March 27, 2026 (published date taken as the byline date, possibly updated later).
+Vendor CEO's ROI guide mixing case-study claims with a hypothetical dollar calculation. Evidence kind: vendor-claim. Re-check 2026-10-24: original fetched in full and claims checked; page shows both March 21, 2025 and March 27, 2026 (published date taken as the byline date, possibly updated later).
 
 ## Themes
 - feedback-triage-agents: Cites its GitHub Copilot case study: "Unwrap saves product managers 4–5 hours per week"; Sunrun "10x'ed their number of actionable insights" (case 22). The $180k/yr for 10 PMs is a hypothetical ($75/hour assumption), not a customer result.

@@ -23,4 +23,4 @@ Community Claude skill listings for feedback triage. Evidence that feedback tria
 
 ## Could not verify
 - Statistics quoted in related vendor blogs (Forrester, McKinsey) could not be traced and were not used. Evidence is mostly vendor blogs and community skill listings.
-- Audit 2026-10-24: listing read; 'bug escalations' and 'new discovery inputs' are not outputs of the skill and were corrected in the map.
+- Re-check 2026-10-24: listing read; 'bug escalations' and 'new discovery inputs' are not outputs of the skill and were corrected in the map.

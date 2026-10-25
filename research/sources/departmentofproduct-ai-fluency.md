@@ -27,4 +27,4 @@ A June 2025 walk-through of Zapier CEO Wade Foster's AI fluency rubric (unaccept
 
 ## Could not verify
 - Wade Foster's rubric and post were shown as images and not read here; Zapier's rubric is not filed.
-- Retrieved through Geoff's paid subscription; summarised, not reproduced.
+- Retrieved through a paid subscription; summarised, not reproduced.

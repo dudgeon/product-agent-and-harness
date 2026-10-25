@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Aggregator relaying 14 Sprig customer-story headlines. The three cited numbers are survey-product outcomes; only the Ramp headline mentions "Sprig AI". Evidence kind: vendor-claim (relays vendor case studies). Audit 2026-10-24: aggregator fetched in full; Nova Credit original fetched on sprig.com; Chipper Cash and Shift originals not found on sprig.com.
+Aggregator relaying 14 Sprig customer-story headlines. The three cited numbers are survey-product outcomes; only the Ramp headline mentions "Sprig AI". Evidence kind: vendor-claim (relays vendor case studies). Re-check 2026-10-24: aggregator fetched in full; Nova Credit original fetched on sprig.com; Chipper Cash and Shift originals not found on sprig.com.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: Headlines "Chipper Cash boosts crypto feature adoption by 194%", "Nova Credit increases homepage conversion by 47%", "Shift achieves 340% higher response rates"; none mention AI (Nova Credit original credits in-product surveys plus a homepage redesign) (case 12)

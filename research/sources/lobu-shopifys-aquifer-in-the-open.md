@@ -28,4 +28,4 @@ A vendor (Lobu, an open-source shared-memory agent platform) positioning itself 
 _Full text omitted from the public repository; see `source_url` for the original._
 
 ## Could not verify
-- Whether Aquifer itself uses a placeholder-swapping credentials proxy. adaptordie.io lists a "credentials proxy" among Aquifer's parts, so the coordinator should check Under the River.
+- Whether Aquifer itself uses a placeholder-swapping credentials proxy. adaptordie.io lists a "credentials proxy" among Aquifer's parts, so Under the River should be checked.

@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-A partner roundup of 38 Atlassian-sourced AI statistics (adoption, search quality, hours saved), each relaying an Atlassian figure without method. It was filed as the source of the Procore roadmap-item claim, but the audit found it does NOT contain Procore, the beta 1-2 hours/week figure, OVO Energy or the 44% Teamwork Graph figure; their originals are Atlassian's own blog and SiliconANGLE (listed below). Audit 2026-10-24: original fetched in full (44,644 chars, read in four passes) and claims checked; page shows "Last updated: Mar 06, 2026", no original publish date.
+A partner roundup of 38 Atlassian-sourced AI statistics (adoption, search quality, hours saved), each relaying an Atlassian figure without method. It was filed as the source of the Procore roadmap-item claim, but the re-check found it does NOT contain Procore, the beta 1-2 hours/week figure, OVO Energy or the 44% Teamwork Graph figure; their originals are Atlassian's own blog and SiliconANGLE (listed below). Re-check 2026-10-24: original fetched in full (44,644 chars, read in four passes) and claims checked; page shows "Last updated: Mar 06, 2026", no original publish date.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: Every statistic is an Atlassian figure relayed by a services partner with a link to Atlassian, no method (e.g. #19 "Each Atlassian engineer saves 50+ hours per year with Rovo"). The Procore quote and beta aggregate are NOT in this article; they come from Atlassian's own blog (case 1)

@@ -22,4 +22,4 @@ Vendor customer story: Claude Code 3-4x on tasks and docs that update as code ch
 - No PM use.
 
 ## Could not verify
-- Audit 2026-10-24: date filled; claim is "3-4x improvements on specific tasks" with no method, and one engineer says he does not save time. The Brex PM job post was not re-checked (unverified).
+- Re-check 2026-10-24: date filled; claim is "3-4x improvements on specific tasks" with no method, and one engineer says he does not save time. The Brex PM job post was not re-checked (unverified).

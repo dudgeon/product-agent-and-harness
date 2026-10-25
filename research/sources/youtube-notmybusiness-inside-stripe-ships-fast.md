@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-The first public look at **Orbit**, Stripe's planning layer above Minions, and the only video naming **Trailhead** (internal docs) and **Compass** (project tracking) as agent context. Orbit reads the codebase and Trailhead, writes a shareable plan teammates comment on, and hands it to a minion that may run 12 hours and pause to ask questions. A Stripe veteran's account of how tacit knowledge moved from "in our heads" to documents to robots is direct evidence for Geoff's context-creation hypothesis. Stripe-arranged access filmed by a vendor's media team: treat as first-party marketing.
+The first public look at **Orbit**, Stripe's planning layer above Minions, and the only video naming **Trailhead** (internal docs) and **Compass** (project tracking) as agent context. Orbit reads the codebase and Trailhead, writes a shareable plan teammates comment on, and hands it to a minion that may run 12 hours and pause to ask questions. A Stripe veteran's account of how tacit knowledge moved from "in our heads" to documents to robots is direct evidence for the context-creation hypothesis. Stripe-arranged access filmed by a vendor's media team: treat as first-party marketing.
 
 ## Themes
 - agent-factory-sdlc: Orbit was built because "Minions were just unable to handle" larger, planned changes (06:00); "Gru" is the internal code-review engine that finds bugs better than people, tested against past problem changes (04:00-06:00).
@@ -31,7 +31,7 @@ The first public look at **Orbit**, Stripe's planning layer above Minions, and t
 - What takes effort now: "interfaces ... integration ... alignment with humans" (16:00).
 
 ## The whiteboard chain: Opportunity → Problem → Goal → Intent → Plan (→ code)
-Added 2026-10-24 at Geoff's request ("opportunity >> problem >> goal >> intent >> plan >> code").
+Added 2026-10-24 ("opportunity >> problem >> goal >> intent >> plan >> code").
 - **What is on screen (about 12:24-12:31; frames read from the 360p stream, so handwriting is partly blurry):** Adam (Stripe engineer, revenue suite) has written on a whiteboard, top to bottom with hooked arrows:
   `Opportunity` → `Problem` → `Goal` → `Intent` → `Plan`.
   A curly brace spans **Problem and Goal** with a side label that reads as "**Customer conv[ersations]**" (legible: "Custome…" / "Conv…"; most likely "customer conversations", not confirmed). **"Code" is not written on the board.** It is the next step in the narration: the plan is handed to a minion that writes the code (13:40-14:40). So Geoff's six-step wording is the board's five steps plus the step the video shows next.

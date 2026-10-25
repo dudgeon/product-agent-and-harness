@@ -34,5 +34,5 @@ A practical method a PM can use to define "good" for an agent: a four-part LLM-j
 - "If a human can grade something, so can an LLM" (section "LLM-based evals").
 
 ## Could not verify
-- Paywalled post, read in full through Geoff's paid session. The embedded example prompt images were not visible in the text.
+- Paywalled post, read in full through a paid subscription. The embedded example prompt images were not visible in the text.
 - The 90% agreement target and 10-100 example rule are the author's rules of thumb, not tested thresholds. Author has a commercial interest in eval tooling (disclosed).

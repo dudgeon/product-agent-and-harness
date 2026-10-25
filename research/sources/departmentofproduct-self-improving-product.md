@@ -41,4 +41,4 @@ The clearest end-to-end PM agent loop in this publication: sense (analytics, sup
 ## Could not verify
 - Amplitude's Wave write-up and Tom Blomfield's talk are cited but not filed or read here; the 11% and ~50% figures are as the post reports them.
 - The downloadable agent files and the demo video were not retrieved.
-- Retrieved through Geoff's paid subscription; agent templates are described, not reproduced.
+- Retrieved through a paid subscription; agent templates are described, not reproduced.

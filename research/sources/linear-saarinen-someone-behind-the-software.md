@@ -22,4 +22,4 @@ Opinion essay (original read on audit): product changes are "primarily additive"
 - Opinion, no data.
 
 ## Could not verify
-- Audit 2026-10-24: original read; date filled; "additive drift" was the summary's wording, not Saarinen's.
+- Re-check 2026-10-24: original read; date filled; "additive drift" was the summary's wording, not Saarinen's.

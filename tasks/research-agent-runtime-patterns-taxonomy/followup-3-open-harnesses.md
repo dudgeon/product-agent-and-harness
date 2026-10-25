@@ -164,7 +164,7 @@ Which identity, audit, policy and data-retention controls a harness gives an org
 - [OpenCode Enterprise (docs)](sources/opencode-enterprise-docs.md): gateway-only config via SSO; no audit feature (research-runtime-patterns-follow-up-round)
 - [Superset homepage, pricing and enterprise pages](sources/superset-sh-site-pricing-enterprise.md): SSO, SCIM and audit only on Enterprise (research-runtime-patterns-follow-up-round)
 
-A second candidate, *harness-supplier-risk* (Vibe Kanban shutdown, Roo Code shutdown, Cline staff to OpenAI, Superset rename, Amp spinout, OpenCode's forced removal), could be folded into `build-vs-buy` instead; the coordinator should decide.
+A second candidate, *harness-supplier-risk* (Vibe Kanban shutdown, Roo Code shutdown, Cline staff to OpenAI, Superset rename, Amp spinout, OpenCode's forced removal), could be folded into `build-vs-buy` instead; still open.
 
 ## Proposed DIMENSIONS additions
 
@@ -181,10 +181,10 @@ Key questions:
 1. For a regulated, mostly non-coding workload, would a goose custom distribution plus our own admin plane (SSO, audit, policy) cost less to run than a Claude Agent SDK app (P2), given that both leave sandboxing and governance to us? — *answered by:* scoped build estimate for both; a one-week spike building one intent-shaping recipe as a goose distribution — *affects:* fork foundation-governed harness, embed vendor SDK
 2. Does a coding-centred harness (indexing, git, shell) help or hurt an intent-shaping workload whose inputs are documents, tickets and policies rather than a repo? — *answered by:* running the same intent-shaping skill in Claude Code, goose and the Cursor SDK on 10 past intents, scored against SME-labelled outcomes — *affects:* all open-harness and SDK options
 3. Which admin controls does our policy owner require on every surface (CLI, desktop, IDE), and does any open-core console meet them (Cline binds only IDE extensions)? — *answered by:* policy-owner checklist; Cline and OpenCode enterprise trials — *affects:* open-core with vendor console
-4. How much weight should supplier risk carry against harness quality, given Geoff would not trade quality for independence? Is foundation governance (Goose) worth a weaker out-of-the-box loop? — *answered by:* Geoff and the director at scoping; a supplier-risk register for shortlisted harnesses — *affects:* all
+4. How much weight should supplier risk carry against harness quality, if harness quality is weighted above independence? Is foundation governance (Goose) worth a weaker out-of-the-box loop? — *answered by:* project scoping at scoping; a supplier-risk register for shortlisted harnesses — *affects:* all
 5. Is there any production non-coding deployment of OpenCode, Goose or Cline we can interview (Block's internal non-engineer use of Goose is the nearest lead)? — *answered by:* more research; outreach to Block/AAIF and goose distribution builders — *affects:* fork options
 
-Lean: none. Harness quality outweighs independence for Geoff. The quality evidence (Endor Labs, coding only) shows small, version-dependent gaps between commercial harnesses, and none of it covers open harnesses or knowledge work. A head-to-head on the intent-shaping bake-off would change this most.
+Lean: none. Harness quality is weighted above independence in this project's scoping. The quality evidence (Endor Labs, coding only) shows small, version-dependent gaps between commercial harnesses, and none of it covers open harnesses or knowledge work. A head-to-head on the intent-shaping bake-off would change this most.
 
 ### harness-layering
 
@@ -229,4 +229,3 @@ Key questions:
 - **Cursor:** whether the Cursor IDE can host Claude Code or Codex as harnesses in its own agent system (none found; only the Claude Code extension as a separate panel, per search summaries); whether BYOK applies to the SDK and cloud agents; Endor Labs' methodology and task count (whitepaper not read); the GPT-5.5 Codex vs Cursor figures (secondary only).
 - **Anthropic:** its own announcements of each restriction were not read first-hand; the timeline rests on one independent blog plus VentureBeat.
 - **Independent knowledge-work evidence:** none for any of the six. Every independent signal found is about coding.
-- **Filing note for the coordinator:** before the session was confined to this worktree, my first copies of these 18 notes, the four follow-up appends and nothing else were written by shell into the shared checkout at `/Users/geoff/claude-home/project-agent-and-harness/research/sources/`. The worktree copies are authoritative and identical in substance. The shared-checkout copies (and the appended follow-up sections on github-block-goose-repo, github-cline-repo, github-opencode-repo and venturebeat-anthropic-third-party-harness-crackdown there) should be removed or reconciled before merging, or the merge will duplicate the follow-up sections.

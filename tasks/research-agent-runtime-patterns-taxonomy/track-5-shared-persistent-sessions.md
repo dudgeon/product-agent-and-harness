@@ -85,15 +85,7 @@ Added to [options/DIMENSIONS.md](../../options/DIMENSIONS.md) (all end with key 
 - New: [session-handoff-portability](../../options/DIMENSIONS.md#session-handoff-portability-handing-a-session-between-people-devices-and-harnesses), [durability-substrate](../../options/DIMENSIONS.md#durability-substrate-how-persistence-and-recovery-are-implemented), [shared-agent-users-and-jobs](../../options/DIMENSIONS.md#shared-agent-users-and-jobs-which-users-and-jobs-a-shared-persistent-agent-serves-first).
 - One cross-cutting question added (agent identity as product decision).
 
-**Proposed structural changes (for the director):** (a) split identity out of governance-control-plane into its own dimension, `agent-identity-delegation`; (b) merge session-handoff-portability into session-persistence-sharing if fewer dimensions are preferred; (c) merge shared-agent-users-and-jobs into the user/product dimensions `target-user` and `target-outcome` added by another agent, keeping its options as examples; (d) the Contents list does not yet include my three new dimensions (director maintains it).
-
-## 7. Open questions for Geoff
-
-1. Which jobs do you want shared or unattended first: interactive co-working, recurring digests, or chat requests? The infrastructure differs sharply.
-2. Which identity behaviour is acceptable for a shared agent: requester, creator-tokens, or service account? Needs a policy owner.
-3. Is the target setting regulated (transcript retention, data residency)? It decides vendor cloud vs customer-hosted vs self-built.
-4. Do you want us to chase non-Ramp, non-Stripe adopters (interviews) since independent success evidence is nearly absent?
-5. For Glass-style scheduled work, is laptop-dependence a dealbreaker, given vendor cloud scheduled tasks are personal and not team-shared?
+**Proposed structural changes:** (a) split identity out of governance-control-plane into its own dimension, `agent-identity-delegation`; (b) merge session-handoff-portability into session-persistence-sharing if fewer dimensions are preferred; (c) merge shared-agent-users-and-jobs into the user/product dimensions `target-user` and `target-outcome` added by another agent, keeping its options as examples; (d) the Contents list does not yet include my three new dimensions.
 
 ## 8. Caveats
 

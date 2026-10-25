@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-Geoff's own map of Stripe's internal agents for product development. It widens this teardown from Kai to about six tools across the PM-to-code loop (Kai, Orbit, Minions, the "Gru" code-review agent, Harbor, Protodash), on a shared foundation (Toolshed, devboxes, Trailhead internal docs, Compass project tracking). It names Orbit and Trailhead, which the first pass of this teardown had not covered, and it prompted Geoff's hypothesis that a business and operational context-creation agent is needed. It is a secondary compilation: every claim traces to the linked sources, which are filed separately.
+Geoff's own map of Stripe's internal agents for product development. It widens this teardown from Kai to about six tools across the PM-to-code loop (Kai, Orbit, Minions, the "Gru" code-review agent, Harbor, Protodash), on a shared foundation (Toolshed, devboxes, Trailhead internal docs, Compass project tracking). It names Orbit and Trailhead, which the first pass of this teardown had not covered, and it prompted the working hypothesis that a business and operational context-creation agent is needed. It is a secondary compilation: every claim traces to the linked sources, which are filed separately.
 
 ## Themes
 - agent-factory-sdlc: a five-stage flow diagram: 1 Research (Kai, PM pulls data and docs) → 2 Prototype (Harbor or Protodash) → 3 Plan (Orbit, engineer; team comments) → 4 Build (Minions on a devbox) → 5 Review (review agent plus a human; every PR human-reviewed); shortcut: prototype straight to a coding agent, or a PM starts a minion from Slack.
@@ -35,4 +35,4 @@ _Full text omitted from the public repository; see `source_url` for the original
 - "Rami Banna" as the PM in the Clay video is the doc's inference (captions say "Romi"/"Ramy"); Banna is the author of the Stripe Projects post.
 
 ## Added 2026-10-24
-- The Department of Product piece is no longer unread: read in full through Geoff's subscription; see [departmentofproduct-stripe-kai](departmentofproduct-stripe-kai.md).
+- The Department of Product piece is no longer unread: read in full through a paid subscription; see [departmentofproduct-stripe-kai](departmentofproduct-stripe-kai.md).

@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-The only head-to-head PRD-drafting comparison found; single author and scenario, qualitative, so weak but useful. Also the indirect evidence that Claude ranks first for PRD drafting. Evidence kind: independent (unaffiliated practitioner, no sponsorship or tool affiliation disclosed; author sells PM/executive coaching and consulting, not a PRD tool). Audit 2026-10-24: original fetched in full and claims checked.
+The only head-to-head PRD-drafting comparison found; single author and scenario, qualitative, so weak but useful. Also the indirect evidence that Claude ranks first for PRD drafting. Evidence kind: independent (unaffiliated practitioner, no sponsorship or tool affiliation disclosed; author sells PM/executive coaching and consulting, not a PRD tool). Re-check 2026-10-24: original fetched in full and claims checked.
 
 ## Themes
 - prd-agents: Tested ChatGPT, Claude, Gemini, Grok, ChatPRD on one PRD task (AI tutor for high-school science/math); ranking Claude 1, ChatPRD 2, Gemini 3, ChatGPT 4, Grok 5 (cases 9, 19)

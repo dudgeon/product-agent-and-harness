@@ -1,8 +1,8 @@
 # User story mapping: index
 
-Task note: [user-story-mapping](../user-story-mapping.md). Format, evidence tags and derivation recipe: [README](README.md). Backbone: the [PM jobs-to-be-done map](../research-pm-agents-jobs-to-be-done/01-jobs-to-be-done-map.md).
+Task note: user-story-mapping. Format, evidence tags and derivation recipe: [README](README.md). Backbone: the [PM jobs-to-be-done map](../research-pm-agents-jobs-to-be-done/01-jobs-to-be-done-map.md).
 
-Baseline for every "Today" section: inconsistent Claude Code use with poor artifact management (Geoff's definition). Stories are performer-agnostic; the unit is the PM job.
+Baseline for every "Today" section: inconsistent Claude Code use with poor artifact management. Stories are performer-agnostic; the unit is the PM job.
 
 ## Job stories ([stories-jobs.md](stories-jobs.md))
 
@@ -33,7 +33,7 @@ Baseline for every "Today" section: inconsistent Claude Code use with poor artif
 | [S17](stories-cross-cutting.md#s17-find-and-reuse-an-earlier-artifact-across-tools) | Find and reuse an earlier artifact across tools | sitting | artifact-and-project-structure, grounding |
 | [S18](stories-cross-cutting.md#s18-share-an-artifact-with-a-multi-party-team-and-keep-it-correct) | Share an artifact with a multi-party team and keep it correct | multi-session | artifact-and-project-structure, handoff, governance |
 
-S16–S18 were added after the artifact-management follow-up; S01 and S08 also gained V4 variants in the audit. Research: [platforms](research-artifacts-platforms.md), [standardization](research-artifacts-standardization.md). Job stories S02–S06, S09, S10 each gained a V4 artifact-structure variant; S11–S13 were rewritten around the research.
+S16–S18 were added after the artifact-management follow-up; S01 and S08 also gained V4 variants in a later review. Research: [platforms](research-artifacts-platforms.md), [standardization](research-artifacts-standardization.md). Job stories S02–S06, S09, S10 each gained a V4 artifact-structure variant; S11–S13 were rewritten around the research.
 
 ## Atlassian lifecycle map (for pdlc-maps-per-ecosystem)
 
@@ -45,9 +45,9 @@ S16–S18 were added after the artifact-management follow-up; S01 and S08 also g
 
 ## Key questions this raised (filed in options/DIMENSIONS.md)
 
-New dimension: [artifact-and-project-structure](../../options/DIMENSIONS.md#artifact-and-project-structure-how-pm-artifacts-and-projects-are-structured-stored-and-found), with 10 key questions. Reconciliation with context-location, org-context-grounding-source and memory-design is noted in the dimension; a merge is the director's call.
+New dimension: [artifact-and-project-structure](../../options/DIMENSIONS.md#artifact-and-project-structure-how-pm-artifacts-and-projects-are-structured-stored-and-found), with 10 key questions. Reconciliation with context-location, org-context-grounding-source and memory-design is noted in the dimension; a merge is still open.
 
 
-Added to [context-and-memory/context-location](../../options/DIMENSIONS.md#sub-choice-context-location--where-product-context-lives-for-agents), [session-persistence-sharing](../../options/DIMENSIONS.md#session-persistence-sharing-session-persistence-sharing-and-handoff) (and its handoff sub-choice), [runtime-location](../../options/DIMENSIONS.md#runtime-location-where-the-agent-runtime-lives), [work-structure](../../options/DIMENSIONS.md#work-structure-how-structured-the-work-is-what-agent-shape-fits-and-the-unit-of-an-agent), [agent-identity-delegation](../../options/DIMENSIONS.md#agent-identity-delegation-agent-identity-and-delegation) (the director moved the shared-thread permissions question there from governance), [review-and-autonomy/review-gating](../../options/DIMENSIONS.md#sub-choice-review-gating--how-human-review-of-agent-output-is-gated), [sequencing/pm-job-sequencing](../../options/DIMENSIONS.md#sub-choice-pm-job-sequencing--which-pm-jobs-to-automate-first), [target-user](../../options/DIMENSIONS.md#target-user-which-users-and-personas-we-serve-first-including-for-shared-agents), [pm-agent-evaluation](../../options/DIMENSIONS.md#pm-agent-evaluation-how-we-would-know-a-pm-agent-works) and the cross-cutting list. Each is tagged `(user-story-mapping)`. Unranked. Dimension slugs in the stories follow the consolidated register (`parent/sub` for sub-choices).
+Added to [context-and-memory/context-location](../../options/DIMENSIONS.md#sub-choice-context-location--where-product-context-lives-for-agents), [session-persistence-sharing](../../options/DIMENSIONS.md#session-persistence-sharing-session-persistence-sharing-and-handoff) (and its handoff sub-choice), [runtime-location](../../options/DIMENSIONS.md#runtime-location-where-the-agent-runtime-lives), [work-structure](../../options/DIMENSIONS.md#work-structure-how-structured-the-work-is-what-agent-shape-fits-and-the-unit-of-an-agent), [agent-identity-delegation](../../options/DIMENSIONS.md#agent-identity-delegation-agent-identity-and-delegation) (the shared-thread permissions question moved there from governance), [review-and-autonomy/review-gating](../../options/DIMENSIONS.md#sub-choice-review-gating--how-human-review-of-agent-output-is-gated), [sequencing/pm-job-sequencing](../../options/DIMENSIONS.md#sub-choice-pm-job-sequencing--which-pm-jobs-to-automate-first), [target-user](../../options/DIMENSIONS.md#target-user-which-users-and-personas-we-serve-first-including-for-shared-agents), [pm-agent-evaluation](../../options/DIMENSIONS.md#pm-agent-evaluation-how-we-would-know-a-pm-agent-works) and the cross-cutting list. Each is tagged `(user-story-mapping)`. Unranked. Dimension slugs in the stories follow the consolidated register (`parent/sub` for sub-choices).
 
 The three facts the stories most often hinge on: how PMs keep artifacts today; whether reviewers will enter agent sessions; whether a machine-checkable spec standard exists.

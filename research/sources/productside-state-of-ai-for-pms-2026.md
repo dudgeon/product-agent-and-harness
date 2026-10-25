@@ -25,4 +25,4 @@ Landing page for a vendor survey of 250+ professionals. Contributes the 4-in-5 a
 - Cited in J2 and in the GPM/CPO persona section.
 
 ## Could not verify
-- Landing page only; full report not read. No publication date shown (only '© 2026'). Productside sells PM and AI training. Figures re-confirmed against the landing page in the 2026-10-24 audit.
+- Landing page only; full report not read. No publication date shown (only '© 2026'). Productside sells PM and AI training. Figures re-confirmed against the landing page in the 2026-10-24 re-check.

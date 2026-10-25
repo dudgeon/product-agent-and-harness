@@ -1,14 +1,13 @@
 # Dimensions and options
 
-The menu for the strategy deck: for each dimension, the options and the key questions that decide among them. Rules: [README.md](README.md). Sources: [../research/sources/](../research/sources/).
+The options menu: for each dimension, the options and the key questions that decide among them. Rules: [README.md](README.md). Sources: [../research/sources/](../research/sources/).
 
-**Status:** Consolidated 2026-10-24 by the director per 01-synthesis.md D.0 (approved by Geoff)
+**Status:** Consolidated 2026-10-24 per 01-synthesis.md D.0
 
 Key-question numbers are kept from the sections they were filed in, so numbering inside a moved or merged section can skip. Each merged or split dimension has a "Formerly:" line naming the old slugs.
 
 ## Contents
 
-(maintained by the director)
 
 - [loop-source](#loop-source-who-supplies-the-agent-loop)
 - [harness-layering](#harness-layering-is-there-a-layer-above-the-vendor-harnesses)
@@ -82,7 +81,7 @@ See also, evidence for existing options and placement notes (from the contributi
 12. How much of the vendor-claimed harness benefit transfers to our setting (e.g. +13.7 points from harness changes alone on Terminal Bench; 20x cost for a full planner/evaluator harness)? — *answered by:* a small eval of our own jobs with and without added scaffolding — *affects:* build and fork options
 - See also: key questions 1 (does harness independence matter to users) and 6 (are portable assets enough) are under [[harness-layering]].
 
-#### Audit additions (competitive-teardown-ramp-glass, 2026-10-24)
+#### Re-check additions (competitive-teardown-ramp-glass, 2026-10-24)
 Correction to the Glass rows above: "Ramp Glass on the Claude Agent SDK" is the April 2026 state (Charles). Ramp's Oct 20 post says every agentic product, Glass included, now runs on Laminar, its own harness ([first-party](../research/sources/ramp-builders-building-laminar.md); [independent coverage](../research/sources/thenewstack-ramp-laminar-agent-harness.md)).
 
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -93,10 +92,6 @@ Key questions (unranked):
 - Ramp outgrew the vendor SDK within about six months of shipping Glass on it. What signals would tell us we had reached that point (provider lock-in, missing observability, vendor response time), and can the first build be designed so that switching the loop is a migration rather than a rewrite? — *answered by:* list the SDK dependencies in a prototype; ask Ramp/Stripe-style adopters what triggered the switch — *affects:* embed SDK, own harness
 - Kronick's claim that coding agents make an own harness "marginal" to build is unquantified. What did Ramp's six weeks cost in senior-engineer time, and what is the ongoing on-call load? — *answered by:* ask Ramp; our own time-boxed build spike — *affects:* own harness, framework
 
-### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 4 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | intent-factory pass: research-product-agent-and-harness on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | audit pass: competitive-teardown-ramp-glass on 2026-10-24
-
-#### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
-- The resource request may fund whatever mix of build and buy gives the highest leverage and the best experience and outcomes. Building, buying and layering all stay open. Harness and model independence are benefits, not goals, and their value has not been quantified. Geoff would not trade harness quality for harness independence. New key question: how much is independence worth to us, against harness quality? *answered by:* a cost/benefit estimate during the bake-off.
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 Evidence note: the "one engineer, one week" build is LangChain's headline; Stripe's own podcast says "one and a half people over two weeks" for v0, then 2.5-3 people in pilot and a core team under 10 at 10,000+ weekly users.
@@ -159,10 +154,6 @@ See also, evidence for existing options and placement notes (from the contributi
 17. Is the independent evidence for any meta-harness thin by nature (new, alpha) or have we not found it? Omnigent's HN launch drew 15 points; Cloudflare OS 668. Is there anyone running Omnigent beyond Databricks? — *answered by:* more research (Reddit, X, Discord, GitHub discussions), ask Databricks — *affects:* meta-harness server
 18. Which of Claude Code's seven steering mechanisms carry over to Cowork for PMs? — *answered by:* Anthropic docs ([steering](../research/sources/claude-steering-claude-code.md)) (from research-claude-resources-articles)
 
-### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 4 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | intent-factory pass: research-product-agent-and-harness on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24
-
-#### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
-- Terms must follow real, common usage. Use 'meta-harness' only in its established sense (a layer above several harnesses), and record the competing usages found (Anthropic Managed Agents; the Stanford optimiser sense). Where a pattern lacks a consensus term (e.g. Cloudflare OS, an org-deployed agent workspace with its own agent), name it explicitly as our coined term and don't stretch 'meta-harness' to cover it.
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -181,7 +172,7 @@ River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
 | One substrate under many agent profiles (layer below, not above) | Instead of a meta-harness over vendor CLIs, one platform (session, harness, sandbox, gateway, credentials proxy, observability) hosts many agents as config bundles | Shopify Aquifer: River, PR review, "pi" profiles; "future agents are peers, not children" | Next agent costs a bundle, not a platform; same session model across interactive, automation and job modes | Every agent shares one platform's limits and team; no portability to vendor harnesses stated | early-adopter | [Under the River](../research/sources/shopify-engineering-under-the-river.md) (first-party) |
 
 Key questions (River pass):
-- Is our layer of leverage above harnesses (meta-harness) or below agents (a substrate that hosts profiles)? Shopify's answer is below. — *answered by:* Geoff / director scoping; prototype of two profiles on one session store — *affects:* meta-harness vs substrate options
+- Is our layer of leverage above harnesses (meta-harness) or below agents (a substrate that hosts profiles)? Shopify's answer is below. — *answered by:* project scoping; prototype of two profiles on one session store — *affects:* meta-harness vs substrate options
 
 ---
 
@@ -227,14 +218,13 @@ See also, evidence for existing options and placement notes (from the contributi
 - (Track 3) 3. Do target orgs need the agent runtime inside their own network (self-hosted sandbox/environment), and which vendor options support that today? — *answered by:* security review; vendor trial of Managed Agents self-hosted sandboxes and Claude Code self-hosted environments (page not read here) — *affects:* vendor-hosted vs org-deployed
 - (user-story-mapping) Which stories genuinely need to run when the performer's laptop is off (S02, S07, S09, S10, S14), and which are fine on demand? Scoring them settles whether unattended work is a core need or an extra. — *answered by:* story inventory with PMs ([stories](../tasks/user-story-mapping/INDEX.md)) — *affects:* local, laptop-as-server, cloud, org-deployed
 
-#### Audit additions (competitive-teardown-ramp-glass, 2026-10-24)
+#### Re-check additions (competitive-teardown-ramp-glass, 2026-10-24)
 Correction: the seed row lists Glass as an "Org-deployed service" and my April-based row as "Desktop app + laptop as server". Both are partly right at different dates. April 2026: desktop app, laptop-side MCP proxy and scheduling (Goddijn, Buchan). October 2026: Laminar runs all sessions on "a fleet of generic disposable workers" in the cloud with "Web + desktop" clients; Kronick calls local-first agents "a weird blip" and says it no longer matters "if their laptop goes to sleep" ([first-party](../research/sources/ramp-builders-building-laminar.md)). Treat the laptop-as-server row as superseded for Glass; whether the desktop client still executes anything locally is not stated.
 
 Key questions (unranked):
 - Is Kronick right that local-first agent runtimes were a transitional blip, or do some of our target users' jobs still need local files, repos or devices? — *answered by:* task inventory with users; check which of our stories touch local state — *affects:* local, laptop-as-server, cloud worker fleet
 - If sessions live in the cloud, what happens to the "memory as local inspectable files" and "self-healing local integrations" properties Ramp praised in April? — *answered by:* ask Ramp; prototype memory files in a cloud session store — *affects:* cloud options, [[context-and-memory]]
 
-### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 5 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | research-agent-runtime-patterns-taxonomy (Track 3) on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | user-story-mapping pass on 2026-10-24 | audit pass: competitive-teardown-ramp-glass on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -303,7 +293,6 @@ See also, evidence for existing options and placement notes (from the contributi
 - (Track 3) 11. Does a deployed agent need to be callable from harnesses we do not control (Codex, Cursor, Claude Desktop), or only from our own? Only the former needs MCP/A2A; the latter can use a vendor API. — *answered by:* user interviews on which hosts they use — *affects:* MCP vs vendor API
 - See also: key questions 3, 4 and 8 (Dojo reuse, review model, skill lifecycle) are under [[capability-distribution-trust]].
 
-### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 4 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 (proposal: consider splitting this dimension into "capability-format-portability" and "capability-distribution-trust"; see track-4 report) | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | research-agent-runtime-patterns-taxonomy (Track 3) on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -373,8 +362,6 @@ See also, evidence for existing options and placement notes (from the contributi
 11. Do we let PMs install public skills, and through what vetting: a registry gate, a curated pack, or none? Mainstream PM media hands them out with no security framing. — *answered by:* security and IT policy, plus an audit of the skills the pilot's PMs actually use — *affects:* curated pack, org-governed registry (from research-department-of-product-knowledge-series)
 
 Attribution for the rows and questions from capability-packaging, then for those from governance-control-plane:
-### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 4 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 (proposal: consider splitting this dimension into "capability-format-portability" and "capability-distribution-trust"; see track-4 report) | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | research-agent-runtime-patterns-taxonomy (Track 3) on 2026-10-24
-### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 4 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 5 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | research-agent-runtime-patterns-taxonomy (Track 3) on 2026-10-24 | user-story-mapping pass on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -391,7 +378,7 @@ Key questions (Stripe pass):
 
 ## remote-invocation-route: How a primary harness reaches a remote or deployed agent
 **Choice:** When Claude Code, Codex or another general harness needs a powerful agent that runs elsewhere, does it use in-process subagents, a vendor cloud delegation, an MCP tool (sync or with Tasks), an A2A call, an event/CI trigger, or a human-triggered handoff?
-**Why it matters to the strategy:** It decides whether a standardised task agent (code review, PRD review) can live outside any one harness and still be called from the harness users already have, and what latency, auth and debugging cost that adds. Proposed as a new dimension (Track 3); the director may prefer to merge it into capability-packaging.
+**Why it matters to the strategy:** It decides whether a standardised task agent (code review, PRD review) can live outside any one harness and still be called from the harness users already have, and what latency, auth and debugging cost that adds. Proposed as a new dimension (Track 3); it may later be merged into capability-packaging.
 **Related themes:** [[remote-agent-invocation]], [[identity-delegation]], [[harness-portability]], [[agent-failure-modes]]   **Related dimensions:** [[capability-format-portability]], [[runtime-location]], [[governance-control-plane]], [[loop-source]]
 
 ### Options
@@ -419,7 +406,6 @@ Key questions (Stripe pass):
 ### Current lean (optional) and what would change it
 Evidence so far favours MCP (sync, with Tasks for long jobs) over A2A for harness-to-agent calls today, because every named MCP host already supports MCP, concrete examples exist (Glean, Sentry), and A2A's production evidence is membership rather than use; this is thin, mostly vendor-sourced. It would change if a primary harness ships a native A2A client, or if independent accounts of A2A in production appear.
 
-### Added by: research-agent-runtime-patterns-taxonomy (Track 3) on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -498,13 +484,12 @@ See also, evidence for existing options and placement notes (from the contributi
 14. Which PM monitoring jobs fit an in-session loop, and which need a cloud routine? — *answered by:* trialling both on two real weekly jobs — *affects:* in-session loop, scheduled or event-triggered runs (from research-department-of-product-knowledge-series)
 15. Will PMs without a code repo adopt scheduled agents that need one? Remote routines need a repo, so the DoP tutorial starts by creating one on GitHub. — *answered by:* a setup test with 3–5 PMs — *affects:* routines, agent-interface "own workspace" (from research-department-of-product-knowledge-series)
 
-#### Audit additions (competitive-teardown-ramp-glass, 2026-10-24)
+#### Re-check additions (competitive-teardown-ramp-glass, 2026-10-24)
 Evidence (first-party, [Building Laminar](../research/sources/ramp-builders-building-laminar.md)): Laminar makes agents non-blocking by default and keeps "the agent session always open to new input", with human-in-the-loop approvals, message queuing and steering, subagent handoffs, multiplayer sessions and Slack as a first-class client; Glass tasks "can take minutes or hours". Session state (definition, history, turn state) lives in Postgres independent of any sandbox, so sessions survive sandbox and worker churn.
 
 Key question (unranked):
 - Ramp's multiplayer and always-open sessions depend on a cloud session store. Which of these properties do we lose if sessions stay in a local vendor harness, and which could a thin shared layer add back? — *answered by:* feature matrix across Claude Code/Cowork/Codex vs Laminar-style store; prototype — *affects:* shared, persistent
 
-#### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 5 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | user-story-mapping pass on 2026-10-24 | audit pass: competitive-teardown-ramp-glass on 2026-10-24
 
 ### Sub-choice: session-handoff-portability — Handing a session between people, devices and harnesses
 **Choice:** When work moves (laptop to cloud, cloud to laptop, person to person, harness to harness), what moves with it: the repo branch only, a forked copy of the transcript, or the live session itself?
@@ -528,7 +513,6 @@ Key question (unranked):
 4. Can a neutral record (Agent Trace or similar) be captured from the harnesses we would support, and is it enough for audit? — *answered by:* prototype of trace capture — *affects:* neutral trace
 - (user-story-mapping) What must survive a session ending (reasoning, decisions, sources, the transcript itself) and for how long? ([S11](../tasks/user-story-mapping/stories-cross-cutting.md#s11-pick-up-where-i-or-someone-else-left-off-and-find-the-artifacts)) — *answered by:* the baseline interviews above; retention policy owner — *affects:* retained transcripts, neutral trace record, branch-only handoff
 
-#### Added by: research-agent-runtime-patterns-taxonomy (Track 5) on 2026-10-24 (proposal: merge into session-persistence-sharing if the director prefers fewer dimensions) | user-story-mapping pass on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -603,7 +587,6 @@ See also, evidence for existing options and placement notes (from the contributi
 15. How should agent-to-agent requests over Slack be authorised now that Anthropic calls them "the norm"? — *answered by:* Anthropic security; the target org's security — *affects:* Single-purpose service identity. (from research-claude-resources-articles)
 16. Is connector-level scoping fine-grained enough for unattended PM runs, or do we need read/write limits per action? — *answered by:* security owners reviewing the routines permission model — *affects:* connector boundary, credentials proxy (from research-department-of-product-knowledge-series)
 
-### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 4 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 5 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | research-agent-runtime-patterns-taxonomy (Track 3) on 2026-10-24 | user-story-mapping pass on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -673,7 +656,7 @@ See also, evidence for existing options and placement notes (from the contributi
 - **Control plane above harnesses**, mid-market reality: advisory Notion AI policy; vendor usage reporting unavailable to smaller businesses; one firm blocks non-approved apps and runs an internal multi-model chat; another runs an internal MCP registry across four assistants — [cw-fragmented](../research/sources/lenny-community-wisdom-fragmented-ai-usage.md) (anecdote). Admin-curated, role-based tool bundles delivered through one connector per client — [zapier-mcp](../research/sources/howiai-zapier-reid-robinson-mcp-pm-workflows.md) (vendor claim). (from research-lennys-newsletter-archive)
 - Guardrail products are bypassable and create overconfidence; spend on permissioning, sandboxing and logging; most companies don't know what AI they run — [schulhoff](../research/sources/lenny-podcast-sander-schulhoff-ai-security.md) (independent). (from research-lennys-newsletter-archive)
 - When non-engineers build, dependency vetting, credential storage and exposure detection are unsolved — [cw-vibe-coding](../research/sources/lenny-community-wisdom-vibe-coding-team-sport.md) (anecdote). (from research-lennys-newsletter-archive)
-- Placement (director, contribution merge 2026-10-24): *Tiered model routing inside a pipeline* is filed here as a cost-control pattern rather than under [model-provider-coupling](#model-provider-coupling-how-tightly-the-agent-is-coupled-to-one-model-provider), which holds a see-also back to it. It is related to *Typed-answer classifier for routing and pre-action checks* above: both use a small typed-output decision model in front of a frontier model.
+- Placement (contribution merge 2026-10-24): *Tiered model routing inside a pipeline* is filed here as a cost-control pattern rather than under [model-provider-coupling](#model-provider-coupling-how-tightly-the-agent-is-coupled-to-one-model-provider), which holds a see-also back to it. It is related to *Typed-answer classifier for routing and pre-action checks* above: both use a small typed-output decision model in front of a frontier model.
 
 ### Key questions to choose
 1. What are the governance requirements of target orgs (audit, data, spend)? — *answered by:* policy owners / customer interviews — *affects:* all
@@ -691,13 +674,9 @@ See also, evidence for existing options and placement notes (from the contributi
 17. Does the Agentic Trust Controls checklist cover our regulated audit needs, or does it duplicate controls we already hold? — *answered by:* a policy owner review — *affects:* interception, gateway (from research-department-of-product-knowledge-series)
 18. Should routing and pre-action checks run on a typed classifier rather than an LLM call? — *answered by:* an engineering benchmark on our own agent traces — *affects:* typed classifier, review-and-autonomy "classifier-gated" (from research-department-of-product-knowledge-series)
 
-#### Audit additions (competitive-teardown-ramp-glass, 2026-10-24)
+#### Re-check additions (competitive-teardown-ramp-glass, 2026-10-24)
 Correction to my row "Per-project cost meter + model router": the "30% claimed saving" is Ramp Router's launch claim from Jul 20, 2026 ("without any performance degradation", Diego Zaks), repeated by Glyman at the Glass launch; it is not a Glass measurement, no data was published, and one secondary outlet quotes 40% ([Router posts](../research/sources/x-ramp-router-launch-posts.md), vendor claim). The earlier "press: 'certain accounts'" qualifier came from a search summary and is unverified; disregard it.
 
-### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 4 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 5 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | research-agent-runtime-patterns-taxonomy (Track 3) on 2026-10-24 | user-story-mapping pass on 2026-10-24 | audit pass: competitive-teardown-ramp-glass on 2026-10-24
-
-#### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
-- The setting is regulated and audit is needed. Options that cannot provide audit and enforcement weigh less. The specific requirements (residency, retention, identity) remain key questions for the policy owner.
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -739,10 +718,9 @@ River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
 3. Where may session state be stored (residency, vendor access)? — *answered by:* security/policy owner — *affects:* platform log, engine SaaS (Inngest sends step data to its platform)
 4. Who will own idempotency for side effects (PRs opened, tickets created, emails)? — *answered by:* engineering owner; design review — *affects:* all but no-durability
 
-#### Audit additions (competitive-teardown-ramp-glass, 2026-10-24)
+#### Re-check additions (competitive-teardown-ramp-glass, 2026-10-24)
 Evidence row (first-party, [Building Laminar](../research/sources/ramp-builders-building-laminar.md)): Ramp chose "boring technology" — Postgres (sessions and messages), Temporal (durable orchestration of the loop, surviving deploys and ephemeral failures), S3 — on a disposable worker fleet, with "sandbox-as-a-tool" so sandbox lifetime is decoupled from session lifetime. Stated reason: the team already knows how to run and fix that stack at scale.
 
-### Added by: research-agent-runtime-patterns-taxonomy (Track 5) on 2026-10-24 | audit pass: competitive-teardown-ramp-glass on 2026-10-24
 
 
 River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
@@ -769,23 +747,19 @@ See also, evidence for existing options and placement notes (from the contributi
 - **Provider-agnostic abstraction we maintain**: Goose is model-agnostic with no automatic routing; users pick per task (Claude Sonnet for code, an OpenAI reasoning model for design docs, local Qwen) — [block-goose](../research/sources/howiai-block-goose-brosamer-axen.md) (first-party). (from research-lennys-newsletter-archive)
 - Routing heuristics (bear on governance's *Per-project cost meter + model router*): open-weight tuned models for bounded verifiable work, frontier tokens where one insight matters — [acharya](../research/sources/lenny-podcast-anish-acharya-company-loops.md) (anecdote); pick the bigger model when the request is unclear, not when the task is technically hard — [rieseberg](../research/sources/howiai-felix-rieseberg-cowork.md) (vendor claim); over 50% of users mixed assistants by use case in Jan 2025 — [tech-stack-2025](../research/sources/lenny-newsletter-tech-stack-2025-survey.md) (independent). (from research-lennys-newsletter-archive)
 - New evidence: multi-provider gateways routed by task difficulty (Atlassian, Delivery Hero on LiteLLM with Claude at ~95%) ([atlassian](../research/sources/claude-customers-atlassian-trusted-agents.md), [delivery-hero](../research/sources/claude-customers-delivery-hero-pr-agent.md)); Bedrock/Vertex/Foundry to stay inside the cloud perimeter in regulated firms ([financial-guide](../research/sources/claude-guide-financial-industry.md)) (from research-claude-resources-articles)
-- See also (director, contribution merge 2026-10-24): *Tiered model routing inside a pipeline* (a cheap classifier, then a reasoning model, then a generator) is filed under [governance-control-plane](#governance-control-plane-governance-and-control-plane-policy-cost-audit) as a cost-control pattern; its routing evidence bears on this dimension too.
+- See also (contribution merge 2026-10-24): *Tiered model routing inside a pipeline* (a cheap classifier, then a reasoning model, then a generator) is filed under [governance-control-plane](#governance-control-plane-governance-and-control-plane-policy-cost-audit) as a cost-control pattern; its routing evidence bears on this dimension too.
 
 ### Key questions to choose
 1. Is model-provider independence a requirement for our users, or only harness independence? — *answered by:* user/customer interviews; procurement/policy owner at target orgs — *affects:* all
 2. What are the current Anthropic and OpenAI terms for using subscriptions, SDKs and third-party products (resale, embedding, branding, login), and who at those vendors can confirm them? — *answered by:* terms review plus vendor account contact — *affects:* single-provider, multi-harness
 3. How much quality and cost do we lose by routing the same jobs through a provider-agnostic abstraction versus the native harness? — *answered by:* same job run on native harness and on a portable loop with matching evals — *affects:* abstraction option
 
-#### Audit additions (competitive-teardown-ramp-glass, 2026-10-24)
+#### Re-check additions (competitive-teardown-ramp-glass, 2026-10-24)
 Evidence: Ramp made Laminar "model- and provider-agnostic from the start" because a single provider's managed-agents API "would lock us into their models", and routes every call through Ramp Router (its LLM gateway) to optimise cost, latency and performance ([first-party](../research/sources/ramp-builders-building-laminar.md)). Glyman's launch article sells "Any model. Open or closed." Independent data point on in-harness routing from LangChain's Open SWE experiment (−64% median cost per thread, no significant quality change across 973 threads) is in [The New Stack](../research/sources/thenewstack-ramp-laminar-agent-harness.md); Ramp was not part of it.
 
 Key question (unranked):
 - Ramp's provider-agnosticism rests on owning the harness and a router. If we stay in a vendor harness, how much provider choice do we actually get, and at what cost in features? — *answered by:* compare model options in Claude Code/Codex/Cowork vs an Agent-SDK app vs a gateway — *affects:* all
 
-### Added by: research-agent-runtime-patterns-taxonomy (Track 2) on 2026-10-24 | audit pass: competitive-teardown-ramp-glass on 2026-10-24
-
-#### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
-- Model independence is a benefit to weigh, not a goal (see loop-source).
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -818,16 +792,15 @@ See also, evidence for existing options and placement notes (from the contributi
 1. What is the real recurring upkeep for an internal harness (people, eval infrastructure, per-model re-tests)? — *answered by:* interviews with Ramp/Stripe-like teams; a scoped staffing estimate — *affects:* internal team option
 2. Which vendor-claimed upkeep savings (hosted harness) hold up, and what changes silently on the vendor side? — *answered by:* trial of Managed Agents or Agent SDK with a changelog and regression-test routine — *affects:* vendor-maintained
 3. Do we have, or can we fund, an eval set for our jobs good enough to detect regressions after a model or harness update? — *answered by:* policy owner / PM team; link to [[pm-agent-evaluation]] — *affects:* all
-4. Which parts of a product harness (templates, checklists, forced steps) encode model weaknesses that will expire, and who owns pruning them? — *answered by:* Geoff and the harness team — *affects:* all. (from research-claude-resources-articles)
+4. Which parts of a product harness (templates, checklists, forced steps) encode model weaknesses that will expire, and who owns pruning them? — *answered by:* the project owner and the harness team — *affects:* all. (from research-claude-resources-articles)
 5. Do we keep a standing list of "features waiting on the model", each with a test, so every release is a scheduled re-test, and how cheaply can agent topology (persona sub-agents) be merged or removed when it is? — *answered by:* the harness owner's release checklist; re-test at each major release — *affects:* harness-upkeep, work-structure. See also cross-cutting key question 13. (from research-lennys-newsletter-archive)
 
-#### Audit additions (competitive-teardown-ramp-glass, 2026-10-24)
+#### Re-check additions (competitive-teardown-ramp-glass, 2026-10-24)
 Evidence: Ramp, after building Laminar, says "even though building in-house has never been cheaper, you still need good engineers to be on-call, keep the platform healthy, and figure out what product teams actually need" ([first-party](../research/sources/ramp-builders-building-laminar.md)); The New Stack notes Ramp published no operating-cost comparison or benchmarks ([independent](../research/sources/thenewstack-ramp-laminar-agent-harness.md)). Ramp also rebuilt its loop once already (vendor SDK in April → Laminar by October), which is a data point on cadence.
 
 Key question (unranked):
 - What is the realistic steady-state team for a harness like Laminar at our scale, and who pages when an agent session breaks at 2 a.m.? — *answered by:* ask Ramp; staffing estimate against our on-call model — *affects:* own harness options
 
-### Added by: research-agent-runtime-patterns-taxonomy (Track 2) on 2026-10-24 | audit pass: competitive-teardown-ramp-glass on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -869,13 +842,12 @@ See also, evidence for existing options and placement notes (from the contributi
 1. Does an automatically mined profile measurably improve results versus user-authored context? — *answered by:* A/B prototype — *affects:* all
 2. What privacy rules apply to mining Slack/Notion/session history per user? — *answered by:* policy/security owners — *affects:* offline-built, shared
 3. Who may edit shared knowledge, and how are conflicts resolved? — *answered by:* governance design, trial — *affects:* shared org knowledge
-4. Should learned memories that change agent behaviour go through the same review as skill edits? — *answered by:* Geoff and compliance — *affects:* dreaming, lessons log. (from research-claude-resources-articles)
+4. Should learned memories that change agent behaviour go through the same review as skill edits? — *answered by:* the project owner and compliance — *affects:* dreaming, lessons log. (from research-claude-resources-articles)
 5. If memory stays local for privacy, how do scheduled or cloud runs reach it? (One PM runs workflows by hand because cloud schedules could not read local memory.) — *answered by:* runtime and memory-sync design — *affects:* context-and-memory, runtime-location, trust-privacy-defaults. (from research-lennys-newsletter-archive)
 
-#### Audit additions (competitive-teardown-ramp-glass, 2026-10-24)
+#### Re-check additions (competitive-teardown-ramp-glass, 2026-10-24)
 Caveat (audit): the offline-built, read-only memory-file design is from the April 2026 desktop architecture (Buchan, Goddijn). Ramp's October Laminar post does not re-describe memory; whether it still works as inspectable files in a cloud session store is unknown ([first-party](../research/sources/ramp-builders-building-laminar.md)).
 
-#### Added by: competitive-teardown-ramp-glass on 2026-10-24 | audit pass: competitive-teardown-ramp-glass on 2026-10-24
 
 ### Sub-choice: context-location — Where product context lives for agents
 **Choice:** Does the product context agents need (requirements, decisions, domain rules, research) stay scattered in docs and people's heads, live in a shared plain-text repo near the code, or live in systems of record that agents query?
@@ -901,14 +873,13 @@ See also, evidence for existing options and placement notes (from the contributi
 4. Which questions do other teams keep asking us in Slack support channels? These are the first candidates to write down. — *answered by:* support-channel analysis — *affects:* shared repo, systems of record
 5. Does always-on repo context outperform connector retrieval for our tasks? — *answered by:* a small eval on real tasks — *affects:* all
 
-- (user-story-mapping) How do PMs who use Claude Code inconsistently actually store, name and find the artifacts of a piece of work today (spec drafts, synthesis outputs, prototypes, session history)? The story baseline ([S11](../tasks/user-story-mapping/stories-cross-cutting.md#s11-pick-up-where-i-or-someone-else-left-off-and-find-the-artifacts)) rests on Geoff's description plus an independent report of 30-day transcript deletion. — *answered by:* 6–8 short interviews or screen-share walkthroughs of real folders and sessions — *affects:* all; decides whether files-as-record or sessions-as-record is the larger need
+- (user-story-mapping) How do PMs who use Claude Code inconsistently actually store, name and find the artifacts of a piece of work today (spec drafts, synthesis outputs, prototypes, session history)? The story baseline ([S11](../tasks/user-story-mapping/stories-cross-cutting.md#s11-pick-up-where-i-or-someone-else-left-off-and-find-the-artifacts)) rests on the project's description plus an independent report of 30-day transcript deletion. — *answered by:* 6–8 short interviews or screen-share walkthroughs of real folders and sessions — *affects:* all; decides whether files-as-record or sessions-as-record is the larger need
 - (user-story-mapping) Would a reviewer (engineer, designer, risk) review a spec in a PR against a context repo, or does that exclude people who do not use Git? ([S05 journey A](../tasks/user-story-mapping/worked-derivation-s05.md)) — *answered by:* ask 3–5 reviewers to walk through a real review; prototype of journey A with hidden Git — *affects:* shared plain-text context repo
 6. Who keeps a PM harness's context current over months (the PM, the agent at session end, connectors, a scheduled pipeline), and what is the staleness under each? — *answered by:* a pilot measuring staleness of project knowledge per approach — *affects:* context-and-memory, harness-upkeep. (from research-lennys-newsletter-archive)
 
 #### Current lean and what would change it
 Geoff's doc leans towards a harness-agnostic plain-text repo because it survives tool changes. That lean would weaken if connector retrieval proved reliably better in an eval, or if governance can't be solved for a repo.
 
-#### Added by: research-product-agent-and-harness on 2026-10-24 | user-story-mapping pass on 2026-10-24
 
 ### Sub-choice: org-context-grounding-source — How organisation context reaches the agent
 **Choice:** Does the agent get org context from a platform-native graph, connectors/MCP into a general harness, a curated plain-text context repo, or what the user pastes?
@@ -944,7 +915,6 @@ See also, evidence for existing options and placement notes (from the contributi
 14. When should a PM agent reach a tool through a vendor CLI rather than MCP? — *answered by:* a prototype comparing the Workspace CLI with a Google MCP server on 2–3 PM jobs — *affects:* CLI route, agent-interface (from research-department-of-product-knowledge-series)
 15. As PM tools get more traffic from agents than from people (Linear's CEO says agent-created issues now outnumber human ones), how much does our harness depend on those vendors' MCP quality and rate limits? — *answered by:* a review of vendor MCP servers — *affects:* all tool-route rows (from research-department-of-product-knowledge-series)
 16. For shared metrics and definitions, do we route everyone through one gateway agent that owns the semantic layer, or give every agent an MCP server to the source of truth plus shared rules? — *answered by:* compare drift in answers to the same metric question across both set-ups — *affects:* context-and-memory, work-structure, governance-control-plane. (from research-lennys-newsletter-archive)
-#### Added by: research-pm-agents-jobs-to-be-done on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -970,9 +940,9 @@ Key questions (River pass):
 - If memory and skills are mined from shared sessions, how is sensitive content kept out of what gets injected into everyone's sessions? — *answered by:* prototype with a redaction step; security owner — *affects:* corpus-mining and shared-memory options
 
 ### Sub-choice: context-creation — How tacit business and operational knowledge is captured for agents
-Proposed by competitive-teardown-stripe-knowledge-agents on 2026-10-24, to test Geoff's hypothesis that "there is a need for a business and operational context creation agent -- so much tacit knowledge needs to be captured from humans in order to be accessible to the agent ecosystem."
+Proposed by competitive-teardown-stripe-knowledge-agents on 2026-10-24, to test the working hypothesis that "there is a need for a business and operational context creation agent -- so much tacit knowledge needs to be captured from humans in order to be accessible to the agent ecosystem."
 **Choice:** By what mechanism do we create the knowledge agents ground on that today lives only in people's heads (how the business works, which data to trust, design and architectural judgment, customer understanding): mine it from work exhaust, have owners curate and verify it, elicit it with an interviewing agent, or write it back from finished work? And is that a dedicated agent or a property of every agent?
-**Why it matters to the strategy:** Every company that got agents working at scale (Stripe, Shopify, Ramp) did so on top of captured context. At Stripe that is Trailhead docs, a curated data catalog, Toolshed and 2,000 skills; at Shopify, AGENTS.md and skills; at Ramp, memory plus 6,500+ human edits. On Stripe's whiteboard chain, the human stages (opportunity, problem, goal: "customer conversations") are where most uncaptured knowledge sits. Whether capture needs its own funded agent changes the resource request.
+**Why it matters to the strategy:** Every company that got agents working at scale (Stripe, Shopify, Ramp) did so on top of captured context. At Stripe that is Trailhead docs, a curated data catalog, Toolshed and 2,000 skills; at Shopify, AGENTS.md and skills; at Ramp, memory plus 6,500+ human edits. On Stripe's whiteboard chain, the human stages (opportunity, problem, goal: "customer conversations") are where most uncaptured knowledge sits. Whether capture needs its own funded agent changes the next phase of work.
 **Related themes:** [[tacit-knowledge-capture]], [[opportunity-to-code-chain]], [[compounding-context-repo]], [[memory-architecture]], [[org-learning-loop]], [[legible-org-for-agents]], [[org-context-grounding]]   **Related dimensions:** [[sequencing]], [[intent-shaping-and-spec]], [[trust-privacy-defaults]], [[capability-distribution-trust]]
 
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -992,7 +962,7 @@ See also, evidence for existing options and placement notes (from the contributi
 2. Without a code-style source of truth, how is business and operational knowledge verified and expired: owner sign-off, links to evidence, expiry dates? What is its staleness half-life? — *answered by:* prototype with instrumentation; Stripe's Trailhead verification rules if obtainable — *affects:* owner-curated, write-back, agent-drafts
 3. Will experts contribute when they gain little themselves (+34% for novices, about 0 for experts in the call-centre study) and knowledge hiding is common? Which incentives or role expectations make them? — *answered by:* interviews, then a trial with a contribution metric — *affects:* owner-curated, elicitation
 4. Which sources (Slack, email, meetings, calls) may legally be mined in the target orgs, and is a person-level "who knows what" map allowed? — *answered by:* policy owner (privacy, legal, works council) — *affects:* passive mining
-5. Is capture a separate agent ("context creation agent") or a duty of every agent (write-back plus skill-creator), with one shared store? Stripe, Shopify and Ramp all chose the latter, with no dedicated capture agent found. — *answered by:* Geoff; a prototype of each on one job (e.g. intent shaping, S05) — *affects:* all
+5. Is capture a separate agent ("context creation agent") or a duty of every agent (write-back plus skill-creator), with one shared store? Stripe, Shopify and Ramp all chose the latter, with no dedicated capture agent found. — *answered by:* the project owner; a prototype of each on one job (e.g. intent shaping, S05) — *affects:* all
 6. Is the marginal value in eliciting new knowledge at the top of the chain (opportunity, problem, goal) or in codifying and writing back knowledge for the lower chain (intent, plan, code)? — *answered by:* trial comparing the two on agent output quality — *affects:* elicitation vs agent-drafts and write-back
 
 **Current lean and what would change it:** Evidence so far favours capture as a **by-product of work**: owner-verified curation plus agent drafts plus write-back from finished tasks, inside the agents people already use. A standalone interview agent is the least proven route. Every scaled example (Stripe, Shopify, Ramp) captures through use and owners, and the best interview-agent evidence shows shallow probing. The hypothesis holds for the **need** (strong evidence: all three companies built on captured context, and people stop writing knowledge down once they can ask an AI). It is unproven for the **form** (a dedicated agent). What would change the lean: a trial where an elicitation agent captures expert decision rules with high fidelity (checked by a second expert) and those rules measurably improve agent output on upper-chain work (problem, goal, intent).
@@ -1007,7 +977,7 @@ See also, evidence for existing options and placement notes (from the contributi
 
 Key questions (DoP pass):
 7. Spotify's 87.5% rejection rate says mined examples are mostly noise. What share of mined context would our domain owners reject, and how much curation time does a cluster take? — *answered by:* a one-domain trial using our own query or document history — *affects:* passive mining, owner-curated
-8. Could "knowledge readiness as a release gate" generalise from support to internal agents? Every shipped feature or decision would update what the internal agent knows, with a named owner. Who would own it in our setting? — *answered by:* Geoff / product ops; a pilot on two launches — *affects:* write-back, owner-curated
+8. Could "knowledge readiness as a release gate" generalise from support to internal agents? Every shipped feature or decision would update what the internal agent knows, with a named owner. Who would own it in our setting? — *answered by:* the project owner / product ops; a pilot on two launches — *affects:* write-back, owner-curated
 
 Update to the lean: the three new cases strengthen it. Each puts a **human owner or embedded human** at the point of capture: Spotify's curators, Intercom's NPI manager, Uber's pod engineers. Agents draft, test and monitor. None of the three uses a standalone capture agent.
 
@@ -1015,13 +985,13 @@ Update to the lean: the three new cases strengthen it. Each puts a **human owner
 
 ## artifact-and-project-structure: How PM artifacts and projects are structured, stored and found
 **Choice:** Do PM artifacts (specs, research syntheses, decisions, status updates, prototypes, dashboards) stay ad hoc and local, follow repo conventions, live as objects in a platform (Atlassian, Notion, Linear style), sit behind a thin product-defined project descriptor, or does a product meta-harness define typed artifact primitives and a project structure itself?
-**Why it matters to the strategy:** Multi-party collaboration, reuse across sessions and harnesses, review, permissions and provenance all depend on a shared answer to "what is a project, what artifact types does it have, where do they live and who may see them". Today there is no cross-tool answer: "project" means different things even inside one vendor, and PM artifacts are mostly local files or scattered docs. This is the structural question behind [[context-and-memory]] (where context lives), [[context-and-memory]] (how context reaches the agent) and [[context-and-memory]] (per-user memory). Those three answer *where and how it is read*; this one answers *what the things are and how a project is defined*. Director: consider merging context-location and org-context-grounding-source into this dimension as its "location" half, or keep all four linked; I have kept them separate and cross-referenced.
+**Why it matters to the strategy:** Multi-party collaboration, reuse across sessions and harnesses, review, permissions and provenance all depend on a shared answer to "what is a project, what artifact types does it have, where do they live and who may see them". Today there is no cross-tool answer: "project" means different things even inside one vendor, and PM artifacts are mostly local files or scattered docs. This is the structural question behind [[context-and-memory]] (where context lives), [[context-and-memory]] (how context reaches the agent) and [[context-and-memory]] (per-user memory). Those three answer *where and how it is read*; this one answers *what the things are and how a project is defined*. Open: consider merging context-location and org-context-grounding-source into this dimension as its "location" half, or keep all four linked; I have kept them separate and cross-referenced.
 **Related themes:** [[product-artifact-primitives]], [[artifact-standardization]], [[docs-as-code-prd]], [[pm-tool-connectivity]], [[project-taxonomy]], [[compounding-context-repo]], [[org-context-grounding]], [[memory-architecture]]   **Related dimensions:** [[context-and-memory]], [[intent-shaping-and-spec]], [[session-persistence-sharing]], [[governance-control-plane]]
 
 ### Options
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
 |---|---|---|---|---|---|---|
-| Ad hoc and local | Artifacts are files and chats on each person's machine plus whichever docs tool they like; no shared project definition | Inconsistent Claude Code use today (Geoff's baseline); local session history | No change cost; maximum flexibility | Findability and sharing depend on one person; local transcripts auto-deleted after 30 days by default; agents cannot answer "what exists for project X" | mainstream | [itdaily-claude-code-30-day-transcript-deletion](../research/sources/itdaily-claude-code-30-day-transcript-deletion.md) (independent); [geoff-building-accelerating-intent-factory](../research/sources/geoff-building-accelerating-intent-factory.md) (first-party, Geoff); [hn-ask-claude-code-non-coding-workflows](../research/sources/hn-ask-claude-code-non-coding-workflows.md) (anecdote) |
+| Ad hoc and local | Artifacts are files and chats on each person's machine plus whichever docs tool they like; no shared project definition | Inconsistent Claude Code use today (the project's baseline); local session history | No change cost; maximum flexibility | Findability and sharing depend on one person; local transcripts auto-deleted after 30 days by default; agents cannot answer "what exists for project X" | mainstream | [itdaily-claude-code-30-day-transcript-deletion](../research/sources/itdaily-claude-code-30-day-transcript-deletion.md) (independent); [geoff-building-accelerating-intent-factory](../research/sources/geoff-building-accelerating-intent-factory.md) (first-party, Geoff); [hn-ask-claude-code-non-coding-workflows](../research/sources/hn-ask-claude-code-non-coding-workflows.md) (anecdote) |
 | Repo-native conventions (docs-as-code) | PRDs, specs, decisions live as typed files in a repo with agreed folders and frontmatter | Spec Kit `specs/NNN-feature/`, Kiro `requirements/design/tasks`, ADR/MADR `docs/decisions/`, AGENTS.md, Gherkin | Versioning, review (PRs), permissions and history come free; works with any harness; agents read it natively | Spec-driven tools disagree on file sets; specs are developer-feature specs, not research/strategy; review burden high and agents may ignore specs; non-engineers may not use Git; no adoption data for PMs | early-adopter (engineering); emerging (PM) | [github-spec-kit-sdd](../research/sources/github-spec-kit-sdd.md), [kiro-specs-docs](../research/sources/kiro-specs-docs.md) (first-party); [fowler-bockeler-sdd-kiro-speckit-tessl](../research/sources/fowler-bockeler-sdd-kiro-speckit-tessl.md) (independent); [adr-madr-template](../research/sources/adr-madr-template.md) (first-party); [lenny-cursor-better-product-manager](../research/sources/lenny-cursor-better-product-manager.md) (anecdote) |
 | Platform-owned objects | Artifacts and projects are objects in a work/knowledge platform, reached by agents through that platform's MCP and permissions | Atlassian (Jira work items in spaces, Confluence spaces, Home projects, Teamwork Graph), Notion databases, Linear initiative > project > issue + documents, Productboard product hierarchy with specs on features | Existing governance, permissions, UI and history; many PMs already live there; Ramp uses Notion and Linear as the formal record | "Project" differs per platform (Atlassian has three); no vendor graph has native spec/insight/decision types; long-form specs second-class in issue-centric tools; MCP coverage and plan gating uneven; cross-platform view missing | mainstream (platforms); early-adopter (agent access) | [atlassian-teamwork-graph-object-types](../research/sources/atlassian-teamwork-graph-object-types.md), [atlassian-jira-space-definition](../research/sources/atlassian-jira-space-definition.md), [atlassian-confluence-space-definition](../research/sources/atlassian-confluence-space-definition.md), [atlassian-rovo-mcp-server-supported-tools](../research/sources/atlassian-rovo-mcp-server-supported-tools.md), [notion-api-databases-data-sources](../research/sources/notion-api-databases-data-sources.md), [linear-initiatives-docs](../research/sources/linear-initiatives-docs.md), [productboard-product-hierarchy](../research/sources/productboard-product-hierarchy.md) (first-party) |
 | Inferred enterprise context layer | A vendor graph indexes many tools and infers entities (projects, people, customers) rather than prescribing structure | Glean Enterprise Graph; Atlassian Teamwork Graph (partly inferred relationships) | No migration; cross-tool search for agents | Inferred, not authored: no owner/status/version semantics; vendor claims only; permission mirroring is only as good as connectors | early-adopter | [glean-enterprise-graph-product-page](../research/sources/glean-enterprise-graph-product-page.md) (vendor claim); [atlassian-teamwork-graph-glossary](../research/sources/atlassian-teamwork-graph-glossary.md) (first-party) |
@@ -1039,8 +1009,8 @@ Update to the lean: the three new cases strengthen it. Each puts a **human owner
 | Point-in-time intent docs plus living capability pages | PRDs and briefs are dated statements of intent, not maintained; current state lives in one living page per capability | One unnamed org in a community thread | Clear split between what was intended and what is true now; one current page for agents and GTM | Someone must keep capability pages current | emerging | [cw-eng-outpaces](../research/sources/lenny-community-wisdom-engineering-outpaces-product.md) (anecdote) (from research-lennys-newsletter-archive) |
 
 #### Audit correction (user-story-mapping, 2026-10-24)
-- Repo-native row: the Lenny/Cursor note is evidence of PMs drafting PRDs with a coding agent over the codebase and pushing them to Confluence/Notion, not of PRDs kept in git; the PRD-in-repo practice itself is Geoff's observation (`[G]`) with no published adoption figure. The row's "early-adopter (engineering); emerging (PM)" maturity stands on the spec-driven-development evidence only.
-- Platform-owned row, Atlassian detail (Fable verification pass, verbatim re-reads): Rovo MCP `delete_jira` and `manage_jira` are off by default and destructive calls go through a separate confirmation path ([tools](../research/sources/atlassian-rovo-mcp-server-supported-tools.md)); the Teamwork Graph API is read-only, Forge-app-only and org-admin installed, so it is not a direct data path for an external harness ([scopes](../research/sources/atlassian-teamwork-graph-scopes.md), [limitations](../research/sources/atlassian-teamwork-graph-limitations.md)); Atlassian's guidance on where PRDs and decisions live is Confluence page templates (PRD, project poster, DACI) linked to Jira by embedded issue links ([PRD template](../research/sources/atlassian-confluence-prd-template.md), [DACI](../research/sources/atlassian-confluence-daci-decision-template.md)); Confluence spaces carry agent-readable "space instructions", a per-container context file ([tools](../research/sources/atlassian-rovo-mcp-server-supported-tools.md)). JPD idea access over MCP is claimed in a vendor blog but unconfirmed ([blog](../research/sources/atlassian-blog-mcp-enhancements-jpd.md)).
+- Repo-native row: the Lenny/Cursor note is evidence of PMs drafting PRDs with a coding agent over the codebase and pushing them to Confluence/Notion, not of PRDs kept in git; the PRD-in-repo practice itself is the project's observation (`[G]`) with no published adoption figure. The row's "early-adopter (engineering); emerging (PM)" maturity stands on the spec-driven-development evidence only.
+- Platform-owned row, Atlassian detail (verification pass, verbatim re-reads): Rovo MCP `delete_jira` and `manage_jira` are off by default and destructive calls go through a separate confirmation path ([tools](../research/sources/atlassian-rovo-mcp-server-supported-tools.md)); the Teamwork Graph API is read-only, Forge-app-only and org-admin installed, so it is not a direct data path for an external harness ([scopes](../research/sources/atlassian-teamwork-graph-scopes.md), [limitations](../research/sources/atlassian-teamwork-graph-limitations.md)); Atlassian's guidance on where PRDs and decisions live is Confluence page templates (PRD, project poster, DACI) linked to Jira by embedded issue links ([PRD template](../research/sources/atlassian-confluence-prd-template.md), [DACI](../research/sources/atlassian-confluence-daci-decision-template.md)); Confluence spaces carry agent-readable "space instructions", a per-container context file ([tools](../research/sources/atlassian-rovo-mcp-server-supported-tools.md)). JPD idea access over MCP is claimed in a vendor blog but unconfirmed ([blog](../research/sources/atlassian-blog-mcp-enhancements-jpd.md)).
 - Hybrid row: "Glass projects are per-project cost meters" is an inference from two sentences in the Glyman essay; what a Glass project contains is unestablished.
 - Platform-owned row: Ramp's use of Notion and Linear as "the formal record" is confirmed verbatim in the Charles transcript at 11:43 ([transcript](../research/sources/lenny-podcast-geoff-charles-product-when-coding-solved.transcript.md)).
 
@@ -1055,7 +1025,7 @@ See also, evidence for existing options and placement notes (from the contributi
 - Bidirectional sync as a pattern: Figma MCP keeps design and code in sync both ways (code to editable frames; frame edits reconciled into code) — [figma](../research/sources/howiai-figma-design-code-loop.md) (vendor claim). (from research-lennys-newsletter-archive)
 
 ### Key questions to choose
-1. How do PMs (not engineers) actually store and find artifacts today, per artifact type, and how long does finding the last version take? Evidence is Geoff's description and anecdotes. — *answered by:* 6–8 walkthrough interviews of real folders, sessions and tools; an artifact audit of 2–3 recent initiatives — *affects:* all
+1. How do PMs (not engineers) actually store and find artifacts today, per artifact type, and how long does finding the last version take? Evidence is the project's description and anecdotes. — *answered by:* 6–8 walkthrough interviews of real folders, sessions and tools; an artifact audit of 2–3 recent initiatives — *affects:* all
 2. What share of PMs (and of the reviewing roles) can and will work in Git for long-form artifacts? No adoption figure was found. — *answered by:* survey or interviews; check with engineering leadership — *affects:* repo-native, hybrid
 3. Which artifact types does a multi-party team actually need to share and review (spec, research synthesis, decision, status, prototype, dashboard), and which can be left platform-specific? — *answered by:* story inventory (S05, S13, S16, S17) scored with PMs, designers, engineers — *affects:* primitives, descriptor
 4. Does a team already agree what a "project" is (initiative, epic, space, feature folder), or would the harness be imposing one? — *answered by:* ask 3–5 teams to list their current projects and boundaries; compare with Atlassian/Linear/Backstage models — *affects:* descriptor, meta-harness-defined
@@ -1074,7 +1044,6 @@ See also, evidence for existing options and placement notes (from the contributi
 ### Current lean (optional) and what would change it
 No lean. Evidence is thin on PM-side practice (anecdote and vendor guides); the strongest independent evidence says spec-driven tooling is young and divergent. The thin-descriptor option is the cheapest to test and the meta-harness-defined option the largest bet; Q1, Q4 and Q6 decide between them.
 
-### Added by: user-story-mapping on 2026-10-24 (research: [platforms](../tasks/user-story-mapping/research-artifacts-platforms.md), [standardization](../tasks/user-story-mapping/research-artifacts-standardization.md))
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -1139,7 +1108,6 @@ See also, evidence for existing options and placement notes (from the contributi
 8. Do non-engineer PMs prefer a powerful developer-shaped agent app over a simplified one built for them (OpenAI's experience), and does that hold in a regulated enterprise? — *answered by:* pilot both shapes with the same PM group — *affects:* target-user, agent-interface. (from research-lennys-newsletter-archive)
 9. Is "PM ships code" a target outcome at all, or only "PM ships a reviewed spec or prototype"? Large-company PMs may ship only contained UI changes finished by an engineer, once the codebase is agent-ready — *answered by:* engineering leadership position plus a pilot on one agent-ready repo — *affects:* target-user, target-outcome. (from research-lennys-newsletter-archive)
 
-#### Added by: research-pm-agents-jobs-to-be-done on 2026-10-24 | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | user-story-mapping pass on 2026-10-24
 
 ### Sub-choice: shared-agent-users-and-jobs — Which users and jobs a shared, persistent agent serves first
 **Choice:** Do we aim shared/persistent sessions at engineers' code work, at non-engineers building things, at recurring scheduled digests and triage, or at team Q&A in chat, and for which roles?
@@ -1161,13 +1129,9 @@ See also, evidence for existing options and placement notes (from the contributi
 #### Key questions to choose
 1. Which PM or team jobs (from the PM jobs map) are recurring and unattended versus interactive and shared? — *answered by:* score the jobs map with users — *affects:* scheduled vs multiplayer
 2. Is there any independent outcome evidence (quality, time saved, incidents) for non-engineer use of shared agents? None found beyond Ramp's accounts. — *answered by:* more research; interviews with adopters — *affects:* non-engineer option
-3. Who is the first user group worth a pilot, and what decision would a pilot inform? — *answered by:* Geoff / user interviews — *affects:* all
+3. Who is the first user group worth a pilot, and what decision would a pilot inform? — *answered by:* the project owner / user interviews — *affects:* all
 - See also: key question 4 (what value outcome we target, and how to measure it) moved to [[target-outcome]].
 
-#### Added by: research-agent-runtime-patterns-taxonomy (Track 5) on 2026-10-24
-
-#### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
-- Users are our own team plus a small number of beta users across the company. This is internal tooling, not a commercial product. Commercial-buyer options and questions are out of scope.
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -1196,16 +1160,12 @@ See also, evidence for existing options and placement notes (from the contributi
 - **Decision and spec quality** (bottleneck moved to intent): second-hand, a Google executive reports two years of roadmap in three months, with deciding what to add as the hard problem — [acharya](../research/sources/lenny-podcast-anish-acharya-company-loops.md) (anecdote). (from research-lennys-newsletter-archive)
 
 ### Key questions to choose
-1. What outcome would the resource sponsor fund against (hours, cycle time, quality, revenue)? — *answered by:* sponsor interviews — *affects:* all
+1. What outcome would a sponsor measure success against (hours, cycle time, quality, revenue)? — *answered by:* sponsor interviews — *affects:* all
 2. Is reclaimed PM time actually redirected to higher-value work in target orgs, or absorbed by reactive work? — *answered by:* pilot with before/after time diary — *affects:* time-saved option
-- (Track 6) Is the target outcome speed, consistency (same standard applied every time), reduced review effort, or org learning? Consistency and reduced noise are the measurable outcomes in the code-review cases (Cloudflare, CR-Bench); speed alone is contested (METR RCT, early-2025: AI-allowed tasks 19% slower while experts believed faster). — *answered by:* choose metric with Geoff; baseline trial — *affects:* task-agent vs general harness
+- (Track 6) Is the target outcome speed, consistency (same standard applied every time), reduced review effort, or org learning? Consistency and reduced noise are the measurable outcomes in the code-review cases (Cloudflare, CR-Bench); speed alone is contested (METR RCT, early-2025: AI-allowed tasks 19% slower while experts believed faster). — *answered by:* choose metric with the project owner; baseline trial — *affects:* task-agent vs general harness
 - (moved from shared-agent-users-and-jobs, Track 5:)
 4. What value outcome do we target (cycle time, review load, consistency, learning once), and how would we measure it, noting Wavect's point to measure accepted changes per review effort rather than PR count? — *answered by:* metrics design with policy owner — *affects:* all
 
-### Added by: research-pm-agents-jobs-to-be-done on 2026-10-24
-
-#### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
-- Geoff's target: free human time for discovering novel problems, experiments and insight. Shaping simple intent should become trivial and approach full autonomy while meeting organisational standards for quality and good management. Consistency, reduced review effort, org learning and speed are all wanted. New key question: how would we measure the shift of human time toward discovery? *answered by:* baseline time study plus pilot instrumentation.
 
 ---
 
@@ -1246,14 +1206,14 @@ See also, evidence for existing options and placement notes (from the contributi
 - **Self-reported time saved** is biased: see the tech-workers survey above; Anthropic's CPO measures time saved on real work (a prototype in 20-25 minutes vs six hours) but calls it harder to quantify — [krieger](../research/sources/lenny-podcast-mike-krieger-anthropic-cpo.md) (first-party). (from research-lennys-newsletter-archive)
 - Experience quality beyond accuracy: swear words as a frustration proxy; per-team "bad" (unrecoverable) and "sad" (recoverable) events; verifying that the experience is what you wanted is unsolved — [fung](../research/sources/lenny-podcast-fiona-fung-after-coding-solved.md) (first-party). Per-architecture agent metrics (automation rate, human review rate, cost per run) measure the agent, not PM outcomes — [three-agent-categories](../research/sources/lenny-newsletter-three-agent-categories.md) (anecdote). (from research-lennys-newsletter-archive)
 - Evals catch only errors you already know about; Codex relies on regression evals plus A/B tests plus each engineer's hard problems — [reganti-badam](../research/sources/lenny-podcast-reganti-badam-ai-deployments.md) (anecdote), against evals as "the defining skill" — [khan](../research/sources/lenny-newsletter-aman-khan-evals-guide.md) (vendor claim). For a novel capability, start with open-ended testing and write evals once the use-case cluster is known — [liu](../research/sources/lenny-podcast-howie-liu-airtable-reorg.md) (first-party); reconcilable with error analysis, since both say criteria come from looking at outputs first. (from research-lennys-newsletter-archive)
-- Overlapping rows (director, contribution merge 2026-10-24): *Draft-retention rate* and *Human touches and draft retention per unit of work* share the draft-retention measure; *Calibrated LLM-judge stack* and *Error-analysis-led evals* share judges calibrated to human labels. Kept as separate rows because each adds a distinct mechanism; merge if preferred.
+- Overlapping rows (contribution merge 2026-10-24): *Draft-retention rate* and *Human touches and draft retention per unit of work* share the draft-retention measure; *Calibrated LLM-judge stack* and *Error-analysis-led evals* share judges calibrated to human labels. Kept as separate rows because each adds a distinct mechanism; merge if preferred.
 
 ### Key questions to choose
 1. What would a sceptical exec accept as proof that a PM agent helped? — *answered by:* exec/sponsor interviews — *affects:* all
 2. Can we get a before/after baseline for the first job in a pilot org? — *answered by:* pilot design with a policy owner — *affects:* throughput, quality
 3. Which PM jobs can be framed as classification against a known taxonomy (risk review, feedback routing, spec-completeness checks), so that SME-labelled accuracy becomes the measure? — *answered by:* reviewing the PM jobs map with domain SMEs — *affects:* classification accuracy
 - (user-story-mapping) Can each story's success criteria be measured as written (for example 'few gaps in first review', 'reliance matches measured accuracy')? Which need new instrumentation? — *answered by:* review the 15 stories' success criteria with whoever would run an evaluation — *affects:* all evaluation options
-7. What would a product-work counterpart to contribution metrics measure (specs accepted, rework, decisions), and is per-user tracking acceptable? Anthropic itself calls PRs "an incomplete measure". — *answered by:* Geoff and PM leads — *affects:* all ([contribution-metrics](../research/sources/claude-code-contribution-metrics.md)). (from research-claude-resources-articles)
+7. What would a product-work counterpart to contribution metrics measure (specs accepted, rework, decisions), and is per-user tracking acceptable? Anthropic itself calls PRs "an incomplete measure". — *answered by:* the project owner and PM leads — *affects:* all ([contribution-metrics](../research/sources/claude-code-contribution-metrics.md)). (from research-claude-resources-articles)
 8. Can PM SMEs write rubrics good enough for judgement skills (e.g. spec review), and who reviews the evals? — *answered by:* a pilot — *affects:* Rubric-graded outcomes. (from research-claude-resources-articles)
 9. How are the vendor headline numbers measured (95% analytics accuracy on live queries; 80% "measurable financial impact" in the agents survey)? — *answered by:* Anthropic data team; Material/Anthropic questionnaire — *affects:* any lean that relies on them. (from research-claude-resources-articles)
 10. Would PMs accept an agent that proposes backlog items from metrics and tickets, and what ship rate would make reviewing its proposals worthwhile? — *answered by:* a pilot on one product area that logs why items are rejected — *affects:* proposal funnel, intent-shaping "agent-originated intent" (from research-department-of-product-knowledge-series)
@@ -1262,7 +1222,6 @@ See also, evidence for existing options and placement notes (from the contributi
 13. What crisp pass/fail signal exists for each candidate PM job (the equivalent of a sanitizer build), and which jobs have none? — *answered by:* a job-by-job inventory of verifiable signals — *affects:* pm-agent-evaluation, sequencing, review-and-autonomy. (from research-lennys-newsletter-archive)
 14. Is draft retention (how much of an agent's PRD or brief survives review) a usable quality proxy, or does it reward bland drafts? — *answered by:* comparing retention against blind expert ratings on a sample — *affects:* pm-agent-evaluation, review-and-autonomy. (from research-lennys-newsletter-archive)
 
-### Added by: research-pm-agents-jobs-to-be-done on 2026-10-24; intent-factory rows: research-product-agent-and-harness on 2026-10-24 | user-story-mapping pass on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -1286,13 +1245,13 @@ River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
 
 ## sequencing: Which jobs first and which layer first
 **Choice:** Job level: feedback triage and synthesis (J1, J10); status and "ask the org" (J8); spec/PRD draft and review (J4); prototyping (J3); metrics review (J9); strategy and prioritisation (J2, J5). Stage level: delivery factory first, shaping layer first, or discovery first.
-**Why it matters to the strategy:** It decides what the resource request funds first and what evidence we can gather soonest; the two sub-choices ask the same "what first" question at different granularity.
+**Why it matters to the strategy:** It decides what gets built or tested first and what evidence we can gather soonest; the two sub-choices ask the same "what first" question at different granularity.
 **Related themes:** [[intent-factory-before-discovery]], [[agent-factory-sdlc]], [[human-judgment-pm-jobs]]   **Related dimensions:** [[work-structure]], [[activity-classification]], [[review-and-autonomy]], [[harness-upkeep]], [[adoption-model]]
 Formerly: pm-job-sequencing, investment-sequencing (kept as two sub-choices and presented together, per 01-synthesis.md D.0)
 
 ### Sub-choice: pm-job-sequencing — Which PM jobs to automate first
 **Choice:** Which PM jobs does the first agent(s) take on: feedback triage and synthesis, status and comms, spec/PRD drafting and review, prototyping, metrics review, or strategy and prioritization?
-**Why it matters to the strategy:** It decides what the resource request funds first and what evidence we can gather soonest. Related to Geoff's thesis of accelerating intent shaping before discovery.
+**Why it matters to the strategy:** It decides what gets built or tested first and what evidence we can gather soonest. Related to Geoff's thesis of accelerating intent shaping before discovery.
 **Related themes:** [[feedback-triage-agents]], [[status-update-agents]], [[prd-agents]], [[human-judgment-pm-jobs]], [[intent-factory-before-discovery]]   **Related dimensions:** [[work-structure]], [[review-and-autonomy]]
 
 #### Options
@@ -1313,22 +1272,21 @@ See also, evidence for existing options and placement notes (from the contributi
 
 #### Key questions to choose
 1. Which jobs do the target PMs actually find most painful and most repetitive (frequency x pain x cost of error)? — *answered by:* PM interviews and a time diary; scoring the PM jobs map — *affects:* all options
-2. Do we agree with the intent-first order (shape intent and delivery before AI discovery)? — *answered by:* Geoff / the strategy owner — *affects:* order of options
+2. Do we agree with the intent-first order (shape intent and delivery before AI discovery)? — *answered by:* the strategy owner — *affects:* order of options
 3. For the first job, what baseline would let us show improvement (review time, rework, cycle time)? — *answered by:* a trial with before/after measurement — *affects:* all
 4. Which jobs have org data we can legally and technically reach (calls, tickets, analytics)? — *answered by:* data-access inventory with policy owners — *affects:* feedback, metrics, status
 
 - (Track 6) Score each PM job step on the activity axes (predictability, verifiability, repeatability, error cost, audit need, context breadth) before choosing: jobs high on repeatability, audit and context are candidates for a constrained agent; jobs low on all are better left in the general harness. — *answered by:* scoring workshop with PMs and a policy owner — *affects:* order of options; see activity-classification
-- (user-story-mapping) Do the cross-cutting needs (S11 continuity, S12 context, S13 hand-off, S15 trust) need to be met before the job stories pay off, or can job stories succeed on their own? The baseline pain Geoff describes suggests the former; no evidence tests it. — *answered by:* prototype one job story (S01 or S05) with and without the cross-cutting need met; PM interviews — *affects:* sequencing
+- (user-story-mapping) Do the cross-cutting needs (S11 continuity, S12 context, S13 hand-off, S15 trust) need to be met before the job stories pay off, or can job stories succeed on their own? The baseline pain describes suggests the former; no evidence tests it. — *answered by:* prototype one job story (S01 or S05) with and without the cross-cutting need met; PM interviews — *affects:* sequencing
 5. Is metrics review a better first job than spec drafting for PMs in our org, given data readiness? — *answered by:* a data-catalogue and labelling audit plus a PM time-use survey — *affects:* sequencing, context-and-memory. (from research-lennys-newsletter-archive)
 
 #### Current lean (optional) and what would change it
 Evidence so far leans toward bounded, reviewable jobs (feedback triage, status/updates, spec first draft + gap review) as first candidates, because they have the most first-party use and checkable output; it would change if user interviews show a different top pain, or if a trial shows review cost cancels the time saved.
 
-#### Added by: research-pm-agents-jobs-to-be-done on 2026-10-24 | user-story-mapping pass on 2026-10-24
 
 ### Sub-choice: investment-sequencing — Where to invest first
-**Choice:** Does the resource request fund the delivery factory first (agentic coding, verification, gates), the intent-shaping layer first, or AI discovery first?
-**Why it matters to the strategy:** Geoff's thesis is that order matters. Discovery without a faster factory swells the backlog, and a factory without agent-ready intent idles. This choice shapes the resource request directly.
+**Choice:** Should investment go to the delivery factory first (agentic coding, verification, gates), the intent-shaping layer first, or AI discovery first?
+**Why it matters to the strategy:** Geoff's thesis is that order matters. Discovery without a faster factory swells the backlog, and a factory without agent-ready intent idles. This choice shapes the next phase of work directly.
 **Related themes:** [[intent-factory-before-discovery]], [[agent-factory-sdlc]], [[build-vs-buy]]   **Related dimensions:** [[intent-shaping-and-spec]], [[loop-source]]
 
 #### Options
@@ -1348,15 +1306,11 @@ See also, evidence for existing options and placement notes (from the contributi
 1. Where is our actual bottleneck today: shovel-ready intent, build, review, or release? — *answered by:* value-stream data (lead time by stage) — *affects:* all
 2. Will engineering commit sustained capacity to factory work, rather than spending AI gains on new features? — *answered by:* engineering and product leadership — *affects:* delivery-first, shaping-first
 3. Can shaping and factory investment run together, so that neither idles? — *answered by:* a joint pilot on one team — *affects:* delivery-first, shaping-first
-4. Should a product-agent effort start at intent capture (the playbook's no-prerequisite first play), or downstream where agents already work? Asana's Command reports that automated feedback-to-PR loops bloated cycles until planning was gated ([asana-coach](../research/sources/claude-asana-agents-you-can-coach.md)), which supports intent first. — *answered by:* the deck; a pilot — *affects:* all. (from research-claude-resources-articles)
+4. Should a product-agent effort start at intent capture (the playbook's no-prerequisite first play), or downstream where agents already work? Asana's Command reports that automated feedback-to-PR loops bloated cycles until planning was gated ([asana-coach](../research/sources/claude-asana-agents-you-can-coach.md)), which supports intent first. — *answered by:* the strategy; a pilot — *affects:* all. (from research-claude-resources-articles)
 
 #### Current lean and what would change it
 Geoff's doc leans towards delivery-first, then shaping, then discovery. Bottleneck data showing build is not the constraint would change that lean.
 
-#### Added by: research-product-agent-and-harness on 2026-10-24
-
-#### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
-- Reference workload for the first bake-off is **intent shaping**: take high-level intent and shape it against the real constraints of a large enterprise into intent that deserves to ship and is ready to, with constraints identified and resolved, dependencies mapped, and ready to hand to an engineering team or coding agent. It replaces PRD review as the example job.
 
 
 River/Aquifer additions (competitive-teardown-shopify-river, 2026-10-24):
@@ -1457,7 +1411,6 @@ See also, evidence for existing options and placement notes (from the contributi
 9. Which PM jobs have deterministic stop criteria (fit for /goal) and which need a human-judged stop? — *answered by:* PMs plus the eval owner — *affects:* Loops by what is handed off. (from research-claude-resources-articles)
 10. Should a PM harness's critics see only the artifact (spec, prototype) and not the conversation that produced it? — *answered by:* an A/B on critique quality with and without session context — *affects:* builder plus critic loop; trust-privacy-defaults (task-context isolation). (from research-lennys-newsletter-archive)
 
-#### Added by: director (seed), 2026-10-24; Glass pass: competitive-teardown-ramp-glass on 2026-10-24 | Track 4 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | research-agent-runtime-patterns-taxonomy (Track 3) on 2026-10-24 | Track 2 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | user-story-mapping pass on 2026-10-24
 
 ### Sub-choice: agent-unit — Persona, job, or stage as the unit of an agent
 **Choice:** Is the unit we standardise a persona (a "PM agent"), a job (e.g. feedback triage), a lifecycle stage (discovery, shaping, delivery), or a workflow chaining several?
@@ -1479,10 +1432,6 @@ See also, evidence for existing options and placement notes (from the contributi
 1. Do PMs in the target orgs think in personas, jobs or stages when they ask for help? — *answered by:* PM interviews, card sort of the jobs map — *affects:* all
 2. Are personas stable enough to build on (founder-PM vs IC PM vs CPO differ)? — *answered by:* persona research with each type — *affects:* persona agent
 8. Where do persona sub-agents hand off to each other and what carries the state (shared file, message, shared session)? Practitioners report handoffs as the weak point — *answered by:* prototype tests of handoff artifacts — *affects:* work-structure, session-persistence-sharing. (from research-lennys-newsletter-archive)
-#### Added by: research-pm-agents-jobs-to-be-done on 2026-10-24
-
-#### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
-- Agreed as the first hypothesis to test: 'a task agent beats a skill in a general harness on a standardised job', on intent shaping. Geoff says 'we don't know' whether standards should be encoded as fixed workflows or as rubrics and evals, and the call should not be forced. Keep it as a bake-off variable and key question.
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -1505,7 +1454,7 @@ Key questions (Stripe pass):
 ### Options
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
 |---|---|---|---|---|---|---|
-| Two classes: structured vs unstructured | Binary split by whether the path can be written down | Anthropic workflows vs agents | Simple; matches Geoff's framing | Hides the middle; most production systems are hybrids | mainstream | [Building effective agents](../research/sources/anthropic-building-effective-agents.md) (first-party); [LangChain](../research/sources/langchain-how-to-think-about-agent-frameworks.md) (vendor claim, "how agentic") |
+| Two classes: structured vs unstructured | Binary split by whether the path can be written down | Anthropic workflows vs agents | Simple; matches the working hypothesis | Hides the middle; most production systems are hybrids | mainstream | [Building effective agents](../research/sources/anthropic-building-effective-agents.md) (first-party); [LangChain](../research/sources/langchain-how-to-think-about-agent-frameworks.md) (vendor claim, "how agentic") |
 | Multi-axis task properties | Score each job step on predictability, verifiability, repeatability, error cost, audit need, context breadth, collaboration | Google's requirement-driven decision table; Track 6 axes A1-A7 | Explains why review and policy work constrain while ideation does not | Axes are a synthesis, untested with users | emerging | [Google design patterns](../research/sources/google-cloud-choose-design-pattern-agentic-ai.md) (vendor claim); [Track 6 report](../tasks/research-agent-runtime-patterns-taxonomy/track-6-work-structure-fit.md) (judgment) |
 | Worker-desired agency | Classify by how much human involvement the person wants (Human Agency Scale H1-H5) crossed with agent capability | Stanford WORKBank (844 tasks, 104 occupations) | Captures adoption and trust, not only feasibility | Self-reported; O*NET tasks, not PM jobs | emerging | [Future of Work with AI Agents](../research/sources/arxiv-future-of-work-with-ai-agents.md) (independent) |
 | Usage-derived pattern | Classify by how people actually use the agent: directive/automation vs iterative/augmentation | Anthropic Economic Index | Grounded in logs | Reflects access route (API vs chat) as much as the job | emerging | [Economic Index Jan 2026](../research/sources/anthropic-economic-index-2026-01.md) (first-party) |
@@ -1522,10 +1471,6 @@ See also, evidence for existing options and placement notes (from the contributi
 4. Do three axes (safety, volume, verifiability) sort PM job steps as well as the seven Track 6 axes, so the simpler canvas could be used in user workshops? — *answered by:* scoring the same 10–20 steps both ways and comparing against bake-off results — *affects:* three-axis canvas, multi-axis task properties (from research-department-of-product-knowledge-series)
 5. Do the candidates mined from usage (`/insights`) match what workshops pick? — *answered by:* a pilot with 3–5 PMs: report first, then workshop, then compare — *affects:* repetition report, usage-derived pattern (from research-department-of-product-knowledge-series)
 
-### Added by: research-agent-runtime-patterns-taxonomy (Track 6) on 2026-10-24
-
-#### Geoff's answers, 2026-10-24 (via research-agent-runtime-patterns-taxonomy)
-- Agreed: classify by job step, not by user.
 
 ---
 
@@ -1573,7 +1518,6 @@ See also, evidence for existing options and placement notes (from the contributi
 #### Current lean and what would change it
 No lean yet. In regulated organisations, evidence so far points to every-change review as the floor (Stripe), with upstream classification as the lever that could shrink review effort. That would change if policy owners accept risk-scored auto-approval.
 
-#### Added by: research-product-agent-and-harness on 2026-10-24 | user-story-mapping pass on 2026-10-24
 Row moved from governance-control-plane: "Logged human override on an approval-biased AI reviewer" (Track 6). Its attribution is that section's Added by line, under [[governance-control-plane]].
 
 ### Sub-choice: review-gate-placement — Where review gates sit on PM-agent output
@@ -1606,7 +1550,7 @@ See also, evidence for existing options and placement notes (from the contributi
 - Per-action approval is expected to fade; containment by permissions is the durable control — [schulhoff](../research/sources/lenny-podcast-sander-schulhoff-ai-security.md) (independent); "click OK five times a minute" fails — [willison](../research/sources/lenny-podcast-simon-willison-state-of-ai.md) (independent). (from research-lennys-newsletter-archive)
 - Review hollowing and oversight load: "I just follow Claude" among surveyed workers — [tech-workers-2026](../research/sources/lenny-newsletter-tech-workers-2026-survey.md) (anecdote within survey); the mental tax stays with the delegator and grows with agent count — [graham](../research/sources/lenny-podcast-molly-graham-delegating-to-ai.md) (anecdote); verification is the ceiling, one engineer caps parallel agents at three — [cw-pms-coding-tools](../research/sources/lenny-community-wisdom-pms-ai-coding-tools.md) (anecdote); PR, design review and QA became the bottleneck in a product-builder pilot — [cw-product-engineers](../research/sources/lenny-community-wisdom-product-engineers-pilot.md) (anecdote); validation and review named as the current limit, with self-verifying agents as the fix — [embiricos](../research/sources/lenny-podcast-embiricos-codex-human-bottleneck.md) (vendor claim). (from research-lennys-newsletter-archive)
 - Review UI: approvals, a summarising inbox, logs and quick rollback when human and agent share an artifact — [shipper-paradox](../research/sources/lenny-podcast-dan-shipper-ai-paradox.md) (anecdote); rendered preview before diff — [embiricos](../research/sources/lenny-podcast-embiricos-codex-human-bottleneck.md) (vendor claim). (from research-lennys-newsletter-archive)
-- See also (director, contribution merge 2026-10-24): *Decouple shipping from exposure (post-build PM gate)* is the review-side counterpart of *PR as the PRD* in [intent-shaping-and-spec](#intent-shaping-and-spec-intent-shaping-mode-and-spec-standard) (intent-shaping-mode). Both move the product decision to after working software exists.
+- See also (contribution merge 2026-10-24): *Decouple shipping from exposure (post-build PM gate)* is the review-side counterpart of *PR as the PRD* in [intent-shaping-and-spec](#intent-shaping-and-spec-intent-shaping-mode-and-spec-standard) (intent-shaping-mode). Both move the product decision to after working software exists.
 
 #### Key questions to choose
 1. For each candidate PM job, what is the cost of an error (wrong customer claim, wrong status, wrong spec) and who bears it? — *answered by:* PM and stakeholder interviews — *affects:* all
@@ -1617,7 +1561,6 @@ See also, evidence for existing options and placement notes (from the contributi
 6. Can a PM-written rubric plus subagent grader replace per-output human review for recurring jobs (changelogs, status, synthesis), and what false-pass rate is acceptable? — *answered by:* a pilot comparing rubric-graded outputs against human ratings on a held-out set — *affects:* review-and-autonomy, pm-agent-evaluation, sequencing. (from research-lennys-newsletter-archive)
 7. Do encoded reviewer or persona critique agents change the spec before build, or only find what a later review would have found? — *answered by:* a pilot that runs them on live specs and logs which findings changed scope — *affects:* encoded reviewer pre-pass vs PM-led with a shaping skill. (from research-lennys-newsletter-archive)
 - See also cross-cutting key question 12 (oversight capacity) (from research-lennys-newsletter-archive)
-#### Added by: research-pm-agents-jobs-to-be-done on 2026-10-24
 
 ### Sub-choice: autonomy-calibration — Who sets how much autonomy an agent gets, and how it changes
 **Choice:** Is autonomy fixed per task class by policy, set by each user on a slider, earned over time from measured accuracy, or decided by a classifier?
@@ -1649,12 +1592,11 @@ See also, evidence for existing options and placement notes (from the contributi
 1. Do our target users' autonomy preferences change with experience as the Anthropic data suggests, and should the product track that? — *answered by:* usage telemetry from a pilot; interviews — *affects:* user-set slider vs fixed policy
 2. For which jobs would a policy owner refuse user-set autonomy? — *answered by:* risk/compliance owners — *affects:* fixed policy vs slider
 3. What labelled data exists to earn autonomy for a job such as PRD review? — *answered by:* SME labelling exercise — *affects:* earned autonomy
-4. Which action classes should a regulated product agent never auto-approve (outbound messages, writes to systems of record, production)? Nuro, Gusto and Garner each picked one class. — *answered by:* compliance owners and Geoff — *affects:* Classifier-gated, Autonomy tiered by environment. (from research-claude-resources-articles)
+4. Which action classes should a regulated product agent never auto-approve (outbound messages, writes to systems of record, production)? Nuro, Gusto and Garner each picked one class. — *answered by:* compliance owners and the project owner — *affects:* Classifier-gated, Autonomy tiered by environment. (from research-claude-resources-articles)
 5. What agreement threshold and sample size moves an agent from recommender to automation mode, and who re-reviews when a model upgrade unlocks new behaviour inside existing permissions? — *answered by:* ABC Legal's CTO; security plus harness owner — *affects:* Earned from measured accuracy. (from research-claude-resources-articles)
 6. For each tool a PM agent can call, is the action reversible, and who classifies it? — *answered by:* a tool inventory reviewed with policy owners — *affects:* reversibility split, propose-only, deterministic gates (from research-department-of-product-knowledge-series)
 7. Do we have permissions to let agents read the results of their own writes? (Companies reportedly grant write more readily than read, which stops agents checking their output.) — *answered by:* a permissions review of target systems (Slack, tracker, CRM) — *affects:* review-and-autonomy, agent-identity-delegation, governance-control-plane. (from research-lennys-newsletter-archive)
 
-#### Added by: research-agent-runtime-patterns-taxonomy (Track 6) on 2026-10-24
 Row moved from governance-control-plane: "Autonomy slider + ground-truth evals" (Ramp Policy Agent, Glass pass). Its attribution is that section's Added by line, under [[governance-control-plane]].
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
@@ -1712,21 +1654,20 @@ See also, evidence for existing options and placement notes (from the contributi
 - **Agent-originated intent**: Claude reads Anthropic's internal feedback channel, bugs and telemetry and proposes fixes as PRs — [cherny](../research/sources/lenny-podcast-boris-cherny-after-coding.md) (first-party); Codex's lead favours "chatter-driven development" over specs — [embiricos](../research/sources/lenny-podcast-embiricos-codex-human-bottleneck.md) (vendor claim); risk: engineers fed call transcripts straight into implementation and half the shipped suggestions were judged bloat — [cw-eng-outpaces](../research/sources/lenny-community-wisdom-engineering-outpaces-product.md) (anecdote). (from research-lennys-newsletter-archive)
 - The bottleneck has moved upstream: with about 90% AI-written code the limit is decision making and alignment; Anthropic's CPO still seeks a "minimum viable strategy" — [krieger](../research/sources/lenny-podcast-mike-krieger-anthropic-cpo.md) (first-party); spec-to-implementation from three weeks to three hours — [willison](../research/sources/lenny-podcast-simon-willison-state-of-ai.md) (independent); "I'm the bottleneck, not the engineer" — [rauch](../research/sources/lenny-podcast-guillermo-rauch-v0.md) (vendor claim); building got cheap but confusion didn't; slipped estimates trace to weak specs — [cw-ai-velocity](../research/sources/lenny-community-wisdom-ai-velocity-strategy.md) (anecdote). (from research-lennys-newsletter-archive)
 - Prototype abundance: thousands of prototypes not aimed at an agreed problem — [stone](../research/sources/lenny-podcast-elizabeth-stone-netflix-systems-thinkers.md) (first-party), [cw-am-calls](../research/sources/lenny-community-wisdom-am-calls-mcp-server.md) (anecdote); coding tools are linear and bias to one direction, so divergent exploration still happens on a canvas first — [jenny-wen](../research/sources/lenny-podcast-jenny-wen-design-process-dead.md) (first-party); a champion of three prototypes per feature has no confident way to choose among them and rejects simulated users — [willison](../research/sources/lenny-podcast-simon-willison-state-of-ai.md) (independent). (from research-lennys-newsletter-archive)
-- See also (director, contribution merge 2026-10-24): *PR as the PRD* pairs with *Decouple shipping from exposure (post-build PM gate)* in [review-and-autonomy](#review-and-autonomy-review-and-autonomy) (review-gate-placement): build first, then decide what ships.
+- See also (contribution merge 2026-10-24): *PR as the PRD* pairs with *Decouple shipping from exposure (post-build PM gate)* in [review-and-autonomy](#review-and-autonomy-review-and-autonomy) (review-gate-placement): build first, then decide what ships.
 
 #### Key questions to choose
 1. What are the universal questions every piece of intent must answer here (including risk questions), and where is the source for each answer? — *answered by:* a workshop with PMs plus a review of past specs — *affects:* shaping skill, agent-led
 2. Which of those answers can an agent find with today's context access, and which stay with a person? — *answered by:* a prototype shaping skill run on 3–5 live initiatives — *affects:* agent-led
 3. How far ahead of delivery is shovel-ready intent today, and does a shaping skill extend that? — *answered by:* backlog analysis before and after a pilot — *affects:* all
 4. Is a prototype acceptable as the spec of record in a regulated setting? — *answered by:* risk and compliance policy owners — *affects:* prototype-first
-5. Anthropic's own trends report collapses requirements and design into "express intent (minutes)" ([trends](../research/sources/claude-2026-agentic-coding-trends.md)), and the playbook folds problem and outcome into intent.md. Who does the shaping between an idea and an accepted intent.md, and is that the product agent's job? — *answered by:* the strategy deck plus a PM prototype — *affects:* all options. (from research-claude-resources-articles)
+5. Anthropic's own trends report collapses requirements and design into "express intent (minutes)" ([trends](../research/sources/claude-2026-agentic-coding-trends.md)), and the playbook folds problem and outcome into intent.md. Who does the shaping between an idea and an accepted intent.md, and is that the product agent's job? — *answered by:* the strategy plus a PM prototype — *affects:* all options. (from research-claude-resources-articles)
 6. Does prototype-first, light-documentation planning survive a regulated org's need for a decision record, or does the committed artifact chain become mandatory? — *answered by:* risk/compliance owners plus a PM trial — *affects:* Prototype-first, Committed artifact chain. (from research-claude-resources-articles)
 7. Do synthetic persona verdicts agree with what real users later said, for our own features? — *answered by:* a back-test on past features whose reception is known — *affects:* persona panel (from research-department-of-product-knowledge-series)
 8. Extending existing Q4 beyond prototypes: when the handoff is an eval set, a PR or a prototype rather than a document, who outside the team (risk, compliance, design) can read and sign it off, does it carry the why a regulated reviewer needs, and can a leader grant "no spec" permission at all or only a lighter approved artifact? — *answered by:* a spec-as-evals handoff with one risk reviewer on one feature; control-owner and sponsor interviews — *affects:* eval set as spec, PR as the PRD, prototype-first, adoption-model. (from research-lennys-newsletter-archive)
 9. When prototypes are nearly free, what decides which of several variants proceeds, who decides and how fast, where are decisions logged, and can any of it be delegated (synthetic vs human usability signals)? — *answered by:* observing teams that prototype in parallel; a time study of decision latency; whether teams that gate prototyping on a framed problem ship fewer reworked features — *affects:* prototype-first, all shaping modes, sequencing, pm-agent-evaluation. (from research-lennys-newsletter-archive)
 10. When building is nearly free, does shaping happen before the build (pitch, spec) or after it (build freely, decouple shipping from exposure, PM decides what to keep)? — *answered by:* trials comparing pre-build shaping with post-build triage on rework, bloat and maintenance cost — *affects:* intent-shaping-and-spec, review-and-autonomy, target-outcome. (from research-lennys-newsletter-archive)
 
-#### Added by: research-product-agent-and-harness on 2026-10-24
 
 ### Sub-choice: spec-standard — What counts as agent-ready intent
 **Choice:** What artifact hands intent to delivery agents: a narrative PRD or deck, a short evidence-tied spec held to a completeness standard with evals, a prototype, or a canonical spec that also carries risk mitigations?
@@ -1775,7 +1716,6 @@ See also, evidence for existing options and placement notes (from the contributi
 13. Should the canonical statement of intent be editable by agents at all? — *answered by:* whether teams that lock intent docs catch more code/intent drift than code-as-truth teams — *affects:* intent-shaping-and-spec, context-and-memory, review-and-autonomy. (from research-lennys-newsletter-archive)
 14. Is the dependency and open-questions check a distinct agent job worth separating from drafting, or part of spec review? — *answered by:* comparing defect and rework rates with a separate checker agent vs a single drafting agent — *affects:* intent-shaping-and-spec, work-structure. (from research-lennys-newsletter-archive)
 
-#### Added by: research-product-agent-and-harness on 2026-10-24
 
 #### Stripe chain additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 A Stripe engineer's whiteboard (Not My Business video, ~12:24) frames product work as **Opportunity → Problem → Goal → Intent → Plan**. A brace over Problem and Goal is labelled, partly legibly, "Customer conv…". Code follows: the plan is handed to a minion. Orbit (Stripe's planning agent) owns Intent research and Plan, and minions own Code. Opportunity, Problem and Goal stay with people. This separates two things the options above treat as one: **intent shaping** (problem, goal, intent) and **planning** (intent to an agent-executable plan).
@@ -1786,7 +1726,7 @@ A Stripe engineer's whiteboard (Not My Business video, ~12:24) frames product wo
 | Agent-drafted spec reviewed as an issue, then delegated | The agent drafts a precise spec (contract, valid and invalid examples); the team reviews it before implementation | Stripe extensibility SDK (~20 lint rules) | Catches design issues before code review | Works for bounded work with clear correctness | early-adopter | [SDK post](../research/sources/stripe-ai-didnt-write-our-sdk.md) (first-party) |
 
 Key questions (Stripe pass):
-4. Is the gap we fund **above intent** (opportunity, problem, goal, which Stripe leaves to people and customer conversations) or **below it** (intent to plan, which Stripe has automated with Orbit)? Geoff's Intent Factory loop starts at "informal intent", so it covers the lower half. — *answered by:* Geoff, plus a time study of where PM hours and delays sit across the six stages — *affects:* agent-led interrogation, prototype-first, plan-as-artifact
+4. Is the gap we build for **above intent** (opportunity, problem, goal, which Stripe leaves to people and customer conversations) or **below it** (intent to plan, which Stripe has automated with Orbit)? Geoff's Intent Factory loop starts at "informal intent", so it covers the lower half. — *answered by:* the project owner, plus a time study of where PM hours and delays sit across the six stages — *affects:* agent-led interrogation, prototype-first, plan-as-artifact
 5. Does a reviewed plan (Stripe) do the job of a completeness-standard spec (Ramp, Geoff's Action 3), or do they gate different risks? — *answered by:* compare defect and rework rates of plan-gated vs spec-gated agent work in a pilot — *affects:* short evidence-tied spec, plan as artifact
 
 ---
@@ -1829,7 +1769,7 @@ See also, evidence for existing options and placement notes (from the contributi
 - **Decentralised authoring, central trust**: Block's bottom-up pockets (sales, engineering) plus top-down standardisation; 40-50 internal MCP extensions — [block-goose](../research/sources/howiai-block-goose-brosamer-axen.md) (first-party). (from research-lennys-newsletter-archive)
 - **One domain, one surface first**: async Codex Cloud was hard to adopt; growth came from interactive IDE/CLI pairing whose configuration later enables delegation; internal power users were a misleading sample — [embiricos](../research/sources/lenny-podcast-embiricos-codex-human-bottleneck.md) (vendor claim). Cost transparency per operation as a tactic in a regulated company — [kaul](../research/sources/howiai-prerna-kaul-fda-submissions.md) (first-party). (from research-lennys-newsletter-archive)
 - Adoption sorts the workforce: AI lifts about half and destabilises others, more at 10,000+ person companies (23% vs 15% at 1-10); the top fear is more work for the same pay — [tech-workers-2026](../research/sources/lenny-newsletter-tech-workers-2026-survey.md) (independent). (from research-lennys-newsletter-archive)
-- Overlapping rows (director, contribution merge 2026-10-24): *Peer showcase channel, then org-wide rollout* and *Recurring peer demo rituals* both spread use through peer demos; kept separate because the first adds promotion of personal skills to team assets.
+- Overlapping rows (contribution merge 2026-10-24): *Peer showcase channel, then org-wide rollout* and *Recurring peer demo rituals* both spread use through peer demos; kept separate because the first adds promotion of personal skills to team assets.
 
 ### Key questions to choose
 1. Would our target users' orgs tolerate mandates/leaderboards, or does adoption have to be product-led? — *answered by:* user interviews — *affects:* all
@@ -1843,7 +1783,6 @@ See also, evidence for existing options and placement notes (from the contributi
 9. Does the adoption plan turn productivity gains into relief or into a higher quota, and how would staff know? — *answered by:* an explicit policy on scope and workload, plus burnout and sentiment tracking alongside usage — *affects:* adoption-model, target-outcome. (from research-lennys-newsletter-archive)
 10. Should enablement start by giving each team the decision of what stays human, or by mandating use and measuring it? — *answered by:* a pilot comparing veto-style design sessions with a mandate, measuring sustained weekly use after 8-12 weeks — *affects:* adoption-model, activity-classification, review-and-autonomy. (from research-lennys-newsletter-archive)
 
-### Added by: competitive-teardown-ramp-glass on 2026-10-24 | Track 4 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | Track 1 pass: research-agent-runtime-patterns-taxonomy on 2026-10-24 | research-agent-runtime-patterns-taxonomy (Track 3) on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 Baseline evidence: before Kai, 8,500 of ~10,000 Stripes used LLM tools daily (Oct 2025), via GoLLM presets and a LibreChat front end on Toolshed ([Latent Space, Sands](../research/sources/latentspace-emily-sands-stripe.md) (first-party)).
@@ -1878,7 +1817,7 @@ Department of Product pass (competitive-teardown-stripe-knowledge-agents, 2026-1
 **Choice:** Where people meet the agent: our own app (desktop or web workspace), the chat tool they already live in (Slack, Teams), the IDE/CLI, embedded inside existing tools (docs, tracker, browser), or one agent service behind several of these.
 **Why it matters to the strategy:** The surface decides who can use the agent on day one, what work is visible to others, what UI we must fund (artifact rendering, review panes, cost meters), and how much of the experience a chat vendor controls. River (Slack only) and Glass (own desktop app) are the two strongest opposite data points.
 **Related themes:** [[agent-as-service-many-surfaces]], [[org-learning-loop]], [[shared-persistent-sessions]], [[remote-agent-invocation]], [[enablement-by-product]]   **Related dimensions:** [[trust-privacy-defaults]], [[session-persistence-sharing]], [[artifact-and-project-structure]], [[adoption-model]], [[remote-invocation-route]], [[runtime-location]]
-Opened by competitive-teardown-shopify-river (Geoff's request), in parallel with competitive-teardown-stripe-knowledge-agents.
+Opened by competitive-teardown-shopify-river, in parallel with competitive-teardown-stripe-knowledge-agents.
 
 ### Options
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -1907,7 +1846,7 @@ See also, evidence for existing options and placement notes (from the contributi
 3. Does the org's chat tool allow a bot of this kind: API rate limits, retention settings, eDiscovery, admin approval for apps, Enterprise Grid features? — *answered by:* IT / chat-platform owner — *affects:* chat-native options, vendor chat-agent
 4. Is Shopify's adoption (5,938 users in 30 days) due to the Slack surface, the monorepo substrate, or a CEO-led culture? Can we separate them? — *answered by:* ask Shopify builders if reachable; compare with Ramp's own-app adoption curve; more research — *affects:* all
 5. Do non-engineers (PMs, designers, support) get as much from a chat-only agent as engineers do? Shopify says PMs and designers use River via Remote Dev but gives no split by role. — *answered by:* ask Shopify; pilot with mixed roles — *affects:* chat-native vs own app
-6. If we choose a chat surface, which one: is the target org on Slack or Teams, and does it differ across target orgs? — *answered by:* Geoff / target-org inventory — *affects:* chat-native, vendor offering
+6. If we choose a chat surface, which one: is the target org on Slack or Teams, and does it differ across target orgs? — *answered by:* the project owner / target-org inventory — *affects:* chat-native, vendor offering
 8. Does a PM product agent live in the work tracker (where Notion and Asana put it), in chat, or in its own app? — *answered by:* user interviews (from research-claude-resources-articles)
 9. Is our PM agent an MCP client that reaches other tools, or a server that other agents call? DoP reports that Intercom chose the first and Stripe the second. — *answered by:* where PMs already work, and whether the agent's value depends on being the front door — *affects:* agent-interface, remote-invocation-route (from research-department-of-product-knowledge-series)
 10. If a regulated customer's employees may only use one corporate-blessed assistant, is a PM harness a product they open, or a set of skills and MCP tools delivered into that assistant? — *answered by:* procurement and policy interviews with target enterprises — *affects:* agent-interface, harness-layering, loop-source. (from research-lennys-newsletter-archive)
@@ -1916,7 +1855,6 @@ See also, evidence for existing options and placement notes (from the contributi
 ### Current lean and what would change it
 No lean. Evidence so far: chat-native wins on reach and on making work visible by default (River); an own app wins on rich, artifact-heavy, multi-step work for non-engineers (Glass); and both large adopters ended up with more than one surface (River + Quick/Live Preview; Inspect's Slack + web + extension). A finding that our first jobs are artifact-heavy would push toward an own app or chat + companion; a finding that most value comes from pulling the agent into existing human threads would push toward chat-native.
 
-### Added by: competitive-teardown-shopify-river on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -1935,7 +1873,7 @@ Key questions (Stripe pass):
 **Choice:** Who can see an agent session (its transcript, artifacts and memory) by default: only its owner, the people invited, a team or project, or everyone in the org; and whether private work is allowed at all.
 **Why it matters to the strategy:** It decides how much the org learns from each session (Shopify's whole thesis) against what users will be willing to ask, what sensitive data leaks, and whether the design survives a regulated setting. It is a policy choice as much as a product one and has its own owners (security, legal, HR, works councils).
 **Related themes:** [[public-by-default-agent-work]], [[org-learning-loop]], [[shared-persistent-sessions]], [[identity-delegation]], [[task-context-isolation]], [[scoped-governance-containers]], [[compounding-context-repo]]   **Related dimensions:** [[agent-interface]], [[session-persistence-sharing]], [[agent-identity-delegation]], [[governance-control-plane]], [[context-and-memory]], [[artifact-and-project-structure]]
-Opened by competitive-teardown-shopify-river (Geoff's request), in parallel with competitive-teardown-stripe-knowledge-agents.
+Opened by competitive-teardown-shopify-river, in parallel with competitive-teardown-stripe-knowledge-agents.
 
 ### Options
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -1956,11 +1894,11 @@ See also, evidence for existing options and placement notes (from the contributi
 
 ### Key questions to choose
 1. What share of the target jobs touch data that can't be open to the whole org (customer PII, financials, security, HR, legal, unreleased strategy), and can those jobs be fenced without killing the default? — *answered by:* jobs map scored with a data-classification owner; security/privacy policy owner — *affects:* public-by-default, fenced exceptions, team-scoped
-2. Is the target a regulated organisation with information barriers, records-retention, or works-council rules on employee monitoring? If so, is public-by-default allowed at all? — *answered by:* Geoff; compliance, legal and (in the EU) works council — *affects:* public options
+2. Is the target a regulated organisation with information barriers, records-retention, or works-council rules on employee monitoring? If so, is public-by-default allowed at all? — *answered by:* the project owner; compliance, legal and (in the EU) works council — *affects:* public options
 3. How large is the chilling effect: which questions stop being asked when sessions are public, and are they the low-value ones (River's claim) or the important, uncertain ones (Bernstein's finding)? — *answered by:* a pilot with matched teams (public vs private default), counting questions asked and their kind; user interviews — *affects:* public-by-default vs private-by-default
 4. Does visibility itself drive the learning, or does it come from someone mining the corpus into skills (Shopify does both)? If mining is what matters, private-by-default with an opt-in corpus might capture most of the value. — *answered by:* ask Shopify; a pilot measuring reuse of others' threads vs reuse of mined skills — *affects:* public-by-default vs private draft then publish
 5. When a session is visible, does the viewer see only what their own permissions allow (re-check), or everything the session saw with the creator's access? — *answered by:* security owner; prototype — *affects:* all shared options; see [[agent-identity-delegation]]
-6. What does our org's culture support: would a CEO-modelled public channel (Tobi's #tobi_river, 100+ watchers) work here, or does public-by-default need a leadership mandate we don't have? — *answered by:* Geoff / leadership; user interviews — *affects:* public-by-default
+6. What does our org's culture support: would a CEO-modelled public channel (Tobi's #tobi_river, 100+ watchers) work here, or does public-by-default need a leadership mandate we don't have? — *answered by:* the project owner / leadership; user interviews — *affects:* public-by-default
 7. How are memory and skills learned from public sessions scrubbed of sensitive data before they are reused everywhere? — *answered by:* prototype of a mining pipeline with a redaction step; Track 5 memory research — *affects:* public-by-default, private draft then publish
 10. How does public-by-default work under information barriers in a regulated org? — *answered by:* compliance (from research-claude-resources-articles)
 11. Which PM-agent jobs combine reading untrusted input (customer feedback, email, web pages) with write actions to shared systems, so task-scoped permissions alone cannot protect them? — *answered by:* a read/write map of the target PM jobs — *affects:* trust-privacy-defaults, governance-control-plane, sequencing. (from research-lennys-newsletter-archive)
@@ -1968,7 +1906,6 @@ See also, evidence for existing options and placement notes (from the contributi
 ### Current lean and what would change it
 No lean. Shopify is the only large-scale evidence for public-by-default and it is all self-reported; the one independent study found the opposite effect in a very different setting (factory floor, 2009). A finding that the target org is regulated, or that the first jobs are mostly sensitive, pushes toward private or team-scoped defaults with a publish step; a pilot showing a small chilling effect and high reuse of others' threads would push toward public-by-default.
 
-### Added by: competitive-teardown-shopify-river on 2026-10-24
 
 #### Stripe knowledge-agents additions (competitive-teardown-stripe-knowledge-agents, 2026-10-24)
 | Option | What it is | Examples | Gives you | Costs / risks | Maturity | Evidence |
@@ -1991,22 +1928,22 @@ Department of Product pass (competitive-teardown-stripe-knowledge-agents, 2026-1
 ## Cross-cutting key questions
 
 
-1. Who is the user we are choosing for (individual PM, product team, whole org), and does the answer differ by dimension? — *answered by:* Geoff / user interviews
-2. What would the resource request fund first: a prototype to choose between options, or a build of the leading option?
-3. Is the target setting a regulated organisation (as in Geoff's two intent docs)? If so, how does regulatory review shape every dimension: review gating, prototype-as-spec, context governance, and harness choice? — *answered by:* Geoff; risk and compliance policy owners — *affects:* [[review-and-autonomy]], [[intent-shaping-and-spec]], [[context-and-memory]], [[governance-control-plane]] (added by research-product-agent-and-harness)
+1. Who is the user we are choosing for (individual PM, product team, whole org), and does the answer differ by dimension? — *answered by:* the project owner / user interviews
+2. What should further work cover first: a prototype to choose between options, or a build of the leading option?
+3. Is the target setting a regulated organisation? If so, how does regulatory review shape every dimension: review gating, prototype-as-spec, context governance, and harness choice? — *answered by:* the project owner; risk and compliance policy owners — *affects:* [[review-and-autonomy]], [[intent-shaping-and-spec]], [[context-and-memory]], [[governance-control-plane]] (added by research-product-agent-and-harness)
 4. Shared-agent identity (creator, requester, service account) is a product decision as much as a security one: what is the least surprising behaviour for our users when a teammate sends an instruction to an agent holding someone else's access? — *answered by:* user interviews plus security owner — *affects:* governance-control-plane, session-persistence-sharing (Track 5)
-5. (Track 3) Is the first deployed task agent meant to be called from many harnesses we do not control, or only from our own product? The answer decides whether protocols (MCP/A2A) matter at all or a vendor API suffices. — *answered by:* Geoff / user interviews; see [[remote-invocation-route]]
-6. (Track 2) Is the thing being funded a harness at all, or the assets and governance around vendor harnesses? The independent evidence says the competitive unit has moved from the loop to the ecosystem surface (skills, marketplaces, governance), and that building the loop is cheap while upkeep and evals are not. — *answered by:* Geoff / director deciding the scope of the request; Track 4 and 5 findings; a scoped upkeep estimate
+5. (Track 3) Is the first deployed task agent meant to be called from many harnesses we do not control, or only from our own product? The answer decides whether protocols (MCP/A2A) matter at all or a vendor API suffices. — *answered by:* the project owner / user interviews; see [[remote-invocation-route]]
+6. (Track 2) Is the thing being built a harness at all, or the assets and governance around vendor harnesses? The independent evidence says the competitive unit has moved from the loop to the ecosystem surface (skills, marketplaces, governance), and that building the loop is cheap while upkeep and evals are not. — *answered by:* project scoping; Track 4 and 5 findings; a scoped upkeep estimate
 
-- (Track 6) Does the project treat "unstructured" work as out of scope for standardisation (leave it in a flexible harness) or as something that still needs structured context (folders, memory, rubrics)? The evidence (best-practices guidance, vault anecdotes) says the path is open but the context is structured. — *answered by:* Geoff; user interviews
+- (Track 6) Does the project treat "unstructured" work as out of scope for standardisation (leave it in a flexible harness) or as something that still needs structured context (folders, memory, rubrics)? The evidence (best-practices guidance, vault anecdotes) says the path is open but the context is structured. — *answered by:* the project owner; user interviews
 
 - (user-story-mapping) Which embodiment fits depends on a fact we lack in several stories: how PMs keep artifacts today, whether reviewers will enter agent sessions, and whether a machine-checkable spec standard exists. Are these three facts the first things to establish before any prototype? The cross-cutting stories ([S11–S15](../tasks/user-story-mapping/stories-cross-cutting.md)) and the S05 pair ([worked derivation](../tasks/user-story-mapping/worked-derivation-s05.md)) mark where each bites. — *answered by:* a short interview round plus one clickable prototype pair — *affects:* all
-7. Ramp changed its answer on who supplies the loop (vendor SDK → own harness) and where it runs (laptop → cloud workers) within about six months of shipping Glass. Should the resource request fund a reversible first step and an explicit revisit point rather than a one-time pattern choice, and what would the revisit criteria be? — *answered by:* Geoff / the strategy deck's framing; evidence in [Building Laminar](../research/sources/ramp-builders-building-laminar.md) (competitive-teardown-ramp-glass, audit 2026-10-24)
-8. (competitive-teardown-stripe-knowledge-agents) Stripe runs its internal knowledge agent on the same harness, sandbox, orchestration and access control as its customer-facing agents, arguing the shared substrate forces the external security bar inside and improves both. Does our resource request assume the internal PM agent and any customer-facing agent share a substrate, or are they separate bets? It bears on loop-source, runtime-location, governance-control-plane and trust-privacy-defaults. — *answered by:* Geoff / product leadership; ask Stripe what sharing has cost them — *affects:* the scope of the request ([source](../research/sources/stripe-meet-knowledge-ai-platform.md), first-party)
+7. Ramp changed its answer on who supplies the loop (vendor SDK → own harness) and where it runs (laptop → cloud workers) within about six months of shipping Glass. Should the next phase take a reversible first step and an explicit revisit point rather than a one-time pattern choice, and what would the revisit criteria be? — *answered by:* the project owner / the strategy's framing; evidence in [Building Laminar](../research/sources/ramp-builders-building-laminar.md) (competitive-teardown-ramp-glass, re-check 2026-10-24)
+8. (competitive-teardown-stripe-knowledge-agents) Stripe runs its internal knowledge agent on the same harness, sandbox, orchestration and access control as its customer-facing agents, arguing the shared substrate forces the external security bar inside and improves both. Does our next phase of work assume the internal PM agent and any customer-facing agent share a substrate, or are they separate bets? It bears on loop-source, runtime-location, governance-control-plane and trust-privacy-defaults. — *answered by:* the project owner / product leadership; ask Stripe what sharing has cost them — *affects:* the scope of the request ([source](../research/sources/stripe-meet-knowledge-ai-platform.md), first-party)
 
-- (competitive-teardown-shopify-river) Does the strategy assume the target org will accept agent work being visible by default? Shopify's River (public-only, no DMs) shows the learning upside; the cost (chilling effect, sensitive data, regulated walls) is unmeasured. The answer moves [[agent-interface]], [[trust-privacy-defaults]], [[context-and-memory]] (corpus mining), [[adoption-model]] and [[agent-identity-delegation]] together. — *answered by:* Geoff; policy/compliance owners; a matched public-vs-private pilot
-9. Every first-party page here prescribes; none reports a controlled outcome. Which two or three claims would the deck rely on, and can any be checked independently (customer platform teams, a pilot)? — *affects:* all leans. (from research-claude-resources-articles)
-10. Anthropic's own guidance moved within six months (multi-agent patterns in April, fold subagents back into one loop in October; chat vs Cowork advice in June, merged in September). How should the deck treat vendor guidance that is this young? — *affects:* work-structure, agent-interface. (from research-claude-resources-articles)
-11. Almost every number in PM-audience explainers belongs to the vendor; DoP relays Strella, Amplitude, DoorDash, Anthropic, Rippling and Vercel figures without checking them. Must every figure be traced to its primary source and labelled before the deck uses it? — *answered by:* the claim-check practice the story worker already uses — *affects:* all dimensions (from research-department-of-product-knowledge-series)
+- (competitive-teardown-shopify-river) Does the strategy assume the target org will accept agent work being visible by default? Shopify's River (public-only, no DMs) shows the learning upside; the cost (chilling effect, sensitive data, regulated walls) is unmeasured. The answer moves [[agent-interface]], [[trust-privacy-defaults]], [[context-and-memory]] (corpus mining), [[adoption-model]] and [[agent-identity-delegation]] together. — *answered by:* the project owner; policy/compliance owners; a matched public-vs-private pilot
+9. Every first-party page here prescribes; none reports a controlled outcome. Which two or three claims would the strategy rely on, and can any be checked independently (customer platform teams, a pilot)? — *affects:* all leans. (from research-claude-resources-articles)
+10. Anthropic's own guidance moved within six months (multi-agent patterns in April, fold subagents back into one loop in October; chat vs Cowork advice in June, merged in September). How should the strategy treat vendor guidance that is this young? — *affects:* work-structure, agent-interface. (from research-claude-resources-articles)
+11. Almost every number in PM-audience explainers belongs to the vendor; DoP relays Strella, Amplitude, DoorDash, Anthropic, Rippling and Vercel figures without checking them. Must every figure be traced to its primary source and labelled before the strategy uses it? — *answered by:* the claim-check practice the story worker already uses — *affects:* all dimensions (from research-department-of-product-knowledge-series)
 12. How many concurrent agent sessions or outputs can one PM or reviewer oversee before review quality drops; does a triage or oversight interface change that number (practitioners use paper lists and folders for 10-20 sessions); and when product people ship more, where does downstream review capacity come from (agent review, a "utility engineer", design-system-only teams)? — *answered by:* a time-and-error study at 1, 3, 6 and 10 concurrent sessions; review queue times in builder pilots — *affects:* review-and-autonomy, session-persistence-sharing, agent-interface, work-structure, target-user, target-outcome. Evidence: [cw-pms-coding-tools](../research/sources/lenny-community-wisdom-pms-ai-coding-tools.md), [graham](../research/sources/lenny-podcast-molly-graham-delegating-to-ai.md), [carson](../research/sources/howiai-ryan-carson-devin-20k-month.md), [cw-product-engineers](../research/sources/lenny-community-wisdom-product-engineers-pilot.md) (anecdote); [sherwin-wu](../research/sources/lenny-podcast-sherwin-wu-openai-codex.md) (first-party). (from research-lennys-newsletter-archive)
 13. Which of our harness investments (skills, file-based context, workflow scaffolding, persona topologies) will models absorb within 12-24 months, and how do we re-test the harness without each scaffold at each model release? (A team dropped BMAD after Opus 4.6 and GPT-5.5; a vibe-coding course went obsolete in months.) — *answered by:* re-testing without each scaffold at each model release — *affects:* harness-upkeep, loop-source, capability-format-portability, work-structure, context-and-memory. Evidence: [sherwin-wu](../research/sources/lenny-podcast-sherwin-wu-openai-codex.md), [cherny](../research/sources/lenny-podcast-boris-cherny-after-coding.md) (first-party); [cw-ai-operating-models](../research/sources/lenny-community-wisdom-ai-operating-models.md), [jovanovic](../research/sources/lenny-podcast-lazar-jovanovic-vibe-coder.md) (anecdote). (from research-lennys-newsletter-archive)

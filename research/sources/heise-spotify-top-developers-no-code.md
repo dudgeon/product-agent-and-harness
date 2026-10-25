@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-A rare independent piece that adds critical context to the Q4 2025 call claim: it treats "top developers" as a deliberate promotional framing, notes that oversight and architecture judgment matter more, and raises the risk that savings fall on junior staff who cannot yet supervise AI. Useful for the deck's balance between company claims and outside views.
+A rare independent piece that adds critical context to the Q4 2025 call claim: it treats "top developers" as a deliberate promotional framing, notes that oversight and architecture judgment matter more, and raises the risk that savings fall on junior staff who cannot yet supervise AI. Useful for the strategy's balance between company claims and outside views.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: author suggests the stress on top developers was deliberate promotion; online critics called it "a loss of control, not a quality feature".

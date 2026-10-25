@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-States that Pendo's Novus runs on Claude Managed Agents (built with the Agent SDK and Claude Code); a stack detail for a PM-adjacent product agent, plus a vendor eval figure. Evidence kind: Anthropic customer story (both parties are vendors), vendor-claim. Audit 2026-10-24: original fetched in full and claims checked; page shows no date.
+States that Pendo's Novus runs on Claude Managed Agents (built with the Agent SDK and Claude Code); a stack detail for a PM-adjacent product agent, plus a vendor eval figure. Evidence kind: Anthropic customer story (both parties are vendors), vendor-claim. Re-check 2026-10-24: original fetched in full and claims checked; page shows no date.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: Anthropic customer page; build-stack claim plus a self-reported "90% success rate on PM-reviewed evaluation sets" (case 4)

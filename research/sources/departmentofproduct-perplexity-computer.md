@@ -35,4 +35,4 @@ A hands-on guide to Perplexity Computer, a hosted general-purpose agent that pla
 ## Could not verify
 - Perplexity's own announcements, the model-routing examples and the Ramp ranking claim were not read or checked.
 - No outcome data for any recipe; demos only.
-- Retrieved through Geoff's paid subscription; prompts are described, not reproduced.
+- Retrieved through a paid subscription; prompts are described, not reproduced.

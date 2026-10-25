@@ -17,7 +17,7 @@ A hands-on first look at Claude Design (research preview, April 2026), which mat
 
 ## Themes
 - org-context-grounding: the design system is the core setup step: company blurb plus a GitHub repo (or subfolder), local code folder, .fig file (parsed locally, per the post) and assets; Claude extracts components into an editable library ("surprised it worked so well").
-- prototyping-agents-limits: onboarding flow, landing page and a 3D component came out well from short outcome-oriented prompts; the stakeholder deck was "passable" but full of AI clichés, and PPT export failed repeatedly (sections on the deck).
+- prototyping-agents-limits: onboarding flow, landing page and a 3D component came out well from short outcome-oriented prompts; the stakeholder deck was "passable" but full of AI clichés, and PPT export failed repeatedly (sections on the strategy).
 - pm-persona-role-expansion: closes on the view that model-native design tools are "closing the gaps between each of the traditional product disciplines".
 - harness-portability: "handoff to Claude Code" gives a command that pulls the design from the Anthropic API into a local copy, so work moves between surfaces rather than being trapped in one.
 

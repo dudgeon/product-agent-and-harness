@@ -1,6 +1,6 @@
 # Spotify's product lifecycle, mapped by task: people, agents and handoffs
 
-Date: 2026-10-24. Worker draft (task research-airbnb-spotify-product-practices). This uses the same frame as the [Stripe map](../competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.md): rows are tasks, not job titles. Each handoff is marked:
+Date: 2026-10-24. This uses the same frame as the [Stripe map](../competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.md): rows are tasks, not job titles. Each handoff is marked:
 - **documented**: a Spotify source says it happens;
 - **inferred**: consistent with the sources but not stated;
 - **unknown**: no source covers it.
@@ -148,11 +148,11 @@ MISSING   no object for "bet" or "brief" in the catalog; no link from bet → pr
   - Leadership: "We're retooling the entire company."
   - Spotify claims 99%+ weekly AI use by engineers. Golden technologies and Backstage predate the agents and make them work.
 
-Key questions (in the [contributions file](../../options/contributions/research-airbnb-spotify-product-practices.md)):
+Key questions (in the contributions file):
 1. Should a bet or brief become an owned entity in the same catalog agents already read, so product rationale has an owner, a lifecycle and health signals like Vedder's clusters? — *answered by:* a prototype catalog kind; a Portal or Backstage maintainer; a pilot with one product area.
 2. Where research, intent and plan are split across levels (team research, VP bet, executive ranking), what must the bet carry for an agent downstream to use it? — *answered by:* reviewing 10 past bets against the PRs that served them; interviews with VPs who pitch.
 
-## Cross-ecosystem notes (for the comparison worker)
+## Cross-ecosystem notes
 
 - **Archetype: "systems context layer".** Spotify is the clearest case of an org making itself legible to agents through a software catalog: owners, lineage, standards, TechDocs, skills and MCP servers as entities. The same layer is now sold as Portal, and Xirp adds vendor-neutral sessions.
 - **The seam sits at the VP level**, not between people at the same level. Research and shaping happen in teams; the bet is pitched by a VP and ranked by the co-CEOs; agents work below that. Nothing links a bet to its prompts, PRs and experiments, and Spotify says it is building that link.

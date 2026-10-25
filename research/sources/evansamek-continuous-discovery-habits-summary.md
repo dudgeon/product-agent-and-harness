@@ -27,4 +27,4 @@ Secondary summary of Torres's Continuous Discovery Habits. Supplies the definiti
 
 ## Could not verify
 - Secondary summary, not Torres's own text.
-- Audit 2026-10-24: re-read: definition, trio, OST, assumption tests and snapshots confirmed; 'one-page' removed.
+- Re-check 2026-10-24: re-read: definition, trio, OST, assumption tests and snapshots confirmed; 'one-page' removed.

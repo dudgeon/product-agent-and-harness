@@ -35,7 +35,7 @@ Compass was not covered on the page. No statement about rate limits per tool.
 
 Retrieved via WebFetch, which returns a model-summarised view of the page, not verbatim text; wording and exact lists should be re-checked against the live page before quoting.
 
-## Verification (user-story-mapping audit, 2026-10-24)
+## Verification (user-story-mapping re-check, 2026-10-24)
 
 Re-read verbatim from a curl download of the page (tags stripped), not via summarising fetch.
 

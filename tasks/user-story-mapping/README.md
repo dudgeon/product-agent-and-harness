@@ -1,17 +1,17 @@
 # Modular user stories for PM work: format and derivation recipe
 
-Task: [user-story-mapping](../user-story-mapping.md). Filed 2026-10-24. Index of stories: [INDEX.md](INDEX.md).
+Task: user-story-mapping. Filed 2026-10-24. Index of stories: [INDEX.md](INDEX.md).
 
 ## What these stories are
 
 A **modular story** fixes the *need* and leaves the *approach* open. It says who is doing what job, why now, what "done" is and how we'd know it went well, and nothing about which product feature serves it. The same story can then be told as a journey in many harness embodiments (local general harness with skills, deployed shared task agent, desktop workspace, and so on). That journey is the input to prototypes and walkthrough videos.
 
-Decisions Geoff made when checking the format (2026-10-24):
+Format decisions (2026-10-24):
 
 - **Stories first, solutions later.** Each story is plain. Variants come last and stay short; dimension options are only used to *name* variants, never to define the need.
 - **Performer-agnostic.** The unit is the PM *job*, not the person. The performer can be a PM, analyst, designer or engineer. Stories name the job and the performer role in the trigger, but are always written from the point of view of whoever is doing the job.
 - **Spans.** A story may run across days. Each story marks its span: *sitting* (one sitting), *multi-session* (days, with a hand-off to self or others) or *recurring*.
-- **Today (the baseline) is inconsistent Claude Code use with poor artifact management.** It is not a no-AI PM. This is Geoff's statement of the baseline, marked `[G]`. A one-line "before agents" note appears only where it helps.
+- **Today (the baseline) is inconsistent Claude Code use with poor artifact management.** It is not a no-AI PM. This is the project's stated baseline, marked `[G]`. A one-line "before agents" note appears only where it helps.
 
 ## Story format
 
@@ -45,7 +45,7 @@ VARIANTS (ways an agent or harness could serve it; short)
 
 | Tag | Meaning |
 |---|---|
-| `[G]` | Stated by Geoff (baseline definition or experience). Not independently evidenced. |
+| `[G]` | Stated as the project's baseline (from experience). Not independently evidenced. |
 | `[E: source]` | Supported by a source note in `../../research/sources/`. The note says whether it is first-party, independent, vendor claim or anecdote; follow the link for that. |
 | `[A]` | Assumed by this task. Plausible from the job map or general experience; no source. These are candidates for a user interview. |
 | `[E: findings §n]` | Points at a section of this task's own research syntheses ([platforms](research-artifacts-platforms.md), [standardization](research-artifacts-standardization.md)), which link on to the source notes. |
@@ -117,4 +117,4 @@ A fully worked example (S05 in two contrasting embodiments) is in [worked-deriva
 
 - Today sections lean on the [JTBD map](../research-pm-agents-jobs-to-be-done/01-jobs-to-be-done-map.md), the [in-practice cases](../research-pm-agents-jobs-to-be-done/03-in-practice-cases-and-failures.md) and [Geoff's Intent Factory doc](../../research/sources/geoff-building-accelerating-intent-factory.md). Those are mostly vendor surveys, talks and anecdotes; no source documents how a PM *with inconsistent Claude Code use* manages artifacts. That baseline is `[G]` and `[A]` throughout and is the single biggest candidate for a short user interview round (key questions added to [artifact-and-project-structure](../../options/DIMENSIONS.md#artifact-and-project-structure-how-pm-artifacts-and-projects-are-structured-stored-and-found) and [context-and-memory/context-location](../../options/DIMENSIONS.md#sub-choice-context-location--where-product-context-lives-for-agents)).
 - Time costs are mostly not established.
-- Variants use the dimensions as consolidated in DIMENSIONS.md on 2026-10-24 (23 dimensions, sub-choices for the merged ones). The audit log is [audit-2026-10-24.md](audit-2026-10-24.md).
+- Variants use the dimensions as consolidated in DIMENSIONS.md on 2026-10-24 (23 dimensions, sub-choices for the merged ones).

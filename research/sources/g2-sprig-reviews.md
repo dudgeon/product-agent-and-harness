@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Weak review-site signals on Sprig limits. Evidence kind: anecdote (user reviews). Audit 2026-10-24: G2 returned 403 to direct fetch (www and non-www); claims below rest on search-result summaries of G2 pages and are unverified unless marked. The Screeb comparison was fetched in full.
+Weak review-site signals on Sprig limits. Evidence kind: anecdote (user reviews). Re-check 2026-10-24: G2 returned 403 to direct fetch (www and non-www); claims below rest on search-result summaries of G2 pages and are unverified unless marked. The Screeb comparison was fetched in full.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: Review snippets only (case 12): confusing pricing and billing units; "no-code" event setup oversold; two reviews tagged "Data Inaccuracy", one saying Sprig's AI sometimes hallucinates (unverified, search summary)

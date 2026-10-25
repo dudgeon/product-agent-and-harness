@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Launch material for a purpose-built product-management agent (page HTML title "Dedicated Product Management AI Agent"), the closest commercial analogue to the project itself. The source_url is the January 2026 public-beta post by the CEO, not the October 2025 private-beta press release. Evidence is vendor material only: the product page now carries named customer testimonials, one with a time figure, but nothing measured independently. Audit 2026-10-24: original fetched in full and claims checked; product page and press release (via TechDogs mirror) fetched.
+Launch material for a purpose-built product-management agent (page HTML title "Dedicated Product Management AI Agent"), the closest commercial analogue to the project itself. The source_url is the January 2026 public-beta post by the CEO, not the October 2025 private-beta press release. Evidence is vendor material only: the product page now carries named customer testimonials, one with a time figure, but nothing measured independently. Re-check 2026-10-24: original fetched in full and claims checked; product page and press release (via TechDogs mirror) fetched.
 
 ## Themes
 - prd-agents: Spark is pitched as "the ultimate place to create product specifications"; per the product page, specs can be pulled into Claude Code, Codex or Cursor through Productboard's MCP server (case 2)

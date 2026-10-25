@@ -25,4 +25,4 @@ Vendor launch post. Notes the most-used internal agent routes product feedback a
 - Prompt-injection risk is disclosed.
 
 ## Could not verify
-- Audit 2026-10-24: date and author filled; no named standup or OKR customer example on the page.
+- Re-check 2026-10-24: date and author filled; no named standup or OKR customer example on the page.

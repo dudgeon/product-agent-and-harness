@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Directory listing used as the source for Birdie. It does not mention Pendo or Zelta; the Zelta acquisition comes from Pendo's own press release (folded in below). Evidence kind: third-party data directory, not selling in the category; profile text is likely company-supplied ("Analyst Briefing Submitted"), so treat descriptions as self-description. Audit 2026-10-24: alternatives page and Birdie profile page fetched; claims checked.
+Directory listing used as the source for Birdie. It does not mention Pendo or Zelta; the Zelta acquisition comes from Pendo's own press release (folded in below). Evidence kind: third-party data directory, not selling in the category; profile text is likely company-supplied ("Analyst Briefing Submitted"), so treat descriptions as self-description. Re-check 2026-10-24: alternatives page and Birdie profile page fetched; claims checked.
 
 ## Themes
 - feedback-triage-agents: Birdie described as a customer-intelligence platform analysing multi-channel feedback (CB Insights profile page); no case study found (case 23)
@@ -24,4 +24,4 @@ Directory listing used as the source for Birdie. It does not mention Pendo or Ze
 - Kraftful: see siliconangle-amplitude-ai-feedback.
 
 ## Could not verify
-- Whether any Birdie customer case study exists (not searched in this audit).
+- Whether any Birdie customer case study exists (not searched in this re-check).

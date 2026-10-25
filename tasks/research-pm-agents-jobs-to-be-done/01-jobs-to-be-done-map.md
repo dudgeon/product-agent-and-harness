@@ -6,11 +6,11 @@ Conventions:
 - Source-type tags: **[SURVEY-IND]** independent survey, **[SURVEY-VENDOR]** vendor-run or sponsored survey, **[PRACTITIONER]**, **[FRAMEWORK]**, **[VENDOR]**, **[JOBS]** job postings. Each source note carries a mapped `evidence` field (first-party, independent, vendor-claim, anecdote).
 - "Judgment" labels mark my own assessment, not sourced facts.
 - Several sources were only partly readable. Gaps are in section 9 and in each source note's "Could not verify".
-- Audited 2026-10-24 against the original pages: corrections, additions (S32-S40) and remaining unverified items are logged in [audit-2026-10-24-01-jobs-map.md](audit-2026-10-24-01-jobs-map.md). "(unverified)" marks claims that could not be confirmed at source.
+- Re-checked 2026-10-24 against the original pages: corrections and additions (S32-S40) are made in place, and remaining unverified items are marked. "(unverified)" marks claims that could not be confirmed at source.
 
 ---
 
-## 1. Source register (40 sources; S32-S40 added in the 2026-10-24 audit)
+## 1. Source register (40 sources; S32-S40 added in the 2026-10-24 re-check)
 
 | # | Source note | Type | URL |
 |---|---|---|---|
@@ -42,18 +42,18 @@ Conventions:
 | S26 | [CleverX, AI PRD workflow](../../research/sources/cleverx-ai-prd-from-user-research.md) | VENDOR | https://cleverx.com/blog/how-to-use-ai-to-write-a-prd-from-user-research-in-2026-a-4-step-workflow |
 | S27 | [MindStudio, AI agents for PMs](../../research/sources/mindstudio-ai-agents-for-product-managers.md) | VENDOR | https://mindstudio.ai/blog/ai-agents-for-product-managers |
 | S28 | [Medium (Haberlah), 638 practitioner voices](../../research/sources/medium-haberlah-638-practitioner-voices.md) | PRACTITIONER (403; search-engine extracts only; LLM-assisted content analysis) | https://medium.com/@haberlah/what-638-practitioner-voices-reveal-about-pms-ai-transformation-7d2fd16be10d |
-| S29 | [Product Focus Industry Survey 2026](../../research/sources/productfocus-industry-survey-2026.md) | SURVEY-VENDOR (training vendor; PDF read in audit) | https://www.productfocus.com/wp/wp-content/uploads/2026/03/Product-Focus-Industry-Survey-Report-2026.pdf |
+| S29 | [Product Focus Industry Survey 2026](../../research/sources/productfocus-industry-survey-2026.md) | SURVEY-VENDOR (training vendor; PDF read in re-check) | https://www.productfocus.com/wp/wp-content/uploads/2026/03/Product-Focus-Industry-Survey-Report-2026.pdf |
 | S30 | [Mind the Product, Torres on team-based discovery (Eira Hayward's write-up of Torres's keynote)](../../research/sources/mindtheproduct-torres-team-based-continuous-discovery.md) | PRACTITIONER (secondary) | https://www.mindtheproduct.com/getting-to-a-team-based-approach-to-continuous-discovery-by-teresa-torres |
 | S31 | [Claude skill directories, feedback triage](../../research/sources/claudepluginhub-feedback-triage-skills.md) | VENDOR/community | https://www.claudepluginhub.com/skills/productfculty-aipm-pm-copilot/feedback-triage |
-| S32 | [SVPG, Product Management Theater](../../research/sources/svpg-product-management-theater.md) | FRAMEWORK (added in audit) | https://www.svpg.com/product-management-theater/ |
-| S33 | [Product Talk, Customer Interview Analysis: Where AI Helps and Hurts](../../research/sources/producttalk-customer-interview-analysis-ai.md) | PRACTITIONER (added in audit) | https://www.producttalk.org/customer-interview-analysis-ai/ |
-| S34 | [Microsoft study: PM practices for delegating work to GenAI (885 PMs)](../../research/sources/arxiv-pm-delegating-work-to-genai.md) | SURVEY + telemetry, single company (added in audit) | https://arxiv.org/abs/2510.02504 |
-| S35 | [SVPG, The AI Productivity Paradox](../../research/sources/svpg-ai-productivity-paradox.md) | FRAMEWORK (added in audit) | https://www.svpg.com/the-ai-productivity-paradox/ |
-| S36 | [SVPG, Experimentation, AI and the Product Model](../../research/sources/svpg-experimentation-ai-product-model.md) | FRAMEWORK (added in audit) | https://www.svpg.com/experimentation-ai-and-the-product-model/ |
-| S37 | [SVPG, Prototypes vs Products](../../research/sources/svpg-prototypes-vs-products.md) | FRAMEWORK (added in audit) | https://www.svpg.com/prototypes-vs-products/ |
-| S38 | [Product Talk, Don't Use Generative AI to Replace Discovery with Real Humans](../../research/sources/producttalk-generative-ai-discovery.md) | PRACTITIONER (added in audit) | https://www.producttalk.org/generative-ai-discovery/ |
-| S39 | [Product Talk, Building My First AI Product (Torres vs Claude synthesis)](../../research/sources/producttalk-ai-playbook-first-ai-product.md) | PRACTITIONER (added in audit) | https://www.producttalk.org/ai-playbook/ |
-| S40 | [Lenny's Newsletter, How AI will impact product management (2024)](../../research/sources/lenny-how-ai-will-impact-product-management.md) | PRACTITIONER opinion (added in audit) | https://www.lennysnewsletter.com/p/how-ai-will-impact-product-management |
+| S32 | [SVPG, Product Management Theater](../../research/sources/svpg-product-management-theater.md) | FRAMEWORK (added in re-check) | https://www.svpg.com/product-management-theater/ |
+| S33 | [Product Talk, Customer Interview Analysis: Where AI Helps and Hurts](../../research/sources/producttalk-customer-interview-analysis-ai.md) | PRACTITIONER (added in re-check) | https://www.producttalk.org/customer-interview-analysis-ai/ |
+| S34 | [Microsoft study: PM practices for delegating work to GenAI (885 PMs)](../../research/sources/arxiv-pm-delegating-work-to-genai.md) | SURVEY + telemetry, single company (added in re-check) | https://arxiv.org/abs/2510.02504 |
+| S35 | [SVPG, The AI Productivity Paradox](../../research/sources/svpg-ai-productivity-paradox.md) | FRAMEWORK (added in re-check) | https://www.svpg.com/the-ai-productivity-paradox/ |
+| S36 | [SVPG, Experimentation, AI and the Product Model](../../research/sources/svpg-experimentation-ai-product-model.md) | FRAMEWORK (added in re-check) | https://www.svpg.com/experimentation-ai-and-the-product-model/ |
+| S37 | [SVPG, Prototypes vs Products](../../research/sources/svpg-prototypes-vs-products.md) | FRAMEWORK (added in re-check) | https://www.svpg.com/prototypes-vs-products/ |
+| S38 | [Product Talk, Don't Use Generative AI to Replace Discovery with Real Humans](../../research/sources/producttalk-generative-ai-discovery.md) | PRACTITIONER (added in re-check) | https://www.producttalk.org/generative-ai-discovery/ |
+| S39 | [Product Talk, Building My First AI Product (Torres vs Claude synthesis)](../../research/sources/producttalk-ai-playbook-first-ai-product.md) | PRACTITIONER (added in re-check) | https://www.producttalk.org/ai-playbook/ |
+| S40 | [Lenny's Newsletter, How AI will impact product management (2024)](../../research/sources/lenny-how-ai-will-impact-product-management.md) | PRACTITIONER opinion (added in re-check) | https://www.lennysnewsletter.com/p/how-ai-will-impact-product-management |
 
 ---
 
@@ -102,7 +102,7 @@ All numbers as reported by each source; samples are self-selected and vary, so d
 
 ## 5. Matrix: job x stage x persona
 
-Legend: **L** leads or owns, **C** contributes or co-owns, **R** receives output or approves, blank little involvement. Marks are my synthesis; judgment where sources do not state it. A persona that owns one of the four risks inside a job led by someone else is marked C with the risk named (audit 2026-10-24: J3 previously showed four leads).
+Legend: **L** leads or owns, **C** contributes or co-owns, **R** receives output or approves, blank little involvement. Marks are my synthesis; judgment where sources do not state it. A persona that owns one of the four risks inside a job led by someone else is marked C with the risk named (re-check 2026-10-24: J3 previously showed four leads).
 
 | ID | Job | Stage | P1 IC PM | P2 GPM/CPO | P3 Founder-PM | P4 Tech/Platform PM | P5 Prod Ops | P6a Design | P6b Eng lead | P6c PMM |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -181,7 +181,7 @@ Each card: inputs, outputs, typical pain, automation suitability (judgment), key
 - **Inputs:** product analytics, experiment results, OKRs, adoption and reliability data.
 - **Outputs:** metric reviews, experiment readouts, ship/iterate/kill decisions.
 - **Typical pain:** data literacy is the top rising skill (58%) and only 40% measure AI ROI via business outcomes ([S5](../../research/sources/productboard-ai-in-product-management-report.md)). 97% report some productivity improvement vs 64% improved product outcomes ([S29](../../research/sources/productfocus-industry-survey-2026.md)). Gamma's A/B tests showed evals missed a customer preference, so human validation stays ([S15](../../research/sources/atlassian-bottleneck-keeps-shifting-gamma.md)). Gupta names evals as a core skill for AI features ([S14](../../research/sources/atlassian-ai-turns-pms-into-builders.md)).
-- **Experimentation (added in audit):** Cagan says AI can automate variant generation, sample-size calculation, instrumentation checks, metric monitoring and issue detection, while decisions and strategy stay human; measure experimentation by impact, not test volume; for AI products, evals become part of this job ([S36](../../research/sources/svpg-experimentation-ai-product-model.md)). This is a framework view; no experimentation survey was found.
+- **Experimentation (added in re-check):** Cagan says AI can automate variant generation, sample-size calculation, instrumentation checks, metric monitoring and issue detection, while decisions and strategy stay human; measure experimentation by impact, not test volume; for AI products, evals become part of this job ([S36](../../research/sources/svpg-experimentation-ai-product-model.md)). This is a framework view; no experimentation survey was found.
 - **Automation suitability (judgment):** High for dashboard pulls, anomaly flags, draft readouts. Medium for interpretation. Low for ship-or-kill calls and deciding what to measure.
 
 ### J10. Triage post-launch feedback and feed learning back
@@ -237,14 +237,14 @@ Theme: `pm-persona-role-expansion`.
 
 Source-specific gaps are in each note's "Could not verify" section. Summary:
 
-1. Lenny's survey is paywalled after the opening sections; PM sub-sample size not shown. "63% save 4+ hours" (PMs) and "more than half of respondents save at least half a day per week on their most important tasks" (all roles) measure different groups and units; both confirmed against the original in the 2026-10-24 audit ([S4](../../research/sources/lennys-newsletter-ai-tools-overdelivering-results.md)).
+1. Lenny's survey is paywalled after the opening sections; PM sub-sample size not shown. "63% save 4+ hours" (PMs) and "more than half of respondents save at least half a day per week on their most important tasks" (all roles) measure different groups and units; both confirmed against the original in the 2026-10-24 re-check ([S4](../../research/sources/lennys-newsletter-ai-tools-overdelivering-results.md)).
 2. Atlassian State of Product: audit read the report PDF (syndicated copy). Core sample is 700 manager-level respondents in the US, Germany and France, plus a separate AI survey of 521 PMs, which explains the "1,000+" and "1,200+" marketing figures. The event session page is dead, so its "close to two hours a day" wording is unverified and was replaced with the report's own figures. Mind the Product's exact wording of the 49% figure was not surfaced (unverified) ([S2](../../research/sources/mindtheproduct-atlassian-state-of-product-2026-takeaways.md)).
-3. Product Focus: PDF read in the audit and all figures confirmed; self-selected, 83% Europe, collected Oct 2025 to Jan 2026 ([S29](../../research/sources/productfocus-industry-survey-2026.md)).
+3. Product Focus: PDF read in the re-check and all figures confirmed; self-selected, 83% Europe, collected Oct 2025 to Jan 2026 ([S29](../../research/sources/productfocus-industry-survey-2026.md)).
 4. ProductPlan: report gated; "250 product leaders" (Product-Led Alliance says "nearly 250") and the over-60% claim confirmed only as marketing copy; underlying measure unverified; no credible time-allocation survey located ([S7](../../research/sources/productplan-state-of-product-management-2026.md)).
 5. No Pendo report on PM time and AI found; Productboard gave no per-task breakdown beyond top savers ([S5](../../research/sources/productboard-ai-in-product-management-report.md)).
 6. UXCam charts are images; no per-task breakdown ([S1](../../research/sources/uxcam-state-of-ai-in-product-management-2026.md)).
 7. Product School: only secondhand references; "roadmaps giving way to principles" unverified ([S25](../../research/sources/productschool-launch-checklist-product-marketers.md)).
-8. Cagan: Four Big Risks, Discovery – Judgement, Era of the Product Creator and Product Management Theater confirmed against svpg.com in the 2026-10-24 audit; airfocus never uses "theater" ([S9](../../research/sources/svpg-era-of-the-product-creator.md), [S10](../../research/sources/airfocus-cagan-ai-product-management.md), [S32](../../research/sources/svpg-product-management-theater.md)).
+8. Cagan: Four Big Risks, Discovery – Judgement, Era of the Product Creator and Product Management Theater confirmed against svpg.com in the 2026-10-24 re-check; airfocus never uses "theater" ([S9](../../research/sources/svpg-era-of-the-product-creator.md), [S10](../../research/sources/airfocus-cagan-ai-product-management.md), [S32](../../research/sources/svpg-product-management-theater.md)).
 9. Torres: podcast transcript paywalled (public summary confirmed); "Where AI Helps and Hurts" article partly paywalled ([S33](../../research/sources/producttalk-customer-interview-analysis-ai.md)); "misses 20 to 40%" found nowhere and removed; Business Tech Navigator figures not used ([S11](../../research/sources/producttalk-torres-customer-interview-analysis-podcast.md), [S12](../../research/sources/echai-torres-ai-interview-analysis.md)).
 10. Medium (Haberlah, probably David Haberlah) returned 403 and mirrors failed; search-engine extracts only; publication date unknown ([S28](../../research/sources/medium-haberlah-638-practitioner-voices.md)).
 11. Reforge primary course material not public; other Reforge claims ("Full Stack PM", "Builder-PM") left out ([S16](../../research/sources/reforge-more-valuable-less-protected.md)).

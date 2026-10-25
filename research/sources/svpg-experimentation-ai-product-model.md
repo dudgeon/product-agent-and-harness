@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: article
 evidence: first-party
 filed_by: research-pm-agents-jobs-to-be-done
-filed_note: audit 2026-10-24
+filed_note: re-check 2026-10-24
 themes: [metrics-review-agents, human-judgment-pm-jobs, research-synthesis-agents, outcome-measurement-gap]
 relevance: high
 ---

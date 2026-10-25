@@ -173,7 +173,7 @@ body='''<div class="wrap">
     <li><strong>Where Anthropic names a break, it is meetings → documents and personal agents.</strong> The Cowork guide names “decisions and customer insights lost between meetings and PRDs”; another post warns that “fleets of personal AIs” fracture a team’s context. Cowork sessions and Claude Code projects have a single owner.</li>
     <li><strong>The playbook’s intent.md → spec.md → plan.md chain is a prescription for customers.</strong> No source shows Anthropic’s own teams using it.</li>
   </ol>
-  <p><strong>Against Stripe:</strong> both rely on one person doing research to plan. Stripe bridges people through shared tools and docs; Anthropic bridges them through public-by-default channels with an agent in them. That substitute assumes an openness regulated orgs may refuse, so the seam to fund for split-role orgs is unchanged: research → intent → plan, across people.</p>
+  <p><strong>Against Stripe:</strong> both rely on one person doing research to plan. Stripe bridges people through shared tools and docs; Anthropic bridges them through public-by-default channels with an agent in them. That substitute assumes an openness regulated orgs may refuse, so the seam to build for for split-role orgs is unchanged: research → intent → plan, across people.</p>
 </div>
 
 <div class="diagram" role="figure" aria-label="Swimlane diagram of Anthropic's own lifecycle by task">

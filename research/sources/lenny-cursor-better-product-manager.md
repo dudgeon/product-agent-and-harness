@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-A PM (Dennis Yang, Principal PM for Generative AI at Chime) using a coding agent (Cursor) as his PM system for PRDs, Jira tickets, status reports and prototypes. Host Claire Vo is ChatPRD's founder (a PM-tool vendor). The "20 minutes" anecdote is from Builder.io (sells a competing tool), not this episode. Evidence kind: anecdote. Audit 2026-10-24: episode page and both Builder.io pages fetched and claims checked.
+A PM (Dennis Yang, Principal PM for Generative AI at Chime) using a coding agent (Cursor) as his PM system for PRDs, Jira tickets, status reports and prototypes. Host Claire Vo is ChatPRD's founder (a PM-tool vendor). The "20 minutes" anecdote is from Builder.io (sells a competing tool), not this episode. Evidence kind: anecdote. Re-check 2026-10-24: episode page and both Builder.io pages fetched and claims checked.
 
 ## Themes
 - prd-agents: PRDs written in Cursor as source-controlled markdown, pushed to Confluence/Notion via MCP, Jira tickets generated from PRDs, status reports from Jira data (episode show notes) (case 20); Builder.io's Cursor piece adds that his PRDs reference the actual codebase

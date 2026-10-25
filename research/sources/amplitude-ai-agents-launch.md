@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Vendor launch of metrics-review and feedback-synthesis agents plus an MCP server, relevant to the metrics-review job. Evidence kind: vendor-originated launch material (blog and press release); the only customer statements are vendor-selected quotes with no figures on outcomes. Audit 2026-10-24: blog and docs page fetched in full; Business Wire copy returned 403, so the identical release on amplitude.com/press was fetched instead; claims checked.
+Vendor launch of metrics-review and feedback-synthesis agents plus an MCP server, relevant to the metrics-review job. Evidence kind: vendor-originated launch material (blog and press release); the only customer statements are vendor-selected quotes with no figures on outcomes. Re-check 2026-10-24: blog and docs page fetched in full; Business Wire copy returned 403, so the identical release on amplitude.com/press was fetched instead; claims checked.
 
 ## Themes
 - metrics-review-agents: Global Agent plus four specialized, always-on agents (Dashboard Monitoring, Session Replay, Web Experimentation, AI Feedback in the press release; the blog calls the fourth web agent "web conversion") and Amplitude MCP for Claude, Cursor, ChatGPT, Figma, Notion and others (case 3)

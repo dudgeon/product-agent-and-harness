@@ -1,6 +1,6 @@
 # Triage: claude.com/resources and customer stories
 
-Task: [research-claude-resources-articles](../research-claude-resources-articles.md). Retrieved 2026-10-24 from the site's sitemap (`claude.com/sitemap.xml`): every English page under `/resources/` (articles, guides, webinars, section indexes) and `/customers/` (customer stories and Q&As). Localised copies (`/de/`, `/fr/`, etc.) are duplicates and were skipped. All pages are first-party Anthropic publications; customer stories are vendor claims.
+Task: research-claude-resources-articles. Retrieved 2026-10-24 from the site's sitemap (`claude.com/sitemap.xml`): every English page under `/resources/` (articles, guides, webinars, section indexes) and `/customers/` (customer stories and Q&As). Localised copies (`/de/`, `/fr/`, etc.) are duplicates and were skipped. All pages are first-party Anthropic publications; customer stories are vendor claims.
 
 **How to read it.** One line per item: date (articles carry a publish date; guides, webinars and customer stories don't show one, so "undated"), title, relevance (high / medium / low / none), a one-line reason, and the source note when filed. "filed" = already in the library from an earlier task; "(folded)" = a companion page (a guide's article version, a short launch post, a second story about the same customer) filed inside another note. Guides are listed once with their sub-page count; each guide's sub-pages were read as part of its note.
 

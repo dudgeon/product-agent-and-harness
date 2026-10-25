@@ -1,6 +1,6 @@
 # Cross-cutting stories S11–S18
 
-These eight exist because of the baseline pain Geoff described (inconsistent Claude Code use, poor artifact management `[G]`), not because they are PM jobs in their own right. Each is a need that appears *inside* most job stories S01–S10. They are written once here so the job stories can point to them. Format and evidence tags: [README](README.md).
+These eight exist because of the baseline pain described (inconsistent Claude Code use, poor artifact management `[G]`), not because they are PM jobs in their own right. Each is a need that appears *inside* most job stories S01–S10. They are written once here so the job stories can point to them. Format and evidence tags: [README](README.md).
 
 Performers are whoever is doing a PM job (PM, analyst, designer, engineer).
 

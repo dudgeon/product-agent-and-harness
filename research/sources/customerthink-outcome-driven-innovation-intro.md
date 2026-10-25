@@ -25,4 +25,4 @@ Secondary introduction to Ulwick's ODI. Gives the job map and importance/satisfa
 
 ## Could not verify
 - Secondary summaries only; the eight ODI steps could not be confirmed. The Ulwick/Christensen origin dispute was noted by a critic and not resolved.
-- Audit 2026-10-24: page read; job-as-unit and job map confirmed; ratings method and '5x' claim absent.
+- Re-check 2026-10-24: page read; job-as-unit and job map confirmed; ratings method and '5x' claim absent.

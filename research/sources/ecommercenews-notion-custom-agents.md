@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Trade-news relay of Notion's Custom Agents public-beta launch and early-customer claims (Pigment, SumUp); no independent testing. Related Notion-internal use (Slack questions and feedback routing) and the Braintrust story come from two other pages folded in below. Evidence kind: vendor-claim. Audit 2026-10-24: original and both extra URLs fetched in full and claims checked.
+Trade-news relay of Notion's Custom Agents public-beta launch and early-customer claims (Pigment, SumUp); no independent testing. Related Notion-internal use (Slack questions and feedback routing) and the Braintrust story come from two other pages folded in below. Evidence kind: vendor-claim. Re-check 2026-10-24: original and both extra URLs fetched in full and claims checked.
 
 ## Themes
 - feedback-triage-agents: Notion already uses Custom Agents internally to answer questions and feedback posted in Slack and route messages to the right people (Fast Company SA, Sept 2025, COO Akshay Kothari) (case 8)

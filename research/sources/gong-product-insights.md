@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Gong "Recipe Book" page for product managers (ingredients: Smart Trackers, Library, Streams), plus Gong Collective marketplace listings for Productboard and Canny that push call insights to product tools. Evidence kind: vendor-claim, no metrics. Audit 2026-10-24: source_url now resolves to the Gong homepage, not the recipe; recipe content checked via search-index text titled "GONG RECIPE BOOK" for this URL; Productboard and Canny integration listings fetched/checked separately.
+Gong "Recipe Book" page for product managers (ingredients: Smart Trackers, Library, Streams), plus Gong Collective marketplace listings for Productboard and Canny that push call insights to product tools. Evidence kind: vendor-claim, no metrics. Re-check 2026-10-24: source_url now resolves to the Gong homepage, not the recipe; recipe content checked via search-index text titled "GONG RECIPE BOOK" for this URL; Productboard and Canny integration listings fetched/checked separately.
 
 ## Themes
 - feedback-triage-agents: Recipe: Smart Trackers (AI concept search) find feedback/pain points across calls; Streams give PMs a shared, updating feed with digests. Integrations (Productboard, Canny, listed under Gong Collective "Product Insights") push call snippets or detected feature requests to product tools (case 13)

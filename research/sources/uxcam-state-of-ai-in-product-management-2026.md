@@ -27,4 +27,4 @@ Vendor-run survey of 157 product professionals in 34 countries on AI adoption. U
 
 ## Could not verify
 - Charts are images, so no per-task AI breakdown was readable.
-- The page shows no publication date (only '© 2026') and no size for the 'leaders' sub-sample behind the 70%/6% figures, which may be very small. Figures re-confirmed against the page in the 2026-10-24 audit.
+- The page shows no publication date (only '© 2026') and no size for the 'leaders' sub-sample behind the 70%/6% figures, which may be very small. Figures re-confirmed against the page in the 2026-10-24 re-check.

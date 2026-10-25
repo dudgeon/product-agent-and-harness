@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Software-review-site write-up (Danish translation of the English review at https://thecxlead.com/tools/unwrap-review/) praising traceability of themes to source feedback, without validating outcomes. Not disinterested: TheCXLead (owned by media company BWZ) discloses affiliate commissions and also hosts an Unwrap "partner-spotlight" section, so this is opinion from a party with a commercial relationship in the category, not an independent test. Audit 2026-10-24: original could not be fetched (403 on all thecxlead.com URLs); claims below come from search-result summaries only.
+Software-review-site write-up (Danish translation of the English review at https://thecxlead.com/tools/unwrap-review/) praising traceability of themes to source feedback, without validating outcomes. Not disinterested: TheCXLead (owned by media company BWZ) discloses affiliate commissions and also hosts an Unwrap "partner-spotlight" section, so this is opinion from a party with a commercial relationship in the category, not an independent test. Re-check 2026-10-24: original could not be fetched (403 on all thecxlead.com URLs); claims below come from search-result summaries only.
 
 ## Themes
 - feedback-triage-agents: Traceability praised (each theme links back to the original feedback); outcomes not validated (case 22) (unverified: search summary only)

@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-A 1,500-person security company standardised on Cowork as the single agent "front door" over 40 connected tools rather than using the AI inside each SaaS tool, and grounds self-service analytics in a governed semantic layer plus a definitions skill loaded by every team plugin. It is useful for the deck on three counts: the aggregator-versus-embedded-AI choice, governed data context as the precondition for agent analytics, and the customer's own named gap, that Cowork is a personal agent and team agents need a "graduation" process with software-engineering gates. Customer Q&A and case study published by Anthropic; all figures are the customer's claims, unaudited.
+A 1,500-person security company standardised on Cowork as the single agent "front door" over 40 connected tools rather than using the AI inside each SaaS tool, and grounds self-service analytics in a governed semantic layer plus a definitions skill loaded by every team plugin. It is useful for the strategy on three counts: the aggregator-versus-embedded-AI choice, governed data context as the precondition for agent analytics, and the customer's own named gap, that Cowork is a personal agent and team agents need a "graduation" process with software-engineering gates. Customer Q&A and case study published by Anthropic; all figures are the customer's claims, unaudited.
 
 ## Themes
 - agent-as-service-many-surfaces: Cowork chosen as the aggregator over per-tool embedded AI: "Claude is now the aggregator" across Snowflake, Salesforce, Drive, Slack; 40 tools and several homegrown MCP servers (Q&A, "Why route work through Claude Cowork").

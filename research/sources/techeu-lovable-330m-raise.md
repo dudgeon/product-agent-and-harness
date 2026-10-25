@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Trade press relaying Lovable's own Series B announcement ($330M Series B at $6.6B, led by CapitalG and Menlo Ventures' Anthology fund); customer figures are company-supplied and mostly anonymous. Useful only as a marker of vendor-side claims about prototyping speed. Audit 2026-10-24: original fetched in full and claims checked; Zendesk quote also confirmed on Lovable's own Series B post.
+Trade press relaying Lovable's own Series B announcement ($330M Series B at $6.6B, led by CapitalG and Menlo Ventures' Anthology fund); customer figures are company-supplied and mostly anonymous. Useful only as a marker of vendor-side claims about prototyping speed. Re-check 2026-10-24: original fetched in full and claims checked; Zendesk quote also confirmed on Lovable's own Series B post.
 
 ## Themes
 - prototyping-agents-limits: Unnamed "global ride-sharing and delivery platform" cut design concept testing "from six weeks to just five days" (vendor-supplied) (case 18)

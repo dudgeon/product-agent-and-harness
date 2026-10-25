@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-InfoQ news relay of Anthropic's Cowork launch (announced 2026-01-12); it does not mention plugins. The product-management plugin claims below are checked against the plugin's own repository (first-party docs), https://github.com/anthropics/knowledge-work-plugins/tree/main/product-management; the skills available in this very environment come from that plugin. Evidence kind: vendor-claim (no outcome data). Audit 2026-10-24: InfoQ article and the repo README fetched and claims checked; pluginsforcowork.com and composio.dev pages not fetched.
+InfoQ news relay of Anthropic's Cowork launch (announced 2026-01-12); it does not mention plugins. The product-management plugin claims below are checked against the plugin's own repository (first-party docs), https://github.com/anthropics/knowledge-work-plugins/tree/main/product-management; the skills available in this very environment come from that plugin. Evidence kind: vendor-claim (no outcome data). Re-check 2026-10-24: InfoQ article and the repo README fetched and claims checked; pluginsforcowork.com and composio.dev pages not fetched.
 
 ## Themes
 - prd-agents: Plugin (per repo README) covers feature specs/PRDs, roadmap planning, stakeholder updates, user-research synthesis, competitive analysis, metrics review, brainstorming (case 19)

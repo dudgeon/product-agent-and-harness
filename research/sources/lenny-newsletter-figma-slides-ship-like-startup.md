@@ -33,5 +33,5 @@ A first-party account from inside Figma of a large company running a new product
 - "A design file with notes is infinitely more useful (and accurate) than a text doc." (lesson 1)
 
 ## Could not verify
-- Post read in full (subscriber-only edition, read through Geoff's session). Images of prototypes and decks were not available.
+- Post read in full (subscriber-only edition, read through a paid subscription). Images of prototypes and decks were not available.
 - Adoption claims ("millions of Figma Slides decks", tied with Canva in a reader survey) are the author's and Lenny's; method not given. Figma is a design-tool company, so "design file as source of truth" is also its product's pitch.

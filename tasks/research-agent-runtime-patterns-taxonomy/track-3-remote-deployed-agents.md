@@ -81,21 +81,10 @@ Entries appended to [options/DIMENSIONS.md](../../options/DIMENSIONS.md):
 - [work-structure](../../options/DIMENSIONS.md#work-structure-how-structured-the-work-is-and-what-agent-shape-fits): fire-and-forget delegation and read-only bounded task agent rows, question 3.
 - [adoption-model](../../options/DIMENSIONS.md#adoption-model-adoption-and-enablement-model): admin-curated agent catalog row (user and product choice), one question; plus cross-cutting question 5.
 
-**Proposed structure changes (for the director):**
+**Proposed structure changes:**
 1. Keep `remote-invocation-route` as its own dimension or fold it into `capability-packaging`'s "deployed agent" option; I split it out because the choice among six call routes is separable from the choice of packaging format, and capability-packaging is already long (Track 4 also proposed a split).
 2. Consider a new dimension `agent-identity-delegation` (whose authority a delegated or shared agent uses). It currently sits as rows in governance-control-plane, overlaps Track 5's identity rows (creator/requester/service account) and my MCP/A2A rows, and has its own theme slug `identity-delegation` in THEMES.md.
 3. `session-handoff-portability` (Track 5) and my "human-triggered handoff" option overlap; merge candidates.
-
-## 7. Open questions for Geoff
-
-Unranked.
-
-1. Is the first deployed task agent (PRD review?) meant to be called from harnesses we do not control (Claude Code, Codex, Claude Desktop, Cursor), or from our own surface? That decides whether MCP/A2A matter at all.
-2. Which hosts do your target users actually use? Support for MCP Tasks, A2A clients, plugins and background agents differs per host.
-3. Do target orgs require Zero Data Retention, HIPAA or customer-managed keys? Claude Code cloud sessions and Managed Agents are documented as excluded, which constrains vendor-cloud options.
-4. Who should the agent act as when it touches downstream systems: the requester, a service account, or the creator? Needs a security/policy owner.
-5. Are you willing to fund a small prototype: one workflow (PRD review) built as a skill, as a sync MCP agent, as an MCP+Tasks agent and as a CI-triggered reviewer, with a no-agent baseline, because the independent evidence for every one of these is missing?
-6. Should I look further for A2A production evidence (e.g. named customer case studies from Microsoft, AWS, Salesforce, ServiceNow, SAP) or accept "unproven" for the synthesis?
 
 ## 8. Gaps and what I could not verify
 

@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Anthropic moved Cowork sessions off the laptop: sessions and files follow the user across desktop, web and mobile, and scheduled tasks run with no device online, which answers the gap Cyera named (a personal agent stops when its owner's laptop closes) for the single-user case only. It bears on the deck's session-persistence and runtime-location options, and it states a review default ("Nothing ships until you've reviewed and approved it") with decisions pushed to the phone. It also gives a first-party usage figure: over 90% of Cowork use is not software development. This is a beta launch post; there is no detail on where cloud sessions run or how they are governed, and sessions are not described as shareable between people.
+Anthropic moved Cowork sessions off the laptop: sessions and files follow the user across desktop, web and mobile, and scheduled tasks run with no device online, which answers the gap Cyera named (a personal agent stops when its owner's laptop closes) for the single-user case only. It bears on the strategy's session-persistence and runtime-location options, and it states a review default ("Nothing ships until you've reviewed and approved it") with decisions pushed to the phone. It also gives a first-party usage figure: over 90% of Cowork use is not software development. This is a beta launch post; there is no detail on where cloud sessions run or how they are governed, and sessions are not described as shareable between people.
 
 ## Themes
 - shared-persistent-sessions: "Close the laptop and head to your meeting; Claude keeps going"; start at a desk, check from the phone, pick up output anywhere; persistence is per user, not shared (section "What changes today").

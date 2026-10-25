@@ -29,4 +29,4 @@ The clearest practitioner statement of which PM activities gain and lose value w
 
 ## Could not verify
 - Reforge primary course material is not public; only this blog post used. Other Reforge claims ('Full Stack PM', 'Builder-PM') came from non-Reforge newsletters and were left out.
-- Audit 2026-10-24: page read: problem definition, strategy and customer understanding, distributing context, customer-validated prototypes, default captaincy, central roadmap model falling apart, 'prototyping has moved from something PMs hand off to something PMs do', speed in the wrong direction, and the spec being more important were all confirmed.
+- Re-check 2026-10-24: page read: problem definition, strategy and customer understanding, distributing context, customer-validated prototypes, default captaincy, central roadmap model falling apart, 'prototyping has moved from something PMs hand off to something PMs do', speed in the wrong direction, and the spec being more important were all confirmed.

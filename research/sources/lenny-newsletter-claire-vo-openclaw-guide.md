@@ -38,6 +38,6 @@ A detailed anatomy of a persistent, always-on personal agent harness and of runn
 - "People are just more willing to give it access without understanding the underlying risks" ("Some notes on security").
 
 ## Could not verify
-- Read in full via Geoff's paid session; screenshots were not visible.
+- Read in full through a paid subscription; screenshots were not visible.
 - All outcomes are the author's own experience over about two months; no measures of quality or time saved. The Jensen Huang quote at the top is quoted by the post, not checked.
 - The author runs a commercial PM-agent product (ChatPRD) and a paid course, both mentioned.

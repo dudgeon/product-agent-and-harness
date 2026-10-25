@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-Anthropic's own guidance already encodes a structure ladder inside one general harness: vague prompts for exploration, plan mode for uncertain multi-file work, precise specs plus verification for delegation, skills/hooks for repeatable workflows, subagents for isolated review, non-interactive `claude -p` for CI and fan-out. That is direct evidence that the general harness spans both classes in Geoff's hypothesis, with structure added by the user on demand rather than by switching tools.
+Anthropic's own guidance already encodes a structure ladder inside one general harness: vague prompts for exploration, plan mode for uncertain multi-file work, precise specs plus verification for delegation, skills/hooks for repeatable workflows, subagents for isolated review, non-interactive `claude -p` for CI and fan-out. That is direct evidence that the general harness spans both classes in the working hypothesis, with structure added by the user on demand rather than by switching tools.
 
 ## Themes
 - work-structure-spectrum: "Vague prompts can be useful when you're exploring"; "Sometimes you should skip planning ... because the task is exploratory"; if you could describe the diff in one sentence, skip the plan.

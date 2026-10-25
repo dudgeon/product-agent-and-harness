@@ -36,7 +36,7 @@ relevance: high | medium | low
 ```
 
 - **Body, in this order:**
-  - `## Relevance to the project`: 2–5 sentences on why this matters for the product agent and harness project (research, concepts / strategy deck, prototypes, teardowns), and which open question it bears on.
+  - `## Relevance to the project`: 2–5 sentences on why this matters for the product agent and harness project (research, concepts, prototypes, teardowns), and which open question it bears on.
   - `## Themes`: each theme it supports, one bullet each, with the specific claim or evidence and a timestamp, quote location or section.
   - `## Key points`: the substance, in your words, with timestamps or section refs.
   - `## Notable quotes` (optional): short verbatim quotes with timestamps.
@@ -58,7 +58,7 @@ Themes are the recurring ideas pulled out across sources. `THEMES.md` is **gener
 ```
 
 - **Reuse before inventing.** Read the generated THEMES.md first; use an existing slug if it fits (add your bullets under the same `## slug: Name` heading in your own file, without a description).
-- Merges, renames and splits of themes across tasks are done only by the lint pass (LINTING.md), one at a time.
+- Merges, renames and splits of themes across tasks are done only in a separate consolidation pass, one at a time.
 - Then run `python3 research/build.py`.
 
 **Shared files, generally:** never rewrite a file another agent also writes (no Write tool, no script that rewrites it whole). Use small Edits on the current version. `options/DIMENSIONS.md` is the one shared hand-edited file: append only, with Edit.

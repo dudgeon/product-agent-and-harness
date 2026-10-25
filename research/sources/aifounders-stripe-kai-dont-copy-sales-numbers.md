@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-The only independent critique of Kai's outcome numbers found: the sales uplift is a usage-vs-non-usage comparison with selection bias (best sellers adopt first; activity metrics reward volume), so "cause stays open". It also argues skills are the durable asset and must stay exportable from any vendor harness. Useful for the deck's evidence-quality caveats and the capability-format-portability dimension.
+The only independent critique of Kai's outcome numbers found: the sales uplift is a usage-vs-non-usage comparison with selection bias (best sellers adopt first; activity metrics reward volume), so "cause stays open". It also argues skills are the durable asset and must stay exportable from any vendor harness. Useful for the strategy's evidence-quality caveats and the capability-format-portability dimension.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: "That is not a controlled test. Your best sellers are the likeliest to adopt a new tool early"; "built in a week" is "a vendor's story about its own product".

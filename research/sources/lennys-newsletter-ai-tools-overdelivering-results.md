@@ -33,5 +33,5 @@ The largest and most independent survey in the set (1,750 respondents across rol
 - Cited in the map for J1, J2, J3, J4, J5, J8.
 
 ## Could not verify
-- Full text is paywalled after the opening sections; figures above are from the free portion (audit 2026-10-24 re-read the original and confirmed every figure listed). No per-role respondent counts are visible, so the PM sub-sample size is unknown.
+- Full text is paywalled after the opening sections; figures above are from the free portion (re-check 2026-10-24 re-read the original and confirmed every figure listed). No per-role respondent counts are visible, so the PM sub-sample size is unknown.
 - Audit correction: the 'half a day per week' headline applies to more than half of respondents and to their most important tasks, not to all respondents; it measures a different group and unit from the '63% of PMs save 4+ hours' figure.

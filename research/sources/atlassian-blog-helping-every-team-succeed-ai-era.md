@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-The true origin of the best-known PM-adjacent Rovo numbers (Procore roadmap items, the Rovo beta "1-2 hours a week"), which the commercial PM-agents survey had wrongly attributed to a partner stats roundup (deviniti-atlassian-ai-statistics-2026). It is Atlassian's own announcement, so every figure is a vendor claim with no method. Bears on how much weight Rovo's PRD/roadmap-drafting evidence can carry. Audit 2026-10-24: page fetched; claims below checked against it.
+The true origin of the best-known PM-adjacent Rovo numbers (Procore roadmap items, the Rovo beta "1-2 hours a week"), which the commercial PM-agents survey had wrongly attributed to a partner stats roundup (deviniti-atlassian-ai-statistics-2026). It is Atlassian's own announcement, so every figure is a vendor claim with no method. Bears on how much weight Rovo's PRD/roadmap-drafting evidence can carry. Re-check 2026-10-24: page fetched; claims below checked against it.
 
 ## Themes
 - prd-agents: Procore Staff TPM Noemi Flores: quarterly roadmap items "used to take about an hour", now "about 15 minutes" with Rovo; up to five items per person per quarter (case 1)
@@ -24,7 +24,7 @@ The true origin of the best-known PM-adjacent Rovo numbers (Procore roadmap item
 - Procore: Noemi Flores (Staff Program Technical Program Manager): roadmap items about an hour each before, about 15 minutes with Rovo; Ronny Katzenberger (Director of Engineering Enablement) on faster search, no number.
 - Rovo closed beta: "1-2 hours of time saved per week on average", from feedback by "thousands of customers, partners, and Atlassians"; no method or sample breakdown.
 - OVO Energy: Luke Collins (Senior Solutions Engineer), qualitative ("previously took days to track down is now available instantly").
-- The same Procore quote is relayed by SiliconANGLE (2024-10-09, per the audit of the deviniti note), so it predates this post's date (unverified).
+- The same Procore quote is relayed by SiliconANGLE (2024-10-09, per the re-check of the deviniti note), so it predates this post's date (unverified).
 - A later Atlassian Procore customer story reportedly gives different figures (46 min/day, 23 h/month, 24% faster completion); seen via search summaries only (unverified).
 
 ## Could not verify

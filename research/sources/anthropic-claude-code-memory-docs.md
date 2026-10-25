@@ -14,7 +14,7 @@ relevance: high
 
 ## Relevance to the project
 
-The first-party definition of project structure for Claude Code: scoped CLAUDE.md files, path-scoped .claude/rules, @imports, AGENTS.md fallback, and a separate model-written auto memory. This is the de facto 'project structure' convention a Claude-based meta-harness inherits and the thing Geoff's own global CLAUDE.md uses.
+The first-party definition of project structure for Claude Code: scoped CLAUDE.md files, path-scoped .claude/rules, @imports, AGENTS.md fallback, and a separate model-written auto memory. This is the de facto 'project structure' convention a Claude-based meta-harness inherits.
 
 ## Themes
 

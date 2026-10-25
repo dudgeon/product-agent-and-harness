@@ -1,9 +1,9 @@
 # Teardowns mapped to the runtime pattern classes P1-P10
 
-Date: 2026-10-24. Task: [teardowns-to-pattern-classes](../teardowns-to-pattern-classes.md). Worker draft for review. The classes are those of [B.2 in the taxonomy synthesis](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes); B.1 (axes) and B.3 (how classes combine) were read with them. This file maps; it does not change the classes. Where a teardown strains a class definition, the strain is reported in [section 6](#6-class-definitions-the-teardowns-strain).
+Date: 2026-10-24. Task: teardowns-to-pattern-classes. The classes are those of [B.2 in the taxonomy synthesis](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#b2-pattern-classes); B.1 (axes) and B.3 (how classes combine) were read with them. This file maps; it does not change the classes. Where a teardown strains a class definition, the strain is reported in [section 6](#6-class-definitions-the-teardowns-strain).
 
 **Sources read.**
-- Ramp: [00-teardown-summary.md](../competitive-teardown-ramp-glass/00-teardown-summary.md), [07-pdlc-agent-ecosystem-map.md](../competitive-teardown-ramp-glass/07-pdlc-agent-ecosystem-map.md), [audit-2026-10-24.md](../competitive-teardown-ramp-glass/audit-2026-10-24.md).
+- Ramp: [00-teardown-summary.md](../competitive-teardown-ramp-glass/00-teardown-summary.md), [07-pdlc-agent-ecosystem-map.md](../competitive-teardown-ramp-glass/07-pdlc-agent-ecosystem-map.md).
 - Shopify: [00-teardown-summary.md](../competitive-teardown-shopify-river/00-teardown-summary.md), [01-pdlc-agent-ecosystem-map.md](../competitive-teardown-shopify-river/01-pdlc-agent-ecosystem-map.md).
 - Stripe: [00-teardown-summary.md](../competitive-teardown-stripe-knowledge-agents/00-teardown-summary.md), [02-pdlc-agent-ecosystem-map.md](../competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.md).
 - Anthropic: [00-summary.md](../research-claude-resources-articles/00-summary.md), [02-pdlc-agent-ecosystem-map.md](../research-claude-resources-articles/02-pdlc-agent-ecosystem-map.md).
@@ -69,7 +69,7 @@ Cells name the agents in the class, marked **(c)** clear, **(p)** partial, **(x)
 
 ### 2.1 Ramp
 
-Teardown: [summary](../competitive-teardown-ramp-glass/00-teardown-summary.md), [lifecycle map](../competitive-teardown-ramp-glass/07-pdlc-agent-ecosystem-map.md), [audit](../competitive-teardown-ramp-glass/audit-2026-10-24.md). Every outcome figure is Ramp's own. The architecture posts (Buchan in April, Kronick in October) are the high-signal sources.
+Teardown: [summary](../competitive-teardown-ramp-glass/00-teardown-summary.md), [lifecycle map](../competitive-teardown-ramp-glass/07-pdlc-agent-ecosystem-map.md), audit. Every outcome figure is Ramp's own. The architecture posts (Buchan in April, Kronick in October) are the high-signal sources.
 
 **The Glass question, answered from the sources.**
 - **April 2026: P2.** Charles calls Glass "our own version of Claude Code's Cowork" built on Anthropic's Claude Agent SDK.
@@ -526,18 +526,18 @@ These are reported for a later B.2 edit. No class was changed here.
 **Placeholders.**
 - **Airbnb:** no summary and no filed notes. No row is made.
 - **Spotify:** no summary. Three rows are provisional, from notes filed by other tasks: the Honk office-hours note (vendor-claim), InfoQ on Honk (independent), and the Vedder post (first-party).
-- **Block:** no summary. Four rows from the Lenny's Podcast note, the Goose repo and skills notes, and follow-up 3. About a dozen further `block-*` notes are being filed by the active Block worker and were deliberately not used; rerun this mapping when [research-block-product-practices](../research-block-product-practices.md) lands.
+- **Block:** no summary. Four rows from the Lenny's Podcast note, the Goose repo and skills notes, and follow-up 3. About a dozen further `block-*` notes are being filed by the active Block worker and were deliberately not used; rerun this mapping when research-block-product-practices lands.
 
 **Other caveats.**
 - **Stale B.2 text.** B.2 and B.3 cite Glass "on the Claude Agent SDK". That is now dated April 2026 (see the P2 suggested edit).
-- **Reading notes, not originals.** Where a note says its body was read through a summarising fetch (the Ramp Builders Inspect post as filed by user-story-mapping; some Atlassian pages before the audit), placements lean on the verbatim-read notes where one exists.
+- **Reading notes, not originals.** Where a note says its body was read through a summarising fetch (the Ramp Builders Inspect post as filed by user-story-mapping; some Atlassian pages before the re-check), placements lean on the verbatim-read notes where one exists.
 - **Duplicate notes.** Two notes describe the same Ramp Inspect post (`ramp-builders-why-we-built-background-agent` and `ramp-builders-why-we-built-our-own-background-agent`). This mapping cites the first, filed by the Ramp teardown.
 
 ---
 
 ## 8. Revised classes (2026-10-24)
 
-Geoff chose to revise the classes (task revise-pattern-classes). The old-to-new table is in the [synthesis change log](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#change-log). Sections 1 to 7 above keep the original numbering. These placements change under the revised classes:
+The classes were revised (task revise-pattern-classes). The old-to-new table is in the [synthesis change log](../research-agent-runtime-patterns-taxonomy/01-synthesis.md#change-log). Sections 1 to 7 above keep the original numbering. These placements change under the revised classes:
 
 | Ecosystem | Agent or system | Old | New | Fit now | Why |
 |---|---|---|---|---|---|

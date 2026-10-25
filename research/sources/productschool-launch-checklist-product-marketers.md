@@ -25,4 +25,4 @@ Vendor blog used for J7 and persona P6c: positioning, messaging, launch tiering 
 ## Could not verify
 - No first-party Product School report on tasks automated found; only secondhand references (WebProNews, Gleap). 'Roadmaps giving way to principles' is unverified at source.
 - No source settles PM versus PMM decision rights on tiering and positioning, and no survey on AI use in launch work.
-- Audit 2026-10-24: page read; earlier claims that PMM owns positioning/messaging/tiering with PM and engineering as partners, that pricing is shared, and that a 'launch measurement plan' is an output were not supported and have been corrected.
+- Re-check 2026-10-24: page read; earlier claims that PMM owns positioning/messaging/tiering with PM and engineering as partners, that pricing is shared, and that a 'launch measurement plan' is an output were not supported and have been corrected.

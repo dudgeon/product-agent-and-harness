@@ -22,4 +22,4 @@ Practitioner post saying AI PRDs "read well but often lack the specificity" a te
 - No named-company postmortem found.
 
 ## Could not verify
-- Audit 2026-10-24: original read directly; description, date and incentive corrected.
+- Re-check 2026-10-24: original read directly; description, date and incentive corrected.

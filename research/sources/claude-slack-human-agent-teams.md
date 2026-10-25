@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-Slack's CPO argues that conversation in public channels is the context agents need, so working in the open becomes the precondition for useful agents, which bears directly on the deck's trust and privacy defaults and context-and-memory options. The piece is also candid that there is no clean way to prove AI use improves business results, which supports the outcome-measurement-gap theme from a product leader. It is an interview with a partner-company executive published by Anthropic, both parties selling the channel-agent model, and it gives practices and anecdotes, not data.
+Slack's CPO argues that conversation in public channels is the context agents need, so working in the open becomes the precondition for useful agents, which bears directly on the strategy's trust and privacy defaults and context-and-memory options. The piece is also candid that there is no clean way to prove AI use improves business results, which supports the outcome-measurement-gap theme from a product leader. It is an interview with a partner-company executive published by Anthropic, both parties selling the channel-agent model, and it gives practices and anecdotes, not data.
 
 ## Themes
 - public-by-default-agent-work: "Agents can only learn from what they can see"; default channels to public and go private on purpose; "A private channel is a blind spot for every agent that reports on it" (sections "Treat your conversation history", "Default shared channels to public").

@@ -1,6 +1,6 @@
 # Summary: claude.com/resources (AI-native SDLC playbook and related)
 
-Task: [research-claude-resources-articles](../research-claude-resources-articles.md). Triage: [01-triage.md](01-triage.md). Theme evidence: [research/themes/research-claude-resources-articles.md](../../research/themes/research-claude-resources-articles.md). Options for the director to merge: [options/contributions/research-claude-resources-articles.md](../../options/contributions/research-claude-resources-articles.md).
+Task: research-claude-resources-articles. Triage: [01-triage.md](01-triage.md). Theme evidence: [research/themes/research-claude-resources-articles.md](../../research/themes/research-claude-resources-articles.md).
 
 **What was done (2026-10-24).** I read the [AI-native SDLC playbook](../../research/sources/claude-ai-native-sdlc-playbook.md) in full and triaged every English page on claude.com under `/resources/` and `/customers/`: 695 items from the sitemap, with guides counted once (145 guide pages in all). 29 came out high and 66 medium; they are filed as 95 source notes (`claude-*`, `filed_by: research-claude-resources-articles`), with companion pages folded in. 9 items were already in the library and were not re-filed. Webinar pages are event listings with no transcripts, so all of them were triaged low. Every source here is Anthropic's own publication. Notes label Anthropic describing itself as **first-party** and customer stories and commissioned surveys as **vendor claim**. **None of the 95 reports a controlled outcome.**
 
@@ -88,7 +88,7 @@ No new dimension is proposed.
   - Ramp's office-hours transcript confirms the Inspect, automation and "agents for every stage" picture.
 
 **Contradict / sharpen**
-1. **Subagents.** Anthropic's October fold-in guidance cuts against its own April multi-agent patterns, its trends report's "multi-agent hierarchies" prediction, and the one-job-per-agent evidence filed earlier (Cloudflare's specialist reviewers, 12-Factor). The lint pass should weigh one-job-per-agent against single-agent-many-skills.
+1. **Subagents.** Anthropic's October fold-in guidance cuts against its own April multi-agent patterns, its trends report's "multi-agent hierarchies" prediction, and the one-job-per-agent evidence filed earlier (Cloudflare's specialist reviewers, 12-Factor). A later consolidation pass should weigh one-job-per-agent against single-agent-many-skills.
 2. **Who edits skills.** The playbook requires a named policy owner to sign off skill changes. Notion's self-updating skills, and Netflix keeping corrections in Managed Agents memory "instead of" editing skills, bypass review.
 3. **Advisory vs enforced policy.** The scaling guide calls security rules in CLAUDE.md "policy-as-code"; the playbook says such guidance is advisory and needs a hook behind it.
 4. **Cost.** Ramp and DoorDash run with no token budgets. Anthropic's own advice is to gate access, then cap. Ramp's "no budget" also sits awkwardly with the budget-overrun origin story of Glass ([ramp-introducing-glass](../../research/sources/ramp-introducing-glass.md)); scope or timing may differ.

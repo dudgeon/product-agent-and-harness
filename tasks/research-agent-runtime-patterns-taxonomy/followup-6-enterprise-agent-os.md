@@ -12,7 +12,7 @@ Filed by: research-runtime-patterns-follow-up-round, 2026-10-24. Builds on [Trac
 
 **Search terms used.** "Microsoft Agent 365 control plane registry Entra Agent ID pricing"; "OpenAI Frontier enterprise agent platform identity"; "Gemini Enterprise agent platform governance agent registry"; "Amazon Bedrock AgentCore Policy Identity Gateway"; "AgentCore Claude Agent SDK"; "ServiceNow AI Control Tower third-party agents"; "Agentforce adoption independent"; "Entra Agent ID blueprint on-behalf-of"; "Claude Enterprise Cowork audit logs Compliance API"; "Glean agents governance 2026"; "Writer AI HQ governance"; "Forrester agent control plane"; "agentic operating system term critique"; "Gartner agent washing guardian agents"; "Agent 365 Anthropic Claude".
 
-Pages that would not load: OpenAI's Frontier pages (403), GovInfoSecurity's ServiceNow piece (403), and the Gartner primaries (paywalled). WebFetch returns a summary written by a model, so wording should be re-checked before anything is quoted in the deck. The GitLab page was read verbatim via curl.
+Pages that would not load: OpenAI's Frontier pages (403), GovInfoSecurity's ServiceNow piece (403), and the Gartner primaries (paywalled). WebFetch returns a summary written by a model, so wording should be re-checked before anything is quoted in the strategy. The GitLab page was read verbatim via curl.
 
 ## Findings
 
@@ -65,7 +65,7 @@ Forrester's own vendor poll (February 2026, 47 vendors): 79% see agent control p
 3. **P4 (meta-harness) gets a sharper boundary.** None of the enterprise platforms is a meta-harness in the common horizontal sense. The nearest overlaps: (a) AgentCore Runtime hosting a Claude Agent SDK agent, which is P2 (vendor SDK embedded) running under a hyperscaler control plane; (b) Agent 365 registering Claude Managed Agents, which is P11 over P4's "model vendor's hosted service" shape. Record "Agent 365 governs Claude Code locally" as an unverified vendor-blog claim. The FastTrack atlas says only that Shadow AI detects local agents.
 4. **Axis B.1 (governance and control).** Add a value, "external control plane (P11)", next to per-harness settings, gateway, and layer-launched policies. Note that it governs only what is instrumented and registered.
 5. **Maturity (H.1).** Independent evidence for this whole class is three items: one security test (Compass on Entra), one customer turn-off (Syracuse on Cowork), and one adoption check (SF Ben on Agentforce). There is also one adopter-written configuration record (GitLab) and two public analyst blogs. No independent outcome or incident-reduction data exists for any platform.
-6. **Terms.** Recommend that the deck use **"agent control plane"** (P11) and **"enterprise agent platform"** (full-stack P5 variants) as the common terms. Keep **"org-deployed agent workspace"** as our coined term for the P5 pattern. Use "agent OS" only when quoting a vendor's product name.
+6. **Terms.** Recommend that the strategy use **"agent control plane"** (P11) and **"enterprise agent platform"** (full-stack P5 variants) as the common terms. Keep **"org-deployed agent workspace"** as our coined term for the P5 pattern. Use "agent OS" only when quoting a vendor's product name.
 
 ## Proposed INDEX lines
 
@@ -147,7 +147,7 @@ Forrester's own vendor poll (February 2026, 47 vendors): 79% see agent control p
 Key questions:
 1. Which agent control plane does our company already run or plan to buy (Agent 365, ServiceNow AI Control Tower, a cloud's registry), and must our intent-shaping agent register with it to pass security review? — *answered by:* security and IT platform owners — *affects:* all harness-layering options
 2. If the agent runs on the Claude Agent SDK, can we meet audit requirements through the control plane's telemetry (Agent 365 needs a root `invoke_agent` span), or do we also need Anthropic's Compliance API, which only covers some routes? — *answered by:* prototype registering one SDK agent with Agent 365 or AgentCore and checking what appears in Purview or CloudWatch — *affects:* control plane beside harness; hyperscaler-hosted harness
-3. Would an enterprise platform's own loop (Gemini, Frontier, Glean, Writer) do intent shaping as well as Claude Code's harness? Geoff would not trade harness quality for independence. — *answered by:* the intent-shaping bake-off, with one platform agent as a contender — *affects:* full-stack platform vs embed SDK
+3. Would an enterprise platform's own loop (Gemini, Frontier, Glean, Writer) do intent shaping as well as Claude Code's harness? Harness quality is weighted above independence in this project's scoping. — *answered by:* the intent-shaping bake-off, with one platform agent as a contender — *affects:* full-stack platform vs embed SDK
 
 ### governance-control-plane
 
@@ -210,5 +210,4 @@ Key question:
 - **Glean:** the security showcase page (Glean Protect, AWARE framework) gave no concrete controls and was not filed as a note.
 - **Not covered:** Dust, Sana, Notion agents, Atlassian Rovo (existing notes), IBM watsonx Orchestrate, Kore.ai, UiPath. Ramp's "custom agent OS" was not re-examined. It is a Notion vendor video predating Glass, and it is evidence only that "agent OS" is used loosely.
 - **No independent outcome, cost or incident-reduction evidence** was found for any enterprise agent platform or control plane.
-- WebFetch output is a model's summary. Quotes and figures from those notes should be re-checked against live pages before they go into the deck.
-- **Housekeeping:** before I found the worktree, the same 20 source notes were written by mistake into the shared checkout at `/Users/geoff/claude-home/project-agent-and-harness/research/sources/`. Bash was then blocked, so I could not delete them. The worktree copies are canonical. The shared-checkout copies are near-identical duplicates and should be removed or replaced at merge.
+- WebFetch output is a model's summary. Quotes and figures from those notes should be re-checked against live pages before they go into the strategy.

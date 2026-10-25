@@ -40,15 +40,7 @@ Added to [options/DIMENSIONS.md](../../options/DIMENSIONS.md):
 - [work-structure](../../options/DIMENSIONS.md#work-structure-how-structured-the-work-is-and-what-agent-shape-fits): role/function plugin packs; key question 4 (which job families gain most).
 - [adoption-model](../../options/DIMENSIONS.md#adoption-model-adoption-and-enablement-model): decentralised authoring with central trust; key question 3.
 
-Proposed structural changes (director's call): split `capability-packaging` into **capability-format-portability** (skill/subagent/plugin formats, harness coupling) and **capability-distribution-trust** (registries, versioning, scanning, evals, org control); consider a dedicated **skill-trigger-reliability / evaluation** dimension or cross-cutting question, since it bears on skills vs deployed agents vs always-on context. No user/product dimension was added beyond the adoption-model and work-structure entries; "which jobs first" is where SkillsBench's domain variance is relevant.
-
-## Open questions for Geoff (unranked)
-
-- Do our target users move between harnesses, or is portability mainly our own concern?
-- Is a skills-only internal marketplace an acceptable trust boundary, or must plugin code (hooks, MCP) be in scope?
-- Which one workflow (PRD review?) do we prototype as a portable skill and test in two harnesses?
-- Do we have access to Ramp or PayPal people for reuse/quality data on their registries?
-- Should Codex/Copilot admin controls and Cowork/Claude Enterprise be trialled (not covered here)?
+Proposed structural changes: split `capability-packaging` into **capability-format-portability** (skill/subagent/plugin formats, harness coupling) and **capability-distribution-trust** (registries, versioning, scanning, evals, org control); consider a dedicated **skill-trigger-reliability / evaluation** dimension or cross-cutting question, since it bears on skills vs deployed agents vs always-on context. No user/product dimension was added beyond the adoption-model and work-structure entries; "which jobs first" is where SkillsBench's domain variance is relevant.
 
 ## Could not verify / gaps
 

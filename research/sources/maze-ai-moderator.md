@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Vendor launch post for AI-moderated interviews with AI analysis. The "200 interviews in 10 days" claim is not in this post; it is in a later Maze post (2026-04-02) and is unattributed there. Maze does have one named-customer AI story (LCS), but it gives no after-figure. Evidence kind: vendor-claim. Audit 2026-10-24: original and extra URLs fetched in full and claims checked.
+Vendor launch post for AI-moderated interviews with AI analysis. The "200 interviews in 10 days" claim is not in this post; it is in a later Maze post (2026-04-02) and is unattributed there. Maze does have one named-customer AI story (LCS), but it gives no after-figure. Evidence kind: vendor-claim. Re-check 2026-10-24: original and extra URLs fetched in full and claims checked.
 
 ## Themes
 - research-synthesis-agents: AI moderator runs interviews autonomously across timezones and languages, evaluates each conversation against 25 quality metrics, with AI analysis (case 11)

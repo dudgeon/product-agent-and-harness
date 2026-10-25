@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Product page only; no outcome data. The page looks stale (footer "© 2024 Zeda"; latest linked blog post 2024-10-07), so it may not reflect current product. Audit 2026-10-24: original fetched in full and claims checked.
+Product page only; no outcome data. The page looks stale (footer "© 2024 Zeda"; latest linked blog post 2024-10-07), so it may not reflect current product. Re-check 2026-10-24: original fetched in full and claims checked.
 
 ## Themes
 - feedback-triage-agents: Multi-channel feedback collection with AI that "Auto-detects and categorizes feedback for quick analysis" (case 10)

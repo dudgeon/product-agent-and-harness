@@ -13,7 +13,7 @@ relevance: high
 ---
 
 ## Relevance to the project
-The canonical vendor statement of the workflow/agent split: predefined code paths for well-defined tasks, model-directed loops for open-ended ones. It is the main citation for the first half of Geoff's hypothesis (structured work wants a workflow, open work wants an agent), but it frames the split by *predictability of steps*, not by user activity type, and it says start with the simplest thing. The page now notes the tooling landscape has changed since 2024.
+The canonical vendor statement of the workflow/agent split: predefined code paths for well-defined tasks, model-directed loops for open-ended ones. It is the main citation for the first half of the working hypothesis (structured work wants a workflow, open work wants an agent), but it frames the split by *predictability of steps*, not by user activity type, and it says start with the simplest thing. The page now notes the tooling landscape has changed since 2024.
 
 ## Themes
 - work-structure-spectrum: workflows = "predefined code paths"; agents = LLM "dynamically direct their own processes"; choose by whether steps can be predicted in advance (Summary, "When to use agents").

@@ -36,4 +36,4 @@ About making your own product usable by outside agents (MCP, CLI, skills, agent 
 
 ## Could not verify
 - Linear, PostHog, Rippling, Replit, Salesforce and Meta figures are relayed from screenshots and talks; none of the primaries were read.
-- Retrieved through Geoff's paid subscription; summarised, not reproduced.
+- Retrieved through a paid subscription; summarised, not reproduced.

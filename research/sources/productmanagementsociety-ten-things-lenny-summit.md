@@ -24,4 +24,4 @@ Attendee write-up covering Ramp (speaker-reported 85% figure), Atlassian (cycle 
 
 ## Could not verify
 - Not verified against talk videos (Atlassian and Ramp now checked against transcripts).
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): this write-up, not note.com, is the source of Krieger's "Every bet needs one decision owner", Dill's editing-as-a-job, Saarinen's learning-from-struggle remark and Cagan's "avoid thinking"; it does not contain "100% right".
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): this write-up, not note.com, is the source of Krieger's "Every bet needs one decision owner", Dill's editing-as-a-job, Saarinen's learning-from-struggle remark and Cagan's "avoid thinking"; it does not contain "100% right".

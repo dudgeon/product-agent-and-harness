@@ -6,7 +6,7 @@ Evidence labels: **first-party** (author describes own system), **vendor claim**
 
 ## 1. Bottom line
 
-Geoff's hypothesis is **partly supported and needs refining**.
+The working hypothesis is **partly supported and needs refining**.
 
 - Supported: the vendor guidance from Anthropic, Google, OpenAI and LangChain all draw a line between work whose path can be written down (workflow, deterministic steps) and work whose path cannot (agent, model-directed loop). The independent production study finds deployed agents are short, constrained and human-checked (68% run at most 10 steps before human intervention), so constraint is what reliability work produces.
 - Refined: the dividing line in the evidence is **not "kind of user activity"** (planning vs PRD review). It is a bundle of properties of a *step of work*: how predictable the path is, whether a cheap check exists, how often it repeats and how much consistency matters, what an error costs, whether someone must audit it, and how much tacit context it carries. Planning and ideation sit at one end of most of these, review and policy checks at the other, but the same person moves between them inside one session (explore, spec, review, build).
@@ -42,7 +42,7 @@ Notes on the classes:
 - The class belongs to a **job step**, not a person or a tool. A "PRD" job contains a C1 step (framing), a C3 step (review against a team standard) and a C5 step (ratify).
 - C1 is unstructured in *path* but still wants structured *context* (folders, memory, naming): the HN anecdotes and the Claude Code CLAUDE.md guidance both point that way.
 
-## 3. Evidence for and against Geoff's hypothesis
+## 3. Evidence for and against the working hypothesis
 
 Hypothesis (as stated): there is general-purpose planning and ideation work that is and wants to remain unstructured and needs a powerful flexible harness; and task-specific work, such as standardising PRD review, that wants a task-specific agent or workflow.
 
@@ -87,7 +87,7 @@ So "one job per agent" means one bounded loop per job, not necessarily one deplo
 
 ## 5. Fit of runtime patterns to classes
 
-Pattern letters are from the research plan (A general harness + skills/subagents; B own harness on a framework/SDK; C meta-harness; D harness calling deployed task agents; E cloud/background agents; F shared persistent workspace; G workflow-engine-embedded agents; H portable skill/plugin ecosystem). Ratings are **judgment**, derived from the evidence cited; they are hypotheses for Geoff to test. S = strong fit, O = workable, W = weak, ? = no evidence.
+Pattern letters are from the research plan (A general harness + skills/subagents; B own harness on a framework/SDK; C meta-harness; D harness calling deployed task agents; E cloud/background agents; F shared persistent workspace; G workflow-engine-embedded agents; H portable skill/plugin ecosystem). Ratings are **judgment**, derived from the evidence cited; they are hypotheses to test. S = strong fit, O = workable, W = weak, ? = no evidence.
 
 | Pattern | C1 Open exploration | C2 Directed construction | C3 Repeatable standardised judgement | C4 Volume pipelines | C5 Accountable commitments |
 |---|---|---|---|---|---|
@@ -121,21 +121,11 @@ Dimension sections added or extended in [../../options/DIMENSIONS.md](../../opti
 - [governance-control-plane](../../options/DIMENSIONS.md#governance-control-plane-permissions-cost-identity-audit): added enforcement-by-hooks/gates option and key question.
 - Key questions appended to [pm-job-sequencing](../../options/DIMENSIONS.md#pm-job-sequencing-which-pm-jobs-to-automate-first), [target-user](../../options/DIMENSIONS.md#target-user-which-users-and-personas-we-serve-first) and [target-outcome](../../options/DIMENSIONS.md#target-outcome-which-outcome-or-value-we-target).
 
-Structure proposals for the director:
+Structure proposals:
 - Consider **merging `review-gating` and `review-gate-placement`** (and `governance-control-plane`'s review/autonomy rows); the same choice appears in three places.
 - Consider **merging `agent-unit` into `work-structure`** or keeping it clearly as "naming unit"; the one-job vs many-skills choice appears in both plus `capability-packaging`.
 - **New dimension `activity-classification`** (proposed above) as the user-facing analogue of `work-structure`: work-structure is about the agent shape; classification is about how we decide which shape applies.
 - **New dimension `autonomy-calibration`**: separate from review gates (gates are where, calibration is who sets how much and how it changes over time).
-
-## 8. Open questions for Geoff
-
-1. Is the unit you want to classify the **user** (a PM who sometimes ideates and sometimes reviews) or the **job step**? The evidence supports the step; a persona-level split would be hard to defend.
-2. Which hypothesis do you most need settled: (a) "task agents beat skills in a general harness on standardised jobs" (no evidence either way; needs a bake-off), or (b) "ideation should stay unstructured" (guidance and anecdotes support it; nothing measured)? These need different research.
-3. How much weight do you put on the **bitter-lesson counter-argument** (structure decays as models improve)? It affects whether to invest in encoding PM standards as workflows or as portable context (skills, rubrics, evals) that survive model changes.
-4. For PRD review specifically: is the team's standard a **rubric (judgment against criteria)** or a **checklist (completeness)**? The evidence on noise (Cloudflare, CR-Bench) suggests narrow, exclusion-heavy specialists; a rubric of five or six criteria may need different design than a long checklist.
-5. Do you need the **audit and enforcement** a deployed workflow gives (A5), or is a skill plus a logged human sign-off enough? This decides pattern G/B vs A/H for C3.
-6. Is a shared, persistent session more valuable for C1 (shared thinking) or C5 (accountable commitments)? Evidence is thin on C1.
-7. Who are the first users: individual PMs (C1/C2-heavy) or a team lead standardising a team process (C3-heavy)? The pattern fit differs sharply.
 
 ## 9. Source notes filed by this track
 

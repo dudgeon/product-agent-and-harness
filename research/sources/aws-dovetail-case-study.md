@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-AWS partner case study on how Dovetail built its Magic AI features on Amazon Bedrock, with one named-customer time figure (Instawork) and unsourced poll stats. Evidence kind: vendor-claim (AWS and Dovetail both promote the story; customer quote is self-reported). Audit 2026-10-24: original fetched in full and claims checked.
+AWS partner case study on how Dovetail built its Magic AI features on Amazon Bedrock, with one named-customer time figure (Instawork) and unsourced poll stats. Evidence kind: vendor-claim (AWS and Dovetail both promote the story; customer quote is self-reported). Re-check 2026-10-24: original fetched in full and claims checked.
 
 ## Themes
 - research-synthesis-agents: Emi Fogg, UX researcher at Instawork: Dovetail AI features save "around 1-2 hours per project" (case 5)

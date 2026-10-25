@@ -1,6 +1,6 @@
 # Block (Square, Cash App): how it runs product and is bringing agents into product management
 
-Date: 2026-10-24. Worker brief for [research-block-product-practices](../research-block-product-practices.md). Built on 61 source notes in [research/sources/](../../research/sources/), filed or updated by this task; themes in [research/themes/research-block-product-practices.md](../../research/themes/research-block-product-practices.md). Lifecycle map: [01-pdlc-block.md](01-pdlc-block.md) and [01-pdlc-block.html](01-pdlc-block.html). Register proposals: [options/contributions/research-block-product-practices.md](../../options/contributions/research-block-product-practices.md).
+Date: 2026-10-24. Worker brief for research-block-product-practices. Built on 61 source notes in [research/sources/](../../research/sources/), filed or updated by this task; themes in [research/themes/research-block-product-practices.md](../../research/themes/research-block-product-practices.md). Lifecycle map: [01-pdlc-block.md](01-pdlc-block.md) and [01-pdlc-block.html](01-pdlc-block.html). Register proposals: options/contributions/research-block-product-practices.md.
 
 Evidence tags: **FP** = first-party (Block, its leaders, goose docs), **VC** = vendor claim (Block marketing a figure), **IND** = independent press, with publication dates.
 
@@ -130,7 +130,7 @@ What Block adds to the set:
 
 ## Options by dimension
 
-Proposals are in [options/contributions/research-block-product-practices.md](../../options/contributions/research-block-product-practices.md), grouped under:
+Proposals are in options/contributions/research-block-product-practices.md, grouped under:
 - loop-source
 - harness-layering
 - model-provider-coupling

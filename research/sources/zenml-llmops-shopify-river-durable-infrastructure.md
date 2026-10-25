@@ -34,5 +34,5 @@ A long structured summary of "Under the River" with a "Critical Assessment" sect
 _Full text omitted from the public repository; see `source_url` for the original._
 
 ## Could not verify
-- The 19-minute / 50-tool-call medians and the "+1,200 people" detail are attributed to Under the River. Those details are first-party via this summary; the coordinator holds the original.
+- The 19-minute / 50-tool-call medians and the "+1,200 people" detail are attributed to Under the River. Those details are first-party via this summary.
 - Authorship: no named author.

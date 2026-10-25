@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Separates two things: Agent Analytics (a metrics tool for a company's own AI features, not a PM agent) and Novus (a PM-adjacent product-fix agent). Useful for scoping. Evidence kind: Pendo press releases plus trade press relaying them; vendor-claim. Audit 2026-10-24: original, the Dec 2025 GA release and the CFOtech article fetched in full; claims checked. Note: this release itself does not mention Pushpay, Novus or the GA date; those come from the extra URLs below.
+Separates two things: Agent Analytics (a metrics tool for a company's own AI features, not a PM agent) and Novus (a PM-adjacent product-fix agent). Useful for scoping. Evidence kind: Pendo press releases plus trade press relaying them; vendor-claim. Re-check 2026-10-24: original, the Dec 2025 GA release and the CFOtech article fetched in full; claims checked. Note: this release itself does not mention Pushpay, Novus or the GA date; those come from the extra URLs below.
 
 ## Themes
 - metrics-review-agents: Agent Analytics measures usage/performance of AI agents; initial launch June 2025, GA 2025-12-17 per Pendo's GA release (case 4)

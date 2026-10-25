@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Comparison written by a competitor: Playcode sells its own AI website/app builder. Per search-index summaries it says it did not run the same brief through either tool, so it is editorial opinion from first-party docs, not a test; shows how thin Figma Make evidence is. Audit 2026-10-24: source_url now 301-redirects to https://playcode.io/lovable-alternative ("Lovable vs Playcode", which does not mention Figma Make and promotes Playcode); no Wayback snapshot exists; claims below rest on search-engine summaries of the original and are unverified against the page.
+Comparison written by a competitor: Playcode sells its own AI website/app builder. Per search-index summaries it says it did not run the same brief through either tool, so it is editorial opinion from first-party docs, not a test; shows how thin Figma Make evidence is. Re-check 2026-10-24: source_url now 301-redirects to https://playcode.io/lovable-alternative ("Lovable vs Playcode", which does not mention Figma Make and promotes Playcode); no Wayback snapshot exists; claims below rest on search-engine summaries of the original and are unverified against the page.
 
 ## Themes
 - prototyping-agents-limits: Competitor comparison without hands-on testing (unverified; search summary only) (case 16)

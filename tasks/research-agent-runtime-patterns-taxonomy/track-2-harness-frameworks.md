@@ -1,6 +1,6 @@
 # Track 2: Frameworks and SDKs for building your own harness
 
-Date: 2026-10-24. Filed by: research-agent-runtime-patterns-taxonomy. Status: report for the director; menu of options and questions, not a recommendation. Source notes are in `../../research/sources/` (links below). Evidence labels: **first-party** (the builder describing its own product), **vendor claim**, **independent**, **anecdote**.
+Date: 2026-10-24. Filed by: research-agent-runtime-patterns-taxonomy. Status: report; menu of options and questions, not a recommendation. Source notes are in `../../research/sources/` (links below). Evidence labels: **first-party** (the builder describing its own product), **vendor claim**, **independent**, **anecdote**.
 
 ## 1. Headline findings
 
@@ -92,18 +92,9 @@ Added to `../../options/DIMENSIONS.md` (menu and unranked key questions; no winn
 - [session-persistence-sharing](../../options/DIMENSIONS.md#session-persistence-sharing-session-persistence-and-sharing): hybrid ephemeral-plus-SessionStore option.
 - [work-structure](../../options/DIMENSIONS.md#work-structure-how-structured-the-work-is-and-what-agent-shape-fits): workflow engine with embedded agents; single-agent vs crew question.
 - New, proposed: [model-provider-coupling](../../options/DIMENSIONS.md#model-provider-coupling-how-tightly-the-agent-is-coupled-to-one-model-provider) and [harness-upkeep](../../options/DIMENSIONS.md#harness-upkeep-who-maintains-the-harness-over-time-and-at-what-cadence).
-- Cross-cutting question added: is the funded thing a harness at all, or the assets and governance around vendor harnesses.
+- Cross-cutting question added: is the thing being built a harness at all, or the assets and governance around vendor harnesses.
 
-**Structural proposals for the director:** (1) split `harness-ownership` into the loop's *source* (vendor / SDK / framework / fork / own) and its *hosting* (local / self-hosted SDK / hosted), since runtime-location now overlaps; (2) keep `model-provider-coupling` separate from `harness-ownership` at first (different decision owner: procurement and vendor terms); (3) `harness-upkeep` is a resource-request dimension and could sit beside `investment-sequencing` and `adoption-model`; (4) `target-user` should carry whether users are builders (Ramp-like internal teams) or buyers of a harness, because all the build evidence comes from builders.
-
-## 7. Open questions for Geoff
-
-Unranked.
-- Is the outcome a harness that Geoff's team operates, or portable assets plus governance that work in whichever harness users run? (the evidence on the cost of upkeep bears on this)
-- Is model-provider independence a goal, or only harness independence? The first conflicts with current Claude access terms.
-- Which concrete job should be the reference workload for a build comparison (suggest one PM job, e.g. PRD review, built three ways)?
-- Who could answer upkeep and cost questions first-hand: Ramp's Glass team, Stripe, or other adopters? None of the sources give headcount or dollar cost of running a custom harness.
-- Do target users' organisations accept hosted-harness data retention (Managed Agents is not ZDR/HIPAA eligible) or require self-hosting?
+**Structural proposals:** (1) split `harness-ownership` into the loop's *source* (vendor / SDK / framework / fork / own) and its *hosting* (local / self-hosted SDK / hosted), since runtime-location now overlaps; (2) keep `model-provider-coupling` separate from `harness-ownership` at first (different decision owner: procurement and vendor terms); (3) `harness-upkeep` is a resource-request dimension and could sit beside `investment-sequencing` and `adoption-model`; (4) `target-user` should carry whether users are builders (Ramp-like internal teams) or buyers of a harness, because all the build evidence comes from builders.
 
 ## 8. Gaps and what was tried
 

@@ -141,7 +141,7 @@ body=f'''<div class="wrap">
     <li><strong>Re-capture intent at the PR, then verify it in review.</strong> Cheap and enforceable, but it comes after planning, so it can’t stop a well-built wrong thing.</li>
     <li><strong>One general harness plus a governed skills marketplace, not a set of named agents.</strong> The only named custom agents are the reviewer (Shrek) and Operator; Stripe, by contrast, names an agent per task.</li>
     <li><strong>Write-back after release is a first-class step.</strong> Support knowledge is a launch gate; harness gaps come back as skills.</li>
-    <li><strong>The seam to fund is research → shaped intent, with the evidence attached.</strong> Intercom’s research team is heavily AI-assisted, but its handoff to the people who shape work isn’t on record.</li>
+    <li><strong>The seam to build for is research → shaped intent, with the evidence attached.</strong> Intercom’s research team is heavily AI-assisted, but its handoff to the people who shape work isn’t on record.</li>
   </ul>
 </section>
 

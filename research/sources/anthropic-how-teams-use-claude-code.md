@@ -24,4 +24,4 @@ Case study mostly about engineering, with product design feeding Figma files to 
 - Anecdotal, no PM section.
 
 ## Could not verify
-- Audit 2026-10-24: date 2025-07-24 confirmed; product design quote is "saves them hours of debugging later on".
+- Re-check 2026-10-24: date 2025-07-24 confirmed; product design quote is "saves them hours of debugging later on".

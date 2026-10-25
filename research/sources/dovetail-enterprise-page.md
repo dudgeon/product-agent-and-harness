@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Dovetail's enterprise sales page, which carries the "30hrs weekly time saved per user" stat and links to a Dovetail-commissioned Forrester Total Economic Impact study. Shows how vendor ROI stats get detached from their method. Evidence kind: vendor-claim (the Forrester TEI was commissioned by Dovetail, so it is also vendor-claim). Audit 2026-10-24: page fetched in full; the Forrester TEI at https://tei.forrester.com/go/dovetail/CustomerInsights/ and Dovetail's TEI summary at https://dovetail.com/resources/industry-reports/2025-forrester-TEI-of-Dovetail were also fetched.
+Dovetail's enterprise sales page, which carries the "30hrs weekly time saved per user" stat and links to a Dovetail-commissioned Forrester Total Economic Impact study. Shows how vendor ROI stats get detached from their method. Evidence kind: vendor-claim (the Forrester TEI was commissioned by Dovetail, so it is also vendor-claim). Re-check 2026-10-24: page fetched in full; the Forrester TEI at https://tei.forrester.com/go/dovetail/CustomerInsights/ and Dovetail's TEI summary at https://dovetail.com/resources/industry-reports/2025-forrester-TEI-of-Dovetail were also fetched.
 
 ## Themes
 - research-synthesis-agents: Enterprise page stats "30hrs" weekly time saved per user, "30%" team capacity increase, "66%" faster shipping (unattributed stat tiles). The Notion and GrandPad testimonials are NOT on this page; they are in the Dovetail 3.0 launch release (see dovetail-ai-customer-insights-hub) (case 5)

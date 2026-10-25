@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-Documents an issue-tracker agent that does feedback intake and triage, a concrete instance of the triage job rather than discovery. Audit 2026-10-24: source_url returns 404 (feature renamed); current page https://linear.app/docs/triage-intelligence fetched in full, plus both changelog entries; claims checked.
+Documents an issue-tracker agent that does feedback intake and triage, a concrete instance of the triage job rather than discovery. Re-check 2026-10-24: source_url returns 404 (feature renamed); current page https://linear.app/docs/triage-intelligence fetched in full, plus both changelog entries; claims checked.
 
 ## Themes
 - feedback-triage-agents: Triage Intelligence suggests team, project, assignee, labels and flags likely duplicates (docs); the Linear agent files issues from Intercom/Zendesk tickets and Gong transcripts into the team's triage queue and auto-merges duplicates (changelog 2025-12-11), and drafts issues from Slack @mentions (changelog 2025-10-23) (case 7)

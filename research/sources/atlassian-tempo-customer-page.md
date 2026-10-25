@@ -13,7 +13,7 @@ relevance: medium
 ---
 
 ## Relevance to the project
-A vendor customer page for Rovo whose headline numbers are the only quantified Tempo evidence in the case file. Bears on whether any PM-agent time-saving claim has a disclosed method: neither Atlassian nor Tempo publishes one. Both parties have a commercial interest (Tempo is an Atlassian Platinum Marketplace Partner), so this is vendor-claim twice over. Audit 2026-10-24: Atlassian page fetched (only the banner renders; story body is not in the fetched text, three attempts incl. wac-cdn mirror and offsets); Tempo's own write-up of the same story fetched in full and claims checked against it.
+A vendor customer page for Rovo whose headline numbers are the only quantified Tempo evidence in the case file. Bears on whether any PM-agent time-saving claim has a disclosed method: neither Atlassian nor Tempo publishes one. Both parties have a commercial interest (Tempo is an Atlassian Platinum Marketplace Partner), so this is vendor-claim twice over. Re-check 2026-10-24: Atlassian page fetched (only the banner renders; story body is not in the fetched text, three attempts incl. wac-cdn mirror and offsets); Tempo's own write-up of the same story fetched in full and claims checked against it.
 
 ## Themes
 - vendor-claims-vs-independent-evidence: Banner "30% faster task completion and 3x time savings"; Tempo's own page scopes the 3x to one agent (Structure View Builder) and gives no baseline, sample or period (case 1)

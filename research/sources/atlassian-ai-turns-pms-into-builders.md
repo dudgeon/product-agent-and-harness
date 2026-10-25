@@ -29,4 +29,4 @@ Vendor blog hosting practitioner quotes from Aakash Gupta. Supplies a list of li
 
 ## Could not verify
 - No Gupta piece ranking tasks to automate was found; his comments are via Atlassian. Peter Yang's Creator Economy workflows are paywalled and not summarised. The 70 to 80% claim is Gupta's own and unverified.
-- Audit 2026-10-24: page read; Gupta quotes confirmed: 'the biggest change that has happened to the product management job in the last few years'; deliver AI prototypes alongside PRDs and strategy docs; agent 'drafting 70–80% of your emails'; 'Evals and RAG are two of the most important skills'. All seven automatable examples confirmed.
+- Re-check 2026-10-24: page read; Gupta quotes confirmed: 'the biggest change that has happened to the product management job in the last few years'; deliver AI prototypes alongside PRDs and strategy docs; agent 'drafting 70–80% of your emails'; 'Evals and RAG are two of the most important skills'. All seven automatable examples confirmed.

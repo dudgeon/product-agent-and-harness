@@ -13,7 +13,7 @@ relevance: low
 ---
 
 ## Relevance to the project
-Vercel-published customer story about Avalara using v0; a product-leader story (idea from the Chief Strategy and Product Officer, prototype built by an unnamed teammate), not PM-specific. Audit 2026-10-24: original fetched in full and claims checked; source_url corrected from the index page https://vercel.com/case-studies.
+Vercel-published customer story about Avalara using v0; a product-leader story (idea from the Chief Strategy and Product Officer, prototype built by an unnamed teammate), not PM-specific. Re-check 2026-10-24: original fetched in full and claims checked; source_url corrected from the index page https://vercel.com/case-studies.
 
 ## Themes
 - prototyping-agents-limits: Avalara "two patent-pending products created in roughly 60 days" (vendor-claim) (case 17)

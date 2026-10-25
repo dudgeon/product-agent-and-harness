@@ -23,6 +23,6 @@ Vendor case study claiming 89% AI adoption and 800+ internal agents. No PM-speci
 
 ## Could not verify
 - Publish date and PM usage not found.
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read at https://claude.com/customers/zapier (308 redirect): "89% AI adoption across all employees", "800+ AI agents deployed internally"; page undated. The Zapier job-post detail in Relevance was not re-checked (unverified).
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read at https://claude.com/customers/zapier (308 redirect): "89% AI adoption across all employees", "800+ AI agents deployed internally"; page undated. The Zapier job-post detail in Relevance was not re-checked (unverified).
-- Audit 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read at https://claude.com/customers/zapier (308 redirect): "89% AI adoption across all employees", "800+ AI agents deployed internally"; page undated. The Zapier job-post detail in Relevance was not re-checked (unverified).
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read at https://claude.com/customers/zapier (308 redirect): "89% AI adoption across all employees", "800+ AI agents deployed internally"; page undated. The Zapier job-post detail in Relevance was not re-checked (unverified).
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read at https://claude.com/customers/zapier (308 redirect): "89% AI adoption across all employees", "800+ AI agents deployed internally"; page undated. The Zapier job-post detail in Relevance was not re-checked (unverified).
+- Re-check 2026-10-24 (research-pm-agents-jobs-to-be-done): re-read at https://claude.com/customers/zapier (308 redirect): "89% AI adoption across all employees", "800+ AI agents deployed internally"; page undated. The Zapier job-post detail in Relevance was not re-checked (unverified).

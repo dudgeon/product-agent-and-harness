@@ -1,6 +1,6 @@
 # Options register
 
-Why this exists: the project's deliverable is a strategy deck that informs a **resource request** to go and do the hard work of picking the right pattern. It is not a PRD for one implementation. So the research is aggregated as a **menu of options, split by dimension**, with the **key questions** that would have to be answered to choose among them. Research that only recommends one answer, or only describes a landscape, is incomplete.
+Why this exists: the project's aim is to inform the hard work of picking the right pattern. It is not a PRD for one implementation. So the research is aggregated as a **menu of options, split by dimension**, with the **key questions** that would have to be answered to choose among them. Research that only recommends one answer, or only describes a landscape, is incomplete.
 
 Where it sits: `research/` holds sources and themes (what we found). `options/` holds the menu (what we could choose, and what we'd need to know to choose). Findings link up from here to `research/sources/`.
 
@@ -37,15 +37,14 @@ One section per dimension:
 2. ...
 
 ### Current lean (optional) and what would change it
-### Added by: <task slug> on <date>
 ```
 
 ## Rules for every agent
 
 1. **Read `DIMENSIONS.md` before you start and before you report.** Use an existing dimension and option before inventing one; the same idea under two names fragments the menu.
-2. **Append, don't rewrite.** Add options, evidence rows and key questions to a dimension. If you think a dimension should be merged, split, renamed, or another agent's entry is wrong, say so in your report to the director. Several agents write here at once: make small Edits and re-read just before each.
+2. **Append, don't rewrite.** Add options, evidence rows and key questions to a dimension. If you think a dimension should be merged, split, renamed, or another agent's entry is wrong, say so in your report. Several agents write here at once: make small Edits and re-read just before each.
 3. **Every option needs evidence** linking to a source note in `research/sources/`, marked vendor claim, independent or first-party. An option with no source goes in under "Unsourced / to verify".
 4. **Every dimension you touch must end with key questions**, not only a description. If you can't say what we'd need to learn to choose, say that explicitly as the first key question.
 5. **Your deliverable has an "Options by dimension" section** that points at the dimension sections you added to (links, not copies), plus a short list of any new dimensions you propose.
 6. **Cross-cutting questions** (a question that bears on several dimensions) go in the `## Cross-cutting key questions` section at the end of `DIMENSIONS.md`.
-7. The director keeps `DIMENSIONS.md` coherent (merges, renames, a contents list at the top) and brings the decisions about structure to Geoff.
+7. `DIMENSIONS.md` is kept coherent by one maintainer (merges, renames, a contents list at the top).
