@@ -30,3 +30,7 @@ Core framework defining PM accountability: value, usability, feasibility and bus
 ## Could not verify
 - The discovery-judgement post was not opened directly; its claim is from a search summary.
 - Re-check 2026-10-24: page and the Discovery – Judgement post opened directly and confirmed; the earlier search-summary caveat is superseded.
+
+## Added by research-skill-rigidity-spectrum (2026-10-25)
+- Read as decision rights for a process artifact: each risk has a named owner (value and viability: PM; usability: designer; feasibility: lead engineer), so a risk or open-question register built on the four risks already carries a RACI-like owner column. Compare Torres's five assumption types (producttalk-torres-assumption-testing), which add ethical risk.
+- For multi-party agent sessions, this suggests routing each open question to the owner of its risk type rather than to "the PM" (my judgment, not Cagan's claim).

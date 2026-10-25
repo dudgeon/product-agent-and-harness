@@ -29,3 +29,6 @@ Block runs an internal Skills marketplace of 100+ SKILL.md skills with role bund
 
 ## Could not verify
 - Whether non-engineering roles have skill bundles; the examples are engineering.
+
+## Added by research-skill-rigidity-spectrum (2026-10-25)
+- Form of the standard: Block's third principle, "write a constitution, not a suggestion", is the explicit-constraint form (named prohibitions such as never recalculating script scores) rather than the explained-reasoning form Anthropic's January 2026 constitution for Claude takes; both reject soft phrasing, but Block's version is closer to a short rule list and Anthropic's to a long argument. Together with Principle 1 (binary bash checks so scores reproduce) it puts Block's skills at the checklist-plus-hard-rules end of dimension 3, with interpretation (Principle 2) left to the model and no rubric or exemplar layer described in the post. Themes: standard-form-spectrum, gate-judge-separation.

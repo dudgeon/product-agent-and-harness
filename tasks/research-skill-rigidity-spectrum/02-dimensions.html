@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skills on the Spectrum</title>
+<meta name="description" content="Seven dimensions along which a product-work skill or agent encodes work, from rigid to judgment-driven; place a skill on them step by step.">
+<style>
+:root{--paper:#f4f3ef;--ink:#232b36;--muted:#64707f;--faint:#c9cfd7;--hair:#e1e5ea;--card:#ffffff;--accent:#b85c35;--accent-wash:#f3e2d8;--wash:#e8ebee;--serif:Charter,"Iowan Old Style",Georgia,serif;--sans:"Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif;--mono:Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171a1f;--ink:#e6e8eb;--muted:#9aa4b1;--faint:#3a424d;--hair:#2b323b;--card:#1f242b;--accent:#e08a62;--accent-wash:#3a2a22;--wash:#242a32}}
+:root[data-theme="dark"]{--paper:#171a1f;--ink:#e6e8eb;--muted:#9aa4b1;--faint:#3a424d;--hair:#2b323b;--card:#1f242b;--accent:#e08a62;--accent-wash:#3a2a22;--wash:#242a32}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.45}
+body{padding:0 16px 64px}
+main{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,5vw,46px);margin-top:40px}
+h2{font-size:clamp(22px,3vw,28px);margin-top:44px;padding-top:18px;border-top:1px solid var(--hair)}
+h3{font-size:19px;margin-top:22px}
+p{max-width:72ch;margin:12px 0}
+.lede{font-size:18px;color:var(--muted);max-width:68ch}
+.tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--faint);border-radius:999px;padding:2px 9px;margin-right:6px;vertical-align:middle}
+.tag.accent{color:var(--accent);border-color:var(--accent)}
+.row{margin-top:18px;padding:16px;border:1px solid var(--hair);border-radius:12px;background:var(--card)}
+.row header{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.row header .q{color:var(--muted);font-size:15px}
+.stops{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.stop{flex:1 1 150px;min-width:140px;border:1.5px solid var(--faint);border-radius:10px;background:transparent;color:var(--ink);text-align:left;padding:10px 12px;font:inherit;font-size:14px;cursor:pointer;line-height:1.3}
+.stop small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.stop:hover{border-color:var(--muted)}
+.stop[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-wash);box-shadow:inset 0 0 0 1px var(--accent)}
+.stop:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.detail{margin-top:12px;padding:12px 14px;border-left:3px solid var(--accent);background:var(--wash);border-radius:0 10px 10px 0;font-size:14px}
+.detail ul{margin:6px 0 0;padding-left:18px}
+.detail li{margin:4px 0}
+.ev{color:var(--muted);font-size:12.5px}
+.scale{position:relative;height:22px;margin-top:8px}
+.scale .line{position:absolute;left:0;right:0;top:10px;height:2px;background:var(--faint)}
+.scale .lab{position:absolute;top:0;font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.scale .lab.r{right:0}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.preset{border:1.5px solid var(--faint);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer}
+.preset[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-wash)}
+.profile{margin-top:16px;padding:14px 16px;border:1px dashed var(--faint);border-radius:12px;background:var(--card)}
+.profile .line{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:14px}
+.profile .line b{font-weight:600}
+.profile .line span.empty{color:var(--muted)}
+.steps{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.step{border:1.5px solid var(--faint);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px;font:inherit;font-size:14px;cursor:pointer}
+.step[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-wash)}
+table{border-collapse:collapse;width:100%;font-size:14px;margin-top:14px;display:block;overflow-x:auto}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--hair);min-width:150px}
+th{font-weight:600;color:var(--muted);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
+td:first-child,th:first-child{min-width:110px;font-weight:600}
+.note{font-size:13.5px;color:var(--muted)}
+.btn{border:1.5px solid var(--faint);background:var(--card);color:var(--ink);border-radius:8px;padding:7px 12px;font:inherit;font-size:14px;cursor:pointer}
+textarea{width:100%;min-height:120px;margin-top:10px;font-family:var(--mono);font-size:12.5px;background:var(--card);color:var(--ink);border:1px solid var(--faint);border-radius:8px;padding:10px}
+footer{margin-top:48px;color:var(--muted);font-size:13px}
+@media (max-width:640px){.stop{flex:1 1 100%}.profile .line{grid-template-columns:90px 1fr}}
+</style>
+</head>
+<body>
+<main>
+<h1>Skills on the spectrum</h1>
+<p class="lede">A skill is a score, not a dial. Seven dimensions set how a skill or agent encodes a piece of product work, and each is set per step, not once for the whole skill. Click a stop on each dimension to place a skill, or load a preset. Techniques and sources appear under the stop you pick.</p>
+<p class="note">From the research synthesis of 2026-10-25 (research-skill-rigidity-spectrum). Evidence labels: first-party, vendor claim, independent, anecdote. Source slugs name notes in the project's research library.</p>
+
+<h2>Place a skill</h2>
+<p>Pick the job the skill is doing, or build a profile by hand. The three jobs are not three points on a line; each is a different profile.</p>
+<div class="presets" id="presets"></div>
+<div id="dims"></div>
+
+<div class="profile" id="profile">
+  <h3>Profile</h3>
+  <div class="line" id="profileLines"></div>
+  <p class="note" id="profileNote"></p>
+  <button class="btn" id="copyBtn" type="button">Copy as text</button>
+  <textarea id="profileText" readonly aria-label="Profile as text"></textarea>
+</div>
+
+<h2>Worked example: an intent-shaping skill, step by step</h2>
+<p>Geoff's intent-shaping documents describe a shaping skill (standard questions, a named source per answer, every answer written back) and a risk advisor that classifies a spec against a known taxonomy. The same skill is rigid at some steps and loose at others. Pick a step to load its profile above.</p>
+<div class="steps" id="steps"></div>
+<p class="note" id="stepNote"></p>
+
+<h2>The three jobs as profiles</h2>
+<table>
+<thead><tr><th>Dimension</th><th>Enforce standards</th><th>Up-level judgment</th><th>Act autonomously</th></tr></thead>
+<tbody id="jobsTable"></tbody>
+</table>
+
+<h2>Two modifiers that are not dimensions of the skill</h2>
+<p><b>Party count.</b> A long-running session with several people and agents adds no techniques; it raises the weight of Check and Record. The failure modes it adds: claimed-but-not-done work (agent task status lags; checklists "documented as complete"), clarification never asked, records drifting as contributors rotate. <span class="ev">Claude Code agent teams (first-party); MAST, Urbach (independent).</span></p>
+<p><b>Competence fit.</b> Whether the step sits inside the model's competence, and whether the person alone beats the model alone, decides the right stance and rights for that step. It moves with every model release. <span class="ev">BCG consultants; Vaccaro meta-analysis (independent).</span></p>
+
+<footer>Standalone page, inline styles and script only. Companion to 01-synthesis.md and 03-design-guide.md in tasks/research-skill-rigidity-spectrum/. Figures are those stated by the cited sources; vendor and first-party claims are labelled.</footer>
+</main>
+
+<script>
+(function(){
+const DIMS=[
+{id:'path',name:'Path',q:'Who picks the next step?',left:'code decides',right:'person decides',stops:[
+ {l:'Code-fixed',s:'a workflow of steps',t:[['Workflow agents: sequential, loop, parallel; graph of nodes','Google ADK; Microsoft Agent Framework','first-party'],['Chain, route on structured output, evaluator loop','OpenAI Agents SDK','first-party']]},
+ {l:'Model nodes in a code scaffold',s:'bounded nodes, iteration cap',t:[['Blueprint of deterministic and agentic nodes; hand back to a person after two CI rounds','Stripe Minions (more than 1,000 merged PRs a week, company figure)','first-party'],['Model returns the next-step intent; a code switch executes, loops or breaks for approval','HumanLayer 12-factor, factor 8','anecdote'],['Fixed stages, model fills content','Anthropic frontend-design, doc-coauthoring, PM write-spec','first-party']]},
+ {l:'Code islands in a model flow',s:'rules inside tools the model calls',t:[['Topic as a mini-agent: deterministic logic inside, model orchestration outside; admins can force classic dialog trees','Microsoft Copilot Studio','first-party'],['Consolidate a multi-step procedure into one tool','Anthropic tool-design guidance','first-party'],['Script computes the score; the model interprets and never recalculates','Block Repo Readiness skill','first-party']]},
+ {l:'Model-chosen',s:'a loop with a stopping condition',t:[['Runs tools in a loop toward a goal; a stopping condition, not a step list','Simon Willison’s agent definition','independent'],['Prefer instructions over scripts unless you need deterministic behavior or external tooling','OpenAI Codex skills guidance','first-party']]},
+ {l:'Human-chosen',s:'the person drives, the agent fills in',t:[['Section by section: questions, options, the person curates with reasons','Anthropic doc-coauthoring','first-party'],['Refuses to draft the next paragraph until the thesis holds','Khanmigo writing coach','first-party talk']]}]},
+{id:'check',name:'Check',q:'Where does a gate fire, who judges it, and can it fail open?',left:'script, fail-closed, before',right:'person, advisory, after',stops:[
+ {l:'Script, fail-closed, before the side effect',s:'schema, lint, required checks',t:[['Deterministic checks on the process artifact: sections present, sources linked, record current','GitHub branch protection; Codeminer42 CI; agent-teams hooks','first-party; anecdote'],['A hook blocks only on exit 2; a timed-out hook lets the action through: build it fail-closed','Claude Code hooks reference','first-party']]},
+ {l:'Model judge in a fresh context',s:'reader test, grader, adversarial reviewer',t:[['An outcome runs a grader in a separate context against a per-criterion rubric, iteration cap 3 by default','Claude Managed Agents (beta)','first-party'],['No-context reader test; a reviewer told to disprove','doc-coauthoring; Superpowers; Osmani','first-party; anecdote'],['Judge hygiene: swap order, length control, a different model family, a reference answer, escalate unstable verdicts','Zheng et al.; length-controlled AlpacaEval; self-preference study','independent']]},
+ {l:'Model self-check in context',s:'critique against the brief',t:[['Self-review against the brief for generic choices; say what changed and why','Anthropic frontend-design','first-party'],['Stop hook asking "are all tasks complete?" turns a gate into a loop','Claude Code hooks guide','first-party']]},
+ {l:'Human judge, cheap to verify',s:'point to the line and the source',t:[['Friction sloped to stakes; verification made cheap or people stop doing it','Vasconcelos et al.; Fok and Weld','independent'],['Code decides when the person steps in: action type, iteration cap or risk category, not model confidence','12-factor; Stripe; Devin categories; Ramp Approve/Reject/Needs review','anecdote; first-party; vendor claim']]},
+ {l:'Advisory only',s:'the standard lives in the prompt',t:[['A skill is "a control, though an advisory one"; a policy that must hold needs a hook behind it','Anthropic AI-native SDLC playbook','first-party'],['Every PM skill read holds its standard as prose with no gate','Anthropic PM plugin: write-spec, synthesize-research, brainstorm','first-party']]}]},
+{id:'standard',name:'Standard',q:'What form does the bar take?',left:'checkable items',right:'taste in the person',stops:[
+ {l:'Checkable items',s:'pass/fail, one per task',t:[['Checklists and holistic rubrics had equal inter-rater reliability (0.81 vs 0.78) but each task needs its own checklist','Ilgen et al., 45 medical assessment studies','independent'],['Yes/no items raised judge agreement with humans from 46.4% to 52.2%','TICK','independent']]},
+ {l:'Items read holistically',s:'tagged statements, one grade',t:[['Self-contained statements tagged Essential/Important/Optional/Pitfall, read as a whole; fixed weights were brittle','Rubrics as Rewards','independent'],['A consensus filter keeps criteria most experts agree apply (34 of 48,562); the grader still only matched physician-physician agreement','HealthBench','first-party']]},
+ {l:'Rubric with reasons',s:'criteria plus the why',t:[['"Goals should be outcomes, not outputs"; "if everything is P0, nothing is P0"','Anthropic PM write-spec','first-party'],['Explain the why; all-caps ALWAYS/NEVER is "a yellow flag"','Anthropic skill-creator','first-party'],['Experts discover their standard while grading ("criteria drift"): grade first, write the rubric second','Hamel Husain’s judge guide','independent']]},
+ {l:'Exemplars and anti-exemplars',s:'references, defaults to refuse',t:[['3 to 5 relevant, diverse, tagged examples; a reference answer cut one judge’s failure rate from 70% to 15%','Anthropic prompting guidance; Zheng et al.','first-party; independent'],['Named AI defaults to avoid, "defaults rather than choices"; impact-ranked rules with incorrect/correct pairs','Anthropic frontend-design; Vercel react-best-practices (70 rules)','first-party'],['Model help raises individual quality and narrows collective diversity; positive exemplars converge the portfolio','Doshi and Hauser; Anderson et al.; Padmakumar and He','independent']]},
+ {l:'Stance as the standard',s:'a way of working, not an output property',t:[['"Give hints, never the answer": the same model with tutor prompts raised practice 127% and removed most of the learning harm','Bastani et al., PNAS RCT','independent'],['Non-negotiable rules for disciplines the model skips; reasons for everything else','Superpowers; Claude’s constitution','anecdote; first-party']]},
+ {l:'Taste in the person',s:'learned by doing',t:[['Criteria that need judgment and practice to apply','Paul Graham, Taste for Makers','anecdote'],['Encoding a graded rubric costs weeks per artifact and tops out at expert agreement','PaperBench; HealthBench','first-party']]}]},
+{id:'rights',name:'Rights',q:'Who decides, who approves, who sets autonomy?',left:'agent acts',right:'person does',stops:[
+ {l:'Agent acts, person audits',s:'sandbox, trace, circuit breaker',t:[['Rules, then a classifier, then a human prompt, under a sandbox, with admin locks; auto mode pauses after 3 consecutive or 20 total blocks','Claude Code permission modes; VS Code Copilot approvals','first-party'],['Interactive sessions now start in auto mode; auto-approve-all rose from about 20% to over 40% of sessions with experience','Claude Code docs; Anthropic autonomy study','first-party']]},
+ {l:'Agent acts in bounds, approves by class',s:'tiered by environment or artifact state',t:[['"The agent may act up to the production gate and cannot pass it"','Anthropic SDLC playbook','first-party'],['Earned autonomy: suggestions first, a slider raised as weekly labelling shows accuracy','Ramp Policy Agent','first-party'],['Mode switched mid-session "as trust builds"','Claude Agent SDK','first-party']]},
+ {l:'Agent proposes, person decides',s:'separation of duties',t:[['The requester cannot approve their own agent PR; the authoring agent cannot approve its own code','GitHub Copilot cloud agent; SDLC playbook','first-party'],['Single Decider and Recommender; a named owner per risk; hand off the decision, not the investigation','Bain RAPID; Cagan; Shopify River','vendor claim; first-party']]},
+ {l:'Agent informs, person does',s:'recommend or withhold',t:[['Blend human and AI only where the human alone beats the AI alone or the task is creation; otherwise give the decision to the better party','Vaccaro et al., meta-analysis of 100+ studies','independent'],['"The final responsibility should always remain with a human"','Linear agent interaction guidelines','first-party'],['Refuse to run, or fall back to a stated floor, when no person is present','Addy Osmani’s skills','anecdote']]}]},
+{id:'stance',name:'Stance',q:'How does the skill treat the person’s thinking?',left:'do it',right:'stay out',stops:[
+ {l:'Do',s:'produce from template and criteria',t:[['Produce the artifact; ask only to confirm the subject','Anthropic PM write-spec; frontend-design','first-party']]},
+ {l:'Check',s:'self-critique, fresh reader, checklist',t:[['Verification checklists; a verifier agent in the task; agents review their own misses','Anthropic human-agent teams','first-party']]},
+ {l:'Challenge',s:'critique the work, or the other agent',t:[['A devil’s advocate arguing against the AI’s recommendation improved appropriate reliance at no perceived workload cost','Chiang et al., IUI 2024','independent'],['Pre-mortem; an independent second reader with written answers to every objection; "challenge any requirement without evidence"','Klein; Amazon Bar Raiser; Ramp’s seven questions','anecdote; vendor claim; first-party']]},
+ {l:'Ask before',s:'one question at a time, person commits first',t:[['One question at a time with a guess attached; tied to something specific; an explicit-yes rule; never ask what you can read; listed cases where asking would be paternalistic','discernment-nudge; doc-coauthoring; Superpowers; Osmani interview-me','first-party; anecdote']]},
+ {l:'Ask after',s:'findings as questions',t:[['Framing an AI’s findings as questions improved people’s reasoning even when the AI was always right','Danry et al., CHI 2023','independent'],['Two or three specific follow-ups after a consequential answer, at most once per conversation','Anthropic discernment-nudge','first-party']]},
+ {l:'Coach or withhold',s:'hints and the expert move, not the answer',t:[['Explanation without the recommendation produced learning where recommendation plus explanation did not','Gajos and Mamykina','independent'],['Expert-move suggestions to tutors shifted them toward guiding questions: +4 points mastery, +9 for weaker tutors','Tutor CoPilot RCT, 900 tutors','independent'],['Forcing functions (on demand, delay, decide first) reduce over-reliance but are the least liked designs','Buçinca et al.','independent']]}]},
+{id:'record',name:'Record',q:'What does it leave behind, and how does that stay true?',left:'outcome only',right:'done, open, why, outcome',stops:[
+ {l:'The outcome',s:'spec, PRD, prototype',t:[['Committed artifact chain intent.md, spec.md, plan.md','Anthropic SDLC playbook','first-party'],['Per-feature spec folder plus standing steering files; change proposals archived into the canonical spec','Kiro; OpenSpec','first-party']]},
+ {l:'Plus why',s:'decision records, traces',t:[['Small numbered records, immutable, superseded not edited; accepted ones binding on agents; a generated index omits superseded ones','Nygard; Davidson; Codeminer42','anecdote'],['Stale records read by agents become wrong instructions: "AI checks; humans attest"','Codeminer42','anecdote'],['Decision traces captured at decision time ("context graph")','Foundation Capital thesis','vendor claim, no data']]},
+ {l:'Plus what is open',s:'questions, assumptions, owners',t:[['Typed assumptions mapped by importance and evidence, success criteria set before testing','Teresa Torres','first-party practitioner'],['Open questions tagged by owner and blocking/non-blocking; typed elicitation activity on an issue','Anthropic write-spec; Linear agent sessions','first-party']]},
+ {l:'Plus what done means',s:'definition of done, required checks, fidelity',t:[['A 19-item checklist: deaths 1.5% to 0.8% in eight hospitals (before/after); mandated across 101 hospitals, outcomes did not move; "inaccurately documented as complete"','Haynes; Urbach; Gagliardi','independent'],['About 24% of multi-agent failures were verification failures; an objective-level verification step gave +15.6%','MAST, 1,642 traces','independent'],['Fixed ritual, open content: silent read, senior speaks last, alternatives required','Amazon PR/FAQ; Google design docs','first-party']]}]},
+{id:'loop',name:'Loop',q:'How does the skill get better?',left:'static',right:'rewrites itself',stops:[
+ {l:'Static',s:'written once',t:[['No PM skill found ships with evals','Anthropic PM plugin','first-party']]},
+ {l:'Curated from corrections',s:'a person writes the lesson',t:[['A shared CLAUDE.md of about 2.5k tokens recording mistakes; tag the agent on PRs to add learnings','Claude Code team','anecdote'],['Strengthen a skill after a pressure-test failure','Superpowers','anecdote']]},
+ {l:'Agent proposes, person approves',s:'from transcripts and corrections',t:[['Knowledge proposed from chat corrections; the person edits or dismisses','Devin','vendor claim'],['Transcript analysis proposes instruction lines; a scheduled improver opens a PR','Claude Code /insights; Warp','anecdote; first-party'],['Nightly "dreaming" rewrites skill files from the day’s sessions; a classifier tags every thread by outcome','Shopify River','first-party']]},
+ {l:'Eval-driven',s:'graded examples, regression suite',t:[['Evals started from five examples; weekly labelling','Ramp Policy Agent','first-party'],['Capability evals graduate into regression suites; re-test when models change','Anthropic evals post; human-agent teams','first-party'],['Prose diagnosis beats a scalar score as the signal: +6% over RL with up to 35 times fewer rollouts','GEPA','independent']]},
+ {l:'Self-rewriting',s:'incremental deltas, separate curate role',t:[['Whole-file rewrites suffer brevity bias and context collapse; fixed by incremental deltas from generate, reflect and curate roles','ACE','independent'],['Self-curation persists errors; little gain for weaker models; fivefold tokens','Dynamic Cheatsheet (its own limits)','independent'],['Verified executable skills retrieved later','Voyager','independent']]}]}
+];
+const PRESETS={
+ enforce:{name:'Enforce standards',p:{path:1,check:0,standard:1,rights:2,stance:2,record:3,loop:3},note:'Fixed stages applied at a pause point; a fail-closed check on the process artifact and a fresh-context grader on content; checkable items read holistically with a consensus filter; policy per class with the shaper unable to ratify; check and challenge; definition of done; the standard owner labels a sample.'},
+ uplevel:{name:'Up-level human judgment',p:{path:4,check:3,standard:4,rights:3,stance:3,record:2,loop:1},note:'The person keeps the pen; the person is the judge and the agent makes verification cheap; stance as the standard, with anti-exemplars rather than positive exemplars; the person decides; ask before and after, coach, withhold; open-question register, assumption map, decisions with reasons; a stance eval of its own.'},
+ act:{name:'Act autonomously',p:{path:1,check:0,standard:3,rights:1,stance:0,record:1,loop:3},note:'Code scaffold with model nodes and an iteration cap; script checks before side effects and a model grader with hygiene; exemplars and references for the grader; earned autonomy tiered by environment under a sandbox; do, asking only below a confidence category; a decision trace per action; execution feedback and an eval set, re-tested on each model release.'}
+};
+const STEPS=[
+ {name:'Gather evidence',p:{path:1,check:0,standard:0,rights:0,stance:0,record:0,loop:3},note:'Parallel research streams, each writing a file; a script insists every claim has a source link and fails closed; the agent acts; the record is evidence files with sources; the loop is execution feedback (does the link resolve).'},
+ {name:'Interrogate the PM',p:{path:0,check:3,standard:4,rights:3,stance:3,record:2,loop:3},note:'The seven questions are code-fixed, the follow-ups model-chosen; the PM is the judge and a "needs evidence" stamp is a model check; the standard is the stance itself; the PM decides and the agent may not fill the answer; ask before, one question at a time with a guess; the record is an open-question register with owners; the loop is a stance eval (did the answers change).'},
+ {name:'Draft the short spec',p:{path:1,check:1,standard:1,rights:2,stance:0,record:1,loop:2},note:'A fixed template the model fills; a fresh-context reader test plus a fail-closed completeness hook on required sections; checkable items read holistically with anti-exemplars for prose that reads well and says nothing; the agent proposes and the PM owns; do, then self-check; the spec plus decisions with reasons; corrections proposed by the agent, approved by the PM.'},
+ {name:'Classify risk',p:{path:0,check:1,standard:0,rights:2,stance:2,record:1,loop:3},note:'A code-fixed loop over the risk taxonomy; a model classifier with an SME label on a sample and novel risks escalated to a person; checkable heuristics per risk with a consensus filter for contested ones; policy per risk class with a named owner deciding; check and challenge; a decision trace (risk, heuristic, mitigation, approver); weekly labelled sample with false positive and negative rates.'},
+ {name:'Decide readiness',p:{path:4,check:3,standard:0,rights:3,stance:5,record:3,loop:3},note:'Human-chosen; a human gate with separation of duties (the shaper cannot ratify); a binary definition of ready; a named human decides; the agent stays out and presents the smallest question; a ratification record superseded on change; the loop measures the survival rate of intents into design.'}
+];
+const JOBS=[
+ ['Path','Fixed stages, model fills content; applied at a fixed pause point','Human-chosen or alternating; the agent never takes the pen on the decision','Code scaffold with model nodes; iteration cap; stopping condition'],
+ ['Check','Fail-closed hook on the process artifact; fresh-context grader on content; code first, model second, human for calibration','The person judges; the agent lowers verification cost; forcing functions sloped to stakes','Script and schema before side effects; model grader with hygiene; human spot-check on a sample'],
+ ['Standard','Checkable items read holistically; consensus filter; reasons attached; few hard constraints','Anti-exemplars and questions, not positive exemplars; the standard discovered by grading, not written up front','Exemplars and references for the grader; thresholds with chosen numbers'],
+ ['Rights','Policy per task class; separation of duties; a named human attests','The person decides; the agent recommends or informs; declared up-level job, so it withholds','Earned from measured accuracy; tiered by environment; sandbox; circuit breaker'],
+ ['Stance','Check and challenge the work; challenge the other agent too','Ask before, ask after, coach; withhold while the goal is learning; devil’s advocate on the AI’s recommendation','Do; ask only below a confidence category; batch questions'],
+ ['Record','Definition of done; required checks; drift checks on standing records','Open-question register; assumption map; pre-mortem; decisions with reasons','Decision trace per action; generated index of current records'],
+ ['Loop','Labelled samples graded by the standard owner; evals graduate into regression','A stance eval ("did the person think"); team grading sessions feed the rubric','Execution and metric feedback; eval set; re-test on each model release']
+];
+const state={}; let activePreset=null, activeStep=null, source='';
+const $=s=>document.querySelector(s);
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function renderDims(){
+ $('#dims').innerHTML=DIMS.map(d=>`<section class="row" id="dim-${d.id}"><header><h3>${esc(d.name)}</h3><span class="q">${esc(d.q)}</span></header><div class="scale"><div class="line"></div><span class="lab">${esc(d.left)}</span><span class="lab r">${esc(d.right)}</span></div><div class="stops" role="group" aria-label="${esc(d.name)} stops">${d.stops.map((s,i)=>`<button type="button" class="stop" data-dim="${d.id}" data-i="${i}" aria-pressed="${state[d.id]===i}">${esc(s.l)}<small>${esc(s.s)}</small></button>`).join('')}</div><div class="detail" id="detail-${d.id}" hidden></div></section>`).join('');
+ document.querySelectorAll('.stop').forEach(b=>b.addEventListener('click',()=>{const d=b.dataset.dim,i=+b.dataset.i;state[d]=state[d]===i?undefined:i;activePreset=null;activeStep=null;source='';update();}));
+}
+function update(){
+ DIMS.forEach(d=>{document.querySelectorAll(`.stop[data-dim="${d.id}"]`).forEach(b=>b.setAttribute('aria-pressed',String(state[d.id]===+b.dataset.i)));const det=$(`#detail-${d.id}`);const i=state[d.id];if(i===undefined){det.hidden=true;det.innerHTML='';}else{const s=d.stops[i];det.hidden=false;det.innerHTML=`<b>${esc(s.l)}.</b> Techniques at this point:<ul>${s.t.map(t=>`<li>${esc(t[0])} <span class="ev">(${esc(t[1])}; ${esc(t[2])})</span></li>`).join('')}</ul>`;}});
+ document.querySelectorAll('.preset').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===activePreset)));
+ document.querySelectorAll('.step').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.i===activeStep)));
+ $('#profileLines').innerHTML=DIMS.map(d=>`<b>${esc(d.name)}</b>${state[d.id]===undefined?'<span class="empty">not placed</span>':`<span>${esc(d.stops[state[d.id]].l)}</span>`}`).join('');
+ $('#profileNote').textContent=source;
+ $('#profileText').value=(source?source+'\n\n':'')+DIMS.map(d=>`${d.name}: ${state[d.id]===undefined?'not placed':d.stops[state[d.id]].l}`).join('\n');
+ $('#stepNote').textContent=activeStep===null?'':STEPS[activeStep].note;
+}
+function load(p){DIMS.forEach(d=>{state[d.id]=p[d.id];});}
+$('#presets').innerHTML=Object.entries(PRESETS).map(([k,v])=>`<button type="button" class="preset" data-k="${k}" aria-pressed="false">${esc(v.name)}</button>`).join('')+`<button type="button" class="preset" data-k="clear" aria-pressed="false">Clear</button>`;
+document.querySelectorAll('.preset').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.k;activeStep=null;if(k==='clear'){DIMS.forEach(d=>state[d.id]=undefined);activePreset=null;source='';}else{load(PRESETS[k].p);activePreset=k;source=`Preset: ${PRESETS[k].name}. ${PRESETS[k].note}`;}update();}));
+$('#steps').innerHTML=STEPS.map((s,i)=>`<button type="button" class="step" data-i="${i}" aria-pressed="false">${i+1}. ${esc(s.name)}</button>`).join('');
+document.querySelectorAll('.step').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i;load(STEPS[i].p);activeStep=i;activePreset=null;source=`Intent-shaping skill, step ${i+1}: ${STEPS[i].name}. ${STEPS[i].note}`;update();$('#dim-path').scrollIntoView({behavior:'smooth',block:'start'});}));
+$('#jobsTable').innerHTML=JOBS.map(r=>`<tr>${r.map((c,i)=>i?`<td>${esc(c)}</td>`:`<td>${esc(c)}</td>`).join('')}</tr>`).join('');
+$('#copyBtn').addEventListener('click',()=>{const ta=$('#profileText');ta.select();try{navigator.clipboard&&navigator.clipboard.writeText(ta.value);}catch(e){}});
+renderDims();update();
+})();
+</script>
+</body>
+</html>

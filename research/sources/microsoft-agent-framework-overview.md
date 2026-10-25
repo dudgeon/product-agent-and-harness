@@ -29,3 +29,10 @@ Microsoft's consolidated successor to AutoGen and Semantic Kernel. Notably it no
 
 ## Could not verify
 - GA date (a third-party source says 1.0 GA on 2026-04-02/03) not confirmed from Microsoft text in this fetch.
+
+## Added by research-skill-rigidity-spectrum (2026-10-25)
+Read https://learn.microsoft.com/en-us/agent-framework/workflows/ (2026-07-29) and https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/ (2026-02-12) (first-party).
+- Composition both ways: "Agents in workflows" (agents as executors in a graph) and "Workflows as agents" (a workflow exposed through the agent interface); declarative workflows from configuration.
+- Orchestration patterns, by who picks the next agent: Sequential ("defined order"), Concurrent (parallel), Handoff ("transfer control to each other based on context"), Group Chat (shared conversation), Magentic ("A manager agent dynamically coordinates specialized agents").
+- Human gates: orchestrations support human-in-the-loop "through tool approval and request info"; approval-required tools "pause the workflow for human review before execution"; checkpoints save and resume.
+- Themes: work-structure-spectrum, human-review-gates, deterministic-scaffold-model-nodes.

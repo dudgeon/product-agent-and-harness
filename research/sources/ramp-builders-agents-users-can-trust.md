@@ -30,3 +30,6 @@ Ramp's design principles for its customer-facing Policy Agent (expense approvals
 ## Could not verify
 
 Figure self-reported; no external evaluation.
+
+## Added by research-skill-rigidity-spectrum (2026-10-25)
+- Contrast: Cognition's Devin 2.1 ships a green/yellow/red self-confidence rating and asks clarifying questions below green, claiming green doubles merged-PR likelihood (cognition-devin-2-1-confidence, vendor claim). Ramp chose categories (Approve / Reject / Needs review) over confidence scores; both converge on a small set of categories rather than a numeric score shown to users. Theme: evals-autonomy-trust.

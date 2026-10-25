@@ -22,3 +22,6 @@ Announces 11 open-source plugins 'built and used by our own team', including a P
 - 11 plugins open-sourced Jan 30, 2026; PM plugin covers PRD, prioritization, roadmap upkeep.
 - No description of how Anthropic's own PMs use it or results.
 - Local skills product-management:write-spec etc. appear to mirror this family (unverified).
+
+## Added by research-skill-rigidity-spectrum (2026-10-25)
+- The PM plugin's SKILL.md files were read and characterised in anthropics-kwp-pm-plugin-skills: write-spec is a fixed workflow plus PRD template plus per-section criteria with no deterministic gate; product-brainstorming is a mode-switching sparring partner that explicitly does not produce deliverables; synthesize-research fixes extraction fields and a frequency x impact matrix. This confirms the earlier "unverified" point that the local product-management skills mirror this family (installed files identical to the anthropics/knowledge-work-plugins repo on 2026-10-25). Themes: prd-agents, rules-vs-judgment-encoding.

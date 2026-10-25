@@ -28,3 +28,6 @@ The best independent evidence on how consistent spec-in-repo practice is: defini
 
 ## Could not verify
 - Exact publication date not verified (October 2025 per search snippet).
+
+## Added by research-skill-rigidity-spectrum (2026-10-25)
+- Follow-up a year on: Tessl's docs now describe a skills registry with governance scoring, with/without-context evals and drift detection, not spec-as-source (tessl-docs-overview). A fourth toolchain, OpenSpec, uses per-change folders (proposal, spec deltas, design, tasks) archived into canonical specs and positions itself against Spec Kit's "rigid phase gates" (github-openspec-readme). Kiro's steering inclusion modes and command-vs-agent hooks are filed as kiro-steering-docs and kiro-hooks-docs.

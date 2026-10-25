@@ -27,3 +27,10 @@ OpenAI adopts the same SKILL.md format for Codex and ChatGPT and adds its own me
 
 ## Could not verify
 - Enterprise administration beyond the ADMIN path; plugin packaging format for Codex.
+
+## Added by research-skill-rigidity-spectrum (2026-10-25)
+Verified at the current URL https://learn.chatgpt.com/docs/build-skills (the developers.openai.com/codex/skills URL now redirects there; first-party).
+- Exact best-practice wording: "Prefer instructions over scripts unless you need deterministic behavior or external tooling." The note's earlier quote omitted "or external tooling".
+- `scripts/` is "Optional: executable code"; the skill creator defaults to "Instruction-only". Other practices: "Write imperative steps with explicit inputs and outputs"; one job per skill.
+- The page does not define what counts as needing deterministic behaviour, and has no gating section; the nearest controls are `allow_implicit_invocation: false` (explicit `$skill` only) and `enabled = false` in config.
+- Themes: work-structure-spectrum, gate-judge-separation.

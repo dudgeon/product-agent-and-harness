@@ -25,3 +25,8 @@ The most explicit vendor control model for an agent that acts on behalf of a hum
 
 ## Could not verify
 - Session lifecycle and exact identity/token used were not found in what was retrieved.
+
+## Added by research-skill-rigidity-spectrum (2026-10-25)
+- Decision rights are split by design (re-read 2026-10-25): only users with write access can trigger the agent; it pushes only to a `copilot/` branch or the PR branch it was mentioned on; it cannot mark ready, approve or merge; the requester cannot approve their own agent PR, so "Required approvals" stay meaningful; an extra approval is required when the PR is under the agent's app identity (default on in rulesets). Themes: human-review-gates, identity-delegation.
+- Actions workflows on agent PRs do not run until a write-access user selects "Approve and run workflows", which stops automatic chains; automations are attributed to their creator, who also cannot approve their output. This is a "separation of duties" gate: the human who delegated is not the human who approves.
+- Built-in deterministic sensors before human review: CodeQL, dependency advisory checks, secret scanning; admins can disable them.
