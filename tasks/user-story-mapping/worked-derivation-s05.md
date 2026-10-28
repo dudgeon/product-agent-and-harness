@@ -109,3 +109,6 @@ Must-show screens: A (add the project folder layout and `PROJECT.md` at beat 1):
 Contrast beats for a side-by-side video: beats 5–7 (how reviewers join and how Sam picks up later) and the two failure beats. Narration alone is enough for beats 1, 8, 9.
 
 Both journeys can run on the same fixture: one invented spec, three reviewers, one risk mitigation, one forgotten decision. That keeps the videos comparable.
+
+
+See also: [research-dependency-agent](../research-dependency-agent/00-summary.md), which researches the dependency job behind S05 (a taxonomy of dependency classes, a crawl/walk/run maturity model and an MVP recommendation in [06-mvp.md](../research-dependency-agent/06-mvp.md)).
