@@ -107,6 +107,8 @@ The notional dialogue in [10-dialogue.md](10-dialogue.md) and its mockup [10-dia
 - Financial-promotion rules differ by jurisdiction; the film keeps the compliance question generic ("is this wording a promotion that needs the full sign-off") and does not cite a specific rule.
 - The film follows the project's film rules (draft voice and draft indicator until Geoff reviews).
 
-## Open question for Geoff
+## Decided
 
-Whether the film is built now, from this brief, or after he has read the written deliverables and reacted; the director raised this on 2026-10-28 and it is Geoff's call. The brief is written so that either works.
+The film was built after Geoff had read the written deliverables (his decision, 2026-10-28); film 14 is the result, with its own script doc and claim check.
+
+See also: the film built from this brief, script and grounding in `explainers/projects/14-dependency-agent-v2/` (`script-doc.md` Appendix A is its claim check); task [[dependency-agent-film-v2]].
