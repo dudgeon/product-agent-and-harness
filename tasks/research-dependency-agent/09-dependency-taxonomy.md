@@ -17,7 +17,7 @@ A dependency is something the work needs that the team does not control. To make
 
 The test for exclusivity: ask "what act resolves it?" A privacy assessment is C (someone must rule), even though it concerns data; the data itself is B (someone must grant access). A platform team's work on your feature is A (they must build), but their prioritising it against their backlog is D (they must allocate capacity), and the release train it must ride is E. If one real-world item needs several acts, it is several dependencies, and the agent should record it as such; that is a feature of the partition, not a flaw, because each act has a different owner, a different route and a different wait.
 
-The test for exhaustiveness: every dependency named in the research (team, system, data, process gate, approval, vendor, funding, people, sequencing, knowledge; Strode and Huff's task, resource and knowledge types; the RAID log's "external reliance") lands in exactly one class once its resolving act is named. Vendors, for example, are not a class of their own: a vendor must build (A), grant (B), or be approved (C), and the agent should say which.
+The test for exhaustiveness: every dependency named in the research (the ten types in [01-dependency-management-today.md](01-dependency-management-today.md), section 1, which this taxonomy sits beside and does not replace: team, system, data, process gate, approval, vendor, funding, people, sequencing, knowledge; Strode and Huff's task, resource and knowledge types; the RAID log's "external reliance") lands in exactly one class once its resolving act is named. Vendors, for example, are not a class of their own: a vendor must build (A), grant (B), or be approved (C), and the agent should say which.
 
 ## 2. The taxonomy
 
