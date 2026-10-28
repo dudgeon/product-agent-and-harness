@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dependency Agent Maturity</title>
+<meta name="description" content="A crawl, walk, run model for a dependency agent on two axes (agent capability and environment legibility), the seven kinds of value it provides, and the agent-ready checklist for a platform.">
+<style>
+:root{--paper:#f4f3ef;--ink:#232b36;--muted:#64707f;--faint:#c9cfd7;--hair:#e1e5ea;--card:#ffffff;--accent:#b85c35;--accent-wash:#f3e2d8;--wash:#e8ebee;--ok:#3f7d5a;--serif:Charter,"Iowan Old Style",Georgia,serif;--sans:"Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif;--mono:Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171a1f;--ink:#e6e8eb;--muted:#9aa4b1;--faint:#3a424d;--hair:#2b323b;--card:#1f242b;--accent:#e08a62;--accent-wash:#3a2a22;--wash:#242a32;--ok:#7fbf9a}}
+:root[data-theme="dark"]{--paper:#171a1f;--ink:#e6e8eb;--muted:#9aa4b1;--faint:#3a424d;--hair:#2b323b;--card:#1f242b;--accent:#e08a62;--accent-wash:#3a2a22;--wash:#242a32;--ok:#7fbf9a}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.45}
+body{padding:0 16px 64px}
+main{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,5vw,46px);margin-top:40px}
+h2{font-size:clamp(22px,3vw,28px);margin-top:44px;padding-top:18px;border-top:1px solid var(--hair)}
+h3{font-size:19px;margin-top:22px}
+p{max-width:72ch;margin:12px 0}
+.lede{font-size:18px;color:var(--muted);max-width:68ch}
+.note{font-size:13.5px;color:var(--muted)}
+.tag{display:inline-block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--faint);border-radius:999px;padding:2px 9px;margin-right:6px;vertical-align:middle}
+.tag.accent{color:var(--accent);border-color:var(--accent)}
+.tag.ok{color:var(--ok);border-color:var(--ok)}
+/* grid */
+.gridwrap{margin-top:18px;overflow-x:auto}
+.grid{display:grid;grid-template-columns:150px repeat(3,minmax(160px,1fr));gap:8px;min-width:640px}
+.grid .corner{display:flex;align-items:flex-end;justify-content:flex-start;font-size:12px;color:var(--muted);padding:6px}
+.grid .hd{font-size:13px;font-weight:600;padding:8px 10px;border-bottom:2px solid var(--faint)}
+.grid .hd small,.grid .rh small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.grid .rh{font-size:13px;font-weight:600;padding:8px 10px;border-right:2px solid var(--faint)}
+.cell{border:1.5px solid var(--faint);border-radius:10px;background:var(--card);color:var(--ink);text-align:left;padding:10px 12px;font:inherit;font-size:13.5px;cursor:pointer;min-height:92px;line-height:1.3}
+.cell b{display:block;font-weight:600;margin-bottom:3px}
+.cell small{color:var(--muted);font-size:12px}
+.cell:hover{border-color:var(--muted)}
+.cell[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-wash);box-shadow:inset 0 0 0 1px var(--accent)}
+.cell.trap{border-style:dashed}
+.cell:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.detail{margin-top:14px;padding:14px 16px;border-left:3px solid var(--accent);background:var(--wash);border-radius:0 10px 10px 0;font-size:14.5px}
+.detail h3{margin-top:0;font-size:18px}
+.detail dl{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;margin:10px 0 0}
+.detail dt{font-weight:600;color:var(--muted);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;padding-top:2px}
+.detail dd{margin:0}
+.ev{color:var(--muted);font-size:12.5px}
+/* axes tables */
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:14px;display:block;overflow-x:auto}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--hair);min-width:160px}
+th{font-weight:600;color:var(--muted);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
+td:first-child,th:first-child{min-width:130px;font-weight:600}
+/* values */
+.vals{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:14px}
+.val{border:1.5px solid var(--faint);border-radius:12px;background:var(--card);color:var(--ink);text-align:left;padding:12px 14px;font:inherit;cursor:pointer;line-height:1.3}
+.val .k{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.val b{display:block;font-size:15px;margin:3px 0 4px}
+.val small{color:var(--muted);font-size:12.5px;display:block}
+.val:hover{border-color:var(--muted)}
+.val[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-wash);box-shadow:inset 0 0 0 1px var(--accent)}
+.val .mvp{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ok);border:1px solid var(--ok);border-radius:999px;padding:1px 8px}
+.val .mvp.part{color:var(--accent);border-color:var(--accent)}
+.stages{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stage{flex:1 1 150px;border:1px solid var(--hair);border-radius:8px;padding:8px 10px;font-size:13px;background:var(--card)}
+.stage b{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+/* checklist */
+ol.check{padding-left:22px;max-width:76ch}
+ol.check li{margin:8px 0}
+ol.check li b{font-weight:600}
+ol.check li small{color:var(--muted);display:block}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:13px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:14px;height:14px;border-radius:4px;border:1.5px solid var(--faint);vertical-align:-2px;margin-right:6px;background:var(--card)}
+.legend span.t::before{border-style:dashed}
+.legend span.a::before{border-color:var(--accent);background:var(--accent-wash)}
+footer{margin-top:48px;color:var(--muted);font-size:13px}
+@media (max-width:640px){.detail dl{grid-template-columns:1fr}.detail dt{padding-top:8px}}
+</style>
+</head>
+<body>
+<main>
+<h1>The dependency agent: maturity model and value types</h1>
+<p class="lede">A dependency agent's usefulness is bounded by what it can read and trust, and that is a property of the organisation, not the model. So the model has two axes: what the agent can do and how much it may do unaided, and how legible the platforms and processes are to it. Pick a cell to read what the agent does there, what it needs, what it gives back and what moves the organisation on.</p>
+<p class="note">From the research synthesis of 2026-10-28 (research-dependency-agent). Evidence labels: first-party, independent, vendor claim, anecdote. Source slugs name notes in the project's research library; the written deliverables (00 to 07) carry the links.</p>
+
+<h2>The grid</h2>
+<p>Rows are the agent's stage; columns are the environment's. Four cells matter and two are traps (dashed). The rule the evidence supports: move the environment one step ahead of the agent.</p>
+<div class="gridwrap"><div class="grid" id="grid"></div></div>
+<div class="legend"><span>a cell</span><span class="a">selected</span><span class="t">a trap</span></div>
+<div class="detail" id="cellDetail" aria-live="polite"></div>
+
+<h2>The environment axis: how legible the organisation is</h2>
+<table>
+<thead><tr><th>Rung</th><th>Crawl: scattered</th><th>Walk: verified</th><th>Run: contracted</th></tr></thead>
+<tbody>
+<tr><td>Platform identity and ownership</td><td>Several catalogues, CMDBs and spreadsheets; owners stale; "the person who knows" is the directory</td><td>One platform card per platform with a named owner and a verified-on date; unverified cards expire</td><td>Cards generated from the systems where possible, verified by owners where not</td></tr>
+<tr><td>Intake</td><td>Forms, tickets, emails and meetings, different per platform; intake is a funded demand in someone else's portfolio</td><td>Each platform's intake described in one place in a common shape: what it needs, what it checks, who approves</td><td>A machine-readable contract that accepts a request from an agent acting for a person, runs checks, returns status, records the decision</td></tr>
+<tr><td>Gates</td><td>Criteria known to the reviewers; evidence requests by email; wait times unmeasured</td><td>Criteria and evidence list published and checkable; applicability as a screening</td><td>Data gates decide by policy on evidence packets; judgement gates publish intake and lead time; decisions recorded with evidence</td></tr>
+<tr><td>Calendars and lead times</td><td>In people's heads and slide decks</td><td>Release trains, freezes, planning windows published; lead times measured per platform and gate</td><td>Calendars and lead times are data; the sequence is computed from them</td></tr>
+<tr><td>Decisions and history</td><td>Slack threads, meeting notes, a RAID log updated when there is time</td><td>Small numbered decision records with owner and source; a session of record per feature</td><td>Decisions written automatically at decision time, linked to evidence, audit-grade</td></tr>
+<tr><td>Agent identity</td><td>None; the agent runs as a person's login</td><td>Agent identity with a sponsor; read access scoped per session</td><td>Delegation from the requester recorded on every request; platforms accept agent requests under policy</td></tr>
+<tr><td>Where the evidence puts organisations</td><td>The default in the sources: NHS onboarding guidance, the Norwegian public programme, the telecoms study (first-party, independent)</td><td>ING's per-service owner, contract, lifecycle, SLO and unit cost; Stripe's owner-verified docs; OpsLevel's inferred-then-confirmed owners (first-party)</td><td>Pieces exist (Backstage template schemas; Entra agent access packages; pipeline change approval at two Australian banks). No platform found has all of it</td></tr>
+</tbody></table>
+
+<h2>The agent axis: what it can do and how much unaided</h2>
+<table>
+<thead><tr><th>Value</th><th>Crawl: reads, drafts, proposes</th><th>Walk: submits and tracks under gates</th><th>Run: acts within policy</th></tr></thead>
+<tbody id="agentAxis"></tbody>
+</table>
+
+<h2>The seven kinds of value</h2>
+<p>Each is a different job with a different profile on the project's seven dimensions (path, check, standard, rights, stance, record, loop). Pick one to see what it needs from the environment, what it looks like in operation, how its work is checked, and what could go wrong. The MVP lean builds two in full and one in its crawl form.</p>
+<div class="vals" id="vals"></div>
+<div class="detail" id="valDetail" aria-live="polite"></div>
+
+<h2>What moves an organisation to the next stage</h2>
+<table>
+<thead><tr><th>From</th><th>To</th><th>What moves it</th><th>Evidence or reasoning</th></tr></thead>
+<tbody>
+<tr><td>Crawl environment</td><td>Walk environment</td><td>A consumer that reads the records (an agent) plus owner verification with expiry; one card schema; lead times measured from real asks; a session of record per feature</td><td>Stripe verified first, then put the bot over it (first-party); OpsLevel's suggest-then-confirm (first-party); CMDB health metrics exist to be acted on (vendor)</td></tr>
+<tr><td>Walk environment</td><td>Run environment</td><td>Platform teams publish intake as a schema with approvers and policy because asks already arrive in that shape; data gates accept evidence packets; agent identity with sponsors; decisions recorded automatically</td><td>The intake rung is already the most machine-readable (Backstage, Kratix, first-party); identity providers support agent principals (first-party); pipeline change approval proven in banks (first-party via press)</td></tr>
+<tr><td>Crawl agent</td><td>Walk agent</td><td>Rights per task class; agent identity; a weekly labelled sample of its asks; chase rules in code; fail-closed checks before submission</td><td>The skill-spectrum guide's earned-autonomy pattern; Nudge's chase rules (first-party, randomised)</td></tr>
+<tr><td>Walk agent</td><td>Run agent</td><td>Policy-decided routine intake on an easier population, tiered by risk, with reverts and incidents measured; the walk environment must already exist</td><td>Meta RADAR: risk-stratified auto-approval, measured (first-party, peer-reviewed); the ING warning on risk scoring (first-party, peer-reviewed)</td></tr>
+</tbody></table>
+
+<h2>Agent-ready: a checklist for a platform owner</h2>
+<p>Items 1 to 4 are the walk environment; 5 to 7 are the run environment. A platform at 1 to 4 can be mapped and asked well; at 5 to 7 it can be submitted to. Every item exists somewhere today; nothing found has all seven.</p>
+<ol class="check">
+<li><b>A platform card, owner-verified and dated.</b><small>Purpose, what it does and does not do, the owning team with a named person, the contract, lifecycle; verified on a date, expiring if not re-verified.</small></li>
+<li><b>Intake described in one place, in the common shape.</b><small>What the platform needs, what it checks, who approves, the route in. Prose is fine at walk.</small></li>
+<li><b>Lead times measured and published.</b><small>Intake to first response; first response to decision; decision to access. No source found publishes these.</small></li>
+<li><b>A calendar.</b><small>Release trains, freezes, planning windows; a page first, data later.</small></li>
+<li><b>Intake as a schema with an endpoint.</b><small>The form as JSON Schema or equivalent; a request endpoint that accepts "on behalf of" and returns status; approvers and policy declared beside it.</small></li>
+<li><b>Decisions recorded automatically.</b><small>Every intake decision written with evidence linked, in a form an auditor accepts.</small></li>
+<li><b>Agent-compatible identity.</b><small>Accepts a request from an agent with a sponsor acting for a named person; records both; can revoke the agent without touching the person.</small></li>
+</ol>
+
+<h2>The hypothesis, tested</h2>
+<p>An early-stage agent in a limited-context environment creates value by aggregating and curating context about dependencies, processes and platforms, and by producing a standard shape, and that work compounds. <b>It holds, with a condition and a correction.</b> It holds because capture as a by-product of work is the pattern that worked at the beacons, a clearly understood process has independent evidence behind it (DORA 2019: 1.8 times more likely to be elite), the cross-team process in these organisations is often undefined, and the agent produces the lead-time measurement nobody has. The condition: verification must ride on real asks, as the smallest question, or the owners who are the bottleneck switch the agent off (targeted reminders cut resolution time 60%; untargeted bot volume gets abandoned). The correction: "driving standardisation" means producing a shape platforms adopt because asks already arrive in it, not imposing a process. Whether the value compounds is unmeasured anywhere; the MVP's verification rate and reuse rate are the test.</p>
+
+<footer>Standalone page, inline styles and script only. Companion to 05-maturity-model.md, 04-destination.md and 06-mvp.md in tasks/research-dependency-agent/. Figures are those stated by the cited sources; vendor and first-party claims are labelled. The company, people and feature in the examples are fictional.</footer>
+</main>
+
+<script>
+(function(){
+const ENV=['Crawl: scattered','Walk: verified','Run: contracted'];
+const AG=['Crawl: reads, drafts, proposes','Walk: submits and tracks under gates','Run: acts within policy'];
+const CELLS={
+'0,0':{t:'Where almost everyone starts',trap:false,does:'Reads scattered, stale records and tribal threads; draws a partial map with every edge sourced or flagged unverified; the "could not find" list is a first-class output; drafts asks a person sends; writes every answer back as provisional with owner, date and source; times its own asks.',needs:'Read access to what exists (catalogues, CMDB, tickets, wiki, past sessions, gate guidance); a session of record; a store the organisation trusts for provisional cards; a product owner steering.',gives:'The first dependency map with explicit gaps; answers in a standard shape; the first lead-time measurement per platform; the verification rate that says whether owners will answer.',moves:'To the walk environment: owners verify cards because asks already ride on real needs; unverified entries expire; lead times accumulate. Do not move the agent first.',ev:'Evidence: Port 2025 metadata trust (vendor); ESAs register dry run, 6.5% clean (regulator); NHS onboarding guidance (first-party); Stripe verify-then-bot (first-party).'},
+'0,1':{t:'Verified first, then the agent',trap:false,does:'As crawl, but the map is good on day one because platform cards and intake descriptions exist; the agent is the reason they stay current.',needs:'The verified cards; a reason for owners to keep verifying (an agent that reads them).',gives:'Complete maps for the platforms that have cards; a visible list of platforms that do not.',moves:'To the walk agent: identity, rights per task class, a labelled sample. The environment is ahead, so the agent may catch up.',ev:'Evidence: Stripe Trailhead, owner verification before the bot (first-party); OpsLevel suggest-then-confirm (first-party).'},
+'0,2':{t:'Contracts nobody reads',trap:true,does:'Reads schemas and policies it is not allowed to submit against.',needs:'Nothing it does not have; the problem is the reverse.',gives:'Little; the legibility investment has no consumer.',moves:'Raise the agent\'s rights, with identity and a labelled sample; the environment is wasted until something reads it.',ev:'Evidence: 97% of llms.txt files got zero requests (independent). Publishing is not the same as being read.'},
+'1,0':{t:'An agent acting on records nobody trusts',trap:true,does:'Submits and chases on stale owners and guessed lead times.',needs:'The verified cards it does not have.',gives:'Bot noise, wrong routing, asks to people who left.',moves:'Pull the agent back to crawl for the platforms without cards; invest in verification.',ev:'Evidence: untargeted bot requests get configured down and abandoned (independent); CODEOWNERS silently drops departed owners (first-party).'},
+'1,1':{t:'The first serious deployment',trap:false,does:'Submits intake requests on behalf of a named person where the platform accepts them; posts and chases by rule under earned autonomy per channel; computes sequence from published calendars and re-plans, with a person accepting moves to commitments; submits evidence packets to data gates and prepares judgement gates for a person; writes back with owner verification; starts the portfolio signal across sessions.',needs:'Platform cards with verified owners; intake described in one shape; published calendars and measured lead times for the platforms in scope; an agent identity with a sponsor; chase rules in code; fail-closed checks before every side effect.',gives:'Removes the form-fill and the status relay; the ask register as live status; lead time per platform and gate; which gates never say no.',moves:'To run: platforms publish intake as a schema with policy; data gates accept packets; decisions recorded automatically; routine approvals by policy on an easier population, measured.',ev:'Evidence: Nudge, 60% faster resolution with targeted reminders (first-party, randomised); DORA 2019, recorded peer review satisfies segregation of duties (independent); Entra agent access packages (first-party).'},
+'1,2':{t:'Agent lagging a contracted environment',trap:false,does:'As walk, with contracts available; the agent could do more than it is allowed to.',needs:'A labelled record of its submissions and the second line\'s acceptance.',gives:'Throughput left on the table but a strong audit trail.',moves:'Earn run-stage rights per gate and platform from the labelled sample; keep judgement gates at walk by design.',ev:'Evidence: Meta RADAR, risk-stratified auto-approval on an eligible population (first-party, peer-reviewed).'},
+'2,0':{t:'The worst cell',trap:true,does:'Acts within "policy" on records nobody trusts; approvals on near-chance risk scores.',needs:'Everything.',gives:'The Swedbank outcome or the ING scoring result.',moves:'Stop. Return the agent to crawl; build the environment.',ev:'Evidence: ING change-risk scoring near chance on half-empty fields (first-party, peer-reviewed); Swedbank sanction for a bypassed gate (regulator).'},
+'2,1':{t:'Running ahead of the environment',trap:true,does:'Policy-decided approvals where lead times, calendars and some intakes are still prose.',needs:'The contracted environment for the gates and platforms it acts on.',gives:'Fast on the platforms that are contracted; risky on the rest.',moves:'Scope run rights to the platforms and gates at the run environment; keep the others at walk. The map should show each platform\'s stage.',ev:'Evidence: no platform found has all rungs; approvals and lead times are the least encoded (first-party docs survey).'},
+'2,2':{t:'The destination',trap:false,does:'Submits and, where policy allows, receives automatic approval for routine requests; re-plans within agreed bounds; routine data-gate requests approved by policy with an automatic audit trail; cards and decisions largely generated; the portfolio signal feeds platform roadmaps and governance redesign; other platforms\' agents are counterparties.',needs:'Intake as a schema with endpoints; policy-as-code gates; agent identity and delegation recorded on every request; decisions written automatically; many sessions.',gives:'Nothing discovered late; onboarding without the form-fill; gates met, not fought; the record better every run; the platform sees demand coming.',moves:'Keep judgement gates with people by design; keep the counterweight (which gates never say no) so the agent does not become a bureaucrat.',ev:'Evidence: the pieces ship separately (ServiceNow pipeline change approval, vendor; Entra, Kong, SailPoint, first-party); no organisation found is here.'}
+};
+const grid=document.getElementById('grid');
+grid.insertAdjacentHTML('beforeend','<div class="corner">agent ↓ · environment →</div>');
+ENV.forEach(e=>{const [a,b]=e.split(': ');grid.insertAdjacentHTML('beforeend',`<div class="hd">${a}<small>${b}</small></div>`)});
+AG.forEach((a,i)=>{const [x,y]=a.split(': ');grid.insertAdjacentHTML('beforeend',`<div class="rh">${x}<small>${y}</small></div>`);
+ ENV.forEach((e,j)=>{const c=CELLS[i+','+j];grid.insertAdjacentHTML('beforeend',`<button class="cell${c.trap?' trap':''}" type="button" data-k="${i},${j}" aria-pressed="false"><b>${c.t}</b><small>${c.trap?'trap':(i===1&&j===1?'target for a first deployment':(i===2&&j===2?'destination':''))}</small></button>`)});
+});
+const cd=document.getElementById('cellDetail');
+function showCell(k){grid.querySelectorAll('.cell').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k?'true':'false'));const c=CELLS[k];const [i,j]=k.split(',');
+ cd.innerHTML=`<h3>${AG[i]} · ${ENV[j]}: ${c.t}</h3><dl><dt>Agent does</dt><dd>${c.does}</dd><dt>Needs</dt><dd>${c.needs}</dd><dd class="ev"></dd><dt>Gives back</dt><dd>${c.gives}</dd><dt>Next move</dt><dd>${c.moves}</dd></dl><p class="ev">${c.ev}</p>`;}
+grid.addEventListener('click',e=>{const b=e.target.closest('.cell');if(b)showCell(b.dataset.k)});
+showCell('0,0');
+
+const VALS=[
+{k:'V1',n:'Discovery and mapping',s:'Nothing is discovered late',mvp:'core',needs:'Catalogue with owners and relations; intake and gate descriptions; decision records; past sessions; a place to put a flag an owner will see. Rights: read.',op:'The map by phase on day one, every edge with its evidence, plus the "could not find" list and three flags routed to the people who can settle them.',check:'Path: model-chosen reading inside a code-fixed stage order. Check: every edge has a source and every node an owner or a flag; a fresh-context reader test against the dependency-type checklist. Rights: agent proposes; owners decide. Stance: check and challenge; smallest question. Record: the map and the open-question register.',wrong:'Over-prediction (LLMs invent dependencies zero-shot, independent); edges to owners who left. Fix: no edge without a source; a visible unverified state.',stages:['Partial map, sourced or flagged; "could not find" list','Map plus confidence; disagreements routed as the smallest question','Map largely generated from contracts; attention on exceptions']},
+{k:'V2',n:'Intake translation and submission',s:'Onboarding without the form-fill',mvp:'',needs:'The intake schema per platform; an endpoint that accepts a request from an agent acting for a person, returns status and records the decision; an agent identity with a sponsor; a policy for which intakes the agent may submit.',op:'Four platforms\' forms filled once from the spec and submitted "on behalf of", with each request\'s status in the session.',check:'Path: code-fixed per platform. Check: schema validation before submission, fail-closed; the platform\'s own checks after. Rights: per platform, earned; the sponsor can revoke. Record: the request and its status, linked from the map.',wrong:'Automation of bureaucracy: forms filled by one agent and approved by another with nobody understanding the request. Approvals stay with people until policy says otherwise; every submission carries the human it is for.',stages:['Pre-fills each form; a person submits','Submits where the platform accepts agent requests; a person approves','Routine requests approved by policy; exceptions to people']},
+{k:'V3',n:'Sequencing against real constraints',s:'A plan that knows the calendar',mvp:'',needs:'Calendars and lead times as data (today the least legible rung); a way to learn that something moved; write access to the plan the team owns.',op:'"Phase one can start now; phase two waits on the billing contract and the security review." On day nine rating slips; phase two slides; three owners hear once.',check:'Check: date consistency (what today\'s tools already do); a person reviews any re-plan that moves a commitment. Record: the plan with assumptions and sources. Loop: actual versus planned durations become the lead-time data nobody has.',wrong:'A plan that is precise and wrong because lead times were guessed. Every date sourced or tagged assumed. Priority churn on the platform side is the larger cause of slip (independent) and must be reported, not hidden in a re-plan.',stages:['Proposed order with assumptions tagged','Computed from published calendars; re-plans; a person accepts moves to commitments','Re-plans within agreed bounds']},
+{k:'V4',n:'Routing and asking',s:'Asks that are answered once',mvp:'crawl form',needs:'Who owns what and which channel they read; a session the owner can answer in from a phone; identity to post as the agent on behalf of the requester; a human sends the first batch.',op:'Eleven asks on day one, each the smallest question with the requirement, the evidence and what happens if the answer is no; two edited by the product owner; owners join when they can; status live.',check:'Path: code-fixed chase rules (suppress when moving, name the blocker, cap frequency). Check: the product owner reviews before the first send; a weekly labelled sample. Rights: drafts, then earned per channel. Record: the ask register with states and owners.',wrong:'Bot noise: untargeted volume gets switched off (11.3% abandoned a bot, independent). Asking what it could have read. Chasing a person for a platform\'s priority decision.',stages:['Drafts asks; a person sends; tracks','Posts as itself on behalf of the requester; chases by rule; escalates on timeout','Autonomy earned per channel from a labelled sample']},
+{k:'V5',n:'Governance evidence assembly',s:'Gates met, not fought',mvp:'',needs:'Each gate\'s criteria and evidence list in checkable form; data gates with machine-readable intake (change approval is there; registers by law). Rights: submit to data gates under policy; never approve; never act as the validator.',op:'"Two of nine privacy triggers apply; here is the pre-filled draft and the data-flow diagram. Model risk does not apply, reasons attached." The change record opened with evidence linked.',check:'Path: code-fixed per gate. Check: fail-closed on the packet before submission; the gate decides after. Rights: first-line only; separation of duties by identity. Stance: never advise skipping. Record: packet, decision, who decided; audit-grade.',wrong:'Where governance automated badly lives: risk scoring near chance at a bank (first-party, peer-reviewed); a hook that only warns; an agent that makes the bypass easier (SEK 850m fine, regulator). Easier to satisfy, never easier to skip.',stages:['Pre-screens applicability from published criteria; pre-fills; never submits','Submits packets to data gates; prepares judgement gates for a person','Routine data-gate requests approved by policy; audit trail automatic']},
+{k:'V6',n:'Context curation and write-back',s:'The record gets better every run',mvp:'core',needs:'A shared store with a schema for platform cards and decisions; owners willing to verify; a mandate that unverified entries expire. Rights: propose; owners accept.',op:'An expert\'s answer written once with her name on it; a month later another team\'s agent has it in a second. The stale runbook line struck through with the release note that supersedes it.',check:'Path: code-fixed write-back after every answer. Check: owner, date and source present on every entry; owners attest. Rights: agent proposes; the named owner verifies; expiry if nobody does. Loop: verification rate and staleness rate are the health metrics.',wrong:'Curation costs owners\' attention, the scarce thing; an agent writing confidently from a stale source makes the record worse; injection through context files (independent). Write-back is visibly provisional until verified.',stages:['Every answer written back provisional; a person verifies','Verification routed to owners; expiry; cards in the standard shape','Cards and decisions largely generated; the agent curates exceptions and measures freshness']},
+{k:'V7',n:'Portfolio signal',s:'The platform sees demand coming',mvp:'',needs:'Many sessions\' maps and ask registers; a place platform owners and governance owners read; read across sessions under the project\'s privacy rules.',op:'"Forty-one features this quarter depended on document generation; median wait nineteen days; the top three asks were the same question." The platform adds it to its golden path; the change board learns which class it has never rejected.',check:'Path: code-fixed aggregation. Check: numbers reconcile to the sessions. Standard: wait time, flow efficiency, request-to-fulfilment. Rights: read-only reporting. Stance: inform.',wrong:'Surveillance of owners rather than measurement of the system; the chilling effect (independent). Report platforms and gates, never people.',stages:['None; one session at a time','Across sessions: lead time per platform and gate; where waiting happens','Feeds platform roadmaps and governance redesign']}
+];
+const vals=document.getElementById('vals');
+VALS.forEach(v=>vals.insertAdjacentHTML('beforeend',`<button class="val" type="button" data-k="${v.k}" aria-pressed="false"><span class="k">${v.k}</span><b>${v.n}</b><small>${v.s}</small>${v.mvp?`<span class="mvp${v.mvp==='core'?'':' part'}">MVP: ${v.mvp}</span>`:''}</button>`));
+const ab=document.getElementById('agentAxis');
+VALS.forEach(v=>ab.insertAdjacentHTML('beforeend',`<tr><td>${v.k} ${v.n}</td><td>${v.stages[0]}</td><td>${v.stages[1]}</td><td>${v.stages[2]}</td></tr>`));
+ab.insertAdjacentHTML('beforeend','<tr><td>Rights and checks</td><td>Agent proposes, human decides, everywhere; deterministic checks on the artefacts</td><td>Rights per task class; separation of duties by identity; fail-closed checks before every side effect</td><td>Earned autonomy tiered by risk; a labelled sample reviewed weekly; a person on every merge of a standard</td></tr>');
+const vd=document.getElementById('valDetail');
+function showVal(k){vals.querySelectorAll('.val').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k?'true':'false'));const v=VALS.find(x=>x.k===k);
+ vd.innerHTML=`<h3>${v.k} ${v.n}: ${v.s}</h3><dl><dt>Needs</dt><dd>${v.needs}</dd><dt>In operation</dt><dd>${v.op}</dd><dt>How it is checked</dt><dd>${v.check}</dd><dt>What could go wrong</dt><dd>${v.wrong}</dd></dl><div class="stages"><div class="stage"><b>Crawl</b>${v.stages[0]}</div><div class="stage"><b>Walk</b>${v.stages[1]}</div><div class="stage"><b>Run</b>${v.stages[2]}</div></div>`;}
+vals.addEventListener('click',e=>{const b=e.target.closest('.val');if(b)showVal(b.dataset.k)});
+showVal('V1');
+})();
+</script>
+</body>
+</html>

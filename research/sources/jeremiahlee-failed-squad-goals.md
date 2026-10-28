@@ -19,6 +19,7 @@ The best-known critique of the Spotify model, written by a former Spotify PM who
 - autonomy-alignment-placement (proposed): Spotify "fixated on team autonomy"; each team's own process made collaboration harder; the original series' alignment and accountability parts were never written (section "Spotify fixated on team autonomy").
 - svpg-four-risks: PM was cast as squad "mini-CEO" but had no "mini-CTO" peer accountable for delivery; disputes escalated through several engineering managers (section "Matrix management solved the wrong problem").
 - work-structure-spectrum: no common cross-team process was defined; ex-coach Joakim Sundén is quoted that every new team had to "reinvent the wheel".
+- dependency-types-and-practices: "Every responsibility a team cedes to increase its focus becomes a new cross-team dependency"; with no common cross-team process each team engaged differently, and disputes needed three or more engineering managers then a director to resolve; for large regulated firms that copied tribes and squads, a dependency agent may first need to standardise the cross-team process before it can track it (added by research-dependency-agent, re-read 2026-10-28).
 
 ## Key points
 - Context: Lee joined Stockholm HQ after an interview in 2017, when Spotify had grown to about 3,000 people (author's claim).

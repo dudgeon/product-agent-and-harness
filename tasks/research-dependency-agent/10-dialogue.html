@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dependency Agent Dialogue</title>
+<meta name="description" content="A notional chat between a product manager and a dependency agent at a fictional insurer, showing discovery with gaps, the smallest question, write-back with owner and source, re-planning, and reuse across sessions.">
+<style>
+:root{--paper:#f4f3ef;--ink:#232b36;--muted:#64707f;--faint:#c9cfd7;--hair:#e1e5ea;--card:#ffffff;--accent:#b85c35;--accent-wash:#f3e2d8;--wash:#e8ebee;--ok:#3f7d5a;--serif:Charter,"Iowan Old Style",Georgia,serif;--sans:"Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif;--mono:Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171a1f;--ink:#e6e8eb;--muted:#9aa4b1;--faint:#3a424d;--hair:#2b323b;--card:#1f242b;--accent:#e08a62;--accent-wash:#3a2a22;--wash:#242a32;--ok:#7fbf9a}}
+:root[data-theme="dark"]{--paper:#171a1f;--ink:#e6e8eb;--muted:#9aa4b1;--faint:#3a424d;--hair:#2b323b;--card:#1f242b;--accent:#e08a62;--accent-wash:#3a2a22;--wash:#242a32;--ok:#7fbf9a}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.45}
+body{padding:0 16px 64px}
+main{max-width:760px;margin:0 auto}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.15;margin:36px 0 0}
+.lede{color:var(--muted);max-width:66ch;margin:10px 0 0}
+.note{font-size:13px;color:var(--muted)}
+.bar{margin-top:22px;border:1px solid var(--hair);border-radius:12px 12px 0 0;background:var(--card);padding:10px 14px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:13px}
+.bar b{font-weight:600}
+.bar .pill{border:1px solid var(--faint);border-radius:999px;padding:1px 8px;color:var(--muted);font-size:12px}
+.bar .pill.day{color:var(--accent);border-color:var(--accent)}
+.chat{border:1px solid var(--hair);border-top:0;border-radius:0 0 12px 12px;background:var(--card);padding:14px}
+.day{text-align:center;margin:18px 0 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.day span{background:var(--wash);border-radius:999px;padding:3px 10px}
+.msg{display:grid;grid-template-columns:34px 1fr;gap:10px;margin:10px 0;max-width:94%}
+.msg.user{margin-left:auto;grid-template-columns:1fr 34px}
+.msg .who{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;align-self:start;margin-top:4px}
+.msg.agent .who{background:var(--ink);color:var(--paper);clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)}
+.msg.other .who{background:var(--ink);color:var(--paper);clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%);opacity:.6}
+.msg.person .who{background:var(--accent-wash);color:var(--accent);border:1.5px solid var(--accent);border-radius:50%}
+.msg.user .who{background:var(--accent);color:#fff;border-radius:50%}
+.bub{border:1px solid var(--hair);border-radius:12px;padding:10px 13px;font-size:14.5px;background:var(--paper)}
+.msg.user .bub{background:var(--accent-wash);border-color:var(--accent);order:-1}
+.msg.person .bub{border-color:var(--accent)}
+.bub .n{display:block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.bub p{margin:6px 0}
+.bub ul,.bub ol{margin:6px 0;padding-left:20px}
+.bub li{margin:3px 0}
+.bub .q{border-left:3px solid var(--faint);padding:6px 10px;margin:8px 0;background:var(--card);border-radius:0 8px 8px 0;font-size:14px}
+.bub .rec{font-family:var(--mono);font-size:12.5px;background:var(--card);border:1px dashed var(--faint);border-radius:8px;padding:6px 9px;margin:6px 0}
+.bub .rec .v{color:var(--ok);font-weight:600}
+.bub .rec .u{color:var(--accent);font-weight:600}
+.bub .rec s{color:var(--muted)}
+.bub .st{display:inline-block;font-size:11.5px;color:var(--muted);border:1px solid var(--faint);border-radius:999px;padding:1px 8px;margin-top:6px}
+.bub table{border-collapse:collapse;font-size:13px;margin:6px 0;width:100%}
+.bub td{padding:3px 8px 3px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+.bub td:last-child{text-align:right;white-space:nowrap}
+.split{border-top:1px dashed var(--faint);margin:26px 0 8px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;padding-top:10px}
+footer{margin-top:40px;color:var(--muted);font-size:13px}
+@media (max-width:520px){.msg{max-width:100%}}
+</style>
+</head>
+<body>
+<main>
+<h1>A product manager and a dependency agent</h1>
+<p class="lede">A notional session at a fictional insurer. Noor, a product manager on the mobile team, asks the agent to map a feature. The agent reads first, lists what it could not find, drafts the smallest questions, records every answer with owner, date and source, and re-plans when something moves. Six weeks later another team starts further along.</p>
+<p class="note">Illustrative: Lantern Mutual, the people, the counts and the dates are invented. The behaviours come from the research synthesis of 2026-10-28 (research-dependency-agent); the raw text is in 10-dialogue.md. Agents are hexagons; people are circles; the accent colour marks what a person contributed.</p>
+
+<div class="bar"><b>Add a vehicle mid-term</b><span class="pill">shared session</span><span class="pill">participants: Noor · Dep · owners join</span><span class="pill day">Day 1 → Day 16</span></div>
+<div class="chat">
+
+<div class="day"><span>Day 1</span></div>
+<div class="msg user"><div class="bub"><span class="n">Noor</span>The shaping session produced fourteen requirements for "add a vehicle mid-term in the app", in three phases: quote, bind, expand to all states. Can you map what this touches before I take it to the platforms?</div><div class="who">N</div></div>
+
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep · dependency agent</span>
+<p>Done, with gaps. I read the service catalogue, the ownership map, the API contracts, fourteen months of tickets and decisions, and the policy library. The map by phase is in the session; every edge has its source attached.</p>
+<ul>
+<li><b>Systems (build):</b> policy admin, rating, billing, document generation, mobile platform. Four owners confirmed within ninety days.</li>
+<li><b>Data (access):</b> vehicle data, driver records (personal), consent flags. Two of nine privacy triggers apply, so an assessment is needed before bind.</li>
+<li><b>Decisions and gates:</b> change authority (rating, billing); security review; architecture review; actuarial sign-off; state filings.</li>
+<li><b>Funding and capacity:</b> rating's next window Nov 11; billing needs a funded demand.</li>
+<li><b>Time:</b> mobile train Nov 4 / 18, Dec 2; platform train Nov 13, Dec 11; freeze Dec 18 to Jan 3.</li>
+</ul>
+<p><b>31 dependencies · 17 nodes · 13 owners.</b> Now the part that matters more.</p>
+<p><b>Could not find (6)</b></p>
+<ol>
+<li>Billing's listed owner left in April. Billing Core answered the last three tickets. Proposed, unconfirmed.</li>
+<li>No contract for regenerating an ID card after an endorsement. Drafted from two past integrations, unverified.</li>
+<li>Catalogue: rating re-rates mid-term via API. Runbook: overnight batch. One is stale.</li>
+<li>Filings archive (12 states) does not say whether a self-service vehicle add is a new rule or new data. Decides 12 states or 4.</li>
+<li>No lead time published for the security review; no past request from this team to time against.</li>
+<li>Document generation has no intake description. The last two teams messaged its lead directly.</li>
+</ol>
+<p>Draft the asks for the six gaps and the thirteen owners?</p>
+</div></div>
+
+<div class="msg user"><div class="bub"><span class="n">Noor</span>Yes. Group them by person. And don't ask anyone anything you could have read.</div><div class="who">N</div></div>
+
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>
+<p>Eleven asks, grouped by owner, each with the requirement it serves, the evidence attached, and what happens if the answer is no. Two of them:</p>
+<div class="q"><b>To Ines (rating):</b> Does the rating API re-rate a policy mid-term today? The catalogue (March) says yes via API v2; the runbook (last year) says overnight batch. If batch, phase one cannot quote in real time. Both attached. One line is enough.</div>
+<div class="q"><b>To Billing Core (proposed owner):</b> The catalogue lists an owner who left in April; you answered the last three billing tickets. Are you the owner of billing for this purpose? If yes, I will update the entry with your name and today's date. If no, who is?</div>
+<p>Nothing sent. Review, edit, and send when ready; I will track responses here.</p>
+</div></div>
+
+<div class="msg user"><div class="bub"><span class="n">Noor</span>Change the Ines one to ask for the release note if she has it, and send them all.</div><div class="who">N</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>Edited and marked as sent by you at 16:42. Eleven asks open. I will not chase; I will show you what has moved each morning.<br><span class="st">11 asks · sent by Noor · Day 1</span></div></div>
+
+<div class="day"><span>Day 2</span></div>
+<div class="msg other"><div class="who">M</div><div class="bub"><span class="n">Mobile platform agent · joined</span>Release slots: Nov 4 full; Nov 18 capacity for two features; Dec 2 open.</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>Written to the mobile platform card:<div class="rec">mobile-platform · slots · Nov 18: 2; Dec 2: open · <span class="v">verified</span> · mobile platform agent · Oct 29</div>Phase one is now targeted at Nov 18. Noor, nothing else changed.</div></div>
+
+<div class="day"><span>Day 4</span></div>
+<div class="msg person"><div class="who">I</div><div class="bub"><span class="n">Ines · rating</span>The API has re-rated mid-term since March, release 4.2. The runbook is stale; I'll get it fixed. Release note attached.</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>Recorded.<div class="rec">rating · re-rates mid-term via API v2 · <span class="v">verified</span> · Ines · Oct 31 · source: release note 4.2<br><s>runbook: overnight batch</s> · superseded</div>Flag 3 closed. Ines, with your permission I can draft the runbook correction as a change for you to accept, so it is fixed at its home and not only in our record.</div></div>
+<div class="msg person"><div class="who">I</div><div class="bub"><span class="n">Ines</span>Do it.</div></div>
+<div class="msg person"><div class="who">K</div><div class="bub"><span class="n">Kofi · Billing Core · from phone</span>Yes, we own billing now. Instalment contract attached. Our Q4 capacity is spoken for, so this needs a demand.</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>
+<div class="rec">billing · owner: Billing Core (Kofi) · <span class="v">verified</span> · Kofi · Oct 31<br>billing · instalment contract · <span class="v">verified</span> · source: attached v3</div>
+<p>On the demand: the portfolio tool wants a business case (effort, cost, risk, benefit), a cost centre and a sponsor. Drafted from the spec and the map; the effort estimate is marked as Kofi's to confirm. Demand manager for that portfolio: Priya. It needs your sponsor's name, and a person submits it at this stage.</p>
+</div></div>
+<div class="msg user"><div class="bub"><span class="n">Noor</span>Sponsor is Daniel. I'll submit it.</div><div class="who">N</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>Added. The demand is ready for you to submit. When it is in, I will record its reference and start timing it, because no lead time is published for that queue.<br><span class="st">10 asks open · 3 answered · 1 closed by a record change</span></div></div>
+
+<div class="day"><span>Day 9</span></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>
+<p>A change you did not make: rating's release 4.3 moved from Nov 13 to Nov 27 (platform train calendar, updated this morning). Effects:</p>
+<ul>
+<li>Phase two (bind) slides Nov 18 → Dec 2, because bind needs 4.3.</li>
+<li>Security review must be requested by Nov 10 to land before Dec 2, assuming about fifteen working days measured from the two reviews in last year's tickets. <span class="u">Estimate from two cases, not a published lead time.</span></li>
+<li>Two asks change wording; three owners affected: Kofi, the security reviewer, the mobile platform.</li>
+</ul>
+<p>One notification drafted to each. Nothing sent. Phase one is unaffected.</p>
+</div></div>
+<div class="msg user"><div class="bub"><span class="n">Noor</span>Send the three. And add the security lead time to whatever you keep about that gate.</div><div class="who">N</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>Sent, marked as sent by you.<div class="rec">security-review · lead time ≈ 15 working days · <span class="u">estimated</span> from 2 past requests · unverified by security</div>When this review completes I will replace the estimate with the measured time.</div></div>
+
+<div class="day"><span>Day 12</span></div>
+<div class="msg other"><div class="who">C</div><div class="bub"><span class="n">Compliance review agent · joined overnight</span>Read the fourteen requirements. Six disclosure items apply to phase one. Checklist attached to the legal and compliance node.</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>Linked to requirements 3, 7 and 9. Noor: all six are wording and consent presentation; none changes the design. Four are already covered by the spec; two are open, added to the register with legal as owner.</div></div>
+
+<div class="day"><span>Day 16</span></div>
+<div class="msg user"><div class="bub"><span class="n">Noor</span>Status for my director, in one paragraph.</div><div class="who">N</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>Day 16. Of eleven asks, eight answered, two waiting (the demand in Priya's queue, day eight; the security review, requested day ten), one open with no owner (the filings question). The map changed four times from owners' answers; the context layer gained five verified entries and lost two stale ones. Phase one is on the Nov 18 train with two open wording items; phase two targets Dec 2 pending the demand and the review; phase three depends on the filings answer. The one thing that decides scope and that no record answers: whether a self-service mid-term vehicle add is a filed item. That is a question for a person.</div></div>
+<div class="msg user"><div class="bub"><span class="n">Noor</span>Ruth has run state filings for eleven years. I'm adding her. Ruth, one question: does a self-service mid-term vehicle add change anything we have filed?</div><div class="who">N</div></div>
+<div class="msg person"><div class="who">R</div><div class="bub"><span class="n">Ruth · state filings</span>No new filing. The channel is not a filed item. Two states require the disclosure wording before bind, not after. Bulletin 24-07 attached.</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span><div class="rec">filings · self-service mid-term vehicle add: no new filing; 2 states need disclosure before bind · <span class="v">verified</span> · Ruth · Nov 12 · source: bulletin 24-07</div>Flag 4 closed. Phase three can plan for twelve states; the two disclosure states are now a constraint on phase two's sequence. Ruth, thank you. The next team that asks this will get your answer with your name on it, and will not need to ask you.</div></div>
+</div>
+
+<div class="split">Six weeks later · a different session</div>
+<div class="bar"><b>Add a driver mid-term</b><span class="pill">shared session</span><span class="pill">participants: Priyanka · Dep</span><span class="pill day">Day 1</span></div>
+<div class="chat">
+<div class="msg user"><div class="bub"><span class="n">Priyanka · PM, add-a-driver team</span>Map "add a driver mid-term in the app". Start from whatever the vehicle team already learned.</div><div class="who">P</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>
+<p>Mapped. <b>26 dependencies, 19 edges from verified entries</b> written during the vehicle session: the billing owner, the instalment contract, rating's mid-term API, the mobile platform's slots, the security review's measured lead time (twelve working days, not fifteen), and Ruth's filings answer, which applies here because the channel is the same.</p>
+<p><b>Could not find (2):</b> whether driver records need a fresh consent flow for a second driver; and the document generation intake, which still has no description. That one has come up in three sessions, so I have drafted a one-page platform card and intake description for its lead to verify, since asks already arrive in that shape.</p>
+</div></div>
+<div class="msg user"><div class="bub"><span class="n">Priyanka</span>How long did the vehicle team wait on each platform?</div><div class="who">P</div></div>
+<div class="msg agent"><div class="who">D</div><div class="bub"><span class="n">Dep</span>
+<p>Measured from their session, by platform and gate, not by person:</p>
+<table>
+<tr><td>rating</td><td>4 days</td></tr>
+<tr><td>billing (owner)</td><td>1 day</td></tr>
+<tr><td>billing (demand approved)</td><td>22 days</td></tr>
+<tr><td>security review</td><td>12 working days</td></tr>
+<tr><td>mobile platform</td><td>1 day</td></tr>
+<tr><td>document generation</td><td>19 days, mostly finding who to ask</td></tr>
+</table>
+<p>Eighty per cent of their elapsed waiting sat in two queues: the demand and document generation. I can put those two numbers in front of the platform owners, as a demand signal rather than a complaint.</p>
+</div></div>
+</div>
+
+<footer>Standalone page, inline styles only. Companion to 10-dialogue.md (the raw text) and 09-dependency-taxonomy.md (the classes and triage questions the agent is running) in tasks/research-dependency-agent/. All figures are the story's own.</footer>
+</main>
+</body>
+</html>
