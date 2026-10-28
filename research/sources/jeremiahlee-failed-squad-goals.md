@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: article
 evidence: independent
 filed_by: research-airbnb-spotify-product-practices
-themes: [autonomy-alignment-placement, svpg-four-risks, work-structure-spectrum]
+themes: [autonomy-alignment-placement, svpg-four-risks, work-structure-spectrum, dependency-types-and-practices]
 relevance: medium
 ---
 

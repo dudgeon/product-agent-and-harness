@@ -8,7 +8,7 @@ retrieved: 2026-10-24
 type: docs
 evidence: first-party
 filed_by: user-story-mapping
-themes: [artifact-standardization, legible-org-for-agents]
+themes: [artifact-standardization, legible-org-for-agents, dependency-types-and-practices]
 relevance: high
 ---
 
