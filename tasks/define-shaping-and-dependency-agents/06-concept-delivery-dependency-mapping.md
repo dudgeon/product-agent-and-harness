@@ -1,0 +1,178 @@
+# Concept brief: delivery dependency mapping
+
+Date: 2026-10-31. One of two concept briefs (the other is [05 intent shaping](05-concept-intent-shaping.md)); the map of the set is [00](00-overview.md). This brief describes the module as a thing worth building for a large, matrixed, platform-centric, regulated organisation. It builds directly on the project's dependency-agent research: the seven kinds of value and the destination ([04](../research-dependency-agent/04-destination.md)), the two-axis maturity model ([05](../research-dependency-agent/05-maturity-model.md)), the map-ask-record loop and the agent-ready checklist ([06](../research-dependency-agent/06-mvp.md)), the six-class taxonomy with its triage questions ([09](../research-dependency-agent/09-dependency-taxonomy.md)) and the notional dialogue ([10](../research-dependency-agent/10-dialogue.md)). It does not repeat them. The method is [02](02-structured-inquiry.md); the artefacts are in [03](03-context-layer-model.md). Evidence is labelled first-party, independent, vendor claim or anecdote; examples are fictional and say so.
+
+## 1. Naming note: why "delivery dependency mapping"
+
+**The collision.** To a software engineer, a dependency is a package: "a simple object that maps a package name to a version range", fetched at install time ([npm docs](../../research/sources/npm-docs-package-json-dependencies.md), first-party). Dependency management means lockfiles, semver, vulnerability bots and upgrade hell; it is a specific, tool-rich discipline, and an engineer who hears "dependency agent" expects a bot that bumps versions. To a programme manager, a dependency is "a link among a project's terminal elements" ([Wikipedia](../../research/sources/wikipedia-dependency-project-management.md), independent), and in the project's own primer, something the work needs that the team does not control: another team's capacity, a system someone else owns, a gate, an approver, funding, a calendar, knowledge nobody wrote down ([01 primer](../research-dependency-agent/01-dependency-management-today.md)). The module is about the second sense only.
+
+**Why keep the word at all.** Because the second sense is the one the people who carry this work already use. Programme managers, delivery leads and the second line say "dependency" and mean exactly this, and the regulator does too: EU DORA requires firms to map their ICT interdependencies ([EU DORA](../../research/sources/eu-dora-regulation-ict-risk-third-party.md), law). A name that drops the word would be clearer to engineers and stranger to everyone else. The project's working definition therefore qualifies the word rather than replacing it: **delivery** says which kind (what delivery of this intent needs, not what the code imports), and **mapping** says what the module does with it (finds and draws it; the later stages that act on it are described as stages of the same module). Evocative names (a cartographer, a wayfinder, a matchmaker) were judged too evocative for a capability that will be funded, owned and audited.
+
+**A short glossary**, setting the module's vocabulary against a software engineer's.
+
+| Term | What a software engineer hears | What this module means | How the module avoids the confusion |
+|---|---|---|---|
+| Dependency | A package and version range the build resolves | Something delivery of this intent needs that the team does not control, resolved by an act of an outside party: build, grant, decide, fund, align in time, or tell ([09](../research-dependency-agent/09-dependency-taxonomy.md)) | Always "delivery dependency" in a title; "what another team must do" in a sentence |
+| Dependency graph | The package resolution graph or build DAG | The map: requirements linked to the platforms, processes, gates and owners that satisfy them, by phase, with evidence on every edge | Call it "the map", never "the graph" |
+| Onboarding | A new engineer joining; setting up a development environment | Becoming a consumer of a shared platform: intake, prioritisation, funding, access, environments, data agreements, assurance evidence, conformance, a connection agreement ([NHS England](../../research/sources/nhs-england-nrl-onboarding-guidance.md), first-party) | "Onboarding to a platform", with the platform named |
+| Platform | A runtime, an operating system, a cloud | A shared internal capability with an owning team, a contract, an intake and (ideally) a card: a rules engine, a content system, a data product, a document generator | "Internal platform" on first use; the card names which |
+| Contract | An API or interface specification; a type | Both the interface and the terms of consumption: the data contract, the service agreement, the intake schema (what the platform needs from a consumer, what it checks, who approves) | "Intake contract" for the schema; "interface contract" for the API |
+| Build | Compile and package | The class of dependency where an outside team must make or change something (class A in the taxonomy); also "real build work" where no existing platform satisfies a requirement | "Build work" or "class A: someone must build" |
+| Resolve | Pick versions that satisfy all constraints | Close a dependency: the thing exists, access is granted, the decision is recorded, the money is committed, the dates line up, the answer is written down | "Close" or "resolve, in the programme sense" |
+
+**Alternatives considered.** Each conveys part of the job; none conveys all of it without a worse cost.
+
+| Name | What it conveys | Why not chosen |
+|---|---|---|
+| Delivery path | The route from intent to shipped; sequencing | Says nothing about discovery or reuse; sounds like a pipeline tool |
+| Fulfilment | Each requirement is fulfilled by something | Reads as order fulfilment; hides the asks and gates |
+| Readiness | The outcome the pilot measures (time to ready) | Names the result, not the work; collides with "definition of ready" in agile and "operational readiness" in release management |
+| Capability mapping | Requirements to the capabilities that satisfy them | "Capability" is already an enterprise-architecture term with its own maps; drops the process, gate and people dependencies, which the research says are where the delay sits ([Tkalich et al.](../../research/sources/arxiv-tkalich-critical-dependencies-cse.md), independent) |
+| Platform and process mapping | The two main kinds of thing found | Accurate but long; leaves out decisions, funding, time and knowledge (four of six classes) |
+| Reuse-and-onboarding analysis | The interactive choice (reuse what exists or build) and what onboarding takes | The most descriptive of the day-one value; too narrow for the later stages (asks, evidence, sequencing, write-back) and "analysis" undersells that it acts |
+| Enterprise prerequisites | Everything that must be true before delivery | Clear to a newcomer; but "prerequisite" has no owner in it, and the whole point is that each one does |
+| Delivery dependency mapping (chosen working name) | The programme sense of dependency, qualified; the act of finding and drawing | Still contains "dependency"; needs the one-line gloss on first contact with engineers: "the things other teams must do, not the packages your code imports" |
+
+The name stays a working name. What would change it: evidence from the pilot that engineers still hear "packages" after the gloss, or that programme and risk people do not recognise the module as theirs.
+
+## 2. The problem, and who has it
+
+A requirement says what must be true. In this kind of organisation, making it true almost always needs someone outside the team: a platform to onboard to, a data owner to grant access, a gate to clear, a budget line, a release train, an answer only one person knows. The feature is small to describe and touches a lot; that is the normal case, not the exception ([film brief](../research-dependency-agent/07-film-brief.md), fictional: about a dozen dependencies for a home-screen offer).
+
+Today this work is carried by people and done late. Programme managers run a daily dependency block "by persuasion" ([Zalando](../../research/sources/zalando-pmo-typical-day-program-manager.md), anecdote); half of engineers chase the teams they depend on for status and two-thirds see depended-on work change without being told ([Microsoft Research](../../research/sources/microsoft-research-coordination-large-scale-development.md), independent); onboarding to an internal platform is a cascade of queues with no published lead time, and no organisation found publishes one ([02 challenges](../research-dependency-agent/02-challenges.md)); the records that would answer the question are stale by default, with half of engineers not trusting their system of record ([Port survey](../../research/sources/port-state-of-idp-2025-metadata-trust.md), vendor survey). No shipped product discovers dependencies nobody declared; every planning agent reads what people already recorded ([04 destination, section 1](../research-dependency-agent/04-destination.md)).
+
+Who has it: the same job-family-agnostic set as intent shaping. The product manager who does not know which of two rules engines to ask for; the business analyst filling in the third intake form in the third shape; the designer whose placement needs a slot nobody has written down how to request; the engineer who finds in week nine that the data they need has terms. Also, on the other side, the platform and gate owners who answer the same question for the fifth team this quarter.
+
+## 3. The job
+
+For each validated requirement, find which existing platforms, processes and gates in the organisation could satisfy it, what onboarding to or clearing each would take, and where real build work is needed; then run the universal screen for the dependencies every intent carries whatever its requirements; draw the map with evidence on every edge; draft the asks; and write back what is learned so the next feature starts further along. In one line: **from "what must be true" to "who has to do what, by when, and what we already know about them".**
+
+The project's working definition adds one rule and one trajectory. The rule: **choosing between candidate platforms, or choosing to build, is interactive with the person**, because the deciding considerations (a platform's roadmap, a team's appetite, a sponsor's preference) are often not in any record; the module surfaces the considerations it can find, the person decides, and the considerations and the decision are written back so the next choice is better informed. The trajectory: in later stages the module does the onboarding itself, submitting intake and assembling gate evidence under policy.
+
+Fictional example, kept from the brief: the requirement "show this offer only to a specific cohort of customers" needs an arbitration or rules engine. The module finds that the organisation has two (an offers and decisioning engine owned by one team; a campaign rules service owned by another), reads what each publishes about intake and what past consumers said in tickets, lays out the considerations (real-time call or batch; which one already holds the eligibility data; lead time from the two past onboardings it can find; one has a funded roadmap item for exactly this), and asks the person to choose, with the one consideration it could not find (which engine the loan product owner prefers) as an explicit question. The decision and the reasons go into the decision record; the next team asking about cohort targeting reads them.
+
+## 4. Behaviour, step by step
+
+The stages are fixed in order (read, screen, expand, cross-check, draft asks, review and send, record, re-screen on change); the triage sequence in [09, section 4](../research-dependency-agent/09-dependency-taxonomy.md) is the script. What happens inside each stage is the model's.
+
+### Day one: a crawl agent in a scattered environment, with anchors
+
+The cold-start design is single-player usefulness plus anchors: the module is useful to one feature team from raw sources alone, and three to five anchor platforms and gates on the pilot's common paths are co-curated with their owners before launch (a card, an intake description, a measured or estimated lead time). Everything else it reads as it finds it.
+
+1. **Read.** The validated requirements from the intent record. Then, without asking anyone: past features of the same kind and their maps (the strongest day-one heuristic: copy what a similar feature touched and verify the differences); the catalogues and the CMDB, stale as they are; ownership files and who answered the last three tickets on each system (owner inference, proposed and unconfirmed, as OpsLevel does, [first-party](../../research/sources/opslevel-docs-service-detection.md)); intake history in the ticket and service-management tools; the chat channels where teams ask platforms for things (a chat-channel intake is a route, and the module records it as one); the people directory; the anchor cards. It lists what it read.
+2. **Requirement-specific pass.** For each requirement: what capability would satisfy it; which existing platforms, processes or gates provide that capability, with the evidence; for each candidate, what onboarding or clearing takes (the intake route, what it checks, who approves, the lead time if any is known); and where nothing existing satisfies it, a "build" edge, marked as such. Where there is more than one candidate, the considerations are laid out and the choice is the person's (section 3); the choice is one of reuse, onboard, build, wait or waive, as [02, section 4.3](02-structured-inquiry.md) sets it out, and "waive" means the requirement itself goes back across the seam.
+3. **Universal screen.** The ten screening questions from [09](../research-dependency-agent/09-dependency-taxonomy.md), run against the intent and the context, open the six classes (build, grant, decide, fund, align in time, tell). The classes the screen opened are expanded with their triage questions; classes not opened carry "none found, because". This is the deterministic completeness check: no class the screen opened may be empty without a reason.
+4. **Cross-check.** Sources that should agree are compared (catalogue against runbook, owner field against recent tickets, intake page against what the last consumer actually did). Disagreements are items in their own right, routed to whoever can settle them.
+5. **The map, with the "could not find" list.** Dependencies by phase, every edge sourced or marked unverified, every node with an owner or a flag; and the list of what it looked for and did not find: the owner who moved, the intake nobody wrote down, the lead time nobody measured, the two records that disagree. The list is the hero object; it is never empty on a first pass.
+6. **Draft the asks.** One per item that needs a person: the smallest question the owner has to answer, the requirement it serves, the evidence attached, what happens if the answer is no, grouped by owner so nobody gets five messages. Verification of a card or an owner rides on a real ask and never arrives alone.
+7. **The person reviews and sends.** At this stage a person sends; the module tracks and does not chase.
+8. **Record.** Every answer with owner, date and source; the stale record struck through with its superseding source; the inferred owner confirmed or replaced; the lead time measured from the ask's own timestamps and written to the platform's card as an observation; the reuse-vs-build decision with its considerations. Everything provisional until a named person verifies it.
+9. **Re-screen on change.** When the spec changes, an answer arrives or a platform's calendar moves, re-run the screen on what changed and tell only the affected owners, once.
+
+The notional dialogue walks these turns over sixteen days and shows the second session six weeks later starting with most of its map already verified ([10](../research-dependency-agent/10-dialogue.md), fictional).
+
+### At destination: a run agent in a contracted environment
+
+The same stages, with the environment contracted and the module acting within policy. Platform cards are largely generated from the systems themselves and verified by owners where not; intake is a schema with an endpoint that accepts a request from an agent acting for a named person; gate criteria and evidence lists are data; calendars and lead times are data. The module: generates most of the map from contracts and catalogues and spends its attention on the exceptions; expresses each need in each platform's intake contract and **submits intake and onboards** under its own identity with a sponsor, on behalf of the person, with routine requests approved by policy and exceptions going to people; **assembles gate evidence** from the spec, the decisions and the map, runs the deterministic checks each gate publishes, and submits to data gates; **closes routine gates by policy** where the gate's owner has defined the routine class, with the decision recorded automatically and audit-grade; prepares judgement gates (model validation, privacy assessment, threat modelling) for a person and never decides them; sequences against real calendars and re-plans within agreed bounds; posts and chases asks by rule under earned autonomy; and reports the portfolio signal across features: lead time per platform and gate, where the organisation waits, which dependencies recur, which gates never say no. The destination is specified value by value in [04](../research-dependency-agent/04-destination.md), sections 2 to 4.
+
+## 5. What it reads and writes
+
+[03](03-context-layer-model.md) defines the artefacts, their provenance fields and the day-one source map. The module's view:
+
+| Reads | Day one, raw | At destination |
+|---|---|---|
+| What exists and who owns it | Catalogues, CMDB, ownership files, ticket history, chat channels, the people directory; anchor cards | Platform cards, owner-verified with expiry, generated from systems where possible |
+| How to get onto it | Intake pages, portal forms, past intake tickets, "the last two teams messaged its lead" | Intake contracts (schema, checks, approvers, policy) with endpoints |
+| What a gate wants | Gate criteria pages, past evidence packets, reviewers' threads | Gate cards with checkable criteria and evidence lists |
+| How long things take | Its own timings from this and past sessions; estimates from past tickets, labelled as estimates | Measured lead times per platform and gate, as data |
+| When things ship | Release calendars as pages, freeze notices, train schedules in decks | Calendars as data |
+| What was decided before | Past intent records, decision records, past sessions | Indexed decision records, by reference |
+
+| Writes | What | Where |
+|---|---|---|
+| The map | Edges with sources, nodes with owners or flags, by phase, with the position of each platform on the agent-ready checklist | The feature's intent record |
+| The "could not find" list | What it looked for and did not find; what disagreed | The intent record; aggregated across features as the demand signal |
+| Asks and answers | Question, owner, channel, state, timestamps; the answer with owner, date, source | The intent record's ask register; the answer also to the context layer so it is never asked twice |
+| Reuse-vs-build decisions | The candidates, the considerations surfaced and the ones the person added, the choice, the reasons; each consideration tagged by origin (already in a card; surfaced in the session; assumed), so that what the context did not know becomes a candidate card field ([03, section 2.5](03-context-layer-model.md)) | Decision records, reusable by the next feature with the same requirement |
+| Platform and gate cards | Drafted in the standard shape when asks already arrive in it; provisional until the owner verifies | The context layer, in a store the organisation already trusts; links to platform objects rather than copies |
+| Lead-time observations | Intake to first response, to decision, to access; per platform and gate, never per person | The platform or gate card; aggregated for the portfolio signal |
+| Corrections at their home | A stale runbook line struck through with the superseding source, drafted as a change for the owner to accept | The owner's own document, with their consent |
+
+It does not build a new catalogue and it does not hold requests: a demand goes into the portfolio tool, an access request into the identity system, with the module tracking it there.
+
+## 6. What it must not do
+
+The MVP's rules carry over ([06, section 3](../research-dependency-agent/06-mvp.md)), restated for the module and extended to its later stages:
+
+- **Not send, submit or approve anything unaided** until the stage, the identity and the policy allow it; and never approve at a gate, at any stage. First line only at judgement gates, by construction.
+- **Not invent an edge.** No dependency without a source; no owner without a source or an "inferred, unconfirmed" tag; no date without a source or an "assumed" tag.
+- **Not decide between candidate platforms.** It lays out the considerations and asks; the person chooses; the module records.
+- **Not chase** until chase rules exist in code (suppress when moving, name the blocker, cap the frequency: the pattern that cut overdue resolution by 60% in a randomised trial, [Nudge](../../research/sources/arxiv-maddila-nudge-overdue-pull-requests.md), first-party), and never chase a person for a decision that is a platform's to make.
+- **Not ask what it could have read**, and not ask an owner to verify anything the feature does not need.
+- **Not write back as fact.** Provisional until verified; expiry if nobody verifies.
+- **Not report on people.** Timings per platform and gate; never a league table of owners ([Bernstein](../../research/sources/asq-bernstein-transparency-paradox.md), independent, on what visibility does).
+- **Not become the new ticket queue.** It drafts into the platform's own route and tracks there.
+- **Not make a gate easier to skip.** Easier to satisfy, never easier to skip.
+- **Not impose the standard shape.** The card and the ask template are the module's output format first; they become a platform's input format only when the platform's owner prefers asks that way ([NAO on Verify](../../research/sources/nao-investigation-into-verify.md), independent, is what imposition looks like).
+
+## 7. Value to each side of the marketplace
+
+**To the feature team.** Nothing is discovered late: the map and the "could not find" list on day one; the right question to the right owner, once; the lead times nobody had; a plan whose dates have sources; and, at the later stages, onboarding without the form-fill and gates met rather than fought. Fewer late surprises is the outcome the pilot measures.
+
+**To platform, process and gate owners.** The side with the least to gain at first and the most to give. From day one, the project's working definition promises four things, each cheap for the module and new for the owner:
+
+1. **A demand signal.** Which features depend on their platform, what they ask for, and what they could not find: forty-one features depended on document generation this quarter and the top three asks were the same question (the fictional figure in [10](../research-dependency-agent/10-dialogue.md)). Platform teams get this nowhere today ([04, legibility ladder](../research-dependency-agent/04-destination.md): capacity and roadmap in machine-readable form, none found).
+2. **Asks that arrive in one shape.** The requirement, the evidence, what happens if no, grouped: a question that can be answered from a phone instead of a meeting to find out what is being asked.
+3. **Each question answered once.** Their answer written with their role, the date and the source, and reused by name by the next team, so they are not the fifth person this quarter to explain the same intake.
+4. **Their own lead times.** Intake to first response to decision to access, measured from real asks, per platform and never per person: the number no platform in the research publishes ([02 challenges](../research-dependency-agent/02-challenges.md)), and the number a platform owner needs to argue for capacity.
+
+Later: a platform whose intake is a schema receives correctly filled requests from the module and spends review time on the exceptions; a gate whose criteria are data gets evidence packets that pass the deterministic checks before a reviewer sees them. The platform doctrine's "compelling, not mandated" ([Bottcher](../../research/sources/fowler-bottcher-what-i-talk-about-platforms.md), anecdote) is the test: owners should pull the module in because asks are easier that way.
+
+**To the organisation.** The dependency map the regulator already demands ([ESAs dry run](../../research/sources/esas-dora-dry-run-register-of-information.md), regulator: 6.5% of first registers clean), built as a by-product of product work; the measurement of where the organisation waits; and the evidence to retire gates that never say no.
+
+## 8. How it is measured: the four pilot outcomes
+
+The MVP's three numbers (verification rate, reuse rate, wait time per platform and gate) sit inside the four pilot outcomes.
+
+| Pilot outcome | Definition for this module | How it is measured | Baseline |
+|---|---|---|---|
+| **Time to ready** | Working days from validated requirements to a map with every open item owned, and (later) to every intake submitted and every gate's packet assembled | Timestamps in the intent record and the ask register | Reconstructed for recent features from ticket and chat history; expect it to be partial |
+| **Fewer late surprises, less rework** | Late-discovered dependency rate: dependencies that appeared after the map was marked complete, as a share of the as-delivered set; re-plans forced by an unmapped dependency; rework attributable to one | The map's change history; a short "what surprised you" check with the team at release | Prospective control features on non-pilot teams; past features will under-report |
+| **Context compounds** | Verification rate (share of proposed cards, owners and answers a named owner verified); reuse rate (share of a new map's edges that came from a previous session's verified entries); staleness rate (verified entries past expiry) | Counted per session; reported monthly | None exists; the first quarter sets it. The compounding claim is untested anywhere ([05, section 5](../research-dependency-agent/05-maturity-model.md)) |
+| **Owners pull it in unmandated** | Owners who write a card or an intake description in the shape because asks arrive in it; who join sessions; who ask for the demand signal or their lead times; platforms that move a step on the agent-ready checklist without being asked | Observed; the checklist position per platform, tracked quarterly | Zero; the anchors are excluded from this count because they were curated by agreement |
+
+And the one number nobody has: **wait time per platform and gate**, reported from week one, because it is both an outcome for feature teams and the owners' own lead time. It is read with the DORA caution that priority churn on the platform side is a larger cause of slip than dependencies themselves, so "waiting on a platform whose priorities changed" is a state of its own in the ask register ([DORA 2024](../../research/sources/dora-accelerate-state-of-devops-2024.md), independent).
+
+## 9. How it is evaluated
+
+The same classification model as [05, section 8](05-concept-intent-shaping.md): a knowable universe (the six classes and their sub-classes), heuristics per class (the triage questions), classification per requirement, labelled by the people who know, with false positives and false negatives reported per class and each error mapped to a fix.
+
+- **Ground truth is the as-delivered dependency set.** For a shipped feature, the dependencies that actually had to be resolved, labelled by the product owner and the owners it touched. For pilot features, labelled at release. This is cheaper than it sounds: the ask register and the intake records are most of it.
+- **Precision and recall per class.** A false positive is an edge to a platform that was not needed, or an owner who was not the owner; it costs an owner's time and is the bureaucrat risk in miniature. A false negative is the late surprise. Expect the system-to-system edges (classes A and B) to be found and the decide, fund and tell edges (C, D, F) to be the misses, because those live in forms, portfolios and people ([09, section 5](../research-dependency-agent/09-dependency-taxonomy.md)); report per class so the gap is visible. Detection research's own ceiling is a caution: links detected at F1 0.95, typed at 0.64, over-predicted zero-shot from specifications ([Lüders et al.](../../research/sources/arxiv-luders-automated-detection-typed-links.md); [LEREDD](../../research/sources/arxiv-darif-leredd-requirement-dependencies.md), independent).
+- **Owner inference is graded as a recommender.** Share of inferred owners confirmed; the production benchmark for routing is 82.9% F1, good enough to suggest, not to act ([DeepTriage](../../research/sources/arxiv-pham-deeptriage-incident-routing.md), first-party).
+- **Deterministic checks on the artefact.** Every edge has a source; every node has an owner or a flag; every class the screen opened has items or a reason; every ask names the requirement it serves. Scriptable and honest: they grade whether the work was done, not whether it is right.
+- **The asks are graded by a rubric and by response.** A weekly labelled sample of asks, graded by the owners who received them: was it the smallest question, was the evidence enough, was it the right person. Then the behavioural signal: response rate and time per channel and per ask shape. An ask template that owners rate well but do not answer is wrong.
+- **The reuse-vs-build decision is graded after the fact.** Did the platform chosen deliver what the requirement needed, in the time its card said; were the considerations the person added to the module's list ones the context could have held. The second feeds the context layer; the first feeds the card.
+- **Verification is checked, not only recorded.** Somewhere a step confirms that the owner actually saw and confirmed the card, independent of the record that says so (the design guide's "check the work, not the ticks").
+- **Each later-stage right is earned by a labelled sample.** Posting as itself, chasing by rule, submitting intake, assembling packets: each begins as a proposal a person acts on, and the module's accuracy on a weekly sample is what raises it, tiered by risk, with a person on every change to a standard ([design guide, section 4](../research-skill-rigidity-spectrum/03-design-guide.md)).
+
+## 10. The seam with intent shaping
+
+From this side, the seam is a requirement with an empty "satisfied by" field (in the record convention sketched in [03, section 1.5](03-context-layer-model.md), a dependency-map row per requirement with its class, candidate, route and state). Process requirements that [01](01-requirements-taxonomy.md) keeps as requirements pointing at the gate they trigger cross the seam already half-mapped: the gate is the dependency, and mapping's job is the gate card, the criteria and the evidence list. Mapping fills it with one or more dependencies (an existing platform to onboard to; a gate to clear; a decision to obtain; build work), each with an owner and a state, and sends back what shaping needs to know: that the requirement's wording changes once its path is known; that a constraint exists shaping did not see; that an obligation the platform's intake imposes needs a requirement of its own.
+
+The order of the two passes inside mapping is itself a seam question. The requirement-specific pass (section 4, step 2) needs validated requirements and crosses at H2 or H3 in [02, section 7](02-structured-inquiry.md); the universal screen (step 3) needs only the intent and crosses at H1, which is also what [02](02-structured-inquiry.md) calls the mapping-first option. So the universal screen could run before shaping finishes, in parallel with it, or after it; [02](02-structured-inquiry.md) lists the five handoff points with the options, and [05, section 9](05-concept-intent-shaping.md) lays out sequential, interleaved and continuous with a stated lean toward interleaved for the pilot. Mapping adds one consideration to that choice: the universal screen is cheap and reads only the context, so running it early costs little and finds the gate and funding dependencies that decide phase boundaries before the requirements are final. The lean here is the same: H1 early, interleave at H2 in the pilot, and let the rate of mapping-driven requirement changes decide between H2 and H3.
+
+On vocabulary: a requirement is anything the feature must satisfy; an enterprise obligation is a requirement whose source is outside the feature's own goal (classes S2 to S6 in [01](01-requirements-taxonomy.md)). Mapping treats both alike, because both need someone outside the team to act; the obligation's validator is usually also the gate's owner.
+
+## 11. Open questions
+
+1. Where does the dependency context for a recent feature actually live, and how long did assembling it take? (Register: dependency-knowledge-and-intake Q1; a context audit of two or three shipped features with their product owners. Decides how thin "thin" is.)
+2. Will owners verify a card when asked the smallest question riding on a real ask, and at what rate? (Q2; the pilot's first quarter. Decides whether compounding is real.)
+3. Which three to five platforms and gates are the anchors, by what criterion (most depended-on by the pilot teams' kind of feature; owners willing), and what does co-curation cost each owner? (Answered with the pilot teams and candidate owners before launch.)
+4. Which store will the organisation accept as the home for cards, decision records and lead-time observations, and who owns it? (Q3 in the MVP; [03](03-context-layer-model.md) lays out the options.)
+5. How is a reuse-vs-build decision's reasoning best captured so that it is reusable: free text, a fixed set of consideration fields, or both? (Answered by trying both on the pilot's first ten decisions and seeing which the next feature actually reads.)
+6. What identity does the module use when it moves from drafting to posting and submitting, who sponsors it, and does the second line accept an agent-assembled packet as first-line evidence with the agent's identity on it? (Register Q3 and the identity dimension; risk, audit, identity owners.)
+7. Which gates will publish checkable criteria and an evidence list, and which platforms already have intake as a schema? (Register Q4; an inventory. Decides which platforms can be submitted to at the walk stage.)
+8. What does the module do while it waits for an owner, and for how long before it escalates and to whom? ([Shared-agents synthesis](../research-shared-persistent-agents/01-synthesis.md), open question on waiting; a policy per channel.)
+9. Does the chat-channel intake route, recorded as a route, help or embarrass the platform whose intake it is? (A question for the anchor owners; it decides whether "could not find an intake" is published or kept inside the session.)
+10. Does the name survive contact with engineers after the one-line gloss? (The pilot's first month; section 1.)
