@@ -92,6 +92,12 @@ It does not keep a private store. If the intent record lives in a repository, th
 
 Two cautions. A reconstructed baseline for late surprises will be generous to the status quo, because surprises that were absorbed quietly left no record; the honest comparison is prospective. And time to ready can fall for the wrong reason (fewer obligations attached), so it is read together with the late-surprise rate, never alone.
 
+**The overarching goal, measured inside the four outcomes** ([00](00-overview.md); the full set is in [09, section 10](09-sdd-compatibility.md)):
+
+- *Time to ready* also carries **human effort**: person-hours of the feature owner and validators per feature, from session and ask timestamps plus a short self-report, with every validation a person sent counted rather than hidden. Elapsed time is measured to the delivery-ready slice landing in the code repository, not to a document being marked ready.
+- *Fewer late surprises, less rework* also carries **quality** and **compatibility with spec-driven development**: requirements found after handoff (by design, build, review or a gate) per feature; the share of exported requirements with a fit criterion a coding agent turned into a test or check; the share of requirements the spec-driven toolchain consumed without manual translation; and spec commits after the first plan commit, as rework.
+- *Context compounds* also carries the **standing layer**: the share of a feature's obligations supplied by generated constitution or steering entries rather than written into its spec.
+
 ## 8. How it is evaluated
 
 The model is the risk advisor in the project's position paper: a knowable universe of obligations, each with heuristics objective enough for any capable actor to apply, so that review becomes specification plus classification, and classification can be labelled, sampled and improved by fixing heuristics ([Intent Shaping](../../research/sources/geoff-intent-shaping-well-managed-environment.md), first-party position). Applied to this module:

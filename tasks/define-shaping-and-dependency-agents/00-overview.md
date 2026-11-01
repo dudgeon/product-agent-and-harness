@@ -10,7 +10,7 @@ The overarching goal for both modules: **faster, more efficient and higher-quali
 - **Higher quality:** fewer missed requirements, more actionable requirements, and dependencies resolved before handoff.
 - **Spec-driven-development ready:** the outputs are the input a spec-driven toolchain or a coding agent consumes directly, not a document someone has to translate.
 
-Every measure, format and handoff below should be read against this goal.
+Every measure, format and handoff below should be read against this goal. What "compatible with spec-driven development" means in practice (which files, what structure, where dependencies go, and how the handoff to the code repository works) is in [09](09-sdd-compatibility.md).
 
 ## What the two modules are
 

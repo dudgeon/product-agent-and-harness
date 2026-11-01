@@ -141,6 +141,12 @@ The MVP's three numbers (verification rate, reuse rate, wait time per platform a
 | **Context compounds** | Verification rate (share of proposed cards, owners and answers a named owner verified); reuse rate (share of a new map's edges that came from a previous session's verified entries); staleness rate (verified entries past expiry) | Counted per session; reported monthly | None exists; the first quarter sets it. The compounding claim is untested anywhere ([05, section 5](../research-dependency-agent/05-maturity-model.md)) |
 | **Owners pull it in unmandated** | Owners who write a card or an intake description in the shape because asks arrive in it; who join sessions; who ask for the demand signal or their lead times; platforms that move a step on the agent-ready checklist without being asked | Observed; the checklist position per platform, tracked quarterly | Zero; the anchors are excluded from this count because they were curated by agreement |
 
+**The overarching goal, measured inside the four outcomes** ([00](00-overview.md); the full set is in [09, section 10](09-sdd-compatibility.md)):
+
+- *Time to ready* also carries **human effort**: person-hours spent on asks, chases and intake per feature, with every ask a person sent at the crawl stage counted as a known cost, not hidden.
+- *Fewer late surprises, less rework* also carries **dependencies solved before handoff**: the share of dependency edges resolved, or owned with an open ask, when the delivery-ready slice lands in the code repository; tasks that started and then stopped on an unmapped dependency; and blocked work exported as blocked rather than as ready ([09, section 5](09-sdd-compatibility.md)).
+- *Owners pull it in unmandated* also counts platforms that publish an interface contract in a form coding agents read, once asks arrive in that shape.
+
 And the one number nobody has: **wait time per platform and gate**, reported from week one, because it is both an outcome for feature teams and the owners' own lead time. It is read with the DORA caution that priority churn on the platform side is a larger cause of slip than dependencies themselves, so "waiting on a platform whose priorities changed" is a state of its own in the ask register ([DORA 2024](../../research/sources/dora-accelerate-state-of-devops-2024.md), independent).
 
 ## 9. How it is evaluated

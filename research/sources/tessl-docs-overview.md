@@ -27,3 +27,6 @@ Tessl was one of the three tools in Böckeler's spec-driven development review (
 
 ## Could not verify
 - Whether Tessl's earlier spec-as-source features survive; dates of the pivot not established.
+
+## Added by research-sdd-ready-intent (2026-11-01)
+- The docs index ([llms.txt](https://docs.tessl.io/llms.txt), retrieved 2026-11-01) lists no spec pages; the nearest is "Verifiers": "check committed files against repository-specific invariants that a linter cannot express". For this project Tessl is now a home for skills, rules and their evals (where standing enterprise rules could be packaged and scored), not a spec format the shaping module would export to.
