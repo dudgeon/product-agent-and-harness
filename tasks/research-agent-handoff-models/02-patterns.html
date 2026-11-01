@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handoff patterns compared</title>
+<style>
+  :root { --paper:#f6f3ec; --ink:#24221e; --muted:#6f6a60; --hair:#ddd7ca; --accent:#c4673f; --wash:#f0dccf; --card:#fffdf8; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:24px 16px 48px; background:var(--paper); color:var(--ink); font:15px/1.5 "Avenir Next","Helvetica Neue",Arial,sans-serif; }
+  main { max-width:1180px; margin:0 auto; }
+  h1 { font:500 30px/1.2 Charter,"Iowan Old Style",Georgia,serif; margin:0 0 6px; }
+  h2 { font:500 22px/1.25 Charter,"Iowan Old Style",Georgia,serif; margin:34px 0 10px; }
+  p.lead { color:var(--muted); margin:0 0 18px; max-width:80ch; }
+  .legend { display:flex; flex-wrap:wrap; gap:8px 16px; font-size:13px; color:var(--muted); margin:8px 0 18px; }
+  .legend b { color:var(--ink); font-weight:600; }
+  table { width:100%; border-collapse:collapse; background:var(--card); font-size:13.5px; }
+  th, td { border:1px solid var(--hair); padding:8px 10px; vertical-align:top; text-align:left; }
+  th { background:var(--paper); font-weight:600; position:sticky; top:0; }
+  td.name { font-weight:600; white-space:nowrap; }
+  td.fam { color:var(--muted); font-size:12px; white-space:nowrap; }
+  .pill { display:inline-block; padding:1px 8px; border:1px solid var(--hair); border-radius:999px; font-size:11.5px; color:var(--muted); background:var(--paper); white-space:nowrap; }
+  .yes { color:#2d6a3e; font-weight:600; } .no { color:#9b3a2a; font-weight:600; } .part { color:#8a6a1f; font-weight:600; }
+  .ab { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:10px; }
+  .card { background:var(--card); border:1px solid var(--hair); border-radius:10px; padding:14px 16px; }
+  .card h3 { margin:0 0 6px; font:500 18px/1.2 Charter,Georgia,serif; }
+  .card ul { margin:6px 0 0 18px; padding:0; } .card li { margin:3px 0; }
+  .accent { color:var(--accent); font-weight:600; }
+  .wrap { overflow-x:auto; }
+  footer { color:var(--muted); font-size:12.5px; margin-top:28px; }
+  @media (max-width:900px) { .ab { grid-template-columns:1fr; } th { position:static; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Handoff and orchestration patterns, on one page</h1>
+  <p class="lead">Sixteen ways work can move between a person's general-purpose harness and two enterprise product modules, intent shaping and delivery dependency mapping, in a large, matrixed, platform-centric, regulated organisation. Companion to the written synthesis (01-synthesis.md, section C), which carries the sources and evidence labels for every cell.</p>
+  <div class="legend"><span><b>Through line</b> who holds the context, and who holds control</span><span><b>Crosses</b> what moves at the seam</span><span><b>3-week ask</b> can the pattern hold a dependency ask open for weeks, reach an owner who was never in the session, and record who answered</span><span class="yes">yes</span><span class="part">partly</span><span class="no">no</span></div>
+
+  <h2>Family 1 · inside one runtime</h2>
+  <div class="wrap"><table>
+    <tr><th>Pattern</th><th>Examples</th><th>Through line (context / control)</th><th>Crosses the seam</th><th>Identity</th><th>Human gate</th><th>Fails</th><th>3-week ask</th><th>Maturity</th></tr>
+    <tr><td class="name">C1 Control-transfer handoff</td><td>OpenAI handoffs, Swarm, LangGraph swarm, Microsoft handoff, ADK chat mode</td><td>shared transcript / whichever agent is active</td><td>the whole conversation; filters narrow but "do not redact"</td><td>the application's</td><td>every turn; approval-required tools pause</td><td>context bloat; leaked tool content; no owner to notice drift</td><td class="no">no</td><td>mainstream (support triage)</td></tr>
+    <tr><td class="name">C2 Agent as tool / subagent</td><td>Claude Code, Codex, Cursor, VS Code subagents; OpenAI as_tool; ADK AgentTool, task mode</td><td>the caller / the caller</td><td>a brief in; a summary out (typed only in dynamic workflows)</td><td>the caller's; cannot be overridden</td><td>on the caller's turns; task mode lets the specialist ask the person</td><td>under-briefing; "lost or summarized away"; no mid-task correction; nobody checks the summary</td><td class="no">no</td><td>mainstream</td></tr>
+    <tr><td class="name">C3 Skills in one loop</td><td>Agent Skills, hooks, saved workflows; LangChain middleware; Anthropic's fold-subagents guidance</td><td>one context window / the model, hooks for enforcement</td><td>nothing crosses agents</td><td>the person's; permissions live in tools</td><td>hooks; a skill is "a request, not a guarantee"</td><td>context bloat; mis-triggered skills; truncation after compaction</td><td class="no">no</td><td>mainstream (2026 default)</td></tr>
+    <tr><td class="name">C4 Supervisor, with or without a ledger</td><td>LangGraph supervisor (archived), CrewAI hierarchical, Anthropic research system, Managed Devins, Magentic</td><td>the supervisor / the supervisor; Magentic keeps task and progress ledgers</td><td>full history or last message, the supervisor's choice</td><td>the application's; Devin an org role</td><td>the person talks to the supervisor; plan sign-off</td><td>bottleneck and paraphrase; siblings miss each other's discoveries; 3-10x tokens</td><td class="no">no</td><td>mainstream (research, parallel coding)</td></tr>
+    <tr><td class="name">C5 Fixed pipeline over shared state</td><td>ADK sequential/parallel/loop agents, CrewAI processes and flows, OpenAI "orchestrate via code"</td><td>state keys / code</td><td>a step's output saved to a key or relayed as the next task's context</td><td>the application's</td><td>human_input steps; policy confirmation</td><td>relay loss when later steps see only a summary; rigid</td><td class="no">no</td><td>mainstream</td></tr>
+  </table></div>
+
+  <h2>Family 2 · the repository or a board is the medium</h2>
+  <div class="wrap"><table>
+    <tr><th>Pattern</th><th>Examples</th><th>Through line (context / control)</th><th>Crosses the seam</th><th>Identity</th><th>Human gate</th><th>Fails</th><th>3-week ask</th><th>Maturity</th></tr>
+    <tr><td class="name">C6 Spec-driven repo relay</td><td>Kiro specs and hooks, Spec Kit, OpenSpec, the AI-native SDLC playbook</td><td>the files / the person per command, or CI on merge</td><td>a markdown document with a section template</td><td>the person's session or a CI token</td><td>review each phase; PR and merge</td><td>reasoning lost at session end; review burden; hooks fire only on the agent's own edits</td><td class="no">no (nothing watches a file)</td><td>early-adopter</td></tr>
+    <tr><td class="name">C7 Role-document relay with a router</td><td>BMAD (analyst, PM, architect, build), MetaGPT, ChatDev</td><td>the anchor document / the person (v4) or an orchestrator reading statuses</td><td>PRD, spine, epics, per-story plan with frontmatter status</td><td>the person's harness</td><td>five named sign-offs that block the next step</td><td>"a requirement weakens, a constraint disappears"; approver overload</td><td class="no">no external owners</td><td>early-adopter</td></tr>
+    <tr><td class="name">C8 File-driven self-relay</td><td>Ralph loop, OpenAI ExecPlans, Anthropic's long-running harness, spec/plan/todo chains</td><td>the plan file re-read each loop / a loop or the person</td><td>plan, todo, commits; a mandatory decision log</td><td>the person's local agent</td><td>plan review up front</td><td>"will not have the reasoning"; premature done; collisions</td><td class="no">no</td><td>early-adopter</td></tr>
+    <tr><td class="name">C9 Blackboard</td><td>classic Hearsay-II and BB1; LbMAS; a Google and UMass discovery board</td><td>the board / a control unit, or volunteers</td><td>posted requests and partial results</td><td>not addressed</td><td>none in the papers</td><td>redundant posts; 1.8x cost; no termination without a decider</td><td class="no">not shown</td><td>emerging</td></tr>
+  </table></div>
+
+  <h2>Family 3 · the record is the medium</h2>
+  <div class="wrap"><table>
+    <tr><th>Pattern</th><th>Examples</th><th>Through line (context / control)</th><th>Crosses the seam</th><th>Identity</th><th>Human gate</th><th>Fails</th><th>3-week ask</th><th>Maturity</th></tr>
+    <tr><td class="name">C10 Task object, person as router</td><td>Linear delegation, Jira work items to coding agents, GitHub issues to Copilot</td><td>the issue and comments / the person or a tracker automation</td><td>a task object with typed fields plus prose; a PR back</td><td>an app actor with a human accountable</td><td>PR review; never merges</td><td>thin ticket context; restricted automation modes; router fatigue</td><td class="part">partly: outlives sessions, reaches owners; authority not modelled</td><td>mainstream (code)</td></tr>
+    <tr><td class="name">C11 Typed shared record / context layer</td><td>Palantir ontology MCP, Teamwork Graph, Work IQ, context graphs, AWS data contracts</td><td>the record store / unspecified; an orchestrating agent or escalation triggers</td><td>typed objects; governed actions; a versioned context package</td><td>the platform's permission model</td><td>action-type restrictions on writes</td><td>re-derivation without packages; silent deadlocks; stale records</td><td class="part">partly: yes if owners use the same system; "answered as" needs a field</td><td>shipped at the enterprise edge</td></tr>
+    <tr><td class="name">C12 Platform-triggered agents on records</td><td>Notion custom agents, Rovo automations, Jira transitions, Cursor automations, Claude Code routines, Codex scheduled tasks, Kafka patterns</td><td>the changed record plus configured sources / the platform's trigger rules</td><td>a record event; each run is a fresh session</td><td>varies; often undocumented; the trigger belongs to one account</td><td>mostly after the fact</td><td>green runs that did nothing; dropped events; injection through content</td><td class="part">partly: as long-lived as the record; history must sit on the record</td><td>early-adopter to mainstream in each platform</td></tr>
+    <tr><td class="name">C13 Reviewer and checker agents</td><td>Anthropic Code Review, Bugbot, CodeRabbit, Rovo Dev, a Rovo document reviewer</td><td>the artifact / the platform's merge or transition rules</td><td>the diff or page in; comments or a check result out</td><td>a bot app; separation of duties from the platform</td><td>the merge or transition; only CodeRabbit documents a block</td><td>added review load; collisions with rulesets; document reviewers only comment</td><td class="no">no (it reacts)</td><td>mainstream (code), emerging (documents)</td></tr>
+  </table></div>
+
+  <h2>Family 4 · outlives a session</h2>
+  <div class="wrap"><table>
+    <tr><th>Pattern</th><th>Examples</th><th>Through line (context / control)</th><th>Crosses the seam</th><th>Identity</th><th>Human gate</th><th>Fails</th><th>3-week ask</th><th>Maturity</th></tr>
+    <tr><td class="name">C14 Durable workflow with agents at nodes</td><td>Temporal, Inngest, Restate, DBOS, Cloudflare Workflows, LangGraph interrupts; A2A and MCP Tasks on the wire</td><td>the journal / the workflow code</td><td>typed events and signals; the answer as a payload</td><td>the engine's service identity; the answerer is a payload field, unchecked</td><td>placed in code at a step, enforced</td><td>history caps; changed definitions break runs; unauthenticated resolve endpoints</td><td class="part">yes for holding, reminding, escalating; no for who answered under what authority</td><td>early-adopter under agents</td></tr>
+    <tr><td class="name">C15 Persistent agent object; shared agent people join</td><td>Cloudflare Agents, Ramp Inspect; Claude Tag, Block Buzz, Asana teammates, Agent 365 agentic user</td><td>the agent's own store, or the channel / its schedule, or anyone in the channel</td><td>method calls, events, thread messages</td><td>service identity; channel account; signed delegation (Buzz); approving user recorded (Claude Tag)</td><td>approval methods; channel membership</td><td>eviction without replay; channel membership as the access boundary; multi-user conflict</td><td class="part">yes for holding; reachable if in the channel or by mail; authority not modelled</td><td>early-adopter</td></tr>
+    <tr><td class="name">C16 Remote deployed agent via MCP / Tasks / A2A</td><td>Glean agents, Devin MCP, MCP Tasks, A2A v1.0 and its CLI skill, Gemini CLI</td><td>the person's harness / split: harness calls, remote loop runs</td><td>arguments or a message in; a result, task handle or session id out</td><td>per-server OAuth, service credential or org role; no token passthrough</td><td>host tool approval; input-required</td><td>host timeouts; contested Tasks support; no way to wake the harness; no "who answered" field</td><td class="part">yes if the server persists it; no standard authority field</td><td>early-adopter (MCP), emerging (Tasks, A2A)</td></tr>
+  </table></div>
+
+  <h2>The two mental models, and a third placement</h2>
+  <div class="ab">
+    <div class="card"><h3>Model A · finish-to-start relay</h3><p>Boundary at the <span class="accent">stage</span>. The record in the feature repo is the through line; each agent reads it, works, stops. Closest to C5 to C8.</p><ul><li><b>For:</b> the record is the product; write once and re-read often is the low-loss condition; separation of duties; per-stage ownership and evals; harness-agnostic by construction.</li><li><b>Against:</b> the seam loses reasoning unless the artifact carries it; wrong shape if mapping changes requirements often; something must start the next stage and the request leaves it unnamed; a repo file cannot notify, remind or receive an owner's answer.</li></ul></div>
+    <div class="card"><h3>Model B · through line</h3><p>Boundary at the <span class="accent">session</span>. The person's harness stays in charge and calls sub-agents or primitives. Closest to C2 to C4.</p><ul><li><b>For:</b> one conversation holds the why; interleaving is free; lowest build; the vendors' 2026 default; the controlled studies favour one agent for sequential, interdependent reasoning.</li><li><b>Against:</b> the session dies with the person and acts only as the person; what survives compaction is what was written to disk; subagents return summaries nobody checks; enterprise context must be served over MCP; single-user products without organisation controls; a 30-day transcript is not a record.</li></ul></div>
+    <div class="card"><h3>The record as the through line</h3><p>Neither the harness nor a stage agent holds it; the intent record and its asks do, and any agent or owner attaches. The dominant shipped shape (C10 to C13), and the only one where an owner never in any session answers under their own identity.</p><ul><li><b>Costs:</b> who acts next and who is accountable when nobody does; a schema and a platform owner; not shown holding a product-definition flow for weeks.</li><li><b>Lean, with its reason:</b> design the modules so the record is the through line and A versus B is a question about the person's surface. Would change if a record cannot carry reasoning well enough across sessions, or if the record platforms are unreachable from the harnesses product people use.</li></ul></div>
+  </div>
+
+  <h2>What crosses a seam matters more than the topology</h2>
+  <div class="wrap"><table>
+    <tr><th>Finding</th><th>Evidence</th><th>Label</th></tr>
+    <tr><td>A prose relay with the source hidden fell from 90.7% to 22.5% over five stages; structured messages lost about a third as much per stage</td><td>Ao et al., reliability limits of multi-agent planning</td><td><span class="pill">independent</span></td></tr>
+    <tr><td>Consolidated instructions re-read by the model recover about 95%; piecemeal conversation loses 39% on average across 15 models</td><td>Laban et al., LLMs lost in multi-turn conversation</td><td><span class="pill">independent</span></td></tr>
+    <tr><td>Strong-model relays are near lossless over six hops but carry injected errors faithfully</td><td>Zeng, faithful not corrective</td><td><span class="pill">independent, abstract</span></td></tr>
+    <tr><td>Every multi-agent variant lost 39-70% on sequential planning; a central verifier limited error amplification to 4.4x against 17.2x</td><td>Kim et al., towards a science of scaling agent systems</td><td><span class="pill">independent</span></td></tr>
+    <tr><td>At equal thinking-token budgets a single agent matched or beat five multi-agent designs</td><td>Tran and Kiela</td><td><span class="pill">independent</span></td></tr>
+    <tr><td>One loop with progressively disclosed skills "frequently outperformed" subagent designs; keep a full handoff only when the subagent must talk to the user</td><td>Anthropic, fold subagents into the main loop</td><td><span class="pill">first-party, undisclosed data</span></td></tr>
+    <tr><td>Broadcast-and-volunteer beat central assignment by 13-57% relative on discovery work, at about 1.8x cost</td><td>Salemi et al., LLM blackboard for information discovery</td><td><span class="pill">independent, preprint</span></td></tr>
+    <tr><td>Every durable engine can hold a wait for weeks and remind; none checks who answered</td><td>Temporal, Inngest, Restate, DBOS, Cloudflare docs</td><td><span class="pill">first-party</span></td></tr>
+  </table></div>
+
+  <footer>Written for the task research-agent-handoff-models, 2026-10-31. Every cell is summarised from the synthesis; sources and labels are there. The page is a reading aid, not a recommendation.</footer>
+</main>
+</body>
+</html>
