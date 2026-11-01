@@ -18,7 +18,7 @@ Temporal's worked guide for an approval that may take days: decisions arrive as 
 ## Themes
 - durable-external-waits: the Workflow waits "for as long as it takes"; timers are persisted on the Server and survive Worker restarts and deploys; "Temporal's Event History replays the Workflow to its exact pre-failure state"; a suspended Workflow uses no compute.
 - human-review-gates: reminder loop (`reminder_interval_seconds` default 86400, `max_reminders` default 3); on SLA expiry it escalates to `escalation_email` and opens a second wait; with no escalation contact or a second timeout it auto-rejects with `TIMED_OUT` ("If no one responds in time, escalation happens automatically").
-- identity-delegation: `approver_email` is supplied in the decision payload and the Signal handler does not check it against the sender; the audit record holds a caller-supplied value.
+- identity-delegation: `approver_email` is a configured value (`ApproverConfig`) and the decision arrives as a Signal payload; the sample handler stores what it is given, so the audit record holds a caller-supplied value. This is a reading of the sample code, not a quotation.
 - deterministic-scaffold-model-nodes: the approval flow is code-owned (Workflow definition); audit entries written "both in-memory and via an Activity", with the Activity left as a stub for your own store; upsert keyed on Workflow Id and stage.
 
 ## Key points
@@ -34,3 +34,4 @@ Temporal's worked guide for an approval that may take days: decisions arrive as 
 
 ## Could not verify
 - Whether Temporal Server records any caller identity for a Signal (the page shows none). Pages undated; read via WebFetch (model-summarised view).
+- Correction (2026-11-01): a film and synthesis draft quoted this note as saying the approver email is "not checked against the actual sender". Those words are not on the live page (re-fetched 2026-10-31, which shows `approver_email` in `ApproverConfig` and no sender check in the sample). The claim stands only as a reading of the sample code, reworded above; the quotation marks were removed from the synthesis, the themes file, the options contribution and the film.
