@@ -2,6 +2,16 @@
 
 Date: 2026-10-31. Part of the definition of two enterprise product capabilities for a large, matrixed, platform-centric, regulated organisation. This page is the one-page map of the set. The concept briefs are [05 intent shaping](05-concept-intent-shaping.md) and [06 delivery dependency mapping](06-concept-delivery-dependency-mapping.md); the road from day one to the destination is [07](07-staged-roadmap.md); the launch-day narratives are [08](08-working-backwards.md). The method both modules run is in [01 the requirements taxonomy](01-requirements-taxonomy.md) and [02 the structured inquiry](02-structured-inquiry.md); where the work lives and how its context is judged is in [03 the context-layer model](03-context-layer-model.md) and [04 the context trust criteria](04-context-trust-criteria.md). The organisation is never named; examples are fictional and say so.
 
+## The goal
+
+The overarching goal for both modules: **faster, more efficient and higher-quality articulation of product intent, in a form that is maximally compatible with, and useful to, spec-driven development.**
+
+- **Faster and more efficient:** less elapsed time from goal to ready, and lower human effort spent getting there.
+- **Higher quality:** fewer missed requirements, more actionable requirements, and dependencies resolved before handoff.
+- **Spec-driven-development ready:** the outputs are the input a spec-driven toolchain or a coding agent consumes directly, not a document someone has to translate.
+
+Every measure, format and handoff below should be read against this goal.
+
 ## What the two modules are
 
 The project's working definition: two capabilities, described as modules so that how they are packaged stays open.
