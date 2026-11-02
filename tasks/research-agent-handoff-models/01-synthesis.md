@@ -327,7 +327,7 @@ Each with *answered by* and *affects*, in the register's form. The direction-onl
 16. **How is answerer fatigue among outside owners measured and kept down?** Candidates: override rate, response time, share of asks answered without a chase. *Answered by:* pilot telemetry. *Affects:* the module's notification design; adoption.
 17. **Does a specialist beat a skill at equal thinking-token budgets on intent shaping?** *Answered by:* the bake-off with matched budgets. *Affects:* how the module is packaged.
 
-Direction only the project owner can give (not research questions): whether the first users are expected to be in a coding harness at all; whether a tracker or document platform the organisation already runs may be the ask's system of record, or the record must be the project's own; and whether the pilot may put an agent identity, with a sponsor, on an ask to a platform owner.
+Direction from the project owner (2026-11-01): prototypes and the pilot run among the project's own team in Claude Code, so the first prototypes sit in the model B family's harness; whether later users live in a coding harness depends on this research and stays open. Whether a tracker or document platform the organisation already runs may hold the asks, or the record must be the project's own, stays open (key question 4). Agent identity on asks is covered by the two-module definition: at the walk stage an agent identity with a named sponsor acts on behalf of a named person ([08](../define-shaping-and-dependency-agents/08-working-backwards.md)); one identity per feature or per module stays a design question ([06](../define-shaping-and-dependency-agents/06-concept-delivery-dependency-mapping.md), question 12).
 
 ## I. Options by dimension
 

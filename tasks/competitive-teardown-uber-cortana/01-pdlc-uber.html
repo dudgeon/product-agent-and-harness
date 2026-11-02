@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Uber Agent Lifecycle Map</title>
+<style>
+/* One reading column with a wide, scrollable task-by-task swimlane; tables below. System fonts only. Ink on cool paper; one amber accent for the undocumented links. */
+:root{
+  --paper:#f6f6f2; --surface:#ffffff; --ink:#1d2228; --muted:#5d6670; --rule:#d6d9d6; --accent:#b4580c; --accent-soft:#f5e3d2; --auto:#e9ecef; --lite:#f1f3f1; --hl:#e6eef6;
+  --serif:Georgia, "Times New Roman", serif; --sans:system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; --mono:ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; --hl:#1f2a35; color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#15181b; --surface:#1d2125; --ink:#e7e9e6; --muted:#a3abb2; --rule:#343a40; --accent:#f0a35e; --accent-soft:#3a2a1c; --auto:#262b30; --lite:#22272b; --hl:#1f2a35; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55}
+.wrap{max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:40px 64px; display:grid; grid-template-columns:minmax(0,1fr); gap:36px}
+.wrap > *{min-width:0}
+header{display:grid; gap:10px; max-width:70ch}
+.eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--serif); font-weight:600; font-size:clamp(30px,4.4vw,44px); line-height:1.1; margin:0; text-wrap:balance}
+h2{font-family:var(--serif); font-weight:600; font-size:24px; margin:0 0 10px; text-wrap:balance}
+p{margin:0; max-width:70ch}
+.lede{font-size:18px}
+.answer{background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:6px; padding:20px 22px; display:grid; gap:12px}
+.answer ol,.answer ul{margin:0; padding-left:22px; display:grid; gap:8px; max-width:72ch}
+.counts{font-family:var(--mono); font-size:13.5px; color:var(--muted)}
+.diagram{overflow-x:auto; background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:12px}
+.diagram svg{display:block; min-width:1040px; width:100%; height:auto}
+.diagram .stage{font-family:var(--serif); font-weight:600; font-size:14.5px; fill:var(--ink)}
+.diagram .chain{font-family:var(--serif); font-style:italic; font-size:13px; fill:var(--muted)}
+.diagram .lane{font-family:var(--mono); font-size:11px; letter-spacing:.1em; fill:var(--muted)}
+.diagram .cap,.diagram .leg{font-family:var(--sans); font-size:12.5px; fill:var(--muted)}
+.diagram .leg{font-size:13.5px; fill:var(--ink)}
+.diagram .guide{stroke:var(--rule); stroke-width:1; stroke-dasharray:2 5}
+.diagram .lanerule{stroke:var(--rule); stroke-width:1.2}
+.diagram .node{fill:var(--surface); stroke:var(--ink); stroke-width:1.6}
+.diagram .node.cortana{fill:var(--hl)}
+.diagram .node.lite{fill:var(--lite); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode{fill:var(--paper); stroke:var(--muted); stroke-width:1.2}
+.diagram .pnode.acc{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.6}
+.diagram .auto{fill:var(--auto); stroke:var(--muted); stroke-width:1.2}
+.diagram .sub{fill:var(--auto); stroke:none}
+.diagram .nt{font-family:var(--sans); fill:var(--ink)}
+.diagram .doc{fill:none; stroke:var(--ink); stroke-width:1.8}
+.diagram .inf{fill:none; stroke:var(--muted); stroke-width:1.5; stroke-dasharray:5 5}
+.diagram .mech{fill:none; stroke:var(--accent); stroke-width:2.4}
+.diagram .gap{fill:none; stroke:var(--accent); stroke-width:2; stroke-dasharray:3 5}
+.diagram .gapdot{fill:var(--paper); stroke:var(--accent); stroke-width:2}
+.diagram .gapq{font-family:var(--serif); font-weight:600; font-size:15px; fill:var(--accent)}
+.diagram .mk{stroke:var(--ink); stroke-width:1.5}
+.diagram .mkg{stroke:var(--accent); stroke-width:1.5}
+.tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:6px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:760px; font-size:14.5px}
+th,td{text-align:left; vertical-align:top; padding:10px 14px; border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); background:var(--paper)}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600}
+.status{font-family:var(--mono); font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); white-space:nowrap; display:inline-block}
+.s-doc{border-color:var(--ink)} .s-inf{color:var(--muted); border-style:dashed} .s-unk{color:var(--accent); border-color:var(--accent)} .s-mech{color:var(--accent); border-color:var(--accent); background:var(--accent-soft)}
+.row-key td{background:var(--accent-soft)}
+section{display:grid; gap:12px}
+ul.impl{margin:0; padding-left:20px; display:grid; gap:10px; max-width:74ch}
+.foot{font-size:13.5px; color:var(--muted); max-width:82ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Uber teardown · lifecycle map by task · 2 Nov 2026</div>
+  <h1>Where Uber’s agents sit in the product lifecycle, task by task</h1>
+  <p class="lede">Anchored on tasks, not job titles: Uber’s assistant Cortana is for “anyone in the company”, and PMs, designers and engineers each also have their own tools. Each handoff is marked documented, inferred or unknown. Every figure is Uber’s own.</p>
+</header>
+
+<div class="answer">
+  <h2>Uber documents the shaping-to-code handoff, but not how it works</h2>
+  <ol>
+    <li><strong>One assistant covers research → requirements → mock-ups → plan.</strong> In the August 2026 demo, a Slack thread tags Cortana. Cortana judges the business opportunity from the context graph, drafts requirements, makes Figma mock-ups for an A/B test and lists the code to reuse. Then “we hand off from that Cortana agent” to Minion, the cloud coding agent. Stripe’s record has no such link.</li>
+    <li><strong>What crosses is not shown.</strong> The nearest documented mechanism is “@minion, follow this thread … create a PR”. Minion also takes a plan or a “really good spec”.</li>
+    <li><strong>Specs have a tracked home that agents read, but Cortana’s link to it is unknown.</strong> uPlan holds PRDs, ERDs, launch, experiment and readiness reviews with Jira or Linear links, all fed into the context graph: “a source of truth system for both humans and agents to know the specs for every project”. Whether Cortana’s drafts land there, or pass the PRD Evaluator, is not stated.</li>
+  </ol>
+  <p><strong>What the task view adds:</strong> at Uber the shaping tasks sit in one shared assistant, often in a team’s Slack channel, so context can travel in Cortana’s thread rather than in someone’s head. The open seam is the artifact. Does shaped intent become a reviewed, tracked spec before code, or go straight from a chat to a PR?</p>
+  <p class="counts">25 handoffs: 18 documented (1 with its mechanism unknown), 2 inferred, 5 unknown.</p>
+</div>
+
+<div class="diagram" role="figure" aria-label="Swimlane diagram of Uber's lifecycle by task">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 630" role="img" aria-labelledby="dtitle"><title id="dtitle">Uber’s product lifecycle by task, with the humans, agents and shared platform at each task and the handoffs between them</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mk"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" class="mkg"/></marker></defs>
+<text class="stage" x="82.0" y="24" text-anchor="middle"><tspan x="82.0">Spot the</tspan><tspan x="82.0" dy="18">opportunity</tspan></text>
+<text class="chain" x="82.0" y="66" text-anchor="middle">Idea</text>
+<text class="stage" x="206.0" y="24" text-anchor="middle"><tspan x="206.0">Research the</tspan><tspan x="206.0" dy="18">opportunity</tspan></text>
+<text class="chain" x="206.0" y="66" text-anchor="middle">Business research</text>
+<line class="guide" x1="144" y1="50" x2="144" y2="530"/>
+<text class="stage" x="330.0" y="24" text-anchor="middle"><tspan x="330.0">Write the</tspan><tspan x="330.0" dy="18">PRD</tspan></text>
+<text class="chain" x="330.0" y="66" text-anchor="middle">Requirements</text>
+<line class="guide" x1="268" y1="50" x2="268" y2="530"/>
+<text class="stage" x="454.0" y="24" text-anchor="middle"><tspan x="454.0">Design:</tspan><tspan x="454.0" dy="18">mock-ups</tspan></text>
+<text class="chain" x="454.0" y="66" text-anchor="middle">Figma designs</text>
+<line class="guide" x1="392" y1="50" x2="392" y2="530"/>
+<text class="stage" x="578.0" y="24" text-anchor="middle"><tspan x="578.0">Plan the</tspan><tspan x="578.0" dy="18">change</tspan></text>
+<text class="chain" x="578.0" y="66" text-anchor="middle">Code changes</text>
+<line class="guide" x1="516" y1="50" x2="516" y2="530"/>
+<text class="stage" x="702.0" y="24" text-anchor="middle"><tspan x="702.0">Write the</tspan><tspan x="702.0" dy="18">code</tspan></text>
+<text class="chain" x="702.0" y="66" text-anchor="middle">Minion</text>
+<line class="guide" x1="640" y1="50" x2="640" y2="530"/>
+<text class="stage" x="826.0" y="24" text-anchor="middle"><tspan x="826.0">Validate</tspan><tspan x="826.0" dy="18">(inner loop)</tspan></text>
+<text class="chain" x="826.0" y="66" text-anchor="middle">Inner loop</text>
+<line class="guide" x1="764" y1="50" x2="764" y2="530"/>
+<text class="stage" x="950.0" y="24" text-anchor="middle"><tspan x="950.0">Review the</tspan><tspan x="950.0" dy="18">change</tspan></text>
+<text class="chain" x="950.0" y="66" text-anchor="middle">Outer loop</text>
+<line class="guide" x1="888" y1="50" x2="888" y2="530"/>
+<text class="stage" x="1074.0" y="24" text-anchor="middle"><tspan x="1074.0">Release and</tspan><tspan x="1074.0" dy="18">experiment</tspan></text>
+<line class="guide" x1="1012" y1="50" x2="1012" y2="530"/>
+<text class="stage" x="1198.0" y="24" text-anchor="middle"><tspan x="1198.0">Operate,</tspan><tspan x="1198.0" dy="18">maintain</tspan></text>
+<text class="chain" x="1198.0" y="66" text-anchor="middle">Maintenance</text>
+<line class="guide" x1="1136" y1="50" x2="1136" y2="530"/>
+<text class="lane" x="20" y="86">HUMANS · ANY ROLE</text>
+<text class="lane" x="20" y="226">AGENTS</text>
+<text class="lane" x="20" y="456">SHARED PLATFORM</text>
+<line class="lanerule" x1="20" y1="212" x2="1260" y2="212"/><line class="lanerule" x1="20" y1="442" x2="1260" y2="442"/>
+<rect class="pnode" x="26.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="82.0" y="138.8" text-anchor="middle"><tspan x="82.0" dy="0">anyone in a</tspan><tspan x="82.0" dy="15.5">Slack thread</tspan></text>
+<rect class="pnode" x="150.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="206.0" y="138.8" text-anchor="middle"><tspan x="206.0" dy="0">anyone, incl.</tspan><tspan x="206.0" dy="15.5">ops staff</tspan></text>
+<rect class="pnode" x="274.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="330.0" y="131.0" text-anchor="middle"><tspan x="330.0" dy="0">PMs (PRD</tspan><tspan x="330.0" dy="15.5">Evaluator); demo</tspan><tspan x="330.0" dy="15.5">presenter</tspan></text>
+<rect class="pnode" x="398.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="454.0" y="138.8" text-anchor="middle"><tspan x="454.0" dy="0">designers,</tspan><tspan x="454.0" dy="15.5">PMs</tspan></text>
+<rect class="pnode" x="522.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="578.0" y="146.5" text-anchor="middle"><tspan x="578.0" dy="0">engineers</tspan></text>
+<rect class="pnode" x="646.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="702.0" y="131.0" text-anchor="middle"><tspan x="702.0" dy="0">engineers start</tspan><tspan x="702.0" dy="15.5">it from Slack,</tspan><tspan x="702.0" dy="15.5">web, CLI</tspan></text>
+<rect class="pnode" x="894.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="138.8" text-anchor="middle"><tspan x="950.0" dy="0">a person on</tspan><tspan x="950.0" dy="15.5">every PR</tspan></text>
+<rect class="pnode acc" x="1018.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="138.8" text-anchor="middle"><tspan x="1074.0" dy="0">not described</tspan><tspan x="1074.0" dy="15.5">for agents</tspan></text>
+<rect class="pnode" x="1142.0" y="96" width="112.0" height="92" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="138.8" text-anchor="middle"><tspan x="1198.0" dy="0">on-call,</tspan><tspan x="1198.0" dy="15.5">service owners</tspan></text>
+<rect class="node cortana" x="150.0" y="238" width="484.0" height="70" rx="7"/><text class="nt" style="font-size:13px" x="392.0" y="277.5" text-anchor="middle"><tspan x="392.0" dy="0">Cortana: research → requirements → Figma mock-ups → code-change analysis</tspan></text>
+<text class="cap" x="392.0" y="322" text-anchor="middle">one shared assistant on Slack, web and CLI; team personas per Slack channel</text>
+<rect class="node lite" x="26.0" y="238" width="112.0" height="70" rx="7"/><text class="nt" style="font-size:12.5px" x="82.0" y="269.8" text-anchor="middle"><tspan x="82.0" dy="0">Slack</tspan><tspan x="82.0" dy="15.5">thread</tspan></text>
+<rect class="node" x="646.0" y="238" width="112.0" height="70" rx="7"/><text class="nt" style="font-size:12.5px" x="702.0" y="262.0" text-anchor="middle"><tspan x="702.0" dy="0">Minion</tspan><tspan x="702.0" dy="15.5">~15% of prod</tspan><tspan x="702.0" dy="15.5">PRs (Oct 2026)</tspan></text>
+<rect class="node" x="770.0" y="238" width="112.0" height="70" rx="7"/><text class="nt" style="font-size:12.5px" x="826.0" y="262.0" text-anchor="middle"><tspan x="826.0" dy="0">aifx validate,</tspan><tspan x="826.0" dy="15.5">Slate, Figma</tspan><tspan x="826.0" dy="15.5">screenshot check</tspan></text>
+<rect class="node" x="894.0" y="238" width="112.0" height="70" rx="7"/><text class="nt" style="font-size:12.5px" x="950.0" y="262.0" text-anchor="middle"><tspan x="950.0" dy="0">uReview,</tspan><tspan x="950.0" dy="15.5">Code Inbox,</tspan><tspan x="950.0" dy="15.5">self-healing CI</tspan></text>
+<rect class="node" x="1142.0" y="238" width="112.0" height="70" rx="7"/><text class="nt" style="font-size:12.5px" x="1198.0" y="262.0" text-anchor="middle"><tspan x="1198.0" dy="0">maintenance</tspan><tspan x="1198.0" dy="15.5">loops; Debug-</tspan><tspan x="1198.0" dy="15.5">Assist → Minion</tspan></text>
+<rect class="auto" x="1018.0" y="238" width="112.0" height="70" rx="7"/><text class="nt" style="font-size:12.5px" x="1074.0" y="269.8" text-anchor="middle"><tspan x="1074.0" dy="0">A/B planned;</tspan><tspan x="1074.0" dy="15.5">not shown</tspan></text>
+<rect class="node lite" x="274.0" y="360" width="112.0" height="58" rx="7"/><text class="nt" style="font-size:12px" x="330.0" y="378.0" text-anchor="middle"><tspan x="330.0" dy="0">PRD Evaluator</tspan><tspan x="330.0" dy="15.5">(scores, never</tspan><tspan x="330.0" dy="15.5">approves)</tspan></text>
+<rect class="node lite" x="398.0" y="360" width="112.0" height="58" rx="7"/><text class="nt" style="font-size:12px" x="454.0" y="378.0" text-anchor="middle"><tspan x="454.0" dy="0">uSpec</tspan><tspan x="454.0" dy="15.5">(Cursor +</tspan><tspan x="454.0" dy="15.5">Figma MCP)</tspan></text>
+<rect class="node lite" x="522.0" y="360" width="112.0" height="58" rx="7"/><text class="nt" style="font-size:12px" x="578.0" y="378.0" text-anchor="middle"><tspan x="578.0" dy="0">uPlan: PRD,</tspan><tspan x="578.0" dy="15.5">ERD, reviews,</tspan><tspan x="578.0" dy="15.5">Jira links</tspan></text>
+<rect class="sub" x="26.0" y="466" width="1228.0" height="56" rx="7"/><text class="nt" style="font-size:13px" x="640.0" y="498.5" text-anchor="middle"><tspan x="640.0" dy="0">context graph (Cortana’s default grounding) · skills marketplace · MCP gateway · model gateway · DevPods · Slack · Jira / Linear · AIFX over Claude Code, Codex, OpenCode</tspan></text>
+<path class="doc" d="M138 273H150" marker-end="url(#ah)"/>
+<path class="mech" d="M634 273H646" marker-end="url(#ahg)"/>
+<circle class="gapdot" cx="640.0" cy="226" r="10"/><text class="gapq" x="640.0" y="231.5" text-anchor="middle">?</text>
+<path class="doc" d="M758 273H770" marker-end="url(#ah)"/>
+<path class="doc" d="M882 273H894" marker-end="url(#ah)"/>
+<path class="inf" d="M1006 273H1018" marker-end="url(#ah)"/>
+<path class="gap" d="M300.0 308 V358" marker-end="url(#ahg)"/>
+<path class="gap" d="M548.0 308 V358" marker-end="url(#ahg)"/>
+<path class="doc" d="M608.0 418 V464" marker-end="url(#ah)"/>
+<text class="cap" x="614.0" y="436">into the graph</text>
+<path class="doc" d="M206.0 464 V310" marker-end="url(#ah)"/>
+<text class="cap" x="212.0" y="436">grounding</text>
+<path class="doc" d="M82.0 308 V342 H692.0 V310" marker-end="url(#ah)"/>
+<text class="cap" x="704.0" y="358" text-anchor="middle">“@minion, follow this thread”</text>
+<path class="inf" d="M206.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M330.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M454.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M578.0 188V236" marker-end="url(#ah)"/>
+<path class="inf" d="M702.0 188V236" marker-end="url(#ah)"/>
+<path class="doc" d="M1198.0 308V464" marker-end="url(#ah)"/><text class="cap" x="1193.0" y="436" text-anchor="end">diffs, incidents → skills</text>
+<path class="doc" d="M20 566h40" marker-end="url(#ah)"/><text class="leg" x="72" y="571">documented by Uber</text>
+<path class="inf" d="M240 566h40" marker-end="url(#ah)"/><text class="leg" x="292" y="571">inferred, or a person uses the agent</text>
+<path class="mech" d="M560 566h40" marker-end="url(#ahg)"/><text class="leg" x="612" y="571">documented, mechanism unknown (Cortana → Minion)</text>
+<path class="gap" d="M970 566h40" marker-end="url(#ahg)"/><text class="leg" x="1022" y="571">unknown</text>
+<text class="cap" x="20" y="606">Column headers are tasks; the italic row is the stage order of Uber’s own walkthrough (AI Engineer, Aug 2026). Accent: a task with no agent shown. Our own diagram, not Uber’s UI.</text>
+</svg>
+</div>
+
+<section>
+  <h2>Task by task</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Task</th><th>Who does it at Uber</th><th>Agents and tools</th><th>Artifact</th></tr></thead>
+    <tbody>
+      <tr><td>Spot the opportunity</td><td>Whoever is “jamming on it in Slack”</td><td>Slack thread; Cortana tagged in</td><td>Slack thread</td></tr>
+      <tr><td>Research the opportunity</td><td>Anyone, including ops staff</td><td>Cortana on the context graph (past large-venue events, stadiums); QueryGPT and Finch for data</td><td>Cortana answer in Slack, then on the web</td></tr>
+      <tr><td>Write the requirements (PRD)</td><td>PMs (“dozens” use the PRD Evaluator); the demo presenter with Cortana</td><td>Cortana drafts requirements; PRD Evaluator scores readiness (Ready, Caveats, Not Ready) and never approves; uPlan holds the PRD and its reviews</td><td>Requirements in Cortana; PRD and review status in uPlan</td></tr>
+      <tr><td>Design: mock-ups, prototype, spec</td><td>Designers, PMs, the demo presenter</td><td>Cortana makes two Figma mock-ups for an A/B test; uSpec (Cursor + Figma MCP) writes design specs; AI prototypes sharpen the PRD</td><td>Figma mock-ups; design spec</td></tr>
+      <tr><td>Plan the change (ERD)</td><td>Engineers; Cortana in the demo</td><td>Cortana lists reusable screens and back-end code; the ERD lives in uPlan; Minion has a plan mode</td><td>Code-change analysis; ERD; Minion plan</td></tr>
+      <tr><td>Write the code</td><td>Agents, started by engineers from Slack, web, CLI or a PR</td><td>Minion on a mega DevPod (~15% of production PRs, Oct 2026); Claude Code, Codex and OpenCode through AIFX</td><td>Draft PR, possibly across repos</td></tr>
+      <tr><td>Validate (inner loop)</td><td>Agents</td><td>aifx validate (lint, coverage, build rules); simulator screenshot vs Figma; Slate per-branch staging</td><td>Validated draft PR with a table of checks and screenshots</td></tr>
+      <tr><td>Review the change</td><td>A person on every PR</td><td>uReview; Code Inbox (routing, risk score, blast radius); self-healing CI</td><td>Approved PR</td></tr>
+      <tr><td>Release and experiment</td><td>Not described for agents</td><td>A/B variants planned in the demo; experiment capacity named as a bottleneck</td><td>Not shown</td></tr>
+      <tr><td>Operate, maintain and learn</td><td>On-call engineers; owners who enrol services</td><td>Managed maintenance loops; DebugAssist → Minion; incident reviews mined monthly for skills; Cortana health reports; ADR on endpoints</td><td>Diffs, RCAs on Jira tasks, new skills</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Every handoff, task to task</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>From → to</th><th>How</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Slack thread → research (Cortana)</td><td>Tag Cortana in the thread</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Cortana in Slack → Cortana on the web</td><td>Open Cortana into a web interface from Slack</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Research → requirements → mock-ups → code-change analysis (all Cortana)</td><td>One assistant, shown step by step in one demo</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Context graph → every Cortana answer</td><td>The graph is the “default grounding”; Cortana navigates it, then reads deeper</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Team persona → channel members</td><td>Custom skills and prompt bound to a team Slack channel; several people collaborate there</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr class="row-key"><td>Shaped intent (Cortana) → write code (Minion)</td><td>“we hand off from that Cortana agent” to Minion; what crosses is not shown</td><td><span class="status s-mech">documented, mechanism unknown</span></td></tr>
+      <tr><td>Requirements (Cortana) → PRD/ERD tool (uPlan)</td><td>Not described</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>PRD → PRD Evaluator → revised PRD</td><td>A PM runs the evaluator on a PRD and its linked docs; it scores and suggests text, never approves</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Requirements (Cortana) → PRD Evaluator</td><td>Not described</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>uPlan docs and reviews → context graph</td><td>“all of this data also goes into the graph”</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>PRD → ERD → Jira or Linear task</td><td>Links held in uPlan; AI clusters and back-fills missing links to measure feature time</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Slack thread, plan or spec → write code (Minion)</td><td>“@minion, follow this thread … create a PR”; plan mode; templates</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Figma mock-ups → validate</td><td>Simulator screenshot compared with the Figma spec</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Draft PR → validate → review</td><td>Minion stops at a draft PR; inner-loop checks; the PR carries a table of checks</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>PR → uReview, Code Inbox → human reviewer</td><td>Risk score and routing; a person reviews every PR; a “green lane” only later</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>CI failure → fix</td><td>Self-healing CI</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Release → experiment → decision</td><td>A/B variants planned in the demo; launch and readout not shown</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr><td>Service enrolled → maintenance loop → diffs</td><td>Managed, scheduled, rate-limited loops</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Landed or rejected diffs → better skills</td><td>Diffs and comments used as labels</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Incident reviews → new maintenance skills</td><td>Monthly</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Bug report → DebugAssist RCA → Minion PR on the Jira task</td><td>Hand off the RCA; the PR is attached to the Jira task</td><td><span class="status s-doc">documented</span></td></tr>
+      <tr><td>Customer or user research → research (Cortana)</td><td>Not described</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>Production data and health → next opportunity</td><td>Cortana produces health reports and runs queries; not shown as a loop</td><td><span class="status s-inf">inferred</span></td></tr>
+      <tr><td>Agent Builder agents ↔ Cortana personas</td><td>Both bind a prompt and tools to a team; no source links them</td><td><span class="status s-unk">unknown</span></td></tr>
+      <tr><td>ChatGPT Work ↔ Cortana</td><td>ChatGPT Work reached 30,000+ staff on 22 Oct 2026; the split with Cortana is not stated</td><td><span class="status s-unk">unknown</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>What it means for our options</h2>
+  <ul class="impl">
+    <li><strong>One shared assistant across the shaping tasks is a running option.</strong> Uber uses one company assistant with team personas; Stripe splits the same tasks across Kai, Harbor and Orbit.</li>
+    <li><strong>Specs as a graph that agents read.</strong> uPlan’s PRDs, ERDs, reviews and ticket links feed the context graph, so the spec is a tracked record, not a file in one repo.</li>
+    <li><strong>The spec gate before code is still the open seam.</strong> Cortana’s drafts, the PRD Evaluator, uPlan and Minion all exist, but no source joins them.</li>
+    <li><strong>Feature velocity needed rebuilt links.</strong> Uber used AI to back-fill PRD → ERD → task links before it could measure P50 feature time: evidence for a dependency agent that writes links back.</li>
+  </ul>
+</section>
+
+<p class="foot">Sources: Medisetty and Huda at AI Engineer (Aug 2026); Medisetty on The Pragmatic Engineer podcast (14 Oct 2026); Uber Engineering posts on the efficient software factory (Aug 2026), the PRD Evaluator (May 2026), uSpec (Mar 2026), AI prototyping (Apr 2026), uReview (Aug 2025), QueryGPT and Finch; Chada and Smith at The Pragmatic Summit (Mar 2026); Uber’s ChatGPT Work post (22 Oct 2026). uPlan and DebugAssist are named only in the podcast (auto-generated transcript). Full notes: project-agent-and-harness, task competitive-teardown-uber-cortana, 01-pdlc-uber.md.</p>
+</div>
+</body>
+</html>
