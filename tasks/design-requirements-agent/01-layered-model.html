@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Requirements Agent Layers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A layered model of the enterprise requirements agent: the unstructured context it reads, the governed data products it cites, the skills it runs, and the artifacts it generates or augments.">
+<style>
+/* Layout: one tall stack of four bands read top to bottom (context, data products, skills, artifacts),
+   a cross-cutting rules strip, and a detail panel that follows the reader. The project site's tokens. */
+:root {
+  --paper: #f7f4ee; --card: #fffdf9; --ink: #1d1b18; --muted: #5f5a52; --rule: #ddd6ca;
+  --accent: #a8600a; --accent-soft: #f3e3cc; --link: #1f4f8a;
+  --band-ctx: #efe9de; --band-data: #e6ece6; --band-skill: #f5eadb; --band-art: #e8e9f0;
+  --ink-ctx: #6b5a3c; --ink-data: #2f5a3f; --ink-skill: #8a4d06; --ink-art: #3c4373;
+  --dim: .28;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #171614; --card: #201e1b; --ink: #ece7de; --muted: #a59e92; --rule: #38342e;
+    --accent: #e0a24e; --accent-soft: #3a2c18; --link: #8fb6ea;
+    --band-ctx: #24211c; --band-data: #1c241f; --band-skill: #2a2219; --band-art: #1f2029;
+    --ink-ctx: #cdb98f; --ink-data: #94c7a4; --ink-skill: #e8ad5e; --ink-art: #a9b0e6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #171614; --card: #201e1b; --ink: #ece7de; --muted: #a59e92; --rule: #38342e;
+  --accent: #e0a24e; --accent-soft: #3a2c18; --link: #8fb6ea;
+  --band-ctx: #24211c; --band-data: #1c241f; --band-skill: #2a2219; --band-art: #1f2029;
+  --ink-ctx: #cdb98f; --ink-data: #94c7a4; --ink-skill: #e8ad5e; --ink-art: #a9b0e6;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 16px/1.5 var(--sans);
+}
+.wrap {
+  max-width: 1240px; margin: 0 auto;
+  padding-block: 32px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.18; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+h2 { font-size: 1.25rem; }
+p { margin: 0; }
+a { color: var(--link); text-underline-offset: 2px; }
+.kicker { font: 600 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+header.top { display: grid; gap: 12px; max-width: 72ch; margin-bottom: 26px; }
+.lede { font-size: 1.08rem; }
+.muted { color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; align-items: start; }
+@media (max-width: 1080px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+
+/* the stack */
+.stack { display: grid; gap: 0; min-width: 0; }
+.input {
+  display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 16px; align-items: center;
+  padding: 14px 16px; border: 1px dashed var(--rule); border-radius: 8px; background: var(--card);
+}
+.input .who { font: 600 11px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.input .what { font-family: var(--serif); font-size: 1.05rem; }
+.flow { display: flex; align-items: center; gap: 10px; padding: 6px 0 6px 186px; font: 500 12px/1.3 var(--mono); color: var(--muted); letter-spacing: .03em; }
+.flow::before { content: ""; width: 1px; height: 22px; background: var(--muted); opacity: .6; }
+.flow b { color: var(--ink); font-weight: 600; }
+
+.band { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 16px; padding: 16px; border-radius: 10px; }
+.band[data-layer="ctx"] { background: var(--band-ctx); --lc: var(--ink-ctx); }
+.band[data-layer="data"] { background: var(--band-data); --lc: var(--ink-data); }
+.band[data-layer="skill"] { background: var(--band-skill); --lc: var(--ink-skill); }
+.band[data-layer="art"] { background: var(--band-art); --lc: var(--ink-art); }
+.label { display: grid; gap: 6px; align-content: start; }
+.label .n { font: 600 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--lc); }
+.label h2 { color: var(--ink); }
+.label p { font-size: 13px; color: var(--muted); line-height: 1.4; }
+.trust { margin-top: 4px; font: 600 10.5px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--lc); }
+
+.groups { display: grid; gap: 10px; min-width: 0; }
+.group { display: grid; gap: 6px; }
+.group > .gname { font: 600 11px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--lc); }
+.tiles { display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); }
+.tiles.wide { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.groups.cols { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.groups.cols .tiles { grid-template-columns: 1fr; }
+
+.tile {
+  appearance: none; text-align: left; font: inherit; color: inherit; cursor: pointer;
+  display: grid; gap: 2px; padding: 8px 10px; min-height: 52px;
+  background: var(--card); border: 1px solid var(--rule); border-radius: 6px;
+  transition: opacity .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.tile b { font-size: 13.5px; font-weight: 600; line-height: 1.25; }
+.tile span { font-size: 12px; color: var(--muted); line-height: 1.3; }
+.tile:hover { border-color: var(--lc); }
+.tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.band[data-layer="skill"] .tile b { font-family: var(--serif); font-size: 15px; }
+.tile .det { font: 600 9.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--lc); margin-top: 3px; }
+
+/* phases of skills read as a sequence */
+.stack { container-type: inline-size; }
+.band[data-layer="skill"] { grid-template-columns: minmax(0, 1fr); }
+.band[data-layer="skill"] .label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.band[data-layer="skill"] .label p { flex: 1 1 320px; }
+.phases { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+@container (max-width: 760px) { .phases { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container (max-width: 440px) { .phases { grid-template-columns: minmax(0, 1fr); } }
+.phase { display: grid; gap: 6px; align-content: start; }
+.phase .gname { display: flex; gap: 6px; align-items: baseline; }
+.phase .gname i { font-style: normal; color: var(--muted); }
+
+/* artifacts split generated vs augmented */
+.artsplit { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 14px; }
+@media (max-width: 860px) { .artsplit { grid-template-columns: minmax(0, 1fr); } }
+
+/* selection state */
+.stack.selecting .tile { opacity: var(--dim); }
+.stack.selecting .tile.on, .stack.selecting .tile.sel { opacity: 1; }
+.tile.sel { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
+.tile.on { border-color: var(--lc); box-shadow: 0 0 0 1px var(--lc) inset; }
+.tile.on.w::after, .tile.on.r::after {
+  justify-self: start; margin-top: 3px; font: 600 9.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--lc);
+}
+.tile.on.r::after { content: "read"; }
+.tile.on.w::after { content: "written"; }
+.tile.on.r.w::after { content: "read and written"; }
+
+/* seam to the dependency agent */
+.seam {
+  margin-top: 10px; display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 16px; align-items: center;
+  padding: 14px 16px; border: 1.5px solid var(--accent); border-radius: 8px; background: var(--accent-soft);
+}
+.seam .who { font: 600 11px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.seam p { font-size: 14.5px; }
+.seam p + p { margin-top: 4px; font-size: 13px; color: var(--muted); }
+
+.rules { margin-top: 14px; padding: 14px 16px; border: 1px solid var(--rule); border-radius: 8px; background: var(--card); display: grid; gap: 8px; }
+.rules ol { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px 16px; counter-reset: r; }
+.rules li { counter-increment: r; font-size: 13.5px; line-height: 1.35; display: grid; grid-template-columns: 20px minmax(0, 1fr); }
+.rules li::before { content: counter(r); font: 600 12px/1.35 var(--mono); color: var(--accent); }
+
+@media (max-width: 720px) {
+  .band, .input, .seam { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .flow { padding-left: 16px; }
+}
+
+/* detail panel */
+aside.panel {
+  position: sticky; top: calc(16px + env(safe-area-inset-top, 0px));
+  background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 16px;
+  display: grid; gap: 10px; max-height: calc(100vh - 32px); overflow: auto; min-width: 0;
+}
+aside.panel .kind { font: 600 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+aside.panel h3 { font-size: 1.25rem; }
+aside.panel p { font-size: 14px; }
+aside.panel dl { margin: 0; display: grid; gap: 8px; }
+aside.panel dt { font: 600 11px/1.2 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+aside.panel dd { margin: 2px 0 0; font-size: 14px; }
+aside.panel .ex { border-left: 3px solid var(--accent); padding: 6px 0 6px 10px; font-size: 13.5px; background: var(--paper); }
+aside.panel .ex b { display: block; font: 600 10.5px/1.2 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); margin-bottom: 3px; }
+aside.panel button.clear {
+  justify-self: start; font: 500 13px/1 var(--sans); color: var(--ink); background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 999px; padding: 6px 12px; cursor: pointer;
+}
+aside.panel button.clear:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chips span { font-size: 12px; padding: 2px 7px; border: 1px solid var(--rule); border-radius: 999px; background: var(--paper); }
+@media (max-width: 1080px) {
+  aside.panel {
+    position: fixed; left: 0; right: 0; bottom: 0; top: auto; z-index: 20;
+    max-height: 46vh; border-radius: 12px 12px 0 0; border-bottom: 0;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    box-shadow: 0 -8px 24px rgba(0,0,0,.18);
+  }
+  aside.panel.idle { display: none; }
+  .wrap { padding-bottom: 50vh; }
+}
+footer { margin-top: 28px; font-size: 13px; color: var(--muted); display: grid; gap: 6px; max-width: 80ch; }
+@media (prefers-reduced-motion: reduce) { .tile { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">Design · enterprise requirements agent · Nov 2026</div>
+  <h1>The requirements agent, in four layers</h1>
+  <p class="lede">An agent that takes a high-level idea from a product manager, or anyone doing the product task, and shapes it into the complete set of requirements the change must meet to ship in a large, platform-centric, regulated organisation. It reads unstructured context, cites governed data products, runs a fixed set of skills, and produces artifacts that a person owns and the dependency agent picks up.</p>
+  <p class="muted" style="font-size:14px">Select any tile to see what it is. Select a skill to light up what it reads and what it writes, with a line from the worked example: a fictional bank adding a personal-loan offer to its app's home screen.</p>
+  <div class="links"><a href="02-white-paper.html">Read the white paper</a><a href="https://github.com/dudgeon/product-agent-and-harness/tree/main/tasks/design-requirements-agent">Source on GitHub</a></div>
+</header>
+
+<div class="layout">
+<div class="stack" id="stack">
+
+  <div class="input">
+    <div class="who">Comes in</div>
+    <div class="what">A high-level idea, in any form: a paragraph, a deck, a ticket, a prototype link, a voice note. Plus the requirements the person already knows.</div>
+  </div>
+  <div class="flow">read first; nothing is asked of the person until the context has been searched</div>
+
+  <section class="band" data-layer="ctx" aria-labelledby="l1">
+    <div class="label">
+      <div class="n">Layer 1</div>
+      <h2 id="l1">Unstructured context</h2>
+      <p>Documents, threads and records the agent searches and reads. Useful for finding what applies; never enough on its own to assert it.</p>
+      <div class="trust">Trust: lead, not evidence</div>
+    </div>
+    <div class="groups">
+      <div class="tiles wide">
+        <button class="tile" data-id="C1"><b>The idea and its evidence</b><span>Idea notes, decks, prototypes, research, analytics readouts, meeting notes</span></button>
+        <button class="tile" data-id="C2"><b>Precedent</b><span>Past specs and PRDs of the same kind, their review comments, launch retros, incident reviews</span></button>
+        <button class="tile" data-id="C3"><b>Obligation text</b><span>Laws, rules, regulator guidance and enforcement, policies and standards as written, contracts and scheme rules</span></button>
+        <button class="tile" data-id="C4"><b>Interpretation</b><span>Reviewer answers in support channels, office-hours FAQs, second-line guidance memos, training decks</span></button>
+        <button class="tile" data-id="C5"><b>Business context</b><span>Strategy, objectives, business cases, product-line plans, pricing memos, risk appetite statements</span></button>
+        <button class="tile" data-id="C6"><b>Operating context</b><span>Servicing procedures, complaint handling, runbooks, contact-centre knowledge base</span></button>
+        <button class="tile" data-id="C7"><b>Customer harm signals</b><span>Complaint themes, disputes, call drivers, app reviews, accessibility feedback</span></button>
+        <button class="tile" data-id="C8"><b>The organisation</b><span>Team pages, review intake pages, the people directory, who answered which question</span></button>
+      </div>
+    </div>
+  </section>
+  <div class="flow">screened against <b>governed records</b>; every added requirement cites one</div>
+
+  <section class="band" data-layer="data" aria-labelledby="l2">
+    <div class="label">
+      <div class="n">Layer 2</div>
+      <h2 id="l2">Governed data products</h2>
+      <p>Authoritative, owned, versioned records specific to requirements work. The agent cites these; where one does not exist yet it says so and falls back to Layer 1, marked provisional.</p>
+      <div class="trust">Trust: citable</div>
+    </div>
+    <div class="groups cols">
+      <div class="group">
+        <div class="gname">What applies</div>
+        <div class="tiles">
+          <button class="tile" data-id="D1"><b>Regulatory obligations inventory</b><span>Each rule as an obligation, with jurisdiction, triggers and owner</span></button>
+          <button class="tile" data-id="D2"><b>Policy and standards register</b><span>Each "must", with ID, version, owner, effective date, applies-when</span></button>
+          <button class="tile" data-id="D3"><b>Control library</b><span>Controls mapped to obligations and risks, with the evidence each needs</span></button>
+          <button class="tile" data-id="D4"><b>Contract and third-party obligations</b><span>Scheme rules, partner and vendor terms that bind a feature</span></button>
+          <button class="tile" data-id="D5"><b>Monitoring and reporting obligations</b><span>What must be watched, reported, attested and retained after launch</span></button>
+        </div>
+      </div>
+      <div class="group">
+        <div class="gname">When, where and who</div>
+        <div class="tiles">
+          <button class="tile" data-id="D6"><b>Review and gate catalogue</b><span>Each review's published triggers, evidence list, owner and turnaround</span></button>
+          <button class="tile" data-id="D7"><b>Product, channel and jurisdiction catalogue</b><span>What a product is in regulatory terms, where it is sold, through which channels</span></button>
+          <button class="tile" data-id="D8"><b>Data classification and retention schedule</b><span>Data elements, sensitivity, permitted purposes, how long records are kept</span></button>
+          <button class="tile" data-id="D9"><b>Enterprise risk taxonomy</b><span>The agreed universe of risk types, with assessment criteria</span></button>
+          <button class="tile" data-id="D10"><b>Decision-rights register</b><span>Who validates, who can waive, who holds delegated authority</span></button>
+        </div>
+      </div>
+      <div class="group">
+        <div class="gname">What was learned</div>
+        <div class="tiles">
+          <button class="tile" data-id="D11"><b>Prior rulings, exceptions and waivers</b><span>Interpretations made for past features, with policy reference and expiry</span></button>
+          <button class="tile" data-id="D12"><b>Issues and findings register</b><span>Open audit, regulatory and self-identified findings by product and process</span></button>
+          <button class="tile" data-id="D13"><b>Intent records</b><span>Every past feature's validated requirements, with what was added late</span></button>
+          <button class="tile" data-id="D14"><b>Feature-kind baselines</b><span>The obligations every feature of a kind carries, verified item by item</span></button>
+        </div>
+      </div>
+      <div class="group">
+        <div class="gname">How to write and check</div>
+        <div class="tiles">
+          <button class="tile" data-id="D15"><b>Business glossary</b><span>Controlled terms with regulated meanings: pre-approved, APR, vulnerable customer</span></button>
+          <button class="tile" data-id="D16"><b>Requirement pattern library</b><span>Reusable requirement templates with fit criteria, per obligation</span></button>
+          <button class="tile" data-id="D17"><b>Completeness standard</b><span>The versioned definition of ready, as checks and a graded rubric</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="flow">used by <b>eighteen skills</b> in five phases; the phase order is fixed, the work inside each is judgment</div>
+
+  <section class="band" data-layer="skill" aria-labelledby="l3">
+    <div class="label">
+      <div class="n">Layer 3</div>
+      <h2 id="l3">Skills</h2>
+      <p>The verbs the agent has to be good at. Some are scripts that pass or fail; some are model judgment; each is evaluated on its own.</p>
+      <div class="trust">Script · judgment · both</div>
+    </div>
+    <div class="phases">
+      <div class="phase group">
+        <div class="gname"><i>1</i> Frame</div>
+        <button class="tile" data-id="K1"><b>Restate</b><span>Say the goal back in one paragraph for the person to correct</span><em class="det">judgment</em></button>
+        <button class="tile" data-id="K2"><b>Challenge</b><span>Ask for the evidence and the measure behind the goal and each claim</span><em class="det">judgment</em></button>
+        <button class="tile" data-id="K3"><b>Profile</b><span>Answer the screening facets: who, what data, what decision, what channel</span><em class="det">both</em></button>
+        <button class="tile" data-id="K4"><b>Find precedent</b><span>Retrieve past features of the same kind and what they ended up needing</span><em class="det">both</em></button>
+      </div>
+      <div class="phase group">
+        <div class="gname"><i>2</i> Discover</div>
+        <button class="tile" data-id="K5"><b>Screen</b><span>Run each domain's published triggers; open it, or close it with a reason</span><em class="det">script</em></button>
+        <button class="tile" data-id="K6"><b>Derive</b><span>Turn each applicable obligation into requirements for this feature</span><em class="det">judgment</em></button>
+        <button class="tile" data-id="K7"><b>Elicit</b><span>Ask the smallest question, one at a time, with a guess and why it matters</span><em class="det">judgment</em></button>
+        <button class="tile" data-id="K8"><b>Explore cases</b><span>Find the edge, failure and vulnerable-customer cases the idea skipped</span><em class="det">judgment</em></button>
+      </div>
+      <div class="phase group">
+        <div class="gname"><i>3</i> Shape</div>
+        <button class="tile" data-id="K9"><b>Write</b><span>One checkable statement per requirement, with a fit criterion</span><em class="det">both</em></button>
+        <button class="tile" data-id="K10"><b>Weigh scope</b><span>Show which choices pull in which obligations, so scope can be cut on purpose</span><em class="det">judgment</em></button>
+        <button class="tile" data-id="K11"><b>Reconcile</b><span>Find contradictions, duplicates and conflicts with cited policy</span><em class="det">both</em></button>
+        <button class="tile" data-id="K12"><b>Trace</b><span>Link every requirement to its source, control, validator and test</span><em class="det">script</em></button>
+      </div>
+      <div class="phase group">
+        <div class="gname"><i>4</i> Verify</div>
+        <button class="tile" data-id="K13"><b>Check completeness</b><span>Fail closed if any domain, field or blocking question is open</span><em class="det">script</em></button>
+        <button class="tile" data-id="K14"><b>Critique</b><span>A fresh-context reader grades the register against the rubric</span><em class="det">judgment</em></button>
+        <button class="tile" data-id="K15"><b>Route for validation</b><span>One packet per validator, with the evidence attached</span><em class="det">both</em></button>
+      </div>
+      <div class="phase group">
+        <div class="gname"><i>5</i> Hand off and learn</div>
+        <button class="tile" data-id="K16"><b>Package</b><span>Render the register into each downstream shape</span><em class="det">script</em></button>
+        <button class="tile" data-id="K17"><b>Re-screen</b><span>Re-run only what a change touches: an answer, a rule, a delivery path</span><em class="det">both</em></button>
+        <button class="tile" data-id="K18"><b>Write back</b><span>Propose validated answers and late adds as context for the next feature</span><em class="det">both</em></button>
+      </div>
+    </div>
+  </section>
+  <div class="flow">produce one register, rendered into <b>the forms people already use</b></div>
+
+  <section class="band" data-layer="art" aria-labelledby="l4">
+    <div class="label">
+      <div class="n">Layer 4</div>
+      <h2 id="l4">Artifacts</h2>
+      <p>What the agent generates, and the existing enterprise artifacts it pre-fills. A person owns every one; the agent's entries stay provisional until a named validator confirms them.</p>
+      <div class="trust">Owned by people</div>
+    </div>
+    <div class="artsplit">
+      <div class="group">
+        <div class="gname">Generated</div>
+        <div class="tiles">
+          <button class="tile" data-id="A1"><b>Intent brief</b><span>Goal, problem, customers, outcome, measure, scope, non-goals</span></button>
+          <button class="tile" data-id="A2"><b>Change profile</b><span>The facets answered and every domain opened or closed, with reasons</span></button>
+          <button class="tile" data-id="A3"><b>Requirements register</b><span>Every requirement, sourced, classed, with validator and status</span></button>
+          <button class="tile" data-id="A4"><b>Acceptance criteria</b><span>Scenarios and fit criteria a reviewer or a coding agent can test</span></button>
+          <button class="tile" data-id="A5"><b>Traceability matrix</b><span>Requirement to obligation to control to validator to evidence</span></button>
+          <button class="tile" data-id="A6"><b>Open questions and assumptions</b><span>Owner, blocking flag, the guess made</span></button>
+          <button class="tile" data-id="A7"><b>Decision log</b><span>Choices with reasons, including "does not apply, because"</span></button>
+          <button class="tile" data-id="A8"><b>Validation packets</b><span>The smallest questions, grouped per validator</span></button>
+          <button class="tile" data-id="A9"><b>Readiness statement</b><span>What passed, what is open and on whom; a person ratifies</span></button>
+          <button class="tile" data-id="A10"><b>Could-not-find list</b><span>Obligations expected and not located; criteria nobody published</span></button>
+          <button class="tile" data-id="A11"><b>Dependency handoff</b><span>The register as the dependency agent reads it</span></button>
+          <button class="tile" data-id="A12"><b>Spec-driven export</b><span>Feature spec files, plus standing rules for the repo</span></button>
+        </div>
+      </div>
+      <div class="group">
+        <div class="gname">Augmented</div>
+        <div class="tiles">
+          <button class="tile" data-id="A13"><b>PRD, epics and stories</b><span>The tracker items and the document the team already writes</span></button>
+          <button class="tile" data-id="A14"><b>Review intake drafts</b><span>Privacy screening, new product approval, model risk, third party, promotions</span></button>
+          <button class="tile" data-id="A15"><b>Control mapping input</b><span>Which controls the change touches, for the risk and control owners</span></button>
+          <button class="tile" data-id="A16"><b>Monitoring and measurement plan</b><span>Success metrics, risk indicators, surveillance, reports, records</span></button>
+          <button class="tile" data-id="A17"><b>Disclosures and communications</b><span>The customer-facing wording obligations, and who signs off</span></button>
+          <button class="tile" data-id="A18"><b>Launch readiness checklist</b><span>The obligations that must be evidenced before release</span></button>
+          <button class="tile" data-id="A19"><b>Context write-backs</b><span>Proposed rulings, baseline updates, stale-policy flags, new glossary terms</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam">
+    <div class="who">Out of scope: the dependency agent</div>
+    <div>
+      <p>Takes the validated register and finds which platforms, capabilities, data and processes can satisfy each requirement, what onboarding each takes, and who must act.</p>
+      <p>What comes back: a requirement whose delivery path changes its wording, or a constraint the platform imposes. The requirements agent re-screens what changed.</p>
+    </div>
+  </div>
+
+  <div class="rules">
+    <div class="kicker">Rules that hold across every layer</div>
+    <ol>
+      <li>Read before asking. A person is asked only what the context cannot answer.</li>
+      <li>No requirement without a source: a governed record, a cited document, or a named person's answer.</li>
+      <li>Every domain the screen opens ends with requirements or with "none, because" and the criterion.</li>
+      <li>Everything the agent infers is provisional until a named validator confirms it.</li>
+      <li>It classifies which obligations apply. Risk assessment and sign-off stay with the people whose independence the rules require.</li>
+      <li>It never ratifies its own work and never grades it in the same context.</li>
+      <li>It may show how an obligation is easier to meet. It never advises skipping one.</li>
+      <li>Implementation is left open: standards any build must meet are requirements; which platform meets them is the dependency agent's job.</li>
+    </ol>
+  </div>
+</div>
+
+<aside class="panel idle" id="panel" aria-live="polite">
+  <div class="kind" id="p-kind">How to read this</div>
+  <h3 id="p-title">Select a tile</h3>
+  <div id="p-body">
+    <p>The layers run top to bottom in order of how the agent uses them. Layer 1 is where it looks. Layer 2 is what it cites. Layer 3 is what it does. Layer 4 is what it leaves behind.</p>
+    <p style="margin-top:8px">Select a skill to light up what it reads and writes.</p>
+  </div>
+  <button class="clear" id="p-clear" type="button" hidden>Clear selection</button>
+</aside>
+</div>
+
+<footer>
+  <p>Builds on the project's definition of the intent-shaping module (requirements taxonomy, structured inquiry, context-layer model and concept brief in <a href="https://github.com/dudgeon/product-agent-and-harness/tree/main/tasks/define-shaping-and-dependency-agents">define-shaping-and-dependency-agents</a>) and the research library. The organisation and the loan-offer example are fictional.</p>
+  <p>Written with Claude (Anthropic) agents directed by Geoff Dudgeon. Draft for review.</p>
+</footer>
+</div>
+
+<script>
+(function () {
+  var D = {
+    C1: { kind: "Unstructured context", t: "The idea and its evidence", d: "Whatever the person brings, in whatever form, and the evidence behind it.", ex: ["Examples", "Idea notes, a deck, a Figma or coded prototype, customer research, an analytics readout, meeting notes, a voice note."], f: ["Gives", "The goal, the treatment in mind, the first requirements, the claimed evidence."], tr: ["Trust", "The person's own words. Claims in it are tested by Challenge, not assumed."] },
+    C2: { kind: "Unstructured context", t: "Precedent", d: "Features of the same kind that already shipped, and what they turned out to need.", ex: ["Examples", "Past specs, PRDs and business requirement documents; their review comments; launch retros; post-incident reviews."], f: ["Gives", "The fastest first draft of the enterprise requirements, and the record of what was added late last time."], tr: ["Trust", "A copied requirement is marked 'from feature X, unverified here'. The past feature may itself have been incomplete, or shipped before a rule changed."] },
+    C3: { kind: "Unstructured context", t: "Obligation text", d: "The authoritative text of what applies, before anyone has turned it into records.", ex: ["Examples", "Statutes and rules, regulator guidance and enforcement actions, the policy library as written, standards wikis, contracts and scheme rules."], f: ["Gives", "Candidate obligations ('must' sentences), triggers, and the reason a rule cannot be waived."], tr: ["Trust", "Quoted by reference, never by paraphrase alone. A 'must' with no owner or reason is a candidate, flagged for the policy owner."] },
+    C4: { kind: "Unstructured context", t: "Interpretation", d: "How the people who own an obligation have read it in practice.", ex: ["Examples", "A compliance reviewer's answer in a support channel, office-hours FAQs, second-line guidance memos, training decks, past review threads."], f: ["Gives", "Edge-case rulings that never reached a policy, and the questions people keep asking."], tr: ["Trust", "An answer in a thread is an answer to that question on that day. It becomes a prior ruling only when its owner confirms it."] },
+    C5: { kind: "Unstructured context", t: "Business context", d: "What the business has decided about the product line, its market and its limits.", ex: ["Examples", "Strategy documents, objectives and key results, business cases, product-line plans, pricing memos, risk appetite statements."], f: ["Gives", "Business requirements: target market, volumes, budget, success measures, decision rights."], tr: ["Trust", "Decks describe plans. A business constraint is validated by its accountable owner."] },
+    C6: { kind: "Unstructured context", t: "Operating context", d: "How the organisation runs the thing after launch.", ex: ["Examples", "Servicing procedures, complaint handling, runbooks, contact-centre knowledge base, fraud operations playbooks."], f: ["Gives", "Operational requirements people forget: what servicing staff must see, how a complaint is handled, how a failure is recovered."], tr: ["Trust", "Often current, because people use it daily; rarely owned in a findable way."] },
+    C7: { kind: "Unstructured context", t: "Customer harm signals", d: "Evidence of where similar features have hurt or confused customers.", ex: ["Examples", "Complaint themes, dispute reasons, call-driver reports, app reviews, accessibility feedback."], f: ["Gives", "Conduct and experience requirements grounded in what went wrong, and cases to explore."], tr: ["Trust", "Aggregates only. The agent never reads an individual customer's record to shape a requirement."] },
+    C8: { kind: "Unstructured context", t: "The organisation", d: "Enough of the organisation to route a question to the right role.", ex: ["Examples", "Team pages, review intake pages, the people directory, who answered past questions on a topic."], f: ["Gives", "Candidate validators by role, the intake route for each review."], tr: ["Trust", "The directory is reliable for role and manager and silent on who owns an obligation. The agent stores owners by role, never a map of who knows what."] },
+
+    D1: { kind: "Governed data product", g: "What applies", t: "Regulatory obligations inventory", d: "Each law, rule and piece of supervisory guidance broken into obligations, kept current by a regulatory-change process.", f: ["Fields the agent needs", "Obligation ID; citation to the authoritative text; jurisdiction; product and activity scope; triggers as checkable conditions; owning function; effective and sunset dates; linked policies and controls."], h: ["Usually lives in", "A regulatory change management or GRC system, maintained by compliance."], dz: ["Day one, if absent", "The legal and compliance library and regulator pages (Layer 1), every obligation marked provisional with its source chain unknown."] },
+    D2: { kind: "Governed data product", g: "What applies", t: "Policy and standards register", d: "The organisation's own rules as discrete, owned statements.", f: ["Fields the agent needs", "Policy and statement IDs; version; owner; effective and review dates; applies-when; the law or standard behind it; the exception process."], h: ["Usually lives in", "The policy management system, with the text in a policy library."], dz: ["Day one, if absent", "Mine policy documents for 'must' sentences, each a candidate with the document as reference and the reason unknown."] },
+    D3: { kind: "Governed data product", g: "What applies", t: "Control library", d: "The controls that implement obligations and mitigate risks, with how each is tested.", f: ["Fields the agent needs", "Control ID and objective; the obligations and risks it maps to; control owner; design and operating test; the evidence a change must leave."], h: ["Usually lives in", "The GRC system, owned by the first and second lines."], dz: ["Day one, if absent", "Control narratives and past feature evidence packets; the agent drafts a control mapping for the control owner to correct."] },
+    D4: { kind: "Governed data product", g: "What applies", t: "Contract and third-party obligations", d: "What counterparties require: card scheme rules, partner and co-brand terms, vendor terms.", f: ["Fields the agent needs", "Counterparty; contract or rulebook reference; the obligation; what it applies to; relationship owner; renewal date."], h: ["Usually lives in", "The contract register and third-party risk management system."], dz: ["Day one, if absent", "Ask the relationship owner; record the answer as a provisional obligation."] },
+    D5: { kind: "Governed data product", g: "What applies", t: "Monitoring and reporting obligations", d: "What has to be watched, reported, attested and kept once the change is live. The obligations people most often add after launch.", f: ["Fields the agent needs", "Obligation; what triggers it (a product type, a data use, a model); the indicator or report; frequency; recipient (a regulator, a committee); records retention; owner."], h: ["Usually lives in", "Spread across regulatory reporting, risk indicator libraries, surveillance teams and records management."], dz: ["Day one, if absent", "Precedent and the gate catalogue; the agent asks the owner of each report whether the change feeds it."] },
+    D6: { kind: "Governed data product", g: "When, where and who", t: "Review and gate catalogue", d: "Every review a change might need, with the published conditions that trigger it. The agent's screen runs on this.", f: ["Fields the agent needs", "Review name; triggers as checkable conditions; evidence list; owner; intake route; turnaround; which obligations it checks."], h: ["Usually lives in", "Intake pages for each review (privacy, model risk, new product approval, third party, security, change, promotions, accessibility), rarely in one catalogue."], dz: ["Day one, if absent", "Read the published screening criteria of the anchor reviews; where criteria are known only to reviewers, put that on the could-not-find list."] },
+    D7: { kind: "Governed data product", g: "When, where and who", t: "Product, channel and jurisdiction catalogue", d: "What each product is in regulatory terms, where it is offered, and through which channels.", f: ["Fields the agent needs", "Product ID; regulatory classification; legal entity; jurisdictions; channels; the customer segments it serves."], h: ["Usually lives in", "Product and legal-entity master data, sometimes the new-product approval inventory."], dz: ["Day one, if absent", "Ask the person, then confirm against the product line's own documents."] },
+    D8: { kind: "Governed data product", g: "When, where and who", t: "Data classification and retention schedule", d: "Which data elements are sensitive, for what purposes they may be used, and how long records must be kept.", f: ["Fields the agent needs", "Data element; classification; permitted and prohibited purposes; consent basis; retention period and trigger; owner."], h: ["Usually lives in", "The data catalogue and the records management schedule."], dz: ["Day one, if absent", "The classification policy and the records schedule as documents; the data owner validates."] },
+    D9: { kind: "Governed data product", g: "When, where and who", t: "Enterprise risk taxonomy", d: "The organisation's agreed universe of risk types. It makes 'did we look at every domain' a question with a finite answer.", f: ["Fields the agent needs", "Risk type at each level; definition; owning function; the obligations and controls linked to it; assessment criteria."], h: ["Usually lives in", "The risk management framework, owned by the second line."], dz: ["Day one, if absent", "The requirements taxonomy's source and attribute classes serve as the finite list until the risk taxonomy is linked."] },
+    D10: { kind: "Governed data product", g: "When, where and who", t: "Decision-rights register", d: "Who validates which kind of requirement, who may waive it, and who holds delegated authority.", f: ["Fields the agent needs", "Decision type; role that decides; role that can waive; delegation limits; current holder and date."], h: ["Usually lives in", "Delegation-of-authority documents and committee terms of reference."], dz: ["Day one, if absent", "Infer the role from past sign-offs and the directory, tagged inferred, and confirm on the first real question."] },
+    D11: { kind: "Governed data product", g: "What was learned", t: "Prior rulings, exceptions and waivers", d: "How an obligation was interpreted for a past feature, by whom, and until when. The mechanism by which a question is answered once.", f: ["Fields the agent needs", "Question; ruling; obligation and policy reference; ruled by (role); date; expiry; the features it has been applied to."], h: ["Usually lives in", "Review tickets and threads today; an exceptions register for formal waivers."], dz: ["Day one, if absent", "Search past review threads and tickets; treat each answer as a candidate ruling until its owner confirms it."] },
+    D12: { kind: "Governed data product", g: "What was learned", t: "Issues and findings register", d: "Open audit, regulatory and self-identified findings. A new change must not widen an open gap, and a finding shows where reviewers will look hardest.", f: ["Fields the agent needs", "Finding ID; product and process; the obligation or control at issue; status; remediation owner and date."], h: ["Usually lives in", "The GRC system's issue management module."], dz: ["Day one, if absent", "Ask the risk partner for the product line whether open findings touch this change."] },
+    D13: { kind: "Governed data product", g: "What was learned", t: "Intent records", d: "Every past feature's validated requirements register, with what was added after readiness and by whom.", f: ["Fields the agent needs", "Feature kind; requirements with sources and validators; late additions with the stage they were found; decisions; the readiness statement."], h: ["Usually lives in", "Nowhere yet in one shape. The agent's own output becomes this data product."], dz: ["Day one, if absent", "Past specs and tickets (Layer 1), reconstructed and marked unverified."] },
+    D14: { kind: "Governed data product", g: "What was learned", t: "Feature-kind baselines", d: "The obligations every feature of a kind carries: every customer-facing offer, every new use of personal data, every change to a filed term.", f: ["Fields the agent needs", "Feature kind; baseline requirements with sources; verification date per item; owner of the baseline."], h: ["Usually lives in", "Checklists in reviewers' heads and old launch templates."], dz: ["Day one, if absent", "Drafted from the first few features and the policy library, marked provisional, verified item by item as features need them."] },
+    D15: { kind: "Governed data product", g: "How to write and check", t: "Business glossary", d: "Controlled terms, especially those with regulated meanings. One wrong word can open or close a review.", f: ["Fields the agent needs", "Term; definition; regulated meaning and where it comes from; terms that must not be used loosely; owner."], h: ["Usually lives in", "The data governance glossary; marketing and legal style guides."], dz: ["Day one, if absent", "Flag every term that appears in an obligation text and in the requirement, and ask its owner."] },
+    D16: { kind: "Governed data product", g: "How to write and check", t: "Requirement pattern library", d: "Reusable requirement statements for recurring obligations, already written in checkable form and approved by the obligation owner.", f: ["Fields the agent needs", "Pattern ID; the obligation it implements; statement template; fit criterion; attribute class; approved by; version."], h: ["Usually lives in", "Rarely anywhere. Pieces exist in security and accessibility standards."], dz: ["Day one, if absent", "The agent writes the requirement fresh and proposes it as a pattern once a validator confirms it."] },
+    D17: { kind: "Governed data product", g: "How to write and check", t: "Completeness standard", d: "The organisation's definition of ready, as scripted checks and a rubric graded against past specs.", f: ["Fields the agent needs", "Checks (pass or fail); rubric criteria with examples; version; owner (product and engineering together); the evals that test the agent against it."], h: ["Usually lives in", "A definition of ready in team wikis, different per team."], dz: ["Day one, if absent", "Grade ten to twenty past specs pass or fail with reasons; keep the criteria the graders agree on."] },
+
+    K1: { kind: "Skill · Frame · judgment", t: "Restate", d: "Say the goal back in one paragraph: the problem, who it is for, the outcome, the treatment in mind. The person corrects it before anything else happens.", reads: ["C1", "C5"], writes: ["A1"], ex: "\"Show a personal-loan offer on the app's home screen to existing customers who are likely to be eligible, with a tap-through to apply.\" The PM corrects \"likely to be eligible\" to \"eligible\"." },
+    K2: { kind: "Skill · Frame · judgment", t: "Challenge", d: "Ask for the evidence and the measure behind the goal and behind each requirement the person brought. A requirement with no evidence is said to have none.", reads: ["C1", "C5", "C7", "D13"], writes: ["A1", "A6"], ex: "The idea names no measure of success. The agent proposes uptake against a holdout group and asks which number would make the offer worth keeping." },
+    K3: { kind: "Skill · Frame · both", t: "Profile", d: "Classify the change as a new, modified or expanded product in the regulator's sense, and answer the screening facets from the idea: does it show anything to customers, decide anything about them, use their data, target a group, use a model, touch a channel with its own rules, involve a third party, change an operating process, need measuring. A facet it cannot answer becomes a question.", reads: ["C1", "D7", "D8", "D15"], writes: ["A2"], ex: "Shows something to customers: yes. Decides about a customer: yes, who sees it. Uses financial data: yes. Uses a model: unknown, asked. Third party: no, because the loan is the bank's own." },
+    K4: { kind: "Skill · Frame · both", t: "Find precedent", d: "Retrieve features of the same kind and copy what they ended up needing, including what was added late. Every copied item is marked unverified here.", reads: ["C2", "C4", "D11", "D12", "D13", "D14"], writes: ["A2", "A10"], ex: "The last three offer launches. In one, the financial-promotion sign-off was found in week seven; the agent puts it on day one." },
+    K5: { kind: "Skill · Discover · script", t: "Screen", d: "Run each domain's published triggers against the profile. Each domain is opened with the criterion cited, or closed with \"none, because\" and the criterion. A trigger that turns on a judgment goes to its owner.", reads: ["C3", "D1", "D2", "D6", "D7", "D8", "D9"], writes: ["A2", "A10"], ex: "Opens: financial promotions, marketing consent, privacy, fair lending, accessibility, records retention, complaints. Model risk: open if a model picks the audience. Third-party risk: closed, no third party." },
+    K6: { kind: "Skill · Discover · judgment", t: "Derive", d: "Turn each applicable obligation into requirements for this feature, using an approved pattern where one exists. Each requirement carries its source and its validator.", reads: ["C3", "C4", "D1", "D2", "D3", "D4", "D5", "D11", "D16"], writes: ["A3", "A5"], ex: "From the promotions standard: offer wording is approved before it is shown, and the approved version is retained. From the consent policy: customers who opted out of marketing never see it." },
+    K7: { kind: "Skill · Discover · judgment", t: "Elicit", d: "Put the questions the context could not answer to the person, one at a time, each with a guess and the reason it matters. Answers are recorded with the person's name.", reads: ["C1", "C8", "D10"], writes: ["A3", "A6", "A7"], ex: "\"Do you intend the word 'pre-approved'? My guess is no. If yes, the offer is a credit decision and brings in the credit and adverse-action obligations.\"" },
+    K8: { kind: "Skill · Discover · judgment", t: "Explore cases", d: "Walk the cases the idea skipped: customers it should not reach, failures, misuse, accessibility, what happens after the tap.", reads: ["C2", "C6", "C7", "D12", "D14"], writes: ["A3", "A4"], ex: "Customers in collections or flagged as vulnerable; a customer who taps through and is declined; a screen-reader user; the offer after it expires." },
+    K9: { kind: "Skill · Shape · both", t: "Write", d: "One checkable statement per requirement in the organisation's notation, with a fit criterion and an attribute class. A statement with no stateable test is a goal, and is labelled one.", reads: ["D15", "D16"], writes: ["A3", "A4"], ex: "\"When an eligible customer who has not opted out of marketing opens the home screen, the app shall show the approved offer.\" Fit: holds for a sampled set of opted-out customers." },
+    K10: { kind: "Skill · Shape · judgment", t: "Weigh scope", d: "Show the person which of their choices pull in which obligations, so a phase can be scoped on purpose. The agent shows the cost of each option; the person decides.", reads: ["C5", "D1", "D2", "D6"], writes: ["A1", "A3", "A7"], ex: "\"You may be eligible\" keeps phase one a promotion. \"Pre-approved\" adds a credit decision and its reviews. A rules-based audience avoids the model-risk review that a propensity model would open." },
+    K11: { kind: "Skill · Shape · both", t: "Reconcile", d: "Find requirements that contradict each other, duplicate each other, or conflict with a cited policy or prior ruling, and raise each as a question.", reads: ["D2", "D11", "D15"], writes: ["A6", "A7"], ex: "The PM asks for a top banner; the app content standard puts offers in the carousel. Raised to the content owner with both sources." },
+    K12: { kind: "Skill · Shape · script", t: "Trace", d: "Link every requirement to its source, the control it serves, its validator and the test that will show it is met, in both directions.", reads: ["D1", "D2", "D3", "D10"], writes: ["A5"], ex: "R-04 (opt-out suppression) traces to the consent policy statement, the marketing-consent control, the privacy office as validator, and acceptance scenario 3." },
+    K13: { kind: "Skill · Verify · script", t: "Check completeness", d: "Deterministic checks against the completeness standard. Fails closed: an incomplete register cannot be marked ready.", reads: ["D6", "D17"], writes: ["A9"], ex: "Seven domains opened, six closed. Records retention has no requirement and no \"none, because\". The check fails and says which one." },
+    K14: { kind: "Skill · Verify · judgment", t: "Critique", d: "A fresh-context reader, ideally on a different model, grades the register against the rubric and lists what it cannot find. A person grades a sample of the critic.", reads: ["D15", "D16", "D17"], writes: ["A6", "A9"], ex: "Flags R-07 (\"show the offer promptly\") as untestable and asks for a number." },
+    K15: { kind: "Skill · Verify · both", t: "Route for validation", d: "Group every inferred requirement by its validator and send each one packet of the smallest questions, with the evidence attached. Prior rulings are attached where they answer the question already. At first a person sends.", reads: ["C8", "D10", "D11"], writes: ["A8"], ex: "One packet to the promotions reviewer with three questions; one to the privacy office with one; none to model risk, because the audience is rules-based." },
+    K16: { kind: "Skill · Hand off · script", t: "Package", d: "Render the one register into each downstream shape: the dependency agent's handoff, the spec-driven export, the PRD and stories, and the review intake forms.", reads: ["D6", "D17"], writes: ["A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18"], ex: "The privacy screening form and the promotion submission arrive pre-filled from the register, each field traced to a requirement." },
+    K17: { kind: "Skill · Hand off · both", t: "Re-screen", d: "When something changes (an answer, a rule, a scope cut, a constraint from the delivery path), re-run only what it touches and tell only the validators affected.", reads: ["D1", "D2", "D11"], writes: ["A3", "A6", "A9"], ex: "The dependency agent reports that eligibility cannot be checked in real time on the home screen. R-02 is reworded; only the fair-lending screen re-runs." },
+    K18: { kind: "Skill · Learn · both", t: "Write back", d: "Propose what this feature learned as context for the next one: validated answers as prior rulings, late additions as baseline items, stale policies as flags. Each proposal goes to the record's owner.", reads: ["A3"], writes: ["A19", "D11", "D13", "D14"], ex: "The promotions reviewer's answer on \"you may be eligible\" is proposed as a prior ruling, with the policy reference and a twelve-month expiry." },
+
+    A1: { kind: "Artifact · generated", t: "Intent brief", d: "The goal, problem, customers, outcome, success measure, scope and non-goals, in the person's words plus the agent's restatement.", own: "The person who brought the idea" },
+    A2: { kind: "Artifact · generated", t: "Change profile", d: "The screening facets answered, with sources, and every requirement domain opened or closed with the criterion. This is what makes a missed domain visible.", own: "The person; reviewers read it" },
+    A3: { kind: "Artifact · generated", t: "Requirements register", d: "The core artifact. Each requirement has an ID, a statement, a source class (the feature's own goal, law and regulation, enterprise policy, standards any build must meet, the business, counterparties), an attribute class, a fit criterion, its source, its validator, its phase and its status.", own: "The person; each line validated by its validator" },
+    A4: { kind: "Artifact · generated", t: "Acceptance criteria", d: "Scenarios and fit criteria for each requirement, in a form a reviewer or a coding agent can test against.", own: "The person and the delivery team" },
+    A5: { kind: "Artifact · generated", t: "Traceability matrix", d: "Requirement to obligation to control to validator to evidence. Audit readiness by construction.", own: "The person; read by risk, control owners and audit" },
+    A6: { kind: "Artifact · generated", t: "Open questions and assumptions", d: "Each question with an owner, a blocking flag and the guess the agent made; each assumption with what changes if it is wrong.", own: "The person" },
+    A7: { kind: "Artifact · generated", t: "Decision log", d: "Choices with reasons, numbered and superseded rather than edited, including every \"does not apply, because\".", own: "The person who decided" },
+    A8: { kind: "Artifact · generated", t: "Validation packets", d: "One per validator: the requirements they confirm, the smallest questions, the evidence, any prior ruling that already answers it.", own: "Sent by the person at first" },
+    A9: { kind: "Artifact · generated", t: "Readiness statement", d: "Which checks pass, what is validated, what is open and on whom, what could not be found. A person ratifies; the agent never does.", own: "The ratifier" },
+    A10: { kind: "Artifact · generated", t: "Could-not-find list", d: "Obligations the agent expected and could not source, criteria nobody published, owners it could not identify. Across features it is the demand signal for which data products to build next.", own: "The person; aggregated for obligation owners" },
+    A11: { kind: "Artifact · generated", t: "Dependency handoff", d: "The validated register in the form the dependency agent reads, with the screen's facets so it can start its own universal screen early.", own: "Shared record; the dependency agent reads it" },
+    A12: { kind: "Artifact · generated", t: "Spec-driven export", d: "Feature spec files in the layout the team's spec-driven tool reads, and standing obligations as repository rules, so a coding agent consumes them without translation.", own: "The delivery team" },
+    A13: { kind: "Artifact · augmented", t: "PRD, epics and stories", d: "The document and tracker items teams already write, pre-filled from the register so the two never drift.", own: "The person" },
+    A14: { kind: "Artifact · augmented", t: "Review intake drafts", d: "Privacy screening, new product approval, model risk intake, third-party intake, security threat-model kickoff, financial promotion submission, accessibility plan. Drafted from the register; submitted and decided by people.", own: "The person submits; the review owner decides" },
+    A15: { kind: "Artifact · augmented", t: "Control mapping input", d: "Which controls the change touches and what evidence each will need, as input to the risk and control self-assessment.", own: "Control owners" },
+    A16: { kind: "Artifact · augmented", t: "Monitoring and measurement plan", d: "Success metrics and the experiment, plus risk indicators, surveillance, regulatory reports, attestations and records the change feeds, and the metrics that would trigger withdrawing it.", own: "The person, with each report's owner" },
+    A17: { kind: "Artifact · augmented", t: "Disclosures and communications", d: "The customer-facing wording obligations for the change and who approves each.", own: "The person; content and compliance approve" },
+    A18: { kind: "Artifact · augmented", t: "Launch readiness checklist", d: "The obligations that must be evidenced before release, each linked to its requirement and the evidence expected.", own: "The release owner" },
+    A19: { kind: "Artifact · augmented", t: "Context write-backs", d: "Proposed prior rulings, baseline additions, stale-policy flags and new glossary terms, each sent to the owner of the data product it would change.", own: "Each data product's owner" }
+  };
+
+  var stack = document.getElementById("stack");
+  var panel = document.getElementById("panel");
+  var pk = document.getElementById("p-kind"), pt = document.getElementById("p-title"), pb = document.getElementById("p-body"), pc = document.getElementById("p-clear");
+  var tiles = Array.prototype.slice.call(document.querySelectorAll(".tile"));
+  var byId = {};
+  tiles.forEach(function (el) { byId[el.dataset.id] = el; });
+
+  // reverse index: which skills read or write each tile
+  var readBy = {}, writtenBy = {};
+  Object.keys(D).forEach(function (k) {
+    if (k[0] !== "K") return;
+    (D[k].reads || []).forEach(function (x) { (readBy[x] = readBy[x] || []).push(k); });
+    (D[k].writes || []).forEach(function (x) { (writtenBy[x] = writtenBy[x] || []).push(k); });
+  });
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function chips(ids) { return '<div class="chips">' + ids.map(function (i) { return "<span>" + esc(D[i] ? D[i].t : i) + "</span>"; }).join("") + "</div>"; }
+
+  function clear() {
+    stack.classList.remove("selecting");
+    tiles.forEach(function (el) { el.classList.remove("on", "sel", "r", "w"); el.setAttribute("aria-pressed", "false"); });
+  }
+
+  function select(id) {
+    var x = D[id]; if (!x) return;
+    clear();
+    var el = byId[id];
+    el.classList.add("sel"); el.setAttribute("aria-pressed", "true");
+    stack.classList.add("selecting");
+    var rel = [];
+    if (id[0] === "K") {
+      (x.reads || []).forEach(function (r) { if (byId[r]) { byId[r].classList.add("on", "r"); } });
+      (x.writes || []).forEach(function (w) { if (byId[w]) { byId[w].classList.add("on", "w"); } });
+    } else {
+      (readBy[id] || []).forEach(function (k) { byId[k].classList.add("on"); rel.push(k); });
+      (writtenBy[id] || []).forEach(function (k) { byId[k].classList.add("on"); if (rel.indexOf(k) < 0) rel.push(k); });
+    }
+    pk.textContent = x.kind + (x.g ? " · " + x.g : "");
+    pt.textContent = x.t;
+    var h = "<p>" + esc(x.d) + "</p><dl>";
+    if (x.ex && id[0] === "C") h += "<div><dt>" + esc(x.ex[0]) + "</dt><dd>" + esc(x.ex[1]) + "</dd></div>";
+    if (x.f) h += "<div><dt>" + esc(x.f[0]) + "</dt><dd>" + esc(x.f[1]) + "</dd></div>";
+    if (x.tr) h += "<div><dt>" + esc(x.tr[0]) + "</dt><dd>" + esc(x.tr[1]) + "</dd></div>";
+    if (x.h) h += "<div><dt>" + esc(x.h[0]) + "</dt><dd>" + esc(x.h[1]) + "</dd></div>";
+    if (x.dz) h += "<div><dt>" + esc(x.dz[0]) + "</dt><dd>" + esc(x.dz[1]) + "</dd></div>";
+    if (x.own) h += "<div><dt>Owned by</dt><dd>" + esc(x.own) + "</dd></div>";
+    if (id[0] === "K") {
+      h += "<div><dt>Reads</dt><dd>" + chips(x.reads || []) + "</dd></div>";
+      h += "<div><dt>Writes</dt><dd>" + chips(x.writes || []) + "</dd></div>";
+    } else if (rel.length) {
+      h += "<div><dt>" + (id[0] === "A" ? "Written by" : "Used by") + "</dt><dd>" + chips(rel) + "</dd></div>";
+    }
+    h += "</dl>";
+    if (id[0] === "K" && x.ex) h += '<div class="ex"><b>In the loan-offer example (fictional)</b>' + esc(x.ex) + "</div>";
+    pb.innerHTML = h;
+    pc.hidden = false;
+    panel.classList.remove("idle");
+  }
+
+  tiles.forEach(function (el) {
+    el.setAttribute("type", "button");
+    el.setAttribute("aria-pressed", "false");
+    el.addEventListener("click", function () {
+      if (el.classList.contains("sel")) { reset(); return; }
+      select(el.dataset.id);
+    });
+  });
+  function reset() {
+    clear();
+    pk.textContent = "How to read this"; pt.textContent = "Select a tile";
+    pb.innerHTML = "<p>The layers run top to bottom in order of how the agent uses them. Layer 1 is where it looks. Layer 2 is what it cites. Layer 3 is what it does. Layer 4 is what it leaves behind.</p><p style=\"margin-top:8px\">Select a skill to light up what it reads and writes.</p>";
+    pc.hidden = true;
+    panel.classList.add("idle");
+  }
+  pc.addEventListener("click", reset);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") reset(); });
+  if (window.matchMedia("(min-width: 1081px)").matches) panel.classList.remove("idle");
+  window.addEventListener("resize", function () {
+    if (window.matchMedia("(min-width: 1081px)").matches) panel.classList.remove("idle");
+    else if (!stack.classList.contains("selecting")) panel.classList.add("idle");
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Requirements Agent</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A white paper on an enterprise requirements and intent-shaping agent for a large, platform-centric, regulated organisation: what it provides, what it depends on, the skills it needs and the artifacts it produces.">
+<style>
+/* Layout: a single reading column near 68 characters, with wide tables allowed to scroll in their own frame.
+   The project site's tokens; serif for headings, system sans for text, mono for labels. */
+:root {
+  --paper: #f7f4ee; --card: #fffdf9; --ink: #1d1b18; --muted: #5f5a52; --rule: #ddd6ca;
+  --accent: #a8600a; --accent-soft: #f3e3cc; --link: #1f4f8a; --shade: #efe9de;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #171614; --card: #201e1b; --ink: #ece7de; --muted: #a59e92; --rule: #38342e;
+    --accent: #e0a24e; --accent-soft: #3a2c18; --link: #8fb6ea; --shade: #24211c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #171614; --card: #201e1b; --ink: #ece7de; --muted: #a59e92; --rule: #38342e;
+  --accent: #e0a24e; --accent-soft: #3a2c18; --link: #8fb6ea; --shade: #24211c;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 var(--sans); }
+main {
+  max-width: 760px; margin: 0 auto;
+  padding-block: 40px 88px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 5vw, 2.7rem); margin: 0 0 10px; }
+h2 { font-size: 1.5rem; margin: 44px 0 10px; padding-top: 22px; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.12rem; margin: 26px 0 8px; }
+p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin: 5px 0; }
+a { color: var(--link); text-underline-offset: 2px; }
+.kicker { font: 600 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.meta { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
+.lede { font-size: 1.12rem; }
+.summary { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 20px 6px; margin: 22px 0; }
+.summary h2 { border: 0; padding: 0; margin: 0 0 8px; font-size: 1.1rem; }
+.callout { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 12px 16px; margin: 18px 0; border-radius: 0 6px 6px 0; }
+.callout p:last-child { margin-bottom: 0; }
+.tbl { overflow-x: auto; margin: 12px 0 20px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; line-height: 1.45; }
+th, td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--rule); }
+th { font: 600 11.5px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); background: var(--shade); }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; min-width: 150px; }
+table.w td { min-width: 150px; }
+.tag { display: inline-block; font: 600 10.5px/1.5 var(--mono); letter-spacing: .04em; text-transform: uppercase; padding: 0 6px; border-radius: 4px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+.toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 0; padding: 0; list-style: none; }
+.toc li { margin: 0; }
+.toc a { display: block; font-size: 13.5px; padding: 3px 10px; border: 1px solid var(--rule); border-radius: 999px; background: var(--card); text-decoration: none; }
+code { font: 13.5px var(--mono); background: var(--shade); padding: 1px 4px; border-radius: 3px; }
+.ev { font-size: 13px; color: var(--muted); }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--muted); }
+footer ol { padding-left: 20px; }
+footer li { margin: 3px 0; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="kicker">White paper · draft for review · November 2026</div>
+  <h1>The requirements agent</h1>
+  <p class="lede">An agent that turns a product idea into the complete, sourced set of requirements a change must meet to ship in a large, platform-centric, regulated organisation.</p>
+  <p class="meta">Part of the <a href="https://dudgeon.org/product-agent-and-harness/">product agent and harness</a> project. Companion page: <a href="01-layered-model.html">the four-layer model</a>. The organisation described is generic and the worked example is fictional.</p>
+  <ul class="toc">
+    <li><a href="#problem">Problem</a></li><li><a href="#job">The job</a></li><li><a href="#mechanism">Missed domains</a></li><li><a href="#session">A session</a></li><li><a href="#context">Context</a></li><li><a href="#data">Data products</a></li><li><a href="#skills">Skills</a></li><li><a href="#artifacts">Artifacts</a></li><li><a href="#rules">Rules</a></li><li><a href="#measures">Measures</a></li><li><a href="#others">Elsewhere</a></li><li><a href="#open">Open questions</a></li>
+  </ul>
+</header>
+
+<section class="summary" aria-labelledby="sum">
+  <h2 id="sum">Summary</h2>
+  <p>Every change carries two sets of requirements. The first is what the person proposing it wants. The second is what the organisation requires of any change of that kind: law and regulation, enterprise policy and controls, the standards any build must meet, the business's constraints, counterparties' terms, and the monitoring, reporting and records that follow launch. In a large regulated organisation the first set is written early. The second is found late, one domain at a time, by whichever reviewer happens to look.</p>
+  <p>The requirements agent finds the second set at the start. It takes a high-level idea in any form, reads the organisation's context, screens the change against a finite list of requirement domains, asks the person only what it could not read, and produces one requirements register in which every line has a source, a validator and a test. Every domain ends in requirements or in a recorded reason it does not apply, so a missed domain shows up as a failed check before anyone builds.</p>
+  <p>It is implementation-agnostic. It states what must be true and leaves which platforms, data and processes will make it true to the dependency agent, which reads the register next. It never assesses risk, never ratifies its own output, and treats everything it infers as provisional until a named person confirms it.</p>
+</section>
+
+<h2 id="problem">1. The problem</h2>
+<p>Consider an organisation with thousands of people doing product management, each shaping intent in their own way. Solutions are composed from internal platforms owned across the company, some of them hard to find or evaluate. The organisation is well run and heavily regulated, so a change can bring in obligations from a dozen domains: consumer protection, privacy, fair treatment, financial promotions, model risk, third-party risk, information security, accessibility, records retention, operational resilience, complaints handling, regulatory reporting, and the controls and monitoring that evidence each.</p>
+<p>No one person carries all of that. The product manager knows their customer and their goal. Each reviewer knows one domain. The result is a familiar pattern: a requirements document that is complete on the feature's own behaviour and silent on two or three enterprise domains, which are then added by a reviewer at a gate, by an engineer mid-build, or after launch when a monitoring or reporting obligation surfaces. Each late addition costs rework, delay and the reviewer's time, and in a regulated setting a missed obligation can also be a finding.</p>
+<p>The project's earlier work describes the current state in first-party terms: refinement is the bottleneck, done bespoke each time, with context scattered across private documents and the people who know, and only a sprint or two of ready intent ahead of delivery <span class="ev">[1]</span>. The independent evidence is stronger on the dependency side than on the requirements side: the UK regulator's review of over a million technology changes found that a project depending on other projects was the most consistent factor in failure, and asked firms to invest in discovery before designing change <span class="ev">[2]</span>. No independent study measuring late-discovered obligations in product work was found; the pilot proposed in section 10 would produce the first numbers.</p>
+
+<h2 id="job">2. The job, and its boundary</h2>
+<p>In one line: from <em>what I want</em> to <em>what must be true for this to ship here</em>, with a source on every line.</p>
+<div class="tbl"><table>
+<tr><th></th><th>The requirements agent</th></tr>
+<tr><td>Takes</td><td>A high-level idea in whatever form it exists (a paragraph, a deck, a ticket, a prototype, a voice note) and the requirements the person already knows.</td></tr>
+<tr><td>Produces</td><td>One requirements register: the feature's own requirements and every enterprise obligation that applies, each with its source, source class, attribute class, fit criterion, validator, phase and status. Around it: the change profile, open questions, a decision log, validation packets, a readiness statement and a could-not-find list. The register is rendered into the forms people already use (section 8).</td></tr>
+<tr><td>Serves</td><td>Anyone doing the product task: product managers, business analysts, designers whose prototype is about to become the spec, engineers handed a ticket that says what but not what else.</td></tr>
+<tr><td>Is not</td><td>A PRD generator; a risk assessor; an approver. It classifies which obligations apply and prepares the material. The privacy assessment, the model validation, the promotion sign-off and the decision that the intent is ready stay with the people whose independence the rules require.</td></tr>
+</table></div>
+
+<h3>Implementation-agnostic, precisely</h3>
+<p>The boundary with the dependency agent needs a rule, because some enterprise requirements are about the build. The rule used here: a standard that any implementation must meet is a requirement; which platform, capability, data set or process meets it is a dependency.</p>
+<div class="tbl"><table class="w">
+<tr><th>Belongs in the register</th><th>Belongs to the dependency agent</th></tr>
+<tr><td>"Decisions about who sees the offer are logged and retained for the records period."</td><td>Which decisioning platform logs them, and how to onboard to it.</td></tr>
+<tr><td>"The journey meets the organisation's accessibility level."</td><td>Which design-system components already meet it.</td></tr>
+<tr><td>"Marketing opt-outs are honoured before display."</td><td>Which consent service holds the opt-outs, and the access request.</td></tr>
+<tr><td>"The service meets the resilience tier for a customer-facing channel."</td><td>Which hosting pattern provides that tier.</td></tr>
+<tr><td>A mandate to use a named strategic platform, recorded as a constraint with its source</td><td>Everything about that platform: capability, intake, lead time, owner.</td></tr>
+</table></div>
+<p>Process obligations (a review that must happen, a record that must be filed, a sign-off that must be obtained) stay in the register as requirements that point at the review they trigger. That puts the privacy assessment on the page on day one, next to the requirement that caused it, rather than leaving it for the dependency agent's screen to discover later.</p>
+
+<h2 id="mechanism">3. How it prevents the missed domain</h2>
+<p>The design rests on one idea from the project's position paper on risk review: in a well-run regulated organisation, the universe of enterprise obligations is knowable, each has heuristics for when it applies, and those heuristics are objective enough for any capable actor to apply. Review then becomes a specification problem plus a classification problem <span class="ev">[3]</span>. Four mechanisms follow from it.</p>
+<ol>
+  <li><strong>A finite list, closed explicitly.</strong> The agent screens every change against a fixed list of requirement domains, keyed to the enterprise risk taxonomy and the published triggers of each review. Every domain the screen opens must end with requirements or with "none, because" and the criterion. Silence is a failed check. This turns "did we think of everything" from a judgment into a count.</li>
+  <li><strong>Precedent, including what was added late.</strong> Before asking anything, the agent finds features of the same kind and copies what they ended up needing, with particular weight on what reviewers added after readiness. The last feature's late surprise becomes this feature's day-one requirement.</li>
+  <li><strong>Checks that fail closed, and a critic with fresh context.</strong> Deterministic checks confirm that every requirement has a source, a validator and a fit criterion and that nothing blocking is unrouted. A separate reader with no memory of the session then grades the register against the completeness standard and lists what it cannot find.</li>
+  <li><strong>A loop that keeps the list current.</strong> Every obligation added after readiness, by a reviewer, a gate or delivery, is recorded with the stage it was found. It is proposed as an addition to the baseline for that kind of feature, so the next feature starts with it.</li>
+</ol>
+<div class="callout"><p>The agent standardises the output while leaving the person's method alone. A product manager can bring a one-line idea or a forty-page document; the register that comes out has the same shape, the same domains and the same checks every time. That is what lets thousands of people with different habits produce comparable, reviewable intent.</p></div>
+
+<h2 id="session">4. A session</h2>
+<p>The phases run in a fixed order. What happens inside each is the model's judgment. This is the profile the project's skill-spectrum work recommends for shaping: rigid at gathering and classification, loose at interrogation, with decisions kept by a person <span class="ev">[4]</span>. The worked example is a fictional bank adding a personal-loan offer to the home screen of its servicing app, for existing customers who are eligible, with a tap-through to apply.</p>
+<div class="tbl"><table class="w">
+<tr><th>Phase</th><th>What happens</th><th>In the example</th></tr>
+<tr><td>1 · Frame</td><td>Restates the goal for correction; asks for the evidence and measure behind it; answers the screening facets (does it show, decide, use data, target a group, use a model, touch a channel with its own rules, involve a third party, change an operating process, need measuring); finds precedent.</td><td>Three past offer launches are found. In one, the promotion sign-off was added in week seven. A model's use is unknown and becomes the first question.</td></tr>
+<tr><td>2 · Discover</td><td>Screens each domain against its published triggers; derives requirements from each applicable obligation; asks the person the questions the context could not answer, one at a time, each with a guess; explores the cases the idea skipped.</td><td>Opens promotions, marketing consent, privacy, fair lending, accessibility, records retention and complaints. Asks whether "pre-approved" is intended. Adds suppression for customers in collections or flagged as vulnerable.</td></tr>
+<tr><td>3 · Shape</td><td>Writes each requirement as one checkable statement with a fit criterion; shows which scope choices pull in which obligations; reconciles conflicts; traces each requirement to source, control, validator and test.</td><td>"You may be eligible" keeps phase one a promotion; "pre-approved" would add a credit decision and its reviews. A rules-based audience avoids a model-risk review. The PM picks the first of each.</td></tr>
+<tr><td>4 · Verify</td><td>Runs the completeness checks, which fail closed; a fresh-context critic grades the register; inferred requirements are grouped into one packet per validator, with the evidence attached. At first a person sends the packets.</td><td>The check fails on records retention: opened, no requirement, no reason. Fixed. One packet goes to the promotions reviewer, one to the privacy office, none to model risk.</td></tr>
+<tr><td>5 · Hand off and learn</td><td>Renders the register for the dependency agent, the spec-driven toolchain, the PRD and the review intake forms; re-screens only what a later change touches; proposes what was learned as context for the next feature.</td><td>The dependency agent reports eligibility cannot be checked in real time on the home screen; one requirement is reworded and only its domain re-screened. The promotions reviewer's ruling on the wording is proposed as a prior ruling with a twelve-month expiry.</td></tr>
+</table></div>
+<p>Readiness is a person's call. The agent reports which checks pass, what is validated and what is open; it never marks its own output ready.</p>
+
+<h2 id="context">5. What it reads: unstructured context</h2>
+<p>Unstructured context is where the agent looks. It is good for finding what might apply and poor as proof that something does. Anything the agent takes from it is marked provisional and, where a governed record exists, checked against that record.</p>
+<div class="tbl"><table class="w">
+<tr><th>Type</th><th>Examples</th><th>What it gives the agent</th><th>How far to trust it</th></tr>
+<tr><td>The idea and its evidence</td><td>Idea notes, decks, prototypes, customer research, analytics readouts, meeting notes</td><td>The goal, the treatment, the first requirements, the claimed evidence</td><td>The person's own words; claims are tested, not assumed</td></tr>
+<tr><td>Precedent</td><td>Past specs and PRDs of the same kind, review comments, launch retros, incident reviews</td><td>The fastest first draft of the enterprise requirements, and what was added late last time</td><td>The past feature may have been incomplete or pre-date a rule change; copied items are marked unverified</td></tr>
+<tr><td>Obligation text</td><td>Laws and rules, regulator guidance and enforcement actions, policies and standards as written, contracts and scheme rules</td><td>Candidate obligations, triggers, and the reason a rule cannot be waived</td><td>Authoritative but not yet structured; cited by reference, never by paraphrase alone</td></tr>
+<tr><td>Interpretation</td><td>Reviewer answers in support channels, office-hours FAQs, second-line guidance memos, training decks</td><td>Edge-case rulings and the questions people keep asking</td><td>An answer on one day to one question; becomes a prior ruling only when its owner confirms it</td></tr>
+<tr><td>Business context</td><td>Strategy, objectives, business cases, product-line plans, pricing memos, risk appetite statements</td><td>Target market, volumes, budget, success measures, decision rights</td><td>Plans, not facts; validated by the accountable business owner</td></tr>
+<tr><td>Operating context</td><td>Servicing procedures, complaint handling, runbooks, contact-centre knowledge base</td><td>The operational requirements people forget: what staff must see, how failures are recovered</td><td>Often current because it is used daily; rarely owned findably</td></tr>
+<tr><td>Customer harm signals</td><td>Complaint themes, dispute reasons, call drivers, app reviews, accessibility feedback</td><td>Conduct and experience requirements grounded in what went wrong; cases to explore</td><td>Aggregates only; the agent never reads an individual customer's record</td></tr>
+<tr><td>The organisation</td><td>Team pages, review intake pages, the people directory, who answered past questions</td><td>Candidate validators by role; each review's intake route</td><td>Reliable for role, silent on ownership of obligations; owners are stored by role, never as a map of who knows what</td></tr>
+</table></div>
+<p>Access follows the person. The agent sees what the person asking could see, and reads public support channels for their own topic only. Private messages stay private, and some jurisdictions restrict mining employee communications at all <span class="ev">[5]</span>.</p>
+
+<h2 id="data">6. What it cites: governed data products</h2>
+<p>These are the authoritative, owned, versioned records specific to requirements work. They are what let the agent say "this applies, here is the record" instead of "this probably applies". Most large regulated organisations already hold several of them, often in a governance, risk and compliance system or a policy management system, though rarely in a form an agent can query by trigger.</p>
+<div class="tbl"><table class="w">
+<tr><th>Data product</th><th>What the agent needs from it</th><th>Usual home today</th><th>If absent on day one</th></tr>
+<tr><td colspan="4" style="font:600 11.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--paper)">What applies</td></tr>
+<tr><td>Regulatory obligations inventory</td><td>Obligation ID, citation, jurisdiction, product and activity scope, triggers as checkable conditions, owner, linked policies and controls</td><td>Regulatory change management or GRC system</td><td>The legal and compliance library; each obligation provisional, source chain unknown</td></tr>
+<tr><td>Policy and standards register</td><td>Statement ID, version, owner, effective and review dates, applies-when, the law behind it, the exception route</td><td>Policy management system and library</td><td>Mine policies for "must" sentences as candidates</td></tr>
+<tr><td>Control library</td><td>Control ID and objective, mapped obligations and risks, owner, the evidence a change must leave</td><td>GRC system</td><td>Control narratives; a draft mapping for owners to correct</td></tr>
+<tr><td>Contract and third-party obligations</td><td>Counterparty, rulebook or contract reference, obligation, scope, relationship owner</td><td>Contract register, third-party risk system</td><td>Ask the relationship owner</td></tr>
+<tr><td>Monitoring and reporting obligations</td><td>What triggers it, the indicator or report, frequency, recipient, retention, owner</td><td>Spread across regulatory reporting, risk indicators, surveillance and records</td><td>Precedent and the gate catalogue, then each report's owner</td></tr>
+<tr><td colspan="4" style="font:600 11.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--paper)">When, where and who</td></tr>
+<tr><td>Review and gate catalogue</td><td>Each review's triggers as checkable conditions, evidence list, owner, intake route, turnaround, the obligations it checks</td><td>Separate intake pages per review</td><td>Read the anchor reviews' published criteria; unpublished criteria go on the could-not-find list</td></tr>
+<tr><td>Product, channel and jurisdiction catalogue</td><td>Regulatory classification of the product, legal entity, jurisdictions, channels, segments</td><td>Product and legal-entity master data</td><td>Ask the person, confirm against product-line documents</td></tr>
+<tr><td>Data classification and retention schedule</td><td>Element, classification, permitted purposes, consent basis, retention period and trigger</td><td>Data catalogue, records schedule</td><td>The classification policy and schedule as documents</td></tr>
+<tr><td>Enterprise risk taxonomy</td><td>Risk types by level, definitions, owners, linked obligations and controls</td><td>Risk management framework</td><td>The source and attribute classes of the requirements taxonomy</td></tr>
+<tr><td>Decision-rights register</td><td>Decision type, role that decides, role that can waive, delegation limits, current holder</td><td>Delegation-of-authority documents, committee terms of reference</td><td>Infer from past sign-offs; confirm on the first real question</td></tr>
+<tr><td colspan="4" style="font:600 11.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--paper)">What was learned</td></tr>
+<tr><td>Prior rulings, exceptions and waivers</td><td>Question, ruling, policy reference, ruled by (role), date, expiry, features applied to</td><td>Review tickets and threads; a waiver register</td><td>Past threads as candidate rulings until confirmed</td></tr>
+<tr><td>Issues and findings register</td><td>Open audit, regulatory and self-identified findings by product and process, with the obligation or control at issue</td><td>GRC issue management</td><td>Ask the product line's risk partner</td></tr>
+<tr><td>Intent records</td><td>Past features' validated registers, including late additions and the stage they were found</td><td>Nowhere in one shape; the agent's output becomes this</td><td>Past specs and tickets, reconstructed and unverified</td></tr>
+<tr><td>Feature-kind baselines</td><td>Obligations every feature of a kind carries, with a verification date per item</td><td>Reviewers' heads, old launch templates</td><td>Drafted from the first few features, verified item by item</td></tr>
+<tr><td colspan="4" style="font:600 11.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--paper)">How to write and check</td></tr>
+<tr><td>Business glossary</td><td>Terms with regulated meanings, where the meaning comes from, terms not to use loosely</td><td>Data governance glossary, legal and marketing style guides</td><td>Flag terms that appear in both an obligation and a requirement</td></tr>
+<tr><td>Requirement pattern library</td><td>Approved requirement templates per obligation, with fit criterion and attribute class</td><td>Rarely anywhere; pieces in security and accessibility standards</td><td>Write fresh; propose as a pattern once validated</td></tr>
+<tr><td>Completeness standard</td><td>Scripted checks, a rubric with graded examples, version, joint product and engineering owner</td><td>A definition of ready per team</td><td>Grade ten to twenty past specs; keep the criteria graders agree on</td></tr>
+</table></div>
+
+<h3>Three readings of the inventory</h3>
+<ul>
+  <li><strong>Four of the seventeen are made by the agent's own work.</strong> Intent records, prior rulings, feature-kind baselines and the pattern library grow from validated sessions. They do not need a programme to build them first; they need an owner to verify what the agent proposes.</li>
+  <li><strong>The smallest useful start is four records.</strong> The review and gate catalogue with published triggers, the policy and standards register, the decision-rights register and the glossary let the agent screen, cite, route and avoid the word that opens a review by accident. Everything else can begin as Layer 1 context, marked provisional.</li>
+  <li><strong>The could-not-find list says what to build next.</strong> Across many features, the obligations the agent expected and could not source, and the review criteria nobody published, are a ranked demand signal for which data products, and which fields in them, would remove the most questions.</li>
+</ul>
+<p>What the requirements agent does not need: platform and capability catalogues, API registries, configuration databases, intake queues and lead times. Those are the dependency agent's inputs.</p>
+
+<h2 id="skills">7. Skills</h2>
+<p>Eighteen verbs in five phases. Each is evaluated on its own, because each fails in its own way. "Script" means deterministic and pass-or-fail; "judgment" means model reasoning evaluated against labelled samples; "both" means a scripted frame around a judgment.</p>
+<div class="tbl"><table class="w">
+<tr><th>Skill</th><th>What it does</th><th>Kind</th><th>How it fails, and how it is checked</th></tr>
+<tr><td>Restate</td><td>Says the goal back in one paragraph for correction</td><td><span class="tag">judgment</span></td><td>Drifts from the person's intent; the person's correction rate is tracked</td></tr>
+<tr><td>Challenge</td><td>Asks for the evidence and measure behind the goal and each claim</td><td><span class="tag">judgment</span></td><td>Becomes friction; measured by whether answers change and planted weak requirements are caught</td></tr>
+<tr><td>Profile</td><td>Answers the screening facets from the idea, including whether the change is a new, modified or expanded product in the regulator's sense; unknowns become questions</td><td><span class="tag">both</span></td><td>A facet answered wrongly closes a domain; facets are graded on labelled past features</td></tr>
+<tr><td>Find precedent</td><td>Retrieves features of the same kind and what they needed, including late additions</td><td><span class="tag">both</span></td><td>Copies an incomplete or outdated precedent; every copied item is marked unverified</td></tr>
+<tr><td>Screen</td><td>Runs each domain's published triggers; opens it with the criterion or closes it with a reason</td><td><span class="tag">script</span></td><td>A trigger that needs judgment; sent to the domain owner rather than guessed</td></tr>
+<tr><td>Derive</td><td>Turns each applicable obligation into requirements for this feature</td><td><span class="tag">judgment</span></td><td>Over-prediction, the documented failure of language models at related tasks <span class="ev">[6]</span>; false positives and negatives reported per domain</td></tr>
+<tr><td>Elicit</td><td>Asks the smallest question, one at a time, with a guess and the reason, choosing each question from the open domains and facets</td><td><span class="tag">judgment</span></td><td>Free conversation misses most unstated requirements <span class="ev">[21]</span>; asks what it could have read. Every question is logged against what the context held</td></tr>
+<tr><td>Explore cases</td><td>Finds the edge, failure, misuse and vulnerable-customer cases the idea skipped</td><td><span class="tag">judgment</span></td><td>Generic cases; graded against cases reviewers raised on past features</td></tr>
+<tr><td>Write</td><td>One checkable statement per requirement, with a fit criterion and attribute class</td><td><span class="tag">both</span></td><td>Ambiguous or untestable wording; checked against the organisation's writing rules</td></tr>
+<tr><td>Weigh scope</td><td>Shows which choices pull in which obligations, so a phase can be scoped on purpose</td><td><span class="tag">judgment</span></td><td>Reads as advice to dodge a review; it shows how to meet an obligation more simply and never how to avoid one that applies</td></tr>
+<tr><td>Reconcile</td><td>Finds contradictions, duplicates and conflicts with cited policy</td><td><span class="tag">both</span></td><td>Misses a conflict across documents; seeded conflicts in test registers</td></tr>
+<tr><td>Trace</td><td>Links each requirement to source, control, validator and test, both ways</td><td><span class="tag">script</span></td><td>Broken links; the check counts them</td></tr>
+<tr><td>Check completeness</td><td>Fails closed if any opened domain, required field or blocking question is open</td><td><span class="tag">script</span></td><td>Passes a well-formed but wrong register; that is the critic's job</td></tr>
+<tr><td>Critique</td><td>A fresh-context reader, ideally another model, grades the register against the rubric</td><td><span class="tag">judgment</span></td><td>Shares the drafter's blind spots; a person grades a sample of the critic</td></tr>
+<tr><td>Route for validation</td><td>One packet per validator, with evidence and any prior ruling attached</td><td><span class="tag">both</span></td><td>Wrong validator, or the same person asked twice; counted per feature</td></tr>
+<tr><td>Package</td><td>Renders the register into the dependency handoff, the spec-driven export, the PRD and the review forms</td><td><span class="tag">script</span></td><td>Lossy rendering; each target's own validator runs on the output</td></tr>
+<tr><td>Re-screen</td><td>Re-runs only what a change touches and tells only the validators affected</td><td><span class="tag">both</span></td><td>Noise if untargeted; measured by notifications per change</td></tr>
+<tr><td>Write back</td><td>Proposes validated answers, late additions and stale policies as context for the next feature</td><td><span class="tag">both</span></td><td>Writes inference as fact; every write-back is provisional until the record's owner accepts it</td></tr>
+</table></div>
+
+<h2 id="artifacts">8. Artifacts</h2>
+<p>There is one source of truth, the requirements register, and many renderings of it. That keeps the PRD, the tickets, the review forms and the spec files from drifting apart, and lets people who never open the register work in the forms they already use.</p>
+<h3>Generated by the agent</h3>
+<ul>
+  <li><strong>Intent brief</strong>: goal, problem, customers, outcome, measure, scope, non-goals.</li>
+  <li><strong>Change profile</strong>: the facets answered and every domain opened or closed, with reasons. This is the artifact that makes a missed domain visible.</li>
+  <li><strong>Requirements register</strong>: every requirement with ID, statement, source class, attribute class, fit criterion, source, validator, phase and status. The six source classes are the feature's own goal; law and regulation; enterprise policy and standards; standards any build must meet; the business; contracts and counterparties <span class="ev">[7]</span>.</li>
+  <li><strong>Acceptance criteria</strong>: scenarios and fit criteria a reviewer or a coding agent can test.</li>
+  <li><strong>Traceability matrix</strong>: requirement to obligation to control to validator to evidence.</li>
+  <li><strong>Open questions and assumptions</strong>, each with an owner, a blocking flag and the guess made.</li>
+  <li><strong>Decision log</strong>, numbered and superseded rather than edited, including every "does not apply, because".</li>
+  <li><strong>Validation packets</strong>, one per validator.</li>
+  <li><strong>Readiness statement</strong>, for the person who ratifies.</li>
+  <li><strong>Could-not-find list</strong>, per feature and aggregated.</li>
+  <li><strong>Dependency handoff</strong>: the validated register as the dependency agent reads it.</li>
+  <li><strong>Spec-driven export</strong>: feature spec files in the layout the team's tool reads, one checkable statement per requirement with a stable ID, and standing obligations as repository rules so they are not restated in every spec <span class="ev">[8]</span>.</li>
+</ul>
+<h3>Existing artifacts it augments</h3>
+<ul>
+  <li><strong>PRD, epics and stories</strong> in the document and tracker the team already uses.</li>
+  <li><strong>Review intake drafts</strong>: privacy screening, new product approval, model risk intake, third-party intake, security threat-model kickoff, financial promotion submission, accessibility plan. Drafted from the register; submitted and decided by people.</li>
+  <li><strong>Control mapping input</strong> for the risk and control self-assessment.</li>
+  <li><strong>Monitoring and measurement plan</strong>: success metrics and the experiment, plus the risk indicators, surveillance, regulatory reports, attestations and records the change feeds, and the metrics that would trigger withdrawing it <span class="ev">[10]</span>. This is where the obligations most often found after launch are put on the page before it.</li>
+  <li><strong>Disclosures and communications</strong>: the customer-facing wording obligations and who approves each.</li>
+  <li><strong>Launch readiness checklist</strong>: what must be evidenced before release.</li>
+  <li><strong>Context write-backs</strong>: proposed prior rulings, baseline additions, stale-policy flags and glossary terms, each sent to the owner of the record it would change.</li>
+</ul>
+
+<h2 id="rules">9. Rules it holds to</h2>
+<ol>
+  <li><strong>Read before asking.</strong> A person is asked only what the context cannot answer, and the smallest form of the question.</li>
+  <li><strong>No requirement without a source</strong>: a governed record, a cited document, or a named person's answer. Language models over-predict at this kind of task when they work from the specification alone <span class="ev">[6]</span>.</li>
+  <li><strong>No domain closed in silence.</strong> "Does not apply" always cites the criterion.</li>
+  <li><strong>Provisional until verified.</strong> The record shows which entries a named person has confirmed, kept separate from the agent's own confidence.</li>
+  <li><strong>Classify, never assess.</strong> Risk assessment, validation and sign-off stay with the people whose independence the rules require <span class="ev">[9]</span>.</li>
+  <li><strong>Never ratify, never self-grade.</strong> The drafter cannot be the ratifier, and the critic runs in a fresh context. Separation of duties is enforced by identity, not by prompt.</li>
+  <li><strong>Easier to meet, never easier to skip.</strong> It can show a simpler way to satisfy an obligation. It never advises skipping one that applies.</li>
+  <li><strong>Answer once.</strong> A validator's answer is written where the next feature will find it, with role, date, policy reference and expiry.</li>
+  <li><strong>Do not become the bureaucrat.</strong> Its aggregate reporting includes the obligations that never change a design and the reviews that never say no, so the organisation can retire what adds nothing. A baseline item earns its place from a past late addition or incident, as Google requires of its launch checklist, and low-risk changes get a shorter path <span class="ev">[13]</span>.</li>
+</ol>
+
+<h2 id="measures">10. What it provides, and how that is measured</h2>
+<div class="tbl"><table class="w">
+<tr><th>For</th><th>What it provides</th><th>Measured by</th></tr>
+<tr><td>The person shaping the change</td><td>The enterprise requirements on day one, each with its source and validator; a shorter, evidence-tied spec; fewer questions mid-delivery</td><td>Late-discovered requirement rate: requirements added after readiness, by stage found, as a share of all requirements. Time from first statement to ready. Person-hours per feature.</td></tr>
+<tr><td>Validators and review owners</td><td>Questions in one shape with evidence attached; each question answered once; the false-positive rate on their own obligations, which shows where published criteria are unclear</td><td>Validator time per feature; questions asked twice; reuse rate of prior rulings</td></tr>
+<tr><td>Delivery and coding agents</td><td>Requirements with fit criteria in the toolchain's own format; nothing open hidden</td><td>Share of requirements consumed without manual translation; spec changes after the first plan</td></tr>
+<tr><td>Risk, compliance and audit</td><td>Traceability from requirement to obligation to control to evidence by construction; an explicit record of every "does not apply"</td><td>Share of requirements with a complete trace; findings traced to a missed obligation</td></tr>
+<tr><td>The organisation</td><td>The obligation set made explicit and kept current because something reads it; a demand signal for which data products to build</td><td>Share of obligations attached from verified records rather than inferred; staleness of those records</td></tr>
+</table></div>
+<p>Time to ready is read together with the late-discovered rate, never alone, because it also falls when fewer obligations are attached. A baseline reconstructed from past features will flatter the status quo, because absorbed surprises left no record; a prospective comparison with non-pilot features is the honest one.</p>
+<h3>Evaluation</h3>
+<p>Ground truth is what actually applied: for past features, the obligations that turned out to apply, labelled by the validators who know; for pilot features, the same at ship. False positives and false negatives are reported per domain and weighted differently: a missed legal obligation costs more than ten unnecessary brand checks, and each domain's tuning should say which way it leans. Human agreement sets a ceiling: annotators of requirement dependencies agreed only moderately in the one study found (kappa 0.43) <span class="ev">[6]</span>, so validator agreement is measured first and the agent is held to it, not above it. The register itself is graded with a rubric built from ten to twenty past specs graded by product people, criteria kept where the graders agree <span class="ev">[4]</span>.</p>
+
+<h2 id="others">11. How others approach parts of this</h2>
+<p>No organisation found publishes an agent that does this whole job. The pieces exist, mostly as human processes, and each one shaped part of the design. Evidence labels follow the project's convention.</p>
+<div class="tbl"><table class="w">
+<tr><th>Source</th><th>What it shows</th><th>What the design takes</th></tr>
+<tr><td>Bank new product approval <span class="tag">regulator</span></td><td>The US bank regulator's guidance defines new, modified and expanded products as a classification test, lists the functions to consult, and expects a business plan, an exit strategy and "metrics that trigger an exit" <span class="ev">[10]</span>. The broker-dealer regulator's notice sets out a triage-then-committee workflow and fourteen minimum questions <span class="ev">[11]</span>. The UK regulator's product guidance requires a granular target market, vulnerability, distribution strategy, testing and regular review for new products and significant adaptations <span class="ev">[12]</span>.</td><td>The change test belongs in Profile. Exit metrics and post-launch review belong in the monitoring plan. The minimum questions are close to a ready screening script for financial products.</td></tr>
+<tr><td>Google's launch reviews <span class="tag">first-party</span></td><td>A reliability checklist run at up to 70 launches a week. Every item must be justified, ideally by a past launch failure; the whole list is reviewed once or twice a year; about 30% of launches took a shortened low-risk path <span class="ev">[13]</span>.</td><td>Baseline items earn their place from late additions and incidents; the list is pruned on a cadence; a fast path for low-risk changes.</td></tr>
+<tr><td>AWS operational readiness reviews <span class="tag">first-party</span></td><td>Questions are distilled from post-incident analyses, tailored per workload type, self-assessed by teams and challenged by a named champion who keeps them current <span class="ev">[14]</span>.</td><td>Incident reviews as Layer 1 context; feature-kind baselines; a second-line challenge of first-line work.</td></tr>
+<tr><td>Microsoft's Responsible AI Impact Assessment <span class="tag">first-party</span></td><td>Filled in while defining the product vision and requirements, per intended use, and approved before development. Each goal of the standard is marked as applying or not, with a written reason for every "no" <span class="ev">[15]</span>.</td><td>The "none, because" closure, per domain. An intended-use screen for AI features.</td></tr>
+<tr><td>Meta's privacy review <span class="tag">vendor claim</span></td><td>Under a regulatory consent order, about 1,200 products and features a month are reviewed before they ship <span class="ev">[16]</span>. No public description of the intake or triggers exists.</td><td>The volume a review function must absorb, which is the argument for screening by trigger and routing only what applies.</td></tr>
+<tr><td>Obligation libraries <span class="tag">first-party</span></td><td>The Unified Compliance Framework splits each authority document into citations, each citation into single mandates, and maps each mandate to a common control, recording ambiguities as open questions for the issuer <span class="ev">[17]</span>. A UK regulators' pilot found no method yet turns natural-language rules into code at scale, and that even unambiguous rules need human assumptions <span class="ev">[18]</span>.</td><td>The regulatory obligations inventory and control library as the shape of Layer 2. Interpretation is done once, by people, and reused; the agent classifies against interpretations and does not make them.</td></tr>
+<tr><td>Anthropic's legal plugin <span class="tag">first-party</span></td><td>A launch-review skill reads a PRD or ticket and walks eight categories, each with a key question and an explicit auto-skip condition, calibrated against the organisation's ten most recent launch reviews <span class="ev">[19]</span>. No outcome measures are published.</td><td>The closest public analogue to Screen and Find precedent. Calibration on what actually blocked and what shipped.</td></tr>
+<tr><td>Elicitation research <span class="tag">independent</span></td><td>An interview agent covered up to 73.7% of ground-truth requirements, with mistake rates similar to trained student interviewers <span class="ev">[20]</span>. On a 2026 benchmark the best model elicited 32% of implicit requirements, and probing questions beat clarifying ones <span class="ev">[21]</span>.</td><td>Free conversation misses most unstated requirements. Elicit chooses each question from the domain list and the open facets, rather than chatting.</td></tr>
+</table></div>
+<p>What was not found: a public case study of an agent in a bank's or insurer's new product approval, a primary description of Google's privacy and legal launch approvals, and accuracy evidence for any commercial obligation-extraction or requirements-quality tool.</p>
+
+<h2 id="open">12. Open questions</h2>
+<p>These are left open. Each says what would answer it.</p>
+<ol>
+  <li><strong>The universal domain list.</strong> Which domains does every change in this organisation screen, with what triggers and which owner? Answered by a workshop with the owners of the anchor reviews and a review of the last year's late additions.</li>
+  <li><strong>The partition of the register.</strong> Source class first with attribute second, or the reverse, or by validator? The project's lean is source first, because it says where to look and whom to ask on day one <span class="ev">[7]</span>; the share of requirements with a verified source chain after a quarter would confirm or overturn it.</li>
+  <li><strong>The stance.</strong> Does interrogating first and drafting later produce better registers than drafting first and asking second? No evidence exists for product work; running the same intents both ways would answer it.</li>
+  <li><strong>The class of change simple enough to ratify by policy</strong>, and whether audit accepts a ratification under an agent identity. Answered by risk, audit and the second line.</li>
+  <li><strong>How often the delivery path changes a requirement.</strong> If often, the two agents should interleave per requirement; if rarely, they can run in sequence. Answered by running the pilot interleaved and counting.</li>
+  <li><strong>Packaging.</strong> One agent with two modules, two agents sharing a record, or skills in a general harness. The project's handoff research and a bake-off against a no-agent baseline would decide it.</li>
+</ol>
+
+<footer>
+  <p><strong>Sources.</strong> Links go to the project's source notes and design documents on GitHub, each of which links to its original.</p>
+  <ol>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/geoff-building-accelerating-intent-factory.md">Building and accelerating the intent factory</a> (first-party position)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/fca-implementing-technology-change.md">FCA, Implementing technology change</a> (regulator)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/geoff-intent-shaping-well-managed-environment.md">Intent shaping in a well-managed environment</a> (first-party position)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/research-skill-rigidity-spectrum/03-design-guide.md">Skill rigidity spectrum: design guide</a> (project synthesis)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/microsoft-insidetrack-copilot-works-councils.md">Microsoft on works councils and Copilot</a> (first-party)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/arxiv-darif-leredd-requirement-dependencies.md">LEREDD: automating the detection of requirement dependencies</a> (independent)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/define-shaping-and-dependency-agents/01-requirements-taxonomy.md">The requirements taxonomy</a> (project design)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/define-shaping-and-dependency-agents/09-sdd-compatibility.md">Ready for spec-driven development</a> (project design)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/federalreserve-sr-11-7-model-risk-guidance.md">Federal Reserve SR 11-7, model risk management</a> and <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/ico-when-do-we-need-a-dpia.md">ICO, when do we need a DPIA</a> (regulators)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/occ-bulletin-2017-43-new-modified-expanded-products.md">OCC Bulletin 2017-43, new, modified and expanded products</a> (regulator)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/finra-ntm-05-26-reviewing-new-products.md">NASD Notice to Members 05-26, reviewing new products</a> (regulator)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/fca-fg22-5-consumer-duty-guidance.md">FCA FG22/5, Consumer Duty guidance</a> (regulator)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/google-sre-book-reliable-product-launches.md">Google SRE book, reliable product launches</a> (first-party)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/aws-operational-readiness-reviews-whitepaper.md">AWS, operational readiness reviews</a> (first-party)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/microsoft-rai-impact-assessment-template.md">Microsoft Responsible AI Impact Assessment template</a> (first-party)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/meta-upholding-commitment-privacy-ftc-2023.md">Meta, upholding our commitment to privacy</a> (vendor claim)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/ucf-mapping-report-nist-csf-1-1.md">Unified Compliance Framework mapping report</a> (first-party)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/fca-boe-digital-regulatory-reporting-pilot-phase-1.md">FCA and Bank of England, digital regulatory reporting pilot</a> (regulator)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/github-anthropics-claude-for-legal.md">anthropics/claude-for-legal</a> (first-party)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/arxiv-korn-llmrei.md">LLMREI: an LLM requirements elicitation interviewer</a> (independent)</li>
+    <li><a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/research/sources/arxiv-jin-reqelicitgym.md">ReqElicitGym</a> (independent)</li>
+  </ol>
+  <p>This paper condenses and extends the project's definition of the intent-shaping module: <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/define-shaping-and-dependency-agents/05-concept-intent-shaping.md">concept brief</a>, <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/define-shaping-and-dependency-agents/02-structured-inquiry.md">structured inquiry</a> and <a href="https://github.com/dudgeon/product-agent-and-harness/blob/main/tasks/define-shaping-and-dependency-agents/03-context-layer-model.md">context-layer model</a>. Written with Claude (Anthropic) agents directed by Geoff Dudgeon.</p>
+</footer>
+</main>
+</body>
+</html>
