@@ -2325,6 +2325,7 @@ Agent memory built on first connection, refreshed by a periodic pipeline, read-o
 
 ## meta-harness: Meta harness
 A layer that runs, governs or abstracts over several harnesses.
+- [Web UI (Omnigent documentation)](sources/omnigent-docs-web-ui.md): the web app is one client of several on the same session. (film-omnigent-canvas-coach)
 - [Scaling Managed Agents: Decoupling the brain from the hands](sources/anthropic-engineering-scaling-managed-agents.md): harness is explicitly treated as replaceable behind stable interfaces ('brains' stateless, 'hands' = execute(name,input)->string); cited example: context resets needed for Sonnet 4.5 became unnecessary with Opus 4.5 (research-agent-runtime-patterns-taxonomy)
 - [CData on Managed Agents](sources/cdata-claude-managed-agents-meta-harness.md): independent-ish: frames Managed Agents as a meta-harness and lists lock-in, memory/trace portability and reliability as trade-offs. (research-agent-runtime-patterns-taxonomy)
 - [Harness Engineering: ... Eleven Systems](sources/arxiv-harness-engineering-eleven-systems.md): independent: Omnigent analysed as the first meta-harness; claims harnesses are becoming importable SDKs while framework vendors ship harnesses (research-agent-runtime-patterns-taxonomy)
@@ -3435,6 +3436,10 @@ Change advisory, architecture review, security, privacy, model risk, third-party
 
 ## product-artifact-primitives: Native PM artifact objects and project containers across platforms
 What each platform treats as its first-class product-work objects (idea, initiative, project, space, spec, insight, document, skill) and how a 'project' is bounded. Matters for deciding whether a product meta-harness defines its own primitives or maps onto existing ones.
+- [Web UI (Omnigent documentation)](sources/omnigent-docs-web-ui.md): Omnigent's Canvas is a board of session cards, one canvas per project, off by default; the objects on it are sessions, not product artifacts. (film-omnigent-canvas-coach)
+- [feat(web): open Canvas sessions in a split chat panel (omnigent-ai/omnigent #7431)](sources/github-omnigent-canvas-split-chat-pr-7431.md): the board and a session's chat sit side by side (board, divider, chat), but the chat does not write to the board. (film-omnigent-canvas-coach)
+- [feat(web): add a flagged whiteboard to Canvas (omnigent-ai/omnigent #13111)](sources/github-omnigent-canvas-whiteboard-pr-13111.md): a draft adds hand-drawn frames, notes and arrows to the board; nothing is agent-generated or templated. (film-omnigent-canvas-coach)
+- [[Feature] Canvas teams: a team lead that coordinates agents across a project's sessions (omnigent-ai/omnigent #12446)](sources/github-omnigent-canvas-teams-issue-12446.md): a request to make a project's Canvas tab the board for a team of agents. (film-omnigent-canvas-coach)
 - [Spotify Rhythm: How we create focus](sources/kniberg-spotify-rhythm.md): the bets board was a Google Sheet open to all; cascading company, product and tribe boards (slides 13-16) (research-airbnb-spotify-product-practices)
 - [From Gut to Plan: The Thoughtful Execution Framework](sources/spotify-design-thoughtful-execution-framework.md): tree shipped as PDF, Figma and MURAL templates (research-airbnb-spotify-product-practices)
 - [Scorecards: Creating Alignment Throughout the Process](sources/spotify-design-scorecards-alignment.md): Understand It Brief and Scorecard templates with fail, success and surpass levels (research-airbnb-spotify-product-practices)
