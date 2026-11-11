@@ -108,6 +108,7 @@ All are 16:9 and play on the [site](https://dudgeon.org/product-agent-and-harnes
 | [06 · Ramp Glass, taken apart](films/06-ramp-glass.mp4) | The Glass teardown, with Ramp's claims labelled as first-party |
 | [08 · Shaping intent: the options](films/08-intent-shaping-options.mp4) | The five intent-shaping dimensions (who shapes intent, what counts as ready, review gating, context location, investment sequencing) |
 | [09 · Stripe, taken apart](films/09-stripe-teardown.mp4) | Kai, Agent Studio, Trailhead, Orbit, Minions, the whiteboard chain and the verdict on context creation |
+| [19 · A coach with a canvas](films/19-omnigent-canvas-coach.mp4) | A concept: a product coach in Omnigent's chat that draws prototypes, decisions and plans on a canvas beside it; skills that know their surface can do more. Invented bank and team. |
 
 ## What is left out of the public repo
 
