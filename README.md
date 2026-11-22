@@ -4,13 +4,22 @@ Research and strategy work on agent harnesses for product work. The question is 
 
 The site is at [dudgeon.org/product-agent-and-harness](https://dudgeon.org/product-agent-and-harness/) ([index.html](index.html)): the films and the lifecycle maps in one place.
 
+## Start here
+
+1. **Watch** [film 04](films/04-product-agent-harness-v2.mp4), the strategy story in about 15 minutes, or read its [story](tasks/strategy-story-and-explainer-video/01-story.md).
+2. **Read the menu:** [options/DIMENSIONS.md](options/DIMENSIONS.md), the options for each dimension and the key questions that would decide among them.
+3. **Go deeper** through the [deliverables](#deliverables) below, each of which links to the source notes it rests on; the [research index](research/INDEX.md) lists every source and the [theme register](research/THEMES.md) the recurring ideas.
+4. **To work in the repo** (a person or a Claude session), read [CLAUDE.md](CLAUDE.md) first: the project's framing, layout and working rules, with pointers to the rule files.
+
 ## What this is for
 
 The project builds a **menu of options, split by dimension**, with the **key questions** that would decide among the options in each. It is not a PRD for one implementation, and it does not converge on one answer. Where the evidence leans, the lean is written down along with what would change it.
 
 Dimensions cover both runtime and architecture choices (who supplies the agent loop, where it runs, how capability is packaged, how sessions are shared, how review is gated) and user and product choices (which users, which jobs first, what outcome, how adoption happens). The reference job is **intent shaping**: turning an opportunity into a spec that coding agents can act on, in a regulated setting where audit matters.
 
-The phases are research, concepts, prototypes to settle certain dimensions, competitive teardowns as needed, and explainer films. Research and teardowns are largely done and the films are made; prototypes have not started. Every date in this repo is 2026.
+The story is one of ambition: coding is already scaling, and the opportunity is to scale problem discovery, intent definition and shaping with it.
+
+The phases are research, concepts, prototypes to settle certain dimensions, competitive teardowns as needed, and explainer films. Research and teardowns are largely done, the two product modules (intent shaping and delivery dependency mapping) are defined and the requirements agent has a high-level design, and the films are made; prototypes have not started. Every date in this repo is 2026.
 
 ## How the folder is organised
 
@@ -22,9 +31,10 @@ The phases are research, concepts, prototypes to settle certain dimensions, comp
   - [build.py](research/build.py): regenerates INDEX.md and THEMES.md from the notes and theme files.
 - [options/](options/): the options register, under the rules in [options/README.md](options/README.md).
   - [DIMENSIONS.md](options/DIMENSIONS.md): the register itself. Each dimension has an options table (examples, what it gives, what it costs, maturity, evidence links) and numbered key questions, and there are cross-cutting questions at the end.
-- [tasks/](tasks/): one folder of deliverables per piece of work, listed below.
+- [tasks/](tasks/): one folder of deliverables per piece of work (`tasks/<slug>/`), listed below. Numbered files (`00-…`, `01-…`) are the reading order; a `.build.py` beside an `.html` page generates it.
 - [films/](films/): the explainer films shown on the site.
-- [scripts/](scripts/): `public-check.sh` (checks what would be published) and `strip-full-text.py` (the git filter that removes third-party full text on commit).
+- [scripts/](scripts/): repository checks, described in [scripts/README.md](scripts/README.md).
+- [CLAUDE.md](CLAUDE.md): how to work in the repo.
 
 ## Deliverables
 
@@ -66,6 +76,22 @@ Deliverables: [brief](tasks/research-airbnb-spotify-product-practices/00-brief.m
 **Block (Square) product practices and Goose**
 Deliverables: [brief](tasks/research-block-product-practices/00-brief.md), [lifecycle map](tasks/research-block-product-practices/01-pdlc-block.md).
 
+**Shared, persistent agents**
+The interactions that shared, persistent agents make possible and how they drive speed and quality, grounded in the teardowns. "Shared and persistent" is four separable properties (where the session runs, what survives, whose authority the agent uses, who can see and join), and each interaction needs a different subset; every combination is shipping somewhere.
+Deliverables: [synthesis](tasks/research-shared-persistent-agents/01-synthesis.md), [interactions page](tasks/research-shared-persistent-agents/02-interactions.html).
+
+**The skill rigidity spectrum**
+How skills and agents encode product work from rigid and deterministic to loose and judgment-driven. One slider is the wrong picture: rigidity is set per step, on seven dimensions (path, check, standard, rights, stance, record, loop), and a skill is described by its profile. A rigid gate is only rigid if it is built fail-closed and runs before the side effect.
+Deliverables: [contents](tasks/research-skill-rigidity-spectrum/00-README.md), [synthesis](tasks/research-skill-rigidity-spectrum/01-synthesis.md), [dimensions page](tasks/research-skill-rigidity-spectrum/02-dimensions.html), [design guide](tasks/research-skill-rigidity-spectrum/03-design-guide.md).
+
+**The dependency agent**
+Dependency management in large, matrixed, platform-centric, regulated organisations: what it is today, its challenges and value, a destination agent, a two-axis maturity model, an MVP (the map-ask-record loop), a taxonomy of dependencies by the act that resolves them, and a notional agent-user dialogue. 168 source notes.
+Deliverables: [summary](tasks/research-dependency-agent/00-summary.md), [concepts](tasks/research-dependency-agent/01-dependency-management-today.md), [challenges](tasks/research-dependency-agent/02-challenges.md), [value](tasks/research-dependency-agent/03-value.md), [destination](tasks/research-dependency-agent/04-destination.md), [maturity model](tasks/research-dependency-agent/05-maturity-model.md) ([page](tasks/research-dependency-agent/08-maturity-model.html)), [MVP](tasks/research-dependency-agent/06-mvp.md), [film brief](tasks/research-dependency-agent/07-film-brief.md), [taxonomy](tasks/research-dependency-agent/09-dependency-taxonomy.md), [dialogue](tasks/research-dependency-agent/10-dialogue.md) ([mockup](tasks/research-dependency-agent/10-dialogue.html)).
+
+**Agent handoff and orchestration models**
+How work should move between general-purpose coding harnesses and the two product modules: a finish-to-start relay or a through line kept by the person's own agent. The choice that matters sits under both: what crosses each seam and where the record lives. Relays copy well and correct nothing, so someone has to verify at each seam; production systems coordinate through a shared record rather than an agent protocol.
+Deliverables: [synthesis](tasks/research-agent-handoff-models/01-synthesis.md), [patterns page](tasks/research-agent-handoff-models/02-patterns.html).
+
 ### Teardowns
 
 **Ramp Glass**
@@ -80,10 +106,18 @@ Deliverables: [teardown summary](tasks/competitive-teardown-shopify-river/00-tea
 Kai, Stripe's company-wide agent for people who don't write code, with Agent Studio for domain owners, Harbor for prototyping, and compliance review agents. A second pass sourced the Opportunity → Problem → Goal → Intent → Plan → Code chain to a whiteboard in a Stripe video, and tested the hypothesis that a context creation agent is needed: the need is well supported, but no company found runs a dedicated capture agent; capture happens as a by-product of work, with a human owner verifying it.
 Deliverables: [teardown summary](tasks/competitive-teardown-stripe-knowledge-agents/00-teardown-summary.md), [lifecycle map](tasks/competitive-teardown-stripe-knowledge-agents/02-pdlc-agent-ecosystem-map.md).
 
+**Uber's Cortana**
+Cortana is Uber's internal company-wide AI assistant, one of six building blocks of what Uber calls its software factory: one assistant for anyone, on Slack, the command line and the web, grounded in a context graph, personalised into team personas, and used for shaping and planning before it hands off to Minion, Uber's cloud coding agent. Only a conference talk and a podcast describe it, both first-party.
+Deliverables: [teardown summary](tasks/competitive-teardown-uber-cortana/00-teardown-summary.md), [lifecycle map](tasks/competitive-teardown-uber-cortana/01-pdlc-uber.md) ([page](tasks/competitive-teardown-uber-cortana/01-pdlc-uber.html)).
+
 **Lifecycle across ecosystems** ([index.html](tasks/pdlc-cross-ecosystem-map/index.html), [method](tasks/pdlc-cross-ecosystem-map/README.md))
 All nine ecosystem maps in one frame: the matrix of tasks against ecosystems, where context breaks, a comparison by dimension, and the common gaps.
 
 ### Design and story
+
+**Two product modules: intent shaping and delivery dependency mapping**
+The working definition of two enterprise product capabilities, described as modules so that how they are packaged stays open, with one optional orchestrator. Their shared goal: faster, more efficient and higher-quality articulation of product intent, in a form spec-driven development can consume directly. The set covers the requirements taxonomy and structured inquiry both modules run, the context-layer model and trust criteria, a concept brief for each module, a staged roadmap, working-backwards narratives and what spec-driven compatibility means in practice.
+Deliverables: [overview](tasks/define-shaping-and-dependency-agents/00-overview.md), [requirements taxonomy](tasks/define-shaping-and-dependency-agents/01-requirements-taxonomy.md), [structured inquiry](tasks/define-shaping-and-dependency-agents/02-structured-inquiry.md), [context-layer model](tasks/define-shaping-and-dependency-agents/03-context-layer-model.md), [context trust criteria](tasks/define-shaping-and-dependency-agents/04-context-trust-criteria.md), concept briefs for [intent shaping](tasks/define-shaping-and-dependency-agents/05-concept-intent-shaping.md) and [dependency mapping](tasks/define-shaping-and-dependency-agents/06-concept-delivery-dependency-mapping.md), [staged roadmap](tasks/define-shaping-and-dependency-agents/07-staged-roadmap.md), [working backwards](tasks/define-shaping-and-dependency-agents/08-working-backwards.md), [spec-driven development compatibility](tasks/define-shaping-and-dependency-agents/09-sdd-compatibility.md).
 
 **The requirements agent: a high-level design**
 An enterprise requirements and intent-shaping agent for a large, platform-centric, regulated organisation: it takes a high-level idea and shapes it into one sourced requirements register covering the feature's own requirements and every enterprise obligation it must meet to ship, then hands it to the dependency agent. The layered model sets out the unstructured context it reads (by type), the governed data products it cites, the eighteen skills it runs in five phases, and the artifacts it generates or augments; the white paper says what it provides, how it prevents the missed domain, and how it is measured. It condenses and extends the intent-shaping module in [define-shaping-and-dependency-agents](tasks/define-shaping-and-dependency-agents/).
@@ -112,6 +146,6 @@ All are 16:9 and play on the [site](https://dudgeon.org/product-agent-and-harnes
 
 ## What is left out of the public repo
 
-Verbatim transcripts and full texts of third-party sources are omitted here: transcript files are not tracked, and a git filter strips "Full text" sections from source notes on commit. Each note links to its original. Working notes used to run the project stay local.
+Verbatim transcripts and full texts of third-party sources are omitted here: transcript files are not tracked, and a git filter strips "Full text" sections from source notes on commit. Each note links to its original. Working notes used to run the project stay local, and links to them are removed from the published copy, so a few deliverables mention a file you won't find here.
 
 Written with Claude (Anthropic) agents directed by Geoff Dudgeon. Third-party content belongs to its owners and is summarised and quoted for research.
