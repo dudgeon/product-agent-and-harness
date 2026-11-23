@@ -217,7 +217,7 @@ A first pass at what a bank would need to build or buy for the moves to work as 
 
 - **Problem discovery agent** (Sense, Investigate). Watches the outcomes and customer signals for an area, raises problems nobody asked about, and lays out competing explanations with the evidence for each. *Exists in part:* Flight Deck's `problem-discovery` skill, which runs when asked; nothing yet watches continuously.
 - **Customer research agent** (Investigate, Challenge). Recruits, runs consented structured interviews at scale, links every answer to its recording, and suggests who the person should meet directly.
-- **Prototyping agent** (Prototype). Builds working versions in safe copies of the real systems within hours.
+- **Prototyping agents** (Prototype). Build working versions within hours, in safe copies of the real systems where that matters. One per channel (web, app, branch screen, voice, letter and so on), reached through a single Prototype move: a default enterprise prototyper takes channel teams' design-system packs, and platform teams can own their own. *Exists in part:* designed in Flight Deck, not built.
 - **Challenge agent** (Challenge). Replays real history, runs simulations and the economics, tests for bias such as selection effects, and argues the other side when asked.
 - **Steward agents**, one per platform, journey or operational process (Sense, Design, Learn). Know their area, keep it running, fix small things, propose how a change fits, and work out connections with other stewards. *Related:* this project's dependency agent, which finds and asks the owners a change depends on.
 - **Coding agents** (Build). Write the production change and its tests from the intent and the design.
