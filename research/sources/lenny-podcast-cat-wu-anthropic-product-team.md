@@ -54,3 +54,11 @@ The head of product for Claude Code and Cowork describes, first-hand, how a fron
 - Cadence numbers (six months to a day), the 30-40 PM count, and the 20-30 minute deck saving are the speaker's own; no method given.
 - Anthropic is the vendor of the tools discussed; claims about Cowork's quality are first-party and promotional in context.
 - Regulated settings appear only in passing (a sales deck adds HIPAA/security slides for such customers, 43:12).
+
+## Added by research-future-of-product (2026-11-22)
+- Decisions without the PM rest on weekly team-wide metrics readouts plus written principles (key users, trade-offs); PRDs only for ambiguous or multi-month infrastructure work (09:12-10:05). Tag: B3.1.
+- Roles merge; Anthropic hires engineers with product taste, some going from feedback to ship in a week with almost no product involvement; "product taste is still a very rare skill" (16:15-17:27). Tag: team shape.
+- "As code becomes much cheaper to write, the thing that becomes more valuable is deciding what to write" (18:16); in the Cowork deck workflow the agent proposes outlines and she decides the narrative (39:25-40:07). Tag: B1.1, B1.2.
+- Ten good evals help a team quantify the goal; build products that do not yet work and swap in newer models to test whether the gap closed (53:32-55:46, 1:04:52). Tag: B2.1, B2.3.
+- Roadmap: tens to hundreds of concurrent remote tasks, triage interfaces, agents that verify to spec, self-improving feedback (1:06:30). Tag: B3.2, B4.2.
+- Cost of speed: users on a treadmill; "very hard to be the right amount of AGI-pilled" (26:41, 51:35).

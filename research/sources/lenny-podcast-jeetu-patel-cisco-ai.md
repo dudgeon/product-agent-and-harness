@@ -32,3 +32,9 @@ A large-enterprise (90,000 employees) top-down AI adoption story from Cisco's pr
 - Medium triage, downgraded to low after reading. Read show notes and takeaways in full; transcript read 5:13-15:34 and 31:49-35:31 and 1:20:33-1:23:11; rest searched for agent, PM, Codex, adoption and similar terms with no further hits.
 - No adoption metrics (usage rates, tools deployed) are given; the "100% written with AI" product is a forward-looking claim.
 - The Codex "team member" anecdote appears only in Lenny's takeaways.
+
+## Added by research-future-of-product (2026-11-22)
+- Large companies experiment but hedge when it works; Cisco declared AI-first and "didn't hedge", and told staff their success aligns with using AI (11:10-11:31). Tag: change management.
+- Be clear what is up for debate; in a large company "ask enough people and someone says no" (10:30). Tag: decision rights.
+- Treat the coding agent as a team member, not a tool; reframing came after three months of experimenting (21:17). Tag: B4.1.
+- Enterprise blockers named: adoption, a trust deficit from non-deterministic models, and a data gap (16:31-16:56). Tag: data quality, risk.

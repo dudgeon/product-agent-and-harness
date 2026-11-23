@@ -42,3 +42,7 @@ A mid-2026 practitioner framework for what "AI-native" PM work looks like: three
 - Screenshots of prompts and outputs (the PRD prompt, the cost model, the PostHog result, before/after changelogs) were images not in the text; described from the surrounding prose only.
 - The post launches the author's paid course; no data on how many PMs are on each rung beyond "most people are at this rung, or even lower".
 - Stride is a fictional product used for demos; no first-party company practice is described.
+
+## Added by research-future-of-product (2026-11-22)
+- Systems rung 2-3 (rubric, judge subagent, scheduled run) is the closest practice-level version of a durable record of intent: the rubric is a reviewable artifact with a rationale per check (systems ladder). Relevant to intent-to-market-traceability.
+- Intro claim that the coordination-and-alignment PM role "is fading" is Lenny's, in a post that launches a course; no outcome numbers. Limit: the post stops at the individual PM, not owner agents for platforms (pm-coordination-work-automated).

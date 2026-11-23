@@ -41,3 +41,8 @@ A vendor's account of the design choices behind a knowledge-work agent product t
 ## Could not verify
 - Show notes read in full; transcript read 0:00-23:45 and 27:48-53:00 in full; the recruiting, speed-culture, moats and lightning-round sections (24:00-27:48, 53:36-end) skimmed by search.
 - All adoption claims are the builder's; no usage numbers beyond onboarding counts and "99%". No enterprise governance, audit or admin controls discussed beyond Lenny's aside about SOC 2.
+
+## Added by research-future-of-product (2026-11-22)
+- A handful of people isolated for about a month; a larger group with a 6-12 month vision would not have got there (4:42-5:29). Tag: team shape.
+- "We unshipped a lot": removed exposed internals; "kill as many pixels as we can" since capabilities do not need UI; Lenny: AI is not good at telling you what to take out (19:21, 26:50, 28:43). Tag: B1.1, problem selection.
+- Bots get their own cloud computer, not the user's laptop and credentials, because colleagues would never share logins (30:28-32:39). Tag: identity and delegation.

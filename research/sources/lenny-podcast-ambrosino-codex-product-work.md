@@ -41,3 +41,9 @@ A first-party account from the lead of a major agent harness (the Codex desktop 
 - Medium podcast: read show notes and takeaways in full; transcript read 0:00-11:30, 21:38-56:30; design discussion (12:24-21:30) and lightning round skimmed by search.
 - "90 explorations", "3,000 Slack channels" and adoption by non-engineering functions are his own unquantified remarks. No numbers on Codex app usage given.
 - He leads a vendor product, so claims about its shape are partly promotional.
+
+## Added by research-future-of-product (2026-11-22)
+- Process runs 'backwards': implementation is cheap, so people make about 90 attempts and the work is curation and taste, not de-risking up front (0:50, 4:20-5:07). Scope: all.
+- Choose the medium: document for vague areas, prototype for interaction; polished prototypes tempt 'can we ship this now'; 'baby Codex', a simplified code base approximating the production app, for cheap exploration (7:17-9:32, 19:31-20:46).
+- Role collapse is real in the Codex org, yet he warns dropping roles drops specialties with best practices ('use Excel but cannot work on the finance team', 21:38-26:52). Product is 'a zone defense play' with a few product people (28:07).
+- Top-down year-long planning 'not going to work' when ideas arrive chaotically (29:22). Taste includes systems thinking and wider context; models will get good at design but novelty and semantics are harder (10:46-15:14). Managers must tell signal from noise with unlimited tokens (31:14).

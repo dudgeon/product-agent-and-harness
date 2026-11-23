@@ -50,3 +50,9 @@ The head of the most-used coding harness describes, first-hand, how his own team
 - 200% PR productivity, 4x team growth, 4% of GitHub commits, DAU doubling, revenue figures: speaker's or host's own numbers, no method stated. "200%" is measured in pull requests, which conflates volume with value.
 - "Coding is solved" is stated for "the kinds of programming that I do"; no evidence offered for enterprise or regulated codebases.
 - The 48/50 Cowork eval is an anecdote with no detail on the grading.
+
+## Added by research-future-of-product (2026-11-22)
+- Next roles hit: PM, design, data science, then any computer work (36:23-37:46). PM residual: "coordination or planning or forecasting"; roles overlap about 50%; engineer title may become "builder" (42:46-43:26). This sits against the view that coordination is what gets automated.
+- "In a year or two" knowing code won't matter, though today you must understand the layer below; printing-press analogy (32:27-33:38).
+- Latent demand as the way to pick problems: Marketplace from buy-and-sell groups, Cowork from non-coding use (47:55-50:59).
+- Build for the model six months out; fit will be poor for six months (1:06:37). AI-product only: does not carry over to deterministic systems.

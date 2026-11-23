@@ -42,3 +42,9 @@ Two practitioners with enterprise deployment experience argue that agents should
 - Transcript read 5:16-1:12:07 in full; intro and lightning round skimmed. Auto-transcription errors ("Kodex", "Cloud Code").
 - Lenny's written takeaways add points (confidence-score UX, treating prompts as versioned CI/CD artifacts, startup vs enterprise playbooks) that I did not find in the transcript sections read; treat those as the show notes' gloss.
 - "50+ deployments", the 74-75% reliability figure (attributed to a paper by Matei Zaharia's group, linked in the show notes), and the underwriting time gains are the guests' statements; no data shown. The method behind CC/CD is set out in an earlier guest post ("Why your AI product needs a different development lifecycle") not filed here.
+
+## Added by research-future-of-product (2026-11-22)
+- PM, engineer and data handoffs are replaced by one shared feedback loop; they read agent traces together (6:57). Scope: AI-product.
+- 74-75% of enterprises in a Berkeley/Databricks paper cite reliability as the top barrier, so deployed AI is mostly low-autonomy (21:45). Scope: AI-product.
+- Undocumented enterprise rules (a taxonomy node last updated in 2019) are why agents stall (52:39); this applies to agents building products on any system, so scope: all.
+- Culture: subject-matter experts refuse to help when they fear replacement; leaders must rebuild intuitions hands-on (26:42-28:27). 'Building is cheap, design is expensive' (1:04:22).

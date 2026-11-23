@@ -38,3 +38,9 @@ An organisational-leadership view of what delegating to agents costs the people 
 ## Could not verify
 - Show notes and takeaways read in full; transcript read by search for delegation, oversight, intern, judgment, taste, agents and review (roughly 35:00-50:00 and 1:00:00-1:07:00 read closely); the rest (grief, loneliness, careers) skimmed.
 - Burnout figures come from Lenny's own survey; method not given here. Graham's views are opinion from leadership coaching, not measured data.
+
+## Added by research-future-of-product (2026-11-22)
+- Human side: engineers grieve lost hands-on work ("I like rowing"); a product leader called being a "universal builder" lonely; stripping management layers plus productivity pressure leaves "less room for the human" at bigger companies (21:00-23:37). Scope: all products.
+- Secondhand data point: an engineering report she cites shows lines needing rewrite up 8x and security incidents up as productivity rose; productivity is not efficiency (39:05).
+- "Expected to do more for the same pay" is exhausting; AI-branded layoffs are mostly poor management (32:06, 49:28).
+- Asks "fundamentally, what is product management?", defined differently at each company (58:51).

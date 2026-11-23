@@ -36,3 +36,8 @@ OpenAI's head of product design says engineers got "10 or sometimes 100X" produc
 ## Could not verify
 - Show notes and takeaways read in full; transcript read 0:00-13:30, 18:12-36:31, 41:57-48:05, 55:34-57:00; the rest (imposter syndrome, mentors, lightning round) skimmed by search.
 - "10x/100x" engineer productivity is from OpenAI internal surveys, method not given. Vendor discussing its own products.
+
+## Added by research-future-of-product (2026-11-22)
+- Engineers see 10x-100x output, design does not, because the design process has a feedback loop and alignment overhead in a bigger company (0:43, 4:24-5:23). Tag: B2.3.
+- At a larger company an excellent PM still rallies teams, sharpens the problem space and does resourcing; roles blur but stay distinct; at a startup hire generalists (19:12-21:26). Tag: team shape.
+- Human point of view and judging "what good is" for novel interactions will stand out as more gets made; "do less", reuse components (24:05-26:50, 32:08). Tag: B1.1, B1.2.

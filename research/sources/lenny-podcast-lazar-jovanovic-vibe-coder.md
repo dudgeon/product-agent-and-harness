@@ -35,3 +35,9 @@ A concrete agent-ready intent stack from a non-engineer who ships production app
 
 ## Could not verify
 - Transcript read 5:47-9:00, 18:08-19:38, 27:21-55:25, 1:00:56-1:01:05 and 1:19:33-1:22:34; the rest was skimmed by search. "At least half of S&P 500" companies having Lovable users is a vendor-employee claim (53:23). There's no evidence that the four-PRD approach beats alternatives.
+
+## Added by research-future-of-product (2026-11-22)
+- 80% planning, 20% executing; four PRD-style sources of truth plus tasks.md; parallel builds of a vague idea with the obvious winner picked by eye (13:12, 24:36-35:39). Tag: B2.1, B2.2, B5.1.
+- "We will not be rewarded for faster raw output; we will be rewarded for better judgment" (20:20). Tag: B1.1.
+- "Demo, don't memo": prototype in 30 minutes and hand it over; vendor says customers in regulated sectors use it for internal tools they cannot push to production (52:00-53:50). Tag: B2.1 (vendor claim).
+- Elite engineering still needed for maintenance and infrastructure when everyone builds; "vibe coding is just coding in 12 months" (1:01:05, 1:03:27).

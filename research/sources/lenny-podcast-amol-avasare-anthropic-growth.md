@@ -46,3 +46,10 @@ A first-party account of how one AI-native product org (Anthropic's roughly 40-p
 - CASH win rate is qualitative ("junior PM"); no numbers on volume, revenue impact or eval method. "Prints money" is his characterisation.
 - The 2-3x engineer leverage (five behaving like 15-20) is his estimate, not a measured figure. ARR figures are public numbers as quoted in the episode (February 2026).
 - Speaker is an Anthropic employee describing Anthropic products; vendor interest applies to the Cowork usage examples.
+
+## Added by research-future-of-product (2026-11-22)
+- Role and ratio: engineers get 2-3x from Claude Code, so a pod of five engineers, one designer and one PM behaves like 15-20 engineers with the same PM and designer; PM and design are 'absolutely squeezed' (43:15-44:26). Rule: projects of two engineering weeks or less, the engineer acts as the PM (talks to security and legal); larger ones keep the PM accountable (45:29-46:19). Scope: all products.
+- PRDs: 60-80% of shipped work has none; cross-functional kickoff kept for important work (51:29-54:45). Scope: all.
+- Coordination: shipping at bigger companies is constrained by cross-functional coordination; AI on Slack found major cross-team misalignments (1:04:57); stakeholder management is the last un-automated PM piece for large projects (37:03-37:31). Scope: all.
+- CASH automated growth experiments: win rate like a junior PM of 2-3 years, small scope so far (34:16-36:24). Big swings now 70/30 or 50/50 over micro-optimisation (26:11); that part is AI-product specific and carries over only weakly to stable deterministic products.
+- Dissent: 'SaaS is dead' partly overblown (1:30:58); at larger organisations whether roles merge is 'still very much out' (42:24).

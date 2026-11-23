@@ -48,3 +48,6 @@ Block's CTO, in the fullest first-party account of how Block runs: a functional 
 - No method behind the 8-10 hours (self-reported) or the 20-25% composite; no baseline or period.
 - The CTO intro says he oversees "over 3,500 people"; the show notes say "more than 4,000 engineers": figures differ within the page.
 - An earlier pass (2026-10-24, research-pm-agents-jobs-to-be-done) read only the paywalled page's chapter list; this rewrite (2026-10-24, research-block-product-practices) is from the full transcript read through a paid subscription. Transcript is auto-generated ("games" = gains).
+
+## Added by research-future-of-product (2026-11-22)
+- Block's enterprise risk team built a self-service risk system ('weeks of work into hours', 16:03): the closest regulated-finance practice in this source. AI weak on senior architecture and large legacy codebases (16:03, 20:52): a caution for bank estates (product-team-shape-future). Build-many-discard-most overnight runs (32:32-36:59) bear on idea-slate-validation-loops.

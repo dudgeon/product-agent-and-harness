@@ -38,3 +38,6 @@ A Microsoft AI platform executive's view across its enterprise customers of how 
 ## Could not verify
 - Show notes and takeaways read in full; transcript read 9:12-39:52. The opening (product as organism, post-training economics, 0:00-9:12) and the RL and lightning-round sections (42:10-end) are covered only via the show-note takeaways.
 - Numbers (15,000 customers, millions of agents, 70,000 tools, 83% acceptance) are Sharma's own; she corrected the agent count on air. The episode title's "80,000 companies" is not explained in the parts read.
+
+## Added by research-future-of-product (2026-11-22)
+- 'Org chart becomes the work chart' with tasks routed to a human or agent (20:47-23:33) is the nearest statement to owner-agent-per-process; she calls it speculative. Docs fading into artifacts (28:59) raises a question for intent-to-market-traceability: the new artifacts must keep the link to intent.

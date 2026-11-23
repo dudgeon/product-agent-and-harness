@@ -35,3 +35,6 @@ The CEO's account of Intercom's company-level turn to AI: an existing ML team ha
 - Medium triage; show notes and takeaways read in full; transcript read 5:10-12:34, 26:12-35:52, 40:35-45:00, 50:38-54:00, 1:12:58-1:14:00; the rest (pricing detail, personal story, lightning round) skimmed by search.
 - All growth and benchmark figures are the CEO's claims; the "fastest-growing public software company" forecast is a prediction (1:13:10).
 - Recorded August 2025; Fin and Intercom figures will have moved since.
+
+## Added by research-future-of-product (2026-11-22)
+- 'A medley of humans and agents' with leaders configuring and monitoring agents (42:08): supports owner-agent-per-process at personal scope; no accountability model offered.

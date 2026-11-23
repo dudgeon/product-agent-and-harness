@@ -37,3 +37,9 @@ A non-technical PM at Meta shows the structured workflow he uses to build and sh
 ## Could not verify
 - Show notes and takeaways read in full; transcript read by search for slash commands, review, Linear, context, docs, Meta and the large-company question (roughly 14:00-58:00 read in parts); interview-prep and career sections skimmed.
 - The workflow is for his own side projects, not Meta's process; Meta is his employer, not the subject. Revenue and user numbers are his own.
+
+## Added by research-future-of-product (2026-11-22)
+- Verification: several different models review each other's code; the main agent is told as "dev lead" not to take other reviewers at face value and decides (39:08-45:04). Tag: B3.2.
+- Each failure becomes a documentation/tooling fix by asking the agent what in its prompt or tooling caused it (45:52-46:31). Tag: B4.2.
+- Junior PMs can "play at a higher level" and get reps on strategy and messaging via side projects; "best time to be a junior" (56:13-56:39, 1:06:25). Tag: junior pipeline.
+- At a bigger company the path needs persuading sceptical developers; teams that invest in the workflow will be a few years ahead (53:14).

@@ -42,3 +42,8 @@ The head of Instagram describes, first-hand, a 2026 change to Meta's canonical p
 - Whole transcript read (Substack auto-transcription; speaker labels are SPEAKER_00/01). No numbers on how many pods exist, how many PMs became product staff, or outcomes; the shift is described as starting "this year".
 - "Internal tools" that let product staff do analysis are not named or described.
 - The lab-engineer claim is second-hand ("if you talk to anybody in these labs").
+
+## Added by research-future-of-product (2026-11-22)
+- Junior pipeline: specialists should be senior or on the way; do not hire no juniors, "who's going to be the new super senior data scientists?"; generalist is the soft landing; "you're going to regret it in a couple years" (12:44). Scope: all products.
+- Hedge: "don't be overly confident in whatever your predictions are, there's just too much flux" (13:36).
+- "Long on designers" because taste is hard to automate (07:53-08:28).

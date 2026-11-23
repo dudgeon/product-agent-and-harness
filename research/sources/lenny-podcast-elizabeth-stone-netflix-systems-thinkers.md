@@ -40,3 +40,9 @@ Netflix's CPTO gives a large-company operating-model view: an AI "storming phase
 ## Could not verify
 - Show notes and takeaways read in full; transcript read 3:44-31:16 and 52:54-58:48. Culture and keeper's-test sections (39:00-52:00), entertainment and the lightning round skimmed by search.
 - No tools, numbers or adoption figures given; claims are descriptive.
+
+## Added by research-future-of-product (2026-11-22)
+- Roles blur but functions keep comparative strengths: PM frames the what, engineering the how, data science whether data can be trusted; "great engineering to be scarce" (11:03, 0:26). Tag: team shape.
+- Aim prototypes: PMs and designers can go farther in the lifecycle before engineering, but "thousands of prototypes" without a business problem are a risk (8:13). Tag: B2.1, B2.2, problem selection.
+- Netflix vision: so many agents that the org must "reason and rationalize" the work; humans guide the problem and judge quality; tribal knowledge fails at thousands of people (19:03-19:38). Tag: B4.1, B5.2.
+- Control-light culture: talent density, context not control, decisions pushed down, no extra process when planning is hard (39:13-46:41); an uncomfortable fit for a regulated bank.

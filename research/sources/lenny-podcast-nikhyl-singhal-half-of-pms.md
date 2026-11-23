@@ -38,3 +38,9 @@ A well-connected observer of ~125 heads of product describes how the PM job is s
 ## Could not verify
 - Show notes and takeaways read in full; transcript read 12:04-23:13, 30:52-35:56, 49:37-52:42, 58:59-1:02:10 and 1:09:20-1:18:50. Career-advice sections (37:00-49:00, 53:00-58:00, 1:03:00-1:08:00) and lightning round skimmed by search.
 - No companies named for "fully automated product reviews/standups"; the 30,000/8,000 and "half of PMs" figures are illustrative predictions. The hiring "report" he refers to (24:29) is a Lenny survey not read here.
+
+## Added by research-future-of-product (2026-11-22)
+- "Information movers" are about half of product people and the at-risk half; pre-AI the PM day was moving information, "responsibility without authority" (03:45-04:47, 25:27). By anecdote, not measurement.
+- Legacy estates: expects AI to fix neglected software including COBOL and mainframe code, so tolerance for bad software falls (17:32-20:00). No control story for change risk; relevant to a bank with mainframes.
+- 10 to 100 times more proposed changes means judgment over a flood; "you can't build a hundred custom versions of the same product" (15:29-15:57).
+- Hiring now tests tools and judgment in scenarios; diversity may take "a step back"; pace "feed the beast" raises burnout (35:24-37:44).

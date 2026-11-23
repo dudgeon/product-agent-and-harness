@@ -35,3 +35,8 @@ First-party numbers from inside OpenAI's API engineering org. 95% of engineers u
 
 ## Could not verify
 - Transcript read 0:00-23:33, 37:40-52:05 and 1:05:37-1:08:17; the rest (management philosophy, startup advice, lightning round) was skimmed by search. The 95%, 100%, 70% and 2-3 minute figures are spoken; the method behind them isn't given. He says the code-authorship share is hard to attribute and he "wouldn't make the statement" that 100% of production code is AI-written (19:08). The negative-ROI claim is his impression, explicitly not quantitative (37:59).
+
+## Added by research-future-of-product (2026-11-22)
+- Review moves, not disappears: Codex reviews 100% of PRs; review time falls from 10-15 to 2-3 minutes; human attention 'from 100% to 30%', with care over which PRs go without a human (4:21, 16:24-18:03). One team maintains a 100% Codex-written code base with no escape hatch (13:05). Scope: all (agents building).
+- Managers will run teams well above 6-8 using tools wired to organisational knowledge (21:20-22:50); top performers get disproportionately more productive (19:48-23:33).
+- Adoption needs top-down buy-in plus bottom-up adoption; pure mandates leave a workforce that does not understand the technology (40:02-43:39). Business-process automation outside tech is the most underrated area (53:47-56:35). 'We live in a bubble' (38:35) is a pace caveat.

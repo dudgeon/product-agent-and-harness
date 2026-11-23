@@ -39,3 +39,10 @@ A CPO of a large consumer marketplace (over $8B GMV, about 21-22 PMs) describes 
 ## Could not verify
 - Show notes and takeaways read in full; transcript read 8:46-21:00, 25:52-27:00, 35:22-49:00 and 1:15:59; rest (Twitter and Twitch stories, accordion model, agentic commerce, lightning round) skimmed by search.
 - Productivity comparisons (Hex vs L7 analyst) are the speaker's own; no measurement offered.
+
+## Added by research-future-of-product (2026-11-22)
+- Planning: every six months the CEO, CPO and leads define "what needs to be true", then a named DRI (PM, engineer or designer) is assigned to each item; orphaned items are given a PM on the spot (15:54-16:28). Supports named accountable owners (B1.3).
+- Senior leaders deciding directly saved "a kickoff meeting, an alignment meeting, a week writing PRDs, experiment time" (32:07); PM managers spend 90%+ of time on IC work (23:04).
+- Headcount: "fewer of for the same output doesn't necessarily mean fewer in macro"; he would be surprised by a net decrease because teams build more (43:07).
+- Keeps PMs where there is a specific need ("you don't hire a PM just for the sake of hiring one", 09:41); contrasts with Rabois's "the PM makes no sense in the future" (lenny-podcast-keith-rabois-hard-truths-ai-era).
+- Scope: all products; consumer marketplace, not regulated.

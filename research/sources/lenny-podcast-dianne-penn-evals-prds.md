@@ -48,3 +48,8 @@ The clearest first-party statement from inside a lab of "evals are the new PRDs"
 - The 80% JSON figure and the 99.9-100% eval scores are her recollection, not shown.
 - The eval-as-spec practice is described for a research PM team whose product is the model; no evidence here on how far it is used by Anthropic's application product teams.
 - Sponsor reads removed from consideration.
+
+## Added by research-future-of-product (2026-11-22)
+- Managers must be hands-on and own one or two workstreams per model release; tenured hires get the same onboarding as juniors (50:19-51:40). Hiring loop unchanged for three years (40:04).
+- Strongly held theme, weakly held prototype; parked bets revisited one or two model generations later (24:29-26:56). 'Evals as the new PRDs' is AI-product specific (model behaviour); for deterministic systems acceptance tests and requirements remain the spec.
+- Sign-off matters more than authorship for recurring reports (1:01:38, 1:08:29). Judgment is experience-bound and humans still decide what to build (1:12:09).

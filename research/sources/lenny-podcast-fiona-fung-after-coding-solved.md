@@ -45,3 +45,10 @@ The manager of Anthropic's Claude Code and Cowork teams says, first-hand, that o
 - Transcript read in full (Substack auto-transcription; speakers labelled SPEAKER_00/01, "ClockCo"/"Cloud Code" = Claude Code).
 - 8x is Anthropic's own metric with no published method; the swear dashboard, bad/sad framework and routines were described, not demonstrated.
 - The "bottleneck shifted to how do we know this works" line is Lenny's takeaway wording; Fung's own words are close (8:16, 1:10:44).
+
+## Added by research-future-of-product (2026-11-22)
+- Verification design: human experts review high-risk areas; the rest is checked by encoding "what good looks like" in the repo (specs, content-design skill) and having review agents hold code to it; "trust but verify" (14:55-17:18). Tag: B3.2, B5.1.
+- Quality via monitoring and tests rather than more review; "bad" (irrecoverable) versus "sad" (recoverable pain) error classes (44:47-47:51).
+- Manager work automated: a remote agent across all team repos, Slack and metrics; routines summarise feedback, incidents and open PRs overnight (10:03-13:11, 36:37). Tag: B3.1.
+- Measure outcomes not tool usage ("don't forsake motion for progress"); every initiative states a hypothesis (38:47, 41:26). Tag: B1.3.
+- Open questions she names: separate iOS and Android orgs, how far to push automated review, equal productivity as roles blur, growing engineers who never hand-coded (1:09:57, 1:13:19).

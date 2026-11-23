@@ -47,3 +47,6 @@ Anthropic's CPO describes, first-hand and in mid-2025, what happens to product d
 - Percentages are spoken estimates: "95% plus" for Claude Code is "my guess ... I'll come back with the real stuff"; show notes say "90-95% of code for some products". As of mid-2025; superseded by later Anthropic figures in other sources.
 - First-party but vendor: Krieger is describing his own company and product.
 - A separate attendee write-up of Krieger's later summit remarks is filed as note-krieger-pm-summit-remarks.
+
+## Added by research-future-of-product (2026-11-22)
+- Roles 'haven't yet' changed though engineering has (12:53): dissent on product-team-shape-future. Upstream bottleneck is decision-making and alignment (14:25): bears on problem-selection-as-core-skill. PMs embedded with post-training research are where leverage comes from (22:07); Peter Deng describes the same pairing at OpenAI (Lenny's Podcast, 2025-06-22, 34:41-36:25).

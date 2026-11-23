@@ -38,3 +38,7 @@ The largest product-centric sentiment survey in the library (5,332 working respo
 ## Could not verify
 - Read in full. Charts were images and not in the text copy, so some per-role numbers are only as stated in prose.
 - Sample is self-selected newsletter readers (product-heavy, senior); not representative of all tech workers. Several questions are new or reworded, so only matched questions are compared year on year (appendix).
+
+## Added by research-future-of-product (2026-11-22)
+- Fear is the squeeze not replacement: 51% expect more work for the same pay, only 22% fear job loss (Takeaway 5); freed time is absorbed by higher output expectations, which tempers the idea that saved time goes to problem selection (problem-selection-as-core-skill).
+- 'Early-career: the rungs are disappearing'; leaders told 'don't let the bottom rung rot' (product-team-shape-future). 23% destabilized at 10,000+ firms vs 15% at 1-10 (Takeaway 7).

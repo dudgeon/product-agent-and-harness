@@ -35,3 +35,6 @@ The largest and most independent survey in the set (1,750 respondents across rol
 ## Could not verify
 - Full text is paywalled after the opening sections; figures above are from the free portion (re-check 2026-10-24 re-read the original and confirmed every figure listed). No per-role respondent counts are visible, so the PM sub-sample size is unknown.
 - Audit correction: the 'half a day per week' headline applies to more than half of respondents and to their most important tasks, not to all respondents; it measures a different group and unit from the '63% of PMs save 4+ hours' figure.
+
+## Added by research-future-of-product (2026-11-22)
+- Current PM AI use is on coordination and artifacts (PRDs 21.5%, comms 18.5%) not on choosing problems (roadmap ideas 1.1%, user research 4.7%): evidence for pm-coordination-work-automated and against any claim that AI has yet shifted PM time to problem selection (problem-selection-as-core-skill).

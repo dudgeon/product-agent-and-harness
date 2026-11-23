@@ -38,3 +38,6 @@ A first-party account of a decade-old SaaS company reorganising product, enginee
 - Transcript read in full (Substack auto-transcription; some garbled names, e.g. "ICCO").
 - Financial claims (over $100M free cash flow, ~$12B valuation) are from the show notes and the guest; not checked.
 - No numbers are given on the fast group's size, output or results beyond "near-weekly" shipping and anecdotal user comments about velocity.
+
+## Added by research-future-of-product (2026-11-22)
+- Fast-thinking vs slow-thinking groups and execution moving from 'deterministic resourcing and timelines' to experimentation (21:38-23:33, 50:24): relevant to product-team-shape-future and idea-slate-validation-loops. 'Start with vibes, not evals' for novel experiences (1:03:50) is a counterpoint to loops that need a stable thing to measure.

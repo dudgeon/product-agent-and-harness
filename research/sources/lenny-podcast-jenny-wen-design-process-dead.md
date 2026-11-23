@@ -46,3 +46,8 @@ A first-party account of how one of the most AI-saturated product teams (Anthrop
 - Transcript is Substack auto-transcription; read in full. A short stretch around 27:11-28:30 (the question on which skills become more valuable) was only partly read.
 - Time-split percentages are her own estimates. "Seven Claudes" is a figure of speech, not a measured number.
 - Speaker is an Anthropic employee describing Anthropic products (Cowork, Claude Code); her description of their form factor is partly product advocacy.
+
+## Added by research-future-of-product (2026-11-22)
+- Vision horizon shrank from 2-10 years to 3-6 months and is often a prototype, not a deck (5:52-8:35). Her time split: mocking 60-70% to 30-40%, pairing with engineers 30-40%, some implementation (17:58).
+- Not being able to mock non-deterministic states is AI-product specific (11:58); deterministic journeys can still be prototyped faithfully.
+- Accountability stays human: 'someone still needs to be accountable for the decision', though AI will improve at taste and judgment (28:30-31:18). Pure people-management middle management fades; managers give direction too (35:49-40:31). Overlooked 'craft new grads' as a hiring archetype (46:26-49:33).

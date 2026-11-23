@@ -45,3 +45,8 @@ The product lead for OpenAI's Codex and ChatGPT Work describes how she works and
 - Transcript (about 81 minutes) read 0:00-1:00, 6:49-26:44, 29:30-37:36, 39:26-52:26 and 53:13-1:07:54; intro, sponsor reads, Sutter Hill/career segments (1:00:45-1:05:08) and lightning round skimmed by search. Show notes and Lenny's takeaways read in full.
 - No usage numbers or outcomes; product-direction claims (shared agents, harness auto-selection) are intentions, not shipped features as of the episode.
 - Speaker is the product owner promoting Codex and ChatGPT Work.
+
+## Added by research-future-of-product (2026-11-22)
+- Accountability: humans stay the "entity of accountability", the agent is "your report", "especially in industries and places that are highly regulated" (46:19). Scope: all products.
+- Boundaries dissolve ("everyone could do anything" at Stripe; capability is "finally catching up") but one DRI always owns adoption, quality and effectiveness (42:48-43:25).
+- Open question she cannot answer: whether the fluid model costs craft depth, since "pieces of our craft are getting abstracted by models" (44:06-44:42).

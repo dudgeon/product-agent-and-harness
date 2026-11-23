@@ -38,3 +38,8 @@ The podcast companion to Vo's OpenClaw guide (lenny-newsletter-claire-vo-opencla
 ## Could not verify
 - Show notes and takeaways read in full; transcript read by search at 21:51-24:34, 39:00-44:55, 1:09:25-1:12:05, 1:16:55-1:19:16, 1:22:10-1:29:34; the installation demo, family use cases and lightning round were skimmed only.
 - The 10-hours-a-week saving is Vo's own estimate.
+
+## Added by research-future-of-product (2026-11-22)
+- Onboard agents like an executive assistant: own email and calendar, shared access, never passwords (18:58-19:47); "Managers, this is your moment", outcome-focused "high bar manager" (39:00, 1:11:30).
+- Counter-evidence to unattended owner agents: "sharp edges... you got to feed and maintain your Claws. It is not hands-off" (1:02:52).
+- Sales agent replaced a contractor at about 10 hours a week and is tunable by instruction rather than CRM automations (51:01-52:52). Solo operator; no regulated-use evidence.

@@ -37,3 +37,9 @@ Google Labs' head describes how an internal labs team is set up and run when "wh
 - Show notes and takeaways read in full; transcript read 30:47-39:00 and 46:25-58:00, rest skimmed by search. No tools or harnesses are named in detail.
 - Team-size and cadence figures are the guest's own; no data on outcomes of the builder ladder pilot.
 - Contradicts Howie Liu (lenny-podcast-howie-liu-airtable-reorg), who argues every role must be "minimally good at the other two"; both are first-party opinions.
+
+## Added by research-future-of-product (2026-11-22)
+- The "almost possible" list as a problem-selection engine; ideas "very rarely come from design sprints", "you can't microwave good ideas" (06:44-08:40).
+- Labs are normally ineffective after three to four years unless independent of a business unit (00:22, 48:01).
+- Unlearning rate and trust-building as hiring signals; hiring too many too fast is a vanity metric (31:53-34:28, 53:22).
+- A six-month roadmap because "the thing I saw two days ago is now a project that happened in 48 hours" (41:45); 20-30 parallel experiments (39:06).

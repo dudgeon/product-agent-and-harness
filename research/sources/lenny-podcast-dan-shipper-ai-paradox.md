@@ -41,3 +41,9 @@ Dan Shipper (CEO of Every, about 30 people, all heavy AI users) reports reversin
 - Medium podcast: show notes and takeaways read in full; transcript read 10:22-36:22, 39:15-45:00, 50:25-1:10:30; the rest skimmed by search.
 - The Ramp company agent is mentioned but not named in the transcript; "River" for Shopify is Lenny's recollection. Benchmark scores are his personal test, not published.
 - Different episode from the July 2025 Shipper interview filed as lenny-podcast-dan-shipper-every-ai-native.
+
+## Added by research-future-of-product (2026-11-22)
+- "Every agent needs a human": a personal agent is only useful while someone cares for it; forward-deployed engineers who build systems so less-knowledgeable people can use agents safely are a durable role (14:38, 53:52, 1:02:11). Tag: B4.1, B4.2.
+- A model company's data-science bot, wired to the warehouse with permissions, answers basic questions so data teams are not buried reviewing everyone's AI analysis (56:53). Tag: B3.1.
+- Quarterly planning done with Notion agents interviewing each person; Dan reads across plans to spot who should talk and which plans are weak (1:03:20-1:04:10).
+- Dissent: "automation is a lie", each needs a human; benchmarks overstate autonomy; his vibe-coded launch broke (39:15-48:00). Also "super bullish on PMs" who get AI-fluent, and "the AI job apocalypse is not really a thing" (1:08:40, 1:13:09). Tag: B1.3, B3.2.

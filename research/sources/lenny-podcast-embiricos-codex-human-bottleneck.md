@@ -45,3 +45,8 @@ The Codex product lead argues the binding constraint is no longer the model but 
 - Read show notes and takeaways in full; transcript read 11:45-57:44 and 1:05:38-1:14:33. Opening (0:00-11:45, biography and intro) and the lightning round were skimmed by search only.
 - All growth and speed numbers are the speaker's own; the Atlas estimate is second-hand from one engineer. The Sora Android app was a port of an existing iOS app, which he notes is "easy mode" for agents.
 - Recorded around late November 2025 (refers to GPT-5.1-Codex-Max shipping "last Wednesday").
+
+## Added by research-future-of-product (2026-11-22)
+- OpenAI's product org is "truly, truly bottoms up" because capabilities and market landing are unknown; he would run any product org "totally new" and doubts non-AI companies make sense in future (08:01-08:45). Scope: AI-product; carries to deterministic systems only for discovery work, not delivery.
+- Teammate vision spans ideation and planning through validation, deploy and maintenance, not only coding (12:21, 25:15).
+- "Compressing the talent stack": each role does more and skips a communication boundary; designers keep a vibe-coded prototype of the app and land PRs (44:24-46:24). Scope: all products.

@@ -46,3 +46,9 @@ The clearest first-party description of a large company building **persona criti
 - "70% of skills will change by 2030" and the fastest-growing-jobs stat are LinkedIn Economic Graph claims; method not given in the episode.
 - "Close to 50%" of failed builds fixed by the maintenance agent and "hours a week" saved are spoken claims with no measurement shown. The trust-agent Open to Work example is a retrospective replay, not a prospective test.
 - No numbers on how many people hold the Full Stack Builder title or use the agents.
+
+## Added by research-future-of-product (2026-11-22)
+- Protected cohort: Cohen "carved out two million members" as his experiment population so mass-scale tests did not trigger escalations over other teams' metrics (00:21:56-00:27:23). A pattern for bounded real-customer tests in a large or regulated firm.
+- AI Academy for every PM from 2020; a weekly review of only five bets during the shift; re-architecting platforms into composable parts so AI can reason over them (00:40:57, 00:47:40, 16:35).
+- The trust agent as a pre-review of harm vectors maps to compliance pre-review (19:58-21:59); the curated corpus linking past specs to outcomes is the prerequisite for traceable intent (28:54).
+- Scope: all claims here concern how any product is built (deterministic or AI).

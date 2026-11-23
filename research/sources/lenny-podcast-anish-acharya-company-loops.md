@@ -39,3 +39,8 @@ An investor's framing of the AI-native operating model: every function becomes a
 ## Could not verify
 - Show notes and takeaways read in full; transcript read 8:24-26:00, 44:41-51:13, 51:45-53:31, 54:54 and 58:28-1:01:24; rest skimmed by search (consumer AI, careers, lightning round).
 - Kavak, Google and OpenAI examples are second-hand anecdotes. The loops model is a framing, not a measured practice. Model names and prices (e.g. "100X more" per IQ point) are the guest's own characterisation.
+
+## Added by research-future-of-product (2026-11-22)
+- "Technology unbundles skill from desire" and drives ambition, not only productivity (00:09). Google executive anecdote: "two years of roadmap happens in three months", the hard problem becomes knowing what to add (10:10); second-hand.
+- Dissent on pace: using AI versus reorganising around it, with electricity taking 40 years; many industries "not intelligence bound", so equilibria may not change (09:17, 20:39).
+- Acharya on yes-to-everything plus simulation: many PMs will find they are "not that good at zero to one"; the best idea wins, not the best-sold one (17:21).

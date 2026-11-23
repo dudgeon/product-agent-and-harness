@@ -45,3 +45,9 @@ A widely trusted independent engineer's account of what changed after "November 
 - StrongDM figures ($10,000/day tokens, 32,000 lines, three people) are relayed second-hand by Willison from a demo; not independently verified.
 - Cloudflare/Shopify intern numbers are relayed from a Thoughtworks offsite.
 - Transcript is Substack auto-transcription ("clawed code" = Claude Code).
+
+## Added by research-future-of-product (2026-11-22)
+- Dark factory: an agent-simulated QA swarm (StrongDM) replaced reading the code, with simulated Slack/Jira/Okta built from public API docs (14:47-17:02). Tag: B3.2, B4.2.
+- Simulating users for usability is "not credible"; human usability testing still picks among prototype options (23:02). Tag: B2.3, synthetic users.
+- With coding cheap the bottlenecks are elsewhere; he prototypes three versions of any feature; spec-to-implementation of three weeks becomes three hours (21:27-23:02). Tag: B2.1, B2.2.
+- Parallel agents leave him exhausted by 11am; mid-career engineers are "in the most trouble" (26:17, 30:14, 35:57). Tag: human experience, junior pipeline.
