@@ -5,7 +5,7 @@ An opinionated, evidence-based vision of where product development is heading, f
 ## Read in this order
 
 1. [the-future-of-product-work.md](the-future-of-product-work.md): the whole thing in one file (the truths, the moves, the assets, the open tensions).
-2. [04-truths.md](04-truths.md): the thesis and fifteen truths, with evidence links.
+2. [04-truths.md](04-truths.md): the thesis and seventeen truths, with evidence links.
 3. [07-product-system.md](07-product-system.md): the eleven moves of the product loop, the people, agents and artifacts, and what the scenarios have strained.
 4. [08-assets.md](08-assets.md): a first draft of the agents, skills, artifacts and shared material that would support the loop.
 

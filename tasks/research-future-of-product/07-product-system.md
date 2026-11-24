@@ -34,6 +34,7 @@ How these overlap is unsettled. One person is often all three.
 - **What exists:** a current account of what each platform, journey and process does.
 - **The rules:** standards and obligations in a form agents can apply, with people to interpret the unclear cases.
 - **Somewhere safe to try things:** places to build against, and the ability to replay real history.
+- **Shared knowledge:** lessons learned, tests attempted, constraints found and the ways around them, drawn on and added to by people and agents alike, so new work starts from what is already known.
 - **The trail:** what is in market stays connected to the problem, the evidence and the trade-offs behind it.
 
 ## The moves
@@ -65,17 +66,18 @@ Because learning is cheap, teams try bolder answers, and the organization can co
 Six scenarios have been run against the thesis: Priya (card rewards), Kofi (small-business payouts, carried by an engineer), Amara (a servicing journey and its steward), Dele (a fee change), Ruth (an acquisition) and Sam (a newcomer learning judgment). The leans below are the research's; either side can bend, and each is the project lead's to settle.
 
 **Settled since the first scenario**
-- The artifact a person writes is the statement of intent; how a change fits existing systems is a separate solution design. Truth 7 now says so.
+- Two truths added at the project lead's direction: standards raise the routine while exploration stays open-ended (truth 3), and work draws on and adds to a shared body of knowledge, with novel discovery as people's highest calling (truth 13). The truths are renumbered.
+- The artifact a person writes is the statement of intent; how a change fits existing systems is a separate solution design. Truth 8 now says so.
 - Sense is defined: spotting a problem or an opportunity worth acting on.
 - The limits for unreviewed release are agreed between the person who answers for the area and a risk agent.
 
 **Open**
-1. **Truth 5 (testing converges with describing).** In every scenario, prototypes shape and test the idea, and the production change is built later as its own move. *Lean:* say prototyping is how ideas are shaped, and keep production separate.
-2. **Truth 6 (multiple answers in parallel).** Answers are tested in rounds against a sharp hypothesis, and one person judges them. *Lean:* reword toward judgment: many answers are tested against a sharp hypothesis.
-3. **Truth 8 (loops of rising realism).** Challenge recurs in every round, using whatever fits: data, replay of real history, simulation, customers, colleagues. Replay of real history did most of the deciding; simulated customers barely appear. *Lean:* the truth bends from a ladder to a recurring move, and separates replaying history from simulating people.
-4. **Truth 4 (thresholds for shipping without sign-off).** Amara's story shows a change inside the limits going wrong, being caught in hours, and the limit moving. *Lean:* say the limits are adjusted from experience. Also say AI parts of a product need a different kind of checking from deterministic steps.
-5. **Truth 3 (judgment beyond the PM title).** An engineer carries Kofi's bet and an operations lead sees what Ruth's mapping missed; in each case another craft covers a gap. *Lean:* the truth holds, and should say other crafts stay close by.
-6. **Truth 7 (rules supplied by agents).** In Dele's story the rules agent missed two items. *Lean:* admit the record of obligations will be incomplete for a long time.
-7. **Truth 14 (portfolio ambition).** The thing most likely to sink Ruth's acquisition was written nowhere and came from a person. *Lean:* say that at this scale people's experience carries what records cannot.
+1. **Truth 6 (testing converges with describing).** In every scenario, prototypes shape and test the idea, and the production change is built later as its own move. *Lean:* say prototyping is how ideas are shaped, and keep production separate.
+2. **Truth 7 (multiple answers in parallel).** Answers are tested in rounds against a sharp hypothesis, and one person judges them. *Lean:* reword toward judgment: many answers are tested against a sharp hypothesis.
+3. **Truth 9 (loops of rising realism).** Challenge recurs in every round, using whatever fits: data, replay of real history, simulation, customers, colleagues. Replay of real history did most of the deciding; simulated customers barely appear. *Lean:* the truth bends from a ladder to a recurring move, and separates replaying history from simulating people.
+4. **Truth 5 (thresholds for shipping without sign-off).** Amara's story shows a change inside the limits going wrong, being caught in hours, and the limit moving. *Lean:* say the limits are adjusted from experience. Also say AI parts of a product need a different kind of checking from deterministic steps.
+5. **Truth 4 (judgment beyond the PM title).** An engineer carries Kofi's bet and an operations lead sees what Ruth's mapping missed; in each case another craft covers a gap. *Lean:* the truth holds, and should say other crafts stay close by.
+6. **Truth 8 (rules supplied by agents).** In Dele's story the rules agent missed two items. *Lean:* admit the record of obligations will be incomplete for a long time.
+7. **Truth 16 (portfolio ambition).** The thing most likely to sink Ruth's acquisition was written nowhere and came from a person. *Lean:* say that at this scale people's experience carries what records cannot.
 8. **No truth covers Design, Build and Verify.** Three of the eleven moves rest only on steward agents and verification thresholds. *Open:* add a truth on where engineering attention goes, or keep it here.
 9. **No truth covers how judgment is learned.** Agents take the fetch-and-carry work that was also how newcomers learned the business (Sam). *Open:* add a truth or an open question.
